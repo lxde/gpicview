@@ -1,0 +1,141 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-09-09 23:03+0800\n"
+"PO-Revision-Date: 2007-09-09 20:55+0800\n"
+"Last-Translator: 洪任諭 <pcman.tw@gmail.com>\n"
+"Language-Team: zh_TW <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: TAIWAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: src/mainwin.cpp:100
+msgid "Image Viewer"
+msgstr "圖片檢視器"
+
+#: src/mainwin.cpp:171 src/mainwin.cpp:980
+msgid "Previous"
+msgstr "上一張"
+
+#: src/mainwin.cpp:172 src/mainwin.cpp:981
+msgid "Next"
+msgstr "下一張"
+
+#: src/mainwin.cpp:176 src/mainwin.cpp:985
+msgid "Zoom Out"
+msgstr "縮小"
+
+#: src/mainwin.cpp:177 src/mainwin.cpp:986
+msgid "Zoom In"
+msgstr "放大"
+
+#: src/mainwin.cpp:178 src/mainwin.cpp:987
+msgid "Fit Image To Window Size"
+msgstr "符合視窗大小"
+
+#: src/mainwin.cpp:180 src/mainwin.cpp:989
+msgid "Original Size"
+msgstr "原始大小"
+
+#: src/mainwin.cpp:187
+msgid " Full Screen"
+msgstr "全螢幕瀏覽"
+
+#: src/mainwin.cpp:191 src/mainwin.cpp:1000
+msgid "Rotate Counterclockwise"
+msgstr "逆時針旋轉"
+
+#: src/mainwin.cpp:193 src/mainwin.cpp:1002
+msgid "Rotate Clockwise"
+msgstr "順時針旋轉"
+
+#: src/mainwin.cpp:197 src/mainwin.cpp:1007
+msgid "Open File"
+msgstr "開啟檔案"
+
+#: src/mainwin.cpp:198 src/mainwin.cpp:1008
+msgid "Save File"
+msgstr "儲存檔案"
+
+#: src/mainwin.cpp:199
+msgid "Save File As"
+msgstr "另存新檔"
+
+#: src/mainwin.cpp:200 src/mainwin.cpp:1010
+msgid "Delete File"
+msgstr "刪除檔案"
+
+#: src/mainwin.cpp:613
+msgid "All Supported Images"
+msgstr "所有支援的影像格式"
+
+#: src/mainwin.cpp:618
+msgid "All Files"
+msgstr "所有檔案"
+
+#: src/mainwin.cpp:932
+msgid ""
+"The file name you selected already exist.\n"
+"Do you want to overwrite existing file?\n"
+"(Warning: The quality of original image might be lost)"
+msgstr ""
+"你選擇的檔案名稱已經存在\n"
+"是否確定要覆蓋原有檔案？\n"
+"(警告：原影像的品質可能會喪失)"
+
+#: src/mainwin.cpp:961
+msgid ""
+"Are you sure you want to delete current file?\n"
+"\n"
+"Warning: Once deleted, the file cannot be recovered."
+msgstr ""
+"你是否確定要刪除目前檔案？\n"
+"\n"
+"警告：一旦刪除，檔案就無法復原。"
+
+#: src/mainwin.cpp:996
+msgid "Full Screen"
+msgstr "全螢幕瀏覽"
+
+#: src/mainwin.cpp:1009
+msgid "Save As"
+msgstr "另存新檔"
+
+#: src/mainwin.cpp:1056
+msgid " * Some icons are taken from gimmage"
+msgstr " * 部份圖示是從 gimmage 取得"
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: src/mainwin.cpp:1060
+msgid "translator-credits"
+msgstr "洪任諭 (PCMan) <pcman.tw@gmail.com>"
+
+#: src/mainwin.cpp:1065
+msgid "GPicView"
+msgstr "GPicView 圖片檢視器"
+
+#: src/mainwin.cpp:1066
+msgid "Copyright (C) 2007"
+msgstr "版權所有 (C) 2007"
+
+#: src/mainwin.cpp:1067
+msgid ""
+"Lightweight image viewer\n"
+"\n"
+"Developed by Hon Jen Yee (PCMan)"
+msgstr ""
+"輕巧的圖片檢視器\n"
+"\n"
+"由洪任諭 (PCMan) 開發"
+
+#~ msgid " Original Size"
+#~ msgstr "原始尺寸"

@@ -1,0 +1,127 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-09-09 23:03+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/mainwin.cpp:100
+msgid "Image Viewer"
+msgstr ""
+
+#: src/mainwin.cpp:171 src/mainwin.cpp:980
+msgid "Previous"
+msgstr ""
+
+#: src/mainwin.cpp:172 src/mainwin.cpp:981
+msgid "Next"
+msgstr ""
+
+#: src/mainwin.cpp:176 src/mainwin.cpp:985
+msgid "Zoom Out"
+msgstr ""
+
+#: src/mainwin.cpp:177 src/mainwin.cpp:986
+msgid "Zoom In"
+msgstr ""
+
+#: src/mainwin.cpp:178 src/mainwin.cpp:987
+msgid "Fit Image To Window Size"
+msgstr ""
+
+#: src/mainwin.cpp:180 src/mainwin.cpp:989
+msgid "Original Size"
+msgstr ""
+
+#: src/mainwin.cpp:187
+msgid " Full Screen"
+msgstr ""
+
+#: src/mainwin.cpp:191 src/mainwin.cpp:1000
+msgid "Rotate Counterclockwise"
+msgstr ""
+
+#: src/mainwin.cpp:193 src/mainwin.cpp:1002
+msgid "Rotate Clockwise"
+msgstr ""
+
+#: src/mainwin.cpp:197 src/mainwin.cpp:1007
+msgid "Open File"
+msgstr ""
+
+#: src/mainwin.cpp:198 src/mainwin.cpp:1008
+msgid "Save File"
+msgstr ""
+
+#: src/mainwin.cpp:199
+msgid "Save File As"
+msgstr ""
+
+#: src/mainwin.cpp:200 src/mainwin.cpp:1010
+msgid "Delete File"
+msgstr ""
+
+#: src/mainwin.cpp:613
+msgid "All Supported Images"
+msgstr ""
+
+#: src/mainwin.cpp:618
+msgid "All Files"
+msgstr ""
+
+#: src/mainwin.cpp:932
+msgid ""
+"The file name you selected already exist.\n"
+"Do you want to overwrite existing file?\n"
+"(Warning: The quality of original image might be lost)"
+msgstr ""
+
+#: src/mainwin.cpp:961
+msgid ""
+"Are you sure you want to delete current file?\n"
+"\n"
+"Warning: Once deleted, the file cannot be recovered."
+msgstr ""
+
+#: src/mainwin.cpp:996
+msgid "Full Screen"
+msgstr ""
+
+#: src/mainwin.cpp:1009
+msgid "Save As"
+msgstr ""
+
+#: src/mainwin.cpp:1056
+msgid " * Some icons are taken from gimmage"
+msgstr ""
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: src/mainwin.cpp:1060
+msgid "translator-credits"
+msgstr ""
+
+#: src/mainwin.cpp:1065
+msgid "GPicView"
+msgstr ""
+
+#: src/mainwin.cpp:1066
+msgid "Copyright (C) 2007"
+msgstr ""
+
+#: src/mainwin.cpp:1067
+msgid ""
+"Lightweight image viewer\n"
+"\n"
+"Developed by Hon Jen Yee (PCMan)"
+msgstr ""
