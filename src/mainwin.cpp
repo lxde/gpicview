@@ -1066,7 +1066,7 @@ void MainWin::on_about( GtkWidget* menu, MainWin* self )
     gtk_about_dialog_set_copyright ( GTK_ABOUT_DIALOG ( about_dlg ), _( "Copyright (C) 2007" ) );
     gtk_about_dialog_set_comments ( GTK_ABOUT_DIALOG ( about_dlg ), _( "Lightweight image viewer\n\nDeveloped by Hon Jen Yee (PCMan)" ) );
     gtk_about_dialog_set_license ( GTK_ABOUT_DIALOG ( about_dlg ), "GPicView\n\nCopyright (C) 2007 Hong Jen Yee (PCMan)\n\nThis program is free software; you can redistribute it and/or\nmodify it under the terms of the GNU General Public License\nas published by the Free Software Foundation; either version 2\nof the License, or (at your option) any later version.\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with this program; if not, write to the Free Software\nFoundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA." );
-    gtk_about_dialog_set_website ( GTK_ABOUT_DIALOG ( about_dlg ), "http://gpicview.sourceforge.net/" );
+    gtk_about_dialog_set_website ( GTK_ABOUT_DIALOG ( about_dlg ), "http://lxde.sourceforge.net/gpicview/" );
     gtk_about_dialog_set_authors ( GTK_ABOUT_DIALOG ( about_dlg ), authors );
     gtk_about_dialog_set_translator_credits ( GTK_ABOUT_DIALOG ( about_dlg ), translators );
     gtk_window_set_transient_for( GTK_WINDOW( about_dlg ), GTK_WINDOW( self ) );
