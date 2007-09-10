@@ -106,12 +106,17 @@ MainWin::MainWin()
 
     // image area
     evt_box = gtk_event_box_new();
+    GTK_WIDGET_SET_FLAGS( evt_box, GTK_CAN_FOCUS );
     gtk_widget_add_events( evt_box,
                            GDK_POINTER_MOTION_MASK|GDK_BUTTON_PRESS_MASK|
                            GDK_BUTTON_RELEASE_MASK|GDK_SCROLL_MASK );
     g_signal_connect( evt_box, "button-press-event", G_CALLBACK(on_button_press), this );
     g_signal_connect( evt_box, "button-release-event", G_CALLBACK(on_button_release), this );
     g_signal_connect( evt_box, "motion-notify-event", G_CALLBACK(on_mouse_move), this );
+    g_signal_connect( evt_box, "scroll-event", G_CALLBACK(on_scroll_event), this );
+    // Set bg color to white
+    GdkColor white = {0, 65535, 65535, 65535};
+    gtk_widget_modify_bg( evt_box, GTK_STATE_NORMAL, &white );
 
     img_view = gtk_image_new();
     gtk_container_add( (GtkContainer*)evt_box, img_view);
@@ -146,6 +151,7 @@ MainWin::MainWin()
 
     hand_cursor = gdk_cursor_new_for_display( gtk_widget_get_display((GtkWidget*)this), GDK_FLEUR );
 
+//    zoom_mode = ZOOM_NONE;
     zoom_mode = ZOOM_FIT;
 
     // Set up drag & drop
@@ -175,12 +181,18 @@ void MainWin::create_nav_bar( GtkWidget* box )
 
     add_nav_btn( GTK_STOCK_ZOOM_OUT, _("Zoom Out"), G_CALLBACK(on_zoom_out) );
     add_nav_btn( GTK_STOCK_ZOOM_IN, _("Zoom In"), G_CALLBACK(on_zoom_in) );
+
+//    percent = gtk_entry_new();    // show scale (in percentage)
+//    g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), this );
+//    gtk_widget_set_size_request( percent, 45, -1 );
+//    gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
+
     btn_fit = add_nav_btn( GTK_STOCK_ZOOM_FIT, _("Fit Image To Window Size"),
                            G_CALLBACK(on_zoom_fit), true );
     btn_orig = add_nav_btn( GTK_STOCK_ZOOM_100, _("Original Size"),
                            G_CALLBACK(on_orig_size), true );
-
     gtk_toggle_button_set_active( (GtkToggleButton*)btn_fit, TRUE );
+
 #ifndef GTK_STOCK_FULLSCREEN
 #define GTK_STOCK_FULLSCREEN    "gtk-fullscreen"
 #endif
@@ -226,10 +238,42 @@ bool MainWin::open( const char* file_path )
         show_error( err->message );
         return false;
     }
+/*
+    // select most suitable viewing mode
+    if( zoom_mode == ZOOM_NONE )
+    {
+        int w = gdk_pixbuf_get_width( pic_orig );
+        int h = gdk_pixbuf_get_height( pic_orig );
+
+        GdkRectangle area;
+        get_working_area( gtk_widget_get_screen((GtkWidget*)this), &area );
+        g_debug("zoom none!  w=%d, h=%d", w, h);
+        if( w < area.width && h < area.height )
+        {
+            g_debug("zoom none!");
+            gtk_scrolled_window_set_policy( (GtkScrolledWindow*)scroll,
+            GTK_POLICY_NEVER, GTK_POLICY_NEVER );
+            gtk_widget_set_size_request( img_view, w, h );
+            GtkRequisition req;
+            gtk_widget_size_request ( (GtkWidget*)this, &req );
+            g_debug( "size request: w = %d, h = %d", req.width, req.height );
+            gtk_window_resize( (GtkWindow*)this, req.width, req.height );
+            gtk_widget_set_size_request( img_view, -1, -1 );
+            gtk_scrolled_window_set_policy( (GtkScrolledWindow*)scroll,
+            GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC );
+            zoom_mode = ZOOM_ORIG;
+            on_orig_size( (GtkToggleButton*)btn_orig, this );
+        }
+        else
+        {
+            zoom_mode = ZOOM_FIT;
+        }
+    }
+*/
 
     if( zoom_mode == ZOOM_FIT )
         fit_window_size();
-    else  if( zoom_mode == ZOOM_OTHER )  // scale
+    else  if( zoom_mode == ZOOM_SCALE )  // scale
         scale_image( scale );
     else  if( zoom_mode == ZOOM_ORIG )  // original size
     {
@@ -238,28 +282,6 @@ bool MainWin::open( const char* file_path )
         int w = gdk_pixbuf_get_width( pic );
         int h = gdk_pixbuf_get_height( pic );
 
-/*
-        GdkRectangle area;
-        get_working_area( gtk_widget_get_screen((GtkWidget*)this), &area );
-        if( w < area.width && h < area.height )
-        {
-            gtk_scrolled_window_set_policy( (GtkScrolledWindow*)scroll,
-                                             GTK_POLICY_NEVER, GTK_POLICY_NEVER );
-            int space = 0;
-            gtk_widget_style_get( scroll, "scrollbar-spacing", &space, NULL );
-            space *= 2;
-
-            gtk_window_resize( (GtkWindow*)this, w, h );
-            gtk_scrolled_window_set_policy( (GtkScrolledWindow*)scroll,
-                                             GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC );
-        }
-        else
-        {
-            gtk_scrolled_window_set_policy( (GtkScrolledWindow*)scroll,
-                                             GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC );
-            center_image();
-        }
-*/
         center_image();
     }
 
@@ -393,11 +415,16 @@ void MainWin::on_full_screen( GtkWidget* btn, MainWin* self )
 {
     if( ! self->full_screen )
     {
+        static GdkColor black = {0};
+        gtk_widget_modify_bg( self->evt_box, GTK_STATE_NORMAL, &black );
         gtk_widget_hide( gtk_widget_get_parent(self->nav_bar) );
         gtk_window_fullscreen( (GtkWindow*)self );
     }
     else
     {
+//        gtk_widget_reset_rc_styles( self->evt_box );
+        static GdkColor white = {0, 65535, 65535, 65535};
+        gtk_widget_modify_bg( self->evt_box, GTK_STATE_NORMAL, &white );
         gtk_widget_show( gtk_widget_get_parent(self->nav_bar) );
         gtk_window_unfullscreen( (GtkWindow*)self );
     }
@@ -633,7 +660,7 @@ void MainWin::on_open( GtkWidget* btn, MainWin* self )
 
 void MainWin::on_zoom_in( GtkWidget* btn, MainWin* self )
 {
-    self->zoom_mode = ZOOM_OTHER;
+    self->zoom_mode = ZOOM_SCALE;
     gtk_toggle_button_set_active( (GtkToggleButton*)self->btn_fit, FALSE );
     gtk_toggle_button_set_active( (GtkToggleButton*)self->btn_orig, FALSE );
 
@@ -650,7 +677,7 @@ void MainWin::on_zoom_in( GtkWidget* btn, MainWin* self )
 
 void MainWin::on_zoom_out( GtkWidget* btn, MainWin* self )
 {
-    self->zoom_mode = ZOOM_OTHER;
+    self->zoom_mode = ZOOM_SCALE;
     gtk_toggle_button_set_active( (GtkToggleButton*)self->btn_fit, FALSE );
     gtk_toggle_button_set_active( (GtkToggleButton*)self->btn_orig, FALSE );
 
@@ -677,6 +704,8 @@ void MainWin::on_quit( GtkWidget* btn, MainWin* self )
 
 gboolean MainWin::on_button_press( GtkWidget* widget, GdkEventButton* evt, MainWin* self )
 {
+    gtk_widget_grab_focus( widget );
+
     if( evt->type == GDK_BUTTON_PRESS)
     {
         if( evt->button == 1 )    // left button
@@ -771,18 +800,50 @@ gboolean MainWin::on_button_release( GtkWidget* widget, GdkEventButton* evt, Mai
     return FALSE;
 }
 
+gboolean MainWin::on_scroll_event( GtkWidget* widget, GdkEventScroll* evt, MainWin* self )
+{
+    switch( evt->direction )
+    {
+    case GDK_SCROLL_UP:
+        on_zoom_out( NULL, self );
+        break;
+    case GDK_SCROLL_DOWN:
+        on_zoom_in( NULL, self );
+        break;
+    case GDK_SCROLL_LEFT:
+        on_prev( NULL, self );
+        break;
+    case GDK_SCROLL_RIGHT:
+        on_next( NULL, self );
+        break;
+    }
+    return FALSE;
+}
+
 gboolean MainWin::on_key_press_event(GtkWidget* widget, GdkEventKey * key)
 {
     MainWin* self = (MainWin*)widget;
     switch( key->keyval )
     {
+        case GDK_Left:
+        case GDK_KP_Left:
+        case GDK_leftarrow:
         case GDK_Return:
         case GDK_space:
         case GDK_Next:
+        case GDK_KP_Down:
+        case GDK_Down:
+        case GDK_downarrow:
             on_next( NULL, self );
             break;
+        case GDK_Right:
+        case GDK_KP_Right:
+        case GDK_rightarrow:
         case GDK_Prior:
         case GDK_BackSpace:
+        case GDK_KP_Up:
+        case GDK_Up:
+        case GDK_uparrow:
             on_prev( NULL, self );
             break;
         case GDK_KP_Add:
@@ -793,47 +854,36 @@ gboolean MainWin::on_key_press_event(GtkWidget* widget, GdkEventKey * key)
         case GDK_minus:
             on_zoom_out( NULL, self );
             break;
-        case GDK_Left:
-        case GDK_KP_Left:
-        case GDK_leftarrow:
-            break;
-        case GDK_Right:
-        case GDK_KP_Right:
-        case GDK_rightarrow:
-            break;
-        case GDK_KP_Down:
-        case GDK_Down:
-        case GDK_downarrow:
-            break;
-        case GDK_KP_Up:
-        case GDK_Up:
-        case GDK_uparrow:
-            break;
         case GDK_s:
         case GDK_S:
             on_save( NULL, self );
             break;
         case GDK_l:
-        case GDK_L:
+//        case GDK_L:
             on_rotate_counterclockwise( NULL, self );
             break;
         case GDK_r:
-        case GDK_R:
+//        case GDK_R:
             on_rotate_clockwise( NULL, self );
             break;
         case GDK_f:
-        case GDK_F:
+//        case GDK_F:
             if( self->zoom_mode != ZOOM_FIT )
                 gtk_button_clicked((GtkButton*)self->btn_fit );
             break;
         case GDK_g:
-        case GDK_G:
+//        case GDK_G:
             if( self->zoom_mode != ZOOM_ORIG )
                 gtk_button_clicked((GtkButton*)self->btn_orig );
             break;
         case GDK_o:
-        case GDK_O:
-//            on_open_file( self->btn_open, self );
+//        case GDK_O:
+            on_open( NULL, self );
+            break;
+        case GDK_Delete:
+        case GDK_d:
+//        case GDK_D:
+            on_delete( NULL, self );
             break;
         case GDK_Escape:
             if( self->full_screen )
@@ -972,8 +1022,10 @@ void MainWin::on_delete( GtkWidget* btn, MainWin* self )
     }
 }
 
+#include "ptk-menu.h"
 void MainWin::show_popup_menu( GdkEventButton* evt )
 {
+/*
     GtkMenuShell* popup = (GtkMenuShell*)gtk_menu_new();
 
     GtkWidget *item;
@@ -1014,14 +1066,42 @@ void MainWin::show_popup_menu( GdkEventButton* evt )
     item = gtk_image_menu_item_new_from_stock( GTK_STOCK_ABOUT, NULL );
     g_signal_connect(item, "activate", G_CALLBACK(on_about), this);
     gtk_menu_shell_append( popup, item );
+*/
 
-//    gtk_toggle_button_set_active( (GtkToggleButton*)btn_fit, TRUE );
+    static PtkMenuItemEntry menu_def[] =
+    {
+        PTK_IMG_MENU_ITEM( N_( "Previous" ), GTK_STOCK_GO_BACK, on_prev, GDK_leftarrow, 0 ),
+        PTK_IMG_MENU_ITEM( N_( "Next" ), GTK_STOCK_GO_FORWARD, on_next, GDK_rightarrow, 0 ),
+        PTK_SEPARATOR_MENU_ITEM,
+        PTK_IMG_MENU_ITEM( N_( "Zoom Out" ), GTK_STOCK_ZOOM_OUT, on_zoom_out, GDK_minus, 0 ),
+        PTK_IMG_MENU_ITEM( N_( "Zoom In" ), GTK_STOCK_ZOOM_IN, on_zoom_in, GDK_plus, 0 ),
+        PTK_IMG_MENU_ITEM( N_( "Fit Image To Window Size" ), GTK_STOCK_ZOOM_FIT, on_zoom_fit_menu, GDK_F, 0 ),
+        PTK_IMG_MENU_ITEM( N_( "Original Size" ), GTK_STOCK_ZOOM_100, on_orig_size_menu, GDK_G, 0 ),
+        PTK_SEPARATOR_MENU_ITEM,
+        PTK_IMG_MENU_ITEM( N_( "Full Screen" ), GTK_STOCK_FULLSCREEN, on_zoom_out, GDK_F11, 0 ),
+        PTK_SEPARATOR_MENU_ITEM,
+        PTK_IMG_MENU_ITEM( N_( "Rotate Counterclockwise" ), "gtk-counterclockwise", on_rotate_counterclockwise, GDK_L, 0 ),
+        PTK_IMG_MENU_ITEM( N_( "Rotate Clockwise" ), "gtk-clockwise", on_rotate_clockwise, GDK_R, 0 ),
+        PTK_SEPARATOR_MENU_ITEM,
+        PTK_IMG_MENU_ITEM( N_("Open File"), GTK_STOCK_OPEN, G_CALLBACK(on_open), GDK_O, 0 ),
+        PTK_IMG_MENU_ITEM( N_("Save File"), GTK_STOCK_SAVE, G_CALLBACK(on_save), GDK_S, 0 ),
+        PTK_IMG_MENU_ITEM( N_("Save As"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
+        PTK_IMG_MENU_ITEM( N_("Delete File"), GTK_STOCK_DELETE, G_CALLBACK(on_delete), GDK_Delete, 0 ),
+        PTK_SEPARATOR_MENU_ITEM,
+        PTK_STOCK_MENU_ITEM( GTK_STOCK_ABOUT, on_about ),
+        PTK_MENU_END
+    };
+
+    // This accel group is useless. It's only used to display accels in popup menu
+    GtkAccelGroup* accel_group = gtk_accel_group_new();
+    GtkMenuShell* popup = (GtkMenuShell*)ptk_menu_new_from_data( menu_def, this, accel_group );    
 
     gtk_widget_show_all( (GtkWidget*)popup );
     g_signal_connect( popup, "selection-done", G_CALLBACK(gtk_widget_destroy), NULL );
     gtk_menu_popup( (GtkMenu*)popup, NULL, NULL, NULL, NULL, evt->button, evt->time );
 }
 
+/*
 GtkWidget* MainWin::add_menu_item( GtkMenuShell* menu, const char* label,
                                    const char* icon, GCallback cb, bool toggle )
 {
@@ -1046,6 +1126,7 @@ GtkWidget* MainWin::add_menu_item( GtkMenuShell* menu, const char* label,
     }
     gtk_menu_shell_append( (GtkMenuShell*)menu, item );
 }
+*/
 
 void MainWin::on_about( GtkWidget* menu, MainWin* self )
 {

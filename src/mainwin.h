@@ -26,7 +26,7 @@
 #include "imagelist.h"
 
 /**
-	@author PCMan (Hong Jen Yee) <pcman.tw@gmail.com>
+    @author PCMan (Hong Jen Yee) <pcman.tw@gmail.com>
 */
 
 #define MAIN_WIN_TYPE        (MainWin::_get_type ())
@@ -42,7 +42,7 @@ public:
     struct Class : public GtkWindowClass
     {
     };
-    enum ZoomMode{ ZOOM_FIT = 0, ZOOM_ORIG, ZOOM_OTHER };
+    enum ZoomMode{ ZOOM_NONE = 0, ZOOM_FIT, ZOOM_ORIG, ZOOM_SCALE };
 
     static MainWin* create(){ return (MainWin*)g_object_new ( MAIN_WIN_TYPE, NULL ); }
 
@@ -75,6 +75,7 @@ protected:
 //    GtkWidget* btn_zoom_out;
     GtkWidget* btn_orig;
     GtkWidget* btn_fit;
+    GtkWidget* percent;
     GtkTooltips* tooltips;
     GdkCursor* hand_cursor;
     bool full_screen;
@@ -90,7 +91,7 @@ protected:
     static gboolean on_delete_event( GtkWidget* widget, GdkEventAny* evt );
     static void on_size_allocate( GtkWidget* widget, GtkAllocation    *allocation );
     GtkWidget* add_nav_btn( const char* icon, const char* tip, GCallback cb, bool toggle = false );
-    GtkWidget* add_menu_item(  GtkMenuShell* menu, const char* label, const char* icon, GCallback cb, bool toggle=false );
+    // GtkWidget* add_menu_item(  GtkMenuShell* menu, const char* label, const char* icon, GCallback cb, bool toggle=false );
     static void on_zoom_fit( GtkToggleButton* btn, MainWin* self );
     static void on_zoom_fit_menu( GtkMenuItem* item, MainWin* self );
     static void on_full_screen( GtkWidget* btn, MainWin* self );
@@ -110,6 +111,7 @@ protected:
     static gboolean on_button_press( GtkWidget* widget, GdkEventButton* evt, MainWin* self );
     static gboolean on_button_release( GtkWidget* widget, GdkEventButton* evt, MainWin* self );
     static gboolean on_mouse_move( GtkWidget* widget, GdkEventMotion* evt, MainWin* self );
+    static gboolean on_scroll_event( GtkWidget* widget, GdkEventScroll* evt, MainWin* self );
     static gboolean on_key_press_event(GtkWidget* widget, GdkEventKey * key);
     static void on_drag_data_received( GtkWidget* widget, GdkDragContext *drag_context, 
                                                                                            int x, int y, GtkSelectionData* data, guint info, 

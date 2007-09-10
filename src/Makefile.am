@@ -12,7 +12,8 @@ gpicview_SOURCES = \
 	gpicview.cpp \
 	imagelist.cpp \
 	mainwin.cpp \
-	working-area.c
+	working-area.c \
+	ptk-menu.c
 
 # the library search path.
 # use -nodefaultlibs to prevent linking libstdc++
