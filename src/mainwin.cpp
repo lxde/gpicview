@@ -239,11 +239,11 @@ bool MainWin::open( const char* file_path, ZoomMode zoom )
         show_error( err->message );
         return false;
     }
-    
+
     zoom_mode = zoom;
 
     // select most suitable viewing mode
-    if( zoom_mode == ZOOM_NONE )
+    if( zoom == ZOOM_NONE )
     {
         int w = gdk_pixbuf_get_width( pic_orig );
         int h = gdk_pixbuf_get_height( pic_orig );
@@ -264,20 +264,26 @@ bool MainWin::open( const char* file_path, ZoomMode zoom )
             gtk_scrolled_window_set_policy( (GtkScrolledWindow*)scroll,
             GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC );
             zoom_mode = ZOOM_ORIG;
-            on_orig_size( (GtkToggleButton*)btn_orig, this );
         }
         else
-        {
             zoom_mode = ZOOM_FIT;
-        }
     }
 
     if( zoom_mode == ZOOM_FIT )
+    {
+        gtk_toggle_button_set_active( (GtkToggleButton*)btn_fit, TRUE );
         fit_window_size();
+    }
     else  if( zoom_mode == ZOOM_SCALE )  // scale
+    {
+        gtk_toggle_button_set_active( (GtkToggleButton*)btn_orig, FALSE );
+        gtk_toggle_button_set_active( (GtkToggleButton*)btn_fit, FALSE );
         scale_image( scale );
+    }
     else  if( zoom_mode == ZOOM_ORIG )  // original size
     {
+        gtk_toggle_button_set_active( (GtkToggleButton*)btn_orig, TRUE );
+
         pic = gdk_pixbuf_ref( pic_orig );
         gtk_image_set_from_pixbuf( (GtkImage*)img_view, pic );
         int w = gdk_pixbuf_get_width( pic );
@@ -674,7 +680,7 @@ void MainWin::on_open( GtkWidget* btn, MainWin* self )
 
     if( file )
     {
-        self->open( file );
+        self->open( file, ZOOM_NONE );
         g_free( file );
     }
 }
