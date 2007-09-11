@@ -1,50 +1,50 @@
-# gpicview Slovak translation
+# gpicview Czech translation
 # Ivan Masár <helix84@centrum.sk>, 2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gpicview 0.1.3\n"
 "POT-Creation-Date: 2007-09-10 00:20+0800\n"
-"PO-Revision-Date: 2007-09-11 15:29+0100\n"
+"PO-Revision-Date: 2007-09-11 15:28+0100\n"
 "Last-Translator: Ivan Masár <helix84@centrum.sk>\n"
-"Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/mainwin.cpp:100
 msgid "Image Viewer"
-msgstr "Prehliadač obrázkov"
+msgstr "Prohlížeč obrázků"
 
 #: src/mainwin.cpp:171
 #: src/mainwin.cpp:980
 msgid "Previous"
-msgstr "Predošlý"
+msgstr "Předešlý"
 
 #: src/mainwin.cpp:172
 #: src/mainwin.cpp:981
 msgid "Next"
-msgstr "Ďalší"
+msgstr "Další"
 
 #: src/mainwin.cpp:176
 #: src/mainwin.cpp:985
 msgid "Zoom Out"
-msgstr "Oddialiť"
+msgstr "Oddálit"
 
 #: src/mainwin.cpp:177
 #: src/mainwin.cpp:986
 msgid "Zoom In"
-msgstr "Priblížiť"
+msgstr "Přiblížit"
 
 #: src/mainwin.cpp:178
 #: src/mainwin.cpp:987
 msgid "Fit Image To Window Size"
-msgstr "Prispôsobiť obrázok oknu"
+msgstr "Přispůsobit obrázek oknu"
 
 #: src/mainwin.cpp:180
 #: src/mainwin.cpp:989
 msgid "Original Size"
-msgstr "Pôvodná veľkosť"
+msgstr "Původní velikost"
 
 #: src/mainwin.cpp:187
 msgid " Full Screen"
@@ -53,39 +53,39 @@ msgstr " Celá obrazovka"
 #: src/mainwin.cpp:191
 #: src/mainwin.cpp:1000
 msgid "Rotate Counterclockwise"
-msgstr "Otočiť proti smeru hodinových ručičiek"
+msgstr "Otočit proti směru hodinových ručiček"
 
 #: src/mainwin.cpp:193
 #: src/mainwin.cpp:1002
 msgid "Rotate Clockwise"
-msgstr "Otočiť v smere hodinových ručičiek"
+msgstr "Otočit ve směru hodinových ručiček"
 
 #: src/mainwin.cpp:197
 #: src/mainwin.cpp:1007
 msgid "Open File"
-msgstr "Otvoriť súbor"
+msgstr "Otevřít soubor"
 
 #: src/mainwin.cpp:198
 #: src/mainwin.cpp:1008
 msgid "Save File"
-msgstr "Uložiť súbor"
+msgstr "Uložit soubor"
 
 #: src/mainwin.cpp:199
 msgid "Save File As"
-msgstr "Uložíť súbor ako"
+msgstr "Uložit soubor jako"
 
 #: src/mainwin.cpp:200
 #: src/mainwin.cpp:1010
 msgid "Delete File"
-msgstr "Zmazať súbor"
+msgstr "Smazat soubor"
 
 #: src/mainwin.cpp:613
 msgid "All Supported Images"
-msgstr "Všetky podporované obrázky"
+msgstr "Všechny podporované obrázky"
 
 #: src/mainwin.cpp:618
 msgid "All Files"
-msgstr "Všetky súbory"
+msgstr "Všechny soubory"
 
 #: src/mainwin.cpp:932
 msgid ""
@@ -93,9 +93,9 @@ msgid ""
 "Do you want to overwrite existing file?\n"
 "(Warning: The quality of original image might be lost)"
 msgstr ""
-"Názov súboru, ktorý ste zvolili už existuje.\n"
-"Chcete prepísať existujúci súbor?\n"
-"(Upozornenie: Kvalita originálu sa môže stratiť)"
+"Název souboru, který ste zvolili již existuje.\n"
+"Chcete přepsat existující soubor?\n"
+"(Upozornění: Kvalita originálu se tím může ztratit)"
 
 #: src/mainwin.cpp:961
 msgid ""
@@ -103,9 +103,9 @@ msgid ""
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
-"Ste si istý, že chcete zmazať vybraný súbor?\n"
+"Jste si jistý, že chcete smazat vybraný soubor?\n"
 "\n"
-"Upozornenie: Keď ho raz zmažete, nebudete ho môcť obnoviť."
+"Upozornění: Když obrázek smažete, nebude ho možné obnovit."
 
 #: src/mainwin.cpp:996
 msgid "Full Screen"
@@ -113,11 +113,11 @@ msgstr "Celá obrazovka"
 
 #: src/mainwin.cpp:1009
 msgid "Save As"
-msgstr "Uložiť ako"
+msgstr "Uložit jako"
 
 #: src/mainwin.cpp:1056
 msgid " * Some icons are taken from gimmage"
-msgstr " * Niektoré ikony pochádzajú z gimmage"
+msgstr " * Některé ikony pocházejí z gimmage"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: src/mainwin.cpp:1060
@@ -138,7 +138,7 @@ msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
 msgstr ""
-"Odľahčený prehliadač obrázkov\n"
+"Odlehčený prohlížeč obrázků\n"
 "\n"
 "Vyvinul Hon Jen Yee (PCMan)"
 
