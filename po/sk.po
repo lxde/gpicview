@@ -1,0 +1,144 @@
+# gpicview Slovak translation
+# Ivan Masár <helix84@centrum.sk>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gpicview 0.1\n"
+"POT-Creation-Date: 2007-09-10 00:20+0800\n"
+"PO-Revision-Date: 2007-09-11 14:38+0100\n"
+"Last-Translator: Ivan Masár <helix84@centrum.sk>\n"
+"Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/mainwin.cpp:100
+msgid "Image Viewer"
+msgstr "Prehliadač obrázkov"
+
+#: src/mainwin.cpp:171
+#: src/mainwin.cpp:980
+msgid "Previous"
+msgstr "Predošlý"
+
+#: src/mainwin.cpp:172
+#: src/mainwin.cpp:981
+msgid "Next"
+msgstr "Ďalší"
+
+#: src/mainwin.cpp:176
+#: src/mainwin.cpp:985
+msgid "Zoom Out"
+msgstr "Oddialiť"
+
+#: src/mainwin.cpp:177
+#: src/mainwin.cpp:986
+msgid "Zoom In"
+msgstr "Priblížiť"
+
+#: src/mainwin.cpp:178
+#: src/mainwin.cpp:987
+msgid "Fit Image To Window Size"
+msgstr "Prispôsobiť obrázok oknu"
+
+#: src/mainwin.cpp:180
+#: src/mainwin.cpp:989
+msgid "Original Size"
+msgstr "Pôvodná veľkosť"
+
+#: src/mainwin.cpp:187
+msgid " Full Screen"
+msgstr " Celá obrazovka"
+
+#: src/mainwin.cpp:191
+#: src/mainwin.cpp:1000
+msgid "Rotate Counterclockwise"
+msgstr "Otočiť proti smeru hodinových ručičiek"
+
+#: src/mainwin.cpp:193
+#: src/mainwin.cpp:1002
+msgid "Rotate Clockwise"
+msgstr "Otočiť v smere hodinových ručičiek"
+
+#: src/mainwin.cpp:197
+#: src/mainwin.cpp:1007
+msgid "Open File"
+msgstr "Otvoriť súbor"
+
+#: src/mainwin.cpp:198
+#: src/mainwin.cpp:1008
+msgid "Save File"
+msgstr "Uložiť súbor"
+
+#: src/mainwin.cpp:199
+msgid "Save File As"
+msgstr "Uložíť súbor ako"
+
+#: src/mainwin.cpp:200
+#: src/mainwin.cpp:1010
+msgid "Delete File"
+msgstr "Zmazať súbor"
+
+#: src/mainwin.cpp:613
+msgid "All Supported Images"
+msgstr "Všetky podporované obrázky"
+
+#: src/mainwin.cpp:618
+msgid "All Files"
+msgstr "Všetky súbory"
+
+#: src/mainwin.cpp:932
+msgid ""
+"The file name you selected already exist.\n"
+"Do you want to overwrite existing file?\n"
+"(Warning: The quality of original image might be lost)"
+msgstr ""
+"Názov súboru, ktorý ste zvolili už existuje..\n"
+"Chcete prepísať existujúci súbor?\n"
+"(Upozornenie: Kvalita originálu sa môže stratiť)"
+
+#: src/mainwin.cpp:961
+msgid ""
+"Are you sure you want to delete current file?\n"
+"\n"
+"Warning: Once deleted, the file cannot be recovered."
+msgstr ""
+"Ste si istý, že chcete zmazať vybraný súbor?\n"
+"\n"
+"Upozornenie: Keď ho raz zmažete, nebudete ho môcť obnoviť."
+
+#: src/mainwin.cpp:996
+msgid "Full Screen"
+msgstr "Celá obrazovka"
+
+#: src/mainwin.cpp:1009
+msgid "Save As"
+msgstr "Uložiť ako"
+
+#: src/mainwin.cpp:1056
+msgid " * Some icons are taken from gimmage"
+msgstr " * Niektoré ikony pochádzajú z gimmage"
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: src/mainwin.cpp:1060
+msgid "translator-credits"
+msgstr "Ivan Masár"
+
+#: src/mainwin.cpp:1065
+msgid "GPicView"
+msgstr "GPicView"
+
+#: src/mainwin.cpp:1066
+msgid "Copyright (C) 2007"
+msgstr "Copyright (C) 2007"
+
+#: src/mainwin.cpp:1067
+msgid ""
+"Lightweight image viewer\n"
+"\n"
+"Developed by Hon Jen Yee (PCMan)"
+msgstr ""
+"Odľahčený prehliadač obrázkov\n"
+"\n"
+"Vyvinul Hon Jen Yee (PCMan)"
+
