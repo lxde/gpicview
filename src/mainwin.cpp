@@ -908,6 +908,7 @@ gboolean MainWin::on_key_press_event(GtkWidget* widget, GdkEventKey * key)
             break;
         case GDK_KP_Add:
         case GDK_plus:
+        case GDK_equal:
             on_zoom_in( NULL, self );
             break;
         case GDK_KP_Subtract:
@@ -915,7 +916,7 @@ gboolean MainWin::on_key_press_event(GtkWidget* widget, GdkEventKey * key)
             on_zoom_out( NULL, self );
             break;
         case GDK_s:
-        case GDK_S:
+//        case GDK_S:
             on_save( NULL, self );
             break;
         case GDK_l:
