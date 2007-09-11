@@ -24,19 +24,21 @@
 
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
+#include <string.h>
 
 #include "mainwin.h"
 
 using namespace std;
 
-/*
-static GOptionEntry entries[] = 
+static char** files = NULL;
+
+static GOptionEntry opt_entries[] = 
 {
+    {G_OPTION_REMAINING, 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &files, NULL, N_("[FILE]")},
     { NULL }
 };
-*/
 
-#define PIXMAP_DIR		PACKAGE_DATA_DIR "/gpicview/pixmaps/"
+#define PIXMAP_DIR        PACKAGE_DATA_DIR "/gpicview/pixmaps/"
 
 void register_icons()
 {
@@ -66,17 +68,14 @@ void register_icons()
 
 int main(int argc, char *argv[])
 {
-/*
     GError *error = NULL;
     GOptionContext *context;
 
     context = g_option_context_new ("- simple image viewer");
-    g_option_context_add_main_entries (context, entries, GETTEXT_PACKAGE);
+    g_option_context_add_main_entries (context, opt_entries, GETTEXT_PACKAGE);
     g_option_context_add_group (context, gtk_get_option_group (TRUE));
     g_option_context_parse (context, &argc, &argv, &error);
-*/
-
-    gtk_init( &argc, &argv );
+//    gtk_init( &argc, &argv );    // this is not needed if g_option_context_parse is called
 
 #ifdef ENABLE_NLS
     bindtextdomain ( GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR );
@@ -87,12 +86,20 @@ int main(int argc, char *argv[])
     register_icons();
 
     MainWin* win = MainWin::create();
-    gtk_widget_show( GTK_WIDGET(win) );
 
-    if( argc > 1 ) {
-        g_debug(argv[1]);
-        win->open( argv[1] );
+    // FIXME: need to process multiple files...
+    if( files ) {
+        if( G_UNLIKELY( *files[0] != '/' && strstr( files[0], "://" )) )    // This is an URI
+        {
+            char* path = g_filename_from_uri( files[0], NULL, NULL );
+            win->open( path, MainWin::ZOOM_NONE );
+            g_free( path );
+        }
+        else
+            win->open( files[0], MainWin::ZOOM_NONE );
     }
+
+    gtk_widget_show( GTK_WIDGET(win) );
 
     gtk_main();
     return 0;

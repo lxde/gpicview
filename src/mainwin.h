@@ -50,12 +50,12 @@ public:
     static void _class_init( MainWin::Class* klass );
     static void _finalize(GObject *self);
     static GType _get_type();
-    bool open( const char* file_path );
+    bool open( const char* file_path, ZoomMode zoom = ZOOM_FIT );
     void close();
     bool save( const char* file_path, const char* type, bool confirm=true );
     void show_error( const char* message );
-    void fit_size( int width, int height, GdkInterpType type = GDK_INTERP_BILINEAR );
-    void fit_window_size( GdkInterpType type = GDK_INTERP_BILINEAR );
+    void fit_size( int width, int height, bool can_strech = false, GdkInterpType type = GDK_INTERP_BILINEAR );
+    void fit_window_size( bool can_strech = false, GdkInterpType type = GDK_INTERP_BILINEAR );
     void center_image();
     bool scale_image( double new_scale, GdkInterpType type = GDK_INTERP_BILINEAR );
 

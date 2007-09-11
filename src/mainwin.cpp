@@ -30,6 +30,7 @@
 
 #include <string.h>
 #include <errno.h>
+#include <math.h>
 
 #include "working-area.h"
 
@@ -141,9 +142,9 @@ MainWin::MainWin()
     // build toolbar
     tooltips = gtk_tooltips_new();
 #if GTK_CHECK_VERSION( 2, 10, 0 )
-    g_object_ref_sink( tooltips );
+    g_object_ref_sink( (GObject*)tooltips );
 #else
-    gtk_object_sink( tooltips );
+    gtk_object_sink( (GtkObject*)tooltips );
 #endif
     create_nav_bar( box );
 
@@ -228,7 +229,7 @@ gboolean MainWin::on_delete_event( GtkWidget* widget, GdkEventAny* evt )
     return TRUE;
 }
 
-bool MainWin::open( const char* file_path )
+bool MainWin::open( const char* file_path, ZoomMode zoom )
 {
     close();
     GError* err = NULL;
@@ -238,7 +239,9 @@ bool MainWin::open( const char* file_path )
         show_error( err->message );
         return false;
     }
-/*
+    
+    zoom_mode = zoom;
+
     // select most suitable viewing mode
     if( zoom_mode == ZOOM_NONE )
     {
@@ -247,16 +250,15 @@ bool MainWin::open( const char* file_path )
 
         GdkRectangle area;
         get_working_area( gtk_widget_get_screen((GtkWidget*)this), &area );
-        g_debug("zoom none!  w=%d, h=%d", w, h);
-        if( w < area.width && h < area.height )
+//        g_debug("determine best zoom mode: orig size:  w=%d, h=%d", w, h);
+        if( w < area.width && h < area.height && (w >= 640 || h >= 480) )
         {
-            g_debug("zoom none!");
             gtk_scrolled_window_set_policy( (GtkScrolledWindow*)scroll,
             GTK_POLICY_NEVER, GTK_POLICY_NEVER );
             gtk_widget_set_size_request( img_view, w, h );
             GtkRequisition req;
             gtk_widget_size_request ( (GtkWidget*)this, &req );
-            g_debug( "size request: w = %d, h = %d", req.width, req.height );
+//            g_debug( "size request: w = %d, h = %d", req.width, req.height );
             gtk_window_resize( (GtkWindow*)this, req.width, req.height );
             gtk_widget_set_size_request( img_view, -1, -1 );
             gtk_scrolled_window_set_policy( (GtkScrolledWindow*)scroll,
@@ -269,7 +271,6 @@ bool MainWin::open( const char* file_path )
             zoom_mode = ZOOM_FIT;
         }
     }
-*/
 
     if( zoom_mode == ZOOM_FIT )
         fit_window_size();
@@ -340,7 +341,7 @@ void MainWin::on_size_allocate( GtkWidget* widget, GtkAllocation    *allocation 
     }
 }
 
-void MainWin::fit_size( int width, int height, GdkInterpType type )
+void MainWin::fit_size( int width, int height, bool can_strech, GdkInterpType type )
 {
     if( ! pic_orig )
         return;
@@ -353,20 +354,40 @@ void MainWin::fit_size( int width, int height, GdkInterpType type )
     int orig_w = gdk_pixbuf_get_width(pic_orig);
     int orig_h = gdk_pixbuf_get_height(pic_orig);
 
-    double xscale = double(width) / orig_w;
-    double yscale = double(height) / orig_h;
-    double final_scale = xscale < yscale ? xscale : yscale;
+    if( can_strech || (orig_w > width || orig_h > height) )
+    {
+        double xscale = double(width) / orig_w;
+        double yscale = double(height) / orig_h;
+        double final_scale = xscale < yscale ? xscale : yscale;
 
-    scale_image( final_scale, type );
+        scale_image( final_scale, type );
+    }
+    else    // use original size if the image is smaller than the window
+    {
+        scale = 1.0;
+        pic = gdk_pixbuf_ref( pic_orig );
+        gtk_image_set_from_pixbuf( (GtkImage*)img_view, pic );
+    }
 }
 
-
-void MainWin::fit_window_size(  GdkInterpType type )
+void MainWin::fit_window_size(  bool can_strech, GdkInterpType type )
 {
+    if( pic_orig == NULL )
+        return;
     int space = 0;
     gtk_widget_style_get( scroll, "scrollbar-spacing", &space, NULL );
     space *= 2;
-    fit_size( scroll->allocation.width - space, scroll->allocation.height - space, type );
+/*
+    int w = gdk_pixbuf_get_width( pic_orig );
+    int h = gdk_pixbuf_get_height( pic_orig );
+
+    if( w > scroll->allocation.width - space )
+        w = scroll->allocation.width - space;
+    if( h > scroll->allocation.height - space )
+        h = scroll->allocation.height - space;
+    fit_size( w, h, type );
+*/
+    fit_size( scroll->allocation.width - space, scroll->allocation.height - space, can_strech, type );
 }
 
 GtkWidget* MainWin::add_nav_btn( const char* icon, const char* tip, GCallback cb, bool toggle )
@@ -658,6 +679,15 @@ void MainWin::on_open( GtkWidget* btn, MainWin* self )
     }
 }
 
+// This is taken from the source code of EOG (Eye of GNOME)
+static double preferred_zoom_levels[] = {
+    1.0 / 100, 1.0 / 50, 1.0 / 20,
+    1.0 / 10.0, 1.0 / 5.0, 1.0 / 3.0, 1.0 / 2.0, 1.0 / 1.5,
+        1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0,
+        11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 19.0, 20.0
+};
+#define DOUBLE_EQUAL_MAX_DIFF 1e-6
+
 void MainWin::on_zoom_in( GtkWidget* btn, MainWin* self )
 {
     self->zoom_mode = ZOOM_SCALE;
@@ -665,11 +695,23 @@ void MainWin::on_zoom_in( GtkWidget* btn, MainWin* self )
     gtk_toggle_button_set_active( (GtkToggleButton*)self->btn_orig, FALSE );
 
     double scale = self->scale;
-    if( self->pic_orig && scale < 3.0 )
+    if( self->pic_orig && scale < 10 )
     {
 //        busy(true);
-        (scale > 0.2) ?   scale += scale*0.2 : scale *= 1.5;
-        self->scale_image( scale );
+
+        // This is taken from the source code of EOG (Eye of GNOME)
+        int i, index = -1;
+        for (i = 0; i < G_N_ELEMENTS(preferred_zoom_levels); i++) {
+            if (preferred_zoom_levels [i] - scale
+                    > DOUBLE_EQUAL_MAX_DIFF) {
+                index = i;
+                break;
+            }
+        }
+        if (index >= 0) {
+            scale = preferred_zoom_levels [i];
+            self->scale_image( scale );
+        }
 //        adjust_adjustment_on_zoom(oldscale);
 //        busy(false);
     }
@@ -682,11 +724,23 @@ void MainWin::on_zoom_out( GtkWidget* btn, MainWin* self )
     gtk_toggle_button_set_active( (GtkToggleButton*)self->btn_orig, FALSE );
 
     double scale = self->scale;
-    if( self->pic_orig && scale > 0.05 )
+    if( self->pic_orig && scale > 0.02 )
     {
 //        busy(true);
-        (scale > 0.2) ?   scale -= scale*0.2 : scale *= 0.667;
-        self->scale_image( scale );
+
+        // This is taken from the source code of EOG (Eye of GNOME)
+        int i, index = -1;
+        for (i = G_N_ELEMENTS(preferred_zoom_levels) - 1; i >= 0; i--) {
+            if ( scale - preferred_zoom_levels [i]
+                    > DOUBLE_EQUAL_MAX_DIFF) {
+                index = i;
+                break;
+            }
+        }
+        if ( index >= 0 ) {
+            scale = preferred_zoom_levels [i];
+            self->scale_image( scale );
+        }
 //        adjust_adjustment_on_zoom(oldscale);
 //        busy(false);
     }
@@ -817,7 +871,7 @@ gboolean MainWin::on_scroll_event( GtkWidget* widget, GdkEventScroll* evt, MainW
         on_next( NULL, self );
         break;
     }
-    return FALSE;
+    return TRUE;
 }
 
 gboolean MainWin::on_key_press_event(GtkWidget* widget, GdkEventKey * key)
@@ -950,8 +1004,8 @@ bool MainWin::scale_image( double new_scale, GdkInterpType type )
     int orig_w = gdk_pixbuf_get_width(pic_orig);
     int orig_h = gdk_pixbuf_get_height(pic_orig);
 
-    int width = int(orig_w * new_scale);
-    int height = int(orig_h * new_scale);
+    int width = (int)floor( orig_w * new_scale + 0.5);
+    int height = (int)floor( orig_h * new_scale + 0.5);
 
     GdkPixbuf* new_pic = gdk_pixbuf_scale_simple( pic_orig, width, height, type );
     if( G_LIKELY(new_pic) )
@@ -959,8 +1013,20 @@ bool MainWin::scale_image( double new_scale, GdkInterpType type )
         if( pic )
             gdk_pixbuf_unref( pic );
         pic = new_pic;
+
+//        GtkAdjustment *hadj, *vadj;
+//        hadj = gtk_scrolled_window_get_hadjustment( (GtkScrolledWindow*)scroll );
+//        vadj = gtk_scrolled_window_get_vadjustment( (GtkScrolledWindow*)scroll );
+//        gdouble xpos = gtk_adjustment_get_value(hadj) / (hadj->upper - hadj->lower - hadj->page_size);
+//        gdouble ypos = gtk_adjustment_get_value(vadj) / (vadj->upper - vadj->lower - hadj->page_size);
+
         gtk_image_set_from_pixbuf( (GtkImage*)img_view, pic );
+
+//        gtk_adjustment_set_value(hadj, hadj->lower + xpos * (hadj->upper - hadj->lower - hadj->page_size) );
+//        gtk_adjustment_set_value(vadj, vadj->lower + ypos * (vadj->upper - vadj->lower) - vadj->page_size );
+
         scale = new_scale;
+
         return true;
     }
     return false;
