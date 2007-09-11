@@ -24,5 +24,6 @@ gpicview_CXXFLAGS = -fno-rtti -fno-exceptions
 noinst_HEADERS = \
 	imagelist.h \
 	mainwin.h \
-	working-area.h
+	working-area.h \
+	ptk-menu.h
 

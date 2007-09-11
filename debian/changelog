@@ -1,3 +1,16 @@
+gpicview (0.1.3ubuntu1) feisty; urgency=low
+
+  * Add accelerators to popup menu.
+  * Better keyboard support.
+  * Support zooming with mouse wheel.
+  * Set background to black in full screen mode 
+  * Open file in its original size if suitable.
+  * Don't strech small image in "Fit Window Size".
+  * Better zooming (taken from EOG).
+  * Parse "--help" command line arguments.
+
+ -- PCMan <pcman.tw@gmail.com>  Tue, 11 Sep 2007 20:29:06 +0800
+
 gpicview (0.1) unstable; urgency=low
 
   * Initial Release.
