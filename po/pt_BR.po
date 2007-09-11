@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-10 00:20+0800\n"
+"POT-Creation-Date: 2007-09-11 20:11+0800\n"
 "PO-Revision-Date: 2007-09-10 21:50+0800\n"
 "Last-Translator: Fábio Antunes <fabio.antunes@hotmail.com>\n"
 "Language-Team: pt_BR <LL@li.org>\n"
@@ -17,82 +17,79 @@ msgstr ""
 "X-Poedit-Language: Portuguese\n"
 "X-Poedit-Country: BRAZIL\n"
 
-#: src/mainwin.cpp:100
+#: src/gpicview.cpp:37
+msgid "[FILE]"
+msgstr ""
+
+#: src/mainwin.cpp:101
 msgid "Image Viewer"
 msgstr "Visualizador de Imagem"
 
-#: src/mainwin.cpp:171
-#: src/mainwin.cpp:980
+#: src/mainwin.cpp:178 src/mainwin.cpp:1139
 msgid "Previous"
 msgstr "Anterior"
 
-#: src/mainwin.cpp:172
-#: src/mainwin.cpp:981
+#: src/mainwin.cpp:179 src/mainwin.cpp:1140
 msgid "Next"
 msgstr "Próximo"
 
-#: src/mainwin.cpp:176
-#: src/mainwin.cpp:985
+#: src/mainwin.cpp:183 src/mainwin.cpp:1142
 msgid "Zoom Out"
 msgstr "Menos Zoom"
 
-#: src/mainwin.cpp:177
-#: src/mainwin.cpp:986
+#: src/mainwin.cpp:184 src/mainwin.cpp:1143
 msgid "Zoom In"
 msgstr "Mais Zoom"
 
-#: src/mainwin.cpp:178
-#: src/mainwin.cpp:987
+#. percent = gtk_entry_new();    // show scale (in percentage)
+#. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), this );
+#. gtk_widget_set_size_request( percent, 45, -1 );
+#. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
+#: src/mainwin.cpp:191 src/mainwin.cpp:1144
 msgid "Fit Image To Window Size"
 msgstr "Ajustar Imagem à Janela"
 
-#: src/mainwin.cpp:180
-#: src/mainwin.cpp:989
+#: src/mainwin.cpp:193 src/mainwin.cpp:1145
 msgid "Original Size"
 msgstr "Tamanho Original"
 
-#: src/mainwin.cpp:187
+#: src/mainwin.cpp:200
 msgid " Full Screen"
 msgstr " Tela Cheia"
 
-#: src/mainwin.cpp:191
-#: src/mainwin.cpp:1000
+#: src/mainwin.cpp:204 src/mainwin.cpp:1149
 msgid "Rotate Counterclockwise"
 msgstr "Girar em Sentido Anti-horário"
 
-#: src/mainwin.cpp:193
-#: src/mainwin.cpp:1002
+#: src/mainwin.cpp:206 src/mainwin.cpp:1150
 msgid "Rotate Clockwise"
 msgstr "Girar em Sentido Horário"
 
-#: src/mainwin.cpp:197
-#: src/mainwin.cpp:1007
+#: src/mainwin.cpp:210 src/mainwin.cpp:1152
 msgid "Open File"
 msgstr "Abrir Arquivo"
 
-#: src/mainwin.cpp:198
-#: src/mainwin.cpp:1008
+#: src/mainwin.cpp:211 src/mainwin.cpp:1153
 msgid "Save File"
 msgstr "Salvar Arquivo"
 
-#: src/mainwin.cpp:199
+#: src/mainwin.cpp:212
 msgid "Save File As"
 msgstr "Salvar Arquivo Como"
 
-#: src/mainwin.cpp:200
-#: src/mainwin.cpp:1010
+#: src/mainwin.cpp:213 src/mainwin.cpp:1155
 msgid "Delete File"
 msgstr "Apagar Arquivo"
 
-#: src/mainwin.cpp:613
+#: src/mainwin.cpp:661
 msgid "All Supported Images"
 msgstr "Todos os Arquivos Suportados"
 
-#: src/mainwin.cpp:618
+#: src/mainwin.cpp:666
 msgid "All Files"
 msgstr "Todos os Arquivos"
 
-#: src/mainwin.cpp:932
+#: src/mainwin.cpp:1048
 msgid ""
 "The file name you selected already exist.\n"
 "Do you want to overwrite existing file?\n"
@@ -102,7 +99,7 @@ msgstr ""
 "Você deseja substituir o arquivo existente?\n"
 "(Cuidado: A qualidade da imagem original pode ser perdida)"
 
-#: src/mainwin.cpp:961
+#: src/mainwin.cpp:1077
 msgid ""
 "Are you sure you want to delete current file?\n"
 "\n"
@@ -112,32 +109,32 @@ msgstr ""
 "\n"
 "Cuidado: Uma vez apagado, o arquivo não pode ser recuperado."
 
-#: src/mainwin.cpp:996
+#: src/mainwin.cpp:1147
 msgid "Full Screen"
 msgstr "Tela Cheia"
 
-#: src/mainwin.cpp:1009
+#: src/mainwin.cpp:1154
 msgid "Save As"
 msgstr "Salvar Como"
 
-#: src/mainwin.cpp:1056
+#: src/mainwin.cpp:1203
 msgid " * Some icons are taken from gimmage"
 msgstr " * Alguns ícones retirados do gimmage"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
-#: src/mainwin.cpp:1060
+#: src/mainwin.cpp:1207
 msgid "translator-credits"
 msgstr "Fábio Antunes"
 
-#: src/mainwin.cpp:1065
+#: src/mainwin.cpp:1212
 msgid "GPicView"
 msgstr "GPicView"
 
-#: src/mainwin.cpp:1066
+#: src/mainwin.cpp:1213
 msgid "Copyright (C) 2007"
 msgstr "Direitos autorais (C) 2007"
 
-#: src/mainwin.cpp:1067
+#: src/mainwin.cpp:1214
 msgid ""
 "Lightweight image viewer\n"
 "\n"
@@ -146,4 +143,3 @@ msgstr ""
 "Visualizador leve de imagem\n"
 "\n"
 "Desenvolvido por Hon Jen Yee (PCMan)"
-

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-10 00:20+0800\n"
-"PO-Revision-Date: 2007-09-09 20:55+0800\n"
+"POT-Creation-Date: 2007-09-11 20:11+0800\n"
+"PO-Revision-Date: 2007-09-11 20:19+0800\n"
 "Last-Translator: 洪任諭 <pcman.tw@gmail.com>\n"
 "Language-Team: zh_TW <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,71 +18,90 @@ msgstr ""
 "X-Poedit-Country: TAIWAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: src/mainwin.cpp:100
+#: src/gpicview.cpp:37
+msgid "[FILE]"
+msgstr "[檔案]"
+
+#: src/mainwin.cpp:101
 msgid "Image Viewer"
 msgstr "圖片檢視器"
 
-#: src/mainwin.cpp:171 src/mainwin.cpp:980
+#: src/mainwin.cpp:178
+#: src/mainwin.cpp:1139
 msgid "Previous"
 msgstr "上一張"
 
-#: src/mainwin.cpp:172 src/mainwin.cpp:981
+#: src/mainwin.cpp:179
+#: src/mainwin.cpp:1140
 msgid "Next"
 msgstr "下一張"
 
-#: src/mainwin.cpp:176 src/mainwin.cpp:985
+#: src/mainwin.cpp:183
+#: src/mainwin.cpp:1142
 msgid "Zoom Out"
 msgstr "縮小"
 
-#: src/mainwin.cpp:177 src/mainwin.cpp:986
+#: src/mainwin.cpp:184
+#: src/mainwin.cpp:1143
 msgid "Zoom In"
 msgstr "放大"
 
-#: src/mainwin.cpp:178 src/mainwin.cpp:987
+#. percent = gtk_entry_new();    // show scale (in percentage)
+#. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), this );
+#. gtk_widget_set_size_request( percent, 45, -1 );
+#. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
+#: src/mainwin.cpp:191
+#: src/mainwin.cpp:1144
 msgid "Fit Image To Window Size"
-msgstr "符合視窗大小"
+msgstr "適合視窗大小"
 
-#: src/mainwin.cpp:180 src/mainwin.cpp:989
+#: src/mainwin.cpp:193
+#: src/mainwin.cpp:1145
 msgid "Original Size"
 msgstr "原始大小"
 
-#: src/mainwin.cpp:187
+#: src/mainwin.cpp:200
 msgid " Full Screen"
 msgstr "全螢幕瀏覽"
 
-#: src/mainwin.cpp:191 src/mainwin.cpp:1000
+#: src/mainwin.cpp:204
+#: src/mainwin.cpp:1149
 msgid "Rotate Counterclockwise"
 msgstr "逆時針旋轉"
 
-#: src/mainwin.cpp:193 src/mainwin.cpp:1002
+#: src/mainwin.cpp:206
+#: src/mainwin.cpp:1150
 msgid "Rotate Clockwise"
 msgstr "順時針旋轉"
 
-#: src/mainwin.cpp:197 src/mainwin.cpp:1007
+#: src/mainwin.cpp:210
+#: src/mainwin.cpp:1152
 msgid "Open File"
 msgstr "開啟檔案"
 
-#: src/mainwin.cpp:198 src/mainwin.cpp:1008
+#: src/mainwin.cpp:211
+#: src/mainwin.cpp:1153
 msgid "Save File"
 msgstr "儲存檔案"
 
-#: src/mainwin.cpp:199
+#: src/mainwin.cpp:212
 msgid "Save File As"
 msgstr "另存新檔"
 
-#: src/mainwin.cpp:200 src/mainwin.cpp:1010
+#: src/mainwin.cpp:213
+#: src/mainwin.cpp:1155
 msgid "Delete File"
 msgstr "刪除檔案"
 
-#: src/mainwin.cpp:613
+#: src/mainwin.cpp:661
 msgid "All Supported Images"
 msgstr "所有支援的影像格式"
 
-#: src/mainwin.cpp:618
+#: src/mainwin.cpp:666
 msgid "All Files"
 msgstr "所有檔案"
 
-#: src/mainwin.cpp:932
+#: src/mainwin.cpp:1048
 msgid ""
 "The file name you selected already exist.\n"
 "Do you want to overwrite existing file?\n"
@@ -92,7 +111,7 @@ msgstr ""
 "是否確定要覆蓋原有檔案？\n"
 "(警告：原影像的品質可能會喪失)"
 
-#: src/mainwin.cpp:961
+#: src/mainwin.cpp:1077
 msgid ""
 "Are you sure you want to delete current file?\n"
 "\n"
@@ -102,32 +121,32 @@ msgstr ""
 "\n"
 "警告：一旦刪除，檔案就無法復原。"
 
-#: src/mainwin.cpp:996
+#: src/mainwin.cpp:1147
 msgid "Full Screen"
 msgstr "全螢幕瀏覽"
 
-#: src/mainwin.cpp:1009
+#: src/mainwin.cpp:1154
 msgid "Save As"
 msgstr "另存新檔"
 
-#: src/mainwin.cpp:1056
+#: src/mainwin.cpp:1203
 msgid " * Some icons are taken from gimmage"
 msgstr " * 部份圖示是從 gimmage 取得"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
-#: src/mainwin.cpp:1060
+#: src/mainwin.cpp:1207
 msgid "translator-credits"
 msgstr "洪任諭 (PCMan) <pcman.tw@gmail.com>"
 
-#: src/mainwin.cpp:1065
+#: src/mainwin.cpp:1212
 msgid "GPicView"
 msgstr "GPicView 圖片檢視器"
 
-#: src/mainwin.cpp:1066
+#: src/mainwin.cpp:1213
 msgid "Copyright (C) 2007"
 msgstr "版權所有 (C) 2007"
 
-#: src/mainwin.cpp:1067
+#: src/mainwin.cpp:1214
 msgid ""
 "Lightweight image viewer\n"
 "\n"
@@ -139,3 +158,4 @@ msgstr ""
 
 #~ msgid " Original Size"
 #~ msgstr "原始尺寸"
+
