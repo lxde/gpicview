@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-11 20:11+0800\n"
+"POT-Creation-Date: 2007-09-13 03:44+0800\n"
 "PO-Revision-Date: 2007-09-12 09:10-0300\n"
 "Last-Translator: \n"
 "Language-Team: pt_BR <LL@li.org>\n"
@@ -21,27 +21,23 @@ msgstr ""
 msgid "[FILE]"
 msgstr "[ARQUIVO]"
 
-#: src/mainwin.cpp:101
+#: src/mainwin.cpp:103
 msgid "Image Viewer"
 msgstr "Visualizador de Imagem"
 
-#: src/mainwin.cpp:178
-#: src/mainwin.cpp:1139
+#: src/mainwin.cpp:183 src/mainwin.cpp:1075
 msgid "Previous"
 msgstr "Anterior"
 
-#: src/mainwin.cpp:179
-#: src/mainwin.cpp:1140
+#: src/mainwin.cpp:184 src/mainwin.cpp:1076
 msgid "Next"
 msgstr "Próximo"
 
-#: src/mainwin.cpp:183
-#: src/mainwin.cpp:1142
+#: src/mainwin.cpp:188 src/mainwin.cpp:1078
 msgid "Zoom Out"
 msgstr "Menos Zoom"
 
-#: src/mainwin.cpp:184
-#: src/mainwin.cpp:1143
+#: src/mainwin.cpp:189 src/mainwin.cpp:1079
 msgid "Zoom In"
 msgstr "Mais Zoom"
 
@@ -49,58 +45,51 @@ msgstr "Mais Zoom"
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), this );
 #. gtk_widget_set_size_request( percent, 45, -1 );
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
-#: src/mainwin.cpp:191
-#: src/mainwin.cpp:1144
+#: src/mainwin.cpp:196 src/mainwin.cpp:1080
 msgid "Fit Image To Window Size"
 msgstr "Ajustar Imagem à Janela"
 
-#: src/mainwin.cpp:193
-#: src/mainwin.cpp:1145
+#: src/mainwin.cpp:198 src/mainwin.cpp:1081
 msgid "Original Size"
 msgstr "Tamanho Original"
 
-#: src/mainwin.cpp:200
+#: src/mainwin.cpp:205
 msgid " Full Screen"
 msgstr " Tela Cheia"
 
-#: src/mainwin.cpp:204
-#: src/mainwin.cpp:1149
+#: src/mainwin.cpp:209 src/mainwin.cpp:1085
 msgid "Rotate Counterclockwise"
 msgstr "Girar em Sentido Anti-horário"
 
-#: src/mainwin.cpp:206
-#: src/mainwin.cpp:1150
+#: src/mainwin.cpp:211 src/mainwin.cpp:1086
 msgid "Rotate Clockwise"
 msgstr "Girar em Sentido Horário"
 
-#: src/mainwin.cpp:210
-#: src/mainwin.cpp:1152
+#: src/mainwin.cpp:215 src/mainwin.cpp:1088
 msgid "Open File"
 msgstr "Abrir Arquivo"
 
-#: src/mainwin.cpp:211
-#: src/mainwin.cpp:1153
+#: src/mainwin.cpp:216 src/mainwin.cpp:1089
 msgid "Save File"
 msgstr "Salvar Arquivo"
 
-#: src/mainwin.cpp:212
+#: src/mainwin.cpp:217
 msgid "Save File As"
 msgstr "Salvar Arquivo Como"
 
-#: src/mainwin.cpp:213
-#: src/mainwin.cpp:1155
+#: src/mainwin.cpp:218 src/mainwin.cpp:1091
 msgid "Delete File"
 msgstr "Apagar Arquivo"
 
-#: src/mainwin.cpp:661
+#: src/mainwin.cpp:668
 msgid "All Supported Images"
 msgstr "Todos os Arquivos Suportados"
 
-#: src/mainwin.cpp:666
+#: src/mainwin.cpp:673
 msgid "All Files"
 msgstr "Todos os Arquivos"
 
-#: src/mainwin.cpp:1048
+#: src/mainwin.cpp:984
 msgid ""
 "The file name you selected already exist.\n"
 "Do you want to overwrite existing file?\n"
@@ -110,7 +99,7 @@ msgstr ""
 "Você deseja substituir o arquivo existente?\n"
 "(Cuidado: A qualidade da imagem original pode ser perdida)"
 
-#: src/mainwin.cpp:1077
+#: src/mainwin.cpp:1013
 msgid ""
 "Are you sure you want to delete current file?\n"
 "\n"
@@ -120,32 +109,36 @@ msgstr ""
 "\n"
 "Cuidado: Uma vez apagado, o arquivo não pode ser recuperado."
 
-#: src/mainwin.cpp:1147
+#: src/mainwin.cpp:1083
 msgid "Full Screen"
 msgstr "Tela Cheia"
 
-#: src/mainwin.cpp:1154
+#: src/mainwin.cpp:1090
 msgid "Save As"
 msgstr "Salvar Como"
 
-#: src/mainwin.cpp:1203
+#: src/mainwin.cpp:1139
+msgid " * Refer to source code of EOG image viewer"
+msgstr ""
+
+#: src/mainwin.cpp:1140
 msgid " * Some icons are taken from gimmage"
 msgstr " * Alguns ícones retirados do gimmage"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
-#: src/mainwin.cpp:1207
+#: src/mainwin.cpp:1144
 msgid "translator-credits"
 msgstr "Fábio Antunes"
 
-#: src/mainwin.cpp:1212
+#: src/mainwin.cpp:1149
 msgid "GPicView"
 msgstr "GPicView"
 
-#: src/mainwin.cpp:1213
+#: src/mainwin.cpp:1150
 msgid "Copyright (C) 2007"
 msgstr "Direitos autorais (C) 2007"
 
-#: src/mainwin.cpp:1214
+#: src/mainwin.cpp:1151
 msgid ""
 "Lightweight image viewer\n"
 "\n"
@@ -154,4 +147,3 @@ msgstr ""
 "Visualizador leve de imagem\n"
 "\n"
 "Desenvolvido por Hon Jen Yee (PCMan)"
-

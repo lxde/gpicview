@@ -1,3 +1,11 @@
+gpicview (0.1.5ubuntu1) feisty; urgency=low
+
+  * Optomize memory usage of zooming
+  * Better zooming
+  * Some little but important bug fixes
+
+ -- PCMan <pcman.tw@gmail.com>  Thu, 13 Sep 2007 03:44:49 +0800
+
 gpicview (0.1.3ubuntu1) feisty; urgency=low
 
   * Add accelerators to popup menu.
