@@ -23,6 +23,7 @@
 #include <gtk/gtk.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
 
+#include "image-view.h"
 #include "imagelist.h"
 
 /**
@@ -50,6 +51,7 @@ public:
     static void _class_init( MainWin::Class* klass );
     static void _finalize(GObject *self);
     static GType _get_type();
+
     bool open( const char* file_path, ZoomMode zoom = ZOOM_FIT );
     void close();
     bool save( const char* file_path, const char* type, bool confirm=true );
@@ -65,10 +67,9 @@ protected:
 
     static gpointer _parent_class;
     GtkWidget* zoom_btn;
-    GtkWidget* img_view;
+    ImageView* img_view;
     GtkWidget* scroll;
-    GdkPixbuf* pic_orig;
-    GdkPixbuf* pic;
+    GdkPixbuf* pix;
     GtkWidget* evt_box;
     GtkWidget* nav_bar;
 //    GtkWidget* btn_zoom_in;

@@ -43,24 +43,24 @@ static GOptionEntry opt_entries[] =
 void register_icons()
 {
     GtkIconFactory* factory = gtk_icon_factory_new();
-    GdkPixbuf* pix = NULL;
+    GdkPixbuf* pix;
     GtkIconSet* set = NULL;
 
 #ifndef GTK_STOCK_FULLSCREEN    // before gtk+ 2.8
 #define GTK_STOCK_FULLSCREEN    "gtk-fullscreen"
     pix = gdk_pixbuf_new_from_file( PIXMAP_DIR "fullscreen.png", NULL);
     set = gtk_icon_set_new_from_pixbuf(pix);
-    gdk_pixbuf_unref( pix );
+    g_object_unref( pix );
     gtk_icon_factory_add( factory, GTK_STOCK_FULLSCREEN, set );
 #endif
     pix = gdk_pixbuf_new_from_file( PIXMAP_DIR"clockwise.png", NULL);
     set = gtk_icon_set_new_from_pixbuf(pix);
-    gdk_pixbuf_unref( pix );
+    g_object_unref( pix );
     gtk_icon_factory_add( factory, "gtk-clockwise", set );
 
     pix = gdk_pixbuf_new_from_file( PIXMAP_DIR"counterclockwise.png", NULL);
     set = gtk_icon_set_new_from_pixbuf(pix);
-    gdk_pixbuf_unref( pix );
+    g_object_unref( pix );
     gtk_icon_factory_add( factory, "gtk-counterclockwise", set );
 
     gtk_icon_factory_add_default( factory );

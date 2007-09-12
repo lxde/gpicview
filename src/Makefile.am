@@ -12,6 +12,7 @@ gpicview_SOURCES = \
 	gpicview.cpp \
 	imagelist.cpp \
 	mainwin.cpp \
+	image-view.cpp \
 	working-area.c \
 	ptk-menu.c
 
@@ -24,6 +25,7 @@ gpicview_CXXFLAGS = -fno-rtti -fno-exceptions
 noinst_HEADERS = \
 	imagelist.h \
 	mainwin.h \
+	image-view.h \
 	working-area.h \
 	ptk-menu.h
 
