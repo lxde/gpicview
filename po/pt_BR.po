@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-09-11 20:11+0800\n"
-"PO-Revision-Date: 2007-09-10 21:50+0800\n"
-"Last-Translator: Fábio Antunes <fabio.antunes@hotmail.com>\n"
+"PO-Revision-Date: 2007-09-12 09:10-0300\n"
+"Last-Translator: \n"
 "Language-Team: pt_BR <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -19,25 +19,29 @@ msgstr ""
 
 #: src/gpicview.cpp:37
 msgid "[FILE]"
-msgstr ""
+msgstr "[ARQUIVO]"
 
 #: src/mainwin.cpp:101
 msgid "Image Viewer"
 msgstr "Visualizador de Imagem"
 
-#: src/mainwin.cpp:178 src/mainwin.cpp:1139
+#: src/mainwin.cpp:178
+#: src/mainwin.cpp:1139
 msgid "Previous"
 msgstr "Anterior"
 
-#: src/mainwin.cpp:179 src/mainwin.cpp:1140
+#: src/mainwin.cpp:179
+#: src/mainwin.cpp:1140
 msgid "Next"
 msgstr "Próximo"
 
-#: src/mainwin.cpp:183 src/mainwin.cpp:1142
+#: src/mainwin.cpp:183
+#: src/mainwin.cpp:1142
 msgid "Zoom Out"
 msgstr "Menos Zoom"
 
-#: src/mainwin.cpp:184 src/mainwin.cpp:1143
+#: src/mainwin.cpp:184
+#: src/mainwin.cpp:1143
 msgid "Zoom In"
 msgstr "Mais Zoom"
 
@@ -45,11 +49,13 @@ msgstr "Mais Zoom"
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), this );
 #. gtk_widget_set_size_request( percent, 45, -1 );
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
-#: src/mainwin.cpp:191 src/mainwin.cpp:1144
+#: src/mainwin.cpp:191
+#: src/mainwin.cpp:1144
 msgid "Fit Image To Window Size"
 msgstr "Ajustar Imagem à Janela"
 
-#: src/mainwin.cpp:193 src/mainwin.cpp:1145
+#: src/mainwin.cpp:193
+#: src/mainwin.cpp:1145
 msgid "Original Size"
 msgstr "Tamanho Original"
 
@@ -57,19 +63,23 @@ msgstr "Tamanho Original"
 msgid " Full Screen"
 msgstr " Tela Cheia"
 
-#: src/mainwin.cpp:204 src/mainwin.cpp:1149
+#: src/mainwin.cpp:204
+#: src/mainwin.cpp:1149
 msgid "Rotate Counterclockwise"
 msgstr "Girar em Sentido Anti-horário"
 
-#: src/mainwin.cpp:206 src/mainwin.cpp:1150
+#: src/mainwin.cpp:206
+#: src/mainwin.cpp:1150
 msgid "Rotate Clockwise"
 msgstr "Girar em Sentido Horário"
 
-#: src/mainwin.cpp:210 src/mainwin.cpp:1152
+#: src/mainwin.cpp:210
+#: src/mainwin.cpp:1152
 msgid "Open File"
 msgstr "Abrir Arquivo"
 
-#: src/mainwin.cpp:211 src/mainwin.cpp:1153
+#: src/mainwin.cpp:211
+#: src/mainwin.cpp:1153
 msgid "Save File"
 msgstr "Salvar Arquivo"
 
@@ -77,7 +87,8 @@ msgstr "Salvar Arquivo"
 msgid "Save File As"
 msgstr "Salvar Arquivo Como"
 
-#: src/mainwin.cpp:213 src/mainwin.cpp:1155
+#: src/mainwin.cpp:213
+#: src/mainwin.cpp:1155
 msgid "Delete File"
 msgstr "Apagar Arquivo"
 
@@ -143,3 +154,4 @@ msgstr ""
 "Visualizador leve de imagem\n"
 "\n"
 "Desenvolvido por Hon Jen Yee (PCMan)"
+
