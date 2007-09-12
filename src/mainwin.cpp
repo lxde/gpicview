@@ -337,14 +337,17 @@ void MainWin::show_error( const char* message )
 void MainWin::on_size_allocate( GtkWidget* widget, GtkAllocation    *allocation )
 {
     GTK_WIDGET_CLASS(_parent_class)->size_allocate( widget, allocation );
-    MainWin* self = (MainWin*)widget;
-    if( self->zoom_mode == ZOOM_FIT )
+    if( GTK_WIDGET_REALIZED (widget) )
     {
-        while(gtk_events_pending ())
-            gtk_main_iteration(); // makes it more fluid
+        MainWin* self = (MainWin*)widget;
+        if( self->zoom_mode == ZOOM_FIT )
+        {
+            while(gtk_events_pending ())
+                gtk_main_iteration(); // makes it more fluid
 
-        allocation = &self->scroll->allocation;
-        self->fit_window_size();
+            allocation = &self->scroll->allocation;
+            self->fit_window_size();
+        }
     }
 }
 
