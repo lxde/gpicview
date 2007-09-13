@@ -149,3 +149,28 @@ char* ImageList::get_current_file_path()  const
         return g_build_filename( dir_path, name, NULL );
     return NULL;
 }
+
+static int comp_by_name( char* name1, char* name2, GtkSortType type )
+{
+    // According to the glib API doc, UTF-8 should be considered here,
+    // So the simple strcmp couldn't be used here. What a pity!
+
+    char* utf8;
+
+    utf8 = g_filename_display_name(name1);
+    name1 = g_utf8_casefold( utf8, -1 );
+    g_free( utf8 );
+
+    utf8 = g_filename_display_name(name2);
+    name2 = g_utf8_casefold( utf8, -1 );
+    g_free( utf8 );
+    int ret = g_utf8_collate( name1, name2 );
+    g_free( name1 );
+    g_free( name2 );
+    return type == GTK_SORT_ASCENDING ? -ret : ret;
+}
+
+void ImageList::sort_by_name( GtkSortType type )
+{
+    list = g_list_sort_with_data( list, (GCompareDataFunc)comp_by_name, (gpointer)type );
+}

@@ -309,14 +309,17 @@ bool MainWin::open( const char* file_path, ZoomMode zoom )
     // build file list
     char* dir_path = g_path_get_dirname( file_path );
     img_list.open_dir( dir_path );
+    img_list.sort_by_name( GTK_SORT_ASCENDING );
     g_free( dir_path );
+
     char* base_name = g_path_get_basename( file_path );
     img_list.set_current( base_name );
+
+    char* disp_name = g_filename_display_name( base_name );
     g_free( base_name );
 
-    char* disp_path = g_filename_display_name( file_path );
-    gtk_window_set_title( (GtkWindow*)this, disp_path );
-    g_free( disp_path );
+    gtk_window_set_title( (GtkWindow*)this, disp_name );
+    g_free( disp_name );
 
     return true;
 }

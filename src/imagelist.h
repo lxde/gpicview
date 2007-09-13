@@ -21,6 +21,7 @@
 #define IMAGELIST_H
 
 #include <glib.h>
+#include <gtk/gtk.h>
 
 /**
 	@author PCMan (Hong Jen Yee) <pcman.tw@gmail.com>
@@ -44,6 +45,7 @@ public:
     bool is_empty() const { return (list == NULL); }
     bool has_multiple_files() const { return (list && list->next); }
     char* get_current_file_path()  const;
+    void sort_by_name( GtkSortType type=GTK_SORT_ASCENDING );
 
 protected:
     gchar* dir_path;
