@@ -147,7 +147,8 @@ void ImageView::set_adjustments( GtkAdjustment* h, GtkAdjustment* v )
     #if GTK_CHECK_VERSION( 2, 10, 0 )
             hadj = (GtkAdjustment*)g_object_ref_sink( h );
     #else
-            hadj = (GtkAdjustment*)gtk_object_sink( (GtkObject*)h );
+            hadj = (GtkAdjustment*)h;
+            gtk_object_sink( (GtkObject*)h );
     #endif
         }
         else
@@ -162,7 +163,8 @@ void ImageView::set_adjustments( GtkAdjustment* h, GtkAdjustment* v )
 #if GTK_CHECK_VERSION( 2, 10, 0 )
             vadj = (GtkAdjustment*)g_object_ref_sink( v );
 #else
-            vadj = (GtkAdjustment*)gtk_object_sink( (GtkObject*)v );
+            vadj = (GtkAdjustment*)v;
+            gtk_object_sink( (GtkObject*)v );
 #endif
         }
         else
@@ -184,6 +186,16 @@ void ImageView::on_size_allocate( GtkWidget* widget, GtkAllocation   *allocation
 {
     GTK_WIDGET_CLASS(_parent_class)->size_allocate( widget, allocation );
     ImageView* self = (ImageView*)widget;
+    if( !self->buffer || allocation->width != widget->allocation.width ||
+        allocation->height != widget->allocation.height )
+    {
+        if( self->buffer )
+            g_object_unref( self->buffer );
+        self->buffer = gdk_pixmap_new( (GdkDrawable*)widget->window,
+                                        allocation->width, allocation->height, -1 );
+        g_debug( "off screen buffer created: %d x %d", allocation->width, allocation->height );
+    }
+
     self->calc_image_area();
 }
 
@@ -198,6 +210,13 @@ gboolean ImageView::on_expose_event( GtkWidget* widget, GdkEventExpose* evt )
 void ImageView::paint( GdkEventExpose& evt )
 {
     GtkWidget* widget = (GtkWidget*)this;
+    if( cached )
+    {
+//        gdk_draw_drawable( drawable, widget->style->fg_gc[GTK_STATE_NORMAL], buffer,
+//                         0, 0,  );
+        return;
+    }
+
     if( pix )
     {
         GdkRectangle* rects = NULL;
@@ -289,6 +308,12 @@ void ImageView::clear()
         g_object_unref( pix );
         pix = NULL;
         calc_image_area();
+    }
+
+    if( buffer )
+    {
+        g_object_unref( buffer );
+        buffer = NULL;
     }
 }
 

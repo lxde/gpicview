@@ -52,6 +52,8 @@ protected:
 
     GtkAdjustment *hadj, *vadj;
     GdkPixbuf* pix;
+    GdkPixmap* buffer;
+    bool cached;
     gdouble scale;
     GdkInterpType interp_type;
     guint idle_handler;
