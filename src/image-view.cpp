@@ -186,6 +186,7 @@ void ImageView::on_size_allocate( GtkWidget* widget, GtkAllocation   *allocation
 {
     GTK_WIDGET_CLASS(_parent_class)->size_allocate( widget, allocation );
     ImageView* self = (ImageView*)widget;
+/*
     if( !self->buffer || allocation->width != widget->allocation.width ||
         allocation->height != widget->allocation.height )
     {
@@ -195,7 +196,7 @@ void ImageView::on_size_allocate( GtkWidget* widget, GtkAllocation   *allocation
                                         allocation->width, allocation->height, -1 );
         g_debug( "off screen buffer created: %d x %d", allocation->width, allocation->height );
     }
-
+*/
     self->calc_image_area();
 }
 
@@ -210,12 +211,14 @@ gboolean ImageView::on_expose_event( GtkWidget* widget, GdkEventExpose* evt )
 void ImageView::paint( GdkEventExpose& evt )
 {
     GtkWidget* widget = (GtkWidget*)this;
+/*
     if( cached )
     {
 //        gdk_draw_drawable( drawable, widget->style->fg_gc[GTK_STATE_NORMAL], buffer,
 //                         0, 0,  );
         return;
     }
+*/
 
     if( pix )
     {
@@ -309,12 +312,13 @@ void ImageView::clear()
         pix = NULL;
         calc_image_area();
     }
-
+/*
     if( buffer )
     {
         g_object_unref( buffer );
         buffer = NULL;
     }
+*/
 }
 
 void ImageView::set_pixbuf( GdkPixbuf* pixbuf )
@@ -326,7 +330,7 @@ void ImageView::set_pixbuf( GdkPixbuf* pixbuf )
             pix = (GdkPixbuf*)g_object_ref( pixbuf );
         calc_image_area();
         gtk_widget_queue_resize( (GtkWidget*)this );
-        gtk_widget_queue_draw( (GtkWidget*)this );
+//        gtk_widget_queue_draw( (GtkWidget*)this );
     }
 }
 
@@ -334,12 +338,34 @@ void ImageView::set_scale( gdouble new_scale, GdkInterpType type )
 {
     if( new_scale == scale )
         return;
+    gdouble factor = new_scale / scale;
     scale = new_scale;
     if( pix )
     {
         calc_image_area();
         gtk_widget_queue_resize( (GtkWidget*)this );
-        gtk_widget_queue_draw( (GtkWidget*)this );
+//        gtk_widget_queue_draw( (GtkWidget*)this );
+
+/*
+    // adjust scroll bars
+        g_debug("factor: %f", (float)factor);
+        if( hadj && ((GtkWidget*)this)->allocation.width < img_area.width )
+        {
+            hadj->upper = img_area.width;
+            hadj->page_size = ((GtkWidget*)this)->allocation.width;
+            g_debug( "old_hadj: %d", (int)hadj->value );
+            hadj->value = CLAMP( hadj->value * factor, 0, hadj->upper - hadj->page_size );
+            g_debug( "new_hadj: %d", (int)hadj->value );
+            gtk_adjustment_value_changed( hadj );
+        }
+        if( vadj && ((GtkWidget*)this)->allocation.height < img_area.height )
+        {
+            vadj->upper = img_area.height;
+            vadj->page_size = ((GtkWidget*)this)->allocation.height;
+            vadj->value = CLAMP(vadj->value * factor, 0, vadj->upper - vadj->page_size );
+            gtk_adjustment_value_changed( vadj );
+        }
+*/
     }
 }
 
@@ -464,4 +490,12 @@ void ImageView::paint( GdkRectangle* invalid_rect, GdkInterpType type )
                          GDK_RGB_DITHER_NORMAL, 0, 0 );
         g_object_unref( src_pix );
     }
+}
+
+void ImageView::get_size( int* w, int* h )
+{
+    if( G_LIKELY(w) )
+        *w = img_area.width;
+    if( G_LIKELY(h) )
+        *h = img_area.height;
 }

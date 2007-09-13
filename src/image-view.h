@@ -46,14 +46,15 @@ public:
     gdouble get_scale() const { return scale;  }
     void set_scale( gdouble new_scale, GdkInterpType type = GDK_INTERP_BILINEAR );
     void set_adjustments( GtkAdjustment* h, GtkAdjustment* v );
+    void get_size( int* w, int* h );
 
 protected:
     static gpointer _parent_class;
 
     GtkAdjustment *hadj, *vadj;
     GdkPixbuf* pix;
-    GdkPixmap* buffer;
-    bool cached;
+//    GdkPixmap* buffer;
+//    bool cached;
     gdouble scale;
     GdkInterpType interp_type;
     guint idle_handler;

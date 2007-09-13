@@ -124,6 +124,12 @@ MainWin::MainWin()
     img_view = ImageView::create();
     gtk_container_add( (GtkContainer*)evt_box, (GtkWidget*)img_view);
 
+    const char scroll_style[]=
+            "style \"gpicview-scroll\" {"
+            "GtkScrolledWindow::scrollbar-spacing=0"
+            "}"
+            "class \"GtkScrolledWindow\" style \"gpicview-scroll\"";
+    gtk_rc_parse_string( scroll_style );
     scroll = gtk_scrolled_window_new( NULL, NULL );
     gtk_scrolled_window_set_shadow_type( (GtkScrolledWindow*)scroll, GTK_SHADOW_NONE );
     gtk_scrolled_window_set_policy((GtkScrolledWindow*)scroll,
@@ -132,14 +138,15 @@ MainWin::MainWin()
     hadj = gtk_scrolled_window_get_hadjustment((GtkScrolledWindow*)scroll);
     hadj->page_increment = 10;
     gtk_adjustment_changed(hadj);
-//    g_object_set( hadj, "page-increment", 10, NULL );
     vadj = gtk_scrolled_window_get_vadjustment((GtkScrolledWindow*)scroll);
     vadj->page_increment = 10;
     gtk_adjustment_changed(vadj);
-//    g_object_set( vadj, "page-increment", 10, NULL );
 
     img_view->set_adjustments( hadj, vadj );    // dirty hack :-(
     gtk_scrolled_window_add_with_viewport( (GtkScrolledWindow*)scroll, evt_box );
+    GtkWidget* viewport = gtk_bin_get_child( (GtkBin*)scroll );
+    gtk_viewport_set_shadow_type( (GtkViewport*)viewport, GTK_SHADOW_NONE );
+    gtk_container_set_border_width( (GtkContainer*)viewport, 0 );
 
     gtk_box_pack_start( (GtkBox*)box, scroll, TRUE, TRUE, 0 );
 
@@ -965,6 +972,7 @@ bool MainWin::scale_image( double new_scale, GdkInterpType type )
     }
     scale = new_scale;
     img_view->set_scale( new_scale, type );
+
     return true;
 }
 
