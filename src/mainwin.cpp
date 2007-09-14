@@ -387,22 +387,12 @@ void MainWin::fit_size( int width, int height, bool can_strech, GdkInterpType ty
 
 void MainWin::fit_window_size(  bool can_strech, GdkInterpType type )
 {
+    zoom_mode = ZOOM_FIT;
+
     if( pix == NULL )
         return;
-    int space = 0;
-    gtk_widget_style_get( scroll, "scrollbar-spacing", &space, NULL );
-    space *= 2;
-/*
-    int w = gdk_pixbuf_get_width( pix );
-    int h = gdk_pixbuf_get_height( pix );
 
-    if( w > scroll->allocation.width - space )
-        w = scroll->allocation.width - space;
-    if( h > scroll->allocation.height - space )
-        h = scroll->allocation.height - space;
-    fit_size( w, h, type );
-*/
-    fit_size( scroll->allocation.width - space, scroll->allocation.height - space, can_strech, type );
+    fit_size( scroll->allocation.width, scroll->allocation.height, can_strech, type );
 }
 
 GtkWidget* MainWin::add_nav_btn( const char* icon, const char* tip, GCallback cb, bool toggle )
@@ -440,8 +430,6 @@ void MainWin::on_zoom_fit( GtkToggleButton* btn, MainWin* self )
             gtk_toggle_button_set_active( btn, TRUE );
         return;
     }
-    self->zoom_mode = ZOOM_FIT;
-
     gtk_toggle_button_set_active( (GtkToggleButton*)self->btn_orig, FALSE );
 
     self->fit_window_size();
@@ -489,6 +477,8 @@ void MainWin::on_orig_size( GtkToggleButton* btn, MainWin* self )
     }
     self->zoom_mode = ZOOM_ORIG;
     self->scale = 1.0;
+//    gtk_scrolled_window_set_policy( (GtkScrolledWindow*)self->scroll,
+//                                     GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC );
 
     gtk_toggle_button_set_active( (GtkToggleButton*)self->btn_fit, FALSE );
 
@@ -701,6 +691,8 @@ void MainWin::on_zoom_in( GtkWidget* btn, MainWin* self )
     self->zoom_mode = ZOOM_SCALE;
     gtk_toggle_button_set_active( (GtkToggleButton*)self->btn_fit, FALSE );
     gtk_toggle_button_set_active( (GtkToggleButton*)self->btn_orig, FALSE );
+//    gtk_scrolled_window_set_policy( (GtkScrolledWindow*)self->scroll,
+//                                     GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC );
 
     double scale = self->scale;
     if( self->pix && scale < 20.0 )
@@ -721,6 +713,8 @@ void MainWin::on_zoom_out( GtkWidget* btn, MainWin* self )
     self->zoom_mode = ZOOM_SCALE;
     gtk_toggle_button_set_active( (GtkToggleButton*)self->btn_fit, FALSE );
     gtk_toggle_button_set_active( (GtkToggleButton*)self->btn_orig, FALSE );
+//    gtk_scrolled_window_set_policy( (GtkScrolledWindow*)self->scroll,
+//                                     GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC );
 
     double scale = self->scale;
     if( self->pix && scale > 0.02 )

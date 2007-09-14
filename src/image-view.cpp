@@ -348,21 +348,22 @@ void ImageView::set_scale( gdouble new_scale, GdkInterpType type )
 
 /*
     // adjust scroll bars
-        g_debug("factor: %f", (float)factor);
-        if( hadj && ((GtkWidget*)this)->allocation.width < img_area.width )
+        int vis_w = ((GtkWidget*)this)->allocation.width;
+        if( hadj && vis_w < img_area.width )
         {
             hadj->upper = img_area.width;
-            hadj->page_size = ((GtkWidget*)this)->allocation.width;
-            g_debug( "old_hadj: %d", (int)hadj->value );
-            hadj->value = CLAMP( hadj->value * factor, 0, hadj->upper - hadj->page_size );
-            g_debug( "new_hadj: %d", (int)hadj->value );
+            hadj->page_size = vis_w;
+            gdouble new_w = (hadj->value + vis_w / 2) * factor - vis_w/2;
+            hadj->value = CLAMP(  new_w, 0, hadj->upper - hadj->page_size );
             gtk_adjustment_value_changed( hadj );
         }
-        if( vadj && ((GtkWidget*)this)->allocation.height < img_area.height )
+        int vis_h = ((GtkWidget*)this)->allocation.height;
+        if( vadj && vis_h < img_area.height )
         {
             vadj->upper = img_area.height;
-            vadj->page_size = ((GtkWidget*)this)->allocation.height;
-            vadj->value = CLAMP(vadj->value * factor, 0, vadj->upper - vadj->page_size );
+            vadj->page_size = vis_h;
+            gdouble new_h = (vadj->value + vis_h / 2) * factor - vis_h/2;
+            vadj->value = CLAMP(  new_h, 0, vadj->upper - vadj->page_size );
             gtk_adjustment_value_changed( vadj );
         }
 */

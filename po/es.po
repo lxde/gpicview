@@ -1,0 +1,151 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2007-09-11 21:27+0100\n"
+"Last-Translator: Festor Wailon Dacoba <festor90@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Spanish\n"
+"X-Poedit-Country: SPAIN\n"
+
+#: src/gpicview.cpp:37
+msgid "[FILE]"
+msgstr ""
+
+#: src/mainwin.cpp:101
+msgid "Image Viewer"
+msgstr "Visor de imagen"
+
+#: src/mainwin.cpp:178
+#: src/mainwin.cpp:1139
+msgid "Previous"
+msgstr "Anterior"
+
+#: src/mainwin.cpp:179
+#: src/mainwin.cpp:1140
+msgid "Next"
+msgstr "Siguiente"
+
+#: src/mainwin.cpp:183
+#: src/mainwin.cpp:1142
+msgid "Zoom Out"
+msgstr "Alejar"
+
+#: src/mainwin.cpp:184
+#: src/mainwin.cpp:1143
+msgid "Zoom In"
+msgstr "Acercar"
+
+#. percent = gtk_entry_new();    // show scale (in percentage)
+#. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), this );
+#. gtk_widget_set_size_request( percent, 45, -1 );
+#. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
+#: src/mainwin.cpp:191
+#: src/mainwin.cpp:1144
+msgid "Fit Image To Window Size"
+msgstr "Redimensionar imagen al tamaño de la ventana"
+
+#: src/mainwin.cpp:193
+#: src/mainwin.cpp:1145
+msgid "Original Size"
+msgstr "Tamaño original"
+
+#: src/mainwin.cpp:200
+msgid " Full Screen"
+msgstr " Pantalla completa"
+
+#: src/mainwin.cpp:204
+#: src/mainwin.cpp:1149
+msgid "Rotate Counterclockwise"
+msgstr "Rotar a la izquierda"
+
+#: src/mainwin.cpp:206
+#: src/mainwin.cpp:1150
+msgid "Rotate Clockwise"
+msgstr "Rotar a la derecha"
+
+#: src/mainwin.cpp:210
+#: src/mainwin.cpp:1152
+msgid "Open File"
+msgstr "Abrir archivo"
+
+#: src/mainwin.cpp:211
+#: src/mainwin.cpp:1153
+msgid "Save File"
+msgstr "Guardar archivo"
+
+#: src/mainwin.cpp:212
+msgid "Save File As"
+msgstr "Guardar archivo como"
+
+#: src/mainwin.cpp:213
+#: src/mainwin.cpp:1155
+msgid "Delete File"
+msgstr "Eliminar archivo"
+
+#: src/mainwin.cpp:661
+msgid "All Supported Images"
+msgstr "Todos los tipos de imágenes soportadas"
+
+#: src/mainwin.cpp:666
+msgid "All Files"
+msgstr "Todos los archivos"
+
+#: src/mainwin.cpp:1048
+msgid ""
+"The file name you selected already exist.\n"
+"Do you want to overwrite existing file?\n"
+"(Warning: The quality of original image might be lost)"
+msgstr ""
+"El nombre del archivo que has seleccionado ya existe.\n"
+"¿Quieres sobrescribir el archivo existente?\n"
+"(Atención: puede perderse calidad de la imagen original)"
+
+#: src/mainwin.cpp:1077
+msgid ""
+"Are you sure you want to delete current file?\n"
+"\n"
+"Warning: Once deleted, the file cannot be recovered."
+msgstr ""
+"¿Estas seguro que querer eliminar el archivo actual?\n"
+"\n"
+"Atención: Una vez eliminado, el archivo no se puede recuperar"
+
+#: src/mainwin.cpp:1147
+msgid "Full Screen"
+msgstr "Pantalla completa"
+
+#: src/mainwin.cpp:1154
+msgid "Save As"
+msgstr "Guardar como"
+
+#: src/mainwin.cpp:1203
+msgid " * Some icons are taken from gimmage"
+msgstr "* Algunos iconos fueron extraídos de gimmage"
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: src/mainwin.cpp:1207
+msgid "translator-credits"
+msgstr "Festor Wailon Dacoba <Spanish and Galician translation>"
+
+#: src/mainwin.cpp:1212
+msgid "GPicView"
+msgstr "GPicView"
+
+#: src/mainwin.cpp:1213
+msgid "Copyright (C) 2007"
+msgstr "Copyright (C) 2007"
+
+#: src/mainwin.cpp:1214
+msgid ""
+"Lightweight image viewer\n"
+"\n"
+"Developed by Hon Jen Yee (PCMan)"
+msgstr ""
+"Lightweight image viewer\n"
+"\n"
+"Desarrollador por Hon Jen Yee (PCMan)"
+
