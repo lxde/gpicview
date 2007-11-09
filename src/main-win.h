@@ -69,8 +69,6 @@ typedef struct _MainWin
     GdkCursor* hand_cursor;
     ZoomMode zoom_mode;
     gboolean full_screen;
-    gboolean ask_save;
-    gboolean auto_save;
 
     gboolean dragging;
     double scale;

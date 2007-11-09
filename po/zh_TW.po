@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-10 00:21+0800\n"
-"PO-Revision-Date: 2007-11-10 00:24+0800\n"
+"POT-Creation-Date: 2007-11-10 01:49+0800\n"
+"PO-Revision-Date: 2007-11-10 01:50+0800\n"
 "Last-Translator: 洪任諭 <pcman.tw@gmail.com>\n"
 "Language-Team: zh_TW <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,31 +18,31 @@ msgstr ""
 "X-Poedit-Country: TAIWAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: src/gpicview.c:35
+#: src/gpicview.c:36
 msgid "[FILE]"
 msgstr "[檔案]"
 
-#: src/main-win.c:132
+#: src/main-win.c:135
 msgid "Image Viewer"
 msgstr "圖片檢視器"
 
-#: src/main-win.c:221
-#: src/main-win.c:1110
+#: src/main-win.c:218
+#: src/main-win.c:1107
 msgid "Previous"
 msgstr "上一張"
 
-#: src/main-win.c:222
-#: src/main-win.c:1111
+#: src/main-win.c:219
+#: src/main-win.c:1108
 msgid "Next"
 msgstr "下一張"
 
-#: src/main-win.c:226
-#: src/main-win.c:1113
+#: src/main-win.c:223
+#: src/main-win.c:1110
 msgid "Zoom Out"
 msgstr "縮小"
 
-#: src/main-win.c:227
-#: src/main-win.c:1114
+#: src/main-win.c:224
+#: src/main-win.c:1111
 msgid "Zoom In"
 msgstr "放大"
 
@@ -50,62 +50,63 @@ msgstr "放大"
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
 #. gtk_widget_set_size_request( percent, 45, -1 );
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
-#: src/main-win.c:234
-#: src/main-win.c:1115
+#: src/main-win.c:231
+#: src/main-win.c:1112
 msgid "Fit Image To Window Size"
 msgstr "適合視窗大小"
 
-#: src/main-win.c:236
-#: src/main-win.c:1116
+#: src/main-win.c:233
+#: src/main-win.c:1113
 msgid "Original Size"
 msgstr "原始大小"
 
-#: src/main-win.c:243
+#: src/main-win.c:240
 msgid " Full Screen"
 msgstr "全螢幕瀏覽"
 
-#: src/main-win.c:247
-#: src/main-win.c:1120
+#: src/main-win.c:244
+#: src/main-win.c:1117
 msgid "Rotate Counterclockwise"
 msgstr "逆時針旋轉"
 
-#: src/main-win.c:249
-#: src/main-win.c:1121
+#: src/main-win.c:246
+#: src/main-win.c:1118
 msgid "Rotate Clockwise"
 msgstr "順時針旋轉"
 
-#: src/main-win.c:253
-#: src/main-win.c:1123
+#: src/main-win.c:250
+#: src/main-win.c:1120
 msgid "Open File"
 msgstr "開啟檔案"
 
-#: src/main-win.c:254
-#: src/main-win.c:1124
+#: src/main-win.c:251
+#: src/main-win.c:1121
 msgid "Save File"
 msgstr "儲存檔案"
 
-#: src/main-win.c:255
+#: src/main-win.c:252
 msgid "Save File As"
 msgstr "另存新檔"
 
-#: src/main-win.c:256
-#: src/main-win.c:1126
+#: src/main-win.c:253
+#: src/main-win.c:1123
 msgid "Delete File"
 msgstr "刪除檔案"
 
-#: src/main-win.c:259
-msgid "Preference"
+#: src/main-win.c:256
+#: src/pref.c:83
+msgid "Preferences"
 msgstr "偏好設定"
 
-#: src/main-win.c:742
+#: src/main-win.c:739
 msgid "All Supported Images"
 msgstr "所有支援的影像格式"
 
-#: src/main-win.c:747
+#: src/main-win.c:744
 msgid "All Files"
 msgstr "所有檔案"
 
-#: src/main-win.c:1063
+#: src/main-win.c:1060
 msgid ""
 "The file name you selected already exist.\n"
 "Do you want to overwrite existing file?\n"
@@ -115,7 +116,7 @@ msgstr ""
 "是否確定要覆蓋原有檔案？\n"
 "(警告：原影像的品質可能會喪失)"
 
-#: src/main-win.c:1092
+#: src/main-win.c:1089
 msgid ""
 "Are you sure you want to delete current file?\n"
 "\n"
@@ -125,38 +126,46 @@ msgstr ""
 "\n"
 "警告：一旦刪除，檔案就無法復原。"
 
-#: src/main-win.c:1118
+#: src/main-win.c:1115
 msgid "Full Screen"
 msgstr "全螢幕瀏覽"
 
-#: src/main-win.c:1125
+#: src/main-win.c:1122
 msgid "Save As"
 msgstr "另存新檔"
 
-#: src/main-win.c:1168
+#: src/main-win.c:1165
 msgid " * Refer to source code of EOG image viewer and GThumb"
 msgstr " * 參考 EOG 及 GThumb 的程式碼"
 
-#: src/main-win.c:1169
+#: src/main-win.c:1166
 msgid " * Some icons are taken from gimmage"
 msgstr " * 部份圖示是從 gimmage 取得"
 
 #. TRANSLATORS: Replace mw string with your names, one name per line.
-#: src/main-win.c:1173
+#: src/main-win.c:1170
 msgid "translator-credits"
 msgstr "洪任諭 (PCMan) <pcman.tw@gmail.com>"
 
-#: src/main-win.c:1181
+#: src/main-win.c:1178
 msgid "GPicView"
 msgstr "GPicView 圖片檢視器"
 
-#: src/main-win.c:1183
+#: src/main-win.c:1180
 msgid "Copyright (C) 2007"
 msgstr "版權所有 (C) 2007"
 
-#: src/main-win.c:1184
+#: src/main-win.c:1181
 msgid "Lightweight image viewer from LXDE project"
 msgstr "來自 LXDE 計畫的輕巧圖片檢視器"
+
+#: src/pref.c:86
+msgid "Ask before saving  images"
+msgstr "儲存影像前先詢問"
+
+#: src/pref.c:90
+msgid "Automatically save rotated images ( Currently only JPEG is supported )"
+msgstr "自動儲存經過旋轉的影像 (目前只支援 JPEG 格式)"
 
 #~ msgid ""
 #~ "Lightweight image viewer\n"

@@ -26,6 +26,7 @@
 #include <glib/gi18n.h>
 #include <string.h>
 
+#include "pref.h"
 #include "main-win.h"
 
 static char** files = NULL;
@@ -84,6 +85,8 @@ int main(int argc, char *argv[])
 
     register_icons();
 
+    load_preferences();
+
     win = main_win_new();
 
     // FIXME: need to process multiple files...
@@ -102,5 +105,8 @@ int main(int argc, char *argv[])
     gtk_widget_show( GTK_WIDGET(win) );
 
     gtk_main();
+
+    save_preferences();
+
     return 0;
 }

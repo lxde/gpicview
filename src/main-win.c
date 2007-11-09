@@ -23,6 +23,7 @@
 #endif
 
 #include "main-win.h"
+
 #include <glib/gi18n.h>
 #include <glib/gstdio.h>
 #include <gdk/gdkkeysyms.h>
@@ -31,6 +32,8 @@
 #include <string.h>
 #include <errno.h>
 #include <math.h>
+
+#include "pref.h"
 
 #include "image-view.h"
 #include "working-area.h"
@@ -204,12 +207,6 @@ void main_win_init( MainWin*mw )
 
     mw->img_list = image_list_new();
 
-    // ask before saving?
-    mw->ask_save = TRUE;
-
-    // autosaving on rotation? - maybe we can make this somewhere user defined
-    mw->auto_save = TRUE;
-
     // rotation angle is zero on startup
     mw->rotation_angle = 0;
 }
@@ -256,7 +253,7 @@ void create_nav_bar( MainWin* mw, GtkWidget* box )
     add_nav_btn( mw, GTK_STOCK_DELETE, _("Delete File"), G_CALLBACK(on_delete), FALSE );
 
     gtk_box_pack_start( (GtkBox*)mw->nav_bar, gtk_vseparator_new(), FALSE, FALSE, 0 );
-    add_nav_btn( mw, GTK_STOCK_PREFERENCES, _("Preference"), G_CALLBACK(on_preference), FALSE );
+    add_nav_btn( mw, GTK_STOCK_PREFERENCES, _("Preferences"), G_CALLBACK(on_preference), FALSE );
 
     GtkWidget* align = gtk_alignment_new( 0.5, 0, 0, 0 );
     gtk_container_add( (GtkContainer*)align, mw->nav_bar );
@@ -566,10 +563,10 @@ void on_rotate_clockwise( GtkWidget* btn, MainWin* mw )
 {
     rotate_image( mw, GDK_PIXBUF_ROTATE_CLOCKWISE );
     mw->rotation_angle += 90;
-    if(mw->auto_save){
-        mw->ask_save = FALSE;
+    if(pref.auto_save_rotated){
+        pref.ask_before_save = FALSE;
         on_save(btn,mw);
-        mw->ask_save = TRUE;
+        pref.ask_before_save = TRUE;
     }
 }
 
@@ -577,10 +574,10 @@ void on_rotate_counterclockwise( GtkWidget* btn, MainWin* mw )
 {
     rotate_image( mw, GDK_PIXBUF_ROTATE_COUNTERCLOCKWISE );
     mw->rotation_angle += 270;
-    if(mw->auto_save){
-        mw->ask_save = FALSE;
+    if(pref.auto_save_rotated){
+        pref.ask_before_save = FALSE;
         on_save(btn,mw);
-        mw->ask_save = TRUE;
+        pref.ask_before_save = TRUE;
     }
 }
 
@@ -718,7 +715,7 @@ void on_save( GtkWidget* btn, MainWin* mw )
             main_win_show_error(mw, "Save failed! Check permissions.");
     } else
 #endif
-        main_win_save( mw, file_name, type, mw->ask_save );
+        main_win_save( mw, file_name, type, pref.ask_before_save );
     mw->rotation_angle = 0;
     g_free( file_name );
     g_free( type );
@@ -807,7 +804,7 @@ void on_zoom_out( GtkWidget* btn, MainWin* mw )
 
 void on_preference( GtkWidget* btn, MainWin* mw )
 {
-    main_win_show_error( mw, "Not implemented yet!" );
+    edit_preferences( (GtkWindow*)mw );
 }
 
 void on_quit( GtkWidget* btn, MainWin* mw )
