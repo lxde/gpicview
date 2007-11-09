@@ -1,3 +1,13 @@
+gpicview (0.1.6ubuntu1) gutsy; urgency=low
+
+  * Rewrite in plain C language, remove all C++ dependencies
+  * Sort image files by filenames
+  * Support JPEG lossless rotation
+  * Add simple preferences dialog
+  * Improve about dialog :-P
+
+ -- PCMan <pcman@pcman-laptop>  Sat, 10 Nov 2007 01:56:29 +0800
+
 gpicview (0.1.5ubuntu1) feisty; urgency=low
 
   * Optomize memory usage of zooming
