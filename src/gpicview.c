@@ -26,13 +26,11 @@
 #include <glib/gi18n.h>
 #include <string.h>
 
-#include "mainwin.h"
-
-using namespace std;
+#include "main-win.h"
 
 static char** files = NULL;
 
-static GOptionEntry opt_entries[] = 
+static GOptionEntry opt_entries[] =
 {
     {G_OPTION_REMAINING, 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &files, NULL, N_("[FILE]")},
     { NULL }
@@ -70,6 +68,7 @@ int main(int argc, char *argv[])
 {
     GError *error = NULL;
     GOptionContext *context;
+    MainWin* win;
 
     context = g_option_context_new ("- simple image viewer");
     g_option_context_add_main_entries (context, opt_entries, GETTEXT_PACKAGE);
@@ -85,18 +84,19 @@ int main(int argc, char *argv[])
 
     register_icons();
 
-    MainWin* win = MainWin::create();
+    win = main_win_new();
 
     // FIXME: need to process multiple files...
-    if( files ) {
+    if( files )
+    {
         if( G_UNLIKELY( *files[0] != '/' && strstr( files[0], "://" )) )    // This is an URI
         {
             char* path = g_filename_from_uri( files[0], NULL, NULL );
-            win->open( path, MainWin::ZOOM_NONE );
+            main_win_open( win, path, ZOOM_NONE );
             g_free( path );
         }
         else
-            win->open( files[0], MainWin::ZOOM_NONE );
+            main_win_open( win, files[0], ZOOM_NONE );
     }
 
     gtk_widget_show( GTK_WIDGET(win) );

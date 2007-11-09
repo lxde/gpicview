@@ -1,0 +1,1211 @@
+/***************************************************************************
+ *   Copyright (C) 2007 by PCMan (Hong Jen Yee)   *
+ *   pcman.tw@gmail.com   *
+ *                                                                         *
+ *   mw program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ *   mw program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with mw program; if not, write to the                         *
+ *   Free Software Foundation, Inc.,                                       *
+ *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
+ ***************************************************************************/
+
+#ifdef HAVE_CONFIG_H
+#  include <config.h>
+#endif
+
+#include "main-win.h"
+#include <glib/gi18n.h>
+#include <glib/gstdio.h>
+#include <gdk/gdkkeysyms.h>
+
+#include <unistd.h>
+#include <string.h>
+#include <errno.h>
+#include <math.h>
+
+#include "image-view.h"
+#include "working-area.h"
+#include "ptk-menu.h"
+
+// For drag & drop
+static GtkTargetEntry drop_targets[] =
+{
+    {"text/uri-list", 0, 0},
+    {"text/plain", 0, 1}
+};
+
+static void main_win_init( MainWin*mw );
+static void main_win_finalize( GObject* obj );
+
+static void create_nav_bar( MainWin* mw, GtkWidget* box);
+GtkWidget* add_nav_btn( MainWin* mw, const char* icon, const char* tip, GCallback cb, gboolean toggle);
+// GtkWidget* add_menu_item(  GtkMenuShell* menu, const char* label, const char* icon, GCallback cb, gboolean toggle=FALSE );
+static void rotate_image( MainWin* mw, GdkPixbufRotation angle );
+static void show_popup_menu( MainWin* mw, GdkEventButton* evt );
+
+/* signal handlers */
+static gboolean on_delete_event( GtkWidget* widget, GdkEventAny* evt );
+static void on_size_allocate( GtkWidget* widget, GtkAllocation    *allocation );
+static void on_zoom_fit( GtkToggleButton* btn, MainWin* mw );
+static void on_zoom_fit_menu( GtkMenuItem* item, MainWin* mw );
+static void on_full_screen( GtkWidget* btn, MainWin* mw );
+static void on_next( GtkWidget* btn, MainWin* mw );
+static void on_orig_size( GtkToggleButton* btn, MainWin* mw );
+static void on_orig_size_menu( GtkToggleButton* btn, MainWin* mw );
+static void on_prev( GtkWidget* btn, MainWin* mw );
+static void on_rotate_clockwise( GtkWidget* btn, MainWin* mw );
+static void on_rotate_counterclockwise( GtkWidget* btn, MainWin* mw );
+static void on_save_as( GtkWidget* btn, MainWin* mw );
+static void on_save( GtkWidget* btn, MainWin* mw );
+static void on_open( GtkWidget* btn, MainWin* mw );
+static void on_zoom_in( GtkWidget* btn, MainWin* mw );
+static void on_zoom_out( GtkWidget* btn, MainWin* mw );
+static void on_preference( GtkWidget* btn, MainWin* mw );
+static void on_quit( GtkWidget* btn, MainWin* mw );
+static gboolean on_button_press( GtkWidget* widget, GdkEventButton* evt, MainWin* mw );
+static gboolean on_button_release( GtkWidget* widget, GdkEventButton* evt, MainWin* mw );
+static gboolean on_mouse_move( GtkWidget* widget, GdkEventMotion* evt, MainWin* mw );
+static gboolean on_scroll_event( GtkWidget* widget, GdkEventScroll* evt, MainWin* mw );
+static gboolean on_key_press_event(GtkWidget* widget, GdkEventKey * key);
+static void on_drag_data_received( GtkWidget* widget, GdkDragContext *drag_context,
+                                                                                       int x, int y, GtkSelectionData* data, guint info,
+                                                                                       guint time, MainWin* mw );
+static void on_delete( GtkWidget* btn, MainWin* mw );
+static void on_about( GtkWidget* menu, MainWin* mw );
+
+
+// Begin of GObject-related stuff
+
+G_DEFINE_TYPE( MainWin, main_win, GTK_TYPE_WINDOW )
+
+void main_win_class_init( MainWinClass* klass )
+{
+    GObjectClass * obj_class;
+    GtkWidgetClass *widget_class;
+
+    obj_class = ( GObjectClass * ) klass;
+//    obj_class->set_property = _set_property;
+//   obj_class->get_property = _get_property;
+    obj_class->finalize = main_win_finalize;
+
+    widget_class = GTK_WIDGET_CLASS ( klass );
+    widget_class->delete_event = on_delete_event;
+    widget_class->size_allocate = on_size_allocate;
+    widget_class->key_press_event = on_key_press_event;
+}
+
+void main_win_finalize( GObject* obj )
+{
+    MainWin *mw = (MainWin*)obj;
+
+    main_win_close(mw);
+
+    if( G_LIKELY(mw->img_list) )
+        image_list_free( mw->img_list );
+    gdk_cursor_unref( mw->hand_cursor );
+
+    g_object_unref( mw->tooltips );
+
+    // FIXME: Put this here is weird
+    gtk_main_quit();
+}
+
+GtkWidget* main_win_new()
+{
+    return (GtkWidget*)g_object_new ( MAIN_WIN_TYPE, NULL );
+}
+
+// End of GObject-related stuff
+
+void main_win_init( MainWin*mw )
+{
+    gtk_window_set_title( (GtkWindow*)mw, _("Image Viewer"));
+    gtk_window_set_icon_from_file( (GtkWindow*)mw, PACKAGE_DATA_DIR"/pixmaps/gpicview.png", NULL );
+    gtk_window_set_default_size( (GtkWindow*)mw, 640, 480 );
+
+    GtkWidget* box = gtk_vbox_new( FALSE, 0 );
+    gtk_container_add( (GtkContainer*)mw, box);
+
+    // image area
+    mw->evt_box = gtk_event_box_new();
+    GTK_WIDGET_SET_FLAGS( mw->evt_box, GTK_CAN_FOCUS );
+    gtk_widget_add_events( mw->evt_box,
+                           GDK_POINTER_MOTION_MASK|GDK_BUTTON_PRESS_MASK|
+                           GDK_BUTTON_RELEASE_MASK|GDK_SCROLL_MASK );
+    g_signal_connect( mw->evt_box, "button-press-event", G_CALLBACK(on_button_press), mw );
+    g_signal_connect( mw->evt_box, "button-release-event", G_CALLBACK(on_button_release), mw );
+    g_signal_connect( mw->evt_box, "motion-notify-event", G_CALLBACK(on_mouse_move), mw );
+    g_signal_connect( mw->evt_box, "scroll-event", G_CALLBACK(on_scroll_event), mw );
+    // Set bg color to white
+    GdkColor white = {0, 65535, 65535, 65535};
+    gtk_widget_modify_bg( mw->evt_box, GTK_STATE_NORMAL, &white );
+
+    mw->img_view = image_view_new();
+    gtk_container_add( (GtkContainer*)mw->evt_box, (GtkWidget*)mw->img_view);
+
+    const char scroll_style[]=
+            "style \"gpicview-scroll\" {"
+            "GtkScrolledWindow::scrollbar-spacing=0"
+            "}"
+            "class \"GtkScrolledWindow\" style \"gpicview-scroll\"";
+    gtk_rc_parse_string( scroll_style );
+    mw->scroll = gtk_scrolled_window_new( NULL, NULL );
+    gtk_scrolled_window_set_shadow_type( (GtkScrolledWindow*)mw->scroll, GTK_SHADOW_NONE );
+    gtk_scrolled_window_set_policy((GtkScrolledWindow*)mw->scroll,
+                                    GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
+    GtkAdjustment *hadj, *vadj;
+    hadj = gtk_scrolled_window_get_hadjustment((GtkScrolledWindow*)mw->scroll);
+    hadj->page_increment = 10;
+    gtk_adjustment_changed(hadj);
+    vadj = gtk_scrolled_window_get_vadjustment((GtkScrolledWindow*)mw->scroll);
+    vadj->page_increment = 10;
+    gtk_adjustment_changed(vadj);
+
+    image_view_set_adjustments( mw->img_view, hadj, vadj );    // dirty hack :-(
+    gtk_scrolled_window_add_with_viewport( (GtkScrolledWindow*)mw->scroll, mw->evt_box );
+    GtkWidget* viewport = gtk_bin_get_child( (GtkBin*)mw->scroll );
+    gtk_viewport_set_shadow_type( (GtkViewport*)viewport, GTK_SHADOW_NONE );
+    gtk_container_set_border_width( (GtkContainer*)viewport, 0 );
+
+    gtk_box_pack_start( (GtkBox*)box, mw->scroll, TRUE, TRUE, 0 );
+
+    // build toolbar
+    mw->tooltips = gtk_tooltips_new();
+#if GTK_CHECK_VERSION(2, 10, 0)
+    g_object_ref_sink(mw->tooltips);
+#else
+    gtk_object_sink((GtkObject*)mw->tooltips);
+#endif
+
+    create_nav_bar( mw, box );
+    gtk_widget_show_all( box );
+
+    mw->hand_cursor = gdk_cursor_new_for_display( gtk_widget_get_display((GtkWidget*)mw), GDK_FLEUR );
+
+//    zoom_mode = ZOOM_NONE;
+    mw->zoom_mode = ZOOM_FIT;
+
+    // Set up drag & drop
+    gtk_drag_dest_set( (GtkWidget*)mw, GTK_DEST_DEFAULT_ALL,
+                                                    drop_targets,
+                                                    G_N_ELEMENTS(drop_targets),
+                                                    GDK_ACTION_COPY | GDK_ACTION_ASK );
+    g_signal_connect( mw, "drag-data-received", G_CALLBACK(on_drag_data_received), mw );
+
+    mw->img_list = image_list_new();
+}
+
+void create_nav_bar( MainWin* mw, GtkWidget* box )
+{
+    mw->nav_bar = gtk_hbox_new( FALSE, 0 );
+
+    add_nav_btn( mw, GTK_STOCK_GO_BACK, _("Previous"), G_CALLBACK(on_prev), FALSE );
+    add_nav_btn( mw, GTK_STOCK_GO_FORWARD, _("Next"), G_CALLBACK(on_next), FALSE );
+
+    gtk_box_pack_start( (GtkBox*)mw->nav_bar, gtk_vseparator_new(), FALSE, FALSE, 0 );
+
+    add_nav_btn( mw, GTK_STOCK_ZOOM_OUT, _("Zoom Out"), G_CALLBACK(on_zoom_out), FALSE );
+    add_nav_btn( mw, GTK_STOCK_ZOOM_IN, _("Zoom In"), G_CALLBACK(on_zoom_in), FALSE );
+
+//    percent = gtk_entry_new();    // show scale (in percentage)
+//    g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
+//    gtk_widget_set_size_request( percent, 45, -1 );
+//    gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
+
+    mw->btn_fit = add_nav_btn( mw, GTK_STOCK_ZOOM_FIT, _("Fit Image To Window Size"),
+                           G_CALLBACK(on_zoom_fit), TRUE );
+    mw->btn_orig = add_nav_btn( mw, GTK_STOCK_ZOOM_100, _("Original Size"),
+                           G_CALLBACK(on_orig_size), TRUE );
+    gtk_toggle_button_set_active( (GtkToggleButton*)mw->btn_fit, TRUE );
+
+#ifndef GTK_STOCK_FULLSCREEN
+#define GTK_STOCK_FULLSCREEN    "gtk-fullscreen"
+#endif
+    add_nav_btn( mw, GTK_STOCK_FULLSCREEN, _(" Full Screen"), G_CALLBACK(on_full_screen), FALSE );   // gtk+ 2.8+
+
+    gtk_box_pack_start( (GtkBox*)mw->nav_bar, gtk_vseparator_new(), FALSE, FALSE, 0 );
+
+    add_nav_btn( mw, "gtk-counterclockwise", _("Rotate Counterclockwise"),
+                 G_CALLBACK(on_rotate_counterclockwise), FALSE );
+    add_nav_btn( mw, "gtk-clockwise", _("Rotate Clockwise"), G_CALLBACK(on_rotate_clockwise), FALSE );
+
+    gtk_box_pack_start( (GtkBox*)mw->nav_bar, gtk_vseparator_new(), FALSE, FALSE, 0 );
+
+    add_nav_btn( mw, GTK_STOCK_OPEN, _("Open File"), G_CALLBACK(on_open), FALSE );
+    add_nav_btn( mw, GTK_STOCK_SAVE, _("Save File"), G_CALLBACK(on_save), FALSE );
+    add_nav_btn( mw, GTK_STOCK_SAVE_AS, _("Save File As"), G_CALLBACK(on_save_as), FALSE );
+    add_nav_btn( mw, GTK_STOCK_DELETE, _("Delete File"), G_CALLBACK(on_delete), FALSE );
+
+/*
+    gtk_box_pack_start( (GtkBox*)mw->nav_bar, gtk_vseparator_new(), FALSE, FALSE, 0 );
+
+    add_nav_btn( mw, GTK_STOCK_PREFERENCES, _("Preference"), G_CALLBACK(on_preference) );
+*/
+
+    GtkWidget* align = gtk_alignment_new( 0.5, 0, 0, 0 );
+    gtk_container_add( (GtkContainer*)align, mw->nav_bar );
+    gtk_box_pack_start( (GtkBox*)box, align, FALSE, TRUE, 2 );
+}
+
+gboolean on_delete_event( GtkWidget* widget, GdkEventAny* evt )
+{
+    gtk_widget_destroy( widget );
+    return TRUE;
+}
+
+gboolean main_win_open( MainWin* mw, const char* file_path, ZoomMode zoom )
+{
+    GError* err = NULL;
+
+    main_win_close( mw );
+    mw->pix = gdk_pixbuf_new_from_file( file_path, &err );
+    if( ! mw->pix )
+    {
+        main_win_show_error( mw, err->message );
+        return FALSE;
+    }
+
+    mw->zoom_mode = zoom;
+
+    // select most suitable viewing mode
+    if( zoom == ZOOM_NONE )
+    {
+        int w = gdk_pixbuf_get_width( mw->pix );
+        int h = gdk_pixbuf_get_height( mw->pix );
+
+        GdkRectangle area;
+        get_working_area( gtk_widget_get_screen((GtkWidget*)mw), &area );
+//        g_debug("determine best zoom mode: orig size:  w=%d, h=%d", w, h);
+        // FIXME: actually mw is a little buggy :-(
+        if( w < area.width && h < area.height && (w >= 640 || h >= 480) )
+        {
+            gtk_scrolled_window_set_policy( (GtkScrolledWindow*)mw->scroll, GTK_POLICY_NEVER, GTK_POLICY_NEVER );
+            gtk_widget_set_size_request( (GtkWidget*)mw->img_view, w, h );
+            GtkRequisition req;
+            gtk_widget_size_request ( (GtkWidget*)mw, &req );
+            if( req.width < 640 )   req.width = 640;
+            if( req.height < 480 )   req.height = 480;
+            gtk_window_resize( (GtkWindow*)mw, req.width, req.height );
+            gtk_widget_set_size_request( (GtkWidget*)mw->img_view, -1, -1 );
+            gtk_scrolled_window_set_policy( (GtkScrolledWindow*)mw->scroll, GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC );
+            mw->zoom_mode = ZOOM_ORIG;
+        }
+        else
+            mw->zoom_mode = ZOOM_FIT;
+    }
+
+    if( mw->zoom_mode == ZOOM_FIT )
+    {
+        gtk_toggle_button_set_active( (GtkToggleButton*)mw->btn_fit, TRUE );
+        main_win_fit_window_size( mw, TRUE, GDK_INTERP_BILINEAR );
+    }
+    else  if( mw->zoom_mode == ZOOM_SCALE )  // scale
+    {
+        gtk_toggle_button_set_active( (GtkToggleButton*)mw->btn_orig, FALSE );
+        gtk_toggle_button_set_active( (GtkToggleButton*)mw->btn_fit, FALSE );
+        main_win_scale_image( mw, mw->scale, GDK_INTERP_BILINEAR );
+    }
+    else  if( mw->zoom_mode == ZOOM_ORIG )  // original size
+    {
+        gtk_toggle_button_set_active( (GtkToggleButton*)mw->btn_orig, TRUE );
+        image_view_set_scale( (ImageView*)mw->img_view, 1.0, GDK_INTERP_BILINEAR );
+        main_win_center_image( mw );
+    }
+
+    image_view_set_pixbuf( (ImageView*)mw->img_view, mw->pix );
+
+//    while (gtk_events_pending ())
+//        gtk_main_iteration ();
+
+    // build file list
+    char* dir_path = g_path_get_dirname( file_path );
+    image_list_open_dir( mw->img_list, dir_path, NULL );
+    image_list_sort_by_name( mw->img_list, GTK_SORT_ASCENDING );
+    g_free( dir_path );
+
+    char* base_name = g_path_get_basename( file_path );
+    image_list_set_current( mw->img_list, base_name );
+
+    char* disp_name = g_filename_display_name( base_name );
+    g_free( base_name );
+
+    gtk_window_set_title( (GtkWindow*)mw, disp_name );
+    g_free( disp_name );
+
+    return TRUE;
+}
+
+void main_win_close( MainWin* mw )
+{
+    if( mw->pix )
+    {
+        g_object_unref( mw->pix );
+        mw->pix = NULL;
+    }
+}
+
+void main_win_show_error( MainWin* mw, const char* message )
+{
+    GtkWidget* dlg = gtk_message_dialog_new( (GtkWindow*)mw,
+                                              GTK_DIALOG_MODAL,
+                                              GTK_MESSAGE_ERROR,
+                                              GTK_BUTTONS_OK,
+                                              message );
+    gtk_dialog_run( (GtkDialog*)dlg );
+    gtk_widget_destroy( dlg );
+}
+
+void on_size_allocate( GtkWidget* widget, GtkAllocation    *allocation )
+{
+    GTK_WIDGET_CLASS(main_win_parent_class)->size_allocate( widget, allocation );
+    if( GTK_WIDGET_REALIZED (widget) )
+    {
+        MainWin* mw = (MainWin*)widget;
+
+        if( mw->zoom_mode == ZOOM_FIT )
+        {
+            while(gtk_events_pending ())
+                gtk_main_iteration(); // makes it more fluid
+
+            main_win_fit_window_size( mw, TRUE, GDK_INTERP_BILINEAR );
+        }
+    }
+}
+
+void main_win_fit_size( MainWin* mw, int width, int height, gboolean can_strech, GdkInterpType type )
+{
+    if( ! mw->pix )
+        return;
+
+    int orig_w = gdk_pixbuf_get_width( mw->pix );
+    int orig_h = gdk_pixbuf_get_height( mw->pix );
+
+    if( can_strech || (orig_w > width || orig_h > height) )
+    {
+        gdouble xscale = ((gdouble)width) / orig_w;
+        gdouble yscale = ((gdouble)height)/ orig_h;
+        gdouble final_scale = xscale < yscale ? xscale : yscale;
+
+        main_win_scale_image( mw, final_scale, type );
+    }
+    else    // use original size if the image is smaller than the window
+    {
+        mw->scale = 1.0;
+        image_view_set_scale( (ImageView*)mw->img_view, 1.0, type );
+    }
+}
+
+void main_win_fit_window_size(  MainWin* mw, gboolean can_strech, GdkInterpType type )
+{
+    mw->zoom_mode = ZOOM_FIT;
+
+    if( mw->pix == NULL )
+        return;
+
+    main_win_fit_size( mw, mw->scroll->allocation.width, mw->scroll->allocation.height, can_strech, type );
+}
+
+GtkWidget* add_nav_btn( MainWin* mw, const char* icon, const char* tip, GCallback cb, gboolean toggle )
+{
+    GtkWidget* img = gtk_image_new_from_stock(icon, GTK_ICON_SIZE_SMALL_TOOLBAR);
+    GtkWidget* btn;
+    if( G_UNLIKELY(toggle) )
+    {
+        btn = gtk_toggle_button_new();
+        g_signal_connect( btn, "toggled", cb, mw );
+    }
+    else
+    {
+        btn = gtk_button_new();
+        g_signal_connect( btn, "clicked", cb, mw );
+    }
+    gtk_button_set_relief( (GtkButton*)btn, GTK_RELIEF_NONE );
+    gtk_button_set_focus_on_click( (GtkButton*)btn, FALSE );
+    gtk_container_add( (GtkContainer*)btn, img );
+    gtk_tooltips_set_tip( mw->tooltips, btn, tip, NULL );
+    gtk_box_pack_start( (GtkBox*)mw->nav_bar, btn, FALSE, FALSE, 0 );
+    return btn;
+}
+
+void on_zoom_fit_menu( GtkMenuItem* item, MainWin* mw )
+{
+    gtk_button_clicked( (GtkButton*)mw->btn_fit );
+}
+
+void on_zoom_fit( GtkToggleButton* btn, MainWin* mw )
+{
+    if( ! btn->active )
+    {
+        if( mw->zoom_mode == ZOOM_FIT )
+            gtk_toggle_button_set_active( btn, TRUE );
+        return;
+    }
+    gtk_toggle_button_set_active( (GtkToggleButton*)mw->btn_orig, FALSE );
+
+    main_win_fit_window_size( mw, TRUE, GDK_INTERP_BILINEAR );
+}
+
+void on_full_screen( GtkWidget* btn, MainWin* mw )
+{
+    if( ! mw->full_screen )
+    {
+        static GdkColor black = {0};
+        gtk_widget_modify_bg( mw->evt_box, GTK_STATE_NORMAL, &black );
+        gtk_widget_hide( gtk_widget_get_parent(mw->nav_bar) );
+        gtk_window_fullscreen( (GtkWindow*)mw );
+    }
+    else
+    {
+//        gtk_widget_reset_rc_styles( mw->evt_box );
+        static GdkColor white = {0, 65535, 65535, 65535};
+        gtk_widget_modify_bg( mw->evt_box, GTK_STATE_NORMAL, &white );
+        gtk_widget_show( gtk_widget_get_parent(mw->nav_bar) );
+        gtk_window_unfullscreen( (GtkWindow*)mw );
+    }
+    mw->full_screen = ! mw->full_screen;
+}
+
+void on_orig_size_menu( GtkToggleButton* btn, MainWin* mw )
+{
+    gtk_button_clicked( (GtkButton*)mw->btn_orig );
+}
+
+void on_orig_size( GtkToggleButton* btn, MainWin* mw )
+{
+    // this callback could be called from activate signal of menu item.
+    if( GTK_IS_MENU_ITEM(btn) )
+    {
+        gtk_button_clicked( (GtkButton*)mw->btn_orig );
+        return;
+    }
+
+    if( ! btn->active )
+    {
+        if( mw->zoom_mode == ZOOM_ORIG )
+            gtk_toggle_button_set_active( btn, TRUE );
+        return;
+    }
+    mw->zoom_mode = ZOOM_ORIG;
+    mw->scale = 1.0;
+//    gtk_scrolled_window_set_policy( (GtkScrolledWindow*)mw->scroll,
+//                                     GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC );
+
+    gtk_toggle_button_set_active( (GtkToggleButton*)mw->btn_fit, FALSE );
+
+    if( ! mw->pix )
+        return;
+
+    image_view_set_scale( (ImageView*)mw->img_view, 1.0, GDK_INTERP_BILINEAR );
+
+    while (gtk_events_pending ())
+        gtk_main_iteration ();
+
+    main_win_center_image( mw ); // FIXME:  mw doesn't work well. Why?
+}
+
+void on_prev( GtkWidget* btn, MainWin* mw )
+{
+    const char* name;
+    if( image_list_is_empty( mw->img_list ) )
+        return;
+
+    name = image_list_get_prev( mw->img_list );
+
+    if( ! name && image_list_has_multiple_files( mw->img_list ) )
+    {
+        // FIXME: need to ask user first?
+        name = image_list_get_last( mw->img_list );
+    }
+
+    if( name )
+    {
+        char* file_path = image_list_get_current_file_path( mw->img_list );
+        main_win_open( mw, file_path, ZOOM_FIT );
+        g_free( file_path );
+    }
+}
+
+void on_next( GtkWidget* btn, MainWin* mw )
+{
+    if( image_list_is_empty( mw->img_list ) )
+        return;
+
+    const char* name = image_list_get_next( mw->img_list );
+
+    if( ! name && image_list_has_multiple_files( mw->img_list ) )
+    {
+        // FIXME: need to ask user first?
+        name = image_list_get_first( mw->img_list );
+    }
+
+    if( name )
+    {
+        char* file_path = image_list_get_current_file_path( mw->img_list );
+        main_win_open( mw, file_path, ZOOM_FIT );
+        g_free( file_path );
+    }
+}
+
+void on_rotate_clockwise( GtkWidget* btn, MainWin* mw )
+{
+    rotate_image( mw, GDK_PIXBUF_ROTATE_CLOCKWISE );
+}
+
+void on_rotate_counterclockwise( GtkWidget* btn, MainWin* mw )
+{
+    rotate_image( mw, GDK_PIXBUF_ROTATE_COUNTERCLOCKWISE );
+}
+
+static void on_update_preview( GtkFileChooser *chooser, GtkImage* img )
+{
+    char* file = gtk_file_chooser_get_preview_filename( chooser );
+    GdkPixbuf* pix = NULL;
+    if( file )
+    {
+        pix = gdk_pixbuf_new_from_file_at_scale( file, 128, 128, TRUE, NULL );
+        g_free( file );
+    }
+    if( pix )
+    {
+        gtk_image_set_from_pixbuf( img, pix );
+        g_object_unref( pix );
+    }
+}
+
+void on_save_as( GtkWidget* btn, MainWin* mw )
+{
+    if( ! mw->pix )
+        return;
+
+    GtkFileChooser* dlg = (GtkFileChooser*)gtk_file_chooser_dialog_new( NULL, (GtkWindow*)mw,
+            GTK_FILE_CHOOSER_ACTION_SAVE, GTK_STOCK_CANCEL,
+            GTK_RESPONSE_CANCEL, GTK_STOCK_SAVE, GTK_RESPONSE_OK, NULL );
+
+    gtk_file_chooser_set_current_folder( dlg, image_list_get_dir( mw->img_list ) );
+
+    GtkWidget* img = gtk_image_new();
+    gtk_widget_set_size_request( img, 128, 128 );
+    gtk_file_chooser_set_preview_widget( dlg, img );
+    g_signal_connect( dlg, "update-preview", G_CALLBACK(on_update_preview), img );
+
+    GtkFileFilter *filter;
+
+    /*
+    /// TODO: determine file type from file name
+    filter = gtk_file_filter_new();
+    gtk_file_filter_set_name( filter, _("Determined by File Name") );
+    gtk_file_filter_add_pixbuf_formats( filter );
+    gtk_file_chooser_add_filter( dlg, filter );
+    */
+
+    GSList* modules = gdk_pixbuf_get_formats();
+    GSList* module;
+    for( module = modules; module; module = module->next )
+    {
+        GdkPixbufFormat* format = (GdkPixbufFormat*)module->data;
+        if( ! gdk_pixbuf_format_is_writable( format ) )
+            continue;
+
+        filter = gtk_file_filter_new();
+
+        char* desc = gdk_pixbuf_format_get_description( format );
+        char* name = gdk_pixbuf_format_get_name( format );
+        char* tmp = g_strjoin( ":  ", name, desc, NULL );
+        g_free( desc );
+        g_free( name );
+        gtk_file_filter_set_name( filter, tmp );
+        g_free( tmp );
+
+        char** mimes = gdk_pixbuf_format_get_mime_types( format ), **mime;
+        for( mime  = mimes; *mime ; ++mime )
+            gtk_file_filter_add_mime_type( filter, *mime );
+        g_strfreev( mimes );
+        gtk_file_chooser_add_filter( dlg, filter );
+    }
+
+    if( gtk_dialog_run( (GtkDialog*)dlg ) == GTK_RESPONSE_OK )
+    {
+        filter = gtk_file_chooser_get_filter( dlg );
+        const char* filter_name = gtk_file_filter_get_name( filter );
+        char* p = strstr( filter_name, ": " );
+        char* type = NULL;
+        if( ! p )   // auto detection
+        {
+            /// TODO: auto file type
+        }
+        else
+        {
+            type = g_strndup( filter_name, (p - filter_name)  );
+        }
+        char* file = gtk_file_chooser_get_filename( dlg );
+        // g_debug("type = %s", type);
+        main_win_save( mw, file, type, TRUE );
+        g_free( file );
+        g_free( type );
+    }
+    gtk_widget_destroy( (GtkWidget*)dlg );
+}
+
+void on_save( GtkWidget* btn, MainWin* mw )
+{
+    if( ! mw->pix )
+        return;
+
+    char* file_name = g_build_filename( image_list_get_dir( mw->img_list ),
+                                        image_list_get_current( mw->img_list ), NULL );
+    GdkPixbufFormat* info;
+    info = gdk_pixbuf_get_file_info( file_name, NULL, NULL );
+    char* type = gdk_pixbuf_format_get_name( info );
+    main_win_save( mw, file_name, type, TRUE );
+    g_free( file_name );
+    g_free( type );
+}
+
+void on_open( GtkWidget* btn, MainWin* mw )
+{
+    GtkFileChooser* dlg = (GtkFileChooser*)gtk_file_chooser_dialog_new( NULL, (GtkWindow*)mw,
+            GTK_FILE_CHOOSER_ACTION_OPEN, GTK_STOCK_CANCEL,
+            GTK_RESPONSE_CANCEL, GTK_STOCK_OPEN, GTK_RESPONSE_OK, NULL );
+
+    if( image_list_get_dir( mw->img_list ) )
+        gtk_file_chooser_set_current_folder( dlg, image_list_get_dir( mw->img_list ) );
+
+    GtkWidget* img = gtk_image_new();
+    gtk_widget_set_size_request( img, 128, 128 );
+    gtk_file_chooser_set_preview_widget( dlg, img );
+    g_signal_connect( dlg, "update-preview", G_CALLBACK(on_update_preview), img );
+
+    GtkFileFilter *filter = gtk_file_filter_new();
+    gtk_file_filter_set_name( filter, _("All Supported Images") );
+    gtk_file_filter_add_pixbuf_formats( filter );
+    gtk_file_chooser_add_filter( dlg, filter );
+
+    filter = gtk_file_filter_new();
+    gtk_file_filter_set_name( filter, _("All Files") );
+    gtk_file_filter_add_pattern( filter, "*" );
+    gtk_file_chooser_add_filter( dlg, filter );
+
+    char* file = NULL;
+    if( gtk_dialog_run( (GtkDialog*)dlg ) == GTK_RESPONSE_OK )
+        file = gtk_file_chooser_get_filename( dlg );
+    gtk_widget_destroy( (GtkWidget*)dlg );
+
+    if( file )
+    {
+        main_win_open( mw, file, ZOOM_NONE );
+        g_free( file );
+    }
+}
+
+void on_zoom_in( GtkWidget* btn, MainWin* mw )
+{
+    mw->zoom_mode = ZOOM_SCALE;
+    gtk_toggle_button_set_active( (GtkToggleButton*)mw->btn_fit, FALSE );
+    gtk_toggle_button_set_active( (GtkToggleButton*)mw->btn_orig, FALSE );
+//    gtk_scrolled_window_set_policy( (GtkScrolledWindow*)mw->scroll,
+//                                     GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC );
+
+    double scale = mw->scale;
+    if( mw->pix && scale < 20.0 )
+    {
+//        busy(TRUE);
+            scale *= 1.05;
+            if( scale > 20.0 )
+                scale = 20.0;
+            if( mw->scale != scale )
+                main_win_scale_image( mw, scale, GDK_INTERP_BILINEAR );
+//        adjust_adjustment_on_zoom(oldscale);
+//        busy(FALSE);
+    }
+}
+
+void on_zoom_out( GtkWidget* btn, MainWin* mw )
+{
+    mw->zoom_mode = ZOOM_SCALE;
+    gtk_toggle_button_set_active( (GtkToggleButton*)mw->btn_fit, FALSE );
+    gtk_toggle_button_set_active( (GtkToggleButton*)mw->btn_orig, FALSE );
+//    gtk_scrolled_window_set_policy( (GtkScrolledWindow*)mw->scroll,
+//                                     GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC );
+
+    double scale = mw->scale;
+    if( mw->pix && scale > 0.02 )
+    {
+//        busy(TRUE);
+
+        scale /= 1.05;
+        if( scale < 0.02 )
+            scale = 0.02;
+        if( mw->scale != scale )
+            main_win_scale_image( mw, scale, GDK_INTERP_BILINEAR );
+//        adjust_adjustment_on_zoom(oldscale);
+//        busy(FALSE);
+    }
+}
+
+void on_preference( GtkWidget* btn, MainWin* mw )
+{
+    main_win_show_error( mw, "Not implemented yet!" );
+}
+
+void on_quit( GtkWidget* btn, MainWin* mw )
+{
+    gtk_widget_destroy( (GtkWidget*)mw );
+}
+
+gboolean on_button_press( GtkWidget* widget, GdkEventButton* evt, MainWin* mw )
+{
+    if( ! GTK_WIDGET_HAS_FOCUS( widget ) )
+        gtk_widget_grab_focus( widget );
+
+    if( evt->type == GDK_BUTTON_PRESS)
+    {
+        if( evt->button == 1 )    // left button
+        {
+            if( ! mw->pix )
+                return FALSE;
+            mw->dragging = TRUE;
+            gtk_widget_get_pointer( (GtkWidget*)mw, &mw->drag_old_x ,&mw->drag_old_y );
+            gdk_window_set_cursor( widget->window, mw->hand_cursor );
+        }
+        else if( evt->button == 3 )   // right button
+        {
+            show_popup_menu( mw, evt );
+        }
+    }
+    else if( evt->type == GDK_2BUTTON_PRESS && evt->button == 1 )    // double clicked
+    {
+         on_full_screen( NULL, mw );
+    }
+    return FALSE;
+}
+
+gboolean on_mouse_move( GtkWidget* widget, GdkEventMotion* evt, MainWin* mw )
+{
+    if( ! mw->dragging )
+        return FALSE;
+
+    int cur_x, cur_y;
+    gtk_widget_get_pointer( (GtkWidget*)mw, &cur_x ,&cur_y );
+
+    int dx = (mw->drag_old_x - cur_x);
+    int dy = (mw->drag_old_y - cur_y);
+
+    GtkAdjustment *hadj, *vadj;
+    hadj = gtk_scrolled_window_get_hadjustment((GtkScrolledWindow*)mw->scroll);
+    vadj = gtk_scrolled_window_get_vadjustment((GtkScrolledWindow*)mw->scroll);
+
+    GtkRequisition req;
+    gtk_widget_size_request( (GtkWidget*)mw->img_view, &req );
+
+    if( ABS(dx) > 4 )
+    {
+        mw->drag_old_x = cur_x;
+        if( req.width > hadj->page_size )
+        {
+            gdouble x = gtk_adjustment_get_value (hadj) + dx;
+            if( x < hadj->lower )
+                x = hadj->lower;
+            else if( (x + hadj->page_size) > hadj->upper )
+                x = hadj->upper - hadj->page_size;
+
+            if( x != hadj->value )
+                gtk_adjustment_set_value (hadj, x );
+        }
+    }
+
+    if( ABS(dy) > 4 )
+    {
+        if( req.height > vadj->page_size )
+        {
+            mw->drag_old_y = cur_y;
+            gdouble y = gtk_adjustment_get_value (vadj) + dy;
+            if( y < vadj->lower )
+                y = vadj->lower;
+            else if( (y + vadj->page_size) > vadj->upper )
+                y = vadj->upper - vadj->page_size;
+
+            if( y != vadj->value )
+                gtk_adjustment_set_value (vadj, y  );
+        }
+    }
+    return FALSE;
+}
+
+gboolean on_button_release( GtkWidget* widget, GdkEventButton* evt, MainWin* mw )
+{
+    mw->dragging = FALSE;
+    gdk_window_set_cursor( widget->window, NULL );
+    return FALSE;
+}
+
+gboolean on_scroll_event( GtkWidget* widget, GdkEventScroll* evt, MainWin* mw )
+{
+    switch( evt->direction )
+    {
+    case GDK_SCROLL_UP:
+        on_zoom_out( NULL, mw );
+        break;
+    case GDK_SCROLL_DOWN:
+        on_zoom_in( NULL, mw );
+        break;
+    case GDK_SCROLL_LEFT:
+        on_prev( NULL, mw );
+        break;
+    case GDK_SCROLL_RIGHT:
+        on_next( NULL, mw );
+        break;
+    }
+    return TRUE;
+}
+
+gboolean on_key_press_event(GtkWidget* widget, GdkEventKey * key)
+{
+    MainWin* mw = (MainWin*)widget;
+    switch( key->keyval )
+    {
+        case GDK_Left:
+        case GDK_KP_Left:
+        case GDK_leftarrow:
+        case GDK_Return:
+        case GDK_space:
+        case GDK_Next:
+        case GDK_KP_Down:
+        case GDK_Down:
+        case GDK_downarrow:
+            on_next( NULL, mw );
+            break;
+        case GDK_Right:
+        case GDK_KP_Right:
+        case GDK_rightarrow:
+        case GDK_Prior:
+        case GDK_BackSpace:
+        case GDK_KP_Up:
+        case GDK_Up:
+        case GDK_uparrow:
+            on_prev( NULL, mw );
+            break;
+        case GDK_KP_Add:
+        case GDK_plus:
+        case GDK_equal:
+            on_zoom_in( NULL, mw );
+            break;
+        case GDK_KP_Subtract:
+        case GDK_minus:
+            on_zoom_out( NULL, mw );
+            break;
+        case GDK_s:
+//        case GDK_S:
+            on_save( NULL, mw );
+            break;
+        case GDK_l:
+//        case GDK_L:
+            on_rotate_counterclockwise( NULL, mw );
+            break;
+        case GDK_r:
+//        case GDK_R:
+            on_rotate_clockwise( NULL, mw );
+            break;
+        case GDK_f:
+//        case GDK_F:
+            if( mw->zoom_mode != ZOOM_FIT )
+                gtk_button_clicked((GtkButton*)mw->btn_fit );
+            break;
+        case GDK_g:
+//        case GDK_G:
+            if( mw->zoom_mode != ZOOM_ORIG )
+                gtk_button_clicked((GtkButton*)mw->btn_orig );
+            break;
+        case GDK_o:
+//        case GDK_O:
+            on_open( NULL, mw );
+            break;
+        case GDK_Delete:
+        case GDK_d:
+//        case GDK_D:
+            on_delete( NULL, mw );
+            break;
+        case GDK_Escape:
+            if( mw->full_screen )
+                on_full_screen( NULL, mw );
+            else
+                on_quit( NULL, mw );
+            break;
+        case GDK_F11:
+            on_full_screen( NULL, mw );
+            break;
+
+        default:
+            GTK_WIDGET_CLASS(main_win_parent_class)->key_press_event( widget, key );
+    }
+    return FALSE;
+}
+
+void main_win_center_image( MainWin* mw )
+{
+    GtkAdjustment *hadj, *vadj;
+    hadj = gtk_scrolled_window_get_hadjustment((GtkScrolledWindow*)mw->scroll);
+    vadj = gtk_scrolled_window_get_vadjustment((GtkScrolledWindow*)mw->scroll);
+
+    GtkRequisition req;
+    gtk_widget_size_request( (GtkWidget*)mw->img_view, &req );
+
+    if( req.width > hadj->page_size )
+        gtk_adjustment_set_value(hadj, ( hadj->upper - hadj->page_size ) / 2 );
+
+    if( req.height > vadj->page_size )
+        gtk_adjustment_set_value(vadj, ( vadj->upper - vadj->page_size ) / 2 );
+}
+
+void rotate_image( MainWin* mw, GdkPixbufRotation angle )
+{
+    if( ! mw->pix )
+        return;
+
+    GdkPixbuf* rpix = NULL;
+    rpix = gdk_pixbuf_rotate_simple( mw->pix, angle );
+    g_object_unref( mw->pix );
+    mw->pix = rpix;
+    image_view_set_pixbuf( mw->img_view, mw->pix );
+
+    if( mw->zoom_mode == ZOOM_FIT )
+        main_win_fit_window_size( mw, TRUE, GDK_INTERP_BILINEAR );
+}
+
+gboolean main_win_scale_image( MainWin* mw, double new_scale, GdkInterpType type )
+{
+    if( G_UNLIKELY( new_scale == 1.0 ) )
+    {
+        gtk_toggle_button_set_active( (GtkToggleButton*)mw->btn_orig, TRUE );
+        return TRUE;
+    }
+    mw->scale = new_scale;
+    image_view_set_scale( mw->img_view, new_scale, type );
+
+    return TRUE;
+}
+
+gboolean main_win_save( MainWin* mw, const char* file_path, const char* type, gboolean confirm )
+{
+    if( ! mw->pix )
+        return FALSE;
+
+    if( confirm )   // check existing file
+    {
+        if( g_file_test( file_path, G_FILE_TEST_EXISTS ) )
+        {
+            GtkWidget* dlg = gtk_message_dialog_new( (GtkWindow*)mw,
+                    GTK_DIALOG_MODAL,
+                    GTK_MESSAGE_QUESTION,
+                    GTK_BUTTONS_YES_NO,
+                    _("The file name you selected already exist.\nDo you want to overwrite existing file?\n(Warning: The quality of original image might be lost)") );
+            if( gtk_dialog_run( (GtkDialog*)dlg ) != GTK_RESPONSE_YES )
+            {
+                gtk_widget_destroy( dlg );
+                return FALSE;
+            }
+            gtk_widget_destroy( dlg );
+        }
+    }
+
+    GError* err = NULL;
+    if( ! gdk_pixbuf_save( mw->pix, file_path, type, &err, NULL ) )
+    {
+        main_win_show_error( mw, err->message );
+        return FALSE;
+    }
+
+    return TRUE;
+}
+
+void on_delete( GtkWidget* btn, MainWin* mw )
+{
+    char* file_path = image_list_get_current_file_path( mw->img_list );
+    if( file_path )
+    {
+        GtkWidget* dlg = gtk_message_dialog_new( (GtkWindow*)mw,
+                GTK_DIALOG_MODAL,
+                GTK_MESSAGE_QUESTION,
+                GTK_BUTTONS_YES_NO,
+                _("Are you sure you want to delete current file?\n\nWarning: Once deleted, the file cannot be recovered.") );
+        int resp = gtk_dialog_run( (GtkDialog*)dlg );
+        gtk_widget_destroy( dlg );
+
+        if( resp == GTK_RESPONSE_YES )
+        {
+            g_unlink( file_path );
+            if( errno )
+                main_win_show_error( mw, g_strerror(errno) );
+            g_free( file_path );
+        }
+    }
+}
+
+void show_popup_menu( MainWin* mw, GdkEventButton* evt )
+{
+/*
+    GtkMenuShell* popup = (GtkMenuShell*)gtk_menu_new();
+
+    GtkWidget *item;
+    add_menu_item( popup, _("Previous"), GTK_STOCK_GO_BACK, G_CALLBACK(on_prev) );
+    add_menu_item( popup, _("Next"), GTK_STOCK_GO_FORWARD, G_CALLBACK(on_next) );
+
+    gtk_menu_shell_append( popup, gtk_separator_menu_item_new() );
+
+    add_menu_item( popup, _("Zoom Out"), GTK_STOCK_ZOOM_OUT, G_CALLBACK(on_zoom_out) );
+    add_menu_item( popup, _("Zoom In"), GTK_STOCK_ZOOM_IN, G_CALLBACK(on_zoom_in) );
+    add_menu_item( popup, _("Fit Image To Window Size"), GTK_STOCK_ZOOM_OUT,
+                   G_CALLBACK(on_zoom_fit_menu) );
+    add_menu_item( popup, _("Original Size"), GTK_STOCK_ZOOM_100,
+                   G_CALLBACK(on_orig_size_menu) );
+
+#ifndef GTK_STOCK_FULLSCREEN
+// mw stock item is only available after gtk+ 2.8
+#define GTK_STOCK_FULLSCREEN    "gtk-fullscreen"
+#endif
+    add_menu_item( popup, _("Full Screen"), GTK_STOCK_FULLSCREEN, G_CALLBACK(on_full_screen) );
+
+    gtk_menu_shell_append( popup, gtk_separator_menu_item_new() );
+
+    add_menu_item( popup, _("Rotate Counterclockwise"), "gtk-counterclockwise",
+                   G_CALLBACK(on_rotate_counterclockwise) );
+    add_menu_item( popup, _("Rotate Clockwise"), "gtk-clockwise",
+                   G_CALLBACK(on_rotate_clockwise) );
+
+    gtk_menu_shell_append( popup, gtk_separator_menu_item_new() );
+
+    add_menu_item( popup, _("Open File"), GTK_STOCK_OPEN, G_CALLBACK(on_open) );
+    add_menu_item( popup, _("Save File"), GTK_STOCK_SAVE, G_CALLBACK(on_save) );
+    add_menu_item( popup, _("Save As"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as) );
+    add_menu_item( popup, _("Delete File"), GTK_STOCK_DELETE, G_CALLBACK(on_delete) );
+
+    gtk_menu_shell_append( popup, gtk_separator_menu_item_new() );
+
+    item = gtk_image_menu_item_new_from_stock( GTK_STOCK_ABOUT, NULL );
+    g_signal_connect(item, "activate", G_CALLBACK(on_about), mw);
+    gtk_menu_shell_append( popup, item );
+*/
+
+    static PtkMenuItemEntry menu_def[] =
+    {
+        PTK_IMG_MENU_ITEM( N_( "Previous" ), GTK_STOCK_GO_BACK, on_prev, GDK_leftarrow, 0 ),
+        PTK_IMG_MENU_ITEM( N_( "Next" ), GTK_STOCK_GO_FORWARD, on_next, GDK_rightarrow, 0 ),
+        PTK_SEPARATOR_MENU_ITEM,
+        PTK_IMG_MENU_ITEM( N_( "Zoom Out" ), GTK_STOCK_ZOOM_OUT, on_zoom_out, GDK_minus, 0 ),
+        PTK_IMG_MENU_ITEM( N_( "Zoom In" ), GTK_STOCK_ZOOM_IN, on_zoom_in, GDK_plus, 0 ),
+        PTK_IMG_MENU_ITEM( N_( "Fit Image To Window Size" ), GTK_STOCK_ZOOM_FIT, on_zoom_fit_menu, GDK_F, 0 ),
+        PTK_IMG_MENU_ITEM( N_( "Original Size" ), GTK_STOCK_ZOOM_100, on_orig_size_menu, GDK_G, 0 ),
+        PTK_SEPARATOR_MENU_ITEM,
+        PTK_IMG_MENU_ITEM( N_( "Full Screen" ), GTK_STOCK_FULLSCREEN, on_full_screen, GDK_F11, 0 ),
+        PTK_SEPARATOR_MENU_ITEM,
+        PTK_IMG_MENU_ITEM( N_( "Rotate Counterclockwise" ), "gtk-counterclockwise", on_rotate_counterclockwise, GDK_L, 0 ),
+        PTK_IMG_MENU_ITEM( N_( "Rotate Clockwise" ), "gtk-clockwise", on_rotate_clockwise, GDK_R, 0 ),
+        PTK_SEPARATOR_MENU_ITEM,
+        PTK_IMG_MENU_ITEM( N_("Open File"), GTK_STOCK_OPEN, G_CALLBACK(on_open), GDK_O, 0 ),
+        PTK_IMG_MENU_ITEM( N_("Save File"), GTK_STOCK_SAVE, G_CALLBACK(on_save), GDK_S, 0 ),
+        PTK_IMG_MENU_ITEM( N_("Save As"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
+        PTK_IMG_MENU_ITEM( N_("Delete File"), GTK_STOCK_DELETE, G_CALLBACK(on_delete), GDK_Delete, 0 ),
+        PTK_SEPARATOR_MENU_ITEM,
+        PTK_STOCK_MENU_ITEM( GTK_STOCK_ABOUT, on_about ),
+        PTK_MENU_END
+    };
+
+    // mw accel group is useless. It's only used to display accels in popup menu
+    GtkAccelGroup* accel_group = gtk_accel_group_new();
+    GtkMenuShell* popup = (GtkMenuShell*)ptk_menu_new_from_data( menu_def, mw, accel_group );
+
+    gtk_widget_show_all( (GtkWidget*)popup );
+    g_signal_connect( popup, "selection-done", G_CALLBACK(gtk_widget_destroy), NULL );
+    gtk_menu_popup( (GtkMenu*)popup, NULL, NULL, NULL, NULL, evt->button, evt->time );
+}
+
+/*
+GtkWidget* main_win_add_menu_item( GtkMenuShell* menu, const char* label,
+                                   const char* icon, GCallback cb, gboolean toggle )
+{
+    GtkWidget* item;
+    if( G_UNLIKELY(toggle) )
+    {
+        item = gtk_check_menu_item_new_with_mnemonic( label );
+        g_signal_connect( item, "toggled", cb, mw );
+    }
+    else
+    {
+        if( icon )
+        {
+            item = gtk_image_menu_item_new_with_mnemonic( label);
+            GtkWidget* img = gtk_image_new_from_stock( icon, GTK_ICON_SIZE_MENU );
+            gtk_image_menu_item_set_image( (GtkImageMenuItem*)item, img );
+        }
+        else {
+            item = gtk_menu_item_new_with_mnemonic( label );
+        }
+        g_signal_connect( item, "activate", cb, mw );
+    }
+    gtk_menu_shell_append( (GtkMenuShell*)menu, item );
+}
+*/
+
+void on_about( GtkWidget* menu, MainWin* mw )
+{
+    GtkWidget * about_dlg;
+    const gchar *authors[] =
+    {
+        "洪任諭 Hong Jen Yee <pcman.tw@gmail.com>",
+        _(" * Refer to source code of EOG image viewer"),
+        _(" * Some icons are taken from gimmage"),
+        NULL
+    };
+    /* TRANSLATORS: Replace mw string with your names, one name per line. */
+    gchar *translators = _( "translator-credits" );
+
+    about_dlg = gtk_about_dialog_new ();
+    gtk_container_set_border_width ( GTK_CONTAINER ( about_dlg ), 2 );
+    gtk_about_dialog_set_version ( GTK_ABOUT_DIALOG ( about_dlg ), VERSION );
+    gtk_about_dialog_set_name ( GTK_ABOUT_DIALOG ( about_dlg ), _( "GPicView" ) );
+    gtk_about_dialog_set_copyright ( GTK_ABOUT_DIALOG ( about_dlg ), _( "Copyright (C) 2007" ) );
+    gtk_about_dialog_set_comments ( GTK_ABOUT_DIALOG ( about_dlg ), _( "Lightweight image viewer\n\nDeveloped by Hon Jen Yee (PCMan)" ) );
+    gtk_about_dialog_set_license ( GTK_ABOUT_DIALOG ( about_dlg ), "GPicView\n\nCopyright (C) 2007 Hong Jen Yee (PCMan)\n\nmw program is free software; you can redistribute it and/or\nmodify it under the terms of the GNU General Public License\nas published by the Free Software Foundation; either version 2\nof the License, or (at your option) any later version.\n\nmw program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with mw program; if not, write to the Free Software\nFoundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA." );
+    gtk_about_dialog_set_website ( GTK_ABOUT_DIALOG ( about_dlg ), "http://lxde.sourceforge.net/gpicview/" );
+    gtk_about_dialog_set_authors ( GTK_ABOUT_DIALOG ( about_dlg ), authors );
+    gtk_about_dialog_set_translator_credits ( GTK_ABOUT_DIALOG ( about_dlg ), translators );
+    gtk_window_set_transient_for( GTK_WINDOW( about_dlg ), GTK_WINDOW( mw ) );
+
+    gtk_dialog_run( GTK_DIALOG( about_dlg ) );
+    gtk_widget_destroy( about_dlg );
+}
+
+void on_drag_data_received( GtkWidget* widget, GdkDragContext *drag_context,
+                int x, int y, GtkSelectionData* data, guint info, guint time, MainWin* mw )
+{
+    if( ! data || data->length <= 0)
+        return;
+
+    char* file = NULL;
+    if( info == 0 )    // text/uri-list
+    {
+        char** uris = gtk_selection_data_get_uris( data );
+        if( uris )
+        {
+            file = g_filename_from_uri(*uris, NULL, NULL);
+            g_strfreev( uris );
+        }
+    }
+    else if( info == 1 )    // text/plain
+    {
+        file = (char*)gtk_selection_data_get_text( data );
+    }
+    if( file )
+    {
+        main_win_open( mw, file, ZOOM_FIT );
+        g_free( file );
+    }
+}

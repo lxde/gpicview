@@ -22,15 +22,18 @@
 #  include <config.h>
 #endif
 
-#include "imagelist.h"
+#include "image-list.h"
+#include "glib-mem.h"
 
 #include <string.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
 
-GSList* ImageList::supported_formats = NULL;
+static GSList* supported_formats = NULL;
 
-ImageList::ImageList()
+ImageList* image_list_new()
 {
+    ImageList* il = g_slice_new0( ImageList );
+
     if( ! supported_formats )
     {
         GSList* formats = gdk_pixbuf_get_formats();
@@ -45,108 +48,131 @@ ImageList::ImageList()
         }
         // supported_formats = g_slist_reverse( supported_formats, *ext );
     }
+
+    return il;
 }
 
-ImageList::~ImageList()
+void image_list_free( ImageList* il )
 {
+    g_slice_free( ImageList, il );
 }
 
-bool ImageList::open_dir( const char* path, GError** error )
+const char* image_list_get_dir( ImageList* il )
 {
-    if( dir_path && 0 == strcmp( path, dir_path ) )
-        return true;
+    return il->dir_path;
+}
 
-    close();
+const char* image_list_get_current( ImageList* il )
+{
+    return il->current ? (char*)il->current->data : NULL;
+}
+
+gboolean image_list_is_empty( ImageList* il )
+{
+    return (il->list == NULL);
+}
+
+gboolean image_list_has_multiple_files( ImageList* il )
+{
+    return (il->list && il->list->next);
+}
+
+gboolean image_list_open_dir( ImageList* il, const char* path, GError** error )
+{
+    if( il->dir_path && 0 == strcmp( path, il->dir_path ) )
+        return TRUE;
+
+    image_list_close( il );
 
     GDir* dir = g_dir_open( path, 0, error );
     if( ! dir )
-        return false;
+        return FALSE;
 
-    dir_path = g_strdup( path );
+    il->dir_path = g_strdup( path );
 
     const char* name = NULL;
     while( name = g_dir_read_name ( dir ) )
     {
 //        char* file_path = g_build_filename( dir_path, name, NULL );
-        if( is_file_supported( name ) )
-            list = g_list_prepend( list, g_strdup(name) );
+        if( image_list_is_file_supported( name ) )
+            il->list = g_list_prepend( il->list, g_strdup(name) );
 //        g_free( file_path );
     }
     g_dir_close( dir );
-    list = g_list_reverse(list);
-    current = list;
-    return true;
+    il->list = g_list_reverse( il->list );
+    il->current = il->list;
+    return TRUE;
 }
 
-bool ImageList::set_current( const char* name )
+gboolean image_list_set_current(  ImageList* il,const char* name )
 {
-    if( ! list || !name )
-        return false;
+    if( ! il->list || !name )
+        return FALSE;
 
-    GList* cur = g_list_find_custom( list, name, (GCompareFunc)strcmp );
+    GList* cur = g_list_find_custom( il->list, name, (GCompareFunc)strcmp );
     if( ! cur )
-        return false;
-    current = cur;
-    return true;
+        return FALSE;
+    il->current = cur;
+    return TRUE;
 }
 
-const char* ImageList::get_first()
+const char* image_list_get_first( ImageList* il )
 {
-    current = list;
-    return get_current();
+    il->current = il->list;
+    return image_list_get_current( il );
 }
 
-const char* ImageList::get_next()
+const char* image_list_get_next( ImageList* il )
 {
-    if( current && current->next )
+    if( il->current && il->current->next )
     {
-        current = current->next;
-        return get_current();
+        il->current = il->current->next;
+        return image_list_get_current( il );
     }
     return NULL;
 }
 
-const char* ImageList::get_prev()
+const char* image_list_get_prev( ImageList* il )
 {
-    if( current && current->prev )
+    if( il->current && il->current->prev )
     {
-        current = current->prev;
-        return get_current();
+        il->current = il->current->prev;
+        return image_list_get_current( il );
     }
     return NULL;
 }
 
-const char* ImageList::get_last()
+const char* image_list_get_last( ImageList* il )
 {
-    current = g_list_last( list );
-    return get_current();
+    il->current = g_list_last( il->list );
+    return image_list_get_current( il );
 }
 
-void ImageList::close()
+void image_list_close( ImageList* il )
 {
-    g_list_foreach( list, (GFunc)g_free, NULL );
-    g_list_free( list );
-    list = NULL;
+    g_list_foreach( il->list, (GFunc)g_free, NULL );
+    g_list_free( il->list );
+    il->list = NULL;
 
-    g_free( dir_path );
-    dir_path = NULL;
+    g_free( il->dir_path );
+    il->dir_path = NULL;
 }
 
-bool ImageList::is_file_supported( const char* name )
+gboolean image_list_is_file_supported( const char* name )
 {
     const char* ext = strrchr( name, '.' );
     if( ! ext )
-        return false;
+        return FALSE;
     ++ext;
 
     return !!g_slist_find_custom ( supported_formats, ext,  (GCompareFunc)g_ascii_strcasecmp);
 }
 
-char* ImageList::get_current_file_path()  const
+char* image_list_get_current_file_path( ImageList* il )
 {
     const char* name;
-    if( dir_path && (name = get_current()) )
-        return g_build_filename( dir_path, name, NULL );
+    if( il->dir_path && (name = image_list_get_current( il )) )
+        return g_build_filename( il->dir_path, name, NULL );
     return NULL;
 }
 
@@ -170,7 +196,7 @@ static int comp_by_name( char* name1, char* name2, GtkSortType type )
     return type == GTK_SORT_ASCENDING ? -ret : ret;
 }
 
-void ImageList::sort_by_name( GtkSortType type )
+void image_list_sort_by_name(  ImageList* il, GtkSortType type )
 {
-    list = g_list_sort_with_data( list, (GCompareDataFunc)comp_by_name, (gpointer)type );
+    il->list = g_list_sort_with_data( il->list, (GCompareDataFunc)comp_by_name, (gpointer)type );
 }

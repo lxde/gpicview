@@ -9,22 +9,21 @@ INCLUDES = $(all_includes) \
 
 bin_PROGRAMS = gpicview
 gpicview_SOURCES = \
-	gpicview.cpp \
-	imagelist.cpp \
-	mainwin.cpp \
-	image-view.cpp \
+	gpicview.c \
+	image-list.c \
+	main-win.c \
+	image-view.c \
 	working-area.c \
 	ptk-menu.c
 
 # the library search path.
 # use -nodefaultlibs to prevent linking libstdc++
-gpicview_LDFLAGS = $(all_libraries) -nodefaultlibs -lc
 gpicview_LDADD = @PACKAGE_LIBS@
-gpicview_CXXFLAGS = -fno-rtti -fno-exceptions
 
 noinst_HEADERS = \
-	imagelist.h \
-	mainwin.h \
+	glib-mem.h \
+	image-list.h \
+	main-win.h \
 	image-view.h \
 	working-area.h \
 	ptk-menu.h

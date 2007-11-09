@@ -17,6 +17,7 @@
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
+
 #ifndef IMAGELIST_H
 #define IMAGELIST_H
 
@@ -24,34 +25,39 @@
 #include <gtk/gtk.h>
 
 /**
-	@author PCMan (Hong Jen Yee) <pcman.tw@gmail.com>
+    @author PCMan (Hong Jen Yee) <pcman.tw@gmail.com>
 */
-class ImageList{
-public:
-    ImageList();
-    ~ImageList();
-
-    const char* get_dir() const { return dir_path; }
-    bool open_dir( const char* path, GError** error = NULL  );
-    bool set_current( const char* name );
-    const char* get_current() const { return current ? (char*)current->data : NULL; }
-    const char* get_first();
-    const char* get_next();
-    const char* get_prev();
-    const char* get_last();
-    void close();
-//    static bool is_file_supported( char* file_path );
-    static bool is_file_supported( const char* name );
-    bool is_empty() const { return (list == NULL); }
-    bool has_multiple_files() const { return (list && list->next); }
-    char* get_current_file_path()  const;
-    void sort_by_name( GtkSortType type=GTK_SORT_ASCENDING );
-
-protected:
+typedef struct _ImageList
+{
     gchar* dir_path;
     GList* list;
     GList* current;
-    static GSList* supported_formats;
-};
+} ImageList;
+
+const char* image_list_get_dir( ImageList* il );
+
+gboolean image_list_open_dir( ImageList* il, const char* path, GError** error);
+
+gboolean image_list_set_current( ImageList* il, const char* name );
+
+const char* image_list_get_current( ImageList* il );
+
+const char* image_list_get_first( ImageList* il );
+
+const char* image_list_get_next( ImageList* il );
+
+const char* image_list_get_prev( ImageList* il );
+
+const char* image_list_get_last( ImageList* il );
+
+void image_list_close( ImageList* il );
+
+gboolean image_list_is_empty( ImageList* il );
+
+gboolean image_list_has_multiple_files( ImageList* il );
+
+char* image_list_get_current_file_path( ImageList* il );
+
+void image_list_sort_by_name( ImageList* il, GtkSortType type );
 
 #endif

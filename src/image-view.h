@@ -1,14 +1,23 @@
-//
-// C++ Interface: image-view
-//
-// Description: 
-//
-//
-// Author: PCMan (Hong Jen Yee) <pcman.tw@gmail.com>, (C) 2007
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/***************************************************************************
+ *   Copyright (C) 2007 by PCMan (Hong Jen Yee)   *
+ *   pcman.tw@gmail.com   *
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ *   This program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with this program; if not, write to the                         *
+ *   Free Software Foundation, Inc.,                                       *
+ *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
+ ***************************************************************************/
+
 #ifndef IMAGE_VIEW_H
 #define IMAGE_VIEW_H
 
@@ -16,40 +25,25 @@
 #include <gdk/gdk.h>
 
 /**
-	@author PCMan (Hong Jen Yee) <pcman.tw@gmail.com>
+    @author PCMan (Hong Jen Yee) <pcman.tw@gmail.com>
 */
 
-#define IMAGE_VIEW_TYPE        (ImageView::_get_type ())
+#define IMAGE_VIEW_TYPE        ( image_view_get_type ())
 #define IMAGE_VIEW(obj)        (G_TYPE_CHECK_INSTANCE_CAST ((obj), IMAGE_VIEW_TYPE, ImageView))
-#define IMAGE_VIEW_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), IMAGE_VIEW_TYPE, ImageView::Class))
+#define IMAGE_VIEW_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), IMAGE_VIEW_TYPE, ImageViewClass))
 #define IS_IMAGE_VIEW(obj)     (G_TYPE_CHECK_INSTANCE_TYPE ((obj), IMAGE_VIEW_TYPE))
 #define IS_IMAGE_VIEW_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), IMAGE_VIEW_TYPE))
-#define IMAGE_VIEW_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), IMAGE_VIEW_TYPE, ImageView::Class))
+#define IMAGE_VIEW_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), IMAGE_VIEW_TYPE, ImageViewClass))
 
-class ImageView : public GtkMisc
+typedef struct _ImageViewClass
 {
-public:
-    struct Class : public GtkMiscClass
-    {
-        void (*set_scroll_adjustments)( GtkWidget* w, GtkAdjustment* h, GtkAdjustment* v );
-    };
+    GtkMiscClass parent_class;
+    void (*set_scroll_adjustments)( GtkWidget* w, GtkAdjustment* h, GtkAdjustment* v );
+}ImageViewClass;
 
-    static ImageView* create(){ return (ImageView*)g_object_new ( IMAGE_VIEW_TYPE, NULL ); }
-
-    static void _init( GTypeInstance *instance, gpointer g_class );
-    static void _class_init( ImageView::Class* klass );
-    static void _finalize(GObject *self);
-    static GType _get_type();
-
-    void set_pixbuf( GdkPixbuf* pixbuf );
-
-    gdouble get_scale() const { return scale;  }
-    void set_scale( gdouble new_scale, GdkInterpType type = GDK_INTERP_BILINEAR );
-    void set_adjustments( GtkAdjustment* h, GtkAdjustment* v );
-    void get_size( int* w, int* h );
-
-protected:
-    static gpointer _parent_class;
+typedef struct _ImageView
+{
+    GtkMisc parent;
 
     GtkAdjustment *hadj, *vadj;
     GdkPixbuf* pix;
@@ -59,19 +53,17 @@ protected:
     GdkInterpType interp_type;
     guint idle_handler;
     GdkRectangle img_area;
+}ImageView;
 
-    ImageView();
-    ~ImageView();
+GtkWidget* image_view_new();
 
-    static void on_size_request( GtkWidget* w, GtkRequisition* req );
-    static gboolean on_expose_event( GtkWidget* widget, GdkEventExpose* evt );
-    static void on_size_allocate( GtkWidget* widget, GtkAllocation    *allocation );
+void image_view_set_pixbuf( ImageView* iv, GdkPixbuf* pixbuf );
 
-    void paint( GdkEventExpose& evt );
-    void clear();
-    static gboolean on_idle( ImageView* self );
-    void calc_image_area();
-    void paint( GdkRectangle* invalid_rect, GdkInterpType type = GDK_INTERP_BILINEAR );
-};
+gdouble image_view_get_scale( ImageView* iv );
+void image_view_set_scale( ImageView* iv, gdouble new_scale, GdkInterpType type );
+void set_adjustments( ImageView* iv, GtkAdjustment* h, GtkAdjustment* v );
+void image_view_get_size( ImageView* iv, int* w, int* h );
+
+GType image_view_get_type();
 
 #endif
