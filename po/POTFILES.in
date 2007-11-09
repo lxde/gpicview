@@ -1,5 +1,5 @@
 # List of source files containing translatable strings.
 
-src/gpicview.cpp
-src/mainwin.cpp
+src/gpicview.c
+src/main-win.c
 

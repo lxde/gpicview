@@ -35,6 +35,7 @@
 #include "image-view.h"
 #include "working-area.h"
 #include "ptk-menu.h"
+#include "jpeg-tran.h"
 
 // For drag & drop
 static GtkTargetEntry drop_targets[] =
@@ -202,6 +203,15 @@ void main_win_init( MainWin*mw )
     g_signal_connect( mw, "drag-data-received", G_CALLBACK(on_drag_data_received), mw );
 
     mw->img_list = image_list_new();
+
+    // ask before saving?
+    mw->ask_save = TRUE;
+
+    // autosaving on rotation? - maybe we can make this somewhere user defined
+    mw->auto_save = TRUE;
+
+    // rotation angle is zero on startup
+    mw->rotation_angle = 0;
 }
 
 void create_nav_bar( MainWin* mw, GtkWidget* box )
@@ -245,11 +255,8 @@ void create_nav_bar( MainWin* mw, GtkWidget* box )
     add_nav_btn( mw, GTK_STOCK_SAVE_AS, _("Save File As"), G_CALLBACK(on_save_as), FALSE );
     add_nav_btn( mw, GTK_STOCK_DELETE, _("Delete File"), G_CALLBACK(on_delete), FALSE );
 
-/*
     gtk_box_pack_start( (GtkBox*)mw->nav_bar, gtk_vseparator_new(), FALSE, FALSE, 0 );
-
-    add_nav_btn( mw, GTK_STOCK_PREFERENCES, _("Preference"), G_CALLBACK(on_preference) );
-*/
+    add_nav_btn( mw, GTK_STOCK_PREFERENCES, _("Preference"), G_CALLBACK(on_preference), FALSE );
 
     GtkWidget* align = gtk_alignment_new( 0.5, 0, 0, 0 );
     gtk_container_add( (GtkContainer*)align, mw->nav_bar );
@@ -512,7 +519,7 @@ void on_orig_size( GtkToggleButton* btn, MainWin* mw )
     main_win_center_image( mw ); // FIXME:  mw doesn't work well. Why?
 }
 
-void on_prev( GtkWidget* btn, MainWin* mw )
+void on_next( GtkWidget* btn, MainWin* mw )
 {
     const char* name;
     if( image_list_is_empty( mw->img_list ) )
@@ -534,7 +541,7 @@ void on_prev( GtkWidget* btn, MainWin* mw )
     }
 }
 
-void on_next( GtkWidget* btn, MainWin* mw )
+void on_prev( GtkWidget* btn, MainWin* mw )
 {
     if( image_list_is_empty( mw->img_list ) )
         return;
@@ -558,11 +565,23 @@ void on_next( GtkWidget* btn, MainWin* mw )
 void on_rotate_clockwise( GtkWidget* btn, MainWin* mw )
 {
     rotate_image( mw, GDK_PIXBUF_ROTATE_CLOCKWISE );
+    mw->rotation_angle += 90;
+    if(mw->auto_save){
+        mw->ask_save = FALSE;
+        on_save(btn,mw);
+        mw->ask_save = TRUE;
+    }
 }
 
 void on_rotate_counterclockwise( GtkWidget* btn, MainWin* mw )
 {
     rotate_image( mw, GDK_PIXBUF_ROTATE_COUNTERCLOCKWISE );
+    mw->rotation_angle += 270;
+    if(mw->auto_save){
+        mw->ask_save = FALSE;
+        on_save(btn,mw);
+        mw->ask_save = TRUE;
+    }
 }
 
 static void on_update_preview( GtkFileChooser *chooser, GtkImage* img )
@@ -655,6 +674,34 @@ void on_save_as( GtkWidget* btn, MainWin* mw )
     gtk_widget_destroy( (GtkWidget*)dlg );
 }
 
+#ifdef HAVE_LIBJPEG
+int rotate_and_save_jpeg_lossless(char *  filename,int angle){
+    JXFORM_CODE code = JXFORM_NONE;
+
+    angle = angle % 360;
+
+    if(angle == 90)
+        code = JXFORM_ROT_90;
+    else if(angle == 180)
+        code = JXFORM_ROT_180;
+    else if(angle == 270)
+        code = JXFORM_ROT_270;
+
+    //rotate the image and save it to /tmp/rot.jpg
+    int error = jpegtran (filename, "/tmp/rot.jpg" , code);
+    if(error)
+        return error;
+
+    //now copy /tmp/rot.jpg back to the original file
+    char command[strlen(filename)+50]; //this should not generate buffer owerflow
+    // MS: didn't know, how to make it better, maybe an own copy routine
+    sprintf(command,"cp /tmp/rot.jpg \"%s\"",filename);
+    system(command);
+
+    return 0;
+}
+#endif
+
 void on_save( GtkWidget* btn, MainWin* mw )
 {
     if( ! mw->pix )
@@ -665,7 +712,14 @@ void on_save( GtkWidget* btn, MainWin* mw )
     GdkPixbufFormat* info;
     info = gdk_pixbuf_get_file_info( file_name, NULL, NULL );
     char* type = gdk_pixbuf_format_get_name( info );
-    main_win_save( mw, file_name, type, TRUE );
+#ifdef HAVE_LIBJPEG
+    if(strcmp(type,"jpeg")==0){
+        if(rotate_and_save_jpeg_lossless(file_name,mw->rotation_angle)!=0)
+            main_win_show_error(mw, "Save failed! Check permissions.");
+    } else
+#endif
+        main_win_save( mw, file_name, type, mw->ask_save );
+    mw->rotation_angle = 0;
     g_free( file_name );
     g_free( type );
 }
@@ -872,9 +926,9 @@ gboolean on_key_press_event(GtkWidget* widget, GdkEventKey * key)
     MainWin* mw = (MainWin*)widget;
     switch( key->keyval )
     {
-        case GDK_Left:
-        case GDK_KP_Left:
-        case GDK_leftarrow:
+        case GDK_Right:
+        case GDK_KP_Right:
+        case GDK_rightarrow:
         case GDK_Return:
         case GDK_space:
         case GDK_Next:
@@ -883,9 +937,9 @@ gboolean on_key_press_event(GtkWidget* widget, GdkEventKey * key)
         case GDK_downarrow:
             on_next( NULL, mw );
             break;
-        case GDK_Right:
-        case GDK_KP_Right:
-        case GDK_rightarrow:
+        case GDK_Left:
+        case GDK_KP_Left:
+        case GDK_leftarrow:
         case GDK_Prior:
         case GDK_BackSpace:
         case GDK_KP_Up:
@@ -1051,49 +1105,6 @@ void on_delete( GtkWidget* btn, MainWin* mw )
 
 void show_popup_menu( MainWin* mw, GdkEventButton* evt )
 {
-/*
-    GtkMenuShell* popup = (GtkMenuShell*)gtk_menu_new();
-
-    GtkWidget *item;
-    add_menu_item( popup, _("Previous"), GTK_STOCK_GO_BACK, G_CALLBACK(on_prev) );
-    add_menu_item( popup, _("Next"), GTK_STOCK_GO_FORWARD, G_CALLBACK(on_next) );
-
-    gtk_menu_shell_append( popup, gtk_separator_menu_item_new() );
-
-    add_menu_item( popup, _("Zoom Out"), GTK_STOCK_ZOOM_OUT, G_CALLBACK(on_zoom_out) );
-    add_menu_item( popup, _("Zoom In"), GTK_STOCK_ZOOM_IN, G_CALLBACK(on_zoom_in) );
-    add_menu_item( popup, _("Fit Image To Window Size"), GTK_STOCK_ZOOM_OUT,
-                   G_CALLBACK(on_zoom_fit_menu) );
-    add_menu_item( popup, _("Original Size"), GTK_STOCK_ZOOM_100,
-                   G_CALLBACK(on_orig_size_menu) );
-
-#ifndef GTK_STOCK_FULLSCREEN
-// mw stock item is only available after gtk+ 2.8
-#define GTK_STOCK_FULLSCREEN    "gtk-fullscreen"
-#endif
-    add_menu_item( popup, _("Full Screen"), GTK_STOCK_FULLSCREEN, G_CALLBACK(on_full_screen) );
-
-    gtk_menu_shell_append( popup, gtk_separator_menu_item_new() );
-
-    add_menu_item( popup, _("Rotate Counterclockwise"), "gtk-counterclockwise",
-                   G_CALLBACK(on_rotate_counterclockwise) );
-    add_menu_item( popup, _("Rotate Clockwise"), "gtk-clockwise",
-                   G_CALLBACK(on_rotate_clockwise) );
-
-    gtk_menu_shell_append( popup, gtk_separator_menu_item_new() );
-
-    add_menu_item( popup, _("Open File"), GTK_STOCK_OPEN, G_CALLBACK(on_open) );
-    add_menu_item( popup, _("Save File"), GTK_STOCK_SAVE, G_CALLBACK(on_save) );
-    add_menu_item( popup, _("Save As"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as) );
-    add_menu_item( popup, _("Delete File"), GTK_STOCK_DELETE, G_CALLBACK(on_delete) );
-
-    gtk_menu_shell_append( popup, gtk_separator_menu_item_new() );
-
-    item = gtk_image_menu_item_new_from_stock( GTK_STOCK_ABOUT, NULL );
-    g_signal_connect(item, "activate", G_CALLBACK(on_about), mw);
-    gtk_menu_shell_append( popup, item );
-*/
-
     static PtkMenuItemEntry menu_def[] =
     {
         PTK_IMG_MENU_ITEM( N_( "Previous" ), GTK_STOCK_GO_BACK, on_prev, GDK_leftarrow, 0 ),
@@ -1127,32 +1138,25 @@ void show_popup_menu( MainWin* mw, GdkEventButton* evt )
     gtk_menu_popup( (GtkMenu*)popup, NULL, NULL, NULL, NULL, evt->button, evt->time );
 }
 
-/*
-GtkWidget* main_win_add_menu_item( GtkMenuShell* menu, const char* label,
-                                   const char* icon, GCallback cb, gboolean toggle )
+/* callback used to open default browser when URLs got clicked */
+static void open_url( GtkAboutDialog *dlg, const gchar *url, gpointer data)
 {
-    GtkWidget* item;
-    if( G_UNLIKELY(toggle) )
+    /* FIXME: is there any better way to do this? */
+    char* programs[] = { "xdg-open", "gnome-open" /* Sorry, KDE users. :-P */, "exo-open" };
+    int i;
+    for(  i = 0; i < G_N_ELEMENTS(programs); ++i)
     {
-        item = gtk_check_menu_item_new_with_mnemonic( label );
-        g_signal_connect( item, "toggled", cb, mw );
-    }
-    else
-    {
-        if( icon )
+        char* open_cmd = NULL;
+        if( (open_cmd = g_find_program_in_path( programs[i] )) )
         {
-            item = gtk_image_menu_item_new_with_mnemonic( label);
-            GtkWidget* img = gtk_image_new_from_stock( icon, GTK_ICON_SIZE_MENU );
-            gtk_image_menu_item_set_image( (GtkImageMenuItem*)item, img );
+             char* cmd = g_strdup_printf( "%s \'%s\'", open_cmd, url );
+             g_spawn_command_line_async( cmd, NULL );
+             g_free( cmd );
+             g_free( open_cmd );
+             break;
         }
-        else {
-            item = gtk_menu_item_new_with_mnemonic( label );
-        }
-        g_signal_connect( item, "activate", cb, mw );
     }
-    gtk_menu_shell_append( (GtkMenuShell*)menu, item );
 }
-*/
 
 void on_about( GtkWidget* menu, MainWin* mw )
 {
@@ -1160,26 +1164,31 @@ void on_about( GtkWidget* menu, MainWin* mw )
     const gchar *authors[] =
     {
         "洪任諭 Hong Jen Yee <pcman.tw@gmail.com>",
-        _(" * Refer to source code of EOG image viewer"),
+        "Martin Siggel <martinsiggel@googlemail.com>",
+        _(" * Refer to source code of EOG image viewer and GThumb"),
         _(" * Some icons are taken from gimmage"),
         NULL
     };
     /* TRANSLATORS: Replace mw string with your names, one name per line. */
     gchar *translators = _( "translator-credits" );
 
-    about_dlg = gtk_about_dialog_new ();
-    gtk_container_set_border_width ( GTK_CONTAINER ( about_dlg ), 2 );
-    gtk_about_dialog_set_version ( GTK_ABOUT_DIALOG ( about_dlg ), VERSION );
-    gtk_about_dialog_set_name ( GTK_ABOUT_DIALOG ( about_dlg ), _( "GPicView" ) );
-    gtk_about_dialog_set_copyright ( GTK_ABOUT_DIALOG ( about_dlg ), _( "Copyright (C) 2007" ) );
-    gtk_about_dialog_set_comments ( GTK_ABOUT_DIALOG ( about_dlg ), _( "Lightweight image viewer\n\nDeveloped by Hon Jen Yee (PCMan)" ) );
-    gtk_about_dialog_set_license ( GTK_ABOUT_DIALOG ( about_dlg ), "GPicView\n\nCopyright (C) 2007 Hong Jen Yee (PCMan)\n\nmw program is free software; you can redistribute it and/or\nmodify it under the terms of the GNU General Public License\nas published by the Free Software Foundation; either version 2\nof the License, or (at your option) any later version.\n\nmw program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with mw program; if not, write to the Free Software\nFoundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA." );
-    gtk_about_dialog_set_website ( GTK_ABOUT_DIALOG ( about_dlg ), "http://lxde.sourceforge.net/gpicview/" );
-    gtk_about_dialog_set_authors ( GTK_ABOUT_DIALOG ( about_dlg ), authors );
-    gtk_about_dialog_set_translator_credits ( GTK_ABOUT_DIALOG ( about_dlg ), translators );
-    gtk_window_set_transient_for( GTK_WINDOW( about_dlg ), GTK_WINDOW( mw ) );
+    gtk_about_dialog_set_url_hook( open_url, mw, NULL);
 
-    gtk_dialog_run( GTK_DIALOG( about_dlg ) );
+    about_dlg = gtk_about_dialog_new ();
+
+    gtk_container_set_border_width ( ( GtkContainer*)about_dlg , 2 );
+    gtk_about_dialog_set_version ( (GtkAboutDialog*)about_dlg, VERSION );
+    gtk_about_dialog_set_name ( (GtkAboutDialog*)about_dlg, _( "GPicView" ) );
+    gtk_about_dialog_set_logo( (GtkAboutDialog*)about_dlg, gdk_pixbuf_new_from_file(  PACKAGE_DATA_DIR"/pixmaps/gpicview.png", NULL ) );
+    gtk_about_dialog_set_copyright ( (GtkAboutDialog*)about_dlg, _( "Copyright (C) 2007" ) );
+    gtk_about_dialog_set_comments ( (GtkAboutDialog*)about_dlg, _( "Lightweight image viewer from LXDE project" ) );
+    gtk_about_dialog_set_license ( (GtkAboutDialog*)about_dlg, "GPicView\n\nCopyright (C) 2007 Hong Jen Yee (PCMan)\n\nmw program is free software; you can redistribute it and/or\nmodify it under the terms of the GNU General Public License\nas published by the Free Software Foundation; either version 2\nof the License, or (at your option) any later version.\n\nmw program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with mw program; if not, write to the Free Software\nFoundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA." );
+    gtk_about_dialog_set_website ( (GtkAboutDialog*)about_dlg, "http://lxde.sourceforge.net/gpicview/" );
+    gtk_about_dialog_set_authors ( (GtkAboutDialog*)about_dlg, authors );
+    gtk_about_dialog_set_translator_credits ( (GtkAboutDialog*)about_dlg, translators );
+    gtk_window_set_transient_for( (GtkWindow*) about_dlg, GTK_WINDOW( mw ) );
+
+    gtk_dialog_run( ( GtkDialog*)about_dlg );
     gtk_widget_destroy( about_dlg );
 }
 

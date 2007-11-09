@@ -16,6 +16,11 @@ AC_HEADER_STDC
 pkg_modules="gtk+-2.0 >= 2.6.0"
 
 PKG_CHECK_MODULES(PACKAGE, [$pkg_modules])
+AC_CHECK_LIB(jpeg, jpeg_start_decompress, [],
+	     [AC_MSG_ERROR([libjpeg not found])], -lm)
+AC_CHECK_HEADER(jpeglib.h, , [AC_MSG_ERROR([libjpeg not found])])
+LIBJPEG='-ljpeg'
+
 AC_SUBST(PACKAGE_CFLAGS)
 AC_SUBST(PACKAGE_LIBS)
 
@@ -24,7 +29,7 @@ AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package.])
 
 dnl Add the languages which your application supports here.
-ALL_LINGUAS="zh_TW pt_BR sk cs es gl"
+ALL_LINGUAS="zh_TW pt_BR sk cs es gl de_DE"
 AM_GLIB_GNU_GETTEXT
 
 AC_OUTPUT([
