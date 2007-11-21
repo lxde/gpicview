@@ -1,40 +1,46 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-14 02:40+0800\n"
-"PO-Revision-Date: 2007-09-11 21:27+0100\n"
-"Last-Translator: Festor Wailon Dacoba <festor90@gmail.com>\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2007-11-22 01:33+0800\n"
+"Last-Translator: 程任全 <crquan@gmail.com>\n"
+"Language-Team: zh_CN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Galician\n"
-"X-Poedit-Country: SPAIN\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: China\n"
+"X-Poedit-SourceCharset: utf-8\n"
 
 #: src/gpicview.c:36
 msgid "[FILE]"
-msgstr ""
+msgstr "[文件]"
 
 #: src/main-win.c:135
 msgid "Image Viewer"
-msgstr "Visor de imaxe"
+msgstr "图片查看器"
 
 #: src/main-win.c:218 src/main-win.c:1107
 msgid "Previous"
-msgstr "Anterior"
+msgstr "上一张"
 
 #: src/main-win.c:219 src/main-win.c:1108
 msgid "Next"
-msgstr "Seguinte"
+msgstr "下一张"
 
 #: src/main-win.c:223 src/main-win.c:1110
 msgid "Zoom Out"
-msgstr "Diminuir"
+msgstr "缩小"
 
 #: src/main-win.c:224 src/main-win.c:1111
 msgid "Zoom In"
-msgstr "Aumentar"
+msgstr "放大"
 
 #. percent = gtk_entry_new();    // show scale (in percentage)
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
@@ -42,51 +48,51 @@ msgstr "Aumentar"
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
 #: src/main-win.c:231 src/main-win.c:1112
 msgid "Fit Image To Window Size"
-msgstr "Redimensionar imaxe o tamaño da ventá"
+msgstr "适合窗口大小"
 
 #: src/main-win.c:233 src/main-win.c:1113
 msgid "Original Size"
-msgstr "Tamaño orixinal"
+msgstr "原始大小"
 
 #: src/main-win.c:240
 msgid " Full Screen"
-msgstr " Pantalla completa"
+msgstr "全屏幕浏览"
 
 #: src/main-win.c:244 src/main-win.c:1117
 msgid "Rotate Counterclockwise"
-msgstr "Rotar a esquerda"
+msgstr "逆时针旋转"
 
 #: src/main-win.c:246 src/main-win.c:1118
 msgid "Rotate Clockwise"
-msgstr "Rotar a dereita"
+msgstr "顺时针旋转"
 
 #: src/main-win.c:250 src/main-win.c:1120
 msgid "Open File"
-msgstr "Abrir arquivo"
+msgstr "打开文件"
 
 #: src/main-win.c:251 src/main-win.c:1121
 msgid "Save File"
-msgstr "Gardar arquivo"
+msgstr "保存文件"
 
 #: src/main-win.c:252
 msgid "Save File As"
-msgstr "Gardar arquivo coma"
+msgstr "另存为文件"
 
 #: src/main-win.c:253 src/main-win.c:1123
 msgid "Delete File"
-msgstr "Eliminar arquivo"
+msgstr "删除文件"
 
 #: src/main-win.c:256 src/pref.c:83
 msgid "Preferences"
-msgstr ""
+msgstr "偏好设定"
 
 #: src/main-win.c:739
 msgid "All Supported Images"
-msgstr "Todas as imaxes soportadas"
+msgstr "所有支持的图片格式"
 
 #: src/main-win.c:744
 msgid "All Files"
-msgstr "Tódolos arquivos"
+msgstr "所有文件"
 
 #: src/main-win.c:1060
 msgid ""
@@ -94,9 +100,9 @@ msgid ""
 "Do you want to overwrite existing file?\n"
 "(Warning: The quality of original image might be lost)"
 msgstr ""
-"O nome do arquivo que elixiu xa existe.\n"
-"¿Quere sobrescribirlo arquivo existente?\n"
-"(Coidado: Pode perdela calidade da imaxe orixinal)"
+"你选择的文件名称已经存在\n"
+"是否确定要覆盖原有文件？\n"
+"(警告：原图片的品质可能会损失)"
 
 #: src/main-win.c:1089
 msgid ""
@@ -104,56 +110,59 @@ msgid ""
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
-"¿Estas seguro que querer eliminar o arquivo actual?\n"
+"你是否确定要删除当前文件？\n"
 "\n"
-"Coidado: Una vez eliminado, o arquivo no se pode recuperar"
+"警告：一旦删除，文件就无法恢复。"
 
 #: src/main-win.c:1115
 msgid "Full Screen"
-msgstr "Pantalla completa"
+msgstr "全屏幕浏览"
 
 #: src/main-win.c:1122
 msgid "Save As"
-msgstr "Gardar coma"
+msgstr "另存为文件"
 
 #: src/main-win.c:1165
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr ""
+msgstr " * 参考 EOG 及 GThumb 的源代码"
 
 #: src/main-win.c:1166
 msgid " * Some icons are taken from gimmage"
-msgstr "* Alguns iconos foron extraídos de gimmage"
+msgstr " * 部份图示是从 gimmage 取得"
 
 #. TRANSLATORS: Replace mw string with your names, one name per line.
 #: src/main-win.c:1170
 msgid "translator-credits"
-msgstr "Festor Wailon Dacoba <Galician and Spanish translation>"
+msgstr "程任全 (cheng) <crquan@gmail.com>"
 
 #: src/main-win.c:1178
 msgid "GPicView"
-msgstr "GPicView"
+msgstr "GPicView 图片查看器"
 
 #: src/main-win.c:1180
 msgid "Copyright (C) 2007"
-msgstr "Copyright (C) 2007"
+msgstr "版权所有 (C) 2007"
 
 #: src/main-win.c:1181
 msgid "Lightweight image viewer from LXDE project"
-msgstr ""
+msgstr "来自 LXDE 计划的轻巧图片查看器"
 
 #: src/pref.c:86
 msgid "Ask before saving  images"
-msgstr ""
+msgstr "保存图片前先询问"
 
 #: src/pref.c:90
 msgid "Automatically save rotated images ( Currently only JPEG is supported )"
-msgstr ""
+msgstr "自动保存经过旋转的图片 (目前只支持 JPEG 格式)"
 
 #~ msgid ""
 #~ "Lightweight image viewer\n"
 #~ "\n"
 #~ "Developed by Hon Jen Yee (PCMan)"
 #~ msgstr ""
-#~ "Lightweight image viewer\n"
+#~ "輕巧的圖片檢視器\n"
 #~ "\n"
-#~ "Desarrollador por Hon Jen Yee (PCMan)"
+#~ "由洪任諭 (PCMan) 開發"
+
+#~ msgid " Original Size"
+#~ msgstr "原始尺寸"

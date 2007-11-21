@@ -288,8 +288,8 @@ gboolean main_win_open( MainWin* mw, const char* file_path, ZoomMode zoom )
 
         GdkRectangle area;
         get_working_area( gtk_widget_get_screen((GtkWidget*)mw), &area );
-//        g_debug("determine best zoom mode: orig size:  w=%d, h=%d", w, h);
-        // FIXME: actually mw is a little buggy :-(
+        // g_debug("determine best zoom mode: orig size:  w=%d, h=%d", w, h);
+        // FIXME: actually this is a little buggy :-(
         if( w < area.width && h < area.height && (w >= 640 || h >= 480) )
         {
             gtk_scrolled_window_set_policy( (GtkScrolledWindow*)mw->scroll, GTK_POLICY_NEVER, GTK_POLICY_NEVER );
@@ -310,7 +310,7 @@ gboolean main_win_open( MainWin* mw, const char* file_path, ZoomMode zoom )
     if( mw->zoom_mode == ZOOM_FIT )
     {
         gtk_toggle_button_set_active( (GtkToggleButton*)mw->btn_fit, TRUE );
-        main_win_fit_window_size( mw, TRUE, GDK_INTERP_BILINEAR );
+        main_win_fit_window_size( mw, FALSE, GDK_INTERP_BILINEAR );
     }
     else  if( mw->zoom_mode == ZOOM_SCALE )  // scale
     {
@@ -380,7 +380,7 @@ void on_size_allocate( GtkWidget* widget, GtkAllocation    *allocation )
             while(gtk_events_pending ())
                 gtk_main_iteration(); // makes it more fluid
 
-            main_win_fit_window_size( mw, TRUE, GDK_INTERP_BILINEAR );
+            main_win_fit_window_size( mw, FALSE, GDK_INTERP_BILINEAR );
         }
     }
 }
@@ -455,7 +455,7 @@ void on_zoom_fit( GtkToggleButton* btn, MainWin* mw )
     }
     gtk_toggle_button_set_active( (GtkToggleButton*)mw->btn_orig, FALSE );
 
-    main_win_fit_window_size( mw, TRUE, GDK_INTERP_BILINEAR );
+    main_win_fit_window_size( mw, FALSE, GDK_INTERP_BILINEAR );
 }
 
 void on_full_screen( GtkWidget* btn, MainWin* mw )
@@ -1028,7 +1028,7 @@ void rotate_image( MainWin* mw, GdkPixbufRotation angle )
     image_view_set_pixbuf( mw->img_view, mw->pix );
 
     if( mw->zoom_mode == ZOOM_FIT )
-        main_win_fit_window_size( mw, TRUE, GDK_INTERP_BILINEAR );
+        main_win_fit_window_size( mw, FALSE, GDK_INTERP_BILINEAR );
 }
 
 gboolean main_win_scale_image( MainWin* mw, double new_scale, GdkInterpType type )
