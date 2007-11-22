@@ -1,0 +1,159 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-11-10 01:49+0800\n"
+"PO-Revision-Date: 2007-21-11 20:27+0100\n"
+"Last-Translator: ElGeneralMidi <ElGeneralMidi@jabber.ubuntu-fr.org>\n"
+"Language-Team: French \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: FRANCE\n"
+
+#: src/gpicview.c:36
+msgid "[FILE]"
+msgstr ""
+
+#: src/main-win.c:135
+msgid "Image Viewer"
+msgstr "Visionneur d'images"
+
+#: src/main-win.c:218 src/main-win.c:1107
+msgid "Previous"
+msgstr "Précédent"
+
+#: src/main-win.c:219 src/main-win.c:1108
+msgid "Next"
+msgstr "Suivant"
+
+#: src/main-win.c:223 src/main-win.c:1110
+msgid "Zoom Out"
+msgstr "Zoom arrière"
+
+#: src/main-win.c:224 src/main-win.c:1111
+msgid "Zoom In"
+msgstr "Zoom avant"
+
+#. percent = gtk_entry_new();    // show scale (in percentage)
+#. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
+#. gtk_widget_set_size_request( percent, 45, -1 );
+#. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
+#: src/main-win.c:231 src/main-win.c:1112
+msgid "Fit Image To Window Size"
+msgstr "Ajuster l'image à la taille de la fenêtre"
+
+#: src/main-win.c:233 src/main-win.c:1113
+msgid "Original Size"
+msgstr "Taille originale"
+
+#: src/main-win.c:240
+msgid " Full Screen"
+msgstr " Plein Écran"
+
+#: src/main-win.c:244 src/main-win.c:1117
+msgid "Rotate Counterclockwise"
+msgstr "Rotation à gauche"
+
+#: src/main-win.c:246 src/main-win.c:1118
+msgid "Rotate Clockwise"
+msgstr "Rotation à droite"
+
+#: src/main-win.c:250 src/main-win.c:1120
+msgid "Open File"
+msgstr "Ouvrir une image"
+
+#: src/main-win.c:251 src/main-win.c:1121
+msgid "Save File"
+msgstr "Enregistrer"
+
+#: src/main-win.c:252
+msgid "Save File As"
+msgstr "Enregistrer sous"
+
+#: src/main-win.c:253 src/main-win.c:1123
+msgid "Delete File"
+msgstr "Supprimer"
+
+#: src/main-win.c:256 src/pref.c:83
+msgid "Preferences"
+msgstr "Préférences"
+
+#: src/main-win.c:739
+msgid "All Supported Images"
+msgstr "Supporte toutes les images"
+
+#: src/main-win.c:744
+msgid "All Files"
+msgstr "Tous les fichiers"
+
+#: src/main-win.c:1060
+msgid ""
+"The file name you selected already exist.\n"
+"Do you want to overwrite existing file?\n"
+"(Warning: The quality of original image might be lost)"
+msgstr ""
+"Le nom du fichier que vous avez sélectionné existent déjà.\n"
+"Voulez-vous remplacer le fichier existant?\n"
+"(Attention: La qualité de l'image originale pourraient être perdus)"
+
+#: src/main-win.c:1089
+msgid ""
+"Are you sure you want to delete current file?\n"
+"\n"
+"Warning: Once deleted, the file cannot be recovered."
+msgstr ""
+"Êtes-vous sûr de vouloir supprimer le fichier actuel?\n"
+"\n"
+"Attention: Une fois supprimé, le fichier ne pourra pas être récupéré"
+
+#: src/main-win.c:1115
+msgid "Full Screen"
+msgstr "Plein Écran"
+
+#: src/main-win.c:1122
+msgid "Save As"
+msgstr "Enregistrer sous"
+
+#: src/main-win.c:1165
+msgid " * Refer to source code of EOG image viewer and GThumb"
+msgstr ""
+
+#: src/main-win.c:1166
+msgid " * Some icons are taken from gimmage"
+msgstr "* Certaines icônes sont tirées de gimmage"
+
+#. TRANSLATORS: Replace mw string with your names, one name per line.
+#: src/main-win.c:1170
+msgid "translator-credits"
+msgstr "ElGeneralMidi <http://ubuntufromscratch.wordpress.com/>"
+
+#: src/main-win.c:1178
+msgid "GPicView"
+msgstr "GPicView"
+
+#: src/main-win.c:1180
+msgid "Copyright (C) 2007"
+msgstr "Copyright (C) 2007"
+
+#: src/main-win.c:1181
+msgid "Lightweight image viewer from LXDE project"
+msgstr "Léger visionneur d'images du projet LXDE"
+
+#: src/pref.c:86
+msgid "Ask before saving images"
+msgstr "Demandez avant d'enregistrer des images"
+
+#: src/pref.c:90
+msgid "Automatically save rotated images ( Currently only JPEG is supported )"
+msgstr "Enregistrer automatiquement la rotation des images ( Actuellement seulement le JPEG est supporté )"
+
+#~ msgid ""
+#~ "Lightweight image viewer\n"
+#~ "\n"
+#~ "Developed by Hon Jen Yee (PCMan)"
+#~ msgstr ""
+#~ "Lightweight image viewer\n"
+#~ "\n"
+#~ "Desarrollador por Hon Jen Yee (PCMan)"

@@ -1,0 +1,155 @@
+# translation of pl.po to Polish
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Grzegorz Gibas <amigib@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: pl\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-11-10 01:49+0800\n"
+"PO-Revision-Date: 2007-11-17 11:31+0100\n"
+"Last-Translator: Grzegorz Gibas <amigib@gmail.com>\n"
+"Language-Team: Polish <pl@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: src/gpicview.c:36
+msgid "[FILE]"
+msgstr "[PLIK]"
+
+#: src/main-win.c:135
+msgid "Image Viewer"
+msgstr "Przeglądarka obrazków"
+
+#: src/main-win.c:218 src/main-win.c:1107
+msgid "Previous"
+msgstr "Poprzedni"
+
+#: src/main-win.c:219 src/main-win.c:1108
+msgid "Next"
+msgstr "Następny"
+
+#: src/main-win.c:223 src/main-win.c:1110
+msgid "Zoom Out"
+msgstr "Pomniejszenie"
+
+#: src/main-win.c:224 src/main-win.c:1111
+msgid "Zoom In"
+msgstr "Powiększenie"
+
+#. percent = gtk_entry_new();    // show scale (in percentage)
+#. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
+#. gtk_widget_set_size_request( percent, 45, -1 );
+#. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
+#: src/main-win.c:231 src/main-win.c:1112
+msgid "Fit Image To Window Size"
+msgstr "Dopasuj do okna"
+
+#: src/main-win.c:233 src/main-win.c:1113
+msgid "Original Size"
+msgstr "Oryginalny rozmiar"
+
+#: src/main-win.c:240
+msgid " Full Screen"
+msgstr "Pełny ekran"
+
+#: src/main-win.c:244 src/main-win.c:1117
+msgid "Rotate Counterclockwise"
+msgstr "Obróć przeciwnie do zegara"
+
+#: src/main-win.c:246 src/main-win.c:1118
+msgid "Rotate Clockwise"
+msgstr "Obróć zgodnie z zegarem"
+
+#: src/main-win.c:250 src/main-win.c:1120
+msgid "Open File"
+msgstr "Otwórz Plik"
+
+#: src/main-win.c:251 src/main-win.c:1121
+msgid "Save File"
+msgstr "Zapisz Plik"
+
+#: src/main-win.c:252
+msgid "Save File As"
+msgstr "Zapisz Plik Jako"
+
+#: src/main-win.c:253 src/main-win.c:1123
+msgid "Delete File"
+msgstr "Usuń Plik"
+
+#: src/main-win.c:256 src/pref.c:83
+msgid "Preferences"
+msgstr "Ustawienia"
+
+#: src/main-win.c:739
+msgid "All Supported Images"
+msgstr "Wszystkie obsługiwane obrazki"
+
+#: src/main-win.c:744
+msgid "All Files"
+msgstr "Wszystkie pliki"
+
+#: src/main-win.c:1060
+msgid ""
+"The file name you selected already exist.\n"
+"Do you want to overwrite existing file?\n"
+"(Warning: The quality of original image might be lost)"
+msgstr ""
+"Plik o tej nazwie już istnieje.\n"
+"Chcesz nadpisać istniejący plik?\n"
+"(Uwaga: Jakość oryginalnego obrazka może zostać utracona)"
+
+#: src/main-win.c:1089
+msgid ""
+"Are you sure you want to delete current file?\n"
+"\n"
+"Warning: Once deleted, the file cannot be recovered."
+msgstr ""
+"Czy na pewno chcesz usunąć bieżący plik?\n"
+"\n"
+"Uwaga: Raz usunięty plik nie może zostać odzyskany."
+
+#: src/main-win.c:1115
+msgid "Full Screen"
+msgstr "Pełny Ekran"
+
+#: src/main-win.c:1122
+msgid "Save As"
+msgstr "Zapisz jako"
+
+#: src/main-win.c:1165
+msgid " * Refer to source code of EOG image viewer and GThumb"
+msgstr " * Zajrzyj do kodu przeglądarki obrazków EOG oraz GThumb"
+
+#: src/main-win.c:1166
+msgid " * Some icons are taken from gimmage"
+msgstr " * Część ikon została wzięta z programu gimmage"
+
+#. TRANSLATORS: Replace mw string with your names, one name per line.
+#: src/main-win.c:1170
+msgid "translator-credits"
+msgstr "Grzegorz Gibas"
+
+#: src/main-win.c:1178
+msgid "GPicView"
+msgstr "GPicView"
+
+#: src/main-win.c:1180
+msgid "Copyright (C) 2007"
+msgstr "Prawa Zastrzeżone (C) 2007"
+
+#: src/main-win.c:1181
+msgid "Lightweight image viewer from LXDE project"
+msgstr "Bardzo lekka przeglądarka obrazkóz z projektu LXDE"
+
+#: src/pref.c:86
+msgid "Ask before saving  images"
+msgstr "Spytaj zanim zapiszesz obrazki"
+
+#: src/pref.c:90
+msgid "Automatically save rotated images ( Currently only JPEG is supported )"
+msgstr "Automatycznie zapisz obrócone obrazki (W tej chwili tylko JPEG jest obsługiwany)"
+
