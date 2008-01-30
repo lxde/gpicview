@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-14 02:40+0800\n"
+"POT-Creation-Date: 2008-01-30 12:15+0800\n"
 "PO-Revision-Date: 2007-11-22 01:33+0800\n"
 "Last-Translator: 程任全 <crquan@gmail.com>\n"
 "Language-Team: zh_CN <LL@li.org>\n"
@@ -22,23 +22,23 @@ msgstr ""
 msgid "[FILE]"
 msgstr "[文件]"
 
-#: src/main-win.c:135
+#: src/main-win.c:136
 msgid "Image Viewer"
 msgstr "图片查看器"
 
-#: src/main-win.c:218 src/main-win.c:1107
+#: src/main-win.c:219 src/main-win.c:1108
 msgid "Previous"
 msgstr "上一张"
 
-#: src/main-win.c:219 src/main-win.c:1108
+#: src/main-win.c:220 src/main-win.c:1109
 msgid "Next"
 msgstr "下一张"
 
-#: src/main-win.c:223 src/main-win.c:1110
+#: src/main-win.c:224 src/main-win.c:1111
 msgid "Zoom Out"
 msgstr "缩小"
 
-#: src/main-win.c:224 src/main-win.c:1111
+#: src/main-win.c:225 src/main-win.c:1112
 msgid "Zoom In"
 msgstr "放大"
 
@@ -46,55 +46,55 @@ msgstr "放大"
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
 #. gtk_widget_set_size_request( percent, 45, -1 );
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
-#: src/main-win.c:231 src/main-win.c:1112
+#: src/main-win.c:232 src/main-win.c:1113
 msgid "Fit Image To Window Size"
 msgstr "适合窗口大小"
 
-#: src/main-win.c:233 src/main-win.c:1113
+#: src/main-win.c:234 src/main-win.c:1114
 msgid "Original Size"
 msgstr "原始大小"
 
-#: src/main-win.c:240
+#: src/main-win.c:241
 msgid " Full Screen"
 msgstr "全屏幕浏览"
 
-#: src/main-win.c:244 src/main-win.c:1117
+#: src/main-win.c:245 src/main-win.c:1118
 msgid "Rotate Counterclockwise"
 msgstr "逆时针旋转"
 
-#: src/main-win.c:246 src/main-win.c:1118
+#: src/main-win.c:247 src/main-win.c:1119
 msgid "Rotate Clockwise"
 msgstr "顺时针旋转"
 
-#: src/main-win.c:250 src/main-win.c:1120
+#: src/main-win.c:251 src/main-win.c:1121
 msgid "Open File"
 msgstr "打开文件"
 
-#: src/main-win.c:251 src/main-win.c:1121
+#: src/main-win.c:252 src/main-win.c:1122
 msgid "Save File"
 msgstr "保存文件"
 
-#: src/main-win.c:252
+#: src/main-win.c:253
 msgid "Save File As"
 msgstr "另存为文件"
 
-#: src/main-win.c:253 src/main-win.c:1123
+#: src/main-win.c:254 src/main-win.c:1124
 msgid "Delete File"
 msgstr "删除文件"
 
-#: src/main-win.c:256 src/pref.c:83
+#: src/main-win.c:257 src/pref.c:99
 msgid "Preferences"
 msgstr "偏好设定"
 
-#: src/main-win.c:739
+#: src/main-win.c:740
 msgid "All Supported Images"
 msgstr "所有支持的图片格式"
 
-#: src/main-win.c:744
+#: src/main-win.c:745
 msgid "All Files"
 msgstr "所有文件"
 
-#: src/main-win.c:1060
+#: src/main-win.c:1061
 msgid ""
 "The file name you selected already exist.\n"
 "Do you want to overwrite existing file?\n"
@@ -104,7 +104,7 @@ msgstr ""
 "是否确定要覆盖原有文件？\n"
 "(警告：原图片的品质可能会损失)"
 
-#: src/main-win.c:1089
+#: src/main-win.c:1090
 msgid ""
 "Are you sure you want to delete current file?\n"
 "\n"
@@ -114,21 +114,17 @@ msgstr ""
 "\n"
 "警告：一旦删除，文件就无法恢复。"
 
-#: src/main-win.c:1115
+#: src/main-win.c:1116
 msgid "Full Screen"
 msgstr "全屏幕浏览"
 
-#: src/main-win.c:1122
+#: src/main-win.c:1123
 msgid "Save As"
 msgstr "另存为文件"
 
-#: src/main-win.c:1165
+#: src/main-win.c:1166
 msgid " * Refer to source code of EOG image viewer and GThumb"
 msgstr " * 参考 EOG 及 GThumb 的源代码"
-
-#: src/main-win.c:1166
-msgid " * Some icons are taken from gimmage"
-msgstr " * 部份图示是从 gimmage 取得"
 
 #. TRANSLATORS: Replace mw string with your names, one name per line.
 #: src/main-win.c:1170
@@ -147,13 +143,29 @@ msgstr "版权所有 (C) 2007"
 msgid "Lightweight image viewer from LXDE project"
 msgstr "来自 LXDE 计划的轻巧图片查看器"
 
-#: src/pref.c:86
+#: src/pref.c:85
+msgid ""
+"GPicView will become the default viewer for all supported image files on "
+"your system.\n"
+"(This will be done through 'xdg-mime' program)\n"
+"\n"
+"<b>Are you sure you really want to do this?</b>"
+msgstr ""
+
+#: src/pref.c:102
 msgid "Ask before saving  images"
 msgstr "保存图片前先询问"
 
-#: src/pref.c:90
+#: src/pref.c:106
 msgid "Automatically save rotated images ( Currently only JPEG is supported )"
 msgstr "自动保存经过旋转的图片 (目前只支持 JPEG 格式)"
+
+#: src/pref.c:110
+msgid "Make GPicview the default viewer for images"
+msgstr ""
+
+#~ msgid " * Some icons are taken from gimmage"
+#~ msgstr " * 部份图示是从 gimmage 取得"
 
 #~ msgid ""
 #~ "Lightweight image viewer\n"

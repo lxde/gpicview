@@ -1,3 +1,11 @@
+gpicview (0.1.8ubuntu1) feisty; urgency=low
+
+  * Add new locale: fr, nl
+  * Use better-looking icons for rotation buttons.
+  * Setting gpicview the default image viewer in preference dialog.
+
+ -- PCMan <pcman.tw@gmail.com>  Wed, 30 Jan 2008 04:31:03 +0000
+
 gpicview (0.1.6ubuntu1) gutsy; urgency=low
 
   * Rewrite in plain C language, remove all C++ dependencies

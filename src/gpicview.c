@@ -87,7 +87,7 @@ int main(int argc, char *argv[])
 
     load_preferences();
 
-    win = main_win_new();
+    win = (MainWin*)main_win_new();
 
     // FIXME: need to process multiple files...
     if( files )

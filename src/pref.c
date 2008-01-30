@@ -77,25 +77,45 @@ void save_preferences()
     g_free( path );
 }
 
+static void on_set_default( GtkButton* btn, gpointer user_data )
+{
+    GtkWindow* parent=(GtkWindow*)user_data;
+    GtkWidget* dlg=gtk_message_dialog_new_with_markup( parent, 0,
+            GTK_MESSAGE_WARNING, GTK_BUTTONS_OK_CANCEL,
+            _("GPicView will become the default viewer for all supported image files on your system.\n"
+                "(This will be done through \'xdg-mime\' program)\n\n"
+                "<b>Are you sure you really want to do this?</b>") );
+    if( gtk_dialog_run( (GtkDialog*)dlg ) == GTK_RESPONSE_OK )
+    {
+        const char cmd[]="xdg-mime default gpicview.desktop image/bmp image/gif image/jpeg image/jpg image/png image/tiff image/x-bmp image/x-pcx image/x-tga image/x-portable-pixmap image/x-portable-bitmap image/x-targa image/x-portable-greymap application/pcx image/svg+xml image/svg-xml";
+        g_spawn_command_line_sync( cmd, NULL, NULL, NULL, NULL );
+    }
+    gtk_widget_destroy( dlg );
+}
+
 void edit_preferences( GtkWindow* parent )
 {
-    GtkWidget*auto_save_btn, *ask_before_save_btn;
+    GtkWidget*auto_save_btn, *ask_before_save_btn, *set_default_btn;
     GtkDialog* dlg = (GtkDialog*)gtk_dialog_new_with_buttons( _("Preferences"), parent, GTK_DIALOG_MODAL,
                                                                GTK_STOCK_CLOSE ,GTK_RESPONSE_CLOSE, NULL );
 
     ask_before_save_btn = gtk_check_button_new_with_label( _("Ask before saving  images") );
-    gtk_toggle_button_set_active( ask_before_save_btn, pref.ask_before_save );
-    gtk_box_pack_start( dlg->vbox, ask_before_save_btn, FALSE, FALSE, 2 );
+    gtk_toggle_button_set_active( (GtkToggleButton*)ask_before_save_btn, pref.ask_before_save );
+    gtk_box_pack_start( (GtkBox*)dlg->vbox, ask_before_save_btn, FALSE, FALSE, 2 );
 
     auto_save_btn = gtk_check_button_new_with_label( _("Automatically save rotated images ( Currently only JPEG is supported )") );
-    gtk_toggle_button_set_active( auto_save_btn, pref.auto_save_rotated );
-    gtk_box_pack_start( dlg->vbox, auto_save_btn, FALSE, FALSE, 2 );
+    gtk_toggle_button_set_active( (GtkToggleButton*)auto_save_btn, pref.auto_save_rotated );
+    gtk_box_pack_start( (GtkBox*)dlg->vbox, auto_save_btn, FALSE, FALSE, 2 );
+
+    set_default_btn = gtk_button_new_with_label( _("Make GPicview the default viewer for images") );
+    g_signal_connect( set_default_btn, "clicked", G_CALLBACK(on_set_default), parent );
+    gtk_box_pack_start( (GtkBox*)dlg->vbox, set_default_btn, FALSE, FALSE, 2 );
 
     gtk_widget_show_all( (GtkWidget*)dlg->vbox );
     gtk_dialog_run( dlg );
 
-    pref.ask_before_save = gtk_toggle_button_get_active( ask_before_save_btn );
-    pref.auto_save_rotated = gtk_toggle_button_get_active( auto_save_btn );
+    pref.ask_before_save = gtk_toggle_button_get_active( (GtkToggleButton*)ask_before_save_btn );
+    pref.auto_save_rotated = gtk_toggle_button_get_active( (GtkToggleButton*)auto_save_btn );
 
     gtk_widget_destroy( (GtkWidget*)dlg );
 }

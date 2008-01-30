@@ -36,6 +36,7 @@
 #include "pref.h"
 
 #include "image-view.h"
+#include "image-list.h"
 #include "working-area.h"
 #include "ptk-menu.h"
 #include "jpeg-tran.h"
@@ -1025,7 +1026,7 @@ void rotate_image( MainWin* mw, GdkPixbufRotation angle )
     rpix = gdk_pixbuf_rotate_simple( mw->pix, angle );
     g_object_unref( mw->pix );
     mw->pix = rpix;
-    image_view_set_pixbuf( mw->img_view, mw->pix );
+    image_view_set_pixbuf( (ImageView*)mw->img_view, mw->pix );
 
     if( mw->zoom_mode == ZOOM_FIT )
         main_win_fit_window_size( mw, FALSE, GDK_INTERP_BILINEAR );
@@ -1039,7 +1040,7 @@ gboolean main_win_scale_image( MainWin* mw, double new_scale, GdkInterpType type
         return TRUE;
     }
     mw->scale = new_scale;
-    image_view_set_scale( mw->img_view, new_scale, type );
+    image_view_set_scale( (ImageView*)mw->img_view, new_scale, type );
 
     return TRUE;
 }
@@ -1163,7 +1164,6 @@ void on_about( GtkWidget* menu, MainWin* mw )
         "洪任諭 Hong Jen Yee <pcman.tw@gmail.com>",
         "Martin Siggel <martinsiggel@googlemail.com>",
         _(" * Refer to source code of EOG image viewer and GThumb"),
-        _(" * Some icons are taken from gimmage"),
         NULL
     };
     /* TRANSLATORS: Replace mw string with your names, one name per line. */

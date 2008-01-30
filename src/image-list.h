@@ -34,6 +34,8 @@ typedef struct _ImageList
     GList* current;
 } ImageList;
 
+ImageList* image_list_new();
+
 const char* image_list_get_dir( ImageList* il );
 
 gboolean image_list_open_dir( ImageList* il, const char* path, GError** error);
