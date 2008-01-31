@@ -24,6 +24,7 @@
 #endif
 
 #include <glib/gi18n.h>
+#include <glib/gstdio.h>
 
 #include <stdio.h>
 #include "pref.h"

@@ -32,6 +32,7 @@
 #include <string.h>
 #include <errno.h>
 #include <math.h>
+#include <stdlib.h>
 
 #include "pref.h"
 
@@ -175,7 +176,7 @@ void main_win_init( MainWin*mw )
     vadj->page_increment = 10;
     gtk_adjustment_changed(vadj);
 
-    image_view_set_adjustments( mw->img_view, hadj, vadj );    // dirty hack :-(
+    image_view_set_adjustments( IMAGE_VIEW(mw->img_view), hadj, vadj );    // dirty hack :-(
     gtk_scrolled_window_add_with_viewport( (GtkScrolledWindow*)mw->scroll, mw->evt_box );
     GtkWidget* viewport = gtk_bin_get_child( (GtkBin*)mw->scroll );
     gtk_viewport_set_shadow_type( (GtkViewport*)viewport, GTK_SHADOW_NONE );

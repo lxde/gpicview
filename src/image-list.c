@@ -30,6 +30,8 @@
 
 static GSList* supported_formats = NULL;
 
+static gboolean image_list_is_file_supported( const char* name );
+
 ImageList* image_list_new()
 {
     ImageList* il = g_slice_new0( ImageList );
@@ -91,7 +93,7 @@ gboolean image_list_open_dir( ImageList* il, const char* path, GError** error )
     il->dir_path = g_strdup( path );
 
     const char* name = NULL;
-    while( name = g_dir_read_name ( dir ) )
+    while( ( name = g_dir_read_name ( dir ) ) )
     {
 //        char* file_path = g_build_filename( dir_path, name, NULL );
         if( image_list_is_file_supported( name ) )
@@ -158,7 +160,7 @@ void image_list_close( ImageList* il )
     il->dir_path = NULL;
 }
 
-gboolean image_list_is_file_supported( const char* name )
+static gboolean image_list_is_file_supported( const char* name )
 {
     const char* ext = strrchr( name, '.' );
     if( ! ext )

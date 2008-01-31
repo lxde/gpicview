@@ -30,7 +30,7 @@ void ptk_menu_add_items_from_data( GtkWidget* menu,
                                    GtkAccelGroup* accel_group )
 {
   PtkMenuItemEntry* ent;
-  GtkWidget* menu_item;
+  GtkWidget* menu_item = NULL;
   GtkWidget* sub_menu;
   GtkWidget* image;
   GSList* radio_group = NULL;

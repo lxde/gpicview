@@ -52,6 +52,8 @@ const char* image_list_get_prev( ImageList* il );
 
 const char* image_list_get_last( ImageList* il );
 
+void image_list_free( ImageList* il );
+
 void image_list_close( ImageList* il );
 
 gboolean image_list_is_empty( ImageList* il );

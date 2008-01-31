@@ -166,8 +166,8 @@ gboolean on_expose_event( GtkWidget* widget, GdkEventExpose* evt )
 
 void image_view_paint( ImageView* iv, GdkEventExpose* evt )
 {
-    GtkWidget* widget = (GtkWidget*)iv;
 /*
+    GtkWidget* widget = (GtkWidget*)iv;
     if( cached )
     {
 //        gdk_draw_drawable( drawable, widget->style->fg_gc[GTK_STATE_NORMAL], buffer,
@@ -293,7 +293,7 @@ void image_view_set_scale( ImageView* iv, gdouble new_scale, GdkInterpType type 
 {
     if( new_scale == iv->scale )
         return;
-    gdouble factor = new_scale / iv->scale;
+//    gdouble factor = new_scale / iv->scale;
     iv->scale = new_scale;
     if( iv->pix )
     {
