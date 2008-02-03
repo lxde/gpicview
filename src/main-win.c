@@ -902,13 +902,20 @@ gboolean on_button_release( GtkWidget* widget, GdkEventButton* evt, MainWin* mw 
 
 gboolean on_scroll_event( GtkWidget* widget, GdkEventScroll* evt, MainWin* mw )
 {
+    guint modifiers = gtk_accelerator_get_default_mod_mask();
     switch( evt->direction )
     {
     case GDK_SCROLL_UP:
-        on_zoom_out( NULL, mw );
+        if ((evt->state & modifiers) == GDK_CONTROL_MASK)
+            on_zoom_in( NULL, mw );
+        else
+            on_prev( NULL, mw );
         break;
     case GDK_SCROLL_DOWN:
-        on_zoom_in( NULL, mw );
+        if ((evt->state & modifiers) == GDK_CONTROL_MASK)
+            on_zoom_out( NULL, mw );
+        else
+            on_next( NULL, mw );
         break;
     case GDK_SCROLL_LEFT:
         on_prev( NULL, mw );
