@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007 by PCMan (Hong Jen Yee)   *
+ *   Copyright (C) 2007, 2008 by PCMan (Hong Jen Yee)   *
  *   pcman.tw@gmail.com   *
  *                                                                         *
  *   mw program is free software; you can redistribute it and/or modify  *
@@ -186,7 +186,7 @@ void main_win_init( MainWin*mw )
 
     // build toolbar
     mw->tooltips = gtk_tooltips_new();
-#if GTK_CHECK_VERSION(2, 10, 0)
+#if GTK_CHECK_VERSION(2, 8, 0)
     g_object_ref_sink(mw->tooltips);
 #else
     gtk_object_sink((GtkObject*)mw->tooltips);
