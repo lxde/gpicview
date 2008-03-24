@@ -1,0 +1,166 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-01-30 12:15+0800\n"
+"PO-Revision-Date: 2008-03-03 16:19+0900\n"
+"Last-Translator: Hironao Komatsu <hironao@users.sourceforge.net>\n"
+"Language-Team: Japanese <hironao@users.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/gpicview.c:36
+msgid "[FILE]"
+msgstr "[ファイル]"
+
+#: src/main-win.c:136
+msgid "Image Viewer"
+msgstr "イメージビューワ"
+
+#: src/main-win.c:219 src/main-win.c:1108
+msgid "Previous"
+msgstr "前へ"
+
+#: src/main-win.c:220 src/main-win.c:1109
+msgid "Next"
+msgstr "次へ"
+
+#: src/main-win.c:224 src/main-win.c:1111
+msgid "Zoom Out"
+msgstr "縮小"
+
+#: src/main-win.c:225 src/main-win.c:1112
+msgid "Zoom In"
+msgstr "拡大"
+
+#. percent = gtk_entry_new();    // show scale (in percentage)
+#. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
+#. gtk_widget_set_size_request( percent, 45, -1 );
+#. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
+#: src/main-win.c:232 src/main-win.c:1113
+msgid "Fit Image To Window Size"
+msgstr "ウィンドウサイズに合わせる"
+
+#: src/main-win.c:234 src/main-win.c:1114
+msgid "Original Size"
+msgstr "元のサイズに"
+
+#: src/main-win.c:241
+msgid " Full Screen"
+msgstr " フルスクリーン"
+
+#: src/main-win.c:245 src/main-win.c:1118
+msgid "Rotate Counterclockwise"
+msgstr "反時計回りに回転する"
+
+#: src/main-win.c:247 src/main-win.c:1119
+msgid "Rotate Clockwise"
+msgstr "時計回りに回転する"
+
+#: src/main-win.c:251 src/main-win.c:1121
+msgid "Open File"
+msgstr "ファイルを開く"
+
+#: src/main-win.c:252 src/main-win.c:1122
+msgid "Save File"
+msgstr "ファイルを保存する"
+
+#: src/main-win.c:253
+msgid "Save File As"
+msgstr "名前をつけて保存"
+
+#: src/main-win.c:254 src/main-win.c:1124
+msgid "Delete File"
+msgstr "ファイルを削除する"
+
+#: src/main-win.c:257 src/pref.c:99
+msgid "Preferences"
+msgstr "設定"
+
+#: src/main-win.c:740
+msgid "All Supported Images"
+msgstr "対応するすべての画像ファイル"
+
+#: src/main-win.c:745
+msgid "All Files"
+msgstr "すべてのファイル"
+
+#: src/main-win.c:1061
+msgid ""
+"The file name you selected already exist.\n"
+"Do you want to overwrite existing file?\n"
+"(Warning: The quality of original image might be lost)"
+msgstr ""
+"そのファイル名は既に存在します。\n"
+"上書きしますか？\n"
+"(警告: 画質が劣化する恐れがあります)"
+
+#: src/main-win.c:1090
+msgid ""
+"Are you sure you want to delete current file?\n"
+"\n"
+"Warning: Once deleted, the file cannot be recovered."
+msgstr ""
+"このファイルを本当に削除しますか？\n"
+"\n"
+"警告: 一度削除したファイルは復元できません"
+
+#: src/main-win.c:1116
+msgid "Full Screen"
+msgstr "フルスクリーン"
+
+#: src/main-win.c:1123
+msgid "Save As"
+msgstr "名前をつけて保存"
+
+#: src/main-win.c:1166
+msgid " * Refer to source code of EOG image viewer and GThumb"
+msgstr " * EOG イメージビューワと GThumb のソースコードの参照"
+
+#. TRANSLATORS: Replace mw string with your names, one name per line.
+#: src/main-win.c:1170
+msgid "translator-credits"
+msgstr "翻訳者クレジット"
+
+#: src/main-win.c:1178
+msgid "GPicView"
+msgstr "GPicView"
+
+#: src/main-win.c:1180
+msgid "Copyright (C) 2007"
+msgstr "Copyright (C) 2007"
+
+#: src/main-win.c:1181
+msgid "Lightweight image viewer from LXDE project"
+msgstr "LXDE プロジェクトの軽量イメージビューワ"
+
+#: src/pref.c:85
+msgid ""
+"GPicView will become the default viewer for all supported image files on "
+"your system.\n"
+"(This will be done through 'xdg-mime' program)\n"
+"\n"
+"<b>Are you sure you really want to do this?</b>"
+msgstr ""
+"GPicView は対応するすべての画像ファイルに対して、あなたのシステムでの標準のイメージビューワになります。\n"
+"('xdg-mime' プログラムによって)\n"
+"\n"
+"<b>そうなることを本当に希望しますか？</b>"
+
+#: src/pref.c:102
+msgid "Ask before saving  images"
+msgstr "ファイルの保存の前に確認する"
+
+#: src/pref.c:106
+msgid "Automatically save rotated images ( Currently only JPEG is supported )"
+msgstr "回転された画像を自動で保存する (現在はJPEGのみサポート)"
+
+#: src/pref.c:110
+msgid "Make GPicview the default viewer for images"
+msgstr "GPicViewを標準のイメージビューワにする"
