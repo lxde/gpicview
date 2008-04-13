@@ -24,7 +24,7 @@ msgstr "[FÁJL]"
 
 #: src/main-win.c:137
 msgid "Image Viewer"
-msgstr "Képnéző"
+msgstr "Képmegjelenítő"
 
 #: src/main-win.c:220
 #: src/main-win.c:1116
@@ -39,12 +39,12 @@ msgstr "Következő"
 #: src/main-win.c:225
 #: src/main-win.c:1119
 msgid "Zoom Out"
-msgstr "Távolít"
+msgstr "Kicsinyítés"
 
 #: src/main-win.c:226
 #: src/main-win.c:1120
 msgid "Zoom In"
-msgstr "Közelít"
+msgstr "Nagyítás"
 
 #. percent = gtk_entry_new();    // show scale (in percentage)
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
@@ -67,26 +67,26 @@ msgstr "Teljes képernyő"
 #: src/main-win.c:246
 #: src/main-win.c:1126
 msgid "Rotate Counterclockwise"
-msgstr "Órával szemben forgat"
+msgstr "Forgatás balra"
 
 #: src/main-win.c:248
 #: src/main-win.c:1127
 msgid "Rotate Clockwise"
-msgstr "Óra iránt forgat"
+msgstr "Forgatás jobbra"
 
 #: src/main-win.c:252
 #: src/main-win.c:1129
 msgid "Open File"
-msgstr "Fájl megnyitása"
+msgstr "Megnyitás"
 
 #: src/main-win.c:253
 #: src/main-win.c:1130
 msgid "Save File"
-msgstr "Fájl mentése"
+msgstr "Mentés"
 
 #: src/main-win.c:254
 msgid "Save File As"
-msgstr "Fájl mentése mint"
+msgstr "Mentés másként"
 
 #: src/main-win.c:255
 #: src/main-win.c:1132
@@ -96,11 +96,11 @@ msgstr "Fájl törlése"
 #: src/main-win.c:258
 #: src/pref.c:100
 msgid "Preferences"
-msgstr "Jellemzők"
+msgstr "Beállítások"
 
 #: src/main-win.c:741
 msgid "All Supported Images"
-msgstr "Minden támogatott kép"
+msgstr "Támogatott képek"
 
 #: src/main-win.c:746
 msgid "All Files"
@@ -113,7 +113,7 @@ msgid ""
 "(Warning: The quality of original image might be lost)"
 msgstr ""
 "A választott fájlnév már létezik.\n"
-"Felülírod a létező fájlt?\n"
+"Felülírja a létező fájlt?\n"
 "(Figyelem: Az eredeti kép minősége romolhat)"
 
 #: src/main-win.c:1098
@@ -122,7 +122,7 @@ msgid ""
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
-"Törlöd ezt a fájlt?\n"
+"Valóban törli ezt a fájlt?\n"
 "\n"
 "Figyelem: Törlés után a fájlt nem lehet visszaállítani."
 
@@ -132,11 +132,11 @@ msgstr "Teljes képernyő"
 
 #: src/main-win.c:1131
 msgid "Save As"
-msgstr "Mentés mint"
+msgstr "Mentés másként"
 
 #: src/main-win.c:1174
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr " * Lásd az EOG képnéző és GThumb forráskódját"
+msgstr " * Lásd az EOG és GThumb képmegjelenítő forráskódját"
 
 #. TRANSLATORS: Replace mw string with your names, one name per line.
 #: src/main-win.c:1178
@@ -162,10 +162,10 @@ msgid ""
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"A GPicView lesz az alap néző a támogatott képfájlokhoz a rendszereden.\n"
-"(Az 'xdg-mime' program teszi majd azzá)\n"
+"A GPicView lesz az alap néző a támogatott képfájlokhoz\n"
+"(az 'xdg-mime' program futtatását követően)\n"
 "\n"
-"<b>Ezt akarod?</b>"
+"<b>Valóban ezt kívánja?</b>"
 
 #: src/pref.c:103
 msgid "Ask before saving  images"
@@ -173,9 +173,9 @@ msgstr "Kérdés a képek mentése előtt"
 
 #: src/pref.c:107
 msgid "Automatically save rotated images ( Currently only JPEG is supported )"
-msgstr "Automatán menti az elforgatott képeket ( Még csak a JPEG támogatott )"
+msgstr "Az elforgatott képek automatikus mentése ( csak a JPEG támogatott )"
 
 #: src/pref.c:111
 msgid "Make GPicview the default viewer for images"
-msgstr "Legyen a GPicview az alap képnéző"
+msgstr "Legyen a GPicview az alap képmegjelenítő"
 
