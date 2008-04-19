@@ -41,7 +41,7 @@ void image_view_init( ImageView* iv )
     iv->scale =  1.0;
     iv->interp_type = GDK_INTERP_BILINEAR;
     iv->idle_handler = 0;
-    GTK_WIDGET_SET_FLAGS( (GtkWidget*)iv, GTK_CAN_FOCUS );
+    GTK_WIDGET_SET_FLAGS( (GtkWidget*)iv, GTK_CAN_FOCUS | GTK_APP_PAINTABLE );
 }
 
 void image_view_class_init( ImageViewClass* klass )

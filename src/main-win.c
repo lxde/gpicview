@@ -518,7 +518,7 @@ void on_orig_size( GtkToggleButton* btn, MainWin* mw )
     main_win_center_image( mw ); // FIXME:  mw doesn't work well. Why?
 }
 
-void on_next( GtkWidget* btn, MainWin* mw )
+void on_prev( GtkWidget* btn, MainWin* mw )
 {
     const char* name;
     if( image_list_is_empty( mw->img_list ) )
@@ -540,7 +540,7 @@ void on_next( GtkWidget* btn, MainWin* mw )
     }
 }
 
-void on_prev( GtkWidget* btn, MainWin* mw )
+void on_next( GtkWidget* btn, MainWin* mw )
 {
     if( image_list_is_empty( mw->img_list ) )
         return;

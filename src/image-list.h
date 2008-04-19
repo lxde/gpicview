@@ -24,6 +24,11 @@
 #include <glib.h>
 #include <gtk/gtk.h>
 
+/* for stat and time_t */
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
+
 /**
     @author PCMan (Hong Jen Yee) <pcman.tw@gmail.com>
 */
@@ -32,6 +37,7 @@ typedef struct _ImageList
     gchar* dir_path;
     GList* list;
     GList* current;
+    time_t mtime;
 } ImageList;
 
 ImageList* image_list_new();

@@ -81,18 +81,25 @@ gboolean image_list_has_multiple_files( ImageList* il )
 
 gboolean image_list_open_dir( ImageList* il, const char* path, GError** error )
 {
+    const char* name = NULL;
+    GDir* dir;
+    struct stat stbuf;
+
     if( il->dir_path && 0 == strcmp( path, il->dir_path ) )
         return TRUE;
 
     image_list_close( il );
 
-    GDir* dir = g_dir_open( path, 0, error );
+    if( stat( path, &stbuf ) == -1 )
+        return FALSE;
+
+    dir = g_dir_open( path, 0, error );
     if( ! dir )
         return FALSE;
 
     il->dir_path = g_strdup( path );
+    il->mtime = stbuf.st_mtime;
 
-    const char* name = NULL;
     while( ( name = g_dir_read_name ( dir ) ) )
     {
 //        char* file_path = g_build_filename( dir_path, name, NULL );
@@ -155,6 +162,7 @@ void image_list_close( ImageList* il )
     g_list_foreach( il->list, (GFunc)g_free, NULL );
     g_list_free( il->list );
     il->list = NULL;
+    il->mtime = 0;
 
     g_free( il->dir_path );
     il->dir_path = NULL;
