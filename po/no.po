@@ -1,0 +1,181 @@
+# Norwegian translations for gpicview package.
+# Copyright (C) 2008 THE gpicview'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gpicview package.
+# Jon Ole Killie <Jon.Ole.Killie@gmail.com>, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gpicview 0.1.7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-01-30 12:15+0800\n"
+"PO-Revision-Date: 2008-04-10 21:11+0100\n"
+"Last-Translator: Jon Ole Killie <Jon.Ole.Killie@gmail.com>\n"
+"Language-Team: Norwegian Bokmål\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ASCII\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/gpicview.c:36
+msgid "[FILE]"
+msgstr "[FIL]"
+
+#: src/main-win.c:136
+msgid "Image Viewer"
+msgstr "Bildevisning"
+
+#: src/main-win.c:219
+#: src/main-win.c:1108
+msgid "Previous"
+msgstr "Forrige"
+
+#: src/main-win.c:220
+#: src/main-win.c:1109
+msgid "Next"
+msgstr "Neste"
+
+#: src/main-win.c:224
+#: src/main-win.c:1111
+msgid "Zoom Out"
+msgstr "Zoom ut"
+
+#: src/main-win.c:225
+#: src/main-win.c:1112
+msgid "Zoom In"
+msgstr "Zoom inn"
+
+#. percent = gtk_entry_new();    // show scale (in percentage)
+#. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
+#. gtk_widget_set_size_request( percent, 45, -1 );
+#. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
+#: src/main-win.c:232
+#: src/main-win.c:1113
+msgid "Fit Image To Window Size"
+msgstr "Tilpass bildet til vinduet"
+
+#: src/main-win.c:234
+#: src/main-win.c:1114
+msgid "Original Size"
+msgstr "Originalstørrelse"
+
+#: src/main-win.c:241
+msgid " Full Screen"
+msgstr "Fullskjerm"
+
+#: src/main-win.c:245
+#: src/main-win.c:1118
+msgid "Rotate Counterclockwise"
+msgstr "Roter mot klokken"
+
+#: src/main-win.c:247
+#: src/main-win.c:1119
+msgid "Rotate Clockwise"
+msgstr "Roter med klokken"
+
+#: src/main-win.c:251
+#: src/main-win.c:1121
+msgid "Open File"
+msgstr "Åpne fil"
+
+#: src/main-win.c:252
+#: src/main-win.c:1122
+msgid "Save File"
+msgstr "Lagre fil"
+
+#: src/main-win.c:253
+msgid "Save File As"
+msgstr "Lagre fil som"
+
+#: src/main-win.c:254
+#: src/main-win.c:1124
+msgid "Delete File"
+msgstr "Slett fil"
+
+#: src/main-win.c:257
+#: src/pref.c:99
+msgid "Preferences"
+msgstr "Innstillinger"
+
+#: src/main-win.c:740
+msgid "All Supported Images"
+msgstr "Alle støttede bilder"
+
+#: src/main-win.c:745
+msgid "All Files"
+msgstr "Alle filer"
+
+#: src/main-win.c:1061
+msgid ""
+"The file name you selected already exist.\n"
+"Do you want to overwrite existing file?\n"
+"(Warning: The quality of original image might be lost)"
+msgstr ""
+"Det finnes allerede en fil med angitt filnavn.\n"
+"Vil du overskrive eksisterende fil?\n"
+"(Advarsel: Kvaliteten til originalbildet kan gå tapt)"
+
+#: src/main-win.c:1090
+msgid ""
+"Are you sure you want to delete current file?\n"
+"\n"
+"Warning: Once deleted, the file cannot be recovered."
+msgstr ""
+"Vil du virkelig slette denne filen?\n"
+"\n"
+"Advarsel: Slettede filer kan ikke gjenopprettes."
+
+#: src/main-win.c:1116
+msgid "Full Screen"
+msgstr "Fullskjerm"
+
+#: src/main-win.c:1123
+msgid "Save As"
+msgstr "Lagre som"
+
+#: src/main-win.c:1166
+msgid " * Refer to source code of EOG image viewer and GThumb"
+msgstr " * Se kildekode for EOG bildevisning og GThumb"
+
+#. TRANSLATORS: Replace mw string with your names, one name per line.
+#: src/main-win.c:1170
+msgid "translator-credits"
+msgstr "Jon Ole Killie"
+
+#: src/main-win.c:1178
+msgid "GPicView"
+msgstr "GPicView"
+
+#: src/main-win.c:1180
+msgid "Copyright (C) 2007"
+msgstr "Copyright (C) 2007"
+
+#: src/main-win.c:1181
+msgid "Lightweight image viewer from LXDE project"
+msgstr "Enkel bildeviser fra LXDE prosjektet"
+
+#: src/pref.c:85
+msgid ""
+"GPicView will become the default viewer for all supported image files on your system.\n"
+"(This will be done through 'xdg-mime' program)\n"
+"\n"
+"<b>Are you sure you really want to do this?</b>"
+msgstr ""
+"GPicView vil bli standard bildeviser for alle støttede bilder på systemet.\n"
+"(Dette utføres ved hjelp av 'xdg-mime' programmet)\n"
+"\n"
+"<b>Vil du virkelig gjøre dette?</b>"
+
+#: src/pref.c:102
+msgid "Ask before saving  images"
+msgstr "Spør bruker før lagring av bilder"
+
+#: src/pref.c:106
+msgid "Automatically save rotated images ( Currently only JPEG is supported )"
+msgstr "Automatisk lagre roterte bilder (For øyeblikket støttes kun JPEG bilder)"
+
+#: src/pref.c:110
+msgid "Make GPicview the default viewer for images"
+msgstr "Gjør GPicView til standard bildeviser for alle bilder"
+
+#~ msgid " * Some icons are taken from gimmage"
+#~ msgstr " * Enkelte ikoner er tatt fra gimmage"
