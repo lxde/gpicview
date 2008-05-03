@@ -47,5 +47,5 @@ echo Prefix..........................: $prefix
 echo
 echo The binary will be installed in $prefix/bin
 echo
-echo http://lxde.sourceforge.net/gpicview/
+echo http://lxde.org/gpicview/
 echo
