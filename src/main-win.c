@@ -271,14 +271,23 @@ gboolean on_delete_event( GtkWidget* widget, GdkEventAny* evt )
 gboolean main_win_open( MainWin* mw, const char* file_path, ZoomMode zoom )
 {
     GError* err = NULL;
-
     main_win_close( mw );
     mw->pix = gdk_pixbuf_new_from_file( file_path, &err );
+
     if( ! mw->pix )
     {
         main_win_show_error( mw, err->message );
         return FALSE;
     }
+#if GTK_CHECK_VERSION( 2, 12, 0 )
+    else
+    {
+        /* apply orientation provided by EXIF (Use gtk+ 2.12 specific API) */
+        GdkPixbuf* tmp = gdk_pixbuf_apply_embedded_orientation(mw->pix);
+        g_object_unref( mw->pix );
+        mw->pix = tmp;
+    }
+#endif
 
     mw->zoom_mode = zoom;
 
