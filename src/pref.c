@@ -51,6 +51,7 @@ void load_preferences()
     {
         pref.auto_save_rotated = g_key_file_get_boolean( kf, "General", "auto_save_rotated", NULL );
         pref.ask_before_save = g_key_file_get_boolean( kf, "General", "ask_before_save", NULL );
+        pref.rotate_exif_only = g_key_file_get_boolean( kf, "General", "rotate_exif_only", NULL );
     }
     g_free( path );
     g_key_file_free( kf );
@@ -73,6 +74,7 @@ void save_preferences()
         fputs( "[General]\n", f );
         fprintf( f, "auto_save_rotated=%d\n", pref.auto_save_rotated );
         fprintf( f, "ask_before_save=%d\n", pref.ask_before_save );
+        fprintf( f, "rotate_exif_only=%d\n", pref.rotate_exif_only );
         fclose( f );
     }
     g_free( path );
@@ -96,7 +98,8 @@ static void on_set_default( GtkButton* btn, gpointer user_data )
 
 void edit_preferences( GtkWindow* parent )
 {
-    GtkWidget*auto_save_btn, *ask_before_save_btn, *set_default_btn;
+    GtkWidget *auto_save_btn, *ask_before_save_btn, *set_default_btn,
+              *rotate_exif_only_btn;
     GtkDialog* dlg = (GtkDialog*)gtk_dialog_new_with_buttons( _("Preferences"), parent, GTK_DIALOG_MODAL,
                                                                GTK_STOCK_CLOSE ,GTK_RESPONSE_CLOSE, NULL );
 
@@ -107,6 +110,10 @@ void edit_preferences( GtkWindow* parent )
     auto_save_btn = gtk_check_button_new_with_label( _("Automatically save rotated images ( Currently only JPEG is supported )") );
     gtk_toggle_button_set_active( (GtkToggleButton*)auto_save_btn, pref.auto_save_rotated );
     gtk_box_pack_start( (GtkBox*)dlg->vbox, auto_save_btn, FALSE, FALSE, 2 );
+    
+    rotate_exif_only_btn = gtk_check_button_new_with_label( _("Change EXIF Oritation value only while rotating and fliping if EXIF Oritation tag exist ( JPEG only )") );
+    gtk_toggle_button_set_active( (GtkToggleButton*)rotate_exif_only_btn, pref.rotate_exif_only );
+    gtk_box_pack_start( (GtkBox*)dlg->vbox, rotate_exif_only_btn, FALSE, FALSE, 2 );
 
     set_default_btn = gtk_button_new_with_label( _("Make GPicview the default viewer for images") );
     g_signal_connect( set_default_btn, "clicked", G_CALLBACK(on_set_default), parent );
@@ -117,6 +124,7 @@ void edit_preferences( GtkWindow* parent )
 
     pref.ask_before_save = gtk_toggle_button_get_active( (GtkToggleButton*)ask_before_save_btn );
     pref.auto_save_rotated = gtk_toggle_button_get_active( (GtkToggleButton*)auto_save_btn );
+    pref.rotate_exif_only = gtk_toggle_button_get_active( (GtkToggleButton*)rotate_exif_only_btn );
 
     gtk_widget_destroy( (GtkWidget*)dlg );
 }

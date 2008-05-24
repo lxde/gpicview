@@ -55,7 +55,7 @@ static void main_win_finalize( GObject* obj );
 static void create_nav_bar( MainWin* mw, GtkWidget* box);
 GtkWidget* add_nav_btn( MainWin* mw, const char* icon, const char* tip, GCallback cb, gboolean toggle);
 // GtkWidget* add_menu_item(  GtkMenuShell* menu, const char* label, const char* icon, GCallback cb, gboolean toggle=FALSE );
-static void rotate_image( MainWin* mw, GdkPixbufRotation angle );
+static void rotate_image( MainWin* mw, int angle );
 static void show_popup_menu( MainWin* mw, GdkEventButton* evt );
 
 /* signal handlers */
@@ -89,6 +89,13 @@ static void on_drag_data_received( GtkWidget* widget, GdkDragContext *drag_conte
 static void on_delete( GtkWidget* btn, MainWin* mw );
 static void on_about( GtkWidget* menu, MainWin* mw );
 
+static GdkPixbuf* RotateByEXIF(const char* FileName, GdkPixbuf* pix);
+static void updateTitle(const char *filename, MainWin *mw );
+
+void on_flip_vertical( GtkWidget* btn, MainWin* mw );
+void on_flip_horizontal( GtkWidget* btn, MainWin* mw );
+static int trans_angle_to_id(int i);
+static int get_new_angle( int orig_angle, int rotate_angle );
 
 // Begin of GObject-related stuff
 
@@ -270,9 +277,101 @@ gboolean on_delete_event( GtkWidget* widget, GdkEventAny* evt )
     return TRUE;
 }
 
+static GdkPixbuf* RotateByEXIF(const char* FileName, GdkPixbuf* pix)
+{
+    GdkPixbuf* tmppixbuf = pix;
+#if GTK_CHECK_VERSION( 2, 12, 0 )
+    // apply orientation provided by EXIF (Use gtk+ 2.12 specific API)
+    tmppixbuf = gdk_pixbuf_apply_embedded_orientation(pix);
+    g_object_unref( pix );
+#else
+    // use jhead functions
+    ResetJpgfile();
+
+    // Start with an empty image information structure.
+    memset(&ImageInfo, 0, sizeof(ImageInfo));
+
+    if (!ReadJpegFile( FileName, READ_METADATA)) return;
+
+    // Do Rotate
+    switch(ImageInfo.Orientation)
+    {
+        case 0:	// Undefined
+        case 1:	// Normal
+          break;
+        case 2:	// flip horizontal: left right reversed mirror
+          tmppixbuf = gdk_pixbuf_flip(pix, TRUE);
+          g_object_unref( pix );
+          break;
+        case 3:	// rotate 180
+          tmppixbuf = gdk_pixbuf_rotate_simple(pix, 180);
+          g_object_unref( pix );
+          break;
+        case 4:	// flip vertical: upside down mirror
+          tmppixbuf = gdk_pixbuf_flip(pix, FALSE);
+          g_object_unref( pix );
+          break;
+        case 5:	// transpose: Flipped about top-left <--> bottom-right axis.
+          tmppixbuf = gtk_pixbuf_flip(pix, FALSE);
+          g_object_unref( pix );
+          pix = tmppixbuf;
+          tmppixbuf = gtk_pixbuf_rotate_simple(pix, 270);
+          g_object_unref( pix );
+          break;
+        case 6:	// rotate 90: rotate 90 cw to right it.
+          tmppixbuf = gdk_pixbuf_rotate_simple(pix, 270);
+          g_object_unref( pix );
+          break;
+        case 7:	// transverse: flipped about top-right <--> bottom-left axis
+          tmppixbuf = gtk_pixbuf_flip(pix, FALSE);
+          g_object_unref( pix );
+          pix = tmppixbuf;
+          tmppixbuf = gtk_pixbuf_rotate_simple(pix, 90);
+          g_object_unref( pix );
+          break;
+        case 8:	// rotate 270: rotate 270 to right it.
+          tmppixbuf = gdk_pixbuf_rotate_simple(pix, 90);
+          g_object_unref( pix );
+          break;
+        default:
+          break;
+    }
+
+    DiscardData();
+#endif
+
+    return tmppixbuf;
+}
+
+static void updateTitle(const char *filename, MainWin *mw )
+{
+    static char fname[50];
+    static int wid, hei;
+    
+    char buf[100];
+    
+    if(filename != NULL)
+    {
+      strncpy(fname, filename, 49);
+      fname[49] = '\0';
+      
+      wid = gdk_pixbuf_get_width( mw->pix );
+      hei = gdk_pixbuf_get_height( mw->pix );
+    }
+    
+    snprintf(buf, 100, "%s (%dx%d) %d%%", fname, wid, hei, (int)(mw->scale * 100));
+    gtk_window_set_title( (GtkWindow*)mw, buf );
+    
+    return;    
+}
+
 gboolean main_win_open( MainWin* mw, const char* file_path, ZoomMode zoom )
 {
     GError* err = NULL;
+    GdkPixbufFormat* info;
+    info = gdk_pixbuf_get_file_info( file_path, NULL, NULL );
+    char* type = gdk_pixbuf_format_get_name( info );
+
     main_win_close( mw );
     mw->pix = gdk_pixbuf_new_from_file( file_path, &err );
 
@@ -281,16 +380,12 @@ gboolean main_win_open( MainWin* mw, const char* file_path, ZoomMode zoom )
         main_win_show_error( mw, err->message );
         return FALSE;
     }
-#if GTK_CHECK_VERSION( 2, 12, 0 )
-    else
+    else if(!strcmp(type,"jpeg"))
     {
-        /* apply orientation provided by EXIF (Use gtk+ 2.12 specific API) */
-        GdkPixbuf* tmp = gdk_pixbuf_apply_embedded_orientation(mw->pix);
-        g_object_unref( mw->pix );
-        mw->pix = tmp;
+        // Only jpeg should rotate by EXIF
+        mw->pix = RotateByEXIF( file_path, mw->pix);
     }
-#endif
-
+    
     mw->zoom_mode = zoom;
 
     // select most suitable viewing mode
@@ -315,6 +410,7 @@ gboolean main_win_open( MainWin* mw, const char* file_path, ZoomMode zoom )
             gtk_widget_set_size_request( (GtkWidget*)mw->img_view, -1, -1 );
             gtk_scrolled_window_set_policy( (GtkScrolledWindow*)mw->scroll, GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC );
             mw->zoom_mode = ZOOM_ORIG;
+            mw->scale = 1.0;
         }
         else
             mw->zoom_mode = ZOOM_FIT;
@@ -334,7 +430,7 @@ gboolean main_win_open( MainWin* mw, const char* file_path, ZoomMode zoom )
     else  if( mw->zoom_mode == ZOOM_ORIG )  // original size
     {
         gtk_toggle_button_set_active( (GtkToggleButton*)mw->btn_orig, TRUE );
-        image_view_set_scale( (ImageView*)mw->img_view, 1.0, GDK_INTERP_BILINEAR );
+        image_view_set_scale( (ImageView*)mw->img_view, mw->scale, GDK_INTERP_BILINEAR );
         main_win_center_image( mw );
     }
 
@@ -355,7 +451,7 @@ gboolean main_win_open( MainWin* mw, const char* file_path, ZoomMode zoom )
     char* disp_name = g_filename_display_name( base_name );
     g_free( base_name );
 
-    gtk_window_set_title( (GtkWindow*)mw, disp_name );
+    updateTitle( disp_name, mw );
     g_free( disp_name );
 
     return TRUE;
@@ -438,6 +534,8 @@ void main_win_fit_size( MainWin* mw, int width, int height, gboolean can_strech,
     {
         mw->scale = 1.0;
         image_view_set_scale( (ImageView*)mw->img_view, 1.0, type );
+        
+        updateTitle(NULL, mw);
     }
 }
 
@@ -524,6 +622,9 @@ void on_orig_size( GtkToggleButton* btn, MainWin* mw )
 //    gtk_scrolled_window_set_policy( (GtkScrolledWindow*)mw->scroll,
 //                                     GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC );
 
+    // update scale
+    updateTitle(NULL, mw);
+    
     gtk_toggle_button_set_active( (GtkToggleButton*)mw->btn_fit, FALSE );
 
     if( ! mw->pix )
@@ -580,10 +681,36 @@ void on_next( GtkWidget* btn, MainWin* mw )
     }
 }
 
+//////////////////// rotate & flip
+
+static int trans_angle_to_id(int i)
+{
+    if(i == 0) 		return 1;
+    else if(i == 90)	return 6;
+    else if(i == 180)	return 3;
+    else if(i == 270)	return 8;
+    else if(i == -45)	return 7;
+    else if(i == -90)	return 2;
+    else if(i == -135)	return 5;
+    else if(i == -180)	return 4;
+}
+
+static int get_new_angle( int orig_angle, int rotate_angle )
+{
+    // defined in exif.c
+    extern int ExifRotateFlipMapping[9][9];
+    static int angle_trans_back[] = {0, 0, -90, 180, -180, -135, 90, -45, 270};
+    
+    orig_angle = trans_angle_to_id(orig_angle);
+    rotate_angle = trans_angle_to_id(rotate_angle);
+  
+    return angle_trans_back[ ExifRotateFlipMapping[orig_angle][rotate_angle] ];
+}
+
 void on_rotate_clockwise( GtkWidget* btn, MainWin* mw )
 {
     rotate_image( mw, GDK_PIXBUF_ROTATE_CLOCKWISE );
-    mw->rotation_angle += 90;
+    mw->rotation_angle = get_new_angle(mw->rotation_angle, 90);
     if(pref.auto_save_rotated){
         pref.ask_before_save = FALSE;
         on_save(btn,mw);
@@ -594,13 +721,37 @@ void on_rotate_clockwise( GtkWidget* btn, MainWin* mw )
 void on_rotate_counterclockwise( GtkWidget* btn, MainWin* mw )
 {
     rotate_image( mw, GDK_PIXBUF_ROTATE_COUNTERCLOCKWISE );
-    mw->rotation_angle += 270;
+    mw->rotation_angle = get_new_angle(mw->rotation_angle, 270);
     if(pref.auto_save_rotated){
         pref.ask_before_save = FALSE;
         on_save(btn,mw);
         pref.ask_before_save = TRUE;
     }
 }
+
+void on_flip_vertical( GtkWidget* btn, MainWin* mw )
+{
+    rotate_image( mw, -180 );
+    mw->rotation_angle = get_new_angle(mw->rotation_angle, -180);
+    if(pref.auto_save_rotated){
+        pref.ask_before_save = FALSE;
+        on_save(btn,mw);
+        pref.ask_before_save = TRUE;
+    }
+}
+
+void on_flip_horizontal( GtkWidget* btn, MainWin* mw )
+{
+    rotate_image( mw, -90 );
+    mw->rotation_angle = get_new_angle(mw->rotation_angle, -90);
+    if(pref.auto_save_rotated){
+        pref.ask_before_save = FALSE;
+        on_save(btn,mw);
+        pref.ask_before_save = TRUE;
+    }
+}
+
+///////////////////// end of rotate & flip
 
 static void on_update_preview( GtkFileChooser *chooser, GtkImage* img )
 {
@@ -694,6 +845,10 @@ void on_save_as( GtkWidget* btn, MainWin* mw )
 
 #ifdef HAVE_LIBJPEG
 int rotate_and_save_jpeg_lossless(char *  filename,int angle){
+
+    if(angle < 0)
+        return -1;
+    
     JXFORM_CODE code = JXFORM_NONE;
 
     angle = angle % 360;
@@ -730,12 +885,28 @@ void on_save( GtkWidget* btn, MainWin* mw )
     GdkPixbufFormat* info;
     info = gdk_pixbuf_get_file_info( file_name, NULL, NULL );
     char* type = gdk_pixbuf_format_get_name( info );
+
+    if(strcmp(type,"jpeg")==0)
+    {
+        if(!pref.rotate_exif_only || ExifRotate(file_name, mw->rotation_angle) == FALSE)
+        {
+            // hialan notes:
+            // ExifRotate retrun FALSE when 
+            //   1. Can not read file
+            //   2. Exif do not have TAG_ORIENTATION tag
+            //   3. Format unknown
+            // And then we apply rotate_and_save_jpeg_lossless() , 
+            // the result would not effected by EXIF Orientation...
 #ifdef HAVE_LIBJPEG
-    if(strcmp(type,"jpeg")==0){
-        if(rotate_and_save_jpeg_lossless(file_name,mw->rotation_angle)!=0)
-            main_win_show_error(mw, "Save failed! Check permissions.");
-    } else
+            if(rotate_and_save_jpeg_lossless(file_name,mw->rotation_angle)!=0)
+            {
+                main_win_show_error(mw, "Save failed! Check permissions.");
+            }
+#else
+            main_win_save( mw, file_name, type, pref.ask_before_save );
 #endif
+        }
+    } else
         main_win_save( mw, file_name, type, pref.ask_before_save );
     mw->rotation_angle = 0;
     g_free( file_name );
@@ -1044,14 +1215,26 @@ void main_win_center_image( MainWin* mw )
         gtk_adjustment_set_value(vadj, ( vadj->upper - vadj->page_size ) / 2 );
 }
 
-void rotate_image( MainWin* mw, GdkPixbufRotation angle )
+void rotate_image( MainWin* mw, int angle )
 {
+    GdkPixbuf* rpix = NULL;
+
     if( ! mw->pix )
         return;
 
-    GdkPixbuf* rpix = NULL;
-    rpix = gdk_pixbuf_rotate_simple( mw->pix, angle );
+    if(angle > 0)
+    {
+        rpix = gdk_pixbuf_rotate_simple( mw->pix, angle );
+    }
+    else
+    {
+        if(angle == -90)
+            rpix = gdk_pixbuf_flip( mw->pix, TRUE );
+        else if(angle == -180)
+            rpix = gdk_pixbuf_flip( mw->pix, FALSE );
+    }
     g_object_unref( mw->pix );
+    
     mw->pix = rpix;
     image_view_set_pixbuf( (ImageView*)mw->img_view, mw->pix );
 
@@ -1064,11 +1247,14 @@ gboolean main_win_scale_image( MainWin* mw, double new_scale, GdkInterpType type
     if( G_UNLIKELY( new_scale == 1.0 ) )
     {
         gtk_toggle_button_set_active( (GtkToggleButton*)mw->btn_orig, TRUE );
+        mw->scale = 1.0;
         return TRUE;
     }
     mw->scale = new_scale;
     image_view_set_scale( (ImageView*)mw->img_view, new_scale, type );
-
+    
+    updateTitle( NULL, mw );
+    
     return TRUE;
 }
 
@@ -1144,10 +1330,13 @@ void show_popup_menu( MainWin* mw, GdkEventButton* evt )
         PTK_SEPARATOR_MENU_ITEM,
         PTK_IMG_MENU_ITEM( N_( "Rotate Counterclockwise" ), "gtk-counterclockwise", on_rotate_counterclockwise, GDK_L, 0 ),
         PTK_IMG_MENU_ITEM( N_( "Rotate Clockwise" ), "gtk-clockwise", on_rotate_clockwise, GDK_R, 0 ),
+//        PTK_IMG_MENU_ITEM( N_( "Flip Vertical" ), "gtk-clockwise", on_flip_vertical, GDK_V, 0 ),
+//        PTK_IMG_MENU_ITEM( N_( "Flip Horizontal" ), "gtk-clockwise", on_flip_horizontal, GDK_H, 0 ),
         PTK_SEPARATOR_MENU_ITEM,
         PTK_IMG_MENU_ITEM( N_("Open File"), GTK_STOCK_OPEN, G_CALLBACK(on_open), GDK_O, 0 ),
         PTK_IMG_MENU_ITEM( N_("Save File"), GTK_STOCK_SAVE, G_CALLBACK(on_save), GDK_S, 0 ),
         PTK_IMG_MENU_ITEM( N_("Save As"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
+//        PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
         PTK_IMG_MENU_ITEM( N_("Delete File"), GTK_STOCK_DELETE, G_CALLBACK(on_delete), GDK_Delete, 0 ),
         PTK_SEPARATOR_MENU_ITEM,
         PTK_STOCK_MENU_ITEM( GTK_STOCK_ABOUT, on_about ),
@@ -1190,6 +1379,7 @@ void on_about( GtkWidget* menu, MainWin* mw )
     {
         "洪任諭 Hong Jen Yee <pcman.tw@gmail.com>",
         "Martin Siggel <martinsiggel@googlemail.com>",
+        "Hialan Liu <hialan.liu@gmail.com>",
         _(" * Refer to source code of EOG image viewer and GThumb"),
         NULL
     };

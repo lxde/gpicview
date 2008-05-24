@@ -17,7 +17,10 @@ gpicview_SOURCES = \
 	ptk-menu.c \
 	jpeg-tran.c \
 	tran-supp.c \
-	pref.c
+	pref.c \
+	jhead.c \
+	exif.c \
+	jpgfile.c 
 
 # the library search path.
 # use -nodefaultlibs to prevent linking libstdc++
@@ -32,5 +35,6 @@ noinst_HEADERS = \
 	ptk-menu.h \
 	jpeg-tran.h \
 	tran-supp.h \
-	pref.h
+	pref.h \
+	jhead.h
 

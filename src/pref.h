@@ -30,6 +30,7 @@ typedef struct _Pref
 {
     gboolean auto_save_rotated; /* Save rotated images */
     gboolean ask_before_save;
+    gboolean rotate_exif_only;
 }Pref;
 
  extern Pref pref; /* global variable holding user prerefences */
