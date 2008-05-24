@@ -61,6 +61,7 @@ static void show_popup_menu( MainWin* mw, GdkEventButton* evt );
 /* signal handlers */
 static gboolean on_delete_event( GtkWidget* widget, GdkEventAny* evt );
 static void on_size_allocate( GtkWidget* widget, GtkAllocation    *allocation );
+static void on_win_state_event( GtkWidget* widget, GdkEventWindowState* state );
 static void on_zoom_fit( GtkToggleButton* btn, MainWin* mw );
 static void on_zoom_fit_menu( GtkMenuItem* item, MainWin* mw );
 static void on_full_screen( GtkWidget* btn, MainWin* mw );
@@ -107,6 +108,7 @@ void main_win_class_init( MainWinClass* klass )
     widget_class->delete_event = on_delete_event;
     widget_class->size_allocate = on_size_allocate;
     widget_class->key_press_event = on_key_press_event;
+    widget_class->window_state_event = on_win_state_event;
 }
 
 void main_win_finalize( GObject* obj )
@@ -396,6 +398,26 @@ void on_size_allocate( GtkWidget* widget, GtkAllocation    *allocation )
     }
 }
 
+void on_win_state_event( GtkWidget* widget, GdkEventWindowState* state )
+{
+    MainWin* mw = (MainWin*)widget;
+    if( state->new_window_state == GDK_WINDOW_STATE_FULLSCREEN )
+    {
+        static GdkColor black = {0};
+        gtk_widget_modify_bg( mw->evt_box, GTK_STATE_NORMAL, &black );
+        gtk_widget_hide( gtk_widget_get_parent(mw->nav_bar) );
+        mw->full_screen = TRUE;
+    }
+    else
+    {
+//        gtk_widget_reset_rc_styles( mw->evt_box );
+        static GdkColor white = {0, 65535, 65535, 65535};
+        gtk_widget_modify_bg( mw->evt_box, GTK_STATE_NORMAL, &white );
+        gtk_widget_show( gtk_widget_get_parent(mw->nav_bar) );
+        mw->full_screen = FALSE;
+    }
+}
+
 void main_win_fit_size( MainWin* mw, int width, int height, gboolean can_strech, GdkInterpType type )
 {
     if( ! mw->pix )
@@ -472,21 +494,9 @@ void on_zoom_fit( GtkToggleButton* btn, MainWin* mw )
 void on_full_screen( GtkWidget* btn, MainWin* mw )
 {
     if( ! mw->full_screen )
-    {
-        static GdkColor black = {0};
-        gtk_widget_modify_bg( mw->evt_box, GTK_STATE_NORMAL, &black );
-        gtk_widget_hide( gtk_widget_get_parent(mw->nav_bar) );
         gtk_window_fullscreen( (GtkWindow*)mw );
-    }
     else
-    {
-//        gtk_widget_reset_rc_styles( mw->evt_box );
-        static GdkColor white = {0, 65535, 65535, 65535};
-        gtk_widget_modify_bg( mw->evt_box, GTK_STATE_NORMAL, &white );
-        gtk_widget_show( gtk_widget_get_parent(mw->nav_bar) );
         gtk_window_unfullscreen( (GtkWindow*)mw );
-    }
-    mw->full_screen = ! mw->full_screen;
 }
 
 void on_orig_size_menu( GtkToggleButton* btn, MainWin* mw )
