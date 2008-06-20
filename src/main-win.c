@@ -442,7 +442,8 @@ gboolean main_win_open( MainWin* mw, const char* file_path, ZoomMode zoom )
     // build file list
     char* dir_path = g_path_get_dirname( file_path );
     image_list_open_dir( mw->img_list, dir_path, NULL );
-    image_list_sort_by_name( mw->img_list, GTK_SORT_ASCENDING );
+    //image_list_sort_by_name( mw->img_list, GTK_SORT_ASCENDING );
+    image_list_sort_by_name( mw->img_list, GTK_SORT_DESCENDING );
     g_free( dir_path );
 
     char* base_name = g_path_get_basename( file_path );
