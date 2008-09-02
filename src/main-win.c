@@ -847,6 +847,12 @@ void on_save_as( GtkWidget* btn, MainWin* mw )
 #ifdef HAVE_LIBJPEG
 int rotate_and_save_jpeg_lossless(char *  filename,int angle){
 
+    char tmpfilename[] = {"/tmp/rot.jpg.XXXXXX"};
+    int tmpfilefd;
+    FILE *cp_in;
+    FILE *cp_out;
+    char cp_buf[512];
+
     if(angle < 0)
         return -1;
     
@@ -861,17 +867,34 @@ int rotate_and_save_jpeg_lossless(char *  filename,int angle){
     else if(angle == 270)
         code = JXFORM_ROT_270;
 
+    /* create tmp file */
+    tmpfilefd = mkstemp(tmpfilename);
+    if (tmpfilefd == -1) {
+      return -1;
+    }
+    close(tmpfilefd);
+
     //rotate the image and save it to /tmp/rot.jpg
-    int error = jpegtran (filename, "/tmp/rot.jpg" , code);
+    int error = jpegtran (filename, tmpfilename , code);
     if(error)
         return error;
 
     //now copy /tmp/rot.jpg back to the original file
-    char command[strlen(filename)+50]; //this should not generate buffer owerflow
-    // MS: didn't know, how to make it better, maybe an own copy routine
-    sprintf(command,"cp /tmp/rot.jpg \"%s\"",filename);
-    system(command);
+    cp_in = fopen(tmpfilename,"rb");
+    cp_out = fopen(filename,"wb");
+    while (!feof(cp_in)) {
+      int n;
+      n = fread(cp_buf,1,sizeof(cp_buf),cp_in);
+      if (n<=0) {
+        break;
+      }
+      fwrite (cp_buf,1,n,cp_out);
+    }
+    fclose(cp_in);
+    fclose(cp_out);
 
+    /* remove tmp file */
+    unlink(tmpfilename);
     return 0;
 }
 #endif
