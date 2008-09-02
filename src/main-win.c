@@ -61,7 +61,7 @@ static void show_popup_menu( MainWin* mw, GdkEventButton* evt );
 /* signal handlers */
 static gboolean on_delete_event( GtkWidget* widget, GdkEventAny* evt );
 static void on_size_allocate( GtkWidget* widget, GtkAllocation    *allocation );
-static void on_win_state_event( GtkWidget* widget, GdkEventWindowState* state );
+static gboolean on_win_state_event( GtkWidget* widget, GdkEventWindowState* state );
 static void on_zoom_fit( GtkToggleButton* btn, MainWin* mw );
 static void on_zoom_fit_menu( GtkMenuItem* item, MainWin* mw );
 static void on_full_screen( GtkWidget* btn, MainWin* mw );
@@ -495,7 +495,7 @@ void on_size_allocate( GtkWidget* widget, GtkAllocation    *allocation )
     }
 }
 
-void on_win_state_event( GtkWidget* widget, GdkEventWindowState* state )
+gboolean on_win_state_event( GtkWidget* widget, GdkEventWindowState* state )
 {
     MainWin* mw = (MainWin*)widget;
     if( state->new_window_state == GDK_WINDOW_STATE_FULLSCREEN )
@@ -513,6 +513,7 @@ void on_win_state_event( GtkWidget* widget, GdkEventWindowState* state )
         gtk_widget_show( gtk_widget_get_parent(mw->nav_bar) );
         mw->full_screen = FALSE;
     }
+    return TRUE;
 }
 
 void main_win_fit_size( MainWin* mw, int width, int height, gboolean can_strech, GdkInterpType type )
