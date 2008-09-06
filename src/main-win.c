@@ -1388,9 +1388,11 @@ static void open_url( GtkAboutDialog *dlg, const gchar *url, gpointer data)
         char* open_cmd = NULL;
         if( (open_cmd = g_find_program_in_path( programs[i] )) )
         {
-             char* cmd = g_strdup_printf( "%s \'%s\'", open_cmd, url );
-             g_spawn_command_line_async( cmd, NULL );
-             g_free( cmd );
+             gchar* argv [3];
+             argv [0] = programs[i];
+             argv [1] = url;
+             argv [2] = NULL;
+             g_spawn_async (NULL, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, NULL); 
              g_free( open_cmd );
              break;
         }
