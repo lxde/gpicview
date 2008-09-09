@@ -1285,6 +1285,9 @@ gboolean main_win_scale_image( MainWin* mw, double new_scale, GdkInterpType type
 
 gboolean main_win_save( MainWin* mw, const char* file_path, const char* type, gboolean confirm )
 {
+    gboolean result1,gdk_save_supported;
+    GSList *gdk_formats;
+    GSList *gdk_formats_i;
     if( ! mw->pix )
         return FALSE;
 
@@ -1306,13 +1309,38 @@ gboolean main_win_save( MainWin* mw, const char* file_path, const char* type, gb
         }
     }
 
+    /* detect if the current type can be save by gdk_pixbuf_save() */
+    gdk_save_supported = FALSE;
+    gdk_formats = gdk_pixbuf_get_formats();
+    for (gdk_formats_i = gdk_formats; gdk_formats_i;
+         gdk_formats_i = g_slist_next(gdk_formats_i))
+    {
+        GdkPixbufFormat *data;
+        data = gdk_formats_i->data;
+        if (gdk_pixbuf_format_is_writable(data))
+        {
+            if ( strcmp(type, gdk_pixbuf_format_get_name(data))==0)
+            {
+                gdk_save_supported = TRUE;
+                break;
+            }
+        }
+    }
+    g_slist_free (gdk_formats);
+
     GError* err = NULL;
-    if( ! gdk_pixbuf_save( mw->pix, file_path, type, &err, NULL ) )
+    if (!gdk_save_supported)
+    {
+        /* FIXME: we should show some error messages here when the type
+           is not supported to save */
+        return FALSE;
+    }
+    result1 = gdk_pixbuf_save( mw->pix, file_path, type, &err, NULL );
+    if( ! result1 )
     {
         main_win_show_error( mw, err->message );
         return FALSE;
     }
-
     return TRUE;
 }
 
