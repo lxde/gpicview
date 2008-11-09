@@ -1,7 +1,7 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# Finnish translation for GPicView
+# Copyright (C) 2008
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Elias Julkunen <elias.julkunen@gmail.com>, 2008.
 #
 msgid ""
 msgstr ""
@@ -138,7 +138,7 @@ msgstr " * Viittaa EOG-kuvankatselijan ja GThumbin lähdekoodeihin"
 #. TRANSLATORS: Replace mw string with your names, one name per line.
 #: src/main-win.c:1178
 msgid "translator-credits"
-msgstr "Elias Julkunen"
+msgstr "Elias Julkunen <elias.julkunen@gmail.com>"
 
 #: src/main-win.c:1186
 msgid "GPicView"
@@ -159,7 +159,7 @@ msgid ""
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"GPicViewistä tulee oletuskatselija kaikille tuetuille kuvatiedostoille järjestelmässäsi.\n"
+"GPicViewistä tulee järjestelmän oletuskatselija kaikille tuetuille kuvatiedostoille.\n"
 "(Tämä tehdään xdg-mime-ohjelman avulla)\n"
 "\n"
 "<b>Haluatko varmasti tehdä tämän?</b>"
