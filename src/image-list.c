@@ -210,3 +210,9 @@ void image_list_sort_by_name(  ImageList* il, GtkSortType type )
 {
     il->list = g_list_sort_with_data( il->list, (GCompareDataFunc)comp_by_name, (gpointer)type );
 }
+
+
+void image_list_remove( ImageList* il, const char* name )
+{
+    il->list = g_list_remove( il->list, name );
+}

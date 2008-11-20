@@ -1359,11 +1359,30 @@ void on_delete( GtkWidget* btn, MainWin* mw )
 
         if( resp == GTK_RESPONSE_YES )
         {
-            g_unlink( file_path );
-            if( errno )
-                main_win_show_error( mw, g_strerror(errno) );
-            g_free( file_path );
+            const char* name = image_list_get_current( mw->img_list );
+	    
+	    if( g_unlink( file_path ) != 0 )
+		main_win_show_error( mw, g_strerror(errno) );
+	    else
+	    {
+		const char* next_name = image_list_get_next( mw->img_list );
+		if( ! next_name )
+		    next_name = image_list_get_prev( mw->img_list );
+		
+		if( next_name )
+		{
+		    char* next_file_path = image_list_get_current_file_path( mw->img_list );
+		    main_win_open( mw, next_file_path, ZOOM_FIT );
+		    g_free( next_file_path );
+		}
+
+		image_list_remove ( mw->img_list, name );
+
+		if ( ! next_name )
+		    gtk_main_quit();
+	    }
         }
+	g_free( file_path );
     }
 }
 
