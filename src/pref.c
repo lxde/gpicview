@@ -111,7 +111,7 @@ void edit_preferences( GtkWindow* parent )
     gtk_toggle_button_set_active( (GtkToggleButton*)auto_save_btn, pref.auto_save_rotated );
     gtk_box_pack_start( (GtkBox*)dlg->vbox, auto_save_btn, FALSE, FALSE, 2 );
     
-    rotate_exif_only_btn = gtk_check_button_new_with_label( _("Change EXIF Oritation value only while rotating and fliping if EXIF Oritation tag exist ( JPEG only )") );
+    rotate_exif_only_btn = gtk_check_button_new_with_label( _("Change EXIF orientation value while rotating and fliping only if EXIF orientation tag exist ( JPEG only )") );
     gtk_toggle_button_set_active( (GtkToggleButton*)rotate_exif_only_btn, pref.rotate_exif_only );
     gtk_box_pack_start( (GtkBox*)dlg->vbox, rotate_exif_only_btn, FALSE, FALSE, 2 );
 
