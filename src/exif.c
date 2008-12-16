@@ -536,12 +536,12 @@ static void ProcessExifDir(unsigned char * DirStart, unsigned char * OffsetBase,
             // Show tag name
             for (a=0;;a++){
                 if (a >= TAG_TABLE_SIZE){
-                    printf(IndentString);
+                    printf("%s",IndentString);
                     printf("    Unknown Tag %04x Value = ", Tag);
                     break;
                 }
                 if (TagTable[a].Tag == Tag){
-                    printf(IndentString);
+                    printf("%s",IndentString);
                     printf("    %s = ",TagTable[a].Desc);
                     break;
                 }
