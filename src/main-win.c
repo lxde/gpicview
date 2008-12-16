@@ -473,7 +473,7 @@ void main_win_show_error( MainWin* mw, const char* message )
                                               GTK_DIALOG_MODAL,
                                               GTK_MESSAGE_ERROR,
                                               GTK_BUTTONS_OK,
-                                              message );
+                                              "%s", message );
     gtk_dialog_run( (GtkDialog*)dlg );
     gtk_widget_destroy( dlg );
 }
