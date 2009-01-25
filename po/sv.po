@@ -1,0 +1,189 @@
+# Translation of gpicview to Swedish
+# Copyright (C) 2009 Martin Bagge <brother@bsnet.se>
+# This file is distributed under the same license as the gpicview package.
+#
+# Martin Bagge <brother@bsnet.se>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: gpicview\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-01-05 01:35+0100\n"
+"PO-Revision-Date: 2009-01-06 20:16+0100\n"
+"Last-Translator: Martin Bagge <brother@bsnet.se>\n"
+"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Swedish\n"
+
+#: ../src/gpicview.c:36
+msgid "[FILE]"
+msgstr "[FIL]"
+
+#: ../src/main-win.c:146
+msgid "Image Viewer"
+msgstr "Bildvisare"
+
+#: ../src/main-win.c:229
+#: ../src/main-win.c:1393
+msgid "Previous"
+msgstr "Föregående"
+
+#: ../src/main-win.c:230
+#: ../src/main-win.c:1394
+msgid "Next"
+msgstr "Nästa"
+
+#: ../src/main-win.c:234
+#: ../src/main-win.c:1396
+msgid "Zoom Out"
+msgstr "Zooma ut"
+
+#: ../src/main-win.c:235
+#: ../src/main-win.c:1397
+msgid "Zoom In"
+msgstr "Zooma in"
+
+#. percent = gtk_entry_new();    // show scale (in percentage)
+#. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
+#. gtk_widget_set_size_request( percent, 45, -1 );
+#. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
+#: ../src/main-win.c:242
+#: ../src/main-win.c:1398
+msgid "Fit Image To Window Size"
+msgstr "Anpassa bild till fönstrets storlek"
+
+#: ../src/main-win.c:244
+#: ../src/main-win.c:1399
+msgid "Original Size"
+msgstr "Originalstorlek"
+
+#: ../src/main-win.c:251
+msgid " Full Screen"
+msgstr " Helskärm"
+
+#: ../src/main-win.c:255
+#: ../src/main-win.c:1403
+msgid "Rotate Counterclockwise"
+msgstr "Rotera motsols"
+
+#: ../src/main-win.c:257
+#: ../src/main-win.c:1404
+msgid "Rotate Clockwise"
+msgstr "Rotera medsols"
+
+#: ../src/main-win.c:261
+#: ../src/main-win.c:1408
+msgid "Open File"
+msgstr "Öppna fil"
+
+#: ../src/main-win.c:262
+#: ../src/main-win.c:1409
+msgid "Save File"
+msgstr "Spara fil"
+
+#: ../src/main-win.c:263
+msgid "Save File As"
+msgstr "Spara fil som"
+
+#. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
+#: ../src/main-win.c:264
+#: ../src/main-win.c:1412
+msgid "Delete File"
+msgstr "Ta bort fil"
+
+#: ../src/main-win.c:267
+#: ../src/pref.c:103
+msgid "Preferences"
+msgstr "Inställningar"
+
+#: ../src/main-win.c:956
+msgid "All Supported Images"
+msgstr "Alla filer med stöd"
+
+#: ../src/main-win.c:961
+msgid "All Files"
+msgstr "Alla filer"
+
+#: ../src/main-win.c:1302
+msgid ""
+"The file name you selected already exist.\n"
+"Do you want to overwrite existing file?\n"
+"(Warning: The quality of original image might be lost)"
+msgstr ""
+"Filnamnet du valde finns redan.\n"
+"Vill du skriva över filen?\n"
+"(Varning: kvaliteten i originalfilen kan förloras)"
+
+#: ../src/main-win.c:1356
+msgid ""
+"Are you sure you want to delete current file?\n"
+"\n"
+"Warning: Once deleted, the file cannot be recovered."
+msgstr ""
+"Vill du verkligen ta bort aktuell fil?\n"
+"\n"
+"Varning: Borttagna filer kan inte återställas."
+
+#: ../src/main-win.c:1401
+msgid "Full Screen"
+msgstr "Helskärm"
+
+#: ../src/main-win.c:1410
+msgid "Save As"
+msgstr "Spara som"
+
+#: ../src/main-win.c:1457
+msgid " * Refer to source code of EOG image viewer and GThumb"
+msgstr " * Se källkoden för EOG image viewer och GThumb"
+
+#. TRANSLATORS: Replace mw string with your names, one name per line.
+#: ../src/main-win.c:1461
+msgid "translator-credits"
+msgstr ""
+"Martin Bagge <brother@bsnet.se>\n"
+"\n"
+"Synpunkter på översättningen skickas till:\n"
+"<tp-sv@listor.tp-sv.se>"
+
+#: ../src/main-win.c:1469
+msgid "GPicView"
+msgstr "GPicView"
+
+#: ../src/main-win.c:1471
+msgid "Copyright (C) 2007"
+msgstr "Copyright © 2007"
+
+#: ../src/main-win.c:1472
+msgid "Lightweight image viewer from LXDE project"
+msgstr "Lättviktig bildvisare från LXDE-projektet"
+
+#: ../src/pref.c:88
+msgid ""
+"GPicView will become the default viewer for all supported image files on your system.\n"
+"(This will be done through 'xdg-mime' program)\n"
+"\n"
+"<b>Are you sure you really want to do this?</b>"
+msgstr ""
+"GPicView kommer att bli systemets standardvisare för alla bildformat som stöds.\n"
+"(Detta görs genom programmet \"xdg-mime\")\n"
+"\n"
+"<b>Är du säker på att du verkligen vill göra detta?</b>"
+
+# dubbelspace, rapporterat per mail
+#: ../src/pref.c:106
+msgid "Ask before saving  images"
+msgstr "Fråga innan bilder sparas"
+
+#: ../src/pref.c:110
+msgid "Automatically save rotated images ( Currently only JPEG is supported )"
+msgstr "Ska roterade bilder vändas rätt automatiskt? (Fungerar endast för JPEG)"
+
+#: ../src/pref.c:114
+msgid "Change EXIF orientation value while rotating and fliping only if EXIF orientation tag exist ( JPEG only )"
+msgstr "Uppdatera endast EXIF-värdet för rotering om EXIF-etiketten existerar (endast JPEG)"
+
+#: ../src/pref.c:118
+msgid "Make GPicview the default viewer for images"
+msgstr "Gör GPicview till standardvisare för bilder"
+
