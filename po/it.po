@@ -1,0 +1,198 @@
+# Translation of gpicview to Italian
+# Copyright (C) 2009 Fabio Barone <phonky at gmx.net>
+# This file is distributed under the same license as the gpicview package
+# Fabio Barone <phonky at gmx.net>, 2009
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gpicview 0.1.11\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-01-06 23:50+0100\n"
+"PO-Revision-Date: 2009-01-07 00:06+0100\n"
+"Last-Translator: Fabio Barone <phonky@gmx.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Italian\n"
+"X-Poedit-Country: ITALY\n"
+"Language-Team: \n"
+
+#: ../src/gpicview.c:36
+msgid "[FILE]"
+msgstr "[FILE]"
+
+#: ../src/main-win.c:146
+msgid "Image Viewer"
+msgstr "Visualizzatore di immagini"
+
+#: ../src/main-win.c:229
+#: ../src/main-win.c:1393
+msgid "Previous"
+msgstr "Antecedente"
+
+#: ../src/main-win.c:230
+#: ../src/main-win.c:1394
+msgid "Next"
+msgstr "Successiva"
+
+#: ../src/main-win.c:234
+#: ../src/main-win.c:1396
+msgid "Zoom Out"
+msgstr "Allontanare"
+
+#: ../src/main-win.c:235
+#: ../src/main-win.c:1397
+msgid "Zoom In"
+msgstr "Avvicinare"
+
+#. percent = gtk_entry_new();    // show scale (in percentage)
+#. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
+#. gtk_widget_set_size_request( percent, 45, -1 );
+#. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
+#: ../src/main-win.c:242
+#: ../src/main-win.c:1398
+msgid "Fit Image To Window Size"
+msgstr "Adattare l'immagine alla finestra"
+
+#: ../src/main-win.c:244
+#: ../src/main-win.c:1399
+msgid "Original Size"
+msgstr "Grandezza originale"
+
+#: ../src/main-win.c:251
+msgid " Full Screen"
+msgstr "Visualizzare a schermo intero"
+
+#: ../src/main-win.c:255
+#: ../src/main-win.c:1403
+msgid "Rotate Counterclockwise"
+msgstr "Girare contro-senso dell'orologio"
+
+#: ../src/main-win.c:257
+#: ../src/main-win.c:1404
+msgid "Rotate Clockwise"
+msgstr "Girare a senso dell'orologio"
+
+#: ../src/main-win.c:261
+#: ../src/main-win.c:1408
+msgid "Open File"
+msgstr "Aprire file"
+
+#: ../src/main-win.c:262
+#: ../src/main-win.c:1409
+msgid "Save File"
+msgstr "Salvare file"
+
+#: ../src/main-win.c:263
+msgid "Save File As"
+msgstr "Salvare file con nome..."
+
+#. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
+#: ../src/main-win.c:264
+#: ../src/main-win.c:1412
+msgid "Delete File"
+msgstr "Elimina file"
+
+#: ../src/main-win.c:267
+#: ../src/pref.c:103
+msgid "Preferences"
+msgstr "Preferenze"
+
+#: ../src/main-win.c:956
+msgid "All Supported Images"
+msgstr "Tutte le immagini supportate"
+
+#: ../src/main-win.c:961
+msgid "All Files"
+msgstr "Tutti i file"
+
+#: ../src/main-win.c:1302
+msgid ""
+"The file name you selected already exist.\n"
+"Do you want to overwrite existing file?\n"
+"(Warning: The quality of original image might be lost)"
+msgstr ""
+"Il file selezionato è gia esistente.\n"
+"Sostituire il file esistente?\n"
+"(Attenzione: La qualità dell'original potrebbere andare persa)"
+
+#: ../src/main-win.c:1356
+msgid ""
+"Are you sure you want to delete current file?\n"
+"\n"
+"Warning: Once deleted, the file cannot be recovered."
+msgstr ""
+"Sicuro/a di volere eliminare il file?\n"
+"\n"
+"Attenzione: Una volta eliminato il file\n"
+"non è riperibile nuovamente."
+
+#: ../src/main-win.c:1401
+msgid "Full Screen"
+msgstr "Schermo intero"
+
+#: ../src/main-win.c:1410
+msgid "Save As"
+msgstr "Salvare con nome..."
+
+#: ../src/main-win.c:1457
+msgid " * Refer to source code of EOG image viewer and GThumb"
+msgstr " * Riferirsi al codice originale dell' EOG image viewer e di GThumb"
+
+#. TRANSLATORS: Replace mw string with your names, one name per line.
+#: ../src/main-win.c:1461
+msgid "translator-credits"
+msgstr ""
+"Fabio Barone\n"
+"Fabio Barone <phonky@gmx.net>"
+
+#: ../src/main-win.c:1469
+msgid "GPicView"
+msgstr "GPicView"
+
+#: ../src/main-win.c:1471
+msgid "Copyright (C) 2007"
+msgstr "Copyright (C) 2007"
+
+#: ../src/main-win.c:1472
+msgid "Lightweight image viewer from LXDE project"
+msgstr "Visualizzatore di immagini leggero, dal progetto LXDE"
+
+#: ../src/pref.c:88
+msgid ""
+"GPicView will become the default viewer for all supported image files on your system.\n"
+"(This will be done through 'xdg-mime' program)\n"
+"\n"
+"<b>Are you sure you really want to do this?</b>"
+msgstr ""
+"GPicView diverrà il visualizzatore standard per tutte le immagini supportate sul Suo sistema.\n"
+"(Questo avverrà tramite il programma 'xdg-mime')\n"
+"<b>È davvero sicuro/a che è cio che vuole?</b>"
+
+#: ../src/pref.c:106
+msgid "Ask before saving  images"
+msgstr "Domandare prima di salvare immagini"
+
+#: ../src/pref.c:110
+msgid "Automatically save rotated images ( Currently only JPEG is supported )"
+msgstr "Salvare immagini girate automaticamente (Al momento solo il formato JPEG è supportato)"
+
+#: ../src/pref.c:114
+msgid "Change EXIF orientation value while rotating and fliping only if EXIF orientation tag exist ( JPEG only )"
+msgstr "Cambiare il valore di orientamento EXIF al girare o voltare solo se la voce orientazione EXIF esiste (solo JPEG)"
+
+#: ../src/pref.c:118
+msgid "Make GPicview the default viewer for images"
+msgstr "Selezionare GPicView come visualizzatore standard per immagini"
+
+#~ msgid " * Some icons are taken from gimmage"
+#~ msgstr " * Einige Icons wurden von gimmage verwendet"
+#~ msgid ""
+#~ "Lightweight image viewer\n"
+#~ "\n"
+#~ "Developed by Hon Jen Yee (PCMan)"
+#~ msgstr ""
+#~ "Schneller Bildbetrachter\n"
+#~ "\n"
+#~ "Entwickelt von Hon Jen Yee (PCMan)"
+
