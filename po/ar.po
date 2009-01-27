@@ -1,0 +1,185 @@
+# Arabic translations for PACKAGE package.
+# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# أحمد فرغل <ahmad.farghal@gmail.com>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: GPicView\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-01-27 13:22+0200\n"
+"PO-Revision-Date: 2009-01-27 14:00+0200\n"
+"Last-Translator: Ahmad Farghal <ahmad.farghal@gmail.com>\n"
+"Language-Team: Arabic\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/gpicview.c:36
+msgid "[FILE]"
+msgstr "[ملف]"
+
+#: ../src/main-win.c:146
+msgid "Image Viewer"
+msgstr "عارض الصور"
+
+#: ../src/main-win.c:229
+#: ../src/main-win.c:1393
+msgid "Previous"
+msgstr "السابقة"
+
+#: ../src/main-win.c:230
+#: ../src/main-win.c:1394
+msgid "Next"
+msgstr "التالية"
+
+#: ../src/main-win.c:234
+#: ../src/main-win.c:1396
+msgid "Zoom Out"
+msgstr "كبّر"
+
+#: ../src/main-win.c:235
+#: ../src/main-win.c:1397
+msgid "Zoom In"
+msgstr "صغّر"
+
+#. percent = gtk_entry_new();    // show scale (in percentage)
+#. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
+#. gtk_widget_set_size_request( percent, 45, -1 );
+#. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
+#: ../src/main-win.c:242
+#: ../src/main-win.c:1398
+msgid "Fit Image To Window Size"
+msgstr "لائم الصورة مع حجم النافذة"
+
+#: ../src/main-win.c:244
+#: ../src/main-win.c:1399
+msgid "Original Size"
+msgstr "الحجم الأصلي"
+
+#: ../src/main-win.c:251
+msgid " Full Screen"
+msgstr "ملء الشاشة"
+
+#: ../src/main-win.c:255
+#: ../src/main-win.c:1403
+msgid "Rotate Counterclockwise"
+msgstr "لِف عكس عقارب الساعة"
+
+#: ../src/main-win.c:257
+#: ../src/main-win.c:1404
+msgid "Rotate Clockwise"
+msgstr "لِف مع عقارب الساعة"
+
+#: ../src/main-win.c:261
+#: ../src/main-win.c:1408
+msgid "Open File"
+msgstr "افتح ملفا"
+
+#: ../src/main-win.c:262
+#: ../src/main-win.c:1409
+msgid "Save File"
+msgstr "احفظ الملف"
+
+#: ../src/main-win.c:263
+msgid "Save File As"
+msgstr "احفظ الملف كـ"
+
+#. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
+#: ../src/main-win.c:264
+#: ../src/main-win.c:1412
+msgid "Delete File"
+msgstr "احذف الملف"
+
+#: ../src/main-win.c:267
+#: ../src/pref.c:103
+msgid "Preferences"
+msgstr "تفضيلات"
+
+#: ../src/main-win.c:956
+msgid "All Supported Images"
+msgstr "كل ملفات الصور المدعومة"
+
+#: ../src/main-win.c:961
+msgid "All Files"
+msgstr "كل الملفات"
+
+#: ../src/main-win.c:1302
+msgid ""
+"The file name you selected already exist.\n"
+"Do you want to overwrite existing file?\n"
+"(Warning: The quality of original image might be lost)"
+msgstr ""
+"اسم الملف الذي انتقيته موجود بالفعل.\n"
+"هل تريد الكتابة فوق الملف الموجود؟\n"
+"(تحذير: قد تفقد جودة الصورة الأصلية)"
+
+#: ../src/main-win.c:1356
+msgid ""
+"Are you sure you want to delete current file?\n"
+"\n"
+"Warning: Once deleted, the file cannot be recovered."
+msgstr ""
+"هل أنت متأكد أنك تريد حذف الملف الحالي؟\n"
+"\n"
+"تحذير: لا يمكن استعادة الملف بعد حذفه."
+
+#: ../src/main-win.c:1401
+msgid "Full Screen"
+msgstr "ملء الشاشة"
+
+#: ../src/main-win.c:1410
+msgid "Save As"
+msgstr "احفظ كـ"
+
+#: ../src/main-win.c:1457
+msgid " * Refer to source code of EOG image viewer and GThumb"
+msgstr "* انظر الشفرة المصدرية لعارض الصور عين جنوم و GThumb"
+
+#. TRANSLATORS: Replace mw string with your names, one name per line.
+#: ../src/main-win.c:1461
+msgid "translator-credits"
+msgstr "أحمد فرغل <ahmad.farghal@gmail.com>"
+
+#: ../src/main-win.c:1469
+msgid "GPicView"
+msgstr "GPicView"
+
+#: ../src/main-win.c:1471
+msgid "Copyright (C) 2007"
+msgstr "حقوق النشر محفوظة (C) 2007"
+
+#: ../src/main-win.c:1472
+msgid "Lightweight image viewer from LXDE project"
+msgstr "عارض صور خفيف من مشروع LXDE"
+
+#: ../src/pref.c:88
+msgid ""
+"GPicView will become the default viewer for all supported image files on your system.\n"
+"(This will be done through 'xdg-mime' program)\n"
+"\n"
+"<b>Are you sure you really want to do this?</b>"
+msgstr ""
+"سيصبح GPicview عارض الصور الافتراضي لكل ملفات الصور المدعومة في النظام.\n"
+"(ستتم هذه العملية بواسطة برنامج 'xdg-mime')\n"
+"\n"
+"<b>هل أنت متأكد أنك تريد القيام بهذا؟</b>"
+
+#: ../src/pref.c:106
+msgid "Ask before saving  images"
+msgstr "اسأل قبل حفظ الصور"
+
+#: ../src/pref.c:110
+msgid "Automatically save rotated images ( Currently only JPEG is supported )"
+msgstr "احفظ الصور الملفوفة آليا (صور JPEG فقط هي المدعومة حاليا)"
+
+#: ../src/pref.c:114
+msgid "Change EXIF orientation value while rotating and fliping only if EXIF orientation tag exist ( JPEG only )"
+msgstr "لا تغير اتجاه الصورة في EXIF عند لفها أو قلبها إلا إذا كان وسم EXIF لاتجاه الصورة موجودا (JPEG فقط)"
+
+#: ../src/pref.c:118
+msgid "Make GPicview the default viewer for images"
+msgstr "اجعل GPicview عارض الصور الافتراضي"
+
+
+ 	  	 
