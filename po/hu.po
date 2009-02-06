@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gpicview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-10 23:25+0800\n"
+"POT-Creation-Date: 2009-02-06 22:47+0100\n"
 "PO-Revision-Date: 2008-04-21 07:44+0100\n"
 "Last-Translator: SZERVÁC Attila <sas@321.hu>\n"
 "Language-Team: Hungarian <debian-l10n-hungarian@lists.debian.org>\n"
@@ -18,31 +18,27 @@ msgstr ""
 "X-Poedit-Language: Hungarian\n"
 "X-Poedit-Country: HUNGARY\n"
 
-#: src/gpicview.c:36
+#: ../src/gpicview.c:36
 msgid "[FILE]"
 msgstr "[FÁJL]"
 
-#: src/main-win.c:137
+#: ../src/main-win.c:146
 msgid "Image Viewer"
 msgstr "Képmegjelenítő"
 
-#: src/main-win.c:220
-#: src/main-win.c:1116
+#: ../src/main-win.c:229 ../src/main-win.c:1393
 msgid "Previous"
 msgstr "Előző"
 
-#: src/main-win.c:221
-#: src/main-win.c:1117
+#: ../src/main-win.c:230 ../src/main-win.c:1394
 msgid "Next"
 msgstr "Következő"
 
-#: src/main-win.c:225
-#: src/main-win.c:1119
+#: ../src/main-win.c:234 ../src/main-win.c:1396
 msgid "Zoom Out"
 msgstr "Kicsinyítés"
 
-#: src/main-win.c:226
-#: src/main-win.c:1120
+#: ../src/main-win.c:235 ../src/main-win.c:1397
 msgid "Zoom In"
 msgstr "Nagyítás"
 
@@ -50,63 +46,56 @@ msgstr "Nagyítás"
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
 #. gtk_widget_set_size_request( percent, 45, -1 );
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
-#: src/main-win.c:233
-#: src/main-win.c:1121
+#: ../src/main-win.c:242 ../src/main-win.c:1398
 msgid "Fit Image To Window Size"
 msgstr "Az ablak méretéhez"
 
-#: src/main-win.c:235
-#: src/main-win.c:1122
+#: ../src/main-win.c:244 ../src/main-win.c:1399
 msgid "Original Size"
 msgstr "Eredeti méret"
 
-#: src/main-win.c:242
+#: ../src/main-win.c:251
 msgid " Full Screen"
 msgstr "Teljes képernyő"
 
-#: src/main-win.c:246
-#: src/main-win.c:1126
+#: ../src/main-win.c:255 ../src/main-win.c:1403
 msgid "Rotate Counterclockwise"
 msgstr "Forgatás balra"
 
-#: src/main-win.c:248
-#: src/main-win.c:1127
+#: ../src/main-win.c:257 ../src/main-win.c:1404
 msgid "Rotate Clockwise"
 msgstr "Forgatás jobbra"
 
-#: src/main-win.c:252
-#: src/main-win.c:1129
+#: ../src/main-win.c:261 ../src/main-win.c:1408
 msgid "Open File"
 msgstr "Megnyitás"
 
-#: src/main-win.c:253
-#: src/main-win.c:1130
+#: ../src/main-win.c:262 ../src/main-win.c:1409
 msgid "Save File"
 msgstr "Mentés"
 
-#: src/main-win.c:254
+#: ../src/main-win.c:263
 msgid "Save File As"
 msgstr "Mentés másként"
 
-#: src/main-win.c:255
-#: src/main-win.c:1132
+#. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
+#: ../src/main-win.c:264 ../src/main-win.c:1412
 msgid "Delete File"
 msgstr "Fájl törlése"
 
-#: src/main-win.c:258
-#: src/pref.c:100
+#: ../src/main-win.c:267 ../src/pref.c:103
 msgid "Preferences"
 msgstr "Beállítások"
 
-#: src/main-win.c:741
+#: ../src/main-win.c:956
 msgid "All Supported Images"
 msgstr "Támogatott képek"
 
-#: src/main-win.c:746
+#: ../src/main-win.c:961
 msgid "All Files"
 msgstr "Minden fájl"
 
-#: src/main-win.c:1069
+#: ../src/main-win.c:1302
 msgid ""
 "The file name you selected already exist.\n"
 "Do you want to overwrite existing file?\n"
@@ -116,7 +105,7 @@ msgstr ""
 "Felülírod a létező fájlt?\n"
 "(Figyelem: Az eredeti kép minősége romolhat)"
 
-#: src/main-win.c:1098
+#: ../src/main-win.c:1356
 msgid ""
 "Are you sure you want to delete current file?\n"
 "\n"
@@ -126,38 +115,39 @@ msgstr ""
 "\n"
 "Figyelem: Törlés után a fájlt nem lehet visszaállítani."
 
-#: src/main-win.c:1124
+#: ../src/main-win.c:1401
 msgid "Full Screen"
 msgstr "Teljes képernyő"
 
-#: src/main-win.c:1131
+#: ../src/main-win.c:1410
 msgid "Save As"
 msgstr "Mentés másként"
 
-#: src/main-win.c:1174
+#: ../src/main-win.c:1457
 msgid " * Refer to source code of EOG image viewer and GThumb"
 msgstr " * Lásd az EOG és GThumb képmegjelenítő forráskódját"
 
 #. TRANSLATORS: Replace mw string with your names, one name per line.
-#: src/main-win.c:1178
+#: ../src/main-win.c:1461
 msgid "translator-credits"
 msgstr "SZERVÁC Attila"
 
-#: src/main-win.c:1186
+#: ../src/main-win.c:1469
 msgid "GPicView"
 msgstr "GPicView"
 
-#: src/main-win.c:1188
+#: ../src/main-win.c:1471
 msgid "Copyright (C) 2007"
 msgstr "Copyright (C) 2007"
 
-#: src/main-win.c:1189
+#: ../src/main-win.c:1472
 msgid "Lightweight image viewer from LXDE project"
 msgstr "Pillekönnyű képnéző az LXDE projekthez"
 
-#: src/pref.c:86
+#: ../src/pref.c:88
 msgid ""
-"GPicView will become the default viewer for all supported image files on your system.\n"
+"GPicView will become the default viewer for all supported image files on "
+"your system.\n"
 "(This will be done through 'xdg-mime' program)\n"
 "\n"
 "<b>Are you sure you really want to do this?</b>"
@@ -167,15 +157,20 @@ msgstr ""
 "\n"
 "<b>Valóban ezt kívánod?</b>"
 
-#: src/pref.c:103
+#: ../src/pref.c:106
 msgid "Ask before saving  images"
 msgstr "Kérdés a képek mentése előtt"
 
-#: src/pref.c:107
+#: ../src/pref.c:110
 msgid "Automatically save rotated images ( Currently only JPEG is supported )"
 msgstr "Az elforgatott képek automatikus mentése ( csak a JPEG támogatott )"
 
-#: src/pref.c:111
+#: ../src/pref.c:114
+msgid ""
+"Change EXIF orientation value while rotating and fliping only if EXIF "
+"orientation tag exist ( JPEG only )"
+msgstr ""
+
+#: ../src/pref.c:118
 msgid "Make GPicview the default viewer for images"
 msgstr "Legyen a GPicview az alap képmegjelenítő"
-
