@@ -1,97 +1,105 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: gpicview_hr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-02-06 23:03+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Boljsa <asjlob AT vip.hr>\n"
+"Language-Team:  <asjlob AT vip.hr>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Croatian\n"
+"X-Poedit-Country: CROATIA\n"
 
 #: ../src/gpicview.c:36
 msgid "[FILE]"
-msgstr ""
+msgstr "[DATOTEKA]"
 
 #: ../src/main-win.c:146
 msgid "Image Viewer"
-msgstr ""
+msgstr "Preglednik Slika"
 
-#: ../src/main-win.c:229 ../src/main-win.c:1393
+#: ../src/main-win.c:229
+#: ../src/main-win.c:1393
 msgid "Previous"
-msgstr ""
+msgstr "Prethodno"
 
-#: ../src/main-win.c:230 ../src/main-win.c:1394
+#: ../src/main-win.c:230
+#: ../src/main-win.c:1394
 msgid "Next"
-msgstr ""
+msgstr "Sljedeæe"
 
-#: ../src/main-win.c:234 ../src/main-win.c:1396
+#: ../src/main-win.c:234
+#: ../src/main-win.c:1396
 msgid "Zoom Out"
-msgstr ""
+msgstr "Smanji Zumiranje"
 
-#: ../src/main-win.c:235 ../src/main-win.c:1397
+#: ../src/main-win.c:235
+#: ../src/main-win.c:1397
 msgid "Zoom In"
-msgstr ""
+msgstr "Poveæaj Zumiranje"
 
 #. percent = gtk_entry_new();    // show scale (in percentage)
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
 #. gtk_widget_set_size_request( percent, 45, -1 );
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
-#: ../src/main-win.c:242 ../src/main-win.c:1398
+#: ../src/main-win.c:242
+#: ../src/main-win.c:1398
 msgid "Fit Image To Window Size"
-msgstr ""
+msgstr "Podesi Sliku Na Velièinu Prozora"
 
-#: ../src/main-win.c:244 ../src/main-win.c:1399
+#: ../src/main-win.c:244
+#: ../src/main-win.c:1399
 msgid "Original Size"
-msgstr ""
+msgstr "Orginalna Velièina"
 
 #: ../src/main-win.c:251
 msgid " Full Screen"
-msgstr ""
+msgstr " Cijeli Zaslon"
 
-#: ../src/main-win.c:255 ../src/main-win.c:1403
+#: ../src/main-win.c:255
+#: ../src/main-win.c:1403
 msgid "Rotate Counterclockwise"
-msgstr ""
+msgstr "Rotiraj Suprotno Smjeru Kazaljke na Satu"
 
-#: ../src/main-win.c:257 ../src/main-win.c:1404
+#: ../src/main-win.c:257
+#: ../src/main-win.c:1404
 msgid "Rotate Clockwise"
-msgstr ""
+msgstr "Rotiraj u Smjeru Kazaljke na Satu"
 
-#: ../src/main-win.c:261 ../src/main-win.c:1408
+#: ../src/main-win.c:261
+#: ../src/main-win.c:1408
 msgid "Open File"
-msgstr ""
+msgstr "Otvori Datoteku"
 
-#: ../src/main-win.c:262 ../src/main-win.c:1409
+#: ../src/main-win.c:262
+#: ../src/main-win.c:1409
 msgid "Save File"
-msgstr ""
+msgstr "Spremi Datoteku"
 
 #: ../src/main-win.c:263
 msgid "Save File As"
-msgstr ""
+msgstr "Spremi Datoteku Kao"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
-#: ../src/main-win.c:264 ../src/main-win.c:1412
+#: ../src/main-win.c:264
+#: ../src/main-win.c:1412
 msgid "Delete File"
-msgstr ""
+msgstr "Obri¹i Datoteku"
 
-#: ../src/main-win.c:267 ../src/pref.c:103
+#: ../src/main-win.c:267
+#: ../src/pref.c:103
 msgid "Preferences"
-msgstr ""
+msgstr "Postavke"
 
 #: ../src/main-win.c:956
 msgid "All Supported Images"
-msgstr ""
+msgstr "Sve Podr¾ane Slike"
 
 #: ../src/main-win.c:961
 msgid "All Files"
-msgstr ""
+msgstr "Sve Datoteke"
 
 #: ../src/main-win.c:1302
 msgid ""
@@ -99,6 +107,9 @@ msgid ""
 "Do you want to overwrite existing file?\n"
 "(Warning: The quality of original image might be lost)"
 msgstr ""
+"Ime datoteke koje ste odabrali veæ postoji.\n"
+"®elite li prepisati preko postojeæe datoteke?\n"
+"(Upozorenje: Kvaliteta orginalne slike mo¾e biti izgubljena)"
 
 #: ../src/main-win.c:1356
 msgid ""
@@ -106,59 +117,64 @@ msgid ""
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
+"Jeste li sigurni da ¾elite obrisati trenutnu datoteku?\n"
+"\n"
+"Upozorenje: Jednom obrisana, datoteka se ne mo¾e vratiti."
 
 #: ../src/main-win.c:1401
 msgid "Full Screen"
-msgstr ""
+msgstr "Cijeli Zaslon"
 
 #: ../src/main-win.c:1410
 msgid "Save As"
-msgstr ""
+msgstr "Spremi Kao"
 
 #: ../src/main-win.c:1457
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr ""
+msgstr " * Odnosi se na izvorni kod EOG preglednika datoteka i GThumb"
 
 #. TRANSLATORS: Replace mw string with your names, one name per line.
 #: ../src/main-win.c:1461
 msgid "translator-credits"
-msgstr ""
+msgstr "Boljsa"
 
 #: ../src/main-win.c:1469
 msgid "GPicView"
-msgstr ""
+msgstr "GPicView"
 
 #: ../src/main-win.c:1471
 msgid "Copyright (C) 2007"
-msgstr ""
+msgstr "Copyright (C) 2007"
 
 #: ../src/main-win.c:1472
 msgid "Lightweight image viewer from LXDE project"
-msgstr ""
+msgstr "Lagani preglednik slika iz LXDE projekta"
 
 #: ../src/pref.c:88
 msgid ""
-"GPicView will become the default viewer for all supported image files on "
-"your system.\n"
+"GPicView will become the default viewer for all supported image files on your system.\n"
 "(This will be done through 'xdg-mime' program)\n"
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
+"GPicView æe postati standardni preglednik za sve podr¾ane slikovne datoteke na va¹em sustavu.\n"
+"(Ovo æe biti uèinjeno kroz 'xdg-mime' program)\n"
+"\n"
+"<b>Jeste li sigurno da ¾elite ovo uèiniti?</b>"
 
 #: ../src/pref.c:106
 msgid "Ask before saving  images"
-msgstr ""
+msgstr "Pitaj prije spremanja  datoteka"
 
 #: ../src/pref.c:110
 msgid "Automatically save rotated images ( Currently only JPEG is supported )"
-msgstr ""
+msgstr "Automatski spremi rotirane slike ( Trenutno je podr¾an samo JPEG )"
 
 #: ../src/pref.c:114
-msgid ""
-"Change EXIF orientation value while rotating and fliping only if EXIF "
-"orientation tag exist ( JPEG only )"
-msgstr ""
+msgid "Change EXIF orientation value while rotating and fliping only if EXIF orientation tag exist ( JPEG only )"
+msgstr "Promijeni EXIF orijentacijsku vrijednost za vrijeme rotiranja i okretanja samo ako postoji EXIF orijentacijska oznaka ( samo JPEG )"
 
 #: ../src/pref.c:118
 msgid "Make GPicview the default viewer for images"
-msgstr ""
+msgstr "Postavi GPicView standardnim preglednikom slika"
+
