@@ -1,50 +1,49 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gpicview Rev. 1203\n"
+"Project-Id-Version: gpicview 0.1.10\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-02-06 23:03+0100\n"
-"PO-Revision-Date: 2009-03-30 15:08-0000\n"
-"Last-Translator: Vidar Jon Bauge <vidarjb@gmail.com>\n"
-"Language-Team: da_dk <vidarjb@gmail.com, chalze06@gmail.com>\n"
+"PO-Revision-Date: 2009-04-04 19:27+0100\n"
+"Last-Translator: Matej <paxmanpwnz@gmail.com>\n"
+"Language-Team: Slovenian <paxmanpwnz@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Danish\n"
-"X-Poedit-Country: DENMARK\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Language: Slovenian\n"
+"X-Poedit-Country: SLOVENIA\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 
 #: ../src/gpicview.c:36
 msgid "[FILE]"
-msgstr "[FIL]"
+msgstr "[DATOTEKA]"
 
 #: ../src/main-win.c:146
 msgid "Image Viewer"
-msgstr "Billed Fremviser"
+msgstr "Pregledovalnik slik"
 
 #: ../src/main-win.c:229
 #: ../src/main-win.c:1393
 msgid "Previous"
-msgstr "Forrige"
+msgstr "Prejšnja"
 
 #: ../src/main-win.c:230
 #: ../src/main-win.c:1394
 msgid "Next"
-msgstr "Næste"
+msgstr "Naslednja"
 
 #: ../src/main-win.c:234
 #: ../src/main-win.c:1396
 msgid "Zoom Out"
-msgstr "Zoom Ud"
+msgstr "Oddalji"
 
 #: ../src/main-win.c:235
 #: ../src/main-win.c:1397
 msgid "Zoom In"
-msgstr "Zoom Ind"
+msgstr "Približaj"
 
 #. percent = gtk_entry_new();    // show scale (in percentage)
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
@@ -53,69 +52,66 @@ msgstr "Zoom Ind"
 #: ../src/main-win.c:242
 #: ../src/main-win.c:1398
 msgid "Fit Image To Window Size"
-msgstr "Tilpas billede til Vinduets Størrelse"
+msgstr "Prilagodi sliko velikosti okna"
 
 #: ../src/main-win.c:244
 #: ../src/main-win.c:1399
 msgid "Original Size"
-msgstr "Oprindelig Størrelse"
+msgstr "Izvirna velikost"
 
 #: ../src/main-win.c:251
 msgid " Full Screen"
-msgstr "Fuld Skærm"
+msgstr "Celozaslonski način"
 
 #: ../src/main-win.c:255
 #: ../src/main-win.c:1403
 msgid "Rotate Counterclockwise"
-msgstr "Roter Mod Uret"
+msgstr "Zasuči v nasprotni smeri urinega kazalca"
 
 #: ../src/main-win.c:257
 #: ../src/main-win.c:1404
 msgid "Rotate Clockwise"
-msgstr "Roter Med Uret"
+msgstr "Zasuči v smeri urinega kazalca"
 
 #: ../src/main-win.c:261
 #: ../src/main-win.c:1408
 msgid "Open File"
-msgstr "Åben"
+msgstr "Odpri datoteko"
 
 #: ../src/main-win.c:262
 #: ../src/main-win.c:1409
 msgid "Save File"
-msgstr "Gem"
+msgstr "Shrani datoteko"
 
 #: ../src/main-win.c:263
 msgid "Save File As"
-msgstr "Gem Som"
+msgstr "Shrani datoteko kot"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
 #: ../src/main-win.c:264
 #: ../src/main-win.c:1412
 msgid "Delete File"
-msgstr "Slet"
+msgstr "Izbriši datoteko"
 
 #: ../src/main-win.c:267
 #: ../src/pref.c:103
 msgid "Preferences"
-msgstr "Indstillinger"
+msgstr "Lastnosti"
 
 #: ../src/main-win.c:956
 msgid "All Supported Images"
-msgstr "Alle Understøttede Filtyper"
+msgstr "Vsi podprti formati"
 
 #: ../src/main-win.c:961
 msgid "All Files"
-msgstr "Alle Filer"
+msgstr "Vse datoteke"
 
 #: ../src/main-win.c:1302
 msgid ""
 "The file name you selected already exist.\n"
 "Do you want to overwrite existing file?\n"
 "(Warning: The quality of original image might be lost)"
-msgstr ""
-"Det valgte filnavn findes allerede.\n"
-"Vil du overskrive den eksisterende fil?\n"
-"(Advarsel: Kvaliteten til det oprindelige billede kan gå tabt)"
+msgstr "Datoteka z izbranim imenom že obstaja. Ali res želite prepisati obstoječo datoteko?(Opozorilo: kvaliteta izvirne slike se lahko izgubi)"
 
 #: ../src/main-win.c:1356
 msgid ""
@@ -123,28 +119,26 @@ msgid ""
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
-"Bekræft sletning.\n"
-"\n"
-"Advarsel: Kan ikke fortrydes."
+"Ali res želite izbrisati trenutno datoteko?\n"
+" \n"
+" Opozorilo: izbrisane datoteke ni mogoče obnoviti."
 
 #: ../src/main-win.c:1401
 msgid "Full Screen"
-msgstr "Fuld Skærm"
+msgstr "Celozaslonski način"
 
 #: ../src/main-win.c:1410
 msgid "Save As"
-msgstr "Gem Som"
+msgstr "Shrani kot"
 
 #: ../src/main-win.c:1457
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr "* Referer til kildekoden til EOG Billedfremviser og GThumb"
+msgstr " * Glej izvorno kodo EOG pregledovalnika slik in programa GThumb"
 
 #. TRANSLATORS: Replace mw string with your names, one name per line.
 #: ../src/main-win.c:1461
 msgid "translator-credits"
-msgstr ""
-"Vidar Jon Bauge \n"
-"Charlie Tyrrestrup"
+msgstr "paxman <paxmanpwnz@gmail.com>"
 
 #: ../src/main-win.c:1469
 msgid "GPicView"
@@ -152,11 +146,11 @@ msgstr "GPicView"
 
 #: ../src/main-win.c:1471
 msgid "Copyright (C) 2007"
-msgstr "Copyright (C) 2007"
+msgstr "Vse pravice pridržane (C) 2007"
 
 #: ../src/main-win.c:1472
 msgid "Lightweight image viewer from LXDE project"
-msgstr "Letvægts billed fremviser fra LXDE projektet"
+msgstr "Lahki pregledovalnik slik projekta LXDE"
 
 #: ../src/pref.c:88
 msgid ""
@@ -165,24 +159,23 @@ msgid ""
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"GPicView vil blive standard fremviser for alle understøttede billed filer på dit system.\n"
-"(Dette sker ved hjælp af 'xdg-mime')\n"
+"GPicView bo postal privzet pregledovalnik za vse podprte slikovne datoteke na vašem sistemu.\n"
 "\n"
-"<b>Er du sikker på at du vil dette?</b>"
+"<b>Ali ste prepričani, da želite storiti to?</b>"
 
 #: ../src/pref.c:106
 msgid "Ask before saving  images"
-msgstr "Spørg før billeder gemmes"
+msgstr "Vprašaj preden shraniš"
 
 #: ../src/pref.c:110
 msgid "Automatically save rotated images ( Currently only JPEG is supported )"
-msgstr "Gem roterede billeder automatisk (Kun JPEG)"
+msgstr "Samodejno shrani zasukane slike ( Trenutno podprt le JPEG )"
 
 #: ../src/pref.c:114
 msgid "Change EXIF orientation value while rotating and fliping only if EXIF orientation tag exist ( JPEG only )"
-msgstr "Skift kun EXIF orientering ved rotation og flip, hvis der eksisterer en EXIF Orientation tag."
+msgstr "Med rotiranjem in preslikanjem spremeni EXIF orientacijsko vrednost le, če ta obstaja ( samo JPEG )"
 
 #: ../src/pref.c:118
 msgid "Make GPicview the default viewer for images"
-msgstr "Gør GPicview til standard fremviser for billeder"
+msgstr "Nastavi GPicView kot privzeti pregledovalnik slik"
 
