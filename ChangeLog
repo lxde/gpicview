@@ -1,0 +1,10 @@
+2009-04-05  Juergen Hoetzel  <juergen@archlinux.org>
+
+	* src/main-win.c (on_key_press_event): Fix #2613481 (Proper
+	next/previous switching in RTL locales (Khaled Hosny))
+
+2009-03-03  Juergen Hoetzel  <juergen@archlinux.org>
+
+	* src/main-win.c: rename instead of copy rotated tmpfile and
+	handle errors
+

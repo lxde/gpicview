@@ -1133,10 +1133,16 @@ gboolean on_scroll_event( GtkWidget* widget, GdkEventScroll* evt, MainWin* mw )
             on_next( NULL, mw );
         break;
     case GDK_SCROLL_LEFT:
-        on_prev( NULL, mw );
+        if( gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL )
+            on_next( NULL, mw );
+        else
+            on_prev( NULL, mw );
         break;
     case GDK_SCROLL_RIGHT:
-        on_next( NULL, mw );
+        if( gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL )
+            on_prev( NULL, mw );
+        else
+            on_next( NULL, mw );
         break;
     }
     return TRUE;
@@ -1150,6 +1156,11 @@ gboolean on_key_press_event(GtkWidget* widget, GdkEventKey * key)
         case GDK_Right:
         case GDK_KP_Right:
         case GDK_rightarrow:
+            if( gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL )
+                on_prev( NULL, mw );
+            else
+                on_next( NULL, mw );
+            break;
         case GDK_Return:
         case GDK_space:
         case GDK_Next:
@@ -1161,6 +1172,11 @@ gboolean on_key_press_event(GtkWidget* widget, GdkEventKey * key)
         case GDK_Left:
         case GDK_KP_Left:
         case GDK_leftarrow:
+            if( gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL )
+                on_next( NULL, mw );
+            else
+                on_prev( NULL, mw );
+            break;
         case GDK_Prior:
         case GDK_BackSpace:
         case GDK_KP_Up:
