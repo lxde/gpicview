@@ -1,4 +1,4 @@
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+﻿# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -7,14 +7,13 @@ msgstr ""
 "Project-Id-Version: gpicview 0.1.10\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-02-06 23:03+0100\n"
-"PO-Revision-Date: 2009-04-09 12:21+0200\n"
+"PO-Revision-Date: 2009-04-10 10:58+0100\n"
 "Last-Translator: Matej <paxmanpwnz@gmail.com>\n"
 "Language-Team: Slovenian <paxmanpwnz@gmail.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
-"n%100==4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 "X-Generator: Pootle 1.1.0\n"
 "X-Poedit-Language: Slovenian\n"
 "X-Poedit-Country: SLOVENIA\n"
@@ -161,8 +160,7 @@ msgid ""
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"GPicView bo na vašem sistemu postal privzeti pregledovalnik za vse podprte "
-"slikovne datoteke.\n"
+"GPicView bo na vašem sistemu postal privzeti pregledovalnik za vse podprte slikovne datoteke.\n"
 "\n"
 "<b>Ali ste prepričani, da želite storiti to?</b>"
 
@@ -181,3 +179,4 @@ msgstr "Med rotiranjem in preslikanjem spremeni EXIF orientacijsko vrednost le, 
 #: ../src/pref.c:118
 msgid "Make GPicview the default viewer for images"
 msgstr "Nastavi GPicView za privzeti pregledovalnik slik"
+
