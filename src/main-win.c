@@ -1274,6 +1274,11 @@ void rotate_image( MainWin* mw, int angle )
         else if(angle == -180)
             rpix = gdk_pixbuf_flip( mw->pix, FALSE );
     }
+
+    if (!rpix) {
+        return;
+    }
+
     g_object_unref( mw->pix );
     
     mw->pix = rpix;
