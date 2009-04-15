@@ -880,22 +880,12 @@ int rotate_and_save_jpeg_lossless(char *  filename,int angle){
     if(error)
         return error;
 
-    //now copy /tmp/rot.jpg back to the original file
-    cp_in = fopen(tmpfilename,"rb");
-    cp_out = fopen(filename,"wb");
-    while (!feof(cp_in)) {
-      int n;
-      n = fread(cp_buf,1,sizeof(cp_buf),cp_in);
-      if (n<=0) {
-        break;
-      }
-      fwrite (cp_buf,1,n,cp_out);
+    //now rename /tmp/rot.jpg back to the original file
+    if (g_rename(tmpfilename, filename) == -1) {
+      unlink(tmpfilename);
+      g_error("Unable to rename %s to %s", tmpfilename, filename);
+      /* remove tmp file */
     }
-    fclose(cp_in);
-    fclose(cp_out);
-
-    /* remove tmp file */
-    unlink(tmpfilename);
     return 0;
 }
 #endif
