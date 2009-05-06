@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-04-15 19:14+0200\n"
-"PO-Revision-Date: 2009-04-25 09:41+0200\n"
-"Last-Translator: Александр Голубев <ag@lhp.ru>\n"
+"PO-Revision-Date: 2009-05-05 04:27+0200\n"
+"Last-Translator: Tim Marinin <velkhar@gmail.com>\n"
 "Language-Team: RUSSIAN <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -110,6 +110,7 @@ msgid ""
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
 "Вы уверены что хотите удалить этот файл?\n"
+"\n"
 "Внимание: Удаленный файл не может быть восстановлен."
 
 #: ../src/main-win.c:1422
@@ -122,7 +123,7 @@ msgstr "Сохранить как"
 
 #: ../src/main-win.c:1478
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr " * Смотри исходный код EOG вьювера и GThumb"
+msgstr " * Смотри исходный код просмотрщика EOG  и GThumb"
 
 #. TRANSLATORS: Replace mw string with your names, one name per line.
 #: ../src/main-win.c:1482
@@ -141,7 +142,7 @@ msgstr "Все права защищены (С) 2008"
 
 #: ../src/main-win.c:1493
 msgid "Lightweight image viewer from LXDE project"
-msgstr "Изящный и легкий просмотрщик изображений от проекта LXDE"
+msgstr "Изящный и легкий просмотрщик изображений из проекта LXDE"
 
 #: ../src/pref.c:88
 msgid ""
@@ -151,7 +152,7 @@ msgid ""
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"GPicView станет просмотрщиком изображений по-умолчанию для всех файлов, "
+"GPicView станет просмотрщиком изображений по умолчанию для всех файлов, "
 "которые поддерживаются в вашей системе.\n"
 "(Это будет сделано через программу 'xdg-mime')\n"
 "\n"
@@ -173,7 +174,7 @@ msgid ""
 "Change EXIF orientation value while rotating and fliping only if EXIF "
 "orientation tag exist ( JPEG only )"
 msgstr ""
-"Измените значение параметра ориентации в EXIF, после поворота или отражения, "
+"Изменить значение параметра ориентации в EXIF, после поворота или отражения, "
 "только если существует параметр ориентации в EXIF (только для JPEG)"
 
 #: ../src/pref.c:118
