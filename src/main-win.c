@@ -1,19 +1,19 @@
 /***************************************************************************
- *   Copyright (C) 2007, 2008 by PCMan (Hong Jen Yee)   *
- *   pcman.tw@gmail.com   *
+ *   Copyright (C) 2007, 2008 by PCMan (Hong Jen Yee)                      *
+ *   pcman.tw@gmail.com                                                    *
  *                                                                         *
- *   mw program is free software; you can redistribute it and/or modify  *
+ *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
  *   the Free Software Foundation; either version 2 of the License, or     *
  *   (at your option) any later version.                                   *
  *                                                                         *
- *   mw program is distributed in the hope that it will be useful,       *
+ *   This program is distributed in the hope that it will be useful,       *
  *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
  *   GNU General Public License for more details.                          *
  *                                                                         *
  *   You should have received a copy of the GNU General Public License     *
- *   along with mw program; if not, write to the                         *
+ *   along with this program; if not, write to the                         *
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
@@ -33,6 +33,7 @@
 #include <errno.h>
 #include <math.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 #include "pref.h"
 
@@ -69,6 +70,7 @@ static void on_next( GtkWidget* btn, MainWin* mw );
 static void on_orig_size( GtkToggleButton* btn, MainWin* mw );
 static void on_orig_size_menu( GtkToggleButton* btn, MainWin* mw );
 static void on_prev( GtkWidget* btn, MainWin* mw );
+static void on_rotate_auto_save( GtkWidget* btn, MainWin* mw );
 static void on_rotate_clockwise( GtkWidget* btn, MainWin* mw );
 static void on_rotate_counterclockwise( GtkWidget* btn, MainWin* mw );
 static void on_save_as( GtkWidget* btn, MainWin* mw );
@@ -83,9 +85,9 @@ static gboolean on_button_release( GtkWidget* widget, GdkEventButton* evt, MainW
 static gboolean on_mouse_move( GtkWidget* widget, GdkEventMotion* evt, MainWin* mw );
 static gboolean on_scroll_event( GtkWidget* widget, GdkEventScroll* evt, MainWin* mw );
 static gboolean on_key_press_event(GtkWidget* widget, GdkEventKey * key);
+static gboolean save_confirm( MainWin* mw, const char* file_path );
 static void on_drag_data_received( GtkWidget* widget, GdkDragContext *drag_context,
-                                                                                       int x, int y, GtkSelectionData* data, guint info,
-                                                                                       guint time, MainWin* mw );
+                int x, int y, GtkSelectionData* data, guint info, guint time, MainWin* mw );
 static void on_delete( GtkWidget* btn, MainWin* mw );
 static void on_about( GtkWidget* menu, MainWin* mw );
 
@@ -248,7 +250,7 @@ void create_nav_bar( MainWin* mw, GtkWidget* box )
 #ifndef GTK_STOCK_FULLSCREEN
 #define GTK_STOCK_FULLSCREEN    "gtk-fullscreen"
 #endif
-    add_nav_btn( mw, GTK_STOCK_FULLSCREEN, _(" Full Screen"), G_CALLBACK(on_full_screen), FALSE );   // gtk+ 2.8+
+    add_nav_btn( mw, GTK_STOCK_FULLSCREEN, _("Full Screen"), G_CALLBACK(on_full_screen), FALSE );   // gtk+ 2.8+
 
     gtk_box_pack_start( (GtkBox*)mw->nav_bar, gtk_vseparator_new(), FALSE, FALSE, 0 );
 
@@ -265,6 +267,7 @@ void create_nav_bar( MainWin* mw, GtkWidget* box )
 
     gtk_box_pack_start( (GtkBox*)mw->nav_bar, gtk_vseparator_new(), FALSE, FALSE, 0 );
     add_nav_btn( mw, GTK_STOCK_PREFERENCES, _("Preferences"), G_CALLBACK(on_preference), FALSE );
+    add_nav_btn( mw, GTK_STOCK_QUIT, _("Quit"), G_CALLBACK(on_quit), FALSE );
 
     GtkWidget* align = gtk_alignment_new( 0.5, 0, 0, 0 );
     gtk_container_add( (GtkContainer*)align, mw->nav_bar );
@@ -624,14 +627,14 @@ void on_orig_size( GtkToggleButton* btn, MainWin* mw )
 //    gtk_scrolled_window_set_policy( (GtkScrolledWindow*)mw->scroll,
 //                                     GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC );
 
-    // update scale
-    updateTitle(NULL, mw);
-    
     gtk_toggle_button_set_active( (GtkToggleButton*)mw->btn_fit, FALSE );
 
     if( ! mw->pix )
         return;
 
+    // update scale
+    updateTitle(NULL, mw);
+    
     image_view_set_scale( (ImageView*)mw->img_view, 1.0, GDK_INTERP_BILINEAR );
 
     while (gtk_events_pending ())
@@ -709,48 +712,42 @@ static int get_new_angle( int orig_angle, int rotate_angle )
     return angle_trans_back[ ExifRotateFlipMapping[orig_angle][rotate_angle] ];
 }
 
+void on_rotate_auto_save( GtkWidget* btn, MainWin* mw )
+{
+    if(pref.auto_save_rotated){
+//      gboolean ask_before_save = pref.ask_before_save;
+//      pref.ask_before_save = FALSE;
+        on_save(btn,mw);
+//      pref.ask_before_save = ask_before_save;
+    }
+}
+
 void on_rotate_clockwise( GtkWidget* btn, MainWin* mw )
 {
     rotate_image( mw, GDK_PIXBUF_ROTATE_CLOCKWISE );
     mw->rotation_angle = get_new_angle(mw->rotation_angle, 90);
-    if(pref.auto_save_rotated){
-        pref.ask_before_save = FALSE;
-        on_save(btn,mw);
-        pref.ask_before_save = TRUE;
-    }
+    on_rotate_auto_save(btn, mw);
 }
 
 void on_rotate_counterclockwise( GtkWidget* btn, MainWin* mw )
 {
     rotate_image( mw, GDK_PIXBUF_ROTATE_COUNTERCLOCKWISE );
     mw->rotation_angle = get_new_angle(mw->rotation_angle, 270);
-    if(pref.auto_save_rotated){
-        pref.ask_before_save = FALSE;
-        on_save(btn,mw);
-        pref.ask_before_save = TRUE;
-    }
+    on_rotate_auto_save(btn, mw);
 }
 
 void on_flip_vertical( GtkWidget* btn, MainWin* mw )
 {
     rotate_image( mw, -180 );
     mw->rotation_angle = get_new_angle(mw->rotation_angle, -180);
-    if(pref.auto_save_rotated){
-        pref.ask_before_save = FALSE;
-        on_save(btn,mw);
-        pref.ask_before_save = TRUE;
-    }
+    on_rotate_auto_save(btn, mw);
 }
 
 void on_flip_horizontal( GtkWidget* btn, MainWin* mw )
 {
     rotate_image( mw, -90 );
     mw->rotation_angle = get_new_angle(mw->rotation_angle, -90);
-    if(pref.auto_save_rotated){
-        pref.ask_before_save = FALSE;
-        on_save(btn,mw);
-        pref.ask_before_save = TRUE;
-    }
+    on_rotate_auto_save(btn, mw);
 }
 
 ///////////////////// end of rotate & flip
@@ -848,14 +845,11 @@ void on_save_as( GtkWidget* btn, MainWin* mw )
 #ifdef HAVE_LIBJPEG
 int rotate_and_save_jpeg_lossless(char *  filename,int angle){
 
-    char tmpfilename[] = {"/tmp/rot.jpg.XXXXXX"};
+    char tmpfilename[PATH_MAX];
     int tmpfilefd;
-    FILE *cp_in;
-    FILE *cp_out;
-    char cp_buf[512];
 
     if(angle < 0)
-        return -1;
+        return EINVAL;
     
     JXFORM_CODE code = JXFORM_NONE;
 
@@ -868,23 +862,32 @@ int rotate_and_save_jpeg_lossless(char *  filename,int angle){
     else if(angle == 270)
         code = JXFORM_ROT_270;
 
-    /* create tmp file */
+    /* Length check temporary file name. */
+    if(strlen(filename) > (sizeof(tmpfilename) - 8))
+	return EINVAL;
+    sprintf(tmpfilename, "%s.XXXXXX", filename);
+
+    /* Create temporary file. */
     tmpfilefd = mkstemp(tmpfilename);
     if (tmpfilefd == -1) {
-      return -1;
+      return errno;
     }
     close(tmpfilefd);
 
-    //rotate the image and save it to /tmp/rot.jpg
-    int error = jpegtran (filename, tmpfilename , code);
-    if(error)
-        return error;
+    /* Rotate the image and save it to temporary file. */
+    int error = jpegtran (filename, tmpfilename, code);
+    if(error) {
+	int saved_errno = errno;
+        unlink(tmpfilename);
+        return saved_errno;
+    }
 
-    //now rename /tmp/rot.jpg back to the original file
-    if (g_rename(tmpfilename, filename) == -1) {
-      unlink(tmpfilename);
-      g_error("Unable to rename %s to %s", tmpfilename, filename);
-      /* remove tmp file */
+    /* Rename temporary file over the original file. */
+    int error_1 = g_rename(tmpfilename, filename);
+    if (error_1 == -1) {
+	int saved_errno = errno;
+        unlink(tmpfilename);
+        return saved_errno;
     }
     return 0;
 }
@@ -901,6 +904,10 @@ void on_save( GtkWidget* btn, MainWin* mw )
     info = gdk_pixbuf_get_file_info( file_name, NULL, NULL );
     char* type = gdk_pixbuf_format_get_name( info );
 
+    /* Confirm save if requested. */
+    if ((pref.ask_before_save) && ( ! save_confirm(mw, file_name)))
+	return;
+
     if(strcmp(type,"jpeg")==0)
     {
         if(!pref.rotate_exif_only || ExifRotate(file_name, mw->rotation_angle) == FALSE)
@@ -913,9 +920,10 @@ void on_save( GtkWidget* btn, MainWin* mw )
             // And then we apply rotate_and_save_jpeg_lossless() , 
             // the result would not effected by EXIF Orientation...
 #ifdef HAVE_LIBJPEG
-            if(rotate_and_save_jpeg_lossless(file_name,mw->rotation_angle)!=0)
+            int status = rotate_and_save_jpeg_lossless(file_name,mw->rotation_angle);
+	    if(status != 0)
             {
-                main_win_show_error(mw, "Save failed! Check permissions.");
+                main_win_show_error( mw, g_strerror(status) );
             }
 #else
             main_win_save( mw, file_name, type, pref.ask_before_save );
@@ -1214,11 +1222,17 @@ gboolean on_key_press_event(GtkWidget* widget, GdkEventKey * key)
 //        case GDK_D:
             on_delete( NULL, mw );
             break;
+	case GDK_p:
+	    on_preference( NULL, mw );
+	    break;
         case GDK_Escape:
             if( mw->full_screen )
                 on_full_screen( NULL, mw );
             else
                 on_quit( NULL, mw );
+            break;
+        case GDK_q:
+            on_quit( NULL, mw );
             break;
         case GDK_F11:
             on_full_screen( NULL, mw );
@@ -1294,6 +1308,25 @@ gboolean main_win_scale_image( MainWin* mw, double new_scale, GdkInterpType type
     return TRUE;
 }
 
+gboolean save_confirm( MainWin* mw, const char* file_path )
+{
+    if( g_file_test( file_path, G_FILE_TEST_EXISTS ) )
+    {
+        GtkWidget* dlg = gtk_message_dialog_new( (GtkWindow*)mw,
+                GTK_DIALOG_MODAL,
+                GTK_MESSAGE_QUESTION,
+                GTK_BUTTONS_YES_NO,
+                _("The file name you selected already exists.\nDo you want to overwrite existing file?\n(Warning: The quality of original image might be lost)") );
+        if( gtk_dialog_run( (GtkDialog*)dlg ) != GTK_RESPONSE_YES )
+        {
+            gtk_widget_destroy( dlg );
+            return FALSE;
+        }
+        gtk_widget_destroy( dlg );
+    }
+    return TRUE;
+}
+
 gboolean main_win_save( MainWin* mw, const char* file_path, const char* type, gboolean confirm )
 {
     gboolean result1,gdk_save_supported;
@@ -1301,24 +1334,6 @@ gboolean main_win_save( MainWin* mw, const char* file_path, const char* type, gb
     GSList *gdk_formats_i;
     if( ! mw->pix )
         return FALSE;
-
-    if( confirm )   // check existing file
-    {
-        if( g_file_test( file_path, G_FILE_TEST_EXISTS ) )
-        {
-            GtkWidget* dlg = gtk_message_dialog_new( (GtkWindow*)mw,
-                    GTK_DIALOG_MODAL,
-                    GTK_MESSAGE_QUESTION,
-                    GTK_BUTTONS_YES_NO,
-                    _("The file name you selected already exist.\nDo you want to overwrite existing file?\n(Warning: The quality of original image might be lost)") );
-            if( gtk_dialog_run( (GtkDialog*)dlg ) != GTK_RESPONSE_YES )
-            {
-                gtk_widget_destroy( dlg );
-                return FALSE;
-            }
-            gtk_widget_destroy( dlg );
-        }
-    }
 
     /* detect if the current type can be save by gdk_pixbuf_save() */
     gdk_save_supported = FALSE;
@@ -1342,8 +1357,7 @@ gboolean main_win_save( MainWin* mw, const char* file_path, const char* type, gb
     GError* err = NULL;
     if (!gdk_save_supported)
     {
-        /* FIXME: we should show some error messages here when the type
-           is not supported to save */
+        main_win_show_error( mw, _("Writing of this image format not supported") );
         return FALSE;
     }
     result1 = gdk_pixbuf_save( mw->pix, file_path, type, &err, NULL );
@@ -1390,7 +1404,11 @@ void on_delete( GtkWidget* btn, MainWin* mw )
 		image_list_remove ( mw->img_list, name );
 
 		if ( ! next_name )
-		    gtk_main_quit();
+		{
+		    main_win_close( mw );
+		    image_view_set_pixbuf( (ImageView*)mw->img_view, NULL );
+		    gtk_window_set_title( (GtkWindow*) mw, _("Image Viewer"));
+		}
 	    }
         }
 	g_free( file_path );
@@ -1422,6 +1440,9 @@ void show_popup_menu( MainWin* mw, GdkEventButton* evt )
 //        PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
         PTK_IMG_MENU_ITEM( N_("Delete File"), GTK_STOCK_DELETE, G_CALLBACK(on_delete), GDK_Delete, 0 ),
         PTK_SEPARATOR_MENU_ITEM,
+        PTK_IMG_MENU_ITEM( N_("Preferences"), GTK_STOCK_PREFERENCES, G_CALLBACK(on_preference), GDK_P, 0 ),
+        PTK_IMG_MENU_ITEM( N_("Quit"), GTK_STOCK_QUIT, G_CALLBACK(on_quit), GDK_Q, 0 ),
+        PTK_SEPARATOR_MENU_ITEM,
         PTK_STOCK_MENU_ITEM( GTK_STOCK_ABOUT, on_about ),
         PTK_MENU_END
     };
@@ -1448,7 +1469,7 @@ static void open_url( GtkAboutDialog *dlg, const gchar *url, gpointer data)
         {
              gchar* argv [3];
              argv [0] = programs[i];
-             argv [1] = url;
+             argv [1] = (gchar *) url;
              argv [2] = NULL;
              g_spawn_async (NULL, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, NULL); 
              g_free( open_cmd );
@@ -1468,7 +1489,7 @@ void on_about( GtkWidget* menu, MainWin* mw )
         _(" * Refer to source code of EOG image viewer and GThumb"),
         NULL
     };
-    /* TRANSLATORS: Replace mw string with your names, one name per line. */
+    /* TRANSLATORS: Replace this string with your names, one name per line. */
     gchar *translators = _( "translator-credits" );
 
     gtk_about_dialog_set_url_hook( open_url, mw, NULL);
@@ -1481,7 +1502,7 @@ void on_about( GtkWidget* menu, MainWin* mw )
     gtk_about_dialog_set_logo( (GtkAboutDialog*)about_dlg, gdk_pixbuf_new_from_file(  PACKAGE_DATA_DIR"/pixmaps/gpicview.png", NULL ) );
     gtk_about_dialog_set_copyright ( (GtkAboutDialog*)about_dlg, _( "Copyright (C) 2007" ) );
     gtk_about_dialog_set_comments ( (GtkAboutDialog*)about_dlg, _( "Lightweight image viewer from LXDE project" ) );
-    gtk_about_dialog_set_license ( (GtkAboutDialog*)about_dlg, "GPicView\n\nCopyright (C) 2007 Hong Jen Yee (PCMan)\n\nmw program is free software; you can redistribute it and/or\nmodify it under the terms of the GNU General Public License\nas published by the Free Software Foundation; either version 2\nof the License, or (at your option) any later version.\n\nmw program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with mw program; if not, write to the Free Software\nFoundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA." );
+    gtk_about_dialog_set_license ( (GtkAboutDialog*)about_dlg, "GPicView\n\nCopyright (C) 2007 Hong Jen Yee (PCMan)\n\nThis program is free software; you can redistribute it and/or\nmodify it under the terms of the GNU General Public License\nas published by the Free Software Foundation; either version 2\nof the License, or (at your option) any later version.\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with this program; if not, write to the Free Software\nFoundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA." );
     gtk_about_dialog_set_website ( (GtkAboutDialog*)about_dlg, "http://lxde.org/gpicview/" );
     gtk_about_dialog_set_authors ( (GtkAboutDialog*)about_dlg, authors );
     gtk_about_dialog_set_translator_credits ( (GtkAboutDialog*)about_dlg, translators );

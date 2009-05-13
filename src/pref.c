@@ -42,7 +42,7 @@ void load_preferences()
     GKeyFile* kf;
     char* path;
 
-    pref.auto_save_rotated = TRUE;
+//  pref.auto_save_rotated = TRUE;
     pref.ask_before_save = TRUE;
 
     kf = g_key_file_new();
@@ -103,19 +103,19 @@ void edit_preferences( GtkWindow* parent )
     GtkDialog* dlg = (GtkDialog*)gtk_dialog_new_with_buttons( _("Preferences"), parent, GTK_DIALOG_MODAL,
                                                                GTK_STOCK_CLOSE ,GTK_RESPONSE_CLOSE, NULL );
 
-    ask_before_save_btn = gtk_check_button_new_with_label( _("Ask before saving  images") );
+    ask_before_save_btn = gtk_check_button_new_with_label( _("Ask before saving images") );
     gtk_toggle_button_set_active( (GtkToggleButton*)ask_before_save_btn, pref.ask_before_save );
     gtk_box_pack_start( (GtkBox*)dlg->vbox, ask_before_save_btn, FALSE, FALSE, 2 );
 
-    auto_save_btn = gtk_check_button_new_with_label( _("Automatically save rotated images ( Currently only JPEG is supported )") );
+    auto_save_btn = gtk_check_button_new_with_label( _("Automatically save rotated images") );
     gtk_toggle_button_set_active( (GtkToggleButton*)auto_save_btn, pref.auto_save_rotated );
     gtk_box_pack_start( (GtkBox*)dlg->vbox, auto_save_btn, FALSE, FALSE, 2 );
     
-    rotate_exif_only_btn = gtk_check_button_new_with_label( _("Change EXIF orientation value while rotating and fliping only if EXIF orientation tag exist ( JPEG only )") );
+    rotate_exif_only_btn = gtk_check_button_new_with_label( _("Rotate JPEG file by changing EXIF orientation value (only if EXIF orientation tag exists)") );
     gtk_toggle_button_set_active( (GtkToggleButton*)rotate_exif_only_btn, pref.rotate_exif_only );
     gtk_box_pack_start( (GtkBox*)dlg->vbox, rotate_exif_only_btn, FALSE, FALSE, 2 );
 
-    set_default_btn = gtk_button_new_with_label( _("Make GPicview the default viewer for images") );
+    set_default_btn = gtk_button_new_with_label( _("Make GPicView the default viewer for images") );
     g_signal_connect( set_default_btn, "clicked", G_CALLBACK(on_set_default), parent );
     gtk_box_pack_start( (GtkBox*)dlg->vbox, set_default_btn, FALSE, FALSE, 2 );
 
