@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GPicView 0.1.11\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-15 19:14+0200\n"
+"POT-Creation-Date: 2009-05-13 08:28+0200\n"
 "PO-Revision-Date: 2009-02-26 16:05+0100\n"
 "Last-Translator: Piotr Sokół <piotr.sokol@10g.pl>\n"
 "Language-Team: Polish\n"
@@ -20,23 +20,23 @@ msgstr ""
 msgid "[FILE]"
 msgstr "[PLIK]"
 
-#: ../src/main-win.c:146
+#: ../src/main-win.c:148 ../src/main-win.c:1410
 msgid "Image Viewer"
 msgstr "Przeglądarka obrazów GPicView"
 
-#: ../src/main-win.c:229 ../src/main-win.c:1414
+#: ../src/main-win.c:231 ../src/main-win.c:1422
 msgid "Previous"
 msgstr "Poprzedni"
 
-#: ../src/main-win.c:230 ../src/main-win.c:1415
+#: ../src/main-win.c:232 ../src/main-win.c:1423
 msgid "Next"
 msgstr "Następny"
 
-#: ../src/main-win.c:234 ../src/main-win.c:1417
+#: ../src/main-win.c:236 ../src/main-win.c:1425
 msgid "Zoom Out"
 msgstr "Pomniejsz"
 
-#: ../src/main-win.c:235 ../src/main-win.c:1418
+#: ../src/main-win.c:237 ../src/main-win.c:1426
 msgid "Zoom In"
 msgstr "Powiększ"
 
@@ -44,58 +44,63 @@ msgstr "Powiększ"
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
 #. gtk_widget_set_size_request( percent, 45, -1 );
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
-#: ../src/main-win.c:242 ../src/main-win.c:1419
+#: ../src/main-win.c:244 ../src/main-win.c:1427
 msgid "Fit Image To Window Size"
 msgstr "Dopasuj do okna"
 
-#: ../src/main-win.c:244 ../src/main-win.c:1420
+#: ../src/main-win.c:246 ../src/main-win.c:1428
 msgid "Original Size"
 msgstr "Zwykły rozmiar"
 
-#: ../src/main-win.c:251
-msgid " Full Screen"
+#: ../src/main-win.c:253 ../src/main-win.c:1430
+msgid "Full Screen"
 msgstr "Pełny ekran"
 
-#: ../src/main-win.c:255 ../src/main-win.c:1424
+#: ../src/main-win.c:257 ../src/main-win.c:1432
 msgid "Rotate Counterclockwise"
 msgstr "Obróć w lewo"
 
-#: ../src/main-win.c:257 ../src/main-win.c:1425
+#: ../src/main-win.c:259 ../src/main-win.c:1433
 msgid "Rotate Clockwise"
 msgstr "Obróć w prawo"
 
-#: ../src/main-win.c:261 ../src/main-win.c:1429
+#: ../src/main-win.c:263 ../src/main-win.c:1437
 msgid "Open File"
 msgstr "Otwórz..."
 
-#: ../src/main-win.c:262 ../src/main-win.c:1430
+#: ../src/main-win.c:264 ../src/main-win.c:1438
 msgid "Save File"
 msgstr "Zapisz"
 
-#: ../src/main-win.c:263
+#: ../src/main-win.c:265
 msgid "Save File As"
 msgstr "Zapisz jako..."
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
-#: ../src/main-win.c:264 ../src/main-win.c:1433
+#: ../src/main-win.c:266 ../src/main-win.c:1441
 msgid "Delete File"
 msgstr "Usuń"
 
-#: ../src/main-win.c:267 ../src/pref.c:103
+#: ../src/main-win.c:269 ../src/main-win.c:1443 ../src/pref.c:103
 msgid "Preferences"
 msgstr "Preferencje"
 
-#: ../src/main-win.c:956
+#: ../src/main-win.c:270 ../src/main-win.c:1444
+msgid "Quit"
+msgstr ""
+
+#: ../src/main-win.c:954
 msgid "All Supported Images"
 msgstr "Obsługiwane pliki"
 
-#: ../src/main-win.c:961
+#: ../src/main-win.c:959
 msgid "All Files"
 msgstr "Wszystkie pliki"
 
-#: ../src/main-win.c:1323
+#: ../src/main-win.c:1319
+#, fuzzy
 msgid ""
-"The file name you selected already exist.\n"
+"The file name you selected already exists.\n"
 "Do you want to overwrite existing file?\n"
 "(Warning: The quality of original image might be lost)"
 msgstr ""
@@ -103,7 +108,11 @@ msgstr ""
 "Nadpisać istniejący plik?\n"
 "Uwaga: jakość obrazu może ulec pogorszeniu."
 
-#: ../src/main-win.c:1377
+#: ../src/main-win.c:1360
+msgid "Writing of this image format not supported"
+msgstr ""
+
+#: ../src/main-win.c:1381
 msgid ""
 "Are you sure you want to delete current file?\n"
 "\n"
@@ -113,34 +122,30 @@ msgstr ""
 "\n"
 "Uwaga: usuniętego pliku niebędzie można odzyskać."
 
-#: ../src/main-win.c:1422
-msgid "Full Screen"
-msgstr "Pełny ekran"
-
-#: ../src/main-win.c:1431
+#: ../src/main-win.c:1439
 msgid "Save As"
 msgstr "Zapisz jako..."
 
-#: ../src/main-win.c:1478
+#: ../src/main-win.c:1489
 msgid " * Refer to source code of EOG image viewer and GThumb"
 msgstr " * korzysta z kodu przeglądarek obrazów EOG oraz GThumb"
 
-#. TRANSLATORS: Replace mw string with your names, one name per line.
-#: ../src/main-win.c:1482
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: ../src/main-win.c:1493
 msgid "translator-credits"
 msgstr ""
 "Grzegorz Gibas <amigib@gmail.com>\n"
 "Piotr Sokół <piotr.sokol@10g.pl>"
 
-#: ../src/main-win.c:1490
+#: ../src/main-win.c:1501
 msgid "GPicView"
 msgstr "GPicView"
 
-#: ../src/main-win.c:1492
+#: ../src/main-win.c:1503
 msgid "Copyright (C) 2007"
 msgstr "Copyright (C) 2007"
 
-#: ../src/main-win.c:1493
+#: ../src/main-win.c:1504
 msgid "Lightweight image viewer from LXDE project"
 msgstr "Przeglądarka obrazów dla środowiska LXDE"
 
@@ -159,20 +164,27 @@ msgstr ""
 "<b>Kontynuować?</b>"
 
 #: ../src/pref.c:106
-msgid "Ask before saving  images"
+#, fuzzy
+msgid "Ask before saving images"
 msgstr "Wyświetlanie dialogu potwierdzenia przed zapisaniem obrazów"
 
 #: ../src/pref.c:110
-msgid "Automatically save rotated images ( Currently only JPEG is supported )"
+#, fuzzy
+msgid "Automatically save rotated images"
 msgstr "Automatyczne zapisywanie obróconych obrazów (tylko format JPEG)"
 
 #: ../src/pref.c:114
+#, fuzzy
 msgid ""
-"Change EXIF orientation value while rotating and fliping only if EXIF "
-"orientation tag exist ( JPEG only )"
+"Rotate JPEG file by changing EXIF orientation value (only if EXIF "
+"orientation tag exists)"
 msgstr ""
 "Zmiana wartości orientacji EXIF podczas obracania obrazów (tylko format JPEG)"
 
 #: ../src/pref.c:118
-msgid "Make GPicview the default viewer for images"
+#, fuzzy
+msgid "Make GPicView the default viewer for images"
 msgstr "Ustaw jako domyślną przeglądarkę obrazów"
+
+#~ msgid " Full Screen"
+#~ msgstr "Pełny ekran"
