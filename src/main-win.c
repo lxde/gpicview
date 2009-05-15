@@ -889,21 +889,21 @@ void on_save_as( GtkWidget* btn, MainWin* mw )
     info = gdk_pixbuf_get_file_info( original_file_name, NULL, NULL );
     char* original_file_type = gdk_pixbuf_format_get_name( info );
 
-    GtkWidget *file_save_as_dlg = gtk_dialog_new_with_buttons( _("Save As..."), mw, GTK_DIALOG_MODAL, GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL, GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT, NULL);
-    gtk_dialog_set_has_separator( file_save_as_dlg, FALSE );
+    GtkWidget *file_save_as_dlg = gtk_dialog_new_with_buttons( _("Save As..."), GTK_WINDOW(mw), GTK_DIALOG_MODAL, GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL, GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT, NULL);
+    gtk_dialog_set_has_separator( GTK_DIALOG(file_save_as_dlg), FALSE );
 
     //g_object_set_property( file_save_as_dlg, "content-area-border", &spacing );
 
     GtkWidget* file_chooser_widget = gtk_file_chooser_widget_new( GTK_FILE_CHOOSER_ACTION_SAVE );
     GtkWidget* compression_widget = gtk_vbox_new( FALSE, 0 );
 
-    gtk_dialog_set_default_response( file_save_as_dlg, GTK_RESPONSE_ACCEPT );
+    gtk_dialog_set_default_response( GTK_DIALOG(file_save_as_dlg), GTK_RESPONSE_ACCEPT );
     gtk_widget_set_size_request( file_save_as_dlg, 900, 560 );
 
     GtkWidget *file_save_as_content_area = gtk_dialog_get_content_area( (GtkDialog*)file_save_as_dlg );
 
     GtkWidget *compression_scale = gtk_hscale_new( NULL ); 
-    gtk_range_set_increments( compression_scale, (gdouble)1.0, 0 );
+    gtk_range_set_increments( GTK_RANGE(compression_scale), (gdouble)1.0, 0 );
     g_object_set( G_OBJECT(compression_scale), "digits", 0, NULL );
 
     GtkWidget *compression_label = gtk_label_new( NULL );
@@ -912,12 +912,12 @@ void on_save_as( GtkWidget* btn, MainWin* mw )
         // gtk_widget_set_size_request( quality_label, 0, 0 );
         // gtk_widget_set_size_request( horizontal_scale, 0, 0 );
 
-    gtk_container_add( compression_widget, gtk_hseparator_new() );
-    gtk_container_add( compression_widget, compression_label );
-    gtk_container_add( compression_widget, compression_scale );
+    gtk_container_add( GTK_CONTAINER(compression_widget), gtk_hseparator_new() );
+    gtk_container_add( GTK_CONTAINER(compression_widget), compression_label );
+    gtk_container_add( GTK_CONTAINER(compression_widget), compression_scale );
  
-    gtk_container_add( file_save_as_content_area, file_chooser_widget );
-    gtk_container_add( file_save_as_content_area, compression_widget );
+    gtk_container_add( GTK_CONTAINER(file_save_as_content_area), file_chooser_widget );
+    gtk_container_add( GTK_CONTAINER(file_save_as_content_area), compression_widget );
         
     gtk_widget_show_all( file_chooser_widget );
 
@@ -931,8 +931,8 @@ void on_save_as( GtkWidget* btn, MainWin* mw )
 //            GTK_FILE_CHOOSER_ACTION_SAVE, GTK_STOCK_CANCEL,
 //            GTK_RESPONSE_CANCEL, GTK_STOCK_SAVE, GTK_RESPONSE_OK, NULL );
 
-    gtk_file_chooser_set_current_folder( file_chooser_widget, image_list_get_dir( mw->img_list ) );
-    gtk_file_chooser_set_filename( file_chooser_widget, original_file_name ); // TODO: figure out why if you select the filename
+    gtk_file_chooser_set_current_folder( GTK_FILE_CHOOSER(file_chooser_widget), image_list_get_dir( mw->img_list ) );
+    gtk_file_chooser_set_filename( GTK_FILE_CHOOSER(file_chooser_widget), original_file_name ); // TODO: figure out why if you select the filename
                                                                     //the filter is unselected
 
     GtkFileFilter *filter;
@@ -940,7 +940,7 @@ void on_save_as( GtkWidget* btn, MainWin* mw )
     filter = gtk_file_filter_new();
     gtk_file_filter_add_pattern( filter, "*" );
     gtk_file_filter_set_name( filter, _("All Files") );
-    gtk_file_chooser_add_filter( file_chooser_widget, filter );
+    gtk_file_chooser_add_filter( GTK_FILE_CHOOSER(file_chooser_widget), filter );
 
     GSList *gdk_formats;
     GSList *gdk_formats_i;
@@ -977,34 +977,34 @@ void on_save_as( GtkWidget* btn, MainWin* mw )
                 gtk_file_filter_add_pattern( filter, "*.tif" );
             }
 
-            gtk_file_chooser_add_filter( file_chooser_widget, filter );
+            gtk_file_chooser_add_filter( GTK_FILE_CHOOSER(file_chooser_widget), filter );
 
             if ( strcmp( file_type_name, original_file_type ) == 0 )
 	    {
-                gtk_file_chooser_set_filter( file_chooser_widget, filter );
+	        gtk_file_chooser_set_filter( GTK_FILE_CHOOSER(file_chooser_widget), filter );
             }
         }
     }
 
 
-    if ( strcmp( gtk_file_filter_get_name( gtk_file_chooser_get_filter( file_chooser_widget ) ), "jpeg" ) == 0 )
+    if ( strcmp( gtk_file_filter_get_name( gtk_file_chooser_get_filter( GTK_FILE_CHOOSER(file_chooser_widget) ) ), "jpeg" ) == 0 )
     {
-        gtk_label_set_text( compression_label, _("JPEG Compression Level:") );
+        gtk_label_set_text( GTK_LABEL(compression_label), _("JPEG Compression Level:") );
 
-        gtk_range_set_range( compression_scale, (gdouble)0.0, (gdouble)100.0 );
-        gtk_range_set_value( compression_scale, (gdouble)100.0 );
+        gtk_range_set_range( GTK_RANGE(compression_scale), (gdouble)0.0, (gdouble)100.0 );
+        gtk_range_set_value( GTK_RANGE(compression_scale), (gdouble)100.0 );
 
         gtk_widget_set_tooltip_text( compression_scale, _("Lower compression values create smaller file sizes but cause the image to lose quality.") );
 
         gtk_widget_show_all( compression_widget );
     }
 
-    if ( strcmp( gtk_file_filter_get_name( gtk_file_chooser_get_filter( file_chooser_widget ) ), "png" ) == 0 )
+    if ( strcmp( gtk_file_filter_get_name( gtk_file_chooser_get_filter( GTK_FILE_CHOOSER(file_chooser_widget) ) ), "png" ) == 0 )
     {
-        gtk_label_set_text( compression_label, _("PNG Compression Level:") );
+        gtk_label_set_text( GTK_LABEL(compression_label), _("PNG Compression Level:") );
 
-        gtk_range_set_range( compression_scale, (gdouble)0.0, (gdouble)9.0 );
-        gtk_range_set_value( compression_scale, (gdouble)9.0 );
+        gtk_range_set_range( GTK_RANGE(compression_scale), (gdouble)0.0, (gdouble)9.0 );
+        gtk_range_set_value( GTK_RANGE(compression_scale), (gdouble)9.0 );
         gtk_widget_set_tooltip_text( compression_scale, _("Higher compression values create smaller file sizes but cause the image to lose quality.") );
 
         gtk_widget_show_all( compression_widget );
@@ -1015,10 +1015,10 @@ void on_save_as( GtkWidget* btn, MainWin* mw )
     if( gtk_dialog_run( (GtkDialog*)file_save_as_dlg ) == GTK_RESPONSE_ACCEPT )
     {
         char* new_file_type = NULL;
-        char* new_file_name = gtk_file_chooser_get_filename( file_chooser_widget );
+        char* new_file_name = gtk_file_chooser_get_filename( GTK_FILE_CHOOSER(file_chooser_widget) );
 
         char* file_extension_start = strrchr( new_file_name, '.' ); // finds last '.' in the string
-        gint compression_level = (gint)gtk_range_get_value( compression_scale );
+        gint compression_level = (gint)gtk_range_get_value( GTK_RANGE(compression_scale) );
 
         if( file_extension_start == NULL ) // if the image file name has no '.'
         {

@@ -118,7 +118,7 @@ int main(int argc, char *argv[])
 
     if ( pref.open_maximized )
     {
-        gtk_window_maximize( win );
+        gtk_window_maximize( GTK_WINDOW(win) );
     }
 
     win->loop = g_main_loop_new( NULL, TRUE );

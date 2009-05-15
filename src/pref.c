@@ -155,22 +155,22 @@ void edit_preferences( MainWin* parent )
     GtkWidget *background_color_non_fullscreen_label, *background_color_fullscreen_label;
     GtkWidget *background_color_non_fullscreen_btn, *background_color_fullscreen_btn;
 
-    GtkDialog* dlg = (GtkDialog*)gtk_dialog_new_with_buttons( _("Preferences"), parent, GTK_DIALOG_MODAL,
+    GtkDialog* dlg = (GtkDialog*)gtk_dialog_new_with_buttons( _("Preferences"), GTK_WINDOW(parent), GTK_DIALOG_MODAL,
                                                                GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE, NULL );
     GtkWidget* content_area = gtk_dialog_get_content_area( (GtkDialog*)dlg );
-    gtk_box_set_spacing( content_area, 10 );
+    gtk_box_set_spacing( GTK_BOX(content_area), 10 );
 
     ask_before_save_btn = gtk_check_button_new_with_label( _("Ask before saving images") );
     gtk_toggle_button_set_active( (GtkToggleButton*)ask_before_save_btn, pref.ask_before_save );
-    gtk_container_add( content_area, ask_before_save_btn );
+    gtk_container_add( GTK_CONTAINER(content_area), ask_before_save_btn );
 
     ask_before_delete_btn = gtk_check_button_new_with_label( _("Ask before deleting images") );
     gtk_toggle_button_set_active( (GtkToggleButton*)ask_before_delete_btn, pref.ask_before_delete );
-    gtk_container_add( content_area, ask_before_delete_btn );
+    gtk_container_add( GTK_CONTAINER(content_area), ask_before_delete_btn );
 
     auto_save_btn = gtk_check_button_new_with_label( _("Automatically save rotated images") );
     gtk_toggle_button_set_active( (GtkToggleButton*)auto_save_btn, pref.auto_save_rotated );
-    gtk_container_add( content_area, auto_save_btn );
+    gtk_container_add( GTK_CONTAINER(content_area), auto_save_btn );
 
     background_color_non_fullscreen = gtk_hbox_new( FALSE, 5 );
     background_color_non_fullscreen_label = gtk_label_new( "Select Background Color:" );
@@ -181,22 +181,22 @@ void edit_preferences( MainWin* parent )
     //TODO: fix this
     //g_signal_connect( background_color_non_fullscreen_btn, "color-set", G_CALLBACK(redraw_background), parent );
 
-    gtk_container_add( background_color_non_fullscreen, background_color_non_fullscreen_label );
-    gtk_container_add( background_color_non_fullscreen, background_color_non_fullscreen_btn );
+    gtk_container_add( GTK_CONTAINER(background_color_non_fullscreen), background_color_non_fullscreen_label );
+    gtk_container_add( GTK_CONTAINER(background_color_non_fullscreen), background_color_non_fullscreen_btn );
 
-    gtk_container_add( content_area, background_color_non_fullscreen );
+    gtk_container_add( GTK_CONTAINER(content_area), background_color_non_fullscreen );
     
     set_default_btn = gtk_button_new_with_label( _("Make GPicView the default viewer for images") );
     g_signal_connect( set_default_btn, "clicked", G_CALLBACK(on_set_default), parent );
-    gtk_container_add( content_area, set_default_btn );
+    gtk_container_add( GTK_CONTAINER(content_area), set_default_btn );
 
-    gtk_widget_show_all( dlg );
+    gtk_widget_show_all( GTK_WIDGET(dlg) );
     gtk_dialog_run( dlg );
 
     pref.ask_before_save = gtk_toggle_button_get_active( (GtkToggleButton*)ask_before_save_btn );
     pref.ask_before_delete = gtk_toggle_button_get_active( (GtkToggleButton*)ask_before_delete_btn );
     pref.auto_save_rotated = gtk_toggle_button_get_active( (GtkToggleButton*)auto_save_btn );
-    gtk_color_button_get_color( background_color_non_fullscreen_btn, &pref.background_color );
+    gtk_color_button_get_color( GTK_COLOR_BUTTON(background_color_non_fullscreen_btn), &pref.background_color );
 
     gtk_widget_destroy( (GtkWidget*)dlg );
 
