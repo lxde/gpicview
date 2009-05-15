@@ -58,6 +58,8 @@ typedef struct _MainWin
     GtkWidget* img_view;
     GtkWidget* scroll;
     GdkPixbuf* pix;
+    GdkPixbufAnimation* animation;
+    GdkPixbufAnimationIter* animation_iter;
     GtkWidget* evt_box;
     GtkWidget* nav_bar;
 //    GtkWidget* btn_zoom_in;
@@ -71,11 +73,15 @@ typedef struct _MainWin
     gboolean full_screen;
 
     gboolean dragging;
+    gboolean is_animation;
     double scale;
     int drag_old_x;
     int drag_old_y;
     int rotation_angle;
     ImageList* img_list;
+
+    GMainLoop *loop;
+//    GdkPixbufLoader *img_buffer;
 } MainWin;
 
 GtkWidget* main_win_new();
@@ -84,7 +90,7 @@ gboolean main_win_open( MainWin* mw, const char* file_path, ZoomMode zoom );
 
 void main_win_close( MainWin* mw );
 
-gboolean main_win_save( MainWin* mw, const char* file_path, const char* type, gboolean confirm );
+gboolean main_win_save( MainWin* mw, const char* file_path, const char* type, gboolean confirm, gdouble compression_level );
 
 void main_win_show_error( MainWin* mw, const char* message );
 
@@ -96,7 +102,8 @@ void main_win_center_image( MainWin* mw );
 
 gboolean main_win_scale_image(  MainWin* mw, double new_scale, GdkInterpType type );
 
-
 GType main_win_get_type();
+
+gboolean on_idle();
 
 #endif

@@ -30,15 +30,16 @@
 #include "main-win.h"
 
 static char** files = NULL;
+gboolean should_display_version = FALSE;
 
 static GOptionEntry opt_entries[] =
 {
     {G_OPTION_REMAINING, 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &files, NULL, N_("[FILE]")},
-    { NULL }
+    {"version", 'v', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &should_display_version, 
+                                           N_("Print version information and exit"), NULL }
 };
 
 #define PIXMAP_DIR        PACKAGE_DATA_DIR "/gpicview/pixmaps/"
-
 void register_icons()
 {
     GtkIconFactory* factory = gtk_icon_factory_new();
@@ -62,6 +63,21 @@ void register_icons()
     g_object_unref( pix );
     gtk_icon_factory_add( factory, "gtk-counterclockwise", set );
 
+    pix = gdk_pixbuf_new_from_file( PIXMAP_DIR"horizontal.png", NULL);
+    set = gtk_icon_set_new_from_pixbuf(pix);
+    g_object_unref( pix );
+    gtk_icon_factory_add( factory, "gtk-horizontal", set );
+
+    pix = gdk_pixbuf_new_from_file( PIXMAP_DIR"vertical.png", NULL);
+    set = gtk_icon_set_new_from_pixbuf(pix);
+    g_object_unref( pix );
+    gtk_icon_factory_add( factory, "gtk-vertical", set );
+
+//    pix = gdk_pixbuf_new_from_file( PIXMAP_DIR"tools.png", NULL);
+//    set = gtk_icon_set_new_from_pixbuf(pix);
+//    g_object_unref( pix );
+//    gtk_icon_factory_add( factory, "gtk-tools", set );
+
     gtk_icon_factory_add_default( factory );
 }
 
@@ -74,7 +90,11 @@ int main(int argc, char *argv[])
     context = g_option_context_new ("- simple image viewer");
     g_option_context_add_main_entries (context, opt_entries, GETTEXT_PACKAGE);
     g_option_context_add_group (context, gtk_get_option_group (TRUE));
-    g_option_context_parse (context, &argc, &argv, &error);
+    if ( !g_option_context_parse (context, &argc, &argv, &error) )
+    {
+        g_print( "option parsing failed: %s\n", error->message);
+        return 1;
+    }
 //    gtk_init( &argc, &argv );    // this is not needed if g_option_context_parse is called
 
 #ifdef ENABLE_NLS
@@ -83,11 +103,27 @@ int main(int argc, char *argv[])
     textdomain ( GETTEXT_PACKAGE );
 #endif
 
+    if ( should_display_version )
+    {
+        printf( "gpicview %s\n", VERSION );
+        return 0;
+    }
+
     register_icons();
 
     load_preferences();
 
     win = (MainWin*)main_win_new();
+    gtk_widget_show( GTK_WIDGET(win) );
+
+    if ( pref.open_maximized )
+    {
+        gtk_window_maximize( win );
+    }
+
+    win->loop = g_main_loop_new( NULL, TRUE );
+
+//    g_main_context_iteration( win->loop, FALSE );
 
     // FIXME: need to process multiple files...
     if( files )
@@ -99,12 +135,12 @@ int main(int argc, char *argv[])
             g_free( path );
         }
         else
+        {
             main_win_open( win, files[0], ZOOM_NONE );
+        }
     }
 
-    gtk_widget_show( GTK_WIDGET(win) );
-
-    gtk_main();
+    g_main_loop_run( win->loop );
 
     save_preferences();
 

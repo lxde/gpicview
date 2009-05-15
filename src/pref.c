@@ -40,19 +40,68 @@ void load_preferences()
      *  Need to replace it with our own config loader in the future. */
 
     GKeyFile* kf;
+    GError *error;
     char* path;
 
-//  pref.auto_save_rotated = TRUE;
+    pref.auto_save_rotated = FALSE;
     pref.ask_before_save = TRUE;
+    pref.ask_before_delete = TRUE;
+    pref.open_maximized = FALSE;
+    pref.background_color.pixel = 0;
+    pref.background_color.red = 65535;
+    pref.background_color.green = 65535;
+    pref.background_color.blue = 65535;
 
     kf = g_key_file_new();
     path = g_build_filename( g_get_user_config_dir(),  CFG_FILE, NULL );
     if( g_key_file_load_from_file( kf, path, 0, NULL ) )
     {
-        pref.auto_save_rotated = g_key_file_get_boolean( kf, "General", "auto_save_rotated", NULL );
-        pref.ask_before_save = g_key_file_get_boolean( kf, "General", "ask_before_save", NULL );
-        pref.rotate_exif_only = g_key_file_get_boolean( kf, "General", "rotate_exif_only", NULL );
+        error = NULL;
+        pref.auto_save_rotated = g_key_file_get_boolean( kf, "General", "auto_save_rotated", &error );
+	if ( error != NULL )  // checking to see if the auto_save_rotated preference is in the configuration file
+	{
+            pref.auto_save_rotated = FALSE;
+        }
+
+        error = NULL;
+        pref.ask_before_save = g_key_file_get_boolean( kf, "General", "ask_before_save", &error );
+	if ( error != NULL )  // checking to see if the ask_before_save preference is in the configuration file
+        {
+            pref.ask_before_save = TRUE;
+        }
+
+        error = NULL;
+        pref.ask_before_delete = g_key_file_get_boolean( kf, "General", "ask_before_delete", &error );	
+	if ( error != NULL )  // checking to see if the ask_before_delete preference is in the configuration file
+        {
+            pref.ask_before_delete = TRUE;
+        }
+
+        error = NULL;
+        pref.open_maximized = g_key_file_get_boolean( kf, "General", "open_maximized", &error );
+	if ( error != NULL )  // checking to see if the should_maximize preference is in the configuration file
+        {
+            pref.open_maximized = FALSE;
+        }
+
+        error = NULL;
+        gint *colors = g_key_file_get_integer_list( kf, "General", "background_color", NULL, &error );
+        if ( error != NULL ) // checking to see if the background_color preference is in the configuration file
+        {
+            pref.background_color.pixel = 0;
+            pref.background_color.red = 65535;
+            pref.background_color.green = 65535;
+            pref.background_color.blue = 65535;
+        }
+        else
+        {
+            pref.background_color.pixel = colors[0];
+            pref.background_color.red = colors[1];
+            pref.background_color.green = colors[2];
+            pref.background_color.blue = colors[3];
+        }
     }
+
     g_free( path );
     g_key_file_free( kf );
 }
@@ -74,7 +123,10 @@ void save_preferences()
         fputs( "[General]\n", f );
         fprintf( f, "auto_save_rotated=%d\n", pref.auto_save_rotated );
         fprintf( f, "ask_before_save=%d\n", pref.ask_before_save );
-        fprintf( f, "rotate_exif_only=%d\n", pref.rotate_exif_only );
+        fprintf( f, "ask_before_delete=%d\n", pref.ask_before_delete );
+        fprintf( f, "open_maximized=%d\n", pref.open_maximized );
+        fprintf( f, "background_color=%d;%d;%d;%d\n", pref.background_color.pixel, pref.background_color.red, 
+                                                    pref.background_color.green, pref.background_color.blue );
         fclose( f );
     }
     g_free( path );
@@ -96,35 +148,69 @@ static void on_set_default( GtkButton* btn, gpointer user_data )
     gtk_widget_destroy( dlg );
 }
 
-void edit_preferences( GtkWindow* parent )
+void edit_preferences( MainWin* parent )
 {
-    GtkWidget *auto_save_btn, *ask_before_save_btn, *set_default_btn,
-              *rotate_exif_only_btn;
+    GtkWidget *auto_save_btn, *ask_before_save_btn, *ask_before_delete_btn, *set_default_btn;
+    GtkWidget *background_color_non_fullscreen, *background_color_fullscreen;
+    GtkWidget *background_color_non_fullscreen_label, *background_color_fullscreen_label;
+    GtkWidget *background_color_non_fullscreen_btn, *background_color_fullscreen_btn;
+
     GtkDialog* dlg = (GtkDialog*)gtk_dialog_new_with_buttons( _("Preferences"), parent, GTK_DIALOG_MODAL,
-                                                               GTK_STOCK_CLOSE ,GTK_RESPONSE_CLOSE, NULL );
+                                                               GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE, NULL );
+    GtkWidget* content_area = gtk_dialog_get_content_area( (GtkDialog*)dlg );
+    gtk_box_set_spacing( content_area, 10 );
 
     ask_before_save_btn = gtk_check_button_new_with_label( _("Ask before saving images") );
     gtk_toggle_button_set_active( (GtkToggleButton*)ask_before_save_btn, pref.ask_before_save );
-    gtk_box_pack_start( (GtkBox*)dlg->vbox, ask_before_save_btn, FALSE, FALSE, 2 );
+    gtk_container_add( content_area, ask_before_save_btn );
+
+    ask_before_delete_btn = gtk_check_button_new_with_label( _("Ask before deleting images") );
+    gtk_toggle_button_set_active( (GtkToggleButton*)ask_before_delete_btn, pref.ask_before_delete );
+    gtk_container_add( content_area, ask_before_delete_btn );
 
     auto_save_btn = gtk_check_button_new_with_label( _("Automatically save rotated images") );
     gtk_toggle_button_set_active( (GtkToggleButton*)auto_save_btn, pref.auto_save_rotated );
-    gtk_box_pack_start( (GtkBox*)dlg->vbox, auto_save_btn, FALSE, FALSE, 2 );
-    
-    rotate_exif_only_btn = gtk_check_button_new_with_label( _("Rotate JPEG file by changing EXIF orientation value (only if EXIF orientation tag exists)") );
-    gtk_toggle_button_set_active( (GtkToggleButton*)rotate_exif_only_btn, pref.rotate_exif_only );
-    gtk_box_pack_start( (GtkBox*)dlg->vbox, rotate_exif_only_btn, FALSE, FALSE, 2 );
+    gtk_container_add( content_area, auto_save_btn );
 
+    background_color_non_fullscreen = gtk_hbox_new( FALSE, 5 );
+    background_color_non_fullscreen_label = gtk_label_new( "Select Background Color:" );
+    background_color_non_fullscreen_btn = gtk_color_button_new_with_color( &pref.background_color );
+    gtk_widget_set_size_request( background_color_non_fullscreen_btn, 15, 50 );
+
+    //TODO: currently the function redraw_background will not actually redraw the background
+    //TODO: fix this
+    //g_signal_connect( background_color_non_fullscreen_btn, "color-set", G_CALLBACK(redraw_background), parent );
+
+    gtk_container_add( background_color_non_fullscreen, background_color_non_fullscreen_label );
+    gtk_container_add( background_color_non_fullscreen, background_color_non_fullscreen_btn );
+
+    gtk_container_add( content_area, background_color_non_fullscreen );
+    
     set_default_btn = gtk_button_new_with_label( _("Make GPicView the default viewer for images") );
     g_signal_connect( set_default_btn, "clicked", G_CALLBACK(on_set_default), parent );
-    gtk_box_pack_start( (GtkBox*)dlg->vbox, set_default_btn, FALSE, FALSE, 2 );
+    gtk_container_add( content_area, set_default_btn );
 
-    gtk_widget_show_all( (GtkWidget*)dlg->vbox );
+    gtk_widget_show_all( dlg );
     gtk_dialog_run( dlg );
 
     pref.ask_before_save = gtk_toggle_button_get_active( (GtkToggleButton*)ask_before_save_btn );
+    pref.ask_before_delete = gtk_toggle_button_get_active( (GtkToggleButton*)ask_before_delete_btn );
     pref.auto_save_rotated = gtk_toggle_button_get_active( (GtkToggleButton*)auto_save_btn );
-    pref.rotate_exif_only = gtk_toggle_button_get_active( (GtkToggleButton*)rotate_exif_only_btn );
+    gtk_color_button_get_color( background_color_non_fullscreen_btn, &pref.background_color );
 
     gtk_widget_destroy( (GtkWidget*)dlg );
+
+    gtk_widget_modify_bg( parent->evt_box, GTK_STATE_NORMAL, &pref.background_color );
+    gtk_widget_draw( parent->evt_box, NULL );
 }
+
+    //TODO: currently the function redraw_background will not actually redraw the background
+    //TODO: fix this
+void redraw_background( GtkColorButton *widget, gpointer user_data )
+{printf("\nhere\n");
+    MainWin* parent = (MainWin*)user_data;
+    gtk_widget_modify_bg( (GtkWidget*)parent->evt_box, GTK_STATE_NORMAL, &pref.background_color );
+
+    gtk_widget_draw( (GtkWidget*)parent->evt_box, NULL );
+}
+

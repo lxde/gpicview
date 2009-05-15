@@ -23,21 +23,24 @@
 #define _PREF_H_
 
 #include <gtk/gtk.h>
-
+#include "main-win.h"
 G_BEGIN_DECLS
 
 typedef struct _Pref
 {
-    gboolean auto_save_rotated; /* Save rotated images */
+    gboolean auto_save_rotated; // Save rotated images
     gboolean ask_before_save;
-    gboolean rotate_exif_only;
+    gboolean ask_before_delete;
+    gboolean open_maximized;
+    GdkColor background_color;
 }Pref;
 
- extern Pref pref; /* global variable holding user prerefences */
+ extern Pref pref; // global variable holding user prerefences 
 
-void load_preferences(); /* load user preferences */
-void save_preferences(); /* save user preference s*/
-void edit_preferences( GtkWindow* parent );
+void load_preferences(); // load user preferences 
+void save_preferences(); // save user preferences
+void edit_preferences( MainWin* parent );
+void redraw_background( GtkColorButton *widget, gpointer user_data );
 
 G_END_DECLS
 
