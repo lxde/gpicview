@@ -1,7 +1,7 @@
 dnl Process this file with autoconf to produce a configure script.
 
 AC_INIT(configure.in)
-AM_INIT_AUTOMAKE(gpicview, 0.1.11)
+AM_INIT_AUTOMAKE(gpicview, 0.1.12)
 AM_CONFIG_HEADER(config.h)
 AM_MAINTAINER_MODE
 
@@ -29,7 +29,7 @@ AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package.])
 
 dnl Add the languages which your application supports here.
-ALL_LINGUAS="ar cs da de es et eu fa fi fr gl hr hu id it ja ko lt ml nb nl nn pl ps pt pt_BR ru sk sl sv tr uk vi zh_CN zh_TW"
+ALL_LINGUAS="zh_TW pt_BR sk cs es gl de_DE pl zh_CN fr nl lt ja pl no fi ru zh_CN eu"
 AM_GLIB_GNU_GETTEXT
 
 AC_OUTPUT([
