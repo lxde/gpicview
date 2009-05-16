@@ -100,26 +100,25 @@ void edit_preferences( GtkWindow* parent )
 {
     GtkWidget *auto_save_btn, *ask_before_save_btn, *set_default_btn,
               *rotate_exif_only_btn;
-    GtkDialog* dlg = (GtkDialog*)gtk_dialog_new_with_buttons( _("Preferences"), parent, GTK_DIALOG_MODAL,
-                                                               GTK_STOCK_CLOSE ,GTK_RESPONSE_CLOSE, NULL );
+    GtkBuilder* builder = gtk_builder_new();
+    GtkDialog* dlg;
+    gtk_builder_add_from_file(builder, PACKAGE_DATA_DIR "/gpicview/ui/pref-dlg.ui", NULL);
 
-    ask_before_save_btn = gtk_check_button_new_with_label( _("Ask before saving images") );
+    dlg = (GtkDialog*)gtk_builder_get_object(builder, "dlg");
+    gtk_window_set_transient_for((GtkWindow*)dlg, parent);
+
+    ask_before_save_btn = (GtkWidget*)gtk_builder_get_object(builder, "ask_before_save");
     gtk_toggle_button_set_active( (GtkToggleButton*)ask_before_save_btn, pref.ask_before_save );
-    gtk_box_pack_start( (GtkBox*)dlg->vbox, ask_before_save_btn, FALSE, FALSE, 2 );
 
-    auto_save_btn = gtk_check_button_new_with_label( _("Automatically save rotated images") );
+    ask_before_save_btn = (GtkWidget*)gtk_builder_get_object(builder, "auto_save_rotated");
     gtk_toggle_button_set_active( (GtkToggleButton*)auto_save_btn, pref.auto_save_rotated );
-    gtk_box_pack_start( (GtkBox*)dlg->vbox, auto_save_btn, FALSE, FALSE, 2 );
-    
-    rotate_exif_only_btn = gtk_check_button_new_with_label( _("Rotate JPEG file by changing EXIF orientation value (only if EXIF orientation tag exists)") );
+
+    rotate_exif_only_btn = (GtkWidget*)gtk_builder_get_object(builder, "rotate_exif_only");
     gtk_toggle_button_set_active( (GtkToggleButton*)rotate_exif_only_btn, pref.rotate_exif_only );
-    gtk_box_pack_start( (GtkBox*)dlg->vbox, rotate_exif_only_btn, FALSE, FALSE, 2 );
 
-    set_default_btn = gtk_button_new_with_label( _("Make GPicView the default viewer for images") );
+    set_default_btn = (GtkWidget*)gtk_builder_get_object(builder, "make_default");
     g_signal_connect( set_default_btn, "clicked", G_CALLBACK(on_set_default), parent );
-    gtk_box_pack_start( (GtkBox*)dlg->vbox, set_default_btn, FALSE, FALSE, 2 );
 
-    gtk_widget_show_all( (GtkWidget*)dlg->vbox );
     gtk_dialog_run( dlg );
 
     pref.ask_before_save = gtk_toggle_button_get_active( (GtkToggleButton*)ask_before_save_btn );

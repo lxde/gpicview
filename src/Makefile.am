@@ -38,3 +38,8 @@ noinst_HEADERS = \
 	pref.h \
 	jhead.h
 
+noinst_PROGRAMS=xml-purge
+xml_purge_SOURCES=xml-purge.c
+xml_purge_CFLAGS=@PACKAGE_CFLAGS@
+xml_purge_LDADD=@PACKAGE_LIBS@
+
