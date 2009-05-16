@@ -1,19 +1,19 @@
 /***************************************************************************
- *   Copyright (C) 2007, 2008 by PCMan (Hong Jen Yee)   *
- *   pcman.tw@gmail.com   *
+ *   Copyright (C) 2007, 2008 by PCMan (Hong Jen Yee)                      *
+ *   pcman.tw@gmail.com                                                    *
  *                                                                         *
- *   mw program is free software; you can redistribute it and/or modify  *
+ *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
  *   the Free Software Foundation; either version 2 of the License, or     *
  *   (at your option) any later version.                                   *
  *                                                                         *
- *   mw program is distributed in the hope that it will be useful,       *
+ *   This program is distributed in the hope that it will be useful,       *
  *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
  *   GNU General Public License for more details.                          *
  *                                                                         *
  *   You should have received a copy of the GNU General Public License     *
- *   along with mw program; if not, write to the                         *
+ *   along with this program; if not, write to the                         *
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
@@ -31,7 +31,9 @@
 #include <unistd.h>
 #include <string.h>
 #include <errno.h>
+#include <math.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 #include "pref.h"
 
@@ -68,6 +70,7 @@ static void on_next( GtkWidget* btn, MainWin* mw );
 static void on_orig_size( GtkToggleButton* btn, MainWin* mw );
 static void on_orig_size_menu( GtkToggleButton* btn, MainWin* mw );
 static void on_prev( GtkWidget* btn, MainWin* mw );
+static void on_rotate_auto_save( GtkWidget* btn, MainWin* mw );
 static void on_rotate_clockwise( GtkWidget* btn, MainWin* mw );
 static void on_rotate_counterclockwise( GtkWidget* btn, MainWin* mw );
 static void on_save_as( GtkWidget* btn, MainWin* mw );
@@ -75,7 +78,6 @@ static void on_save( GtkWidget* btn, MainWin* mw );
 static void on_open( GtkWidget* btn, MainWin* mw );
 static void on_zoom_in( GtkWidget* btn, MainWin* mw );
 static void on_zoom_out( GtkWidget* btn, MainWin* mw );
-static void on_tools( GtkWidget* btn, MainWin* mw );
 static void on_preference( GtkWidget* btn, MainWin* mw );
 static void on_quit( GtkWidget* btn, MainWin* mw );
 static gboolean on_button_press( GtkWidget* widget, GdkEventButton* evt, MainWin* mw );
@@ -83,9 +85,9 @@ static gboolean on_button_release( GtkWidget* widget, GdkEventButton* evt, MainW
 static gboolean on_mouse_move( GtkWidget* widget, GdkEventMotion* evt, MainWin* mw );
 static gboolean on_scroll_event( GtkWidget* widget, GdkEventScroll* evt, MainWin* mw );
 static gboolean on_key_press_event(GtkWidget* widget, GdkEventKey * key);
+static gboolean save_confirm( MainWin* mw, const char* file_path );
 static void on_drag_data_received( GtkWidget* widget, GdkDragContext *drag_context,
-                                                     int x, int y, GtkSelectionData* data, guint info,
-                                                     guint time, MainWin* mw );
+                int x, int y, GtkSelectionData* data, guint info, guint time, MainWin* mw );
 static void on_delete( GtkWidget* btn, MainWin* mw );
 static void on_about( GtkWidget* menu, MainWin* mw );
 
@@ -130,7 +132,8 @@ void main_win_finalize( GObject* obj )
 
     g_object_unref( mw->tooltips );
 
-    g_main_loop_quit( mw->loop );
+    // FIXME: Put this here is weird
+    gtk_main_quit();
 }
 
 GtkWidget* main_win_new()
@@ -142,11 +145,9 @@ GtkWidget* main_win_new()
 
 void main_win_init( MainWin*mw )
 {
-    gtk_window_set_title( (GtkWindow*)mw, _("GPicView - Simple Image Viewer"));
+    gtk_window_set_title( (GtkWindow*)mw, _("Image Viewer"));
     gtk_window_set_icon_from_file( (GtkWindow*)mw, PACKAGE_DATA_DIR"/pixmaps/gpicview.png", NULL );
     gtk_window_set_default_size( (GtkWindow*)mw, 640, 480 );
-
-//    mw->img_buffer = gdk_pixbuf_loader_new();
 
     GtkWidget* box = gtk_vbox_new( FALSE, 0 );
     gtk_container_add( (GtkContainer*)mw, box);
@@ -161,8 +162,9 @@ void main_win_init( MainWin*mw )
     g_signal_connect( mw->evt_box, "button-release-event", G_CALLBACK(on_button_release), mw );
     g_signal_connect( mw->evt_box, "motion-notify-event", G_CALLBACK(on_mouse_move), mw );
     g_signal_connect( mw->evt_box, "scroll-event", G_CALLBACK(on_scroll_event), mw );
-    
-    gtk_widget_modify_bg( mw->evt_box, GTK_STATE_NORMAL, &pref.background_color );
+    // Set bg color to white
+    GdkColor white = {0, 65535, 65535, 65535};
+    gtk_widget_modify_bg( mw->evt_box, GTK_STATE_NORMAL, &white );
 
     mw->img_view = image_view_new();
     gtk_container_add( (GtkContainer*)mw->evt_box, (GtkWidget*)mw->img_view);
@@ -230,6 +232,7 @@ void create_nav_bar( MainWin* mw, GtkWidget* box )
     add_nav_btn( mw, GTK_STOCK_GO_FORWARD, _("Next"), G_CALLBACK(on_next), FALSE );
 
     gtk_box_pack_start( (GtkBox*)mw->nav_bar, gtk_vseparator_new(), FALSE, FALSE, 0 );
+
     add_nav_btn( mw, GTK_STOCK_ZOOM_OUT, _("Zoom Out"), G_CALLBACK(on_zoom_out), FALSE );
     add_nav_btn( mw, GTK_STOCK_ZOOM_IN, _("Zoom In"), G_CALLBACK(on_zoom_in), FALSE );
 
@@ -247,15 +250,13 @@ void create_nav_bar( MainWin* mw, GtkWidget* box )
 #ifndef GTK_STOCK_FULLSCREEN
 #define GTK_STOCK_FULLSCREEN    "gtk-fullscreen"
 #endif
-    add_nav_btn( mw, GTK_STOCK_FULLSCREEN, _(" Full Screen"), G_CALLBACK(on_full_screen), FALSE );   // gtk+ 2.8+
+    add_nav_btn( mw, GTK_STOCK_FULLSCREEN, _("Full Screen"), G_CALLBACK(on_full_screen), FALSE );   // gtk+ 2.8+
 
     gtk_box_pack_start( (GtkBox*)mw->nav_bar, gtk_vseparator_new(), FALSE, FALSE, 0 );
 
     add_nav_btn( mw, "gtk-counterclockwise", _("Rotate Counterclockwise"),
                  G_CALLBACK(on_rotate_counterclockwise), FALSE );
     add_nav_btn( mw, "gtk-clockwise", _("Rotate Clockwise"), G_CALLBACK(on_rotate_clockwise), FALSE );
-    add_nav_btn( mw, "gtk-horizontal", _("Flip Horizontal"), G_CALLBACK(on_flip_horizontal), FALSE );
-    add_nav_btn( mw, "gtk-vertical", _("Flip Vertical"), G_CALLBACK(on_flip_vertical), FALSE );
 
     gtk_box_pack_start( (GtkBox*)mw->nav_bar, gtk_vseparator_new(), FALSE, FALSE, 0 );
 
@@ -265,13 +266,8 @@ void create_nav_bar( MainWin* mw, GtkWidget* box )
     add_nav_btn( mw, GTK_STOCK_DELETE, _("Delete File"), G_CALLBACK(on_delete), FALSE );
 
     gtk_box_pack_start( (GtkBox*)mw->nav_bar, gtk_vseparator_new(), FALSE, FALSE, 0 );
-
-//    add_nav_btn( mw, "gtk-tools", _("Image Tools"), G_CALLBACK(on_tools), FALSE );
-
-//    gtk_box_pack_start( (GtkBox*)mw->nav_bar, gtk_vseparator_new(), FALSE, FALSE, 0 );
-
     add_nav_btn( mw, GTK_STOCK_PREFERENCES, _("Preferences"), G_CALLBACK(on_preference), FALSE );
-    add_nav_btn( mw, GTK_STOCK_ABOUT, _("About"), G_CALLBACK(on_about), FALSE );
+    add_nav_btn( mw, GTK_STOCK_QUIT, _("Quit"), G_CALLBACK(on_quit), FALSE );
 
     GtkWidget* align = gtk_alignment_new( 0.5, 0, 0, 0 );
     gtk_container_add( (GtkContainer*)align, mw->nav_bar );
@@ -372,73 +368,19 @@ static void updateTitle(const char *filename, MainWin *mw )
     return;    
 }
 
-gboolean on_idle( MainWin* mw )
-{
-    // make sure the main loop is running before displaying the animation
-    if ( ( mw->loop != NULL ) && (g_main_loop_is_running( mw->loop ) ) )
-    {
-        if ( mw->is_animation )
-        {
-            if ( gdk_pixbuf_animation_iter_advance( mw->animation_iter, NULL ) )
-            {
-                //g_object_unref( mw->pix );  // free the memory from the last frame
-                mw->pix = gdk_pixbuf_animation_iter_get_pixbuf( mw->animation_iter );
-                image_view_set_pixbuf( (ImageView*)mw->img_view, mw->pix );
-            }
-        }
-        else
-        {   // returning FALSE stops the g_timeout_add that calls this function
-            return FALSE;
-        }
-    }
-
-    return TRUE;
-}
-
 gboolean main_win_open( MainWin* mw, const char* file_path, ZoomMode zoom )
 {
     GError* err = NULL;
     GdkPixbufFormat* info;
-
     info = gdk_pixbuf_get_file_info( file_path, NULL, NULL );
     char* type = gdk_pixbuf_format_get_name( info );
 
-    // setup so that if the user saves an image as a new file then the image list will be freed
-    // and a new one will be created for the directory the file was saved in
-    if ( mw->img_list != NULL )
-    {
-        image_list_free( mw->img_list );
-        mw->img_list = image_list_new();
-    }
-
     main_win_close( mw );
-
-    // grabs a file as if it were an animation
-    mw->animation = gdk_pixbuf_animation_new_from_file( file_path, NULL );
-    
-    // tests if the file is actually just a normal picture
-    if ( gdk_pixbuf_animation_is_static_image( mw->animation ) )
-    {
-       mw->pix = gdk_pixbuf_animation_get_static_image( mw->animation );
-       mw->animation = NULL;
-
-       mw->is_animation = FALSE;
-    }
-    else
-    {  // we found an animation
-         mw->animation_iter = gdk_pixbuf_animation_get_iter( mw->animation, NULL );
-         mw->pix = gdk_pixbuf_animation_iter_get_pixbuf( mw->animation_iter );
-         mw->is_animation = TRUE;
-
-         g_timeout_add( 30, on_idle, mw );  // set for 30 fps
-    }
-
-    image_view_set_pixbuf( (ImageView*)mw->img_view, mw->pix );
+    mw->pix = gdk_pixbuf_new_from_file( file_path, &err );
 
     if( ! mw->pix )
     {
         main_win_show_error( mw, err->message );
-
         return FALSE;
     }
     else if(!strcmp(type,"jpeg"))
@@ -474,9 +416,7 @@ gboolean main_win_open( MainWin* mw, const char* file_path, ZoomMode zoom )
             mw->scale = 1.0;
         }
         else
-        {
             mw->zoom_mode = ZOOM_FIT;
-        }
     }
 
     if( mw->zoom_mode == ZOOM_FIT )
@@ -505,11 +445,11 @@ gboolean main_win_open( MainWin* mw, const char* file_path, ZoomMode zoom )
     // build file list
     char* dir_path = g_path_get_dirname( file_path );
     image_list_open_dir( mw->img_list, dir_path, NULL );
+    //image_list_sort_by_name( mw->img_list, GTK_SORT_ASCENDING );
     image_list_sort_by_name( mw->img_list, GTK_SORT_DESCENDING );
     g_free( dir_path );
 
     char* base_name = g_path_get_basename( file_path );
-
     image_list_set_current( mw->img_list, base_name );
 
     char* disp_name = g_filename_display_name( base_name );
@@ -561,16 +501,21 @@ void on_size_allocate( GtkWidget* widget, GtkAllocation    *allocation )
 gboolean on_win_state_event( GtkWidget* widget, GdkEventWindowState* state )
 {
     MainWin* mw = (MainWin*)widget;
-
-    if ( state->new_window_state == GDK_WINDOW_STATE_MAXIMIZED )
+    if( state->new_window_state == GDK_WINDOW_STATE_FULLSCREEN )
     {
-        pref.open_maximized = TRUE;
+        static GdkColor black = {0};
+        gtk_widget_modify_bg( mw->evt_box, GTK_STATE_NORMAL, &black );
+        gtk_widget_hide( gtk_widget_get_parent(mw->nav_bar) );
+        mw->full_screen = TRUE;
     }
-    else if ( !mw->full_screen && state->new_window_state == 0 ) // if new_window_state == 0 then window is not maximized
+    else
     {
-        pref.open_maximized = FALSE;
+//        gtk_widget_reset_rc_styles( mw->evt_box );
+        static GdkColor white = {0, 65535, 65535, 65535};
+        gtk_widget_modify_bg( mw->evt_box, GTK_STATE_NORMAL, &white );
+        gtk_widget_show( gtk_widget_get_parent(mw->nav_bar) );
+        mw->full_screen = FALSE;
     }
-
     return TRUE;
 }
 
@@ -636,10 +581,6 @@ void on_zoom_fit_menu( GtkMenuItem* item, MainWin* mw )
     gtk_button_clicked( (GtkButton*)mw->btn_fit );
 }
 
-void on_tools( GtkWidget* btn, MainWin* mw ) 
-{
-}
-
 void on_zoom_fit( GtkToggleButton* btn, MainWin* mw )
 {
     if( ! btn->active )
@@ -655,21 +596,10 @@ void on_zoom_fit( GtkToggleButton* btn, MainWin* mw )
 
 void on_full_screen( GtkWidget* btn, MainWin* mw )
 {
-
     if( ! mw->full_screen )
-    {
         gtk_window_fullscreen( (GtkWindow*)mw );
-        gtk_widget_modify_bg( mw->evt_box, GTK_STATE_NORMAL, &pref.background_color );
-        gtk_widget_hide( gtk_widget_get_parent(mw->nav_bar) );
-        mw->full_screen = TRUE;
-    }
     else
-    {
         gtk_window_unfullscreen( (GtkWindow*)mw );
-        gtk_widget_modify_bg( mw->evt_box, GTK_STATE_NORMAL, &pref.background_color );
-        gtk_widget_show( gtk_widget_get_parent(mw->nav_bar) );
-        mw->full_screen = FALSE;
-    }
 }
 
 void on_orig_size_menu( GtkToggleButton* btn, MainWin* mw )
@@ -697,14 +627,14 @@ void on_orig_size( GtkToggleButton* btn, MainWin* mw )
 //    gtk_scrolled_window_set_policy( (GtkScrolledWindow*)mw->scroll,
 //                                     GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC );
 
-    // update scale
-    updateTitle(NULL, mw);
-    
     gtk_toggle_button_set_active( (GtkToggleButton*)mw->btn_fit, FALSE );
 
     if( ! mw->pix )
         return;
 
+    // update scale
+    updateTitle(NULL, mw);
+    
     image_view_set_scale( (ImageView*)mw->img_view, 1.0, GDK_INTERP_BILINEAR );
 
     while (gtk_events_pending ())
@@ -782,79 +712,42 @@ static int get_new_angle( int orig_angle, int rotate_angle )
     return angle_trans_back[ ExifRotateFlipMapping[orig_angle][rotate_angle] ];
 }
 
+void on_rotate_auto_save( GtkWidget* btn, MainWin* mw )
+{
+    if(pref.auto_save_rotated){
+//      gboolean ask_before_save = pref.ask_before_save;
+//      pref.ask_before_save = FALSE;
+        on_save(btn,mw);
+//      pref.ask_before_save = ask_before_save;
+    }
+}
+
 void on_rotate_clockwise( GtkWidget* btn, MainWin* mw )
 {
-    if ( ! mw->is_animation )
-    {
-
-        rotate_image( mw, GDK_PIXBUF_ROTATE_CLOCKWISE );
-        mw->rotation_angle = get_new_angle(mw->rotation_angle, 90);
-
-        if ( pref.auto_save_rotated )
-        {
-            gboolean current_ask_before_save_preference = pref.ask_before_save;
-
-            pref.ask_before_save = FALSE;
-            on_save(btn,mw);
-            pref.ask_before_save = current_ask_before_save_preference;
-        }
-    }
+    rotate_image( mw, GDK_PIXBUF_ROTATE_CLOCKWISE );
+    mw->rotation_angle = get_new_angle(mw->rotation_angle, 90);
+    on_rotate_auto_save(btn, mw);
 }
 
 void on_rotate_counterclockwise( GtkWidget* btn, MainWin* mw )
 {
-    if ( ! mw->is_animation )
-    {
-
-        rotate_image( mw, GDK_PIXBUF_ROTATE_COUNTERCLOCKWISE );
-        mw->rotation_angle = get_new_angle(mw->rotation_angle, 270);
-
-        if ( pref.auto_save_rotated )
-        {
-            gboolean current_ask_before_save_preference = pref.ask_before_save;
-
-            pref.ask_before_save = FALSE;
-            on_save(btn,mw);
-            pref.ask_before_save = current_ask_before_save_preference;
-        }
-    }
+    rotate_image( mw, GDK_PIXBUF_ROTATE_COUNTERCLOCKWISE );
+    mw->rotation_angle = get_new_angle(mw->rotation_angle, 270);
+    on_rotate_auto_save(btn, mw);
 }
 
 void on_flip_vertical( GtkWidget* btn, MainWin* mw )
 {
-    if ( ! mw->is_animation )
-    {
-
-        rotate_image( mw, -180 );
-        mw->rotation_angle = get_new_angle(mw->rotation_angle, -180);
-
-        if ( pref.auto_save_rotated )
-        {
-            gboolean current_ask_before_save_preference = pref.ask_before_save;
-
-            pref.ask_before_save = FALSE;
-            on_save(btn,mw);
-            pref.ask_before_save = current_ask_before_save_preference;
-        }
-    }
+    rotate_image( mw, -180 );
+    mw->rotation_angle = get_new_angle(mw->rotation_angle, -180);
+    on_rotate_auto_save(btn, mw);
 }
 
 void on_flip_horizontal( GtkWidget* btn, MainWin* mw )
 {
-    if ( ! mw->is_animation )
-    {
-        rotate_image( mw, -90 );
-        mw->rotation_angle = get_new_angle(mw->rotation_angle, -90);
-    
-        if( pref.auto_save_rotated )
-        {
-            gboolean current_ask_before_save_preference = pref.ask_before_save;
-    
-            pref.ask_before_save = FALSE;
-            on_save(btn,mw);
-            pref.ask_before_save = current_ask_before_save_preference;
-        }
-    }
+    rotate_image( mw, -90 );
+    mw->rotation_angle = get_new_angle(mw->rotation_angle, -90);
+    on_rotate_auto_save(btn, mw);
 }
 
 ///////////////////// end of rotate & flip
@@ -878,295 +771,85 @@ static void on_update_preview( GtkFileChooser *chooser, GtkImage* img )
 void on_save_as( GtkWidget* btn, MainWin* mw )
 {
     if( ! mw->pix )
-    {
         return;
-    }
-    
-    gint compression_level = -1;
-    char* original_file_name = g_build_filename( image_list_get_dir( mw->img_list ),
-                                        image_list_get_current( mw->img_list ), NULL );
-    GdkPixbufFormat* info;
-    info = gdk_pixbuf_get_file_info( original_file_name, NULL, NULL );
-    char* original_file_type = gdk_pixbuf_format_get_name( info );
 
-    GtkWidget *file_save_as_dlg = gtk_dialog_new_with_buttons( _("Save As..."), GTK_WINDOW(mw), GTK_DIALOG_MODAL, GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL, GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT, NULL);
-    gtk_dialog_set_has_separator( GTK_DIALOG(file_save_as_dlg), FALSE );
+    GtkFileChooser* dlg = (GtkFileChooser*)gtk_file_chooser_dialog_new( NULL, (GtkWindow*)mw,
+            GTK_FILE_CHOOSER_ACTION_SAVE, GTK_STOCK_CANCEL,
+            GTK_RESPONSE_CANCEL, GTK_STOCK_SAVE, GTK_RESPONSE_OK, NULL );
 
-    //g_object_set_property( file_save_as_dlg, "content-area-border", &spacing );
+    gtk_file_chooser_set_current_folder( dlg, image_list_get_dir( mw->img_list ) );
 
-    GtkWidget* file_chooser_widget = gtk_file_chooser_widget_new( GTK_FILE_CHOOSER_ACTION_SAVE );
-    GtkWidget* compression_widget = gtk_vbox_new( FALSE, 0 );
-
-    gtk_dialog_set_default_response( GTK_DIALOG(file_save_as_dlg), GTK_RESPONSE_ACCEPT );
-    gtk_widget_set_size_request( file_save_as_dlg, 900, 560 );
-
-    GtkWidget *file_save_as_content_area = gtk_dialog_get_content_area( (GtkDialog*)file_save_as_dlg );
-
-    GtkWidget *compression_scale = gtk_hscale_new( NULL ); 
-    gtk_range_set_increments( GTK_RANGE(compression_scale), (gdouble)1.0, 0 );
-    g_object_set( G_OBJECT(compression_scale), "digits", 0, NULL );
-
-    GtkWidget *compression_label = gtk_label_new( NULL );
-
-//        gtk_box_set_homogeneous( file_save_as_content_area, TRUE );
-        // gtk_widget_set_size_request( quality_label, 0, 0 );
-        // gtk_widget_set_size_request( horizontal_scale, 0, 0 );
-
-    gtk_container_add( GTK_CONTAINER(compression_widget), gtk_hseparator_new() );
-    gtk_container_add( GTK_CONTAINER(compression_widget), compression_label );
-    gtk_container_add( GTK_CONTAINER(compression_widget), compression_scale );
- 
-    gtk_container_add( GTK_CONTAINER(file_save_as_content_area), file_chooser_widget );
-    gtk_container_add( GTK_CONTAINER(file_save_as_content_area), compression_widget );
-        
-    gtk_widget_show_all( file_chooser_widget );
-
- //       gint result = gtk_dialog_run( (GtkDialog*)quality_dlg );
- //       gint compression_level = (gint)gtk_range_get_value( horizontal_scale );
-
-  //      gtk_widget_destroy( quality_dlg );
-
-
-//    GtkFileChooser* file_chooser_dlg = (GtkFileChooser*)gtk_file_chooser_dialog_new( NULL, (GtkWindow*)mw,
-//            GTK_FILE_CHOOSER_ACTION_SAVE, GTK_STOCK_CANCEL,
-//            GTK_RESPONSE_CANCEL, GTK_STOCK_SAVE, GTK_RESPONSE_OK, NULL );
-
-    gtk_file_chooser_set_current_folder( GTK_FILE_CHOOSER(file_chooser_widget), image_list_get_dir( mw->img_list ) );
-    gtk_file_chooser_set_filename( GTK_FILE_CHOOSER(file_chooser_widget), original_file_name ); // TODO: figure out why if you select the filename
-                                                                    //the filter is unselected
+    GtkWidget* img = gtk_image_new();
+    gtk_widget_set_size_request( img, 128, 128 );
+    gtk_file_chooser_set_preview_widget( dlg, img );
+    g_signal_connect( dlg, "update-preview", G_CALLBACK(on_update_preview), img );
 
     GtkFileFilter *filter;
 
+    /*
+    /// TODO: determine file type from file name
     filter = gtk_file_filter_new();
-    gtk_file_filter_add_pattern( filter, "*" );
-    gtk_file_filter_set_name( filter, _("All Files") );
-    gtk_file_chooser_add_filter( GTK_FILE_CHOOSER(file_chooser_widget), filter );
+    gtk_file_filter_set_name( filter, _("Determined by File Name") );
+    gtk_file_filter_add_pixbuf_formats( filter );
+    gtk_file_chooser_add_filter( dlg, filter );
+    */
 
-    GSList *gdk_formats;
-    GSList *gdk_formats_i;
-
-    char filter_pattern[20];
-
-    gdk_formats = gdk_pixbuf_get_formats();
-
-    for (gdk_formats_i = gdk_formats; gdk_formats_i;
-         gdk_formats_i = g_slist_next(gdk_formats_i))
+    GSList* modules = gdk_pixbuf_get_formats();
+    GSList* module;
+    for( module = modules; module; module = module->next )
     {
-        GdkPixbufFormat *data;
-        data = gdk_formats_i->data;
+        GdkPixbufFormat* format = (GdkPixbufFormat*)module->data;
+        if( ! gdk_pixbuf_format_is_writable( format ) )
+            continue;
 
-        if ( gdk_pixbuf_format_is_writable(data) )
+        filter = gtk_file_filter_new();
+
+        char* desc = gdk_pixbuf_format_get_description( format );
+        char* name = gdk_pixbuf_format_get_name( format );
+        char* tmp = g_strjoin( ":  ", name, desc, NULL );
+        g_free( desc );
+        g_free( name );
+        gtk_file_filter_set_name( filter, tmp );
+        g_free( tmp );
+
+        char** mimes = gdk_pixbuf_format_get_mime_types( format ), **mime;
+        for( mime  = mimes; *mime ; ++mime )
+            gtk_file_filter_add_mime_type( filter, *mime );
+        g_strfreev( mimes );
+        gtk_file_chooser_add_filter( dlg, filter );
+    }
+
+    if( gtk_dialog_run( (GtkDialog*)dlg ) == GTK_RESPONSE_OK )
+    {
+        filter = gtk_file_chooser_get_filter( dlg );
+        const char* filter_name = gtk_file_filter_get_name( filter );
+        char* p = strstr( filter_name, ": " );
+        char* type = NULL;
+        if( ! p )   // auto detection
         {
-            char *file_type_name = gdk_pixbuf_format_get_name(data);
-
-            filter = gtk_file_filter_new();
-
-            strcpy( filter_pattern, "*." );
-            strcat( filter_pattern, file_type_name );
-
-            gtk_file_filter_add_pattern( filter, filter_pattern );
-            gtk_file_filter_set_name( filter, file_type_name );
-
-            if ( strcmp( file_type_name, "jpeg" ) == 0 )
-            {
-                gtk_file_filter_add_pattern( filter, "*.jpg" );
-            }
-
-            if ( strcmp( file_type_name, "tiff" ) == 0 )
-            {
-                gtk_file_filter_add_pattern( filter, "*.tif" );
-            }
-
-            gtk_file_chooser_add_filter( GTK_FILE_CHOOSER(file_chooser_widget), filter );
-
-            if ( strcmp( file_type_name, original_file_type ) == 0 )
-	    {
-	        gtk_file_chooser_set_filter( GTK_FILE_CHOOSER(file_chooser_widget), filter );
-            }
-        }
-    }
-
-
-    if ( strcmp( gtk_file_filter_get_name( gtk_file_chooser_get_filter( GTK_FILE_CHOOSER(file_chooser_widget) ) ), "jpeg" ) == 0 )
-    {
-        gtk_label_set_text( GTK_LABEL(compression_label), _("JPEG Compression Level:") );
-
-        gtk_range_set_range( GTK_RANGE(compression_scale), (gdouble)0.0, (gdouble)100.0 );
-        gtk_range_set_value( GTK_RANGE(compression_scale), (gdouble)100.0 );
-
-        gtk_widget_set_tooltip_text( compression_scale, _("Lower compression values create smaller file sizes but cause the image to lose quality.") );
-
-        gtk_widget_show_all( compression_widget );
-    }
-
-    if ( strcmp( gtk_file_filter_get_name( gtk_file_chooser_get_filter( GTK_FILE_CHOOSER(file_chooser_widget) ) ), "png" ) == 0 )
-    {
-        gtk_label_set_text( GTK_LABEL(compression_label), _("PNG Compression Level:") );
-
-        gtk_range_set_range( GTK_RANGE(compression_scale), (gdouble)0.0, (gdouble)9.0 );
-        gtk_range_set_value( GTK_RANGE(compression_scale), (gdouble)9.0 );
-        gtk_widget_set_tooltip_text( compression_scale, _("Higher compression values create smaller file sizes but cause the image to lose quality.") );
-
-        gtk_widget_show_all( compression_widget );
-    }
-
-    g_slist_free (gdk_formats);
-
-    if( gtk_dialog_run( (GtkDialog*)file_save_as_dlg ) == GTK_RESPONSE_ACCEPT )
-    {
-        char* new_file_type = NULL;
-        char* new_file_name = gtk_file_chooser_get_filename( GTK_FILE_CHOOSER(file_chooser_widget) );
-
-        char* file_extension_start = strrchr( new_file_name, '.' ); // finds last '.' in the string
-        gint compression_level = (gint)gtk_range_get_value( GTK_RANGE(compression_scale) );
-
-        if( file_extension_start == NULL ) // if the image file name has no '.'
-        {
-            new_file_type = original_file_type;
+            /// TODO: auto file type
         }
         else
         {
-            char extension[5]; // buffer for the file extension, 4 for the extension + 1 for '\0'
-
-            int i = 0;
-            file_extension_start++;
-
-            while ( (file_extension_start != '\0') && (i < 4) )
-            {
-                extension[i++] = *file_extension_start;
-                file_extension_start++;
-            }
-
-            extension[4] = '\0';
-            new_file_type = extension;
-
-            gboolean file_extension_matches_known_type = FALSE;
-
-            if ( strcmp( new_file_type, "jpg" ) == 0 )
-            {
-                new_file_type = "jpeg";
-                file_extension_matches_known_type = TRUE;
-            }
-            else if (strcmp( new_file_type, "tif" ) == 0 )
-            {
-                new_file_type = "tiff";
-                file_extension_matches_known_type = TRUE;
-            }
-            else
-            {
-                gdk_formats = gdk_pixbuf_get_formats();
-                for (gdk_formats_i = gdk_formats; gdk_formats_i;
-                    gdk_formats_i = g_slist_next(gdk_formats_i))
-                {
-                    GdkPixbufFormat *data = gdk_formats_i->data;
-
-                    if ( strcmp( gdk_pixbuf_format_get_name( data ), new_file_type) == 0)
-                    {
-                        file_extension_matches_known_type = TRUE;
-                        break;
-                    }
-                }
-
-                g_slist_free (gdk_formats);
-            }
-
-            // if a user is trying to save an image file with an unkown extension then save the image
-            // as the original file type
-            if ( ! file_extension_matches_known_type )
-            {
-                new_file_type = original_file_type;
-            }
+            type = g_strndup( filter_name, (p - filter_name)  );
         }
-
-        // currently the compression selection widget only opens for the initial file
-        // so if a png is opened then the compression selection is from 0 to 9 and if the file
-        // is saved as a jpg the compression will automatically be set between 0 to 9 which is
-        // extremely low compression for jpeg.  this is not needed if we can find a way to automatically
-        // update the compression select bar by looking at the file name being typed by the user
-        if ( strcmp( original_file_type, new_file_type ) != 0 )
-        {
-            compression_level = -1;
-        }
-
-        if ( main_win_save( mw, new_file_name, new_file_type, TRUE, compression_level ) )
-        {
-            main_win_open( mw, new_file_name, ZOOM_FIT );
-        }
-
+        char* file = gtk_file_chooser_get_filename( dlg );
+        // g_debug("type = %s", type);
+        main_win_save( mw, file, type, TRUE );
+        g_free( file );
+        g_free( type );
     }
-
-    gtk_widget_destroy( (GtkWidget*)file_save_as_dlg );
-
-    g_free( original_file_name );
+    gtk_widget_destroy( (GtkWidget*)dlg );
 }
 
-//TODO: replace
 #ifdef HAVE_LIBJPEG
-int rotate_and_save_jpeg_lossless(char *filename, int angle){
+int rotate_and_save_jpeg_lossless(char *  filename,int angle){
 
-    char tmpfilename[] = {"/tmp/rot.jpg.XXXXXX"};
+    char tmpfilename[PATH_MAX];
     int tmpfilefd;
-    FILE *cp_in;
-    FILE *cp_out;
-    char cp_buf[512];
-    
-    JXFORM_CODE code = JXFORM_NONE;
 
-    angle = angle % 360;
-
-
-    if(angle == 90)
-        code = JXFORM_ROT_90;
-    else if(angle == 180)
-        code = JXFORM_ROT_180;
-    else if(angle == 270)
-        code = JXFORM_ROT_270;
-    else if(angle == -90)
-        code = JXFORM_FLIP_H;
-    else if(angle == -180)
-        code = JXFORM_FLIP_V;
-
-    /* create tmp file */
-    tmpfilefd = mkstemp(tmpfilename);
-    if (tmpfilefd == -1) {
-      return -1;
-    }
-    close(tmpfilefd);
-
-    //rotate the image and save it to /tmp/rot.jpg
-    int error = jpegtran (filename, tmpfilename , code);
-    if (error)
-        return error;
-
-    //now copy /tmp/rot.jpg back to the original file
-    cp_in = fopen(tmpfilename,"rb");
-    cp_out = fopen(filename,"wb");
-    while (!feof(cp_in)) {
-      int n;
-      n = fread(cp_buf,1,sizeof(cp_buf),cp_in);
-      if (n<=0) {
-        break;
-      }
-      fwrite (cp_buf,1,n,cp_out);
-    }
-    fclose(cp_in);
-    fclose(cp_out);
-
-    /* remove tmp file */
-    unlink(tmpfilename);
-    return 0;
-}
-#endif
-
-//TODO: replace
-#ifdef HAVE_LIBJPEG
-int rotate_and_save_jpeg_lossless2(char *filename, int angle){
-
-    char tmpfilename[] = {"/tmp/rot.jpg.XXXXXX"};
-    int tmpfilefd;
-    FILE *cp_in;
-    FILE *cp_out;
-    char cp_buf[512];
+    if(angle < 0)
+        return EINVAL;
     
     JXFORM_CODE code = JXFORM_NONE;
 
@@ -1178,41 +861,34 @@ int rotate_and_save_jpeg_lossless2(char *filename, int angle){
         code = JXFORM_ROT_180;
     else if(angle == 270)
         code = JXFORM_ROT_270;
-    else if(angle == -90)
-        code = JXFORM_FLIP_H;
-    else if(angle == -180)
-        code = JXFORM_FLIP_V;
 
-    /* create tmp file */
+    /* Length check temporary file name. */
+    if(strlen(filename) > (sizeof(tmpfilename) - 8))
+	return EINVAL;
+    sprintf(tmpfilename, "%s.XXXXXX", filename);
+
+    /* Create temporary file. */
     tmpfilefd = mkstemp(tmpfilename);
     if (tmpfilefd == -1) {
-      return -1;
+      return errno;
     }
     close(tmpfilefd);
 
-    //rotate the image and save it to /tmp/rot.jpg
-    int error = jpegtran (filename, tmpfilename , code);
-    if (error)
-        return error;
-
-    //now copy /tmp/rot.jpg back to the original file
-    cp_in = fopen(tmpfilename,"rb");
-    cp_out = fopen(filename,"wb");
-    while (!feof(cp_in)) 
-    {
-      int n;
-      n = fread(cp_buf,1,sizeof(cp_buf),cp_in);
-      if (n<=0) 
-      {
-        break;
-      }
-      fwrite (cp_buf,1,n,cp_out);
+    /* Rotate the image and save it to temporary file. */
+    int error = jpegtran (filename, tmpfilename, code);
+    if(error) {
+	int saved_errno = errno;
+        unlink(tmpfilename);
+        return saved_errno;
     }
-    fclose(cp_in);
-    fclose(cp_out);
 
-    /* remove tmp file */
-    unlink(tmpfilename);
+    /* Rename temporary file over the original file. */
+    int error_1 = g_rename(tmpfilename, filename);
+    if (error_1 == -1) {
+	int saved_errno = errno;
+        unlink(tmpfilename);
+        return saved_errno;
+    }
     return 0;
 }
 #endif
@@ -1224,14 +900,17 @@ void on_save( GtkWidget* btn, MainWin* mw )
 
     char* file_name = g_build_filename( image_list_get_dir( mw->img_list ),
                                         image_list_get_current( mw->img_list ), NULL );
-
     GdkPixbufFormat* info;
     info = gdk_pixbuf_get_file_info( file_name, NULL, NULL );
     char* type = gdk_pixbuf_format_get_name( info );
 
-    if (strcmp(type,"jpeg")==0)
+    /* Confirm save if requested. */
+    if ((pref.ask_before_save) && ( ! save_confirm(mw, file_name)))
+	return;
+
+    if(strcmp(type,"jpeg")==0)
     {
-        if ( ExifRotate(file_name, mw->rotation_angle) != FALSE )
+        if(!pref.rotate_exif_only || ExifRotate(file_name, mw->rotation_angle) == FALSE)
         {
             // hialan notes:
             // ExifRotate retrun FALSE when 
@@ -1241,26 +920,17 @@ void on_save( GtkWidget* btn, MainWin* mw )
             // And then we apply rotate_and_save_jpeg_lossless() , 
             // the result would not effected by EXIF Orientation...
 #ifdef HAVE_LIBJPEG
-
-            if (rotate_and_save_jpeg_lossless(file_name,mw->rotation_angle)!=0)
+            int status = rotate_and_save_jpeg_lossless(file_name,mw->rotation_angle);
+	    if(status != 0)
             {
-                main_win_show_error(mw, "Save failed! Check permissions.");
+                main_win_show_error( mw, g_strerror(status) );
             }
 #else
-            main_win_save( mw, file_name, type, pref.ask_before_save, -1 );
+            main_win_save( mw, file_name, type, pref.ask_before_save );
 #endif
         }
-        else
-        {
-            main_win_save( mw, file_name, type, pref.ask_before_save, -1 );
-        }
-
-    } 
-    else
-    {
-        main_win_save( mw, file_name, type, pref.ask_before_save, -1 );
-    }
-
+    } else
+        main_win_save( mw, file_name, type, pref.ask_before_save );
     mw->rotation_angle = 0;
     g_free( file_name );
     g_free( type );
@@ -1268,11 +938,11 @@ void on_save( GtkWidget* btn, MainWin* mw )
 
 void on_open( GtkWidget* btn, MainWin* mw )
 {
-    GtkFileChooser* dlg = (GtkFileChooser*)gtk_file_chooser_dialog_new( _("Open"), (GtkWindow*)mw,
+    GtkFileChooser* dlg = (GtkFileChooser*)gtk_file_chooser_dialog_new( NULL, (GtkWindow*)mw,
             GTK_FILE_CHOOSER_ACTION_OPEN, GTK_STOCK_CANCEL,
             GTK_RESPONSE_CANCEL, GTK_STOCK_OPEN, GTK_RESPONSE_OK, NULL );
 
-    if ( image_list_get_dir( mw->img_list ) )
+    if( image_list_get_dir( mw->img_list ) )
         gtk_file_chooser_set_current_folder( dlg, image_list_get_dir( mw->img_list ) );
 
     GtkWidget* img = gtk_image_new();
@@ -1349,7 +1019,7 @@ void on_zoom_out( GtkWidget* btn, MainWin* mw )
 
 void on_preference( GtkWidget* btn, MainWin* mw )
 {
-    edit_preferences( mw );
+    edit_preferences( (GtkWindow*)mw );
 }
 
 void on_quit( GtkWidget* btn, MainWin* mw )
@@ -1379,9 +1049,8 @@ gboolean on_button_press( GtkWidget* widget, GdkEventButton* evt, MainWin* mw )
     }
     else if( evt->type == GDK_2BUTTON_PRESS && evt->button == 1 )    // double clicked
     {
-        on_full_screen( NULL, mw );
+         on_full_screen( NULL, mw );
     }
-
     return FALSE;
 }
 
@@ -1462,10 +1131,16 @@ gboolean on_scroll_event( GtkWidget* widget, GdkEventScroll* evt, MainWin* mw )
             on_next( NULL, mw );
         break;
     case GDK_SCROLL_LEFT:
-        on_prev( NULL, mw );
+        if( gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL )
+            on_next( NULL, mw );
+        else
+            on_prev( NULL, mw );
         break;
     case GDK_SCROLL_RIGHT:
-        on_next( NULL, mw );
+        if( gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL )
+            on_prev( NULL, mw );
+        else
+            on_next( NULL, mw );
         break;
     }
     return TRUE;
@@ -1479,6 +1154,11 @@ gboolean on_key_press_event(GtkWidget* widget, GdkEventKey * key)
         case GDK_Right:
         case GDK_KP_Right:
         case GDK_rightarrow:
+            if( gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL )
+                on_prev( NULL, mw );
+            else
+                on_next( NULL, mw );
+            break;
         case GDK_Return:
         case GDK_space:
         case GDK_Next:
@@ -1490,6 +1170,11 @@ gboolean on_key_press_event(GtkWidget* widget, GdkEventKey * key)
         case GDK_Left:
         case GDK_KP_Left:
         case GDK_leftarrow:
+            if( gtk_widget_get_default_direction () == GTK_TEXT_DIR_RTL )
+                on_next( NULL, mw );
+            else
+                on_prev( NULL, mw );
+            break;
         case GDK_Prior:
         case GDK_BackSpace:
         case GDK_KP_Up:
@@ -1507,57 +1192,47 @@ gboolean on_key_press_event(GtkWidget* widget, GdkEventKey * key)
             on_zoom_out( NULL, mw );
             break;
         case GDK_s:
-        case GDK_S:
+//        case GDK_S:
             on_save( NULL, mw );
             break;
         case GDK_l:
-        case GDK_L:
+//        case GDK_L:
             on_rotate_counterclockwise( NULL, mw );
             break;
         case GDK_r:
-        case GDK_R:
+//        case GDK_R:
             on_rotate_clockwise( NULL, mw );
             break;
         case GDK_f:
-        case GDK_F:
+//        case GDK_F:
             if( mw->zoom_mode != ZOOM_FIT )
                 gtk_button_clicked((GtkButton*)mw->btn_fit );
             break;
         case GDK_g:
-        case GDK_G:
+//        case GDK_G:
             if( mw->zoom_mode != ZOOM_ORIG )
                 gtk_button_clicked((GtkButton*)mw->btn_orig );
             break;
-        case GDK_h:
-        case GDK_H:
-            on_flip_horizontal( NULL, mw );
-            break;
-        case GDK_v:
-        case GDK_V:
-            on_flip_vertical( NULL, mw );
-            break;
         case GDK_o:
-        case GDK_O:
+//        case GDK_O:
             on_open( NULL, mw );
             break;
         case GDK_Delete:
         case GDK_d:
-        case GDK_D:
+//        case GDK_D:
             on_delete( NULL, mw );
             break;
-        case GDK_a:
-        case GDK_A:
-            on_about( NULL, mw );
-            break;
-        case GDK_p:
-        case GDK_P:
-            on_preference( NULL, mw );
-            break;
+	case GDK_p:
+	    on_preference( NULL, mw );
+	    break;
         case GDK_Escape:
             if( mw->full_screen )
                 on_full_screen( NULL, mw );
             else
                 on_quit( NULL, mw );
+            break;
+        case GDK_q:
+            on_quit( NULL, mw );
             break;
         case GDK_F11:
             on_full_screen( NULL, mw );
@@ -1603,6 +1278,11 @@ void rotate_image( MainWin* mw, int angle )
         else if(angle == -180)
             rpix = gdk_pixbuf_flip( mw->pix, FALSE );
     }
+
+    if (!rpix) {
+        return;
+    }
+
     g_object_unref( mw->pix );
     
     mw->pix = rpix;
@@ -1628,37 +1308,36 @@ gboolean main_win_scale_image( MainWin* mw, double new_scale, GdkInterpType type
     return TRUE;
 }
 
-gboolean main_win_save( MainWin* mw, const char* file_path, const char* type, gboolean confirm, gdouble compression_level )
+gboolean save_confirm( MainWin* mw, const char* file_path )
 {
-    gboolean result1, gdk_save_supported;
+    if( g_file_test( file_path, G_FILE_TEST_EXISTS ) )
+    {
+        GtkWidget* dlg = gtk_message_dialog_new( (GtkWindow*)mw,
+                GTK_DIALOG_MODAL,
+                GTK_MESSAGE_QUESTION,
+                GTK_BUTTONS_YES_NO,
+                _("The file name you selected already exists.\nDo you want to overwrite existing file?\n(Warning: The quality of original image might be lost)") );
+        if( gtk_dialog_run( (GtkDialog*)dlg ) != GTK_RESPONSE_YES )
+        {
+            gtk_widget_destroy( dlg );
+            return FALSE;
+        }
+        gtk_widget_destroy( dlg );
+    }
+    return TRUE;
+}
+
+gboolean main_win_save( MainWin* mw, const char* file_path, const char* type, gboolean confirm )
+{
+    gboolean result1,gdk_save_supported;
     GSList *gdk_formats;
     GSList *gdk_formats_i;
-
     if( ! mw->pix )
         return FALSE;
 
-    if( confirm )   // check existing file
-    {
-        if( g_file_test( file_path, G_FILE_TEST_EXISTS ) )
-        {
-            GtkWidget* dlg = gtk_message_dialog_new( (GtkWindow*)mw,
-                    GTK_DIALOG_MODAL,
-                    GTK_MESSAGE_QUESTION,
-                    GTK_BUTTONS_YES_NO,
-                    _("The file name you selected already exist.\nDo you want to overwrite existing file?\n(Warning: The quality of original image might be lost)") );
-            if( gtk_dialog_run( (GtkDialog*)dlg ) != GTK_RESPONSE_YES )
-            {
-                gtk_widget_destroy( dlg );
-                return FALSE;
-            }
-            gtk_widget_destroy( dlg );
-        }
-    }
-
-    // detect if the current type can be saved by gdk_pixbuf_save()
+    /* detect if the current type can be save by gdk_pixbuf_save() */
     gdk_save_supported = FALSE;
     gdk_formats = gdk_pixbuf_get_formats();
-
     for (gdk_formats_i = gdk_formats; gdk_formats_i;
          gdk_formats_i = g_slist_next(gdk_formats_i))
     {
@@ -1673,46 +1352,20 @@ gboolean main_win_save( MainWin* mw, const char* file_path, const char* type, gb
             }
         }
     }
-
     g_slist_free (gdk_formats);
 
     GError* err = NULL;
     if (!gdk_save_supported)
     {
-        main_win_show_error( mw, _("Sorry but the image you are trying to save has a format not supported by the GDK.") );
-
+        main_win_show_error( mw, _("Writing of this image format not supported") );
         return FALSE;
     }
-
-    if ( compression_level == -1 )
-    {
-        result1 = gdk_pixbuf_save( mw->pix, file_path, type, &err, NULL );
-    }
-    else
-    {
-        gchar compression_level_string[4];
-        g_ascii_dtostr( compression_level_string, 4, compression_level ); // convert the gdouble compression_level to a string so it can be passed as an option to gdk_pixbuf_save()
-
-        if ( strcmp( type, "jpeg" ) == 0 )
-        {
-           result1 = gdk_pixbuf_save( mw->pix, file_path, type, &err, "quality", compression_level_string, NULL );
-        }
-        else if ( strcmp( type, "png" ) == 0 )
-        {
-           result1 = gdk_pixbuf_save( mw->pix, file_path, type, &err, "compression", compression_level_string, NULL );
-        }
-        else
-        {
-            result1 = gdk_pixbuf_save( mw->pix, file_path, type, &err, NULL );
-        }
-    }
-
+    result1 = gdk_pixbuf_save( mw->pix, file_path, type, &err, NULL );
     if( ! result1 )
     {
         main_win_show_error( mw, err->message );
         return FALSE;
     }
-
     return TRUE;
 }
 
@@ -1721,20 +1374,15 @@ void on_delete( GtkWidget* btn, MainWin* mw )
     char* file_path = image_list_get_current_file_path( mw->img_list );
     if( file_path )
     {
-	int resp = 0;
+        GtkWidget* dlg = gtk_message_dialog_new( (GtkWindow*)mw,
+                GTK_DIALOG_MODAL,
+                GTK_MESSAGE_QUESTION,
+                GTK_BUTTONS_YES_NO,
+                _("Are you sure you want to delete current file?\n\nWarning: Once deleted, the file cannot be recovered.") );
+        int resp = gtk_dialog_run( (GtkDialog*)dlg );
+        gtk_widget_destroy( dlg );
 
-	if ( pref.ask_before_delete )
-	{
-            GtkWidget* dlg = gtk_message_dialog_new( (GtkWindow*)mw,
-                    GTK_DIALOG_MODAL,
-                    GTK_MESSAGE_QUESTION,
-                    GTK_BUTTONS_YES_NO,
-                    _("Are you sure you want to delete current file?\n\nWarning: Once deleted, the file cannot be recovered.") );
-            resp = gtk_dialog_run( (GtkDialog*)dlg );
-            gtk_widget_destroy( dlg );
-	}
-
-        if( ! pref.ask_before_delete || (pref.ask_before_delete && resp == GTK_RESPONSE_YES) )
+        if( resp == GTK_RESPONSE_YES )
         {
             const char* name = image_list_get_current( mw->img_list );
 	    
@@ -1756,10 +1404,13 @@ void on_delete( GtkWidget* btn, MainWin* mw )
 		image_list_remove ( mw->img_list, name );
 
 		if ( ! next_name )
-		    g_main_loop_quit( mw->loop );
+		{
+		    main_win_close( mw );
+		    image_view_set_pixbuf( (ImageView*)mw->img_view, NULL );
+		    gtk_window_set_title( (GtkWindow*) mw, _("Image Viewer"));
+		}
 	    }
         }
-
 	g_free( file_path );
     }
 }
@@ -1780,8 +1431,8 @@ void show_popup_menu( MainWin* mw, GdkEventButton* evt )
         PTK_SEPARATOR_MENU_ITEM,
         PTK_IMG_MENU_ITEM( N_( "Rotate Counterclockwise" ), "gtk-counterclockwise", on_rotate_counterclockwise, GDK_L, 0 ),
         PTK_IMG_MENU_ITEM( N_( "Rotate Clockwise" ), "gtk-clockwise", on_rotate_clockwise, GDK_R, 0 ),
-        PTK_IMG_MENU_ITEM( N_( "Flip Horizontal" ), "gtk-horizontal", on_flip_horizontal, GDK_H, 0 ),
-        PTK_IMG_MENU_ITEM( N_( "Flip Vertical" ), "gtk-vertical", on_flip_vertical, GDK_V, 0 ),
+//        PTK_IMG_MENU_ITEM( N_( "Flip Vertical" ), "gtk-clockwise", on_flip_vertical, GDK_V, 0 ),
+//        PTK_IMG_MENU_ITEM( N_( "Flip Horizontal" ), "gtk-clockwise", on_flip_horizontal, GDK_H, 0 ),
         PTK_SEPARATOR_MENU_ITEM,
         PTK_IMG_MENU_ITEM( N_("Open File"), GTK_STOCK_OPEN, G_CALLBACK(on_open), GDK_O, 0 ),
         PTK_IMG_MENU_ITEM( N_("Save File"), GTK_STOCK_SAVE, G_CALLBACK(on_save), GDK_S, 0 ),
@@ -1789,8 +1440,10 @@ void show_popup_menu( MainWin* mw, GdkEventButton* evt )
 //        PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
         PTK_IMG_MENU_ITEM( N_("Delete File"), GTK_STOCK_DELETE, G_CALLBACK(on_delete), GDK_Delete, 0 ),
         PTK_SEPARATOR_MENU_ITEM,
-        PTK_IMG_MENU_ITEM( N_( "Preferences" ), GTK_STOCK_PREFERENCES, on_preference, GDK_P, 0 ),
-        PTK_IMG_MENU_ITEM( N_( "About" ), GTK_STOCK_ABOUT, on_about, GDK_A, 0 ),
+        PTK_IMG_MENU_ITEM( N_("Preferences"), GTK_STOCK_PREFERENCES, G_CALLBACK(on_preference), GDK_P, 0 ),
+        PTK_IMG_MENU_ITEM( N_("Quit"), GTK_STOCK_QUIT, G_CALLBACK(on_quit), GDK_Q, 0 ),
+        PTK_SEPARATOR_MENU_ITEM,
+        PTK_STOCK_MENU_ITEM( GTK_STOCK_ABOUT, on_about ),
         PTK_MENU_END
     };
 
@@ -1803,18 +1456,11 @@ void show_popup_menu( MainWin* mw, GdkEventButton* evt )
     gtk_menu_popup( (GtkMenu*)popup, NULL, NULL, NULL, NULL, evt->button, evt->time );
 }
 
-// callback used to open default browser when URLs got clicked
+/* callback used to open default browser when URLs got clicked */
 static void open_url( GtkAboutDialog *dlg, const gchar *url, gpointer data)
 {
-//    GError *error = NULL;
-//   gtk_show_uri( gdk_screen_get_default (),
-//                "http://google.com",
-//                gtk_get_current_event_time (),
-//                &error); 
-
-/*
-    // FIXME: is there any better way to do this?
-    char* programs[] = { "xdg-open", "gnome-open", "exo-open" };
+    /* FIXME: is there any better way to do this? */
+    char* programs[] = { "xdg-open", "gnome-open" /* Sorry, KDE users. :-P */, "exo-open" };
     int i;
     for(  i = 0; i < G_N_ELEMENTS(programs); ++i)
     {
@@ -1823,15 +1469,13 @@ static void open_url( GtkAboutDialog *dlg, const gchar *url, gpointer data)
         {
              gchar* argv [3];
              argv [0] = programs[i];
-             // *******************************************************************************************
-             argv [1] = url; // FIXME: gcc gives warning: assignment discards qualifiers from pointer target type
-             // *******************************************************************************************
-             //argv [2] = NULL;
+             argv [1] = (gchar *) url;
+             argv [2] = NULL;
              g_spawn_async (NULL, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, NULL); 
              g_free( open_cmd );
              break;
         }
-    }*/
+    }
 }
 
 void on_about( GtkWidget* menu, MainWin* mw )
@@ -1840,14 +1484,12 @@ void on_about( GtkWidget* menu, MainWin* mw )
     const gchar *authors[] =
     {
         "洪任諭 Hong Jen Yee <pcman.tw@gmail.com>",
-        "Louis Casillas <oxaric@gmail.com>",
         "Martin Siggel <martinsiggel@googlemail.com>",
         "Hialan Liu <hialan.liu@gmail.com>",
-        "",
         _(" * Refer to source code of EOG image viewer and GThumb"),
         NULL
     };
-    // TRANSLATORS: Replace mw string with your names, one name per line.
+    /* TRANSLATORS: Replace this string with your names, one name per line. */
     gchar *translators = _( "translator-credits" );
 
     gtk_about_dialog_set_url_hook( open_url, mw, NULL);
@@ -1860,8 +1502,8 @@ void on_about( GtkWidget* menu, MainWin* mw )
     gtk_about_dialog_set_logo( (GtkAboutDialog*)about_dlg, gdk_pixbuf_new_from_file(  PACKAGE_DATA_DIR"/pixmaps/gpicview.png", NULL ) );
     gtk_about_dialog_set_copyright ( (GtkAboutDialog*)about_dlg, _( "Copyright (C) 2007" ) );
     gtk_about_dialog_set_comments ( (GtkAboutDialog*)about_dlg, _( "Lightweight image viewer from LXDE project" ) );
-    gtk_about_dialog_set_license ( (GtkAboutDialog*)about_dlg, "GPicView\n\nCopyright (C) 2007 Hong Jen Yee (PCMan)\n\nmw program is free software; you can redistribute it and/or\nmodify it under the terms of the GNU General Public License\nas published by the Free Software Foundation; either version 2\nof the License, or (at your option) any later version.\n\nmw program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with mw program; if not, write to the Free Software\nFoundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA." );
-    gtk_about_dialog_set_website ( (GtkAboutDialog*)about_dlg, "http://wiki.lxde.org/en/GPicView" );
+    gtk_about_dialog_set_license ( (GtkAboutDialog*)about_dlg, "GPicView\n\nCopyright (C) 2007 Hong Jen Yee (PCMan)\n\nThis program is free software; you can redistribute it and/or\nmodify it under the terms of the GNU General Public License\nas published by the Free Software Foundation; either version 2\nof the License, or (at your option) any later version.\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with this program; if not, write to the Free Software\nFoundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA." );
+    gtk_about_dialog_set_website ( (GtkAboutDialog*)about_dlg, "http://lxde.org/gpicview/" );
     gtk_about_dialog_set_authors ( (GtkAboutDialog*)about_dlg, authors );
     gtk_about_dialog_set_translator_credits ( (GtkAboutDialog*)about_dlg, translators );
     gtk_window_set_transient_for( (GtkWindow*) about_dlg, GTK_WINDOW( mw ) );
