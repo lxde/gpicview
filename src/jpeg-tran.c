@@ -40,13 +40,13 @@
 
 #ifdef HAVE_LIBJPEG
 
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <jpeglib.h>
 #include "tran-supp.h"      /* Support routines for jpegtran */
-
+#include <limits.h>
+#include <errno.h>
 
 int
 jpegtran (char        *input_filename,
@@ -184,5 +184,61 @@ main (int    argc,
 }
 
 #endif /* TEST */
+
+int rotate_and_save_jpeg_lossless(char *  filename,int angle)
+{
+
+    char tmpfilename[PATH_MAX];
+    int tmpfilefd;
+
+/*
+    if(angle < 0)
+        return EINVAL;
+*/
+
+    JXFORM_CODE code = JXFORM_NONE;
+
+    angle = angle % 360;
+
+    if(angle == 90)
+        code = JXFORM_ROT_90;
+    else if(angle == 180)
+        code = JXFORM_ROT_180;
+    else if(angle == 270)
+        code = JXFORM_ROT_270;
+    else if(angle == -90)
+        code = JXFORM_FLIP_H;
+    else if(angle == -180)
+        code = JXFORM_FLIP_V;
+
+    /* Length check temporary file name. */
+    if(strlen(filename) > (sizeof(tmpfilename) - 8))
+	return EINVAL;
+    sprintf(tmpfilename, "%s.XXXXXX", filename);
+
+    /* Create temporary file. */
+    tmpfilefd = mkstemp(tmpfilename);
+    if (tmpfilefd == -1) {
+      return errno;
+    }
+    close(tmpfilefd);
+
+    /* Rotate the image and save it to temporary file. */
+    int error = jpegtran (filename, tmpfilename, code);
+    if(error) {
+	int saved_errno = errno;
+        unlink(tmpfilename);
+        return saved_errno;
+    }
+
+    /* Rename temporary file over the original file. */
+    int error_1 = g_rename(tmpfilename, filename);
+    if (error_1 == -1) {
+	int saved_errno = errno;
+        unlink(tmpfilename);
+        return saved_errno;
+    }
+    return 0;
+}
 
 #endif /* HAVE_LIBJPEG */

@@ -35,6 +35,7 @@ int  jpegtran (char        *input_filename,
 
 //Martin Siggel: added this wrapper for easy rotation
 //int rotateJpegLossless(char *  filename,int angle);
+int rotate_and_save_jpeg_lossless(char *  filename,int angle);
 
 #endif /* JPEGTRAN_H */
 

@@ -54,10 +54,14 @@ typedef struct _MainWin
 {
     GtkWindow parent;
 
+    GdkPixbuf* pix;
+    GdkPixbufAnimation* animation;
+    GdkPixbufAnimationIter* animation_iter;
+    guint animation_timeout;
+
     GtkWidget* zoom_btn;
     GtkWidget* img_view;
     GtkWidget* scroll;
-    GdkPixbuf* pix;
     GtkWidget* evt_box;
     GtkWidget* nav_bar;
 //    GtkWidget* btn_zoom_in;
@@ -65,7 +69,6 @@ typedef struct _MainWin
     GtkWidget* btn_orig;
     GtkWidget* btn_fit;
     GtkWidget* percent;
-    GtkTooltips* tooltips;
     GdkCursor* hand_cursor;
     ZoomMode zoom_mode;
     gboolean full_screen;
