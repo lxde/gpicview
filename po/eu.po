@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GPicView 0.1.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-17 01:45+0800\n"
+"POT-Creation-Date: 2009-05-17 02:47+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Alain Mendizabal <alainmendi@gmail.com>\n"
 "Language-Team:  <alainmendi@gmail.com>\n"
@@ -11,9 +11,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Basque\n"
 
-#: src/gpicview.c:36
+#: src/gpicview.c:37
 msgid "[FILE]"
 msgstr "[FITXATEGIA]"
+
+#: src/gpicview.c:39
+msgid "Print version information and exit"
+msgstr ""
 
 #: src/main-win.c:148 src/main-win.c:1410
 msgid "Image Viewer"
@@ -142,7 +146,7 @@ msgstr "Copyright (C) 2007"
 msgid "Lightweight image viewer from LXDE project"
 msgstr "LXDE proiekturako irudi ikustaile arina"
 
-#: src/pref.c:88
+#: src/pref.c:112
 msgid ""
 "GPicView will become the default viewer for all supported image files on "
 "your system.\n"
@@ -155,23 +159,23 @@ msgstr ""
 "\n"
 "<b>Ziur al zaude hau egin nahi duzula?</b>"
 
-#: data/pref-dlg.glade:16
+#: data/pref-dlg.glade:17
 #, fuzzy
 msgid "Ask before saving images"
 msgstr "Galdetu irudiak gorde aurretik"
 
-#: data/pref-dlg.glade:29
+#: data/pref-dlg.glade:30
 #, fuzzy
 msgid "Ask before deleting images"
 msgstr "Galdetu irudiak gorde aurretik"
 
-#: data/pref-dlg.glade:42
+#: data/pref-dlg.glade:43
 #, fuzzy
 msgid "Automatically save rotated images"
 msgstr ""
 "Biratutako irudiak automatikoki gorde (Oraingoz JPEG-rekin bakarrik dabil)"
 
-#: data/pref-dlg.glade:55
+#: data/pref-dlg.glade:56
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
@@ -194,10 +198,6 @@ msgstr ""
 #, fuzzy
 msgid "Make GPicView the default viewer for images"
 msgstr "GPicview irudi ikustaile lehenetsi bezala ipini"
-
-#: data/pref-dlg.glade:159
-msgid "gtk-close"
-msgstr ""
 
 #~ msgid " Full Screen"
 #~ msgstr "Pantaila osoa"

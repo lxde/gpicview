@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gpicview 0.1.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-17 01:45+0800\n"
+"POT-Creation-Date: 2009-05-17 02:47+0800\n"
 "PO-Revision-Date: 2009-04-10 10:58+0100\n"
 "Last-Translator: Matej <paxmanpwnz@gmail.com>\n"
 "Language-Team: Slovenian <paxmanpwnz@gmail.com>\n"
@@ -19,9 +19,13 @@ msgstr ""
 "X-Poedit-Language: Slovenian\n"
 "X-Poedit-Country: SLOVENIA\n"
 
-#: src/gpicview.c:36
+#: src/gpicview.c:37
 msgid "[FILE]"
 msgstr "[DATOTEKA]"
+
+#: src/gpicview.c:39
+msgid "Print version information and exit"
+msgstr ""
 
 #: src/main-win.c:148 src/main-win.c:1410
 msgid "Image Viewer"
@@ -149,7 +153,7 @@ msgstr "Vse pravice pridržane (C) 2007"
 msgid "Lightweight image viewer from LXDE project"
 msgstr "Pregledovalnik slik okenskega okloja LXDE"
 
-#: src/pref.c:88
+#: src/pref.c:112
 msgid ""
 "GPicView will become the default viewer for all supported image files on "
 "your system.\n"
@@ -162,22 +166,22 @@ msgstr ""
 "\n"
 "<b>Ali ste prepričani, da želite storiti to?</b>"
 
-#: data/pref-dlg.glade:16
+#: data/pref-dlg.glade:17
 #, fuzzy
 msgid "Ask before saving images"
 msgstr "Vprašaj preden shraniš"
 
-#: data/pref-dlg.glade:29
+#: data/pref-dlg.glade:30
 #, fuzzy
 msgid "Ask before deleting images"
 msgstr "Vprašaj preden shraniš"
 
-#: data/pref-dlg.glade:42
+#: data/pref-dlg.glade:43
 #, fuzzy
 msgid "Automatically save rotated images"
 msgstr "Samodejno shrani zasukane slike ( trenutno podprt le JPEG )"
 
-#: data/pref-dlg.glade:55
+#: data/pref-dlg.glade:56
 #, fuzzy
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
@@ -203,10 +207,6 @@ msgstr ""
 #, fuzzy
 msgid "Make GPicView the default viewer for images"
 msgstr "Nastavi GPicView za privzeti pregledovalnik slik"
-
-#: data/pref-dlg.glade:159
-msgid "gtk-close"
-msgstr ""
 
 #~ msgid " Full Screen"
 #~ msgstr "Celozaslonski način"

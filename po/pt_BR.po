@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-17 01:45+0800\n"
+"POT-Creation-Date: 2009-05-17 02:47+0800\n"
 "PO-Revision-Date: 2009-03-11 17:59-0300\n"
 "Last-Translator: Henrique P. Machado <zehrique@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
@@ -17,9 +17,13 @@ msgstr ""
 "X-Poedit-Language: Portuguese\n"
 "X-Poedit-Country: BRAZIL\n"
 
-#: src/gpicview.c:36
+#: src/gpicview.c:37
 msgid "[FILE]"
 msgstr "[ARQUIVO]"
+
+#: src/gpicview.c:39
+msgid "Print version information and exit"
+msgstr ""
 
 #: src/main-win.c:148 src/main-win.c:1410
 msgid "Image Viewer"
@@ -150,7 +154,7 @@ msgstr "Direitos autorais (C) 2007"
 msgid "Lightweight image viewer from LXDE project"
 msgstr "Visualizador de imagem leve e rápido do projeto LXDE"
 
-#: src/pref.c:88
+#: src/pref.c:112
 msgid ""
 "GPicView will become the default viewer for all supported image files on "
 "your system.\n"
@@ -164,24 +168,24 @@ msgstr ""
 "\n"
 "<b>Tem certeza que deseja fazer isso?</b>"
 
-#: data/pref-dlg.glade:16
+#: data/pref-dlg.glade:17
 #, fuzzy
 msgid "Ask before saving images"
 msgstr "Perguntar antes de salvar imagens"
 
-#: data/pref-dlg.glade:29
+#: data/pref-dlg.glade:30
 #, fuzzy
 msgid "Ask before deleting images"
 msgstr "Perguntar antes de salvar imagens"
 
-#: data/pref-dlg.glade:42
+#: data/pref-dlg.glade:43
 #, fuzzy
 msgid "Automatically save rotated images"
 msgstr ""
 "Salvar automaticamente imagens rotacionadas (Atualmente, há suporte somente "
 "para o formato JPEG)"
 
-#: data/pref-dlg.glade:55
+#: data/pref-dlg.glade:56
 #, fuzzy
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
@@ -207,10 +211,6 @@ msgstr ""
 #, fuzzy
 msgid "Make GPicView the default viewer for images"
 msgstr "Tornar o GPicview o visualizador padrão de imagens"
-
-#: data/pref-dlg.glade:159
-msgid "gtk-close"
-msgstr ""
 
 #~ msgid " Full Screen"
 #~ msgstr " Tela cheia"

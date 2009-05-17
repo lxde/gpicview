@@ -163,8 +163,8 @@ void main_win_init( MainWin*mw )
     g_signal_connect( mw->evt_box, "motion-notify-event", G_CALLBACK(on_mouse_move), mw );
     g_signal_connect( mw->evt_box, "scroll-event", G_CALLBACK(on_scroll_event), mw );
     // Set bg color to white
-    GdkColor white = {0, 65535, 65535, 65535};
-    gtk_widget_modify_bg( mw->evt_box, GTK_STATE_NORMAL, &white );
+
+    gtk_widget_modify_bg( mw->evt_box, GTK_STATE_NORMAL, &pref.bg );
 
     mw->img_view = image_view_new();
     gtk_container_add( (GtkContainer*)mw->evt_box, (GtkWidget*)mw->img_view);
@@ -350,22 +350,22 @@ static void updateTitle(const char *filename, MainWin *mw )
 {
     static char fname[50];
     static int wid, hei;
-    
+
     char buf[100];
-    
+
     if(filename != NULL)
     {
       strncpy(fname, filename, 49);
       fname[49] = '\0';
-      
+
       wid = gdk_pixbuf_get_width( mw->pix );
       hei = gdk_pixbuf_get_height( mw->pix );
     }
-    
+
     snprintf(buf, 100, "%s (%dx%d) %d%%", fname, wid, hei, (int)(mw->scale * 100));
     gtk_window_set_title( (GtkWindow*)mw, buf );
-    
-    return;    
+
+    return;
 }
 
 gboolean main_win_open( MainWin* mw, const char* file_path, ZoomMode zoom )
@@ -388,7 +388,7 @@ gboolean main_win_open( MainWin* mw, const char* file_path, ZoomMode zoom )
         // Only jpeg should rotate by EXIF
         mw->pix = RotateByEXIF( file_path, mw->pix);
     }
-    
+
     mw->zoom_mode = zoom;
 
     // select most suitable viewing mode
@@ -503,16 +503,13 @@ gboolean on_win_state_event( GtkWidget* widget, GdkEventWindowState* state )
     MainWin* mw = (MainWin*)widget;
     if( state->new_window_state == GDK_WINDOW_STATE_FULLSCREEN )
     {
-        static GdkColor black = {0};
-        gtk_widget_modify_bg( mw->evt_box, GTK_STATE_NORMAL, &black );
+        gtk_widget_modify_bg( mw->evt_box, GTK_STATE_NORMAL, &pref.bg_full );
         gtk_widget_hide( gtk_widget_get_parent(mw->nav_bar) );
         mw->full_screen = TRUE;
     }
     else
     {
-//        gtk_widget_reset_rc_styles( mw->evt_box );
-        static GdkColor white = {0, 65535, 65535, 65535};
-        gtk_widget_modify_bg( mw->evt_box, GTK_STATE_NORMAL, &white );
+        gtk_widget_modify_bg( mw->evt_box, GTK_STATE_NORMAL, &pref.bg );
         gtk_widget_show( gtk_widget_get_parent(mw->nav_bar) );
         mw->full_screen = FALSE;
     }
@@ -539,7 +536,7 @@ void main_win_fit_size( MainWin* mw, int width, int height, gboolean can_strech,
     {
         mw->scale = 1.0;
         image_view_set_scale( (ImageView*)mw->img_view, 1.0, type );
-        
+
         updateTitle(NULL, mw);
     }
 }
@@ -634,7 +631,7 @@ void on_orig_size( GtkToggleButton* btn, MainWin* mw )
 
     // update scale
     updateTitle(NULL, mw);
-    
+
     image_view_set_scale( (ImageView*)mw->img_view, 1.0, GDK_INTERP_BILINEAR );
 
     while (gtk_events_pending ())
@@ -705,10 +702,10 @@ static int get_new_angle( int orig_angle, int rotate_angle )
     // defined in exif.c
     extern int ExifRotateFlipMapping[9][9];
     static int angle_trans_back[] = {0, 0, -90, 180, -180, -135, 90, -45, 270};
-    
+
     orig_angle = trans_angle_to_id(orig_angle);
     rotate_angle = trans_angle_to_id(rotate_angle);
-  
+
     return angle_trans_back[ ExifRotateFlipMapping[orig_angle][rotate_angle] ];
 }
 
@@ -850,7 +847,7 @@ int rotate_and_save_jpeg_lossless(char *  filename,int angle){
 
     if(angle < 0)
         return EINVAL;
-    
+
     JXFORM_CODE code = JXFORM_NONE;
 
     angle = angle % 360;
@@ -913,11 +910,11 @@ void on_save( GtkWidget* btn, MainWin* mw )
         if(!pref.rotate_exif_only || ExifRotate(file_name, mw->rotation_angle) == FALSE)
         {
             // hialan notes:
-            // ExifRotate retrun FALSE when 
+            // ExifRotate retrun FALSE when
             //   1. Can not read file
             //   2. Exif do not have TAG_ORIENTATION tag
             //   3. Format unknown
-            // And then we apply rotate_and_save_jpeg_lossless() , 
+            // And then we apply rotate_and_save_jpeg_lossless() ,
             // the result would not effected by EXIF Orientation...
 #ifdef HAVE_LIBJPEG
             int status = rotate_and_save_jpeg_lossless(file_name,mw->rotation_angle);
@@ -1284,7 +1281,7 @@ void rotate_image( MainWin* mw, int angle )
     }
 
     g_object_unref( mw->pix );
-    
+
     mw->pix = rpix;
     image_view_set_pixbuf( (ImageView*)mw->img_view, mw->pix );
 
@@ -1302,9 +1299,9 @@ gboolean main_win_scale_image( MainWin* mw, double new_scale, GdkInterpType type
     }
     mw->scale = new_scale;
     image_view_set_scale( (ImageView*)mw->img_view, new_scale, type );
-    
+
     updateTitle( NULL, mw );
-    
+
     return TRUE;
 }
 
@@ -1385,7 +1382,7 @@ void on_delete( GtkWidget* btn, MainWin* mw )
         if( resp == GTK_RESPONSE_YES )
         {
             const char* name = image_list_get_current( mw->img_list );
-	    
+
 	    if( g_unlink( file_path ) != 0 )
 		main_win_show_error( mw, g_strerror(errno) );
 	    else
@@ -1393,7 +1390,7 @@ void on_delete( GtkWidget* btn, MainWin* mw )
 		const char* next_name = image_list_get_next( mw->img_list );
 		if( ! next_name )
 		    next_name = image_list_get_prev( mw->img_list );
-		
+
 		if( next_name )
 		{
 		    char* next_file_path = image_list_get_current_file_path( mw->img_list );
@@ -1471,7 +1468,7 @@ static void open_url( GtkAboutDialog *dlg, const gchar *url, gpointer data)
              argv [0] = programs[i];
              argv [1] = (gchar *) url;
              argv [2] = NULL;
-             g_spawn_async (NULL, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, NULL); 
+             g_spawn_async (NULL, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, NULL);
              g_free( open_cmd );
              break;
         }

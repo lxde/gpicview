@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gpicview r846\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-17 01:45+0800\n"
+"POT-Creation-Date: 2009-05-17 02:47+0800\n"
 "PO-Revision-Date: 2007-21-11 20:27+0100\n"
 "Last-Translator: Robert-André Mauchin <zebob.m@pengzone.org>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
@@ -18,9 +18,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: src/gpicview.c:36
+#: src/gpicview.c:37
 msgid "[FILE]"
 msgstr "[FICHIER]"
+
+#: src/gpicview.c:39
+msgid "Print version information and exit"
+msgstr ""
 
 #: src/main-win.c:148 src/main-win.c:1410
 msgid "Image Viewer"
@@ -152,7 +156,7 @@ msgstr "Copyright (C) 2007-2008"
 msgid "Lightweight image viewer from LXDE project"
 msgstr "Visionneur d'images léger du projet LXDE"
 
-#: src/pref.c:88
+#: src/pref.c:112
 msgid ""
 "GPicView will become the default viewer for all supported image files on "
 "your system.\n"
@@ -166,24 +170,24 @@ msgstr ""
 "\n"
 "<b>Voulez-vous vraiment effectuer ceci ?</b>"
 
-#: data/pref-dlg.glade:16
+#: data/pref-dlg.glade:17
 #, fuzzy
 msgid "Ask before saving images"
 msgstr "Demander avant d'enregistrer des images"
 
-#: data/pref-dlg.glade:29
+#: data/pref-dlg.glade:30
 #, fuzzy
 msgid "Ask before deleting images"
 msgstr "Demander avant d'enregistrer des images"
 
-#: data/pref-dlg.glade:42
+#: data/pref-dlg.glade:43
 #, fuzzy
 msgid "Automatically save rotated images"
 msgstr ""
 "Enregistrer automatiquement la rotation des images (actuellement seulement "
 "le JPEG est pris en charge)"
 
-#: data/pref-dlg.glade:55
+#: data/pref-dlg.glade:56
 #, fuzzy
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
@@ -209,10 +213,6 @@ msgstr ""
 #, fuzzy
 msgid "Make GPicView the default viewer for images"
 msgstr "Définir GPicview comme visionneur d'images par défaut"
-
-#: data/pref-dlg.glade:159
-msgid "gtk-close"
-msgstr ""
 
 #~ msgid " Full Screen"
 #~ msgstr " Plein écran"

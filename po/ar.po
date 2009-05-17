@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GPicView\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-17 01:45+0800\n"
+"POT-Creation-Date: 2009-05-17 02:47+0800\n"
 "PO-Revision-Date: 2009-05-01 11:19+0200\n"
 "Last-Translator: Ahmad Farghal <ahmad.farghal@gmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -20,9 +20,13 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 "X-Generator: Pootle 1.1.0\n"
 
-#: src/gpicview.c:36
+#: src/gpicview.c:37
 msgid "[FILE]"
 msgstr "[ملف]"
+
+#: src/gpicview.c:39
+msgid "Print version information and exit"
+msgstr ""
 
 #: src/main-win.c:148 src/main-win.c:1410
 msgid "Image Viewer"
@@ -151,7 +155,7 @@ msgstr "حقوق النشر محفوظة © 2007"
 msgid "Lightweight image viewer from LXDE project"
 msgstr "عارض صور خفيف من مشروع لكسدي"
 
-#: src/pref.c:88
+#: src/pref.c:112
 msgid ""
 "GPicView will become the default viewer for all supported image files on "
 "your system.\n"
@@ -164,22 +168,22 @@ msgstr ""
 "\n"
 "<b>هل أنت متأكد أنك تريد القيام بهذا؟</b>"
 
-#: data/pref-dlg.glade:16
+#: data/pref-dlg.glade:17
 #, fuzzy
 msgid "Ask before saving images"
 msgstr "اسأل قبل حفظ الصور"
 
-#: data/pref-dlg.glade:29
+#: data/pref-dlg.glade:30
 #, fuzzy
 msgid "Ask before deleting images"
 msgstr "اسأل قبل حفظ الصور"
 
-#: data/pref-dlg.glade:42
+#: data/pref-dlg.glade:43
 #, fuzzy
 msgid "Automatically save rotated images"
 msgstr "احفظ الصور الملفوفة آليا (صور JPEG فقط هي المدعومة حاليا)"
 
-#: data/pref-dlg.glade:55
+#: data/pref-dlg.glade:56
 #, fuzzy
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
@@ -205,10 +209,6 @@ msgstr ""
 #, fuzzy
 msgid "Make GPicView the default viewer for images"
 msgstr "اجعل GPicview عارض الصور الافتراضي"
-
-#: data/pref-dlg.glade:159
-msgid "gtk-close"
-msgstr ""
 
 #~ msgid " Full Screen"
 #~ msgstr "ملء الشاشة"

@@ -31,9 +31,13 @@ typedef struct _Pref
     gboolean auto_save_rotated; /* Save rotated images */
     gboolean ask_before_save;
     gboolean rotate_exif_only;
+    gboolean ask_before_delete;
+    gboolean open_maximized;
+    GdkColor bg;
+    GdkColor bg_full
 }Pref;
 
- extern Pref pref; /* global variable holding user prerefences */
+extern Pref pref; /* global variable holding user prerefences */
 
 void load_preferences(); /* load user preferences */
 void save_preferences(); /* save user preference s*/

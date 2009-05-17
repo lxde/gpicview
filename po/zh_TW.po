@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-17 01:45+0800\n"
-"PO-Revision-Date: 2009-05-17 01:46+0800\n"
+"POT-Creation-Date: 2009-05-17 02:47+0800\n"
+"PO-Revision-Date: 2009-05-17 02:49+0800\n"
 "Last-Translator: 洪任諭 <pcman.tw@gmail.com>\n"
 "Language-Team: zh_TW <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,9 +18,13 @@ msgstr ""
 "X-Poedit-Country: TAIWAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: src/gpicview.c:36
+#: src/gpicview.c:37
 msgid "[FILE]"
 msgstr "[檔案]"
+
+#: src/gpicview.c:39
+msgid "Print version information and exit"
+msgstr "顯示版本資訊然後離開"
 
 #: src/main-win.c:148
 #: src/main-win.c:1410
@@ -105,7 +109,7 @@ msgstr "偏好設定"
 #: src/main-win.c:270
 #: src/main-win.c:1444
 msgid "Quit"
-msgstr ""
+msgstr "離開"
 
 #: src/main-win.c:954
 msgid "All Supported Images"
@@ -127,7 +131,7 @@ msgstr ""
 
 #: src/main-win.c:1360
 msgid "Writing of this image format not supported"
-msgstr ""
+msgstr "目前不支援儲存這種影像格式"
 
 #: src/main-win.c:1381
 msgid ""
@@ -164,7 +168,7 @@ msgstr "版權所有 (C) 2007"
 msgid "Lightweight image viewer from LXDE project"
 msgstr "來自 LXDE 計畫的輕巧圖片檢視器"
 
-#: src/pref.c:88
+#: src/pref.c:112
 msgid ""
 "GPicView will become the default viewer for all supported image files on your system.\n"
 "(This will be done through 'xdg-mime' program)\n"
@@ -176,27 +180,29 @@ msgstr ""
 "\n"
 "<b>你是否確定要這麼做？</b>"
 
-#: data/pref-dlg.glade:16
+#: data/pref-dlg.glade:17
 msgid "Ask before saving images"
 msgstr "儲存影像前先詢問"
 
-#: data/pref-dlg.glade:29
+#: data/pref-dlg.glade:30
 msgid "Ask before deleting images"
 msgstr "儲存影像前先詢問"
 
-#: data/pref-dlg.glade:42
+#: data/pref-dlg.glade:43
 msgid "Automatically save rotated images"
 msgstr "自動儲存經過旋轉的影像 (目前只支援 JPEG 格式)"
 
-#: data/pref-dlg.glade:55
+#: data/pref-dlg.glade:56
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
+"透過改變 EXIF orientation 數值來旋轉 JPEG 圖檔\n"
+"(只有當 EXIF orientation 標籤存在時有效)"
 
 #: data/pref-dlg.glade:83
 msgid "Normal:"
-msgstr ""
+msgstr "正常："
 
 #: data/pref-dlg.glade:105
 msgid "Fullscreen:"
@@ -204,15 +210,11 @@ msgstr "全螢幕："
 
 #: data/pref-dlg.glade:131
 msgid "<b>Background colors</b>"
-msgstr ""
+msgstr "<b>背景色彩</b>"
 
 #: data/pref-dlg.glade:143
 msgid "Make GPicView the default viewer for images"
 msgstr "將 GPicView 設為預設的圖片檢視程式"
-
-#: data/pref-dlg.glade:159
-msgid "gtk-close"
-msgstr ""
 
 #~ msgid " Full Screen"
 #~ msgstr "全螢幕瀏覽"

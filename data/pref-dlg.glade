@@ -67,6 +67,7 @@
         </child>
         <child>
           <object class="GtkFrame" id="frame1">
+            <property name="visible">True</property>
             <property name="label_xalign">0</property>
             <property name="shadow_type">none</property>
             <child>
@@ -92,7 +93,6 @@
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
-                        <property name="color">#000000000000</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -114,7 +114,6 @@
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
-                        <property name="color">#000000000000</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>

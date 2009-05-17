@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GPicView\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-17 01:45+0800\n"
+"POT-Creation-Date: 2009-05-17 02:47+0800\n"
 "PO-Revision-Date: 2009-02-26 22:51+0700\n"
 "Last-Translator: Andhika Padmawan <andhika.padmawan@gmail.com>\n"
 "Language-Team: Indonesian <translation-team-id@lists.sourceforge.net>\n"
@@ -15,9 +15,13 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/gpicview.c:36
+#: src/gpicview.c:37
 msgid "[FILE]"
 msgstr "[BERKAS]"
+
+#: src/gpicview.c:39
+msgid "Print version information and exit"
+msgstr ""
 
 #: src/main-win.c:148 src/main-win.c:1410
 msgid "Image Viewer"
@@ -146,7 +150,7 @@ msgstr "Hak Cipta (C) 2007"
 msgid "Lightweight image viewer from LXDE project"
 msgstr "Penampil citra ringan dari proyek LXDE"
 
-#: src/pref.c:88
+#: src/pref.c:112
 msgid ""
 "GPicView will become the default viewer for all supported image files on "
 "your system.\n"
@@ -160,24 +164,24 @@ msgstr ""
 "\n"
 "<b>Apakah anda yakin ingin melakukan ini?</b>"
 
-#: data/pref-dlg.glade:16
+#: data/pref-dlg.glade:17
 #, fuzzy
 msgid "Ask before saving images"
 msgstr "Tanya sebelum menyimpan  citra"
 
-#: data/pref-dlg.glade:29
+#: data/pref-dlg.glade:30
 #, fuzzy
 msgid "Ask before deleting images"
 msgstr "Tanya sebelum menyimpan  citra"
 
-#: data/pref-dlg.glade:42
+#: data/pref-dlg.glade:43
 #, fuzzy
 msgid "Automatically save rotated images"
 msgstr ""
 "Simpan secara otomatis citra yang dirotasikan ( Saat ini hanya JPEG yang "
 "didukung )"
 
-#: data/pref-dlg.glade:55
+#: data/pref-dlg.glade:56
 #, fuzzy
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
@@ -203,10 +207,6 @@ msgstr ""
 #, fuzzy
 msgid "Make GPicView the default viewer for images"
 msgstr "Buat GPicview penampil standar untuk citra"
-
-#: data/pref-dlg.glade:159
-msgid "gtk-close"
-msgstr ""
 
 #~ msgid " Full Screen"
 #~ msgstr " Layar Penuh"
