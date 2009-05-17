@@ -64,8 +64,10 @@ typedef struct _MainWin
     GtkWidget* scroll;
     GtkWidget* evt_box;
     GtkWidget* nav_bar;
-//    GtkWidget* btn_zoom_in;
-//    GtkWidget* btn_zoom_out;
+    GtkWidget* btn_rotate_cw;
+    GtkWidget* btn_rotate_ccw;
+    GtkWidget* btn_flip_v;
+    GtkWidget* btn_flip_h;
     GtkWidget* btn_orig;
     GtkWidget* btn_fit;
     GtkWidget* percent;

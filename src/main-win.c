@@ -244,11 +244,11 @@ void create_nav_bar( MainWin* mw, GtkWidget* box )
 
     gtk_box_pack_start( (GtkBox*)mw->nav_bar, gtk_vseparator_new(), FALSE, FALSE, 0 );
 
-    add_nav_btn( mw, "gtk-counterclockwise", _("Rotate Counterclockwise"), G_CALLBACK(on_rotate_counterclockwise), FALSE );
-    add_nav_btn( mw, "gtk-clockwise", _("Rotate Clockwise"), G_CALLBACK(on_rotate_clockwise), FALSE );
+    mw->btn_rotate_ccw = add_nav_btn( mw, "gtk-counterclockwise", _("Rotate Counterclockwise"), G_CALLBACK(on_rotate_counterclockwise), FALSE );
+    mw->btn_rotate_cw = add_nav_btn( mw, "gtk-clockwise", _("Rotate Clockwise"), G_CALLBACK(on_rotate_clockwise), FALSE );
 
-    add_nav_btn( mw, "gtk-horizontal", _("Flip Horizontal"), G_CALLBACK(on_flip_horizontal), FALSE );
-    add_nav_btn( mw, "gtk-vertical", _("Flip Vertical"), G_CALLBACK(on_flip_vertical), FALSE );
+    mw->btn_flip_h = add_nav_btn( mw, "gtk-horizontal", _("Flip Horizontal"), G_CALLBACK(on_flip_horizontal), FALSE );
+    mw->btn_flip_v = add_nav_btn( mw, "gtk-vertical", _("Flip Vertical"), G_CALLBACK(on_flip_vertical), FALSE );
 
     gtk_box_pack_start( (GtkBox*)mw->nav_bar, gtk_vseparator_new(), FALSE, FALSE, 0 );
 
@@ -373,6 +373,15 @@ gboolean on_animation_timeout( MainWin* mw )
     return FALSE;
 }
 
+static void update_btns(MainWin* mw)
+{
+    gboolean enable = (mw->animation == NULL);
+    gtk_widget_set_sensitive(mw->btn_rotate_cw, enable);
+    gtk_widget_set_sensitive(mw->btn_rotate_ccw, enable);
+    gtk_widget_set_sensitive(mw->btn_flip_v, enable);
+    gtk_widget_set_sensitive(mw->btn_flip_h, enable);
+}
+
 gboolean main_win_open( MainWin* mw, const char* file_path, ZoomMode zoom )
 {
     GError* err = NULL;
@@ -388,6 +397,7 @@ gboolean main_win_open( MainWin* mw, const char* file_path, ZoomMode zoom )
     {
         main_win_show_error( mw, err->message );
         g_error_free(err);
+        update_btns( mw );
         return FALSE;
     }
 
@@ -408,6 +418,7 @@ gboolean main_win_open( MainWin* mw, const char* file_path, ZoomMode zoom )
         delay = gdk_pixbuf_animation_iter_get_delay_time( mw->animation_iter );
         mw->animation_timeout = g_timeout_add( delay, on_animation_timeout, mw );
     }
+    update_btns( mw );
 
     if(!strcmp(type,"jpeg"))
     {
@@ -1437,10 +1448,27 @@ void show_popup_menu( MainWin* mw, GdkEventButton* evt )
         PTK_STOCK_MENU_ITEM( GTK_STOCK_ABOUT, on_about ),
         PTK_MENU_END
     };
+    GtkWidget* rotate_cw;
+    GtkWidget* rotate_ccw;
+    GtkWidget* flip_v;
+    GtkWidget* flip_h;
+
+    menu_def[10].ret = &rotate_ccw;
+    menu_def[11].ret = &rotate_cw;
+    menu_def[12].ret = &flip_h;
+    menu_def[13].ret = &flip_v;
 
     // mw accel group is useless. It's only used to display accels in popup menu
     GtkAccelGroup* accel_group = gtk_accel_group_new();
     GtkMenuShell* popup = (GtkMenuShell*)ptk_menu_new_from_data( menu_def, mw, accel_group );
+
+    if( mw->animation )
+    {
+        gtk_widget_set_sensitive( rotate_ccw, FALSE );
+        gtk_widget_set_sensitive( rotate_cw, FALSE );
+        gtk_widget_set_sensitive( flip_h, FALSE );
+        gtk_widget_set_sensitive( flip_v, FALSE );
+    }
 
     gtk_widget_show_all( (GtkWidget*)popup );
     g_signal_connect( popup, "selection-done", G_CALLBACK(gtk_widget_destroy), NULL );
