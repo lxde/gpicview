@@ -71,4 +71,8 @@ char* image_list_get_current_file_path( ImageList* il );
 void image_list_sort_by_name( ImageList* il, GtkSortType type );
 
 void image_list_remove( ImageList* il, const char* name );
+
+/* FIXME: currently only GTK_SORT_ASCENDING is supported */
+void image_list_add_sorted( ImageList* il, const char* name, gboolean set_current );
+
 #endif

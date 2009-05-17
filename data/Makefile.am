@@ -1,7 +1,6 @@
 PIXMAPS_FILES = \
-	pixmaps/clockwise.png \
-	pixmaps/counterclockwise.png \
-	pixmaps/fullscreen.png
+	pixmaps/object-rotate-right.png \
+	pixmaps/object-rotate-left.png
 
 gpicview_DATA = 
 gpicviewdir = $(datadir)/gpicview

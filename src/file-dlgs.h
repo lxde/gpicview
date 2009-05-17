@@ -1,7 +1,7 @@
 /*
- *      pref.h
+ *      file-dlgs.h
  *
- *      Copyright (C) 2007 PCMan <pcman.tw@gmail.com>
+ *      Copyright 2009 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
  *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
@@ -19,32 +19,14 @@
  *      MA 02110-1301, USA.
  */
 
-#ifndef _PREF_H_
-#define _PREF_H_
+#ifndef _FILE_DLGS_H_
+#define _FILE_DLGS_H_
 
 #include <gtk/gtk.h>
 
 G_BEGIN_DECLS
 
-typedef struct _Pref
-{
-    gboolean auto_save_rotated; /* Save rotated images */
-    gboolean ask_before_save;
-    gboolean rotate_exif_only;
-    gboolean ask_before_delete;
-    gboolean open_maximized;
-    GdkColor bg;
-    GdkColor bg_full;
-
-    int jpg_quality;
-    int png_compression;
-}Pref;
-
-extern Pref pref; /* global variable holding user prerefences */
-
-void load_preferences(); /* load user preferences */
-void save_preferences(); /* save user preference s*/
-void edit_preferences( GtkWindow* parent );
+char* get_save_filename( GtkWindow* parent, const char* cwd, char** type );
 
 G_END_DECLS
 

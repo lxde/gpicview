@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-17 02:47+0800\n"
-"PO-Revision-Date: 2009-05-17 02:49+0800\n"
+"PO-Revision-Date: 2009-05-17 12:02+0800\n"
 "Last-Translator: 洪任諭 <pcman.tw@gmail.com>\n"
 "Language-Team: zh_TW <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -186,7 +186,7 @@ msgstr "儲存影像前先詢問"
 
 #: data/pref-dlg.glade:30
 msgid "Ask before deleting images"
-msgstr "儲存影像前先詢問"
+msgstr "刪除影像前先詢問"
 
 #: data/pref-dlg.glade:43
 msgid "Automatically save rotated images"

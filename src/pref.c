@@ -49,6 +49,20 @@ static gboolean kf_get_bool(GKeyFile* kf, const char* grp, const char* name, gbo
     return TRUE;
 }
 
+static int kf_get_int(GKeyFile* kf, const char* grp, const char* name, int* ret )
+{
+    GError* err = NULL;
+    int val = g_key_file_get_integer(kf, grp, name, &err);
+    if( G_UNLIKELY(err) )
+    {
+        g_error_free(err);
+        return FALSE;
+    }
+    if(G_LIKELY(ret))
+        *ret = val;
+    return TRUE;
+}
+
 void load_preferences()
 {
     /* FIXME: GKeyFile is not fast enough.
@@ -61,9 +75,13 @@ void load_preferences()
     /* pref.auto_save_rotated = FALSE; */
     pref.ask_before_save = TRUE;
     pref.ask_before_delete = TRUE;
+    pref.rotate_exif_only = TRUE;
     /* pref.open_maximized = FALSE; */
     pref.bg.red = pref.bg.green = pref.bg.blue = 65535;
     pref.bg_full.red = pref.bg_full.green = pref.bg_full.blue = 0;
+
+    pref.jpg_quality = 90;
+    pref.png_compression = 9;
 
     kf = g_key_file_new();
     path = g_build_filename( g_get_user_config_dir(),  CFG_FILE, NULL );
@@ -74,6 +92,9 @@ void load_preferences()
         kf_get_bool( kf, "General", "ask_before_delete", &pref.ask_before_delete );
         kf_get_bool( kf, "General", "rotate_exif_only", &pref.rotate_exif_only );
         kf_get_bool( kf, "General", "open_maximized", &pref.open_maximized );
+
+        kf_get_int( kf, "General", "jpg_quality", &pref.jpg_quality);
+        kf_get_int( kf, "General", "png_compression", &pref.png_compression );
 
         color = g_key_file_get_string(kf, "General", "bg", NULL);
         if( color )
@@ -116,6 +137,9 @@ void save_preferences()
         fprintf( f, "open_maximized=%d\n", pref.open_maximized );
         fprintf( f, "bg=#%02x%02x%02x\n", pref.bg.red/257, pref.bg.green/257, pref.bg.blue/257 );
         fprintf( f, "bg_full=#%02x%02x%02x\n", pref.bg_full.red/257, pref.bg_full.green/257, pref.bg_full.blue/257 );
+
+        fprintf( f, "jpg_quality=%d\n", pref.jpg_quality );
+        fprintf( f, "png_compression=%d\n", pref.png_compression );
         fclose( f );
     }
     g_free( path );
