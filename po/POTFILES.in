@@ -3,7 +3,7 @@
 src/gpicview.c
 src/main-win.c
 src/pref.c
+src/file-dlgs.c
 gpicview.desktop.in
-data/gpicview.desktop.in
 data/pref-dlg.glade
 

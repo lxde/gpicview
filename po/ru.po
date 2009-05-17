@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-17 18:28+0800\n"
+"POT-Creation-Date: 2009-05-17 21:39+0800\n"
 "PO-Revision-Date: 2009-05-05 04:27+0200\n"
 "Last-Translator: Tim Marinin <velkhar@gmail.com>\n"
 "Language-Team: RUSSIAN <ru@li.org>\n"
@@ -16,31 +16,31 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Pootle 1.1.0\n"
 
-#: src/gpicview.c:37
+#: ../src/gpicview.c:37
 msgid "[FILE]"
 msgstr "[ФАЙЛ]"
 
-#: src/gpicview.c:39
+#: ../src/gpicview.c:39
 msgid "Print version information and exit"
 msgstr ""
 
-#: src/main-win.c:145 src/main-win.c:1283
+#: ../src/main-win.c:145 ../src/main-win.c:1283
 msgid "Image Viewer"
 msgstr "Просмотр изображений"
 
-#: src/main-win.c:221 src/main-win.c:1295
+#: ../src/main-win.c:221 ../src/main-win.c:1295
 msgid "Previous"
 msgstr "Предыдущий"
 
-#: src/main-win.c:222 src/main-win.c:1296
+#: ../src/main-win.c:222 ../src/main-win.c:1296
 msgid "Next"
 msgstr "Следующий"
 
-#: src/main-win.c:226 src/main-win.c:1298
+#: ../src/main-win.c:226 ../src/main-win.c:1298
 msgid "Zoom Out"
 msgstr "Увеличить"
 
-#: src/main-win.c:227 src/main-win.c:1299
+#: ../src/main-win.c:227 ../src/main-win.c:1299
 msgid "Zoom In"
 msgstr "Уменьшить"
 
@@ -48,60 +48,60 @@ msgstr "Уменьшить"
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
 #. gtk_widget_set_size_request( percent, 45, -1 );
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
-#: src/main-win.c:234 src/main-win.c:1300
+#: ../src/main-win.c:234 ../src/main-win.c:1300
 msgid "Fit Image To Window Size"
 msgstr "Масштабировать к размеру окна"
 
-#: src/main-win.c:236 src/main-win.c:1301
+#: ../src/main-win.c:236 ../src/main-win.c:1301
 msgid "Original Size"
 msgstr "Масштаб 1:1"
 
-#: src/main-win.c:243 src/main-win.c:1303
+#: ../src/main-win.c:243 ../src/main-win.c:1303
 msgid "Full Screen"
 msgstr "На полный экран"
 
-#: src/main-win.c:247 src/main-win.c:1305
+#: ../src/main-win.c:247 ../src/main-win.c:1305
 msgid "Rotate Counterclockwise"
 msgstr "Повернуть против часовой стрелки"
 
-#: src/main-win.c:248 src/main-win.c:1306
+#: ../src/main-win.c:248 ../src/main-win.c:1306
 msgid "Rotate Clockwise"
 msgstr "Повернуть по часовой стрелке"
 
-#: src/main-win.c:250 src/main-win.c:1307
+#: ../src/main-win.c:250 ../src/main-win.c:1307
 msgid "Flip Horizontal"
 msgstr ""
 
-#: src/main-win.c:251 src/main-win.c:1308
+#: ../src/main-win.c:251 ../src/main-win.c:1308
 msgid "Flip Vertical"
 msgstr ""
 
-#: src/main-win.c:255 src/main-win.c:1310
+#: ../src/main-win.c:255 ../src/main-win.c:1310
 msgid "Open File"
 msgstr "Открыть файл"
 
-#: src/main-win.c:256 src/main-win.c:1311
+#: ../src/main-win.c:256 ../src/main-win.c:1311
 msgid "Save File"
 msgstr "Сохранить файл"
 
-#: src/main-win.c:257
+#: ../src/main-win.c:257
 msgid "Save File As"
 msgstr "Сохранить файл как"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
-#: src/main-win.c:258 src/main-win.c:1314
+#: ../src/main-win.c:258 ../src/main-win.c:1314
 msgid "Delete File"
 msgstr "Удалить файл"
 
-#: src/main-win.c:261 src/main-win.c:1316 data/pref-dlg.glade:7
+#: ../src/main-win.c:261 ../src/main-win.c:1316 ../data/pref-dlg.glade.h:8
 msgid "Preferences"
 msgstr "Настройки"
 
-#: src/main-win.c:262 src/main-win.c:1319
+#: ../src/main-win.c:262 ../src/main-win.c:1319
 msgid "Quit"
 msgstr ""
 
-#: src/main-win.c:1179
+#: ../src/main-win.c:1179
 #, fuzzy
 msgid ""
 "The file name you selected already exists.\n"
@@ -112,11 +112,11 @@ msgstr ""
 "Вы хотите переписать существующий файл?\n"
 "(Внимание: Качество оригинала может быть потеряно)"
 
-#: src/main-win.c:1220
+#: ../src/main-win.c:1220
 msgid "Writing this image format is not supported."
 msgstr ""
 
-#: src/main-win.c:1254
+#: ../src/main-win.c:1254
 msgid ""
 "Are you sure you want to delete current file?\n"
 "\n"
@@ -126,35 +126,35 @@ msgstr ""
 "\n"
 "Внимание: Удаленный файл не может быть восстановлен."
 
-#: src/main-win.c:1312
+#: ../src/main-win.c:1312
 msgid "Save As"
 msgstr "Сохранить как"
 
-#: src/main-win.c:1381
+#: ../src/main-win.c:1381
 msgid " * Refer to source code of EOG image viewer and GThumb"
 msgstr " * Смотри исходный код просмотрщика EOG  и GThumb"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
-#: src/main-win.c:1385
+#: ../src/main-win.c:1385
 msgid "translator-credits"
 msgstr ""
 "перевод Kazm для PuppyRus Linux \n"
 "http://puppyrus.ru"
 
-#: src/main-win.c:1393
+#: ../src/main-win.c:1393
 msgid "GPicView"
 msgstr "GPicView"
 
-#: src/main-win.c:1395
+#: ../src/main-win.c:1395
 #, fuzzy
 msgid "Copyright (C) 2007 - 2009"
 msgstr "Все права защищены (С) 2008"
 
-#: src/main-win.c:1396
+#: ../src/main-win.c:1396
 msgid "Lightweight image viewer from LXDE project"
 msgstr "Изящный и легкий просмотрщик изображений из проекта LXDE"
 
-#: src/pref.c:153
+#: ../src/pref.c:153
 msgid ""
 "GPicView will become the default viewer for all supported image files on "
 "your system.\n"
@@ -168,24 +168,70 @@ msgstr ""
 "\n"
 "<b>Вы действительно хотите сделать это?</b>"
 
-#: data/pref-dlg.glade:17
-#, fuzzy
-msgid "Ask before saving images"
-msgstr "Спросить перед сохранением изображений"
+#: ../src/file-dlgs.c:62
+msgid "All Supported Images"
+msgstr "Все поддерживаемые изображения"
 
-#: data/pref-dlg.glade:30
+#: ../src/file-dlgs.c:67
+msgid "All Files"
+msgstr "Все файлы"
+
+#: ../src/file-dlgs.c:103
+msgid "JPEG Quality:"
+msgstr ""
+
+#: ../src/file-dlgs.c:104
+msgid ""
+"Lower quality values yield smaller file sizes,\n"
+"but the image quality will be poorer."
+msgstr ""
+
+#: ../src/file-dlgs.c:118
+msgid "PNG Compression Level:"
+msgstr ""
+
+#: ../src/file-dlgs.c:119
+msgid ""
+"Higher compression levels yield smaller file sizes,\n"
+"but the image quality will be poorer."
+msgstr ""
+
+#: ../data/pref-dlg.glade.h:1
+msgid "<b>Background colors</b>"
+msgstr ""
+
+#: ../data/pref-dlg.glade.h:2
 #, fuzzy
 msgid "Ask before deleting images"
 msgstr "Спросить перед сохранением изображений"
 
-#: data/pref-dlg.glade:43
+#: ../data/pref-dlg.glade.h:3
+#, fuzzy
+msgid "Ask before saving images"
+msgstr "Спросить перед сохранением изображений"
+
+#: ../data/pref-dlg.glade.h:4
 #, fuzzy
 msgid "Automatically save rotated images"
 msgstr ""
 "Автоматически сохранять повернутые изображения ( в настоящий момент "
 "поддерживается только JPEG )"
 
-#: data/pref-dlg.glade:56
+#: ../data/pref-dlg.glade.h:5
+#, fuzzy
+msgid "Fullscreen:"
+msgstr "На полный экран"
+
+#: ../data/pref-dlg.glade.h:6
+#, fuzzy
+msgid "Make GPicView the default viewer for images"
+msgstr "Сделать GPicview просмотрщиком изображений по-умолчанию "
+
+#: ../data/pref-dlg.glade.h:7
+msgid "Normal:"
+msgstr ""
+
+#: ../data/pref-dlg.glade.h:9
 #, fuzzy
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
@@ -193,30 +239,6 @@ msgid ""
 msgstr ""
 "Изменить значение параметра ориентации в EXIF, после поворота или отражения, "
 "только если существует параметр ориентации в EXIF (только для JPEG)"
-
-#: data/pref-dlg.glade:84
-msgid "Normal:"
-msgstr ""
-
-#: data/pref-dlg.glade:105
-#, fuzzy
-msgid "Fullscreen:"
-msgstr "На полный экран"
-
-#: data/pref-dlg.glade:130
-msgid "<b>Background colors</b>"
-msgstr ""
-
-#: data/pref-dlg.glade:142
-#, fuzzy
-msgid "Make GPicView the default viewer for images"
-msgstr "Сделать GPicview просмотрщиком изображений по-умолчанию "
-
-#~ msgid "All Supported Images"
-#~ msgstr "Все поддерживаемые изображения"
-
-#~ msgid "All Files"
-#~ msgstr "Все файлы"
 
 #~ msgid " Full Screen"
 #~ msgstr " На полный экран"

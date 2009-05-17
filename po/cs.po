@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gpicview 0.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-17 18:28+0800\n"
+"POT-Creation-Date: 2009-05-17 21:39+0800\n"
 "PO-Revision-Date: 2009-02-02 01:22+0100\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: \n"
@@ -14,31 +14,31 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/gpicview.c:37
+#: ../src/gpicview.c:37
 msgid "[FILE]"
 msgstr "[SOUBOR]"
 
-#: src/gpicview.c:39
+#: ../src/gpicview.c:39
 msgid "Print version information and exit"
 msgstr ""
 
-#: src/main-win.c:145 src/main-win.c:1283
+#: ../src/main-win.c:145 ../src/main-win.c:1283
 msgid "Image Viewer"
 msgstr "Prohlížeč obrázků"
 
-#: src/main-win.c:221 src/main-win.c:1295
+#: ../src/main-win.c:221 ../src/main-win.c:1295
 msgid "Previous"
 msgstr "Předchozí"
 
-#: src/main-win.c:222 src/main-win.c:1296
+#: ../src/main-win.c:222 ../src/main-win.c:1296
 msgid "Next"
 msgstr "Další"
 
-#: src/main-win.c:226 src/main-win.c:1298
+#: ../src/main-win.c:226 ../src/main-win.c:1298
 msgid "Zoom Out"
 msgstr "Oddálit"
 
-#: src/main-win.c:227 src/main-win.c:1299
+#: ../src/main-win.c:227 ../src/main-win.c:1299
 msgid "Zoom In"
 msgstr "Přiblížit"
 
@@ -46,60 +46,60 @@ msgstr "Přiblížit"
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
 #. gtk_widget_set_size_request( percent, 45, -1 );
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
-#: src/main-win.c:234 src/main-win.c:1300
+#: ../src/main-win.c:234 ../src/main-win.c:1300
 msgid "Fit Image To Window Size"
 msgstr "Přispůsobit velikost obrázku oknu"
 
-#: src/main-win.c:236 src/main-win.c:1301
+#: ../src/main-win.c:236 ../src/main-win.c:1301
 msgid "Original Size"
 msgstr "Původní velikost"
 
-#: src/main-win.c:243 src/main-win.c:1303
+#: ../src/main-win.c:243 ../src/main-win.c:1303
 msgid "Full Screen"
 msgstr "Celá obrazovka"
 
-#: src/main-win.c:247 src/main-win.c:1305
+#: ../src/main-win.c:247 ../src/main-win.c:1305
 msgid "Rotate Counterclockwise"
 msgstr "Otočit proti směru hodinových ručiček"
 
-#: src/main-win.c:248 src/main-win.c:1306
+#: ../src/main-win.c:248 ../src/main-win.c:1306
 msgid "Rotate Clockwise"
 msgstr "Otočit ve směru hodinových ručiček"
 
-#: src/main-win.c:250 src/main-win.c:1307
+#: ../src/main-win.c:250 ../src/main-win.c:1307
 msgid "Flip Horizontal"
 msgstr ""
 
-#: src/main-win.c:251 src/main-win.c:1308
+#: ../src/main-win.c:251 ../src/main-win.c:1308
 msgid "Flip Vertical"
 msgstr ""
 
-#: src/main-win.c:255 src/main-win.c:1310
+#: ../src/main-win.c:255 ../src/main-win.c:1310
 msgid "Open File"
 msgstr "Otevřít soubor"
 
-#: src/main-win.c:256 src/main-win.c:1311
+#: ../src/main-win.c:256 ../src/main-win.c:1311
 msgid "Save File"
 msgstr "Uložit soubor"
 
-#: src/main-win.c:257
+#: ../src/main-win.c:257
 msgid "Save File As"
 msgstr "Uložit soubor jako"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
-#: src/main-win.c:258 src/main-win.c:1314
+#: ../src/main-win.c:258 ../src/main-win.c:1314
 msgid "Delete File"
 msgstr "Smazat soubor"
 
-#: src/main-win.c:261 src/main-win.c:1316 data/pref-dlg.glade:7
+#: ../src/main-win.c:261 ../src/main-win.c:1316 ../data/pref-dlg.glade.h:8
 msgid "Preferences"
 msgstr "Předvolby"
 
-#: src/main-win.c:262 src/main-win.c:1319
+#: ../src/main-win.c:262 ../src/main-win.c:1319
 msgid "Quit"
 msgstr ""
 
-#: src/main-win.c:1179
+#: ../src/main-win.c:1179
 #, fuzzy
 msgid ""
 "The file name you selected already exists.\n"
@@ -110,11 +110,11 @@ msgstr ""
 "Chcete přepsat existující soubor?\n"
 "(Varování: Kvalita původního obrázku se může snížit)"
 
-#: src/main-win.c:1220
+#: ../src/main-win.c:1220
 msgid "Writing this image format is not supported."
 msgstr ""
 
-#: src/main-win.c:1254
+#: ../src/main-win.c:1254
 msgid ""
 "Are you sure you want to delete current file?\n"
 "\n"
@@ -124,33 +124,33 @@ msgstr ""
 "\n"
 "Upozornění: Po smazání nebude možné obrázek obnovit."
 
-#: src/main-win.c:1312
+#: ../src/main-win.c:1312
 msgid "Save As"
 msgstr "Uložit jako"
 
-#: src/main-win.c:1381
+#: ../src/main-win.c:1381
 msgid " * Refer to source code of EOG image viewer and GThumb"
 msgstr " * Podívejte se do zdrojového kódu prohlížeče obrázků EOG a GThumb"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
-#: src/main-win.c:1385
+#: ../src/main-win.c:1385
 msgid "translator-credits"
 msgstr "Ivan MasárMichal Várady <miko.vaji@gmail.com>"
 
-#: src/main-win.c:1393
+#: ../src/main-win.c:1393
 msgid "GPicView"
 msgstr "GPicView"
 
-#: src/main-win.c:1395
+#: ../src/main-win.c:1395
 #, fuzzy
 msgid "Copyright (C) 2007 - 2009"
 msgstr "Copyright (C) 2007"
 
-#: src/main-win.c:1396
+#: ../src/main-win.c:1396
 msgid "Lightweight image viewer from LXDE project"
 msgstr "Odlehčený prohlížeč obrázků z projektu LXDE"
 
-#: src/pref.c:153
+#: ../src/pref.c:153
 msgid ""
 "GPicView will become the default viewer for all supported image files on "
 "your system.\n"
@@ -164,23 +164,69 @@ msgstr ""
 "\n"
 "<b>Opravdu chcete pokračovat?</b>"
 
-#: data/pref-dlg.glade:17
-#, fuzzy
-msgid "Ask before saving images"
-msgstr "Ptát se před uložením obrázku"
+#: ../src/file-dlgs.c:62
+msgid "All Supported Images"
+msgstr "Všechny podporované obrázky"
 
-#: data/pref-dlg.glade:30
+#: ../src/file-dlgs.c:67
+msgid "All Files"
+msgstr "Všechny soubory"
+
+#: ../src/file-dlgs.c:103
+msgid "JPEG Quality:"
+msgstr ""
+
+#: ../src/file-dlgs.c:104
+msgid ""
+"Lower quality values yield smaller file sizes,\n"
+"but the image quality will be poorer."
+msgstr ""
+
+#: ../src/file-dlgs.c:118
+msgid "PNG Compression Level:"
+msgstr ""
+
+#: ../src/file-dlgs.c:119
+msgid ""
+"Higher compression levels yield smaller file sizes,\n"
+"but the image quality will be poorer."
+msgstr ""
+
+#: ../data/pref-dlg.glade.h:1
+msgid "<b>Background colors</b>"
+msgstr ""
+
+#: ../data/pref-dlg.glade.h:2
 #, fuzzy
 msgid "Ask before deleting images"
 msgstr "Ptát se před uložením obrázku"
 
-#: data/pref-dlg.glade:43
+#: ../data/pref-dlg.glade.h:3
+#, fuzzy
+msgid "Ask before saving images"
+msgstr "Ptát se před uložením obrázku"
+
+#: ../data/pref-dlg.glade.h:4
 #, fuzzy
 msgid "Automatically save rotated images"
 msgstr ""
 "Automaticky ukládat otočené obrázky (nyní je podporován pouze formát JPEG)"
 
-#: data/pref-dlg.glade:56
+#: ../data/pref-dlg.glade.h:5
+#, fuzzy
+msgid "Fullscreen:"
+msgstr "Celá obrazovka"
+
+#: ../data/pref-dlg.glade.h:6
+#, fuzzy
+msgid "Make GPicView the default viewer for images"
+msgstr "Nastavit aplikaci Gpicview jako výchozí prohlížeč obrázků"
+
+#: ../data/pref-dlg.glade.h:7
+msgid "Normal:"
+msgstr ""
+
+#: ../data/pref-dlg.glade.h:9
 #, fuzzy
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
@@ -188,30 +234,6 @@ msgid ""
 msgstr ""
 "Při rotaci a otáčení změnit hodnotu orientace v metadatech EXIF jen pokud je "
 "již značka pro orientaci přítomna (pouze pro JPEG)"
-
-#: data/pref-dlg.glade:84
-msgid "Normal:"
-msgstr ""
-
-#: data/pref-dlg.glade:105
-#, fuzzy
-msgid "Fullscreen:"
-msgstr "Celá obrazovka"
-
-#: data/pref-dlg.glade:130
-msgid "<b>Background colors</b>"
-msgstr ""
-
-#: data/pref-dlg.glade:142
-#, fuzzy
-msgid "Make GPicView the default viewer for images"
-msgstr "Nastavit aplikaci Gpicview jako výchozí prohlížeč obrázků"
-
-#~ msgid "All Supported Images"
-#~ msgstr "Všechny podporované obrázky"
-
-#~ msgid "All Files"
-#~ msgstr "Všechny soubory"
 
 #~ msgid " Full Screen"
 #~ msgstr " Celá obrazovka"

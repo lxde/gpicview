@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-17 18:28+0800\n"
-"PO-Revision-Date: 2009-05-17 12:02+0800\n"
+"POT-Creation-Date: 2009-05-17 21:39+0800\n"
+"PO-Revision-Date: 2009-05-17 21:41+0800\n"
 "Last-Translator: 洪任諭 <pcman.tw@gmail.com>\n"
 "Language-Team: zh_TW <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,31 +18,36 @@ msgstr ""
 "X-Poedit-Country: TAIWAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: src/gpicview.c:37
+#: ../src/gpicview.c:37
 msgid "[FILE]"
 msgstr "[檔案]"
 
-#: src/gpicview.c:39
+#: ../src/gpicview.c:39
 msgid "Print version information and exit"
 msgstr "顯示版本資訊然後離開"
 
-#: src/main-win.c:145 src/main-win.c:1283
+#: ../src/main-win.c:145
+#: ../src/main-win.c:1283
 msgid "Image Viewer"
 msgstr "圖片檢視器"
 
-#: src/main-win.c:221 src/main-win.c:1295
+#: ../src/main-win.c:221
+#: ../src/main-win.c:1295
 msgid "Previous"
 msgstr "上一張"
 
-#: src/main-win.c:222 src/main-win.c:1296
+#: ../src/main-win.c:222
+#: ../src/main-win.c:1296
 msgid "Next"
 msgstr "下一張"
 
-#: src/main-win.c:226 src/main-win.c:1298
+#: ../src/main-win.c:226
+#: ../src/main-win.c:1298
 msgid "Zoom Out"
 msgstr "縮小"
 
-#: src/main-win.c:227 src/main-win.c:1299
+#: ../src/main-win.c:227
+#: ../src/main-win.c:1299
 msgid "Zoom In"
 msgstr "放大"
 
@@ -50,60 +55,73 @@ msgstr "放大"
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
 #. gtk_widget_set_size_request( percent, 45, -1 );
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
-#: src/main-win.c:234 src/main-win.c:1300
+#: ../src/main-win.c:234
+#: ../src/main-win.c:1300
 msgid "Fit Image To Window Size"
 msgstr "適合視窗大小"
 
-#: src/main-win.c:236 src/main-win.c:1301
+#: ../src/main-win.c:236
+#: ../src/main-win.c:1301
 msgid "Original Size"
 msgstr "原始大小"
 
-#: src/main-win.c:243 src/main-win.c:1303
+#: ../src/main-win.c:243
+#: ../src/main-win.c:1303
 msgid "Full Screen"
 msgstr "全螢幕瀏覽"
 
-#: src/main-win.c:247 src/main-win.c:1305
+#: ../src/main-win.c:247
+#: ../src/main-win.c:1305
 msgid "Rotate Counterclockwise"
 msgstr "逆時針旋轉"
 
-#: src/main-win.c:248 src/main-win.c:1306
+#: ../src/main-win.c:248
+#: ../src/main-win.c:1306
 msgid "Rotate Clockwise"
 msgstr "順時針旋轉"
 
-#: src/main-win.c:250 src/main-win.c:1307
+#: ../src/main-win.c:250
+#: ../src/main-win.c:1307
 msgid "Flip Horizontal"
-msgstr ""
+msgstr "水平翻轉"
 
-#: src/main-win.c:251 src/main-win.c:1308
+#: ../src/main-win.c:251
+#: ../src/main-win.c:1308
 msgid "Flip Vertical"
-msgstr ""
+msgstr "垂直翻轉"
 
-#: src/main-win.c:255 src/main-win.c:1310
+#: ../src/main-win.c:255
+#: ../src/main-win.c:1310
 msgid "Open File"
 msgstr "開啟檔案"
 
-#: src/main-win.c:256 src/main-win.c:1311
+#: ../src/main-win.c:256
+#: ../src/main-win.c:1311
 msgid "Save File"
 msgstr "儲存檔案"
 
-#: src/main-win.c:257
+#: ../src/main-win.c:257
 msgid "Save File As"
 msgstr "另存新檔"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
-#: src/main-win.c:258 src/main-win.c:1314
+#: ../src/main-win.c:258
+#: ../src/main-win.c:1314
 msgid "Delete File"
 msgstr "刪除檔案"
 
-#: src/main-win.c:261 src/main-win.c:1316 data/pref-dlg.glade:7
+#: ../src/main-win.c:261
+#: ../src/main-win.c:1316
+#: ../data/pref-dlg.glade.h:8
 msgid "Preferences"
 msgstr "偏好設定"
 
-#: src/main-win.c:262 src/main-win.c:1319
+#: ../src/main-win.c:262
+#: ../src/main-win.c:1319
 msgid "Quit"
 msgstr "離開"
 
-#: src/main-win.c:1179
+#: ../src/main-win.c:1179
 msgid ""
 "The file name you selected already exists.\n"
 "Do you want to overwrite existing file?\n"
@@ -113,12 +131,11 @@ msgstr ""
 "是否確定要覆蓋原有檔案？\n"
 "(警告：原影像的品質可能會喪失)"
 
-#: src/main-win.c:1220
-#, fuzzy
+#: ../src/main-win.c:1220
 msgid "Writing this image format is not supported."
 msgstr "目前不支援儲存這種影像格式"
 
-#: src/main-win.c:1254
+#: ../src/main-win.c:1254
 msgid ""
 "Are you sure you want to delete current file?\n"
 "\n"
@@ -128,36 +145,34 @@ msgstr ""
 "\n"
 "警告：一旦刪除，檔案就無法復原。"
 
-#: src/main-win.c:1312
+#: ../src/main-win.c:1312
 msgid "Save As"
 msgstr "另存新檔"
 
-#: src/main-win.c:1381
+#: ../src/main-win.c:1381
 msgid " * Refer to source code of EOG image viewer and GThumb"
 msgstr " * 參考 EOG 及 GThumb 的程式碼"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
-#: src/main-win.c:1385
+#: ../src/main-win.c:1385
 msgid "translator-credits"
 msgstr "洪任諭 (PCMan) <pcman.tw@gmail.com>"
 
-#: src/main-win.c:1393
+#: ../src/main-win.c:1393
 msgid "GPicView"
 msgstr "GPicView 圖片檢視器"
 
-#: src/main-win.c:1395
-#, fuzzy
+#: ../src/main-win.c:1395
 msgid "Copyright (C) 2007 - 2009"
-msgstr "版權所有 (C) 2007"
+msgstr "版權所有 (C) 2007  -2009"
 
-#: src/main-win.c:1396
+#: ../src/main-win.c:1396
 msgid "Lightweight image viewer from LXDE project"
 msgstr "來自 LXDE 計畫的輕巧圖片檢視器"
 
-#: src/pref.c:153
+#: ../src/pref.c:153
 msgid ""
-"GPicView will become the default viewer for all supported image files on "
-"your system.\n"
+"GPicView will become the default viewer for all supported image files on your system.\n"
 "(This will be done through 'xdg-mime' program)\n"
 "\n"
 "<b>Are you sure you really want to do this?</b>"
@@ -167,19 +182,67 @@ msgstr ""
 "\n"
 "<b>你是否確定要這麼做？</b>"
 
-#: data/pref-dlg.glade:17
-msgid "Ask before saving images"
-msgstr "儲存影像前先詢問"
+#: ../src/file-dlgs.c:62
+msgid "All Supported Images"
+msgstr "所有支援的影像格式"
 
-#: data/pref-dlg.glade:30
+#: ../src/file-dlgs.c:67
+msgid "All Files"
+msgstr "所有檔案"
+
+#: ../src/file-dlgs.c:103
+msgid "JPEG Quality:"
+msgstr "JPEG 品質："
+
+#: ../src/file-dlgs.c:104
+msgid ""
+"Lower quality values yield smaller file sizes,\n"
+"but the image quality will be poorer."
+msgstr ""
+"選擇較低的品質可以產生比較小的檔案，\n"
+"但影像品質會較差。"
+
+#: ../src/file-dlgs.c:118
+msgid "PNG Compression Level:"
+msgstr "PNG 壓縮程度："
+
+#: ../src/file-dlgs.c:119
+msgid ""
+"Higher compression levels yield smaller file sizes,\n"
+"but the image quality will be poorer."
+msgstr ""
+"較高的壓縮程度可產生比較小的檔案，\n"
+"但影像品質會較差。"
+
+#: ../data/pref-dlg.glade.h:1
+msgid "<b>Background colors</b>"
+msgstr "<b>背景色彩</b>"
+
+#: ../data/pref-dlg.glade.h:2
 msgid "Ask before deleting images"
 msgstr "刪除影像前先詢問"
 
-#: data/pref-dlg.glade:43
+#: ../data/pref-dlg.glade.h:3
+msgid "Ask before saving images"
+msgstr "儲存影像前先詢問"
+
+#: ../data/pref-dlg.glade.h:4
 msgid "Automatically save rotated images"
 msgstr "自動儲存經過旋轉的影像 (目前只支援 JPEG 格式)"
 
-#: data/pref-dlg.glade:56
+#: ../data/pref-dlg.glade.h:5
+msgid "Fullscreen:"
+msgstr "全螢幕："
+
+#: ../data/pref-dlg.glade.h:6
+msgid "Make GPicView the default viewer for images"
+msgstr "將 GPicView 設為預設的圖片檢視程式"
+
+#: ../data/pref-dlg.glade.h:7
+msgid "Normal:"
+msgstr "正常："
+
+#: ../data/pref-dlg.glade.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
@@ -187,34 +250,10 @@ msgstr ""
 "透過改變 EXIF orientation 數值來旋轉 JPEG 圖檔\n"
 "(只有當 EXIF orientation 標籤存在時有效)"
 
-#: data/pref-dlg.glade:84
-msgid "Normal:"
-msgstr "正常："
-
-#: data/pref-dlg.glade:105
-msgid "Fullscreen:"
-msgstr "全螢幕："
-
-#: data/pref-dlg.glade:130
-msgid "<b>Background colors</b>"
-msgstr "<b>背景色彩</b>"
-
-#: data/pref-dlg.glade:142
-msgid "Make GPicView the default viewer for images"
-msgstr "將 GPicView 設為預設的圖片檢視程式"
-
-#~ msgid "All Supported Images"
-#~ msgstr "所有支援的影像格式"
-
-#~ msgid "All Files"
-#~ msgstr "所有檔案"
-
 #~ msgid " Full Screen"
 #~ msgstr "全螢幕瀏覽"
-
 #~ msgid " * Some icons are taken from gimmage"
 #~ msgstr " * 部份圖示是從 gimmage 取得"
-
 #~ msgid ""
 #~ "Lightweight image viewer\n"
 #~ "\n"
@@ -223,6 +262,6 @@ msgstr "將 GPicView 設為預設的圖片檢視程式"
 #~ "輕巧的圖片檢視器\n"
 #~ "\n"
 #~ "由洪任諭 (PCMan) 開發"
-
 #~ msgid " Original Size"
 #~ msgstr "原始尺寸"
+
