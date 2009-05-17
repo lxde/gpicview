@@ -16,7 +16,7 @@ uidir=$(datadir)/gpicview/ui
 EXTRA_DIST = \
 	$(gpicview_DATA) \
 	$(pixmaps_DATA) \
-	$(uifile_DATA)
+	$(ui_DATA)
 
 %.ui: %.glade
 	cp $< $@
