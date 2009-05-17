@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: gpicview\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-17 01:45+0800\n"
-"PO-Revision-Date: 2009-03-22 21:49+0100\n"
+"PO-Revision-Date: 2009-05-16 09:01+0200\n"
 "Last-Translator: Guillermo Iguaran <johnnyprez@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -91,7 +91,7 @@ msgstr "Preferencias"
 
 #: src/main-win.c:270 src/main-win.c:1444
 msgid "Quit"
-msgstr ""
+msgstr "Salir"
 
 #: src/main-win.c:954
 msgid "All Supported Images"
@@ -102,7 +102,6 @@ msgid "All Files"
 msgstr "Todos los archivos"
 
 #: src/main-win.c:1319
-#, fuzzy
 msgid ""
 "The file name you selected already exists.\n"
 "Do you want to overwrite existing file?\n"
@@ -114,7 +113,7 @@ msgstr ""
 
 #: src/main-win.c:1360
 msgid "Writing of this image format not supported"
-msgstr ""
+msgstr "No se admite la escritura para este tipo de formato de imagen."
 
 #: src/main-win.c:1381
 msgid ""
@@ -122,9 +121,9 @@ msgid ""
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
-"¿Seguro que desea eliminar el archivo actual?\n"
-"\n"
-"Atención: Una vez eliminado, el archivo no podrá ser recuperalo."
+"¿Seguro que desea eliminar el archivo actual?\r\n"
+"\r\n"
+"Atención: Una vez eliminado, el archivo no podrá recuperarse."
 
 #: src/main-win.c:1439
 msgid "Save As"
@@ -132,15 +131,16 @@ msgstr "Guardar como"
 
 #: src/main-win.c:1489
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr "* Consulte el código fuente del visor de imágenes de GNOME y GThumb"
+msgstr "* Consulte el código fuente del visor de imágenes EOG y del GThumb"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: src/main-win.c:1493
 msgid "translator-credits"
 msgstr ""
-"Festor Wailon Dacoba, 2007\n"
-"Julio Napurí Carlos <julionc@gmail.com>, 2008\n"
-"Guillermo Iguarán <tronador@cuteam.org>, 2009"
+"Festor Wailon Dacoba, 2007\r\n"
+"Julio Napurí Carlos <julionc@gmail.com>, 2008\r\n"
+"Guillermo Iguarán <tronador@cuteam.org>, 2009\r\n"
+"Hugo Florentino <sysadmin@cips.cu>, 2009"
 
 #: src/main-win.c:1501
 msgid "GPicView"
@@ -169,36 +169,31 @@ msgstr ""
 "<b>¿Estás seguro de desear hacer esto?</b>"
 
 #: data/pref-dlg.glade:16
-#, fuzzy
 msgid "Ask before saving images"
 msgstr "Preguntar antes de guardar imágenes"
 
 #: data/pref-dlg.glade:29
-#, fuzzy
 msgid "Ask before deleting images"
 msgstr "Preguntar antes de guardar imágenes"
 
 #: data/pref-dlg.glade:42
 #, fuzzy
 msgid "Automatically save rotated images"
-msgstr ""
-"Guardar automáticamente imágenes rotadas (Por el momento sólo imágenes JPEG)"
+msgstr "Guardar automáticamente las imágenes rotadas"
 
 #: data/pref-dlg.glade:55
-#, fuzzy
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
-"Cambiar el valor de orientación EXIF cuando se rotan las imagenes solo si "
-"existe la etiqueta de orientación EXIF (JPEG solamente)"
+"Rotar imagen JPEG cambiando el valor de orientación EXIF (solo si tal "
+"etiqueta existe)"
 
 #: data/pref-dlg.glade:83
 msgid "Normal:"
 msgstr ""
 
 #: data/pref-dlg.glade:105
-#, fuzzy
 msgid "Fullscreen:"
 msgstr "Pantalla completa"
 
