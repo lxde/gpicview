@@ -134,8 +134,8 @@ void save_preferences()
         fprintf( f, "ask_before_delete=%d\n", pref.ask_before_delete );
         fprintf( f, "rotate_exif_only=%d\n", pref.rotate_exif_only );
         fprintf( f, "open_maximized=%d\n", pref.open_maximized );
-        fprintf( f, "bg=#%02x%02x%02x\n", pref.bg.red/257, pref.bg.green/257, pref.bg.blue/257 );
-        fprintf( f, "bg_full=#%02x%02x%02x\n", pref.bg_full.red/257, pref.bg_full.green/257, pref.bg_full.blue/257 );
+        fprintf( f, "bg=#%02x%02x%02x\n", pref.bg.red/256, pref.bg.green/256, pref.bg.blue/256 );
+        fprintf( f, "bg_full=#%02x%02x%02x\n", pref.bg_full.red/256, pref.bg_full.green/256, pref.bg_full.blue/256 );
 
         fprintf( f, "jpg_quality=%d\n", pref.jpg_quality );
         fprintf( f, "png_compression=%d\n", pref.png_compression );

@@ -496,7 +496,11 @@ gboolean on_win_state_event( GtkWidget* widget, GdkEventWindowState* state )
         gtk_widget_show( gtk_widget_get_parent(mw->nav_bar) );
         mw->full_screen = FALSE;
     }
-    pref.open_maximized == state->new_window_state == GDK_WINDOW_STATE_MAXIMIZED;
+
+    int previous = pref.open_maximized;
+    pref.open_maximized = (state->new_window_state == GDK_WINDOW_STATE_MAXIMIZED);
+    if (previous != pref.open_maximized)
+        save_preferences();
     return TRUE;
 }
 
