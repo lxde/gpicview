@@ -133,7 +133,6 @@ void save_preferences()
         fprintf( f, "ask_before_save=%d\n", pref.ask_before_save );
         fprintf( f, "ask_before_delete=%d\n", pref.ask_before_delete );
         fprintf( f, "rotate_exif_only=%d\n", pref.rotate_exif_only );
-        fprintf( f, "ask_before_delete=%d\n", pref.ask_before_delete );
         fprintf( f, "open_maximized=%d\n", pref.open_maximized );
         fprintf( f, "bg=#%02x%02x%02x\n", pref.bg.red/257, pref.bg.green/257, pref.bg.blue/257 );
         fprintf( f, "bg_full=#%02x%02x%02x\n", pref.bg_full.red/257, pref.bg_full.green/257, pref.bg_full.blue/257 );
@@ -198,7 +197,7 @@ void edit_preferences( GtkWindow* parent )
     gtk_toggle_button_set_active( (GtkToggleButton*)ask_before_save_btn, pref.ask_before_save );
 
     ask_before_del_btn = (GtkWidget*)gtk_builder_get_object(builder, "ask_before_delete");
-    gtk_toggle_button_set_active( (GtkToggleButton*)ask_before_del_btn, pref.ask_before_save );
+    gtk_toggle_button_set_active( (GtkToggleButton*)ask_before_del_btn, pref.ask_before_delete );
 
     auto_save_btn = (GtkWidget*)gtk_builder_get_object(builder, "auto_save_rotated");
     gtk_toggle_button_set_active( (GtkToggleButton*)auto_save_btn, pref.auto_save_rotated );

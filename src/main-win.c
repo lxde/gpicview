@@ -1092,6 +1092,7 @@ gboolean on_key_press_event(GtkWidget* widget, GdkEventKey * key)
                 on_quit( NULL, mw );
             break;
         case GDK_q:
+	case GDK_Q:
             on_quit( NULL, mw );
             break;
         case GDK_F11:
@@ -1247,15 +1248,19 @@ void on_delete( GtkWidget* btn, MainWin* mw )
     char* file_path = image_list_get_current_file_path( mw->img_list );
     if( file_path )
     {
-        GtkWidget* dlg = gtk_message_dialog_new( (GtkWindow*)mw,
-                GTK_DIALOG_MODAL,
-                GTK_MESSAGE_QUESTION,
-                GTK_BUTTONS_YES_NO,
-                _("Are you sure you want to delete current file?\n\nWarning: Once deleted, the file cannot be recovered.") );
-        int resp = gtk_dialog_run( (GtkDialog*)dlg );
-        gtk_widget_destroy( dlg );
+        int resp = GTK_RESPONSE_YES;
+	if ( pref.ask_before_delete )
+	{
+            GtkWidget* dlg = gtk_message_dialog_new( (GtkWindow*)mw,
+                    GTK_DIALOG_MODAL,
+                    GTK_MESSAGE_QUESTION,
+                    GTK_BUTTONS_YES_NO,
+                    _("Are you sure you want to delete current file?\n\nWarning: Once deleted, the file cannot be recovered.") );
+            resp = gtk_dialog_run( (GtkDialog*)dlg );
+            gtk_widget_destroy( dlg );
+        }
 
-        if( resp == GTK_RESPONSE_YES )
+	if( resp == GTK_RESPONSE_YES )
         {
             const char* name = image_list_get_current( mw->img_list );
 
@@ -1279,6 +1284,7 @@ void on_delete( GtkWidget* btn, MainWin* mw )
 		if ( ! next_name )
 		{
 		    main_win_close( mw );
+		    image_list_close( mw->img_list );
 		    image_view_set_pixbuf( (ImageView*)mw->img_view, NULL );
 		    gtk_window_set_title( (GtkWindow*) mw, _("Image Viewer"));
 		}
