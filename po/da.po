@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gpicview Rev. 1203\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-17 21:39+0800\n"
+"POT-Creation-Date: 2009-05-18 23:21+0800\n"
 "PO-Revision-Date: 2009-05-15 16:13+0200\n"
 "Last-Translator: Vidar Jon Bauge <vidarjb@gmail.com>\n"
 "Language-Team: da_dk <vidarjb@gmail.com, chalze06@gmail.com>\n"
@@ -196,7 +196,7 @@ msgstr ""
 #: ../src/file-dlgs.c:119
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
-"but the image quality will be poorer."
+"but takes more time to do the compression."
 msgstr ""
 
 #: ../data/pref-dlg.glade.h:1

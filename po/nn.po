@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-17 21:39+0800\n"
+"POT-Creation-Date: 2009-05-18 23:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Nynorsk <LL@li.org>\n"
@@ -178,7 +178,7 @@ msgstr ""
 #: ../src/file-dlgs.c:119
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
-"but the image quality will be poorer."
+"but takes more time to do the compression."
 msgstr ""
 
 #: ../data/pref-dlg.glade.h:1

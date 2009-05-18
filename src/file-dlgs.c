@@ -116,7 +116,7 @@ static void on_file_save_filter_changed(GObject* obj, GParamSpec* pspec, gpointe
         {
             extra = gtk_hbox_new(FALSE, 12);
             label = gtk_label_new(_("PNG Compression Level:"));
-            label2 = gtk_label_new(_("Higher compression levels yield smaller file sizes,\nbut the image quality will be poorer."));
+            label2 = gtk_label_new(_("Higher compression levels yield smaller file sizes,\nbut takes more time to do the compression."));
             scale = gtk_hscale_new_with_range( 0, 9, 1 );
             gtk_range_set_value(scale, pref.png_compression);
             gtk_range_set_update_policy(scale, GTK_UPDATE_DISCONTINUOUS);
