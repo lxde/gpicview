@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gpicview\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-18 23:21+0800\n"
-"PO-Revision-Date: 2009-05-13 08:35+0200\n"
+"PO-Revision-Date: 2009-05-19 13:52+0200\n"
 "Last-Translator: Martin Bagge <brother@bsnet.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr "[FIL]"
 
 #: ../src/gpicview.c:39
 msgid "Print version information and exit"
-msgstr ""
+msgstr "Skriv ut versionsinformation och avsluta"
 
 #: ../src/main-win.c:145 ../src/main-win.c:1283
 msgid "Image Viewer"
@@ -71,11 +71,11 @@ msgstr "Rotera medsols"
 
 #: ../src/main-win.c:250 ../src/main-win.c:1307
 msgid "Flip Horizontal"
-msgstr ""
+msgstr "Vänd vågrätt"
 
 #: ../src/main-win.c:251 ../src/main-win.c:1308
 msgid "Flip Vertical"
-msgstr ""
+msgstr "Rotera lodrätt"
 
 #: ../src/main-win.c:255 ../src/main-win.c:1310
 msgid "Open File"
@@ -113,9 +113,8 @@ msgstr ""
 "(Varning: originalfilens kvalité kan förloras)"
 
 #: ../src/main-win.c:1220
-#, fuzzy
 msgid "Writing this image format is not supported."
-msgstr "Stöd för skrivning till det här bildformatet  saknas"
+msgstr "Stöd för skrivning till det här bildformatet saknas."
 
 #: ../src/main-win.c:1254
 msgid ""
@@ -149,9 +148,8 @@ msgid "GPicView"
 msgstr "GPicView"
 
 #: ../src/main-win.c:1395
-#, fuzzy
 msgid "Copyright (C) 2007 - 2009"
-msgstr "Copyright © 2007"
+msgstr "Copyright © 2007 - 2009"
 
 #: ../src/main-win.c:1396
 msgid "Lightweight image viewer from LXDE project"
@@ -181,33 +179,36 @@ msgstr "Alla filer"
 
 #: ../src/file-dlgs.c:103
 msgid "JPEG Quality:"
-msgstr ""
+msgstr "JPEG-kvalité_"
 
 #: ../src/file-dlgs.c:104
 msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
 msgstr ""
+"Lägre värden på kvalité innebär att filstorleken blir\n"
+"mindre, men även att bildkvalitén blir sämre."
 
 #: ../src/file-dlgs.c:118
 msgid "PNG Compression Level:"
-msgstr ""
+msgstr "Kompressionsnivå för PNG:"
 
 #: ../src/file-dlgs.c:119
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
 msgstr ""
+"Högre kompressionsnivå innebär mindre\n"
+"filstorlek men tar längre tid att genomföra."
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
-msgstr ""
+msgstr "<b>Bakgrundsfärg</b>"
 
 # dubbelspace, rapporterat per mail
 #: ../data/pref-dlg.glade.h:2
-#, fuzzy
 msgid "Ask before deleting images"
-msgstr "Fråga innan bilder sparas"
+msgstr "Fråga innan bilder raderas"
 
 # dubbelspace, rapporterat per mail
 #: ../data/pref-dlg.glade.h:3
@@ -219,9 +220,8 @@ msgid "Automatically save rotated images"
 msgstr "Ska roterade bilder sparas automatiskt?"
 
 #: ../data/pref-dlg.glade.h:5
-#, fuzzy
 msgid "Fullscreen:"
-msgstr "Helskärm"
+msgstr "Helskärm:"
 
 #: ../data/pref-dlg.glade.h:6
 msgid "Make GPicView the default viewer for images"
@@ -229,16 +229,15 @@ msgstr "Gör GPicview till standardvisare för bilder"
 
 #: ../data/pref-dlg.glade.h:7
 msgid "Normal:"
-msgstr ""
+msgstr "Normal:"
 
 #: ../data/pref-dlg.glade.h:9
-#, fuzzy
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
-"Uppdatera EXIF-värdet för rotering (endast om EXIF-etiketten för rotering "
-"existerar)"
+"Rotera bilder genom att uppdatera EXIF-värdet för rotering\n"
+"(endast om EXIF-etiketten för rotering existerar)"
 
 #~ msgid " Full Screen"
 #~ msgstr " Helskärm"

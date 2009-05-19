@@ -7,14 +7,14 @@ msgstr ""
 "Project-Id-Version: gpicview 0.1.10\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-18 23:21+0800\n"
-"PO-Revision-Date: 2009-04-10 10:58+0100\n"
+"PO-Revision-Date: 2009-05-17 19:56+0200\n"
 "Last-Translator: Matej <paxmanpwnz@gmail.com>\n"
 "Language-Team: Slovenian <paxmanpwnz@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
-"%100==4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3);\n"
 "X-Generator: Pootle 1.1.0\n"
 "X-Poedit-Language: Slovenian\n"
 "X-Poedit-Country: SLOVENIA\n"
@@ -24,8 +24,9 @@ msgid "[FILE]"
 msgstr "[DATOTEKA]"
 
 #: ../src/gpicview.c:39
+#, fuzzy
 msgid "Print version information and exit"
-msgstr ""
+msgstr "Izpiši informacije o različici in zaključi"
 
 #: ../src/main-win.c:145 ../src/main-win.c:1283
 msgid "Image Viewer"
@@ -72,12 +73,14 @@ msgid "Rotate Clockwise"
 msgstr "Zasuči v smeri urinega kazalca"
 
 #: ../src/main-win.c:250 ../src/main-win.c:1307
+#, fuzzy
 msgid "Flip Horizontal"
-msgstr ""
+msgstr "Preslikaj vodoravno"
 
 #: ../src/main-win.c:251 ../src/main-win.c:1308
+#, fuzzy
 msgid "Flip Vertical"
-msgstr ""
+msgstr "Preslikaj navpično"
 
 #: ../src/main-win.c:255 ../src/main-win.c:1310
 msgid "Open File"
@@ -102,7 +105,7 @@ msgstr "Lastnosti"
 
 #: ../src/main-win.c:262 ../src/main-win.c:1319
 msgid "Quit"
-msgstr ""
+msgstr "Izhod"
 
 #: ../src/main-win.c:1179
 #, fuzzy
@@ -116,7 +119,7 @@ msgstr ""
 
 #: ../src/main-win.c:1220
 msgid "Writing this image format is not supported."
-msgstr ""
+msgstr "Pisanje tega slikovnega formata ni podprto."
 
 #: ../src/main-win.c:1254
 msgid ""
@@ -146,9 +149,8 @@ msgid "GPicView"
 msgstr "GPicView"
 
 #: ../src/main-win.c:1395
-#, fuzzy
 msgid "Copyright (C) 2007 - 2009"
-msgstr "Vse pravice pridržane (C) 2007"
+msgstr "Vse pravice pridržane (C) 2007 - 2009"
 
 #: ../src/main-win.c:1396
 msgid "Lightweight image viewer from LXDE project"
@@ -177,7 +179,7 @@ msgstr "Vse datoteke"
 
 #: ../src/file-dlgs.c:103
 msgid "JPEG Quality:"
-msgstr ""
+msgstr "JPEG kvaliteta:"
 
 #: ../src/file-dlgs.c:104
 msgid ""
@@ -186,8 +188,9 @@ msgid ""
 msgstr ""
 
 #: ../src/file-dlgs.c:118
+#, fuzzy
 msgid "PNG Compression Level:"
-msgstr ""
+msgstr "Nivo stiskanje PNG:"
 
 #: ../src/file-dlgs.c:119
 msgid ""
@@ -197,22 +200,22 @@ msgstr ""
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
-msgstr ""
+msgstr "<b>Barve ozadja</b>"
 
 #: ../data/pref-dlg.glade.h:2
 #, fuzzy
 msgid "Ask before deleting images"
-msgstr "Vprašaj preden shraniš"
+msgstr "Vprašaj pred brisanjem slik"
 
 #: ../data/pref-dlg.glade.h:3
 #, fuzzy
 msgid "Ask before saving images"
-msgstr "Vprašaj preden shraniš"
+msgstr "Vprašaj pred shranjevanjem slik"
 
 #: ../data/pref-dlg.glade.h:4
 #, fuzzy
 msgid "Automatically save rotated images"
-msgstr "Samodejno shrani zasukane slike ( trenutno podprt le JPEG )"
+msgstr "Samodejno shrani zasukane slike"
 
 #: ../data/pref-dlg.glade.h:5
 #, fuzzy
@@ -225,8 +228,9 @@ msgid "Make GPicView the default viewer for images"
 msgstr "Nastavi GPicView za privzeti pregledovalnik slik"
 
 #: ../data/pref-dlg.glade.h:7
+#, fuzzy
 msgid "Normal:"
-msgstr ""
+msgstr "Navadno:"
 
 #: ../data/pref-dlg.glade.h:9
 #, fuzzy
@@ -234,8 +238,8 @@ msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
-"Med rotiranjem in preslikanjem spremeni EXIF orientacijsko vrednost le, če "
-"ta obstaja ( samo JPEG )"
+"Zasuči JPEG datoteko s spremembo EXIF orientacijske značke (samo če le-ta "
+"obstaja)"
 
 #~ msgid " Full Screen"
 #~ msgstr "Celozaslonski način"

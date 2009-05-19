@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gpicview 0.1.11\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-18 23:21+0800\n"
-"PO-Revision-Date: 2009-04-27 17:05+0200\n"
+"PO-Revision-Date: 2009-05-19 13:36+0200\n"
 "Last-Translator: Alessandro Pellizzari <alex@amiran.it>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr "[FILE]"
 
 #: ../src/gpicview.c:39
 msgid "Print version information and exit"
-msgstr ""
+msgstr "Stampa informazioni di versione ed esci"
 
 #: ../src/main-win.c:145 ../src/main-win.c:1283
 msgid "Image Viewer"
@@ -72,11 +72,11 @@ msgstr "Ruota in senso Orario"
 
 #: ../src/main-win.c:250 ../src/main-win.c:1307
 msgid "Flip Horizontal"
-msgstr ""
+msgstr "Specchiare Orizzontalmente"
 
 #: ../src/main-win.c:251 ../src/main-win.c:1308
 msgid "Flip Vertical"
-msgstr ""
+msgstr "Specchiare Verticalmente"
 
 #: ../src/main-win.c:255 ../src/main-win.c:1310
 msgid "Open File"
@@ -101,10 +101,9 @@ msgstr "Preferenze"
 
 #: ../src/main-win.c:262 ../src/main-win.c:1319
 msgid "Quit"
-msgstr ""
+msgstr "Esci"
 
 #: ../src/main-win.c:1179
-#, fuzzy
 msgid ""
 "The file name you selected already exists.\n"
 "Do you want to overwrite existing file?\n"
@@ -116,7 +115,7 @@ msgstr ""
 
 #: ../src/main-win.c:1220
 msgid "Writing this image format is not supported."
-msgstr ""
+msgstr "Il salvataggio in questo formato non è supportato."
 
 #: ../src/main-win.c:1254
 msgid ""
@@ -148,9 +147,8 @@ msgid "GPicView"
 msgstr "GPicView"
 
 #: ../src/main-win.c:1395
-#, fuzzy
 msgid "Copyright (C) 2007 - 2009"
-msgstr "Copyright (C) 2007"
+msgstr "Copyright (C) 2007 - 2009"
 
 #: ../src/main-win.c:1396
 msgid "Lightweight image viewer from LXDE project"
@@ -179,67 +177,63 @@ msgstr "Tutti i file"
 
 #: ../src/file-dlgs.c:103
 msgid "JPEG Quality:"
-msgstr ""
+msgstr "Qualità JPEG:"
 
 #: ../src/file-dlgs.c:104
 msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
 msgstr ""
+"Valori di qualità inferiori comportano un file più piccolo,\n"
+"ma la qualità dell'immagine sarà inferiore."
 
 #: ../src/file-dlgs.c:118
 msgid "PNG Compression Level:"
-msgstr ""
+msgstr "Livello di Compressione PNG:"
 
 #: ../src/file-dlgs.c:119
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
 msgstr ""
+"Livelli di compressione più alti comportano un file più piccolo,\n"
+"ma i tempi di salvataggio e caricamento potranno essere maggiori."
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
-msgstr ""
+msgstr "<b>Colori di Sfondo</b>"
 
 #: ../data/pref-dlg.glade.h:2
-#, fuzzy
 msgid "Ask before deleting images"
-msgstr "Domanda prima di salvare immagini"
+msgstr "Chiedi prima di cancellare immagini"
 
 #: ../data/pref-dlg.glade.h:3
-#, fuzzy
 msgid "Ask before saving images"
-msgstr "Domanda prima di salvare immagini"
+msgstr "Chiedi prima di salvare immagini"
 
 #: ../data/pref-dlg.glade.h:4
-#, fuzzy
 msgid "Automatically save rotated images"
-msgstr ""
-"Salva automaticamente immagini girate (Al momento solo il formato JPEG è "
-"supportato)"
+msgstr "Salva automaticamente immagini ruotate"
 
 #: ../data/pref-dlg.glade.h:5
-#, fuzzy
 msgid "Fullscreen:"
-msgstr "Schermo Intero"
+msgstr "Schermo Intero:"
 
 #: ../data/pref-dlg.glade.h:6
-#, fuzzy
 msgid "Make GPicView the default viewer for images"
 msgstr "Seleziona GPicView come visualizzatore standard per immagini"
 
 #: ../data/pref-dlg.glade.h:7
 msgid "Normal:"
-msgstr ""
+msgstr "Normale:"
 
 #: ../data/pref-dlg.glade.h:9
-#, fuzzy
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
-"Cambia il valore di orientamento EXIF al ruotare o specchiare solo se la "
-"voce orientazione EXIF esiste (solo JPEG)"
+"Ruota JPEG modificando il valore di orientamento EXIF\n"
+"(solo se la voce orientamento EXIF esiste)"
 
 #~ msgid " Full Screen"
 #~ msgstr " Schermo Intero"

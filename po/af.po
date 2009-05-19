@@ -1,49 +1,48 @@
-# Dutch translations for gpicview package.
-# Copyright (C) 2008 THE gpicview'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the gpicview package.
-# Stephan Arts <stephan@xfce.org>, 2008.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gpicview 0.1.7\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-18 23:21+0800\n"
-"PO-Revision-Date: 2009-05-19 13:29+0200\n"
-"Last-Translator: Sander De Voogdt <celettu@gmail.com>\n"
-"Language-Team: Dutch\n"
+"PO-Revision-Date: 2009-05-18 22:01+0200\n"
+"Last-Translator: F Wolff <friedel@translate.org.za>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ASCII\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 1.1.0\n"
 
 #: ../src/gpicview.c:37
 msgid "[FILE]"
-msgstr "[BESTAND]"
+msgstr ""
 
 #: ../src/gpicview.c:39
 msgid "Print version information and exit"
-msgstr "Versie-informatie printen en programma afsluiten"
+msgstr ""
 
 #: ../src/main-win.c:145 ../src/main-win.c:1283
 msgid "Image Viewer"
-msgstr "Afbeeldingsweergave"
+msgstr ""
 
 #: ../src/main-win.c:221 ../src/main-win.c:1295
 msgid "Previous"
-msgstr "Vorige"
+msgstr ""
 
 #: ../src/main-win.c:222 ../src/main-win.c:1296
 msgid "Next"
-msgstr "Volgende"
+msgstr ""
 
 #: ../src/main-win.c:226 ../src/main-win.c:1298
 msgid "Zoom Out"
-msgstr "Uitzoomen"
+msgstr ""
 
 #: ../src/main-win.c:227 ../src/main-win.c:1299
 msgid "Zoom In"
-msgstr "Inzoomen"
+msgstr ""
 
 #. percent = gtk_entry_new();    // show scale (in percentage)
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
@@ -51,56 +50,56 @@ msgstr "Inzoomen"
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
 #: ../src/main-win.c:234 ../src/main-win.c:1300
 msgid "Fit Image To Window Size"
-msgstr "Afbeelding aanpassen aan venstergrootte"
+msgstr ""
 
 #: ../src/main-win.c:236 ../src/main-win.c:1301
 msgid "Original Size"
-msgstr "Originele grootte"
+msgstr ""
 
 #: ../src/main-win.c:243 ../src/main-win.c:1303
 msgid "Full Screen"
-msgstr "Volledig scherm"
+msgstr ""
 
 #: ../src/main-win.c:247 ../src/main-win.c:1305
 msgid "Rotate Counterclockwise"
-msgstr "Linksom draaien"
+msgstr "Draai antikloksgewys"
 
 #: ../src/main-win.c:248 ../src/main-win.c:1306
 msgid "Rotate Clockwise"
-msgstr "Rechtsom draaien"
+msgstr "Draai kloksgewys"
 
 #: ../src/main-win.c:250 ../src/main-win.c:1307
 msgid "Flip Horizontal"
-msgstr "Horizontaal spiegelen"
+msgstr "Swaai horisontaal om"
 
 #: ../src/main-win.c:251 ../src/main-win.c:1308
 msgid "Flip Vertical"
-msgstr "Verticaal spiegelen"
+msgstr "Swaai vertikaal om"
 
 #: ../src/main-win.c:255 ../src/main-win.c:1310
 msgid "Open File"
-msgstr "Bestand openen"
+msgstr "Open lêer"
 
 #: ../src/main-win.c:256 ../src/main-win.c:1311
 msgid "Save File"
-msgstr "Bestand opslaan"
+msgstr "Stoor lêer"
 
 #: ../src/main-win.c:257
 msgid "Save File As"
-msgstr "Bestand opslaan als"
+msgstr "Stoor lêer as"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
 #: ../src/main-win.c:258 ../src/main-win.c:1314
 msgid "Delete File"
-msgstr "Bestand verwijderen"
+msgstr ""
 
 #: ../src/main-win.c:261 ../src/main-win.c:1316 ../data/pref-dlg.glade.h:8
 msgid "Preferences"
-msgstr "Voorkeuren"
+msgstr ""
 
 #: ../src/main-win.c:262 ../src/main-win.c:1319
 msgid "Quit"
-msgstr "Afsluiten"
+msgstr ""
 
 #: ../src/main-win.c:1179
 msgid ""
@@ -108,13 +107,10 @@ msgid ""
 "Do you want to overwrite existing file?\n"
 "(Warning: The quality of original image might be lost)"
 msgstr ""
-"Een bestand met deze naam bestaat al.\n"
-"Wilt U het bestaande bestand overschrijven?\n"
-"(Waarschuwing: De kwaliteit van de originele afbeelding kan verloren gaan)"
 
 #: ../src/main-win.c:1220
 msgid "Writing this image format is not supported."
-msgstr "Het wegschrijven naar dit beeldformaat is niet ondersteund."
+msgstr ""
 
 #: ../src/main-win.c:1254
 msgid ""
@@ -122,35 +118,31 @@ msgid ""
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
-"Weet U zeker dat u het huidige bestand wilt verwijderen?\n"
-"\n"
-"Waarschuwing: nadat het is verwijderd kan het niet meer worden "
-"teruggeplaatst."
 
 #: ../src/main-win.c:1312
 msgid "Save As"
-msgstr "Opslaan als"
+msgstr ""
 
 #: ../src/main-win.c:1381
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr " * Refereer naar de broncode van de EOG afbeeldingsviewer en GThumb"
+msgstr ""
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1385
 msgid "translator-credits"
-msgstr "Stephan Arts <stephan@xfce.org>Sander De Voogdt <celettu@gmail.com>"
+msgstr ""
 
 #: ../src/main-win.c:1393
 msgid "GPicView"
-msgstr "GPicView"
+msgstr ""
 
 #: ../src/main-win.c:1395
 msgid "Copyright (C) 2007 - 2009"
-msgstr "Copyright (C) 2007-2009"
+msgstr ""
 
 #: ../src/main-win.c:1396
 msgid "Lightweight image viewer from LXDE project"
-msgstr "Lichtgewicht afbeeldingsviewer van LXDE project"
+msgstr ""
 
 #: ../src/pref.c:153
 msgid ""
@@ -160,82 +152,65 @@ msgid ""
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"Alle ondersteunde afbeeldingsbestanden op uw computer zullen geopend worden "
-"met GPicView.\n"
-"(Dit gebeurt door middel met het 'xdg-mime' programma)\n"
-"\n"
-"<b>Bent u zeker dat u wilt doen?</b>"
 
 #: ../src/file-dlgs.c:62
 msgid "All Supported Images"
-msgstr "Alle ondersteunde afbeeldingen"
+msgstr ""
 
 #: ../src/file-dlgs.c:67
 msgid "All Files"
-msgstr "Alle bestanden"
+msgstr ""
 
 #: ../src/file-dlgs.c:103
 msgid "JPEG Quality:"
-msgstr "JPEG kwaliteit:"
+msgstr ""
 
 #: ../src/file-dlgs.c:104
 msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
 msgstr ""
-"Een lagere waarde voor kwaliteit zorgt voor kleinere bestanden,\n"
-"maar de beeldkwaliteit zal verminderen."
 
 #: ../src/file-dlgs.c:118
 msgid "PNG Compression Level:"
-msgstr "PNG compressiewaarde:"
+msgstr ""
 
 #: ../src/file-dlgs.c:119
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
 msgstr ""
-"Hogere compressiewaarden zorgen voor kleinere bestanden,\n"
-"maar de beeldkwaliteit zal verminderen."
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
-msgstr "<b>Achtergrondkleuren</b>"
+msgstr ""
 
 #: ../data/pref-dlg.glade.h:2
 msgid "Ask before deleting images"
-msgstr "Vraag bevestiging voor het verwijderen van afbeeldingen"
+msgstr ""
 
 #: ../data/pref-dlg.glade.h:3
 msgid "Ask before saving images"
-msgstr "Vraag bevestiging voor het opslaan van afbeeldingen"
+msgstr ""
 
 #: ../data/pref-dlg.glade.h:4
 msgid "Automatically save rotated images"
-msgstr "Geroteerde afbeeldingen automatisch opslaan"
+msgstr ""
 
 #: ../data/pref-dlg.glade.h:5
 msgid "Fullscreen:"
-msgstr "Volledig scherm:"
+msgstr ""
 
 #: ../data/pref-dlg.glade.h:6
 msgid "Make GPicView the default viewer for images"
-msgstr "Afbeeldingen standaard openen met GPicview"
+msgstr ""
 
 #: ../data/pref-dlg.glade.h:7
 msgid "Normal:"
-msgstr "Normaal:"
+msgstr ""
 
 #: ../data/pref-dlg.glade.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
-"EXIF orientatie enkel veranderen tijdens roteren en spiegelen (indien EXIF "
-"orientatie tag bestaat)"
-
-#~ msgid " Full Screen"
-#~ msgstr " Volledig scherm"
-
-#~ msgid " * Some icons are taken from gimmage"
-#~ msgstr " * Sommige iconen zijn genomen van gimmage"

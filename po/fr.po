@@ -10,13 +10,14 @@ msgstr ""
 "Project-Id-Version: gpicview r846\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-18 23:21+0800\n"
-"PO-Revision-Date: 2007-21-11 20:27+0100\n"
-"Last-Translator: Robert-André Mauchin <zebob.m@pengzone.org>\n"
+"PO-Revision-Date: 2009-05-19 13:45+0200\n"
+"Last-Translator: Cilyan Olowen <gaknar@gmail.com>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Pootle 1.1.0\n"
 
 #: ../src/gpicview.c:37
 msgid "[FILE]"
@@ -24,7 +25,7 @@ msgstr "[FICHIER]"
 
 #: ../src/gpicview.c:39
 msgid "Print version information and exit"
-msgstr ""
+msgstr "Affiche les informations de version et quitte"
 
 #: ../src/main-win.c:145 ../src/main-win.c:1283
 msgid "Image Viewer"
@@ -60,7 +61,7 @@ msgstr "Taille originale"
 
 #: ../src/main-win.c:243 ../src/main-win.c:1303
 msgid "Full Screen"
-msgstr "Plein Écran"
+msgstr "Plein écran"
 
 #: ../src/main-win.c:247 ../src/main-win.c:1305
 msgid "Rotate Counterclockwise"
@@ -72,11 +73,11 @@ msgstr "Pivoter vers la droite"
 
 #: ../src/main-win.c:250 ../src/main-win.c:1307
 msgid "Flip Horizontal"
-msgstr ""
+msgstr "Pivoter horizontalement"
 
 #: ../src/main-win.c:251 ../src/main-win.c:1308
 msgid "Flip Vertical"
-msgstr ""
+msgstr "Pivoter verticalement"
 
 #: ../src/main-win.c:255 ../src/main-win.c:1310
 msgid "Open File"
@@ -101,23 +102,21 @@ msgstr "Préférences"
 
 #: ../src/main-win.c:262 ../src/main-win.c:1319
 msgid "Quit"
-msgstr ""
+msgstr "Quitter"
 
 #: ../src/main-win.c:1179
-#, fuzzy
 msgid ""
 "The file name you selected already exists.\n"
 "Do you want to overwrite existing file?\n"
 "(Warning: The quality of original image might be lost)"
 msgstr ""
-"Le nom du fichier que vous avez sélectionné existe déjà.\n"
+"Un fichier portant le nom choisi existe déjà.\n"
 "Voulez-vous remplacer le fichier existant ?\n"
-"(Avertissement : la qualité de l'image originale pourrait ne pas être "
-"conservée)"
+"(Attention : La qualité de l'image originale pourrait être perdue)"
 
 #: ../src/main-win.c:1220
 msgid "Writing this image format is not supported."
-msgstr ""
+msgstr "Ce format d'image n'est pas pris en charge en écriture."
 
 #: ../src/main-win.c:1254
 msgid ""
@@ -127,7 +126,7 @@ msgid ""
 msgstr ""
 "Voulez-vous vraiment supprimer le fichier actuel ?\n"
 "\n"
-"Avertissement : une fois supprimé, le fichier ne pourra pas être récupéré."
+"Avertissement : Une fois supprimé, le fichier ne pourra pas être récupéré."
 
 #: ../src/main-win.c:1312
 msgid "Save As"
@@ -142,16 +141,16 @@ msgstr " * Se réfère au code source du visionneur d'images EOG et GThumb"
 msgid "translator-credits"
 msgstr ""
 "ElGeneralMidi <http://ubuntufromscratch.wordpress.com/>\n"
-"Robert-André Mauchin <zebob.m@pengzone.org>"
+"Robert-André Mauchin <zebob.m@pengzone.org>\n"
+"Cilyan Olowen <gaknar@gmail.com>"
 
 #: ../src/main-win.c:1393
 msgid "GPicView"
 msgstr "GPicView"
 
 #: ../src/main-win.c:1395
-#, fuzzy
 msgid "Copyright (C) 2007 - 2009"
-msgstr "Copyright (C) 2007-2008"
+msgstr "Copyright (C) 2007 - 2009"
 
 #: ../src/main-win.c:1396
 msgid "Lightweight image viewer from LXDE project"
@@ -181,67 +180,63 @@ msgstr "Tous les fichiers"
 
 #: ../src/file-dlgs.c:103
 msgid "JPEG Quality:"
-msgstr ""
+msgstr "Qualité JPEG :"
 
 #: ../src/file-dlgs.c:104
 msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
 msgstr ""
+"Une valeur plus petite entrainera un fichier plus petit,\n"
+"mais la qualité de l'image sera plus faible."
 
 #: ../src/file-dlgs.c:118
 msgid "PNG Compression Level:"
-msgstr ""
+msgstr "Niveau de compression PNG :"
 
 #: ../src/file-dlgs.c:119
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
 msgstr ""
+"Un niveau de compression plus élevé entrainera un fichier plus petit,\n"
+"mais la qualité de l'image sera plus faible."
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
-msgstr ""
+msgstr "<b>Couleurs d'arrière-plan</b>"
 
 #: ../data/pref-dlg.glade.h:2
-#, fuzzy
 msgid "Ask before deleting images"
-msgstr "Demander avant d'enregistrer des images"
+msgstr "Demander avant de supprimer des images"
 
 #: ../data/pref-dlg.glade.h:3
-#, fuzzy
 msgid "Ask before saving images"
 msgstr "Demander avant d'enregistrer des images"
 
 #: ../data/pref-dlg.glade.h:4
-#, fuzzy
 msgid "Automatically save rotated images"
-msgstr ""
-"Enregistrer automatiquement la rotation des images (actuellement seulement "
-"le JPEG est pris en charge)"
+msgstr "Enregistrer automatiquement les images pivotées"
 
 #: ../data/pref-dlg.glade.h:5
-#, fuzzy
 msgid "Fullscreen:"
-msgstr "Plein Écran"
+msgstr "Plein écran :"
 
 #: ../data/pref-dlg.glade.h:6
-#, fuzzy
 msgid "Make GPicView the default viewer for images"
 msgstr "Définir GPicview comme visionneur d'images par défaut"
 
 #: ../data/pref-dlg.glade.h:7
 msgid "Normal:"
-msgstr ""
+msgstr "Normal :"
 
 #: ../data/pref-dlg.glade.h:9
-#, fuzzy
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
-"Modifie la valeur d'orientation EXIF lors de rotation et de renversement "
-"seulement si la balise Orientation existe (JPEG uniquement)"
+"Pivoter les images JPEG en modifiant la valeur EXIF de l'orientation.\n"
+"(Uniquement si le champ EXIF orientation est présent.)"
 
 #~ msgid " Full Screen"
 #~ msgstr " Plein écran"
