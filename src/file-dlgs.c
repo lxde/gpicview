@@ -84,7 +84,7 @@ static void on_file_save_filter_changed(GObject* obj, GParamSpec* pspec, gpointe
 {
     GtkFileChooser* dlg = (GtkFileChooser*)obj;
     GtkFileFilter* filter = gtk_file_chooser_get_filter( dlg );
-    const char* type = (const char*)g_object_get_data(filter, "type");
+    const char* type = (const char*)g_object_get_data(G_OBJECT(filter), "type");
     GtkWidget* extra = gtk_file_chooser_get_extra_widget(dlg);
 
     if(extra)
@@ -103,14 +103,14 @@ static void on_file_save_filter_changed(GObject* obj, GParamSpec* pspec, gpointe
             label = gtk_label_new(_("JPEG Quality:"));
             label2 = gtk_label_new(_("Lower quality values yield smaller file sizes,\nbut the image quality will be poorer."));
             scale = gtk_hscale_new_with_range( 0, 100, 5 );
-            gtk_range_set_value(scale, pref.jpg_quality);
-            gtk_range_set_update_policy(scale, GTK_UPDATE_DISCONTINUOUS);
-            g_signal_connect(scale, "value-changed", on_int_val_changed, &pref.jpg_quality);
-            gtk_scale_set_draw_value(scale, TRUE);
-            gtk_scale_set_value_pos(scale, GTK_POS_RIGHT);
-            gtk_box_pack_start(extra, label, FALSE, TRUE, 0);
-            gtk_box_pack_start(extra, scale, TRUE, TRUE, 0);
-            gtk_box_pack_start(extra, label2, FALSE, TRUE, 0);
+            gtk_range_set_value(GTK_RANGE(scale), pref.jpg_quality);
+            gtk_range_set_update_policy(GTK_RANGE(scale), GTK_UPDATE_DISCONTINUOUS);
+            g_signal_connect(G_OBJECT(scale), "value-changed", G_CALLBACK(on_int_val_changed), &pref.jpg_quality);
+            gtk_scale_set_draw_value(GTK_SCALE(scale), TRUE);
+            gtk_scale_set_value_pos(GTK_SCALE(scale), GTK_POS_RIGHT);
+            gtk_box_pack_start(GTK_BOX(extra), label, FALSE, TRUE, 0);
+            gtk_box_pack_start(GTK_BOX(extra), scale, TRUE, TRUE, 0);
+            gtk_box_pack_start(GTK_BOX(extra), label2, FALSE, TRUE, 0);
         }
         else if( strcmp( type, "png" ) == 0 )
         {
@@ -118,14 +118,14 @@ static void on_file_save_filter_changed(GObject* obj, GParamSpec* pspec, gpointe
             label = gtk_label_new(_("PNG Compression Level:"));
             label2 = gtk_label_new(_("Higher compression levels yield smaller file sizes,\nbut takes more time to do the compression."));
             scale = gtk_hscale_new_with_range( 0, 9, 1 );
-            gtk_range_set_value(scale, pref.png_compression);
-            gtk_range_set_update_policy(scale, GTK_UPDATE_DISCONTINUOUS);
-            g_signal_connect(scale, "value-changed", on_int_val_changed, &pref.png_compression);
-            gtk_scale_set_draw_value(scale, TRUE);
-            gtk_scale_set_value_pos(scale, GTK_POS_RIGHT);
-            gtk_box_pack_start(extra, label, FALSE, TRUE, 0);
-            gtk_box_pack_start(extra, scale, TRUE, TRUE, 0);
-            gtk_box_pack_start(extra, label2, FALSE, TRUE, 0);
+            gtk_range_set_value(GTK_RANGE(scale), pref.png_compression);
+            gtk_range_set_update_policy(GTK_RANGE(scale), GTK_UPDATE_DISCONTINUOUS);
+            g_signal_connect(G_OBJECT(scale), "value-changed", G_CALLBACK(on_int_val_changed), &pref.png_compression);
+            gtk_scale_set_draw_value(GTK_SCALE(scale), TRUE);
+            gtk_scale_set_value_pos(GTK_SCALE(scale), GTK_POS_RIGHT);
+            gtk_box_pack_start(GTK_BOX(extra), label, FALSE, TRUE, 0);
+            gtk_box_pack_start(GTK_BOX(extra), scale, TRUE, TRUE, 0);
+            gtk_box_pack_start(GTK_BOX(extra), label2, FALSE, TRUE, 0);
         }
         /* FIXME: provide "depth settings for *.ico files" */
 
@@ -180,7 +180,7 @@ char* get_save_filename( GtkWindow* parent, const char* cwd, char** type )
         mimes = gdk_pixbuf_format_get_mime_types( format );
         tmp = g_strdup_printf( "%s (*.%s)", desc, exts[0], NULL );
 
-        g_object_set_data_full(filter, "type", name, (GDestroyNotify)g_free);
+        g_object_set_data_full(G_OBJECT(filter), "type", name, (GDestroyNotify)g_free);
         g_strfreev(exts);
         g_free( desc );
         gtk_file_filter_set_name( filter, tmp );
@@ -193,11 +193,14 @@ char* get_save_filename( GtkWindow* parent, const char* cwd, char** type )
     }
     g_slist_free( modules );
 
+    int initial_jpg_quality = pref.jpg_quality;
+    int initial_png_compression = pref.png_compression;
+
     if( gtk_dialog_run( (GtkDialog*)dlg ) == GTK_RESPONSE_OK )
     {
         filter = gtk_file_chooser_get_filter( dlg );
         file = gtk_file_chooser_get_filename( dlg );
-        *type = g_object_steal_data(filter, "type");
+        *type = g_object_steal_data(G_OBJECT(filter), "type");
 
         if( !*type )   // auto detection
         {
@@ -209,6 +212,9 @@ char* get_save_filename( GtkWindow* parent, const char* cwd, char** type )
         }
     }
     gtk_widget_destroy( (GtkWidget*)dlg );
+
+    if ((initial_jpg_quality != pref.jpg_quality) || (initial_png_compression != pref.png_compression))
+        save_preferences();
 
     return file;
 }
