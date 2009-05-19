@@ -303,7 +303,7 @@ gboolean on_animation_timeout( MainWin* mw )
         image_view_set_pixbuf( (ImageView*)mw->img_view, mw->pix );
     }
     delay = gdk_pixbuf_animation_iter_get_delay_time( mw->animation_iter );
-    mw->animation_timeout = g_timeout_add(delay, on_animation_timeout, mw );
+    mw->animation_timeout = g_timeout_add(delay, (GSourceFunc) on_animation_timeout, mw );
     return FALSE;
 }
 
@@ -350,7 +350,7 @@ gboolean main_win_open( MainWin* mw, const char* file_path, ZoomMode zoom )
         mw->animation_iter = gdk_pixbuf_animation_get_iter( mw->animation, NULL );
         mw->pix = gdk_pixbuf_animation_iter_get_pixbuf( mw->animation_iter );
         delay = gdk_pixbuf_animation_iter_get_delay_time( mw->animation_iter );
-        mw->animation_timeout = g_timeout_add( delay, on_animation_timeout, mw );
+        mw->animation_timeout = g_timeout_add( delay, (GSourceFunc) on_animation_timeout, mw );
     }
     update_btns( mw );
 
@@ -748,7 +748,7 @@ void on_save_as( GtkWidget* btn, MainWin* mw )
     if( ! mw->pix )
         return;
 
-    file = get_save_filename( mw, image_list_get_dir( mw->img_list ), &type );
+    file = get_save_filename( GTK_WINDOW(mw), image_list_get_dir( mw->img_list ), &type );
     if( file )
     {
         char* dir;
@@ -1360,7 +1360,7 @@ void show_popup_menu( MainWin* mw, GdkEventButton* evt )
 static void open_url( GtkAboutDialog *dlg, const gchar *url, gpointer data)
 {
     /* FIXME: is there any better way to do this? */
-    const char* programs[] = { "xdg-open", "gnome-open" /* Sorry, KDE users. :-P */, "exo-open" };
+    char* programs[] = { "xdg-open", "gnome-open", "exo-open" };
     int i;
     for(  i = 0; i < G_N_ELEMENTS(programs); ++i)
     {
