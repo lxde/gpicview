@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: GPicView\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-18 23:21+0800\n"
-"PO-Revision-Date: 2009-05-01 11:19+0200\n"
+"PO-Revision-Date: 2009-05-19 17:10+0200\n"
 "Last-Translator: Ahmad Farghal <ahmad.farghal@gmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr "[ملف]"
 
 #: ../src/gpicview.c:39
 msgid "Print version information and exit"
-msgstr ""
+msgstr "اكتب معلومات الإصدار ثم اخرج"
 
 #: ../src/main-win.c:145 ../src/main-win.c:1283
 msgid "Image Viewer"
@@ -74,11 +74,11 @@ msgstr "لف مع عقارب الساعة"
 
 #: ../src/main-win.c:250 ../src/main-win.c:1307
 msgid "Flip Horizontal"
-msgstr ""
+msgstr "اقلب أفقيا"
 
 #: ../src/main-win.c:251 ../src/main-win.c:1308
 msgid "Flip Vertical"
-msgstr ""
+msgstr "اقلب رأسيا"
 
 #: ../src/main-win.c:255 ../src/main-win.c:1310
 msgid "Open File"
@@ -103,10 +103,9 @@ msgstr "التفضيلات"
 
 #: ../src/main-win.c:262 ../src/main-win.c:1319
 msgid "Quit"
-msgstr ""
+msgstr "أنهِ"
 
 #: ../src/main-win.c:1179
-#, fuzzy
 msgid ""
 "The file name you selected already exists.\n"
 "Do you want to overwrite existing file?\n"
@@ -118,7 +117,7 @@ msgstr ""
 
 #: ../src/main-win.c:1220
 msgid "Writing this image format is not supported."
-msgstr ""
+msgstr "الحفظ بهيئة الصور هذه غير مدعوم."
 
 #: ../src/main-win.c:1254
 msgid ""
@@ -148,9 +147,8 @@ msgid "GPicView"
 msgstr "GPicView"
 
 #: ../src/main-win.c:1395
-#, fuzzy
 msgid "Copyright (C) 2007 - 2009"
-msgstr "حقوق النشر محفوظة © 2007"
+msgstr "حقوق النشر محفوظة (C) 2007 - 2009"
 
 #: ../src/main-win.c:1396
 msgid "Lightweight image viewer from LXDE project"
@@ -179,65 +177,63 @@ msgstr "كل الملفات"
 
 #: ../src/file-dlgs.c:103
 msgid "JPEG Quality:"
-msgstr ""
+msgstr "جودة JPEG:"
 
 #: ../src/file-dlgs.c:104
 msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
 msgstr ""
+"الجودة الأقل تولد صورا أصغر،\n"
+"إلا أن جودة الصورة تكون أسوأ."
 
 #: ../src/file-dlgs.c:118
 msgid "PNG Compression Level:"
-msgstr ""
+msgstr "مستوى ضغط PNG:"
 
 #: ../src/file-dlgs.c:119
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
 msgstr ""
+"الضغط الأعلى يولد صورا أصغر،\n"
+"إلا أن إكمال الضغط يستغرق وفتا أطول."
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
-msgstr ""
+msgstr "<b>ألوان الخلفية</b>"
 
 #: ../data/pref-dlg.glade.h:2
-#, fuzzy
 msgid "Ask before deleting images"
-msgstr "اسأل قبل حفظ الصور"
+msgstr "اسأل قبل حذف الصور"
 
 #: ../data/pref-dlg.glade.h:3
-#, fuzzy
 msgid "Ask before saving images"
 msgstr "اسأل قبل حفظ الصور"
 
 #: ../data/pref-dlg.glade.h:4
-#, fuzzy
 msgid "Automatically save rotated images"
-msgstr "احفظ الصور الملفوفة آليا (صور JPEG فقط هي المدعومة حاليا)"
+msgstr "احفظ الصور آليا بعد لفها"
 
 #: ../data/pref-dlg.glade.h:5
-#, fuzzy
 msgid "Fullscreen:"
-msgstr "ملء الشاشة"
+msgstr "ملء الشاشة:"
 
 #: ../data/pref-dlg.glade.h:6
-#, fuzzy
 msgid "Make GPicView the default viewer for images"
-msgstr "اجعل GPicview عارض الصور الافتراضي"
+msgstr "اجعل GPicView عارض الصور الافتراضي"
 
 #: ../data/pref-dlg.glade.h:7
 msgid "Normal:"
-msgstr ""
+msgstr "الوضع العادي:"
 
 #: ../data/pref-dlg.glade.h:9
-#, fuzzy
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
-"لا تغير اتجاه الصورة في EXIF عند لفها أو قلبها إلا إذا كان وسم EXIF لاتجاه "
-"الصورة موجودا (JPEG فقط)"
+"لف صور JPEG عن طريق تغيير قيمة الاتجاه في EXIF\n"
+"(فقط إذا كان وسم الاتجاه موجودا في EXIF)"
 
 #~ msgid " Full Screen"
 #~ msgstr "ملء الشاشة"
