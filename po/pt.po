@@ -5,11 +5,11 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 0.1\n"
+"Project-Id-Version: 0.1.99\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-18 23:21+0800\n"
-"PO-Revision-Date: 2009-01-14 22:05+0100\n"
-"Last-Translator: Álvaro Morais <alvarommorais@gmail.com>\n"
+"PO-Revision-Date: 2009-05-19 12:13-0000\n"
+"Last-Translator: Sérgio Marques <smarquespt@gmail.com>\n"
 "Language-Team: Portuguese PT <alvarommorais@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,25 +24,30 @@ msgstr "[FICHEIRO]"
 
 #: ../src/gpicview.c:39
 msgid "Print version information and exit"
-msgstr ""
+msgstr "Imprime informação sobre a versão e sai"
 
-#: ../src/main-win.c:145 ../src/main-win.c:1283
+#: ../src/main-win.c:145
+#: ../src/main-win.c:1283
 msgid "Image Viewer"
 msgstr "Visualizador de Imagens"
 
-#: ../src/main-win.c:221 ../src/main-win.c:1295
+#: ../src/main-win.c:221
+#: ../src/main-win.c:1295
 msgid "Previous"
 msgstr "Anterior"
 
-#: ../src/main-win.c:222 ../src/main-win.c:1296
+#: ../src/main-win.c:222
+#: ../src/main-win.c:1296
 msgid "Next"
 msgstr "Próximo"
 
-#: ../src/main-win.c:226 ../src/main-win.c:1298
+#: ../src/main-win.c:226
+#: ../src/main-win.c:1298
 msgid "Zoom Out"
 msgstr "Menos Zoom"
 
-#: ../src/main-win.c:227 ../src/main-win.c:1299
+#: ../src/main-win.c:227
+#: ../src/main-win.c:1299
 msgid "Zoom In"
 msgstr "Mais Zoom"
 
@@ -50,73 +55,85 @@ msgstr "Mais Zoom"
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
 #. gtk_widget_set_size_request( percent, 45, -1 );
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
-#: ../src/main-win.c:234 ../src/main-win.c:1300
+#: ../src/main-win.c:234
+#: ../src/main-win.c:1300
 msgid "Fit Image To Window Size"
 msgstr "Ajustar Imagem à Janela"
 
-#: ../src/main-win.c:236 ../src/main-win.c:1301
+#: ../src/main-win.c:236
+#: ../src/main-win.c:1301
 msgid "Original Size"
 msgstr "Tamanho Original"
 
-#: ../src/main-win.c:243 ../src/main-win.c:1303
+#: ../src/main-win.c:243
+#: ../src/main-win.c:1303
 msgid "Full Screen"
-msgstr "Ecrâ Inteiro"
+msgstr "Ecrã Inteiro"
 
-#: ../src/main-win.c:247 ../src/main-win.c:1305
+#: ../src/main-win.c:247
+#: ../src/main-win.c:1305
 msgid "Rotate Counterclockwise"
-msgstr "Girar no sentido Anti-horário"
+msgstr "Rodar no sentido Anti-horário"
 
-#: ../src/main-win.c:248 ../src/main-win.c:1306
+#: ../src/main-win.c:248
+#: ../src/main-win.c:1306
 msgid "Rotate Clockwise"
-msgstr "Girar no sentido Horário"
+msgstr "Rodar no sentido Horário"
 
-#: ../src/main-win.c:250 ../src/main-win.c:1307
+#: ../src/main-win.c:250
+#: ../src/main-win.c:1307
 msgid "Flip Horizontal"
-msgstr ""
+msgstr "Inverter Horizontalmente"
 
-#: ../src/main-win.c:251 ../src/main-win.c:1308
+#: ../src/main-win.c:251
+#: ../src/main-win.c:1308
 msgid "Flip Vertical"
-msgstr ""
+msgstr "Inverter Verticalmente"
 
-#: ../src/main-win.c:255 ../src/main-win.c:1310
+#: ../src/main-win.c:255
+#: ../src/main-win.c:1310
 msgid "Open File"
 msgstr "Abrir Ficheiro"
 
-#: ../src/main-win.c:256 ../src/main-win.c:1311
+#: ../src/main-win.c:256
+#: ../src/main-win.c:1311
 msgid "Save File"
-msgstr "Gravar Ficheiro"
+msgstr "Guardar Ficheiro"
 
 #: ../src/main-win.c:257
 msgid "Save File As"
-msgstr "Gravar Ficheiro Como"
+msgstr "Guardar Ficheiro Como"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
-#: ../src/main-win.c:258 ../src/main-win.c:1314
+#: ../src/main-win.c:258
+#: ../src/main-win.c:1314
 msgid "Delete File"
 msgstr "Apagar Ficheiro"
 
-#: ../src/main-win.c:261 ../src/main-win.c:1316 ../data/pref-dlg.glade.h:8
+#: ../src/main-win.c:261
+#: ../src/main-win.c:1316
+#: ../data/pref-dlg.glade.h:8
 msgid "Preferences"
 msgstr "Preferências"
 
-#: ../src/main-win.c:262 ../src/main-win.c:1319
+#: ../src/main-win.c:262
+#: ../src/main-win.c:1319
 msgid "Quit"
-msgstr ""
+msgstr "Sair"
 
 #: ../src/main-win.c:1179
-#, fuzzy
 msgid ""
 "The file name you selected already exists.\n"
 "Do you want to overwrite existing file?\n"
 "(Warning: The quality of original image might be lost)"
 msgstr ""
-"O ficheiro que seleccionou já existe.\n"
+"Já existe um ficheiro com este nome.\n"
 "Deseja substituir o ficheiro existente?\n"
 "(Atenção: A qualidade da imagem original pode ser perdida)"
 
 #: ../src/main-win.c:1220
 msgid "Writing this image format is not supported."
-msgstr ""
+msgstr "Escrita neste formato de imagem não é suportado."
 
 #: ../src/main-win.c:1254
 msgid ""
@@ -124,13 +141,13 @@ msgid ""
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
-"Tem a certeza que deseja apagar o ficheiro actual?\n"
+"Tem a certeza que quer eliminar o ficheiro actual?\n"
 "\n"
-"Atençâo: Uma vez apagado, o ficheiro não poderá ser recuperado."
+"Atenção: Uma vez eliminado, não poderá ser recuperado."
 
 #: ../src/main-win.c:1312
 msgid "Save As"
-msgstr "Gravar Como"
+msgstr "Guardar Como"
 
 #: ../src/main-win.c:1381
 msgid " * Refer to source code of EOG image viewer and GThumb"
@@ -139,16 +156,17 @@ msgstr " *Referência ao código fonte do visualizador de imagem EOG e ao GThumb
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1385
 msgid "translator-credits"
-msgstr "Álvaro Morais <alvarommorais@gmail.com>"
+msgstr ""
+"Álvaro Morais <alvarommorais@gmail.com>\n"
+"Sérgio Marques (smarquespt@gmail.com)"
 
 #: ../src/main-win.c:1393
 msgid "GPicView"
 msgstr "GPicView"
 
 #: ../src/main-win.c:1395
-#, fuzzy
 msgid "Copyright (C) 2007 - 2009"
-msgstr "Copyright (C) 2007"
+msgstr "Copyright (C) 2007 - 2009"
 
 #: ../src/main-win.c:1396
 msgid "Lightweight image viewer from LXDE project"
@@ -156,21 +174,19 @@ msgstr "Visualizador de imagem leve e rápido para o projecto LXDE"
 
 #: ../src/pref.c:153
 msgid ""
-"GPicView will become the default viewer for all supported image files on "
-"your system.\n"
+"GPicView will become the default viewer for all supported image files on your system.\n"
 "(This will be done through 'xdg-mime' program)\n"
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"GPicView tornar-se-á o visualizador padrão para os formatos de imagens "
-"suportados no seu sistema.\n"
+"GPicView tornar-se-á o visualizador por omissão para as imagens suportados pelo seu sistema.\n"
 "(Isto será feito através do programa 'xdg-mime')\n"
 "\n"
-"<b>Confirme se tiver a certeza de que é isto que quer?</b>"
+"<b>Tem a certeza de que é isto que quer?</b>"
 
 #: ../src/file-dlgs.c:62
 msgid "All Supported Images"
-msgstr "Todos as imagens suportadas"
+msgstr "Todas as Imagens Suportadas"
 
 #: ../src/file-dlgs.c:67
 msgid "All Files"
@@ -178,74 +194,68 @@ msgstr "Todos os Ficheiros"
 
 #: ../src/file-dlgs.c:103
 msgid "JPEG Quality:"
-msgstr ""
+msgstr "Qualidade JPEG:"
 
 #: ../src/file-dlgs.c:104
 msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
 msgstr ""
+"Valores de qualidade baixa implicam menores tamanhos,\n"
+"mas a qualidade da imagem será inferior."
 
 #: ../src/file-dlgs.c:118
 msgid "PNG Compression Level:"
-msgstr ""
+msgstr "Nível de Compressão PNG:"
 
 #: ../src/file-dlgs.c:119
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
 msgstr ""
+"Níveis de compressão mais elevados implicam menores\n"
+"tamanhos, mas leva mais tempo a comprimir."
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
-msgstr ""
+msgstr "<b>Cores de Fundo</b>"
 
 #: ../data/pref-dlg.glade.h:2
-#, fuzzy
 msgid "Ask before deleting images"
-msgstr "Perguntar antes de gravar imagens"
+msgstr "Perguntar antes de apagar imagens"
 
 #: ../data/pref-dlg.glade.h:3
-#, fuzzy
 msgid "Ask before saving images"
-msgstr "Perguntar antes de gravar imagens"
+msgstr "Perguntar antes de guardar imagens"
 
 #: ../data/pref-dlg.glade.h:4
-#, fuzzy
 msgid "Automatically save rotated images"
-msgstr ""
-"Gravar automaticamente imagens rodadas ( Atualmente apenas o formato JPEG é "
-"suportado )"
+msgstr "Guardar automaticamente imagens rodadas"
 
 #: ../data/pref-dlg.glade.h:5
-#, fuzzy
 msgid "Fullscreen:"
-msgstr "Ecrâ Inteiro"
+msgstr "Ecrã Completo:"
 
 #: ../data/pref-dlg.glade.h:6
-#, fuzzy
 msgid "Make GPicView the default viewer for images"
-msgstr "Tornar o GPicview o visualizador padrão de imagens"
+msgstr "Tornar o GPicview o visualizador de imagens por omissão"
 
 #: ../data/pref-dlg.glade.h:7
 msgid "Normal:"
-msgstr ""
+msgstr "Normal:"
 
 #: ../data/pref-dlg.glade.h:9
-#, fuzzy
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
-"Mudar o valor da orientação EXIF enquanto é rodada e invertida apenas se a "
-"marca de orientação existir (apenas JPEG)"
+"Rodar ficheiro JPEG ao mudar o valor de orientação EXIF\n"
+"(apenas se existir orientação EXIF)"
 
 #~ msgid " Full Screen"
 #~ msgstr "Ecrã Inteiro"
-
 #~ msgid " * Some icons are taken from gimmage"
 #~ msgstr " * Alguns ícones retirados do gimmage"
-
 #~ msgid ""
 #~ "Lightweight image viewer\n"
 #~ "\n"
@@ -254,3 +264,4 @@ msgstr ""
 #~ "Visualizador leve de imagem\n"
 #~ "\n"
 #~ "Desenvolvido por Hon Jen Yee (PCMan)"
+

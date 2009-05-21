@@ -1,20 +1,21 @@
 # translation of pl.po to Polish
 # Copyright (C) 2009 THE GPicView'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the GPicView package.
-# Grzegorz Gibas <amigib@gmail.com>, 2007, 2008.
-# Piotr Sokół <piotr.sokol@10g.pl>, 2009.
 #
+# Grzegorz Gibas <amigib@gmail.com>, 2007, 2008, 2009.
+# Piotr Sokół <piotr.sokol@10g.pl>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: GPicView 0.1.11\n"
+"Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-18 23:21+0800\n"
-"PO-Revision-Date: 2009-02-26 16:05+0100\n"
-"Last-Translator: Piotr Sokół <piotr.sokol@10g.pl>\n"
+"PO-Revision-Date: 2009-05-19 19:22+0200\n"
+"Last-Translator: Grzegorz Gibas <amigib@gmail.com>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: ../src/gpicview.c:37
 msgid "[FILE]"
@@ -22,7 +23,7 @@ msgstr "[PLIK]"
 
 #: ../src/gpicview.c:39
 msgid "Print version information and exit"
-msgstr ""
+msgstr "Pokaż informacje o wersji i wyjdź"
 
 #: ../src/main-win.c:145 ../src/main-win.c:1283
 msgid "Image Viewer"
@@ -70,11 +71,11 @@ msgstr "Obróć w prawo"
 
 #: ../src/main-win.c:250 ../src/main-win.c:1307
 msgid "Flip Horizontal"
-msgstr ""
+msgstr "Odbij poziomo"
 
 #: ../src/main-win.c:251 ../src/main-win.c:1308
 msgid "Flip Vertical"
-msgstr ""
+msgstr "Odbij pionowo"
 
 #: ../src/main-win.c:255 ../src/main-win.c:1310
 msgid "Open File"
@@ -99,10 +100,9 @@ msgstr "Preferencje"
 
 #: ../src/main-win.c:262 ../src/main-win.c:1319
 msgid "Quit"
-msgstr ""
+msgstr "Zamknij"
 
 #: ../src/main-win.c:1179
-#, fuzzy
 msgid ""
 "The file name you selected already exists.\n"
 "Do you want to overwrite existing file?\n"
@@ -114,7 +114,7 @@ msgstr ""
 
 #: ../src/main-win.c:1220
 msgid "Writing this image format is not supported."
-msgstr ""
+msgstr "Zapisywanie do tego formatu nie jest wspierane."
 
 #: ../src/main-win.c:1254
 msgid ""
@@ -124,15 +124,15 @@ msgid ""
 msgstr ""
 "Usunąć bieżący plik?\n"
 "\n"
-"Uwaga: usuniętego pliku niebędzie można odzyskać."
+"Uwaga: usuniętego pliku nie będzie można odzyskać."
 
 #: ../src/main-win.c:1312
 msgid "Save As"
-msgstr "Zapisz jako..."
+msgstr "Zapisz jako"
 
 #: ../src/main-win.c:1381
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr " * korzysta z kodu przeglądarek obrazów EOG oraz GThumb"
+msgstr " * Korzysta z kodu przeglądarek obrazów EOG oraz GThumb"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1385
@@ -146,9 +146,8 @@ msgid "GPicView"
 msgstr "GPicView"
 
 #: ../src/main-win.c:1395
-#, fuzzy
 msgid "Copyright (C) 2007 - 2009"
-msgstr "Copyright (C) 2007"
+msgstr "Copyright (C) 2007 - 2009"
 
 #: ../src/main-win.c:1396
 msgid "Lightweight image viewer from LXDE project"
@@ -178,64 +177,59 @@ msgstr "Wszystkie pliki"
 
 #: ../src/file-dlgs.c:103
 msgid "JPEG Quality:"
-msgstr ""
+msgstr "Jakość JPEG:"
 
 #: ../src/file-dlgs.c:104
 msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
 msgstr ""
+"Niższa jakość to mniejsze objętościowo pliki,\n"
+"jednakże obraz zwykle jest gorszej jakości."
 
 #: ../src/file-dlgs.c:118
 msgid "PNG Compression Level:"
-msgstr ""
+msgstr "Poziom kompresji PNG:"
 
 #: ../src/file-dlgs.c:119
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
 msgstr ""
+"Wyższy poziom kompresji to mniejsze objętościowo pliki,\n"
+"jednakże wyższy poziom oznacza dłuższy czas kompresji."
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
-msgstr ""
+msgstr "<b>Kolory tła</b>"
 
 #: ../data/pref-dlg.glade.h:2
-#, fuzzy
 msgid "Ask before deleting images"
-msgstr "Wyświetlanie dialogu potwierdzenia przed zapisaniem obrazów"
+msgstr "Wyświetlanie dialogu potwierdzenia przed usunięciem obrazów"
 
 #: ../data/pref-dlg.glade.h:3
-#, fuzzy
 msgid "Ask before saving images"
 msgstr "Wyświetlanie dialogu potwierdzenia przed zapisaniem obrazów"
 
 #: ../data/pref-dlg.glade.h:4
-#, fuzzy
 msgid "Automatically save rotated images"
-msgstr "Automatyczne zapisywanie obróconych obrazów (tylko format JPEG)"
+msgstr "Automatyczne zapisywanie obróconych obrazów"
 
 #: ../data/pref-dlg.glade.h:5
-#, fuzzy
 msgid "Fullscreen:"
-msgstr "Pełny ekran"
+msgstr "Pełny ekran:"
 
 #: ../data/pref-dlg.glade.h:6
-#, fuzzy
 msgid "Make GPicView the default viewer for images"
-msgstr "Ustaw jako domyślną przeglądarkę obrazów"
+msgstr "Ustaw GPicView jako domyślną przeglądarkę obrazów"
 
 #: ../data/pref-dlg.glade.h:7
 msgid "Normal:"
-msgstr ""
+msgstr "Normalny:"
 
 #: ../data/pref-dlg.glade.h:9
-#, fuzzy
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
-msgstr ""
-"Zmiana wartości orientacji EXIF podczas obracania obrazów (tylko format JPEG)"
+msgstr "Obróć plik JPEG poprzez zmianę wartości orientacji EXIF (tylko jeśli tag orientacji EXIF istnieje)"
 
-#~ msgid " Full Screen"
-#~ msgstr "Pełny ekran"
