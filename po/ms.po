@@ -140,7 +140,7 @@ msgstr "kredit-penterjemah"
 
 #: ../src/main-win.c:1393
 msgid "GPicView"
-msgstr "罗森柄 Payne Samad Loh <sploh77@yahoo.com>\n"
+msgstr "罗森柄 Payne Samad Loh <sploh77@yahoo.com>"
 
 #: ../src/main-win.c:1395
 msgid "Copyright (C) 2007 - 2009"
