@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-18 23:21+0800\n"
-"PO-Revision-Date: 2009-05-19 13:49+0200\n"
+"PO-Revision-Date: 2009-05-21 16:24+0200\n"
 "Last-Translator: Vitaly Pashkov <admin@fluda.net>\n"
 "Language-Team: RUSSIAN <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr "[ФАЙЛ]"
 
 #: ../src/gpicview.c:39
 msgid "Print version information and exit"
-msgstr ""
+msgstr "Вывести информацию о версии и выйти"
 
 #: ../src/main-win.c:145 ../src/main-win.c:1283
 msgid "Image Viewer"
@@ -99,10 +99,9 @@ msgstr "Настройки"
 
 #: ../src/main-win.c:262 ../src/main-win.c:1319
 msgid "Quit"
-msgstr ""
+msgstr "Выход"
 
 #: ../src/main-win.c:1179
-#, fuzzy
 msgid ""
 "The file name you selected already exists.\n"
 "Do you want to overwrite existing file?\n"
@@ -138,21 +137,20 @@ msgstr " * Смотри исходный код просмотрщика EOG  и
 #: ../src/main-win.c:1385
 msgid "translator-credits"
 msgstr ""
-"перевод Kazm для PuppyRus Linux \n"
-"http://puppyrus.ru"
+"перевод Kazm для PuppyRus Linux http://puppyrus.ru\r\n"
+"Vitaly Pashkov <admin@fluda.net>\r\n"
 
 #: ../src/main-win.c:1393
 msgid "GPicView"
 msgstr "GPicView"
 
 #: ../src/main-win.c:1395
-#, fuzzy
 msgid "Copyright (C) 2007 - 2009"
-msgstr "Все права защищены (С) 2008"
+msgstr "Все права защищены (С) 2007 - 2009"
 
 #: ../src/main-win.c:1396
 msgid "Lightweight image viewer from LXDE project"
-msgstr "Изящный и легкий просмотрщик изображений из проекта LXDE"
+msgstr "Легкий просмотрщик изображений для проекта LXDE"
 
 #: ../src/pref.c:153
 msgid ""
@@ -162,8 +160,8 @@ msgid ""
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"GPicView станет просмотрщиком изображений по умолчанию для всех файлов, "
-"которые поддерживаются в вашей системе.\n"
+"GPicView станет просмотрщиком изображений по умолчанию для всех "
+"поддерживаемых файлов в вашей системе.\n"
 "(Это будет сделано через программу 'xdg-mime')\n"
 "\n"
 "<b>Вы действительно хотите сделать это?</b>"
@@ -178,35 +176,37 @@ msgstr "Все файлы"
 
 #: ../src/file-dlgs.c:103
 msgid "JPEG Quality:"
-msgstr ""
+msgstr "Качество JPEG:"
 
 #: ../src/file-dlgs.c:104
 msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
 msgstr ""
+"Меньший уровень качества приводит к меньшим размерам,\n"
+" но качество изображения будет хуже."
 
 #: ../src/file-dlgs.c:118
 msgid "PNG Compression Level:"
-msgstr ""
+msgstr "Уровень сжатия PNG:"
 
 #: ../src/file-dlgs.c:119
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
 msgstr ""
+"Больший уровень сжатия приводит к меньшим размерам,\n"
+"но требует больше времени на сжатие."
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
-msgstr ""
+msgstr "<b>Цвета фона</b>"
 
 #: ../data/pref-dlg.glade.h:2
-#, fuzzy
 msgid "Ask before deleting images"
-msgstr "Спросить перед сохранением изображений"
+msgstr "Спросить перед удалением изображений"
 
 #: ../data/pref-dlg.glade.h:3
-#, fuzzy
 msgid "Ask before saving images"
 msgstr "Спросить перед сохранением изображений"
 

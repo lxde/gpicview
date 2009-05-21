@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: gpicview 0.1.10\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-18 23:21+0800\n"
-"PO-Revision-Date: 2009-05-17 19:56+0200\n"
+"PO-Revision-Date: 2009-05-21 17:14+0200\n"
 "Last-Translator: Matej <paxmanpwnz@gmail.com>\n"
 "Language-Team: Slovenian <paxmanpwnz@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -24,9 +24,8 @@ msgid "[FILE]"
 msgstr "[DATOTEKA]"
 
 #: ../src/gpicview.c:39
-#, fuzzy
 msgid "Print version information and exit"
-msgstr "Izpiši informacije o različici in zaključi"
+msgstr "Izpiši informacije o različici in končaj"
 
 #: ../src/main-win.c:145 ../src/main-win.c:1283
 msgid "Image Viewer"
@@ -73,12 +72,10 @@ msgid "Rotate Clockwise"
 msgstr "Zasuči v smeri urinega kazalca"
 
 #: ../src/main-win.c:250 ../src/main-win.c:1307
-#, fuzzy
 msgid "Flip Horizontal"
 msgstr "Preslikaj vodoravno"
 
 #: ../src/main-win.c:251 ../src/main-win.c:1308
-#, fuzzy
 msgid "Flip Vertical"
 msgstr "Preslikaj navpično"
 
@@ -108,14 +105,14 @@ msgid "Quit"
 msgstr "Izhod"
 
 #: ../src/main-win.c:1179
-#, fuzzy
 msgid ""
 "The file name you selected already exists.\n"
 "Do you want to overwrite existing file?\n"
 "(Warning: The quality of original image might be lost)"
 msgstr ""
-"Datoteka z izbranim imenom že obstaja. Ali res želite prepisati obstoječo "
-"datoteko?(Opozorilo: kvaliteta izvirne slike se lahko izgubi)"
+"Datoteka z izbranim imenom že obstaja.\n"
+"Ali res želite prepisati obstoječo datoteko?\n"
+"(Opozorilo: kvaliteta izvirne slike se lahko izgubi)"
 
 #: ../src/main-win.c:1220
 msgid "Writing this image format is not supported."
@@ -128,7 +125,7 @@ msgid ""
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
 "Ali res želite izbrisati trenutno datoteko?\n"
-" \n"
+"\n"
 " Opozorilo: izbrisane datoteke ni mogoče obnoviti."
 
 #: ../src/main-win.c:1312
@@ -185,61 +182,53 @@ msgstr "JPEG kvaliteta:"
 msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
-msgstr ""
+msgstr "Nižja vrednost pomeni manjšo velikost, a slabšo kvaliteto slike."
 
 #: ../src/file-dlgs.c:118
-#, fuzzy
 msgid "PNG Compression Level:"
-msgstr "Nivo stiskanje PNG:"
+msgstr "Nivo stiskanja PNG:"
 
 #: ../src/file-dlgs.c:119
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
-msgstr ""
+msgstr "Višji nivoji pomenijo manjše velikosti slik, a daljše stiskanje."
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
 msgstr "<b>Barve ozadja</b>"
 
 #: ../data/pref-dlg.glade.h:2
-#, fuzzy
 msgid "Ask before deleting images"
 msgstr "Vprašaj pred brisanjem slik"
 
 #: ../data/pref-dlg.glade.h:3
-#, fuzzy
 msgid "Ask before saving images"
 msgstr "Vprašaj pred shranjevanjem slik"
 
 #: ../data/pref-dlg.glade.h:4
-#, fuzzy
 msgid "Automatically save rotated images"
 msgstr "Samodejno shrani zasukane slike"
 
 #: ../data/pref-dlg.glade.h:5
-#, fuzzy
 msgid "Fullscreen:"
 msgstr "Celozaslonski način"
 
 #: ../data/pref-dlg.glade.h:6
-#, fuzzy
 msgid "Make GPicView the default viewer for images"
 msgstr "Nastavi GPicView za privzeti pregledovalnik slik"
 
 #: ../data/pref-dlg.glade.h:7
-#, fuzzy
 msgid "Normal:"
 msgstr "Navadno:"
 
 #: ../data/pref-dlg.glade.h:9
-#, fuzzy
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
-"Zasuči JPEG datoteko s spremembo EXIF orientacijske značke (samo če le-ta "
-"obstaja)"
+"Zasuči JPEG datoteko s spremembo orientacijske značke v glavi EXIF (samo če "
+"le-ta obstaja)"
 
 #~ msgid " Full Screen"
 #~ msgstr "Celozaslonski način"
