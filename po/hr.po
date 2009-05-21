@@ -1,82 +1,101 @@
+# Croatian translation for GPicView.
+# Copyright (C) 2009 Hong Jen Yee (PCMan)
+# This file is distributed under the same license as the GPicView package.
+# Frank Bolkovich Boljsa <asjlob@vip.hr>, 2009.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: gpicview_hr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-18 23:21+0800\n"
-"PO-Revision-Date: \n"
-"Last-Translator: Boljsa <asjlob AT vip.hr>\n"
-"Language-Team:  <asjlob AT vip.hr>\n"
+"PO-Revision-Date: 2009-05-21 20:47+0100\n"
+"Last-Translator: \n"
+"Language-Team: Croatian <asjlob AT vip.hr>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Croatian\n"
 "X-Poedit-Country: CROATIA\n"
 
 #: ../src/gpicview.c:37
 msgid "[FILE]"
-msgstr "[DATOTEKA]"
+msgstr "[FILE]"
 
 #: ../src/gpicview.c:39
 msgid "Print version information and exit"
-msgstr ""
+msgstr "Ispi≈°i informacije o verziji i izaƒëi"
 
-#: ../src/main-win.c:145 ../src/main-win.c:1283
+#: ../src/main-win.c:145
+#: ../src/main-win.c:1283
 msgid "Image Viewer"
 msgstr "Preglednik Slika"
 
-#: ../src/main-win.c:221 ../src/main-win.c:1295
+#: ../src/main-win.c:221
+#: ../src/main-win.c:1295
 msgid "Previous"
 msgstr "Prethodno"
 
-#: ../src/main-win.c:222 ../src/main-win.c:1296
+#: ../src/main-win.c:222
+#: ../src/main-win.c:1296
 msgid "Next"
-msgstr "SljedeÊe"
+msgstr "Sljedeƒáe"
 
-#: ../src/main-win.c:226 ../src/main-win.c:1298
+#: ../src/main-win.c:226
+#: ../src/main-win.c:1298
 msgid "Zoom Out"
 msgstr "Smanji Zumiranje"
 
-#: ../src/main-win.c:227 ../src/main-win.c:1299
+#: ../src/main-win.c:227
+#: ../src/main-win.c:1299
 msgid "Zoom In"
-msgstr "PoveÊaj Zumiranje"
+msgstr "Poveƒáaj Zumiranje"
 
 #. percent = gtk_entry_new();    // show scale (in percentage)
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
 #. gtk_widget_set_size_request( percent, 45, -1 );
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
-#: ../src/main-win.c:234 ../src/main-win.c:1300
+#: ../src/main-win.c:234
+#: ../src/main-win.c:1300
 msgid "Fit Image To Window Size"
-msgstr "Podesi Sliku Na VeliËinu Prozora"
+msgstr "Podesi Sliku Na Veliƒçinu Prozora"
 
-#: ../src/main-win.c:236 ../src/main-win.c:1301
+#: ../src/main-win.c:236
+#: ../src/main-win.c:1301
 msgid "Original Size"
-msgstr "Orginalna VeliËina"
+msgstr "Orginalna Veliƒçina"
 
-#: ../src/main-win.c:243 ../src/main-win.c:1303
+#: ../src/main-win.c:243
+#: ../src/main-win.c:1303
 msgid "Full Screen"
 msgstr "Cijeli Zaslon"
 
-#: ../src/main-win.c:247 ../src/main-win.c:1305
+#: ../src/main-win.c:247
+#: ../src/main-win.c:1305
 msgid "Rotate Counterclockwise"
 msgstr "Rotiraj Suprotno Smjeru Kazaljke na Satu"
 
-#: ../src/main-win.c:248 ../src/main-win.c:1306
+#: ../src/main-win.c:248
+#: ../src/main-win.c:1306
 msgid "Rotate Clockwise"
 msgstr "Rotiraj u Smjeru Kazaljke na Satu"
 
-#: ../src/main-win.c:250 ../src/main-win.c:1307
+#: ../src/main-win.c:250
+#: ../src/main-win.c:1307
 msgid "Flip Horizontal"
-msgstr ""
+msgstr "Okreni Horizontalno"
 
-#: ../src/main-win.c:251 ../src/main-win.c:1308
+#: ../src/main-win.c:251
+#: ../src/main-win.c:1308
 msgid "Flip Vertical"
-msgstr ""
+msgstr "Okreni Vertikalno"
 
-#: ../src/main-win.c:255 ../src/main-win.c:1310
+#: ../src/main-win.c:255
+#: ../src/main-win.c:1310
 msgid "Open File"
 msgstr "Otvori Datoteku"
 
-#: ../src/main-win.c:256 ../src/main-win.c:1311
+#: ../src/main-win.c:256
+#: ../src/main-win.c:1311
 msgid "Save File"
 msgstr "Spremi Datoteku"
 
@@ -85,32 +104,35 @@ msgid "Save File As"
 msgstr "Spremi Datoteku Kao"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
-#: ../src/main-win.c:258 ../src/main-win.c:1314
+#: ../src/main-win.c:258
+#: ../src/main-win.c:1314
 msgid "Delete File"
-msgstr "Obriπi Datoteku"
+msgstr "Obri≈°i Datoteku"
 
-#: ../src/main-win.c:261 ../src/main-win.c:1316 ../data/pref-dlg.glade.h:8
+#: ../src/main-win.c:261
+#: ../src/main-win.c:1316
+#: ../data/pref-dlg.glade.h:8
 msgid "Preferences"
 msgstr "Postavke"
 
-#: ../src/main-win.c:262 ../src/main-win.c:1319
+#: ../src/main-win.c:262
+#: ../src/main-win.c:1319
 msgid "Quit"
-msgstr ""
+msgstr "Izaƒëi"
 
 #: ../src/main-win.c:1179
-#, fuzzy
 msgid ""
 "The file name you selected already exists.\n"
 "Do you want to overwrite existing file?\n"
 "(Warning: The quality of original image might be lost)"
 msgstr ""
-"Ime datoteke koje ste odabrali veÊ postoji.\n"
-"Æelite li prepisati preko postojeÊe datoteke?\n"
-"(Upozorenje: Kvaliteta orginalne slike moæe biti izgubljena)"
+"Ime datoteke koje ste odabrali veƒá postoji.\n"
+"≈Ωelite li prepisati preko postojeƒáe datoteke?\n"
+"(Upozorenje: Kvaliteta orginalne slike mo≈æe biti izgubljena)"
 
 #: ../src/main-win.c:1220
 msgid "Writing this image format is not supported."
-msgstr ""
+msgstr "Spremanje u ovaj slikovni format nije podr≈æano."
 
 #: ../src/main-win.c:1254
 msgid ""
@@ -118,9 +140,9 @@ msgid ""
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
-"Jeste li sigurni da æelite obrisati trenutnu datoteku?\n"
+"Jeste li sigurni da ≈æelite obrisati trenutnu datoteku?\n"
 "\n"
-"Upozorenje: Jednom obrisana, datoteka se ne moæe vratiti."
+"Upozorenje: Jednom obrisana, datoteka se ne mo≈æe vratiti."
 
 #: ../src/main-win.c:1312
 msgid "Save As"
@@ -140,9 +162,8 @@ msgid "GPicView"
 msgstr "GPicView"
 
 #: ../src/main-win.c:1395
-#, fuzzy
 msgid "Copyright (C) 2007 - 2009"
-msgstr "Copyright (C) 2007"
+msgstr "Copyright (C) 2007 - 2009"
 
 #: ../src/main-win.c:1396
 msgid "Lightweight image viewer from LXDE project"
@@ -150,21 +171,19 @@ msgstr "Lagani preglednik slika iz LXDE projekta"
 
 #: ../src/pref.c:153
 msgid ""
-"GPicView will become the default viewer for all supported image files on "
-"your system.\n"
+"GPicView will become the default viewer for all supported image files on your system.\n"
 "(This will be done through 'xdg-mime' program)\n"
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"GPicView Êe postati standardni preglednik za sve podræane slikovne datoteke "
-"na vaπem sustavu.\n"
-"(Ovo Êe biti uËinjeno kroz 'xdg-mime' program)\n"
+"GPicView ƒáe postati standardni preglednik za sve podr≈æane slikovne datoteke na va≈°em sustavu.\n"
+"(Ovo ƒáe biti uƒçinjeno kroz 'xdg-mime' program)\n"
 "\n"
-"<b>Jeste li sigurno da æelite ovo uËiniti?</b>"
+"<b>Jeste li sigurno da ≈æelite ovo uƒçiniti?</b>"
 
 #: ../src/file-dlgs.c:62
 msgid "All Supported Images"
-msgstr "Sve Podræane Slike"
+msgstr "Sve Podr≈æane Slike"
 
 #: ../src/file-dlgs.c:67
 msgid "All Files"
@@ -172,65 +191,64 @@ msgstr "Sve Datoteke"
 
 #: ../src/file-dlgs.c:103
 msgid "JPEG Quality:"
-msgstr ""
+msgstr "JPEG kvaliteta:"
 
 #: ../src/file-dlgs.c:104
 msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
 msgstr ""
+"Ni≈æe vrijednosti kvalitete donose manju veliƒçinu datoteka,\n"
+"ali kvaliteta slike ƒáe biti manja."
 
 #: ../src/file-dlgs.c:118
 msgid "PNG Compression Level:"
-msgstr ""
+msgstr "PNG Nivo Kompresije:"
 
 #: ../src/file-dlgs.c:119
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
 msgstr ""
+"Veƒái kompresijski nivoi donose manje veliƒçine datoteka,\n"
+"ali treba vi≈°e vremena za kompresiju."
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
-msgstr ""
+msgstr "<b>Pozadinske boje</b>"
 
 #: ../data/pref-dlg.glade.h:2
-#, fuzzy
 msgid "Ask before deleting images"
-msgstr "Pitaj prije spremanja  datoteka"
+msgstr "Pitaj prije brisanja datoteka"
 
 #: ../data/pref-dlg.glade.h:3
-#, fuzzy
 msgid "Ask before saving images"
-msgstr "Pitaj prije spremanja  datoteka"
+msgstr "Pitaj prije spremanja datoteka"
 
 #: ../data/pref-dlg.glade.h:4
-#, fuzzy
 msgid "Automatically save rotated images"
-msgstr "Automatski spremi rotirane slike ( Trenutno je podræan samo JPEG )"
+msgstr "Automatski spremi rotirane slike"
 
 #: ../data/pref-dlg.glade.h:5
-#, fuzzy
 msgid "Fullscreen:"
-msgstr "Cijeli Zaslon"
+msgstr "Cijeli Zaslon:"
 
 #: ../data/pref-dlg.glade.h:6
-#, fuzzy
 msgid "Make GPicView the default viewer for images"
 msgstr "Postavi GPicView standardnim preglednikom slika"
 
 #: ../data/pref-dlg.glade.h:7
 msgid "Normal:"
-msgstr ""
+msgstr "Normalno:"
 
 #: ../data/pref-dlg.glade.h:9
-#, fuzzy
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
-"Promijeni EXIF orijentacijsku vrijednost za vrijeme rotiranja i okretanja "
-"samo ako postoji EXIF orijentacijska oznaka ( samo JPEG )"
+"Rotiraj JPEG datoteku mijenjajuƒái EXIF orijentacijsku vrijednost\n"
+"(samo ako postoji EXIF orijentacijska oznaka)"
 
 #~ msgid " Full Screen"
 #~ msgstr " Cijeli Zaslon"
+
