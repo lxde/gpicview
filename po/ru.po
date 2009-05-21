@@ -137,8 +137,8 @@ msgstr " * Смотри исходный код просмотрщика EOG  и
 #: ../src/main-win.c:1385
 msgid "translator-credits"
 msgstr ""
-"перевод Kazm для PuppyRus Linux http://puppyrus.ru\r\n"
-"Vitaly Pashkov <admin@fluda.net>\r\n"
+"перевод Kazm для PuppyRus Linux http://puppyrus.ru\n"
+"Vitaly Pashkov <admin@fluda.net>"
 
 #: ../src/main-win.c:1393
 msgid "GPicView"
