@@ -126,8 +126,8 @@ msgid ""
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
-"¿Seguro que desea eliminar el archivo actual?\r\n"
-"\r\n"
+"¿Seguro que desea eliminar el archivo actual?\n"
+"\n"
 "Atención: Una vez eliminado, el archivo no podrá recuperarse."
 
 #: ../src/main-win.c:1312
@@ -142,9 +142,9 @@ msgstr "* Consulte el código fuente del visor de imágenes EOG y del GThumb"
 #: ../src/main-win.c:1385
 msgid "translator-credits"
 msgstr ""
-"Festor Wailon Dacoba, 2007\r\n"
-"Julio Napurí Carlos <julionc@gmail.com>, 2008\r\n"
-"Guillermo Iguarán <tronador@cuteam.org>, 2009\r\n"
+"Festor Wailon Dacoba, 2007\n"
+"Julio Napurí Carlos <julionc@gmail.com>, 2008\n"
+"Guillermo Iguarán <tronador@cuteam.org>, 2009\n"
 "Hugo Florentino <sysadmin@cips.cu>, 2009"
 
 #: ../src/main-win.c:1393

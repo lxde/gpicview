@@ -232,7 +232,7 @@ msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
-"Поворачивать JPEG файл изменяя значение ориентации EXIF\r\n"
+"Поворачивать JPEG файл изменяя значение ориентации EXIF\n"
 "(только если параметр ориентации EXIF существует)"
 
 #~ msgid " Full Screen"
