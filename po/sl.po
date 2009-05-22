@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: gpicview 0.1.10\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-18 23:21+0800\n"
-"PO-Revision-Date: 2009-05-21 17:14+0200\n"
+"PO-Revision-Date: 2009-05-22 13:34+0200\n"
 "Last-Translator: Matej <paxmanpwnz@gmail.com>\n"
 "Language-Team: Slovenian <paxmanpwnz@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,7 @@ msgstr "[DATOTEKA]"
 
 #: ../src/gpicview.c:39
 msgid "Print version information and exit"
-msgstr "Izpiši informacije o različici in končaj"
+msgstr "Izpiši informacijo o različici in končaj"
 
 #: ../src/main-win.c:145 ../src/main-win.c:1283
 msgid "Image Viewer"
@@ -61,7 +61,7 @@ msgstr "Izvirna velikost"
 
 #: ../src/main-win.c:243 ../src/main-win.c:1303
 msgid "Full Screen"
-msgstr "Celozaslonski način"
+msgstr "Cel zaslon"
 
 #: ../src/main-win.c:247 ../src/main-win.c:1305
 msgid "Rotate Counterclockwise"
@@ -212,7 +212,7 @@ msgstr "Samodejno shrani zasukane slike"
 
 #: ../data/pref-dlg.glade.h:5
 msgid "Fullscreen:"
-msgstr "Celozaslonski način"
+msgstr "Cel zaslon"
 
 #: ../data/pref-dlg.glade.h:6
 msgid "Make GPicView the default viewer for images"
