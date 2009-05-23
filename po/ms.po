@@ -136,7 +136,7 @@ msgstr " * Rujuk dari sumber kod penonton imej EOG dan GThumb"
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1385
 msgid "translator-credits"
-msgstr "罗森炳 Payne Samad Loh <sploh77@yahoo.com>\n"
+msgstr "罗森炳 Payne Samad Loh <sploh77@yahoo.com>"
 
 #: ../src/main-win.c:1393
 msgid "GPicView"
