@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-18 23:21+0800\n"
-"PO-Revision-Date: 2009-05-23 14:28+0200\n"
+"PO-Revision-Date: 2009-05-24 01:19+0200\n"
 "Last-Translator: Payne Samad Loh <sploh77@yahoo.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr "Informasi versi cetak dan keluar"
 
 #: ../src/main-win.c:145 ../src/main-win.c:1283
 msgid "Image Viewer"
-msgstr "Penonton Imej"
+msgstr "Paparan Imej"
 
 #: ../src/main-win.c:221 ../src/main-win.c:1295
 msgid "Previous"
@@ -38,11 +38,11 @@ msgstr "Selepas"
 
 #: ../src/main-win.c:226 ../src/main-win.c:1298
 msgid "Zoom Out"
-msgstr "Zum Keluar"
+msgstr "Sorotan Keluar"
 
 #: ../src/main-win.c:227 ../src/main-win.c:1299
 msgid "Zoom In"
-msgstr "Zum Masuk"
+msgstr "Sorotan Masuk"
 
 #. percent = gtk_entry_new();    // show scale (in percentage)
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
@@ -95,11 +95,11 @@ msgstr "Padam Fail"
 
 #: ../src/main-win.c:261 ../src/main-win.c:1316 ../data/pref-dlg.glade.h:8
 msgid "Preferences"
-msgstr "Kesukaan"
+msgstr "Kegemaran"
 
 #: ../src/main-win.c:262 ../src/main-win.c:1319
 msgid "Quit"
-msgstr "Berhenti"
+msgstr "Keluar"
 
 #: ../src/main-win.c:1179
 msgid ""
