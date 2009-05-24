@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-18 23:21+0800\n"
-"PO-Revision-Date: 2009-05-24 01:19+0200\n"
+"PO-Revision-Date: 2009-05-24 05:17+0200\n"
 "Last-Translator: Payne Samad Loh <sploh77@yahoo.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr "Informasi versi cetak dan keluar"
 
 #: ../src/main-win.c:145 ../src/main-win.c:1283
 msgid "Image Viewer"
-msgstr "Paparan Imej"
+msgstr "Pemapar Imej"
 
 #: ../src/main-win.c:221 ../src/main-win.c:1295
 msgid "Previous"
@@ -131,16 +131,18 @@ msgstr "Simpan Sebagai"
 
 #: ../src/main-win.c:1381
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr " * Rujuk dari sumber kod penonton imej EOG dan GThumb"
+msgstr " * Rujuk dari sumber kod pemapar imej EOG dan GThumb"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1385
 msgid "translator-credits"
-msgstr "罗森炳 Payne Samad Loh <sploh77@yahoo.com>"
+msgstr ""
+"罗森炳 Payne Samad Loh <sploh77@yahoo.com>\n"
+"Phyz <phyz2010@gmail.com>"
 
 #: ../src/main-win.c:1393
 msgid "GPicView"
-msgstr "Penonton GPicView"
+msgstr "GPicView"
 
 #: ../src/main-win.c:1395
 msgid "Copyright (C) 2007 - 2009"
@@ -148,7 +150,7 @@ msgstr "Hakcipta Terpelihara (C) 2007 - 2009"
 
 #: ../src/main-win.c:1396
 msgid "Lightweight image viewer from LXDE project"
-msgstr "Penonton imej yang ringan dari projek LXDE"
+msgstr "Pemapar imej ringan dari projek LXDE"
 
 #: ../src/pref.c:153
 msgid ""
@@ -158,7 +160,7 @@ msgid ""
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"GPicView akan menjadi penonton default untuk semua fail imej yang disokong  "
+"GPicView akan menjadi pemapar default untuk semua fail imej yang disokong  "
 "disistem anda.\n"
 "(Ini akan disiapkan melalui program 'xdg-mime'\n"
 "\n"
@@ -219,7 +221,7 @@ msgstr "SkrinPenuh:"
 # ingkar?
 #: ../data/pref-dlg.glade.h:6
 msgid "Make GPicView the default viewer for images"
-msgstr "Jadikan GPicView sebagai penonton default untuk imej"
+msgstr "Jadikan GPicView sebagai pemapar default untuk imej"
 
 #: ../data/pref-dlg.glade.h:7
 msgid "Normal:"
