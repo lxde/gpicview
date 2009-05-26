@@ -189,7 +189,7 @@ msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
 msgstr ""
-"Los valores más bajos producen archivos de menor tamaño,\r\n"
+"Los valores más bajos producen archivos de menor tamaño,\n"
 "pero la imagen tendrá una calidad más pobre."
 
 #: ../src/file-dlgs.c:118
@@ -201,7 +201,7 @@ msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
 msgstr ""
-"Los niveles más altos producen archivos de menor tamaño,\r\n"
+"Los niveles más altos producen archivos de menor tamaño,\n"
 "pero la compresión toma más tiempo."
 
 #: ../data/pref-dlg.glade.h:1
