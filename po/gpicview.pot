@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-18 23:21+0800\n"
+"POT-Creation-Date: 2009-05-26 08:46-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,23 +24,23 @@ msgstr ""
 msgid "Print version information and exit"
 msgstr ""
 
-#: ../src/main-win.c:145 ../src/main-win.c:1283
+#: ../src/main-win.c:145 ../src/main-win.c:1293
 msgid "Image Viewer"
 msgstr ""
 
-#: ../src/main-win.c:221 ../src/main-win.c:1295
+#: ../src/main-win.c:221 ../src/main-win.c:1305
 msgid "Previous"
 msgstr ""
 
-#: ../src/main-win.c:222 ../src/main-win.c:1296
+#: ../src/main-win.c:222 ../src/main-win.c:1306
 msgid "Next"
 msgstr ""
 
-#: ../src/main-win.c:226 ../src/main-win.c:1298
+#: ../src/main-win.c:226 ../src/main-win.c:1308
 msgid "Zoom Out"
 msgstr ""
 
-#: ../src/main-win.c:227 ../src/main-win.c:1299
+#: ../src/main-win.c:227 ../src/main-win.c:1309
 msgid "Zoom In"
 msgstr ""
 
@@ -48,39 +48,39 @@ msgstr ""
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
 #. gtk_widget_set_size_request( percent, 45, -1 );
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
-#: ../src/main-win.c:234 ../src/main-win.c:1300
+#: ../src/main-win.c:234 ../src/main-win.c:1310
 msgid "Fit Image To Window Size"
 msgstr ""
 
-#: ../src/main-win.c:236 ../src/main-win.c:1301
+#: ../src/main-win.c:236 ../src/main-win.c:1311
 msgid "Original Size"
 msgstr ""
 
-#: ../src/main-win.c:243 ../src/main-win.c:1303
+#: ../src/main-win.c:243 ../src/main-win.c:1313
 msgid "Full Screen"
 msgstr ""
 
-#: ../src/main-win.c:247 ../src/main-win.c:1305
+#: ../src/main-win.c:247 ../src/main-win.c:1315
 msgid "Rotate Counterclockwise"
 msgstr ""
 
-#: ../src/main-win.c:248 ../src/main-win.c:1306
+#: ../src/main-win.c:248 ../src/main-win.c:1316
 msgid "Rotate Clockwise"
 msgstr ""
 
-#: ../src/main-win.c:250 ../src/main-win.c:1307
+#: ../src/main-win.c:250 ../src/main-win.c:1317
 msgid "Flip Horizontal"
 msgstr ""
 
-#: ../src/main-win.c:251 ../src/main-win.c:1308
+#: ../src/main-win.c:251 ../src/main-win.c:1318
 msgid "Flip Vertical"
 msgstr ""
 
-#: ../src/main-win.c:255 ../src/main-win.c:1310
+#: ../src/main-win.c:255 ../src/main-win.c:1320
 msgid "Open File"
 msgstr ""
 
-#: ../src/main-win.c:256 ../src/main-win.c:1311
+#: ../src/main-win.c:256 ../src/main-win.c:1321
 msgid "Save File"
 msgstr ""
 
@@ -89,62 +89,62 @@ msgid "Save File As"
 msgstr ""
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
-#: ../src/main-win.c:258 ../src/main-win.c:1314
+#: ../src/main-win.c:258 ../src/main-win.c:1324
 msgid "Delete File"
 msgstr ""
 
-#: ../src/main-win.c:261 ../src/main-win.c:1316 ../data/pref-dlg.glade.h:8
+#: ../src/main-win.c:261 ../src/main-win.c:1326 ../data/pref-dlg.glade.h:8
 msgid "Preferences"
 msgstr ""
 
-#: ../src/main-win.c:262 ../src/main-win.c:1319
+#: ../src/main-win.c:262 ../src/main-win.c:1329
 msgid "Quit"
 msgstr ""
 
-#: ../src/main-win.c:1179
+#: ../src/main-win.c:1184
 msgid ""
 "The file name you selected already exists.\n"
 "Do you want to overwrite existing file?\n"
 "(Warning: The quality of original image might be lost)"
 msgstr ""
 
-#: ../src/main-win.c:1220
+#: ../src/main-win.c:1225
 msgid "Writing this image format is not supported."
 msgstr ""
 
-#: ../src/main-win.c:1254
+#: ../src/main-win.c:1262
 msgid ""
 "Are you sure you want to delete current file?\n"
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
 
-#: ../src/main-win.c:1312
+#: ../src/main-win.c:1322
 msgid "Save As"
 msgstr ""
 
-#: ../src/main-win.c:1381
+#: ../src/main-win.c:1391
 msgid " * Refer to source code of EOG image viewer and GThumb"
 msgstr ""
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../src/main-win.c:1385
+#: ../src/main-win.c:1395
 msgid "translator-credits"
 msgstr ""
 
-#: ../src/main-win.c:1393
+#: ../src/main-win.c:1403
 msgid "GPicView"
 msgstr ""
 
-#: ../src/main-win.c:1395
+#: ../src/main-win.c:1405
 msgid "Copyright (C) 2007 - 2009"
 msgstr ""
 
-#: ../src/main-win.c:1396
+#: ../src/main-win.c:1406
 msgid "Lightweight image viewer from LXDE project"
 msgstr ""
 
-#: ../src/pref.c:153
+#: ../src/pref.c:152
 msgid ""
 "GPicView will become the default viewer for all supported image files on "
 "your system.\n"
