@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gpicview\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-18 23:21+0800\n"
-"PO-Revision-Date: 2009-05-28 17:58+0100\n"
+"PO-Revision-Date: 2009-05-28 19:03+0100\n"
 "Last-Translator: Zsolt Peter Basak <shiki@biomernok.hu>\n"
 "Language-Team: Hungarian <debian-l10n-hungarian@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -58,7 +58,7 @@ msgstr "Nagyítás"
 #: ../src/main-win.c:234
 #: ../src/main-win.c:1300
 msgid "Fit Image To Window Size"
-msgstr "Az ablak méretéhez"
+msgstr "Az ablak méretéhez igazítás"
 
 #: ../src/main-win.c:236
 #: ../src/main-win.c:1301
@@ -119,7 +119,7 @@ msgstr "Beállítások"
 #: ../src/main-win.c:262
 #: ../src/main-win.c:1319
 msgid "Quit"
-msgstr "Kilép"
+msgstr "Kilépés"
 
 #: ../src/main-win.c:1179
 msgid ""
@@ -156,7 +156,7 @@ msgstr " * Lásd az EOG és GThumb képmegjelenítő forráskódját"
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1385
 msgid "translator-credits"
-msgstr "SZERVÁC Attila"
+msgstr "SZERVÁC Attila ; Basák Péter Zsolt"
 
 #: ../src/main-win.c:1393
 msgid "GPicView"
