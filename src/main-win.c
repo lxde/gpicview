@@ -1050,6 +1050,10 @@ gboolean on_key_press_event(GtkWidget* widget, GdkEventKey * key)
         case GDK_S:
             on_save( NULL, mw );
             break;
+        case GDK_a:
+        case GDK_A:
+            on_save_as( NULL, mw );
+            break;
         case GDK_l:
         case GDK_L:
             on_rotate_counterclockwise( NULL, mw );
