@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: gpicview\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-18 23:21+0800\n"
-"PO-Revision-Date: 2009-05-23 20:35+0200\n"
+"PO-Revision-Date: 2009-05-31 16:04+0200\n"
 "Last-Translator: Hugo Florentino <sysadmin@cips.cu>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -127,7 +127,7 @@ msgid ""
 msgstr ""
 "¿Seguro que desea eliminar el archivo actual?\n"
 "\n"
-"Atención: Una vez eliminado, el archivo no podrá recuperarse."
+"Advertencia: Una vez eliminado, el archivo no podrá recuperarse."
 
 #: ../src/main-win.c:1312
 msgid "Save As"
@@ -135,7 +135,7 @@ msgstr "Guardar como"
 
 #: ../src/main-win.c:1381
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr "* Consulte el código fuente del visor de imágenes EOG y del GThumb"
+msgstr " * Consulte el código fuente del visor de imágenes EOG y del GThumb"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1385
@@ -237,8 +237,8 @@ msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
-"Rotar imagen JPEG cambiando el valor de orientación EXIF (solo si tal "
-"etiqueta existe)"
+"Rotar imagen JPEG cambiando el valor de orientación EXIF\n"
+"(solo si tal etiqueta existe)"
 
 #~ msgid " Full Screen"
 #~ msgstr " Pantalla completa"
