@@ -321,7 +321,7 @@ gboolean main_win_open( MainWin* mw, const char* file_path, ZoomMode zoom )
     GError* err = NULL;
     GdkPixbufFormat* info;
     info = gdk_pixbuf_get_file_info( file_path, NULL, NULL );
-    char* type = gdk_pixbuf_format_get_name( info );
+    char* type = ((info != NULL) ? gdk_pixbuf_format_get_name(info) : "");
 
     main_win_close( mw );
 

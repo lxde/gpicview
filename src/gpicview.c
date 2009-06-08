@@ -73,7 +73,10 @@ int main(int argc, char *argv[])
 
     load_preferences();
 
+    /* Allocate and show the window.
+     * We must show the window now in case the file open needs to put up an error dialog. */
     win = (MainWin*)main_win_new();
+    gtk_widget_show( GTK_WIDGET(win) );
 
     if ( pref.open_maximized )
         gtk_window_maximize( (GtkWindow*)win );
@@ -90,8 +93,6 @@ int main(int argc, char *argv[])
         else
             main_win_open( win, files[0], ZOOM_NONE );
     }
-
-    gtk_widget_show( GTK_WIDGET(win) );
 
     gtk_main();
 

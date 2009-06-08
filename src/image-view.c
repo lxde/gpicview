@@ -424,10 +424,13 @@ void paint( ImageView* iv, GdkRectangle* invalid_rect, GdkInterpType type )
         //g_debug("orig src: x=%d, y=%d, w=%d, h=%d",
         //        src_x, src_y, src_w, src_h );
 
-        src_pix = gdk_pixbuf_new_subpixbuf( iv->pix, src_x, src_y,  src_w, src_h );
-        scaled_pix = gdk_pixbuf_scale_simple( src_pix, rect.width, rect.height, type );
-        g_object_unref( src_pix );
-        src_pix = scaled_pix;
+        if ((src_w > 0) && (src_h > 0))
+        {
+            src_pix = gdk_pixbuf_new_subpixbuf( iv->pix, src_x, src_y,  src_w, src_h );
+            scaled_pix = gdk_pixbuf_scale_simple( src_pix, rect.width, rect.height, type );
+            g_object_unref( src_pix );
+            src_pix = scaled_pix;
+        }
 
         src_x = 0;
         src_y = 0;
