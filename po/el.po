@@ -1,55 +1,54 @@
+# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gpicview 0.2.0\n"
+"Project-Id-Version: gpicview\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-26 08:46-0400\n"
-"PO-Revision-Date: 2009-06-28 17:06+0100\n"
-"Last-Translator: Matej Gačnik <paxmanpwnz@gmail.com>\n"
-"Language-Team: Slovenian <paxmanpwnz@gmail.com>\n"
+"PO-Revision-Date: 2009-06-29 00:32+0200\n"
+"Last-Translator: George Vasilakos <forfolias@gmail.com>\n"
+"Language-Team: Greek <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
-"X-Generator: Pootle 1.1.0\n"
-"X-Poedit-Language: Slovenian\n"
-"X-Poedit-Country: SLOVENIA\n"
+"X-Poedit-Language: Greek\n"
+"X-Poedit-Country: GREECE\n"
 
 #: ../src/gpicview.c:37
 msgid "[FILE]"
-msgstr "[DATOTEKA]"
+msgstr "[ΑΡΧΕΙΟ]"
 
 #: ../src/gpicview.c:39
 msgid "Print version information and exit"
-msgstr "Izpiši informacijo o različici in končaj"
+msgstr "Εκτύπωση πληροφοριών έκδοσης και έξοδος "
 
 #: ../src/main-win.c:145
 #: ../src/main-win.c:1293
 msgid "Image Viewer"
-msgstr "Pregledovalnik slik"
+msgstr "Προβολή εικόνων"
 
 #: ../src/main-win.c:221
 #: ../src/main-win.c:1305
 msgid "Previous"
-msgstr "Prejšnja"
+msgstr "Προηγούμενο"
 
 #: ../src/main-win.c:222
 #: ../src/main-win.c:1306
 msgid "Next"
-msgstr "Naslednja"
+msgstr "Επόμενο"
 
 #: ../src/main-win.c:226
 #: ../src/main-win.c:1308
 msgid "Zoom Out"
-msgstr "Oddalji"
+msgstr "Σμίκρυνση"
 
 #: ../src/main-win.c:227
 #: ../src/main-win.c:1309
 msgid "Zoom In"
-msgstr "Približaj"
+msgstr "Μεγένθυση"
 
 #. percent = gtk_entry_new();    // show scale (in percentage)
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
@@ -58,68 +57,68 @@ msgstr "Približaj"
 #: ../src/main-win.c:234
 #: ../src/main-win.c:1310
 msgid "Fit Image To Window Size"
-msgstr "Prilagodi sliko oknu"
+msgstr "Προσαρμογή της εικόνας στο μέγεθος του παραθύρου"
 
 #: ../src/main-win.c:236
 #: ../src/main-win.c:1311
 msgid "Original Size"
-msgstr "Izvirna velikost"
+msgstr "Αρχικό μέγεθος"
 
 #: ../src/main-win.c:243
 #: ../src/main-win.c:1313
 msgid "Full Screen"
-msgstr "Cel zaslon"
+msgstr "Πλήρης οθόνη"
 
 #: ../src/main-win.c:247
 #: ../src/main-win.c:1315
 msgid "Rotate Counterclockwise"
-msgstr "Zasuči v nasprotni smeri urinega kazalca"
+msgstr "Περιστροφή αριστερά"
 
 #: ../src/main-win.c:248
 #: ../src/main-win.c:1316
 msgid "Rotate Clockwise"
-msgstr "Zasuči v smeri urinega kazalca"
+msgstr "Περιστροφή δεξιά"
 
 #: ../src/main-win.c:250
 #: ../src/main-win.c:1317
 msgid "Flip Horizontal"
-msgstr "Preslikaj vodoravno"
+msgstr "Εναλλαγή οριζόντια"
 
 #: ../src/main-win.c:251
 #: ../src/main-win.c:1318
 msgid "Flip Vertical"
-msgstr "Preslikaj navpično"
+msgstr "Εναλλαγή κάθετα"
 
 #: ../src/main-win.c:255
 #: ../src/main-win.c:1320
 msgid "Open File"
-msgstr "Odpri"
+msgstr "Άνοιγμα αρχείου"
 
 #: ../src/main-win.c:256
 #: ../src/main-win.c:1321
 msgid "Save File"
-msgstr "Shrani"
+msgstr "Αποθήκευση αρχείου"
 
 #: ../src/main-win.c:257
 msgid "Save File As"
-msgstr "Shrani kot"
+msgstr "Αποθήκευση αρχείου ως"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
 #: ../src/main-win.c:258
 #: ../src/main-win.c:1324
 msgid "Delete File"
-msgstr "Izbriši datoteko"
+msgstr "Διαγραφή αρχείου"
 
 #: ../src/main-win.c:261
 #: ../src/main-win.c:1326
 #: ../data/pref-dlg.glade.h:8
 msgid "Preferences"
-msgstr "Lastnosti"
+msgstr "Προτιμήσεις"
 
 #: ../src/main-win.c:262
 #: ../src/main-win.c:1329
 msgid "Quit"
-msgstr "Izhod"
+msgstr "Έξοδος"
 
 #: ../src/main-win.c:1184
 msgid ""
@@ -127,13 +126,13 @@ msgid ""
 "Do you want to overwrite existing file?\n"
 "(Warning: The quality of original image might be lost)"
 msgstr ""
-"Datoteka z izbranim imenom že obstaja.\n"
-"Ali res želite prepisati obstoječo datoteko?\n"
-"(Opozorilo: kvaliteta izvirne slike se lahko izgubi)"
+"Το όνομα αρχείου που επιλέξατε υπάρχει ήδη.\n"
+"Θέλετε να αντικαταστήσετε το υπάρχον αρχείο;\n"
+"(Προειδοποίηση: Η ποιότητα της αρχικής εικόνας μπορεί να χαθεί)"
 
 #: ../src/main-win.c:1225
 msgid "Writing this image format is not supported."
-msgstr "Pisanje tega slikovnega formata ni podprto."
+msgstr "Η εγγραφή τέτοιου τύπου εικόνας δεν υποστηρίζεται. "
 
 #: ../src/main-win.c:1262
 msgid ""
@@ -141,22 +140,22 @@ msgid ""
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
-"Ali res želite izbrisati trenutno datoteko?\n"
+"Είστε σίγουροι ότι θέλετε να διαγράψετε το παρόν αρχείο;\n"
 "\n"
-" Opozorilo: izbrisane datoteke ni mogoče obnoviti."
+"Προειδοποίηση: Αν διαγραφεί το αρχείο δεν γίνεται να επαναφερθεί."
 
 #: ../src/main-win.c:1322
 msgid "Save As"
-msgstr "Shrani kot"
+msgstr "Αποθήκευση ως"
 
 #: ../src/main-win.c:1391
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr " * Glej izvorno kodo EOG pregledovalnika slik in programa GThumb"
+msgstr "* Αναφορά στον πηγαίο κώδικα του EOG image viewer και του GThumb"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1395
 msgid "translator-credits"
-msgstr "paxman <paxmanpwnz@gmail.com>"
+msgstr ""
 
 #: ../src/main-win.c:1403
 msgid "GPicView"
@@ -164,11 +163,11 @@ msgstr "GPicView"
 
 #: ../src/main-win.c:1405
 msgid "Copyright (C) 2007 - 2009"
-msgstr "Vse pravice pridržane (C) 2007 - 2009"
+msgstr "Copyright (C) 2007 - 2009"
 
 #: ../src/main-win.c:1406
 msgid "Lightweight image viewer from LXDE project"
-msgstr "Pregledovalnik slik okenskega okolja LXDE"
+msgstr "Ελαφρί πρόγραμμα προβολής εικόνων από το LXDE project"
 
 #: ../src/pref.c:152
 msgid ""
@@ -177,72 +176,76 @@ msgid ""
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"GPicView bo na vašem sistemu postal privzeti pregledovalnik za vse podprte slikovne datoteke.\n"
+"Ο GPicView θα γίνει το προεπιλεγμένο πρόγραμμα προβολής εικόνων για τους υποστηριζόμενους τύπους αρχείων στο σύστημά σας.\n"
+"(Αυτό θα γίνει μέσο του προγράμματος 'xdg-mime')\n"
 "\n"
-"<b>Ali ste prepričani, da želite storiti to?</b>"
+"<b>Είστε σίγουροι ότι θέλετε να το κάνετε αυτό;<b>"
 
 #: ../src/file-dlgs.c:62
 msgid "All Supported Images"
-msgstr "Vsi podprti formati"
+msgstr "Όλοι οι υποστηριζόμενοι τύποι εικόνων"
 
 #: ../src/file-dlgs.c:67
 msgid "All Files"
-msgstr "Vse datoteke"
+msgstr "Όλα τα αρχεία"
 
 #: ../src/file-dlgs.c:103
 msgid "JPEG Quality:"
-msgstr "JPEG kvaliteta:"
+msgstr "JPEG ποιότητα:"
 
 #: ../src/file-dlgs.c:104
 msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
-msgstr "Nižja vrednost pomeni manjšo velikost, a slabšo kvaliteto slike."
+msgstr ""
+"Μικρότερες τιμές ποιότητας αποδίδουν μικρότερο μέγεθος αρχείου,\n"
+"αλλά η ποιότητα είναι πιο φτωχή."
 
 #: ../src/file-dlgs.c:118
 msgid "PNG Compression Level:"
-msgstr "Nivo stiskanja PNG:"
+msgstr "Επίπεδο συμπίεσης PNG:"
 
 #: ../src/file-dlgs.c:119
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
-msgstr "Višji nivoji pomenijo manjše velikosti slik, a daljše stiskanje."
+msgstr ""
+"Μεγαλύτερες τιμές συμπίεσης αποδίδουν μικρότερο μέγεθος αρχείου,\n"
+"αλλά παίρνουν περισσότερη ώρα για να συμπιεστούν."
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
-msgstr "<b>Barve ozadja</b>"
+msgstr "<b>Χρώματα παρασκηνίου</b>"
 
 #: ../data/pref-dlg.glade.h:2
 msgid "Ask before deleting images"
-msgstr "Vprašaj pred brisanjem slik"
+msgstr "Ερώτηση πριν τη διαγραφή αρχείων"
 
 #: ../data/pref-dlg.glade.h:3
 msgid "Ask before saving images"
-msgstr "Vprašaj pred shranjevanjem slik"
+msgstr "Ερώτηση πριν την αποθήκευση αρχείων"
 
 #: ../data/pref-dlg.glade.h:4
 msgid "Automatically save rotated images"
-msgstr "Samodejno shrani zasukane slike"
+msgstr "Αυτόματη αποθήκευση εικόνων που έχουν περιστραφεί"
 
 #: ../data/pref-dlg.glade.h:5
 msgid "Fullscreen:"
-msgstr "Cel zaslon:"
+msgstr "Πλήρης οθόνη:"
 
 #: ../data/pref-dlg.glade.h:6
 msgid "Make GPicView the default viewer for images"
-msgstr "Nastavi GPicView za privzeti pregledovalnik slik"
+msgstr "Κάνε το GPicView το προεπιλεγμένο πρόγραμμα προβολής εικόνων"
 
 #: ../data/pref-dlg.glade.h:7
 msgid "Normal:"
-msgstr "Navadno:"
+msgstr "Κανονικά:"
 
 #: ../data/pref-dlg.glade.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
-msgstr "Zasuči JPEG datoteko s spremembo orientacijske značke v glavi EXIF (samo, če le-ta obstaja)"
-
-#~ msgid " Full Screen"
-#~ msgstr "Celozaslonski način"
+msgstr ""
+"Περιστροφή του αρχείου JPEG αλλάζοντας το EXIF προσανατολισμό\n"
+"(μόνο αν το πεδίο EXIF προσανατολισμού υπάρχει)"
 
