@@ -686,7 +686,7 @@ static int trans_angle_to_id(int i)
     else if(i == -45)	return 7;
     else if(i == -90)	return 2;
     else if(i == -135)	return 5;
-    else if(i == -180)	return 4;
+    else     /* -180 */ return 4;
 }
 
 static int get_new_angle( int orig_angle, int rotate_angle )

@@ -42,6 +42,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <unistd.h>
 #include <jpeglib.h>
 #include "tran-supp.h"      /* Support routines for jpegtran */
