@@ -70,11 +70,15 @@ typedef struct _MainWin
     GtkWidget* btn_flip_h;
     GtkWidget* btn_orig;
     GtkWidget* btn_fit;
+    GtkWidget* btn_play_stop;
+    GtkWidget* img_play_stop;
     GtkWidget* percent;
     GdkCursor* hand_cursor;
     ZoomMode zoom_mode;
     gboolean full_screen;
-
+    gboolean slideshow_running;
+    gboolean slideshow_cancelled;
+    guint slide_timeout;
     gboolean dragging;
     double scale;
     int drag_old_x;
@@ -86,6 +90,8 @@ typedef struct _MainWin
 GtkWidget* main_win_new();
 
 gboolean main_win_open( MainWin* mw, const char* file_path, ZoomMode zoom );
+
+void main_win_start_slideshow( MainWin* mw );
 
 void main_win_close( MainWin* mw );
 

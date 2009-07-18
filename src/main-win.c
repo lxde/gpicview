@@ -50,11 +50,14 @@ static GtkTargetEntry drop_targets[] =
     {"text/plain", 0, 1}
 };
 
+extern int ExifRotate(const char * fname, int new_angle);
+
 static void main_win_init( MainWin*mw );
 static void main_win_finalize( GObject* obj );
 
 static void create_nav_bar( MainWin* mw, GtkWidget* box);
 GtkWidget* add_nav_btn( MainWin* mw, const char* icon, const char* tip, GCallback cb, gboolean toggle);
+GtkWidget* add_nav_btn_img( MainWin* mw, const char* icon, const char* tip, GCallback cb, gboolean toggle, GtkWidget** ret_img);
 // GtkWidget* add_menu_item(  GtkMenuShell* menu, const char* label, const char* icon, GCallback cb, gboolean toggle=FALSE );
 static void rotate_image( MainWin* mw, int angle );
 static void show_popup_menu( MainWin* mw, GdkEventButton* evt );
@@ -75,6 +78,10 @@ static void on_rotate_clockwise( GtkWidget* btn, MainWin* mw );
 static void on_rotate_counterclockwise( GtkWidget* btn, MainWin* mw );
 static void on_save_as( GtkWidget* btn, MainWin* mw );
 static void on_save( GtkWidget* btn, MainWin* mw );
+static void cancel_slideshow(MainWin* mw);
+static gboolean next_slide(MainWin* mw);
+static void on_slideshow_menu( GtkMenuItem* item, MainWin* mw );
+static void on_slideshow( GtkToggleButton* btn, MainWin* mw );
 static void on_open( GtkWidget* btn, MainWin* mw );
 static void on_zoom_in( GtkWidget* btn, MainWin* mw );
 static void on_zoom_out( GtkWidget* btn, MainWin* mw );
@@ -220,6 +227,7 @@ void create_nav_bar( MainWin* mw, GtkWidget* box )
 
     add_nav_btn( mw, GTK_STOCK_GO_BACK, _("Previous"), G_CALLBACK(on_prev), FALSE );
     add_nav_btn( mw, GTK_STOCK_GO_FORWARD, _("Next"), G_CALLBACK(on_next), FALSE );
+    mw->btn_play_stop = add_nav_btn_img( mw, GTK_STOCK_MEDIA_PLAY, _("Start Slideshow"), G_CALLBACK(on_slideshow), TRUE, &mw->img_play_stop );
 
     gtk_box_pack_start( (GtkBox*)mw->nav_bar, gtk_vseparator_new(), FALSE, FALSE, 0 );
 
@@ -434,6 +442,11 @@ gboolean main_win_open( MainWin* mw, const char* file_path, ZoomMode zoom )
     return TRUE;
 }
 
+void main_win_start_slideshow( MainWin* mw )
+{
+    on_slideshow_menu(NULL, mw);
+}
+
 void main_win_close( MainWin* mw )
 {
     if( mw->animation )
@@ -539,7 +552,13 @@ void main_win_fit_window_size(  MainWin* mw, gboolean can_strech, GdkInterpType 
     main_win_fit_size( mw, mw->scroll->allocation.width, mw->scroll->allocation.height, can_strech, type );
 }
 
-GtkWidget* add_nav_btn( MainWin* mw, const char* icon, const char* tip, GCallback cb, gboolean toggle )
+GtkWidget* add_nav_btn( MainWin* mw, const char* icon, const char* tip, GCallback cb, gboolean toggle)
+{
+    GtkWidget* unused;
+    return add_nav_btn_img(mw, icon, tip, cb, toggle, &unused);
+}
+
+GtkWidget* add_nav_btn_img( MainWin* mw, const char* icon, const char* tip, GCallback cb, gboolean toggle, GtkWidget** ret_img )
 {
     GtkWidget* img;
     if( g_str_has_prefix(icon, "gtk-") )
@@ -562,6 +581,7 @@ GtkWidget* add_nav_btn( MainWin* mw, const char* icon, const char* tip, GCallbac
     gtk_container_add( (GtkContainer*)btn, img );
     gtk_widget_set_tooltip_text( btn, tip );
     gtk_box_pack_start( (GtkBox*)mw->nav_bar, btn, FALSE, FALSE, 0 );
+    *ret_img = img;
     return btn;
 }
 
@@ -675,6 +695,49 @@ void on_next( GtkWidget* btn, MainWin* mw )
     }
 }
 
+void cancel_slideshow(MainWin* mw)
+{
+    mw->slideshow_cancelled = TRUE;
+    mw->slideshow_running = FALSE;
+    if (mw->slide_timeout != 0)
+        g_source_remove(mw->slide_timeout);
+    gtk_toggle_button_set_active( GTK_TOGGLE_BUTTON(mw->btn_play_stop), FALSE );
+}
+
+gboolean next_slide(MainWin* mw)
+{
+    /* Timeout causes an implicit "Next". */
+    if (mw->slideshow_running)
+        on_next( NULL, mw );
+
+    return mw->slideshow_running;
+}
+
+void on_slideshow_menu( GtkMenuItem* item, MainWin* mw )
+{
+    gtk_button_clicked( (GtkButton*)mw->btn_play_stop );
+}
+
+void on_slideshow( GtkToggleButton* btn, MainWin* mw )
+{
+    if ((mw->slideshow_running) || (mw->slideshow_cancelled))
+    {
+        mw->slideshow_running = FALSE;
+        mw->slideshow_cancelled = FALSE;
+        gtk_image_set_from_stock( GTK_IMAGE(mw->img_play_stop), GTK_STOCK_MEDIA_PLAY, GTK_ICON_SIZE_SMALL_TOOLBAR );
+        gtk_widget_set_tooltip_text( GTK_WIDGET(btn), _("Start Slideshow") );
+        gtk_toggle_button_set_active( btn, FALSE );
+    }
+    else
+    {
+        gtk_toggle_button_set_active( btn, TRUE );
+        mw->slideshow_running = TRUE;
+        gtk_image_set_from_stock( GTK_IMAGE(mw->img_play_stop), GTK_STOCK_MEDIA_STOP, GTK_ICON_SIZE_SMALL_TOOLBAR );
+        gtk_widget_set_tooltip_text( GTK_WIDGET(btn), _("Stop Slideshow") );
+        mw->slide_timeout = g_timeout_add(1000 * pref.slide_delay, (GSourceFunc) next_slide, mw);
+    }
+}
+
 //////////////////// rotate & flip
 
 static int trans_angle_to_id(int i)
@@ -713,6 +776,7 @@ void on_rotate_auto_save( GtkWidget* btn, MainWin* mw )
 
 void on_rotate_clockwise( GtkWidget* btn, MainWin* mw )
 {
+    cancel_slideshow(mw);
     rotate_image( mw, GDK_PIXBUF_ROTATE_CLOCKWISE );
     mw->rotation_angle = get_new_angle(mw->rotation_angle, 90);
     on_rotate_auto_save(btn, mw);
@@ -720,6 +784,7 @@ void on_rotate_clockwise( GtkWidget* btn, MainWin* mw )
 
 void on_rotate_counterclockwise( GtkWidget* btn, MainWin* mw )
 {
+    cancel_slideshow(mw);
     rotate_image( mw, GDK_PIXBUF_ROTATE_COUNTERCLOCKWISE );
     mw->rotation_angle = get_new_angle(mw->rotation_angle, 270);
     on_rotate_auto_save(btn, mw);
@@ -727,6 +792,7 @@ void on_rotate_counterclockwise( GtkWidget* btn, MainWin* mw )
 
 void on_flip_vertical( GtkWidget* btn, MainWin* mw )
 {
+    cancel_slideshow(mw);
     rotate_image( mw, -180 );
     mw->rotation_angle = get_new_angle(mw->rotation_angle, -180);
     on_rotate_auto_save(btn, mw);
@@ -734,6 +800,7 @@ void on_flip_vertical( GtkWidget* btn, MainWin* mw )
 
 void on_flip_horizontal( GtkWidget* btn, MainWin* mw )
 {
+    cancel_slideshow(mw);
     rotate_image( mw, -90 );
     mw->rotation_angle = get_new_angle(mw->rotation_angle, -90);
     on_rotate_auto_save(btn, mw);
@@ -745,6 +812,7 @@ void on_save_as( GtkWidget* btn, MainWin* mw )
 {
     char *file, *type;
 
+    cancel_slideshow(mw);
     if( ! mw->pix )
         return;
 
@@ -776,6 +844,7 @@ void on_save_as( GtkWidget* btn, MainWin* mw )
 
 void on_save( GtkWidget* btn, MainWin* mw )
 {
+    cancel_slideshow(mw);
     if( ! mw->pix )
         return;
 
@@ -819,6 +888,7 @@ void on_save( GtkWidget* btn, MainWin* mw )
 
 void on_open( GtkWidget* btn, MainWin* mw )
 {
+    cancel_slideshow(mw);
     char* file = get_open_filename( (GtkWindow*)mw, image_list_get_dir( mw->img_list ) );
     if( file )
     {
@@ -879,6 +949,7 @@ void on_preference( GtkWidget* btn, MainWin* mw )
 
 void on_quit( GtkWidget* btn, MainWin* mw )
 {
+    cancel_slideshow(mw);
     gtk_widget_destroy( (GtkWidget*)mw );
 }
 
@@ -1036,6 +1107,10 @@ gboolean on_key_press_event(GtkWidget* widget, GdkEventKey * key)
         case GDK_Up:
         case GDK_uparrow:
             on_prev( NULL, mw );
+            break;
+        case GDK_w:
+        case GDK_W:
+            on_slideshow_menu( NULL, mw );
             break;
         case GDK_KP_Add:
         case GDK_plus:
@@ -1253,6 +1328,7 @@ gboolean main_win_save( MainWin* mw, const char* file_path, const char* type, gb
 
 void on_delete( GtkWidget* btn, MainWin* mw )
 {
+    cancel_slideshow(mw);
     char* file_path = image_list_get_current_file_path( mw->img_list );
     if( file_path )
     {
@@ -1308,6 +1384,7 @@ void show_popup_menu( MainWin* mw, GdkEventButton* evt )
     {
         PTK_IMG_MENU_ITEM( N_( "Previous" ), GTK_STOCK_GO_BACK, on_prev, GDK_leftarrow, 0 ),
         PTK_IMG_MENU_ITEM( N_( "Next" ), GTK_STOCK_GO_FORWARD, on_next, GDK_rightarrow, 0 ),
+        PTK_IMG_MENU_ITEM( N_( "Start/Stop Slideshow" ), GTK_STOCK_MEDIA_PLAY, on_slideshow_menu, GDK_W, 0 ),
         PTK_SEPARATOR_MENU_ITEM,
         PTK_IMG_MENU_ITEM( N_( "Zoom Out" ), GTK_STOCK_ZOOM_OUT, on_zoom_out, GDK_minus, 0 ),
         PTK_IMG_MENU_ITEM( N_( "Zoom In" ), GTK_STOCK_ZOOM_IN, on_zoom_in, GDK_plus, 0 ),

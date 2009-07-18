@@ -92,6 +92,7 @@ void load_preferences()
         kf_get_bool( kf, "General", "ask_before_delete", &pref.ask_before_delete );
         kf_get_bool( kf, "General", "rotate_exif_only", &pref.rotate_exif_only );
         kf_get_bool( kf, "General", "open_maximized", &pref.open_maximized );
+        kf_get_int( kf, "General", "slide_delay", &pref.slide_delay );
 
         kf_get_int( kf, "General", "jpg_quality", &pref.jpg_quality);
         kf_get_int( kf, "General", "png_compression", &pref.png_compression );
@@ -112,6 +113,9 @@ void load_preferences()
     }
     g_free( path );
     g_key_file_free( kf );
+
+    if (pref.slide_delay == 0)
+        pref.slide_delay = 5;
 }
 
 void save_preferences()
@@ -136,6 +140,7 @@ void save_preferences()
         fprintf( f, "open_maximized=%d\n", pref.open_maximized );
         fprintf( f, "bg=#%02x%02x%02x\n", pref.bg.red/256, pref.bg.green/256, pref.bg.blue/256 );
         fprintf( f, "bg_full=#%02x%02x%02x\n", pref.bg_full.red/256, pref.bg_full.green/256, pref.bg_full.blue/256 );
+        fprintf( f, "slide_delay=%d\n", pref.slide_delay );
 
         fprintf( f, "jpg_quality=%d\n", pref.jpg_quality );
         fprintf( f, "png_compression=%d\n", pref.png_compression );
@@ -163,7 +168,7 @@ static void on_set_default( GtkButton* btn, gpointer user_data )
 static void on_set_bg( GtkColorButton* btn, gpointer user_data )
 {
     MainWin* parent=(MainWin*)user_data;
-    gtk_color_button_get_color(btn, &pref.bg);
+    gtk_color_button_get_color(GTK_COLOR_BUTTON(btn), &pref.bg);
     if( !parent->full_screen )
     {
         gtk_widget_modify_bg( parent->evt_box, GTK_STATE_NORMAL, &pref.bg );
@@ -174,7 +179,7 @@ static void on_set_bg( GtkColorButton* btn, gpointer user_data )
 static void on_set_bg_full( GtkColorButton* btn, gpointer user_data )
 {
     MainWin* parent=(MainWin*)user_data;
-    gtk_color_button_get_color(btn, &pref.bg_full);
+    gtk_color_button_get_color(GTK_COLOR_BUTTON(btn), &pref.bg_full);
     if( parent->full_screen )
     {
         gtk_widget_modify_bg( parent->evt_box, GTK_STATE_NORMAL, &pref.bg_full );
@@ -185,7 +190,7 @@ static void on_set_bg_full( GtkColorButton* btn, gpointer user_data )
 void edit_preferences( GtkWindow* parent )
 {
     GtkWidget *auto_save_btn, *ask_before_save_btn, *set_default_btn,
-              *rotate_exif_only_btn, *ask_before_del_btn, *bg_btn, *bg_full_btn;
+              *rotate_exif_only_btn, *slide_delay_spinner, *ask_before_del_btn, *bg_btn, *bg_full_btn;
     GtkBuilder* builder = gtk_builder_new();
     GtkDialog* dlg;
     gtk_builder_add_from_file(builder, PACKAGE_DATA_DIR "/gpicview/ui/pref-dlg.ui", NULL);
@@ -205,15 +210,18 @@ void edit_preferences( GtkWindow* parent )
     rotate_exif_only_btn = (GtkWidget*)gtk_builder_get_object(builder, "rotate_exif_only");
     gtk_toggle_button_set_active( (GtkToggleButton*)rotate_exif_only_btn, pref.rotate_exif_only );
 
+    slide_delay_spinner = (GtkWidget*)gtk_builder_get_object(builder, "slide_delay");
+    gtk_spin_button_set_value( (GtkSpinButton*)slide_delay_spinner, pref.slide_delay) ;
+
     set_default_btn = (GtkWidget*)gtk_builder_get_object(builder, "make_default");
     g_signal_connect( set_default_btn, "clicked", G_CALLBACK(on_set_default), parent );
 
     bg_btn = (GtkWidget*)gtk_builder_get_object(builder, "bg");
-    gtk_color_button_set_color(bg_btn, &pref.bg);
+    gtk_color_button_set_color(GTK_COLOR_BUTTON(bg_btn), &pref.bg);
     g_signal_connect( bg_btn, "color-set", G_CALLBACK(on_set_bg), parent );
 
     bg_full_btn = (GtkWidget*)gtk_builder_get_object(builder, "bg_full");
-    gtk_color_button_set_color(bg_full_btn, &pref.bg_full);
+    gtk_color_button_set_color(GTK_COLOR_BUTTON(bg_full_btn), &pref.bg_full);
     g_signal_connect( bg_full_btn, "color-set", G_CALLBACK(on_set_bg_full), parent );
 
     g_object_unref( builder );
@@ -224,6 +232,7 @@ void edit_preferences( GtkWindow* parent )
     pref.ask_before_delete = gtk_toggle_button_get_active( (GtkToggleButton*)ask_before_del_btn );
     pref.auto_save_rotated = gtk_toggle_button_get_active( (GtkToggleButton*)auto_save_btn );
     pref.rotate_exif_only = gtk_toggle_button_get_active( (GtkToggleButton*)rotate_exif_only_btn );
+    pref.slide_delay = gtk_spin_button_get_value_as_int( (GtkSpinButton*)slide_delay_spinner );
 
     gtk_widget_destroy( (GtkWidget*)dlg );
 }

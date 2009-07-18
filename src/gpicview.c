@@ -31,12 +31,15 @@
 
 static char** files = NULL;
 static gboolean should_display_version = FALSE;
+static gboolean should_start_slideshow = FALSE;
 
 static GOptionEntry opt_entries[] =
 {
     {G_OPTION_REMAINING, 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &files, NULL, N_("[FILE]")},
     {"version", 'v', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &should_display_version,
                  N_("Print version information and exit"), NULL },
+    {"slideshow", 0, G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &should_start_slideshow,
+                 N_("Start slideshow"), NULL },
     { NULL }
 };
 
@@ -92,6 +95,9 @@ int main(int argc, char *argv[])
         }
         else
             main_win_open( win, files[0], ZOOM_NONE );
+
+        if (should_start_slideshow)
+            main_win_start_slideshow ( win );
     }
 
     gtk_main();

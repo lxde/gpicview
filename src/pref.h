@@ -33,6 +33,7 @@ typedef struct _Pref
     gboolean rotate_exif_only;
     gboolean ask_before_delete;
     gboolean open_maximized;
+    int slide_delay;
     GdkColor bg;
     GdkColor bg_full;
 
