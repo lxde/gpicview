@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gpicview\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-26 08:46-0400\n"
-"PO-Revision-Date: 2009-06-29 00:32+0200\n"
+"PO-Revision-Date: 2009-06-30 14:54+0200\n"
 "Last-Translator: George Vasilakos <forfolias@gmail.com>\n"
 "Language-Team: Greek <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -156,6 +156,9 @@ msgstr "* Αναφορά στον πηγαίο κώδικα του EOG image vie
 #: ../src/main-win.c:1395
 msgid "translator-credits"
 msgstr ""
+"Κούτσικος Γιώργος <oege89@hotmail.com>\n"
+"Βασιλάκος Γιώργος  <forfolias@linuxteam.cs.teilar.gr>\n"
+"Ριζόπουλος Γιώργος <georgerizopoulos28@gmail.com>"
 
 #: ../src/main-win.c:1403
 msgid "GPicView"
