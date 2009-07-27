@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-18 23:21+0800\n"
-"PO-Revision-Date: 2009-05-18 18:45+0200\n"
+"PO-Revision-Date: 2009-07-26 18:39+0200\n"
 "Last-Translator: Y P <yupadmin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr "Показати інформацію про версію і вийти"
 
 #: ../src/main-win.c:145 ../src/main-win.c:1283
 msgid "Image Viewer"
-msgstr "Переглядач зображень"
+msgstr "Переглядач зображень GPicview"
 
 #: ../src/main-win.c:221 ../src/main-win.c:1295
 msgid "Previous"
@@ -130,7 +130,7 @@ msgstr "Зберегти як"
 
 #: ../src/main-win.c:1381
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr "* Зверніться до джерельного коду переглядача малюнків EOG  і GThumb"
+msgstr "* Зверніться до джерельного коду переглядача малюнків EOG і GThumb"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1385
@@ -192,8 +192,8 @@ msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
 msgstr ""
-"Вищий ступінь компресії приводить до меншого розміру файлів,\n"
-"але якість зображення буде гіршою."
+"Вищий ступінь компресії зменшує розмір файлів,\n"
+"але забирає час на саму копресію."
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
@@ -201,7 +201,7 @@ msgstr "<b>Кольори тла</b>"
 
 #: ../data/pref-dlg.glade.h:2
 msgid "Ask before deleting images"
-msgstr "Запитувати перед збереженням зображень"
+msgstr "Запитувати перед знищенням зображень"
 
 #: ../data/pref-dlg.glade.h:3
 msgid "Ask before saving images"
@@ -213,11 +213,11 @@ msgstr "Автоматично зберігати повернуті зобра�
 
 #: ../data/pref-dlg.glade.h:5
 msgid "Fullscreen:"
-msgstr "На повний екран"
+msgstr "Повний екран:"
 
 #: ../data/pref-dlg.glade.h:6
 msgid "Make GPicView the default viewer for images"
-msgstr "Зробити GPicview переглядачем зображень по замовчуванню"
+msgstr "Зробити GPicView переглядачем зображень по замовчуванню"
 
 #: ../data/pref-dlg.glade.h:7
 msgid "Normal:"
