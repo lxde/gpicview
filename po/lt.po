@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GPicView\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-18 23:21+0800\n"
-"PO-Revision-Date: 2009-05-19 14:50+0200\n"
+"PO-Revision-Date: 2009-09-10 20:47+0200\n"
 "Last-Translator: Julius Vitkauskas <zadintuvas@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,7 @@ msgstr "Išspausdinti versijos informaciją ir išeiti"
 
 #: ../src/main-win.c:145 ../src/main-win.c:1283
 msgid "Image Viewer"
-msgstr "Paveikslėlių žiūriklis"
+msgstr "Paveikslėlių peržiūros programa"
 
 #: ../src/main-win.c:221 ../src/main-win.c:1295
 msgid "Previous"
@@ -94,7 +94,7 @@ msgstr "Ištrinti failą"
 
 #: ../src/main-win.c:261 ../src/main-win.c:1316 ../data/pref-dlg.glade.h:8
 msgid "Preferences"
-msgstr "Parinktys"
+msgstr "Nustatymai"
 
 #: ../src/main-win.c:262 ../src/main-win.c:1319
 msgid "Quit"
@@ -112,7 +112,7 @@ msgstr ""
 
 #: ../src/main-win.c:1220
 msgid "Writing this image format is not supported."
-msgstr "Saugojimas šiuo formatu nepalaikomas"
+msgstr "Saugojimas šiuo formatu nepalaikomas."
 
 #: ../src/main-win.c:1254
 msgid ""
@@ -149,7 +149,7 @@ msgstr "Autorinės teisės (C) 2007 - 2009"
 
 #: ../src/main-win.c:1396
 msgid "Lightweight image viewer from LXDE project"
-msgstr "Lengvasvorė paveikslėlių peržiūros programa iš LXDE projekto"
+msgstr "Lengvasvorė LXDE projekto paveikslėlių peržiūros programa"
 
 #: ../src/pref.c:153
 msgid ""
@@ -193,7 +193,7 @@ msgid ""
 "but takes more time to do the compression."
 msgstr ""
 "Labiau suspausti paveikslėliai užima mažiau vietos,\n"
-"bet didesniam suspaudimui reikia daugiau laiko."
+"tačiau didesniam suspaudimui reikia daugiau laiko."
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
