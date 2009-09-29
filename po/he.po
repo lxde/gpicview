@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-26 08:46-0400\n"
-"PO-Revision-Date: 2009-09-23 09:36+0200\n"
+"PO-Revision-Date: 2009-09-29 16:53+0200\n"
 "Last-Translator: Yaron Shahrbani <sh.yaron@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -107,13 +107,13 @@ msgid ""
 "Do you want to overwrite existing file?\n"
 "(Warning: The quality of original image might be lost)"
 msgstr ""
-"שם הקובץ שנבחר כבר קיים.\n"
-"האם לשכתב את הקובץ הקיים?\n"
+"שם הקובץ שנבחר כבר קיים.\r\n"
+"האם לשכתב את הקובץ הקיים?\r\n"
 "(אזהרה: איכות התמונה המקורית עלולה להפגם)"
 
 #: ../src/main-win.c:1225
 msgid "Writing this image format is not supported."
-msgstr "כתיבה כסוג תמונה זה אינו נתמך."
+msgstr "כתיבה כסוג תמונה זה אינה נתמכת."
 
 #: ../src/main-win.c:1262
 msgid ""
@@ -123,7 +123,7 @@ msgid ""
 msgstr ""
 "האם למחוק את הקובץ הנוכחי?\n"
 "\n"
-"אזהרה: לאחר שהקובץ נמחק אין כל אפשרות לשחזרו."
+"אזהרה: לאחר מחיקת הקובץ אין כל אפשרות לשחזרו."
 
 #: ../src/main-win.c:1322
 msgid "Save As"
@@ -144,7 +144,7 @@ msgstr "מציג התמונות GPicView"
 
 #: ../src/main-win.c:1405
 msgid "Copyright (C) 2007 - 2009"
-msgstr "כל הזכויות שמורות (C) 2007 - 2009"
+msgstr "כל הזכויות שמורות (C) ‏2007 - 2009"
 
 #: ../src/main-win.c:1406
 msgid "Lightweight image viewer from LXDE project"
