@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-18 23:21+0800\n"
-"PO-Revision-Date: 2009-09-11 09:17+0200\n"
+"PO-Revision-Date: 2009-09-28 14:31+0200\n"
 "Last-Translator: Indalecio Freiría Santos <ifreiria@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -99,14 +99,13 @@ msgid "Quit"
 msgstr "Saír"
 
 #: ../src/main-win.c:1179
-#, fuzzy
 msgid ""
 "The file name you selected already exists.\n"
 "Do you want to overwrite existing file?\n"
 "(Warning: The quality of original image might be lost)"
 msgstr ""
 "O nome do ficheiro que elixiu xa existe.\n"
-"¿Quere sobrescribilo ficheiro existente?\n"
+"Quere sobrescribilo ficheiro existente?\n"
 "(Coidado: Pode perdela calidade da imaxe orixinal)"
 
 #: ../src/main-win.c:1220
@@ -143,7 +142,6 @@ msgid "GPicView"
 msgstr "GPicView"
 
 #: ../src/main-win.c:1395
-#, fuzzy
 msgid "Copyright (C) 2007 - 2009"
 msgstr "Copyright (C) 2007 - 2009"
 
@@ -214,7 +212,6 @@ msgid "Automatically save rotated images"
 msgstr "Gardar automaticamente as imaxes rotadas"
 
 #: ../data/pref-dlg.glade.h:5
-#, fuzzy
 msgid "Fullscreen:"
 msgstr "Pantalla completa"
 
