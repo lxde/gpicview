@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-18 23:21+0800\n"
-"PO-Revision-Date: 2009-09-28 14:31+0200\n"
+"PO-Revision-Date: 2009-10-27 10:41+0100\n"
 "Last-Translator: Indalecio Freiría Santos <ifreiria@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -75,20 +75,20 @@ msgstr "Voltear verticalmente"
 
 #: ../src/main-win.c:255 ../src/main-win.c:1310
 msgid "Open File"
-msgstr "Abrir Ficheiro"
+msgstr "Abrir ficheiro"
 
 #: ../src/main-win.c:256 ../src/main-win.c:1311
 msgid "Save File"
-msgstr "Gardar Ficheiro"
+msgstr "Gardar ficheiro"
 
 #: ../src/main-win.c:257
 msgid "Save File As"
-msgstr "Gardar Ficheiro Como"
+msgstr "Gardar ficheiro como"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
 #: ../src/main-win.c:258 ../src/main-win.c:1314
 msgid "Delete File"
-msgstr "Eliminar Ficheiro"
+msgstr "Eliminar ficheiro"
 
 #: ../src/main-win.c:261 ../src/main-win.c:1316 ../data/pref-dlg.glade.h:8
 msgid "Preferences"
@@ -118,13 +118,13 @@ msgid ""
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
-"¿Estas seguro que queres eliminar o ficheiro actual?\n"
+"Estás seguro que queres eliminar o ficheiro actual?\n"
 "\n"
 "Coidado: Unha vez eliminado, o ficheiro no se pode recuperar"
 
 #: ../src/main-win.c:1312
 msgid "Save As"
-msgstr "Gardar Como"
+msgstr "Gardar como"
 
 #: ../src/main-win.c:1381
 msgid " * Refer to source code of EOG image viewer and GThumb"
@@ -134,8 +134,9 @@ msgstr "* Consulte o código fonte do visor de imáxes EOG e do GThumb"
 #: ../src/main-win.c:1385
 msgid "translator-credits"
 msgstr ""
-"Festor Wailon Dacoba <Galician and Spanish translation>Indalecio Freiría "
-"Santos <Galician translation>"
+"Festor Wailon Dacoba <Galician and Spanish translation> \n"
+"Indalecio Freiría Santos <Galician translation> \n"
+"Proxecto Trasno <Galician team translation>"
 
 #: ../src/main-win.c:1393
 msgid "GPicView"
@@ -165,11 +166,11 @@ msgstr ""
 
 #: ../src/file-dlgs.c:62
 msgid "All Supported Images"
-msgstr "Todas as Imaxes Compatíbeis"
+msgstr "Todas as imaxes compatíbeis"
 
 #: ../src/file-dlgs.c:67
 msgid "All Files"
-msgstr "Todos os Ficheiros"
+msgstr "Todos os ficheiros"
 
 #: ../src/file-dlgs.c:103
 msgid "JPEG Quality:"
