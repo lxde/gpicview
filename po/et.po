@@ -251,3 +251,7 @@ msgstr ""
 #~ msgid " Full Screen"
 #~ msgstr "Täisekraan"
 
+
+#: gpicview.desktop.in:13
+msgid "View your images easily"
+msgstr "Vaata pilte veel lihtsamalt"

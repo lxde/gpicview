@@ -240,3 +240,7 @@ msgstr ""
 
 #~ msgid " Full Screen"
 #~ msgstr " Plein écran"
+
+#: gpicview.desktop.in:13
+msgid "View your images easily"
+msgstr "Visionner des images facilement"

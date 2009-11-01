@@ -265,3 +265,7 @@ msgstr ""
 #~ msgid " Original Size"
 #~ msgstr "原始尺寸"
 
+
+#: gpicview.desktop.in:13
+msgid "View your images easily"
+msgstr "輕鬆檢視數位相片和圖片"

@@ -267,3 +267,7 @@ msgstr ""
 #~ "Schneller Bildbetrachter\n"
 #~ "\n"
 #~ "Entwickelt von Hon Jen Yee (PCMan)"
+
+#: gpicview.desktop.in:13
+msgid "View your images easily"
+msgstr "Bilder einfach betrachten"

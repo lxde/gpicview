@@ -8,7 +8,9 @@ EXTRA_DIST = \
 	gpicview.png
 
 desktopdir = $(datadir)/applications
-desktop_DATA = gpicview.desktop
+desktop_in_files = gpicview.desktop.in
+desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+@INTLTOOL_DESKTOP_RULE@
 
 icondir = $(datadir)/pixmaps
 icon_DATA = gpicview.png

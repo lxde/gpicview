@@ -254,3 +254,7 @@ msgstr "スライドショーの間隔\t"
 #: ../data/pref-dlg.glade.h:12
 msgid "sec\t"
 msgstr "秒\t"
+
+#: gpicview.desktop.in:13
+msgid "View your images easily"
+msgstr "簡単に画像を見ることができます"

@@ -265,3 +265,7 @@ msgstr ""
 #~ "\n"
 #~ "Desenvolvido por Hon Jen Yee (PCMan)"
 
+
+#: gpicview.desktop.in:13
+msgid "View your images easily"
+msgstr "Ver facilmente as imagens "

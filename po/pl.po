@@ -232,3 +232,7 @@ msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr "Obróć plik JPEG poprzez zmianę wartości orientacji EXIF (tylko jeśli tag orientacji EXIF istnieje)"
+
+#: gpicview.desktop.in:13
+msgid "View your images easily"
+msgstr "Wyświetla obrazy"

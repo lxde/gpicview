@@ -256,3 +256,7 @@ msgstr "秒\t"
 
 #~ msgid " Full Screen"
 #~ msgstr "全屏幕浏览"
+
+#: gpicview.desktop.in:13
+msgid "View your images easily"
+msgstr "轻松查看数码相片和图片"

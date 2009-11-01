@@ -237,3 +237,7 @@ msgstr ""
 
 #~ msgid " Full Screen"
 #~ msgstr " Kokoruutu"
+
+#: gpicview.desktop.in:13
+msgid "View your images easily"
+msgstr "Katso kuviasi helposti"
