@@ -1469,6 +1469,7 @@ void on_about( GtkWidget* menu, MainWin* mw )
         "Hialan Liu <hialan.liu@gmail.com>",
         "Marty Jack <martyj19@comcast.net>",
         "Louis Casillas <oxaric@gmail.com>",
+        "Will Davies",
         _(" * Refer to source code of EOG image viewer and GThumb"),
         NULL
     };
