@@ -1,48 +1,49 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# F Wolff <friedel@translate.org.za>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-18 23:21+0800\n"
-"PO-Revision-Date: 2009-05-18 22:01+0200\n"
+"PO-Revision-Date: 2009-12-10 10:20+0200\n"
 "Last-Translator: F Wolff <friedel@translate.org.za>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: translate-discuss-af@lists.sourceforge.net\n"
+"Language: af\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Pootle 1.1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.5.0\n"
 
 #: ../src/gpicview.c:37
 msgid "[FILE]"
-msgstr ""
+msgstr "[LÊER]"
 
 #: ../src/gpicview.c:39
 msgid "Print version information and exit"
-msgstr ""
+msgstr "Druk weergawe-inligting en sluit af"
 
 #: ../src/main-win.c:145 ../src/main-win.c:1283
 msgid "Image Viewer"
-msgstr ""
+msgstr "Beeldbekyker"
 
 #: ../src/main-win.c:221 ../src/main-win.c:1295
 msgid "Previous"
-msgstr ""
+msgstr "Vorige"
 
 #: ../src/main-win.c:222 ../src/main-win.c:1296
 msgid "Next"
-msgstr ""
+msgstr "Volgende"
 
 #: ../src/main-win.c:226 ../src/main-win.c:1298
 msgid "Zoom Out"
-msgstr ""
+msgstr "Zoem uit"
 
 #: ../src/main-win.c:227 ../src/main-win.c:1299
 msgid "Zoom In"
-msgstr ""
+msgstr "Zoem in"
 
 #. percent = gtk_entry_new();    // show scale (in percentage)
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
@@ -50,15 +51,15 @@ msgstr ""
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
 #: ../src/main-win.c:234 ../src/main-win.c:1300
 msgid "Fit Image To Window Size"
-msgstr ""
+msgstr "Pas prent by venstergrootte"
 
 #: ../src/main-win.c:236 ../src/main-win.c:1301
 msgid "Original Size"
-msgstr ""
+msgstr "Oorspronklike grootte"
 
 #: ../src/main-win.c:243 ../src/main-win.c:1303
 msgid "Full Screen"
-msgstr ""
+msgstr "Volskerm"
 
 #: ../src/main-win.c:247 ../src/main-win.c:1305
 msgid "Rotate Counterclockwise"
@@ -91,15 +92,15 @@ msgstr "Stoor lêer as"
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
 #: ../src/main-win.c:258 ../src/main-win.c:1314
 msgid "Delete File"
-msgstr ""
+msgstr "Skrap Lêer"
 
 #: ../src/main-win.c:261 ../src/main-win.c:1316 ../data/pref-dlg.glade.h:8
 msgid "Preferences"
-msgstr ""
+msgstr "Voorkeure"
 
 #: ../src/main-win.c:262 ../src/main-win.c:1319
 msgid "Quit"
-msgstr ""
+msgstr "Sluit af"
 
 #: ../src/main-win.c:1179
 msgid ""
@@ -107,10 +108,14 @@ msgid ""
 "Do you want to overwrite existing file?\n"
 "(Warning: The quality of original image might be lost)"
 msgstr ""
+"Die lêernaam wat u gekies het, bestaan reeds.\n"
+"Wil u definitief die bestaande lêer oorskryf?\n"
+"(Waarskuwing: die kwaliteit van die oorspronklike beeld mag dalk verlore "
+"gaan)"
 
 #: ../src/main-win.c:1220
 msgid "Writing this image format is not supported."
-msgstr ""
+msgstr "Die skryf van hierdie beeldformaat word nie ondersteun nie."
 
 #: ../src/main-win.c:1254
 msgid ""
@@ -118,31 +123,34 @@ msgid ""
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
+"Wil u definitief die huidige lêer skrap?\n"
+"\n"
+"Waarskuwing: as die lêer eers geskrap is, kan dit nie herwin word nie."
 
 #: ../src/main-win.c:1312
 msgid "Save As"
-msgstr ""
+msgstr "Stoor as"
 
 #: ../src/main-win.c:1381
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr ""
+msgstr " * Verwys na die bronkode van EOG-beeldbekyker en GThumb"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1385
 msgid "translator-credits"
-msgstr ""
+msgstr "Friedel Wolff"
 
 #: ../src/main-win.c:1393
 msgid "GPicView"
-msgstr ""
+msgstr "GPicView"
 
 #: ../src/main-win.c:1395
 msgid "Copyright (C) 2007 - 2009"
-msgstr ""
+msgstr "Kopiereg (C) 2007 - 2009"
 
 #: ../src/main-win.c:1396
 msgid "Lightweight image viewer from LXDE project"
-msgstr ""
+msgstr "Liggewig beeldbekyker van die LXDE-projek"
 
 #: ../src/pref.c:153
 msgid ""
@@ -152,65 +160,76 @@ msgid ""
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
+"GPicView gaan die verstekbekyker word vir alle ondersteunde beeldlêers op u "
+"stelsel.\n"
+"(Dit sal gedoen word deur dei 'xdg-mime'-program)\n"
+"\n"
+"<b>Wil u definitief dit doen?</b>"
 
 #: ../src/file-dlgs.c:62
 msgid "All Supported Images"
-msgstr ""
+msgstr "Alle ondersteunde beelde"
 
 #: ../src/file-dlgs.c:67
 msgid "All Files"
-msgstr ""
+msgstr "Alle lêers"
 
 #: ../src/file-dlgs.c:103
 msgid "JPEG Quality:"
-msgstr ""
+msgstr "JPEG-kwaliteit:"
 
 #: ../src/file-dlgs.c:104
 msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
 msgstr ""
+"Laer kwaliteitwaardes resulteer in kleiner lêergroottes,\n"
+"maar beeldkwaliteit sal swakker wees."
 
 #: ../src/file-dlgs.c:118
 msgid "PNG Compression Level:"
-msgstr ""
+msgstr "PNG-saampersvlak:"
 
 #: ../src/file-dlgs.c:119
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
 msgstr ""
+"Hoër saampersvlakke resulteer in kleiner lêergroottes,\n"
+"maar benodig meer tyd vir die saampersing."
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
-msgstr ""
+msgstr "<b>Agtergrondkleure</b>"
 
 #: ../data/pref-dlg.glade.h:2
 msgid "Ask before deleting images"
-msgstr ""
+msgstr "Vra voordat beelde geskrap word"
 
 #: ../data/pref-dlg.glade.h:3
 msgid "Ask before saving images"
-msgstr ""
+msgstr "Vra voordat beelde gestoor word"
 
 #: ../data/pref-dlg.glade.h:4
 msgid "Automatically save rotated images"
-msgstr ""
+msgstr "Stoor gedraaide beelde outomaties"
 
 #: ../data/pref-dlg.glade.h:5
 msgid "Fullscreen:"
-msgstr ""
+msgstr "Volskerm:"
 
 #: ../data/pref-dlg.glade.h:6
 msgid "Make GPicView the default viewer for images"
-msgstr ""
+msgstr "Maak GPicView die verstekbekyker vir beelde"
 
 #: ../data/pref-dlg.glade.h:7
 msgid "Normal:"
-msgstr ""
+msgstr "Normaal:"
 
 #: ../data/pref-dlg.glade.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
+"Draai JPEG-lêer deur die EXIF-oriëntasiewaarde te verander\n"
+"(slegs as die EXIF-oriëntasie-etiket bestaan)"
