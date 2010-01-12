@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gpicview 0.2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-27 13:37+0900\n"
+"POT-Creation-Date: 2010-01-12 01:09+0100\n"
 "PO-Revision-Date: 2009-08-27 13:44+0900\n"
 "Last-Translator: Hironao Komatsu <hironao@users.sourceforge.net>\n"
 "Language-Team: Japanese <hironao@users.sourceforge.net>\n"
@@ -27,7 +27,7 @@ msgstr "バージョン情報を表示して終了"
 msgid "Start slideshow"
 msgstr "スライドショーを開始"
 
-#: ../src/main-win.c:152 ../src/main-win.c:1373
+#: ../src/main-win.c:152 ../src/main-win.c:1373 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
 msgstr "イメージビューワ"
 
@@ -144,24 +144,24 @@ msgstr "スライドショーの開始/終了"
 msgid "Save As"
 msgstr "名前をつけて保存"
 
-#: ../src/main-win.c:1472
+#: ../src/main-win.c:1473
 msgid " * Refer to source code of EOG image viewer and GThumb"
 msgstr " * EOG イメージビューワと GThumb のソースコードの参照"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../src/main-win.c:1476
+#: ../src/main-win.c:1477
 msgid "translator-credits"
 msgstr "Hironao Komatsu <hironao@users.sourceforge.net>"
 
-#: ../src/main-win.c:1484
+#: ../src/main-win.c:1485
 msgid "GPicView"
 msgstr "GPicView"
 
-#: ../src/main-win.c:1486
+#: ../src/main-win.c:1487
 msgid "Copyright (C) 2007 - 2009"
 msgstr "Copyright (C) 2007 - 2009"
 
-#: ../src/main-win.c:1487
+#: ../src/main-win.c:1488
 msgid "Lightweight image viewer from LXDE project"
 msgstr "LXDE プロジェクトの軽量イメージビューワ"
 
@@ -211,6 +211,10 @@ msgstr ""
 "大きな値を与えるほどファイルサイズは小さくなりますが、\n"
 "圧縮に長い時間がかかるようになります。"
 
+#: ../gpicview.desktop.in.h:2
+msgid "View your images easily"
+msgstr "簡単に画像を見ることができます"
+
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
 msgstr "<b>背景色</b>"
@@ -254,7 +258,3 @@ msgstr "スライドショーの間隔\t"
 #: ../data/pref-dlg.glade.h:12
 msgid "sec\t"
 msgstr "秒\t"
-
-#: gpicview.desktop.in:13
-msgid "View your images easily"
-msgstr "簡単に画像を見ることができます"

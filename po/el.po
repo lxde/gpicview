@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gpicview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-26 08:46-0400\n"
+"POT-Creation-Date: 2010-01-12 01:09+0100\n"
 "PO-Revision-Date: 2009-06-30 14:54+0200\n"
 "Last-Translator: George Vasilakos <forfolias@gmail.com>\n"
 "Language-Team: Greek <LL@li.org>\n"
@@ -17,36 +17,39 @@ msgstr ""
 "X-Poedit-Language: Greek\n"
 "X-Poedit-Country: GREECE\n"
 
-#: ../src/gpicview.c:37
+#: ../src/gpicview.c:38
 msgid "[FILE]"
 msgstr "[ΑΡΧΕΙΟ]"
 
-#: ../src/gpicview.c:39
+#: ../src/gpicview.c:40
 msgid "Print version information and exit"
 msgstr "Εκτύπωση πληροφοριών έκδοσης και έξοδος "
 
-#: ../src/main-win.c:145
-#: ../src/main-win.c:1293
+#: ../src/gpicview.c:42
+msgid "Start slideshow"
+msgstr ""
+
+#: ../src/main-win.c:152 ../src/main-win.c:1373 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
 msgstr "Προβολή εικόνων"
 
-#: ../src/main-win.c:221
-#: ../src/main-win.c:1305
+#: ../src/main-win.c:228 ../src/main-win.c:1385
 msgid "Previous"
 msgstr "Προηγούμενο"
 
-#: ../src/main-win.c:222
-#: ../src/main-win.c:1306
+#: ../src/main-win.c:229 ../src/main-win.c:1386
 msgid "Next"
 msgstr "Επόμενο"
 
-#: ../src/main-win.c:226
-#: ../src/main-win.c:1308
+#: ../src/main-win.c:230 ../src/main-win.c:728
+msgid "Start Slideshow"
+msgstr ""
+
+#: ../src/main-win.c:234 ../src/main-win.c:1389
 msgid "Zoom Out"
 msgstr "Σμίκρυνση"
 
-#: ../src/main-win.c:227
-#: ../src/main-win.c:1309
+#: ../src/main-win.c:235 ../src/main-win.c:1390
 msgid "Zoom In"
 msgstr "Μεγένθυση"
 
@@ -54,73 +57,64 @@ msgstr "Μεγένθυση"
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
 #. gtk_widget_set_size_request( percent, 45, -1 );
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
-#: ../src/main-win.c:234
-#: ../src/main-win.c:1310
+#: ../src/main-win.c:242 ../src/main-win.c:1391
 msgid "Fit Image To Window Size"
 msgstr "Προσαρμογή της εικόνας στο μέγεθος του παραθύρου"
 
-#: ../src/main-win.c:236
-#: ../src/main-win.c:1311
+#: ../src/main-win.c:244 ../src/main-win.c:1392
 msgid "Original Size"
 msgstr "Αρχικό μέγεθος"
 
-#: ../src/main-win.c:243
-#: ../src/main-win.c:1313
+#: ../src/main-win.c:251 ../src/main-win.c:1394
 msgid "Full Screen"
 msgstr "Πλήρης οθόνη"
 
-#: ../src/main-win.c:247
-#: ../src/main-win.c:1315
+#: ../src/main-win.c:255 ../src/main-win.c:1396
 msgid "Rotate Counterclockwise"
 msgstr "Περιστροφή αριστερά"
 
-#: ../src/main-win.c:248
-#: ../src/main-win.c:1316
+#: ../src/main-win.c:256 ../src/main-win.c:1397
 msgid "Rotate Clockwise"
 msgstr "Περιστροφή δεξιά"
 
-#: ../src/main-win.c:250
-#: ../src/main-win.c:1317
+#: ../src/main-win.c:258 ../src/main-win.c:1398
 msgid "Flip Horizontal"
 msgstr "Εναλλαγή οριζόντια"
 
-#: ../src/main-win.c:251
-#: ../src/main-win.c:1318
+#: ../src/main-win.c:259 ../src/main-win.c:1399
 msgid "Flip Vertical"
 msgstr "Εναλλαγή κάθετα"
 
-#: ../src/main-win.c:255
-#: ../src/main-win.c:1320
+#: ../src/main-win.c:263 ../src/main-win.c:1401
 msgid "Open File"
 msgstr "Άνοιγμα αρχείου"
 
-#: ../src/main-win.c:256
-#: ../src/main-win.c:1321
+#: ../src/main-win.c:264 ../src/main-win.c:1402
 msgid "Save File"
 msgstr "Αποθήκευση αρχείου"
 
-#: ../src/main-win.c:257
+#: ../src/main-win.c:265
 msgid "Save File As"
 msgstr "Αποθήκευση αρχείου ως"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
-#: ../src/main-win.c:258
-#: ../src/main-win.c:1324
+#: ../src/main-win.c:266 ../src/main-win.c:1405
 msgid "Delete File"
 msgstr "Διαγραφή αρχείου"
 
-#: ../src/main-win.c:261
-#: ../src/main-win.c:1326
-#: ../data/pref-dlg.glade.h:8
+#: ../src/main-win.c:269 ../src/main-win.c:1407 ../data/pref-dlg.glade.h:8
 msgid "Preferences"
 msgstr "Προτιμήσεις"
 
-#: ../src/main-win.c:262
-#: ../src/main-win.c:1329
+#: ../src/main-win.c:270 ../src/main-win.c:1410
 msgid "Quit"
 msgstr "Έξοδος"
 
-#: ../src/main-win.c:1184
+#: ../src/main-win.c:736
+msgid "Stop Slideshow"
+msgstr ""
+
+#: ../src/main-win.c:1263
 msgid ""
 "The file name you selected already exists.\n"
 "Do you want to overwrite existing file?\n"
@@ -130,11 +124,11 @@ msgstr ""
 "Θέλετε να αντικαταστήσετε το υπάρχον αρχείο;\n"
 "(Προειδοποίηση: Η ποιότητα της αρχικής εικόνας μπορεί να χαθεί)"
 
-#: ../src/main-win.c:1225
+#: ../src/main-win.c:1304
 msgid "Writing this image format is not supported."
 msgstr "Η εγγραφή τέτοιου τύπου εικόνας δεν υποστηρίζεται. "
 
-#: ../src/main-win.c:1262
+#: ../src/main-win.c:1342
 msgid ""
 "Are you sure you want to delete current file?\n"
 "\n"
@@ -144,42 +138,48 @@ msgstr ""
 "\n"
 "Προειδοποίηση: Αν διαγραφεί το αρχείο δεν γίνεται να επαναφερθεί."
 
-#: ../src/main-win.c:1322
+#: ../src/main-win.c:1387
+msgid "Start/Stop Slideshow"
+msgstr ""
+
+#: ../src/main-win.c:1403
 msgid "Save As"
 msgstr "Αποθήκευση ως"
 
-#: ../src/main-win.c:1391
+#: ../src/main-win.c:1473
 msgid " * Refer to source code of EOG image viewer and GThumb"
 msgstr "* Αναφορά στον πηγαίο κώδικα του EOG image viewer και του GThumb"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../src/main-win.c:1395
+#: ../src/main-win.c:1477
 msgid "translator-credits"
 msgstr ""
 "Κούτσικος Γιώργος <oege89@hotmail.com>\n"
 "Βασιλάκος Γιώργος  <forfolias@linuxteam.cs.teilar.gr>\n"
 "Ριζόπουλος Γιώργος <georgerizopoulos28@gmail.com>"
 
-#: ../src/main-win.c:1403
+#: ../src/main-win.c:1485
 msgid "GPicView"
 msgstr "GPicView"
 
-#: ../src/main-win.c:1405
+#: ../src/main-win.c:1487
 msgid "Copyright (C) 2007 - 2009"
 msgstr "Copyright (C) 2007 - 2009"
 
-#: ../src/main-win.c:1406
+#: ../src/main-win.c:1488
 msgid "Lightweight image viewer from LXDE project"
 msgstr "Ελαφρί πρόγραμμα προβολής εικόνων από το LXDE project"
 
-#: ../src/pref.c:152
+#: ../src/pref.c:157
 msgid ""
-"GPicView will become the default viewer for all supported image files on your system.\n"
+"GPicView will become the default viewer for all supported image files on "
+"your system.\n"
 "(This will be done through 'xdg-mime' program)\n"
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"Ο GPicView θα γίνει το προεπιλεγμένο πρόγραμμα προβολής εικόνων για τους υποστηριζόμενους τύπους αρχείων στο σύστημά σας.\n"
+"Ο GPicView θα γίνει το προεπιλεγμένο πρόγραμμα προβολής εικόνων για τους "
+"υποστηριζόμενους τύπους αρχείων στο σύστημά σας.\n"
 "(Αυτό θα γίνει μέσο του προγράμματος 'xdg-mime')\n"
 "\n"
 "<b>Είστε σίγουροι ότι θέλετε να το κάνετε αυτό;<b>"
@@ -215,6 +215,10 @@ msgid ""
 msgstr ""
 "Μεγαλύτερες τιμές συμπίεσης αποδίδουν μικρότερο μέγεθος αρχείου,\n"
 "αλλά παίρνουν περισσότερη ώρα για να συμπιεστούν."
+
+#: ../gpicview.desktop.in.h:2
+msgid "View your images easily"
+msgstr ""
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
@@ -252,3 +256,10 @@ msgstr ""
 "Περιστροφή του αρχείου JPEG αλλάζοντας το EXIF προσανατολισμό\n"
 "(μόνο αν το πεδίο EXIF προσανατολισμού υπάρχει)"
 
+#: ../data/pref-dlg.glade.h:11
+msgid "Slideshow interval\t"
+msgstr ""
+
+#: ../data/pref-dlg.glade.h:12
+msgid "sec\t"
+msgstr ""

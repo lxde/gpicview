@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-31 23:31+0800\n"
+"POT-Creation-Date: 2010-01-12 01:09+0100\n"
 "PO-Revision-Date: 2008-08-05 10:08+0800\n"
 "Last-Translator: ideal <05281253@bjtu.edu.cn>\n"
 "Language-Team: zh_CN <LL@li.org>\n"
@@ -31,7 +31,7 @@ msgstr "打印版本信息然后退出"
 msgid "Start slideshow"
 msgstr "开始幻灯片放映"
 
-#: ../src/main-win.c:152 ../src/main-win.c:1373
+#: ../src/main-win.c:152 ../src/main-win.c:1373 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
 msgstr "图像查看器"
 
@@ -148,26 +148,26 @@ msgstr "开始/停止幻灯片放映"
 msgid "Save As"
 msgstr "另存为"
 
-#: ../src/main-win.c:1472
+#: ../src/main-win.c:1473
 msgid " * Refer to source code of EOG image viewer and GThumb"
 msgstr " * 参考 EOG 及 GThumb 的源代码"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../src/main-win.c:1476
+#: ../src/main-win.c:1477
 msgid "translator-credits"
 msgstr ""
 "程任全 (cheng) <crquan@gmail.com>\n"
 "商源纯 <05281253@bjtu.edu.cn>"
 
-#: ../src/main-win.c:1484
+#: ../src/main-win.c:1485
 msgid "GPicView"
 msgstr "GPicView"
 
-#: ../src/main-win.c:1486
+#: ../src/main-win.c:1487
 msgid "Copyright (C) 2007 - 2009"
 msgstr "版权所有 (C) 2007 - 2009"
 
-#: ../src/main-win.c:1487
+#: ../src/main-win.c:1488
 msgid "Lightweight image viewer from LXDE project"
 msgstr "来自 LXDE 计划的轻巧图片查看器"
 
@@ -185,7 +185,8 @@ msgstr ""
 "<b>您是否确定要这么做？</b>"
 
 #: ../src/file-dlgs.c:62
-msgid "All Suprted Images"
+#, fuzzy
+msgid "All Supported Images"
 msgstr "支持的全部图像"
 
 #: ../src/file-dlgs.c:67
@@ -200,7 +201,9 @@ msgstr "JPEG 质量："
 msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
-msgstr "较低的质量值将会带来较小的文件大小，\n但是质量将会更差。"
+msgstr ""
+"较低的质量值将会带来较小的文件大小，\n"
+"但是质量将会更差。"
 
 #: ../src/file-dlgs.c:118
 msgid "PNG Compression Level:"
@@ -210,7 +213,13 @@ msgstr "PNG 压缩级别："
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
-msgstr "较高的压缩级别将会减少文件大小，\n但压缩的时间将会加长。"
+msgstr ""
+"较高的压缩级别将会减少文件大小，\n"
+"但压缩的时间将会加长。"
+
+#: ../gpicview.desktop.in.h:2
+msgid "View your images easily"
+msgstr "轻松查看数码相片和图片"
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
@@ -244,7 +253,9 @@ msgstr "普通："
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
-msgstr "通过更改 EXIF 方向值旋转 JPEG 文件\n(仅当 EXIF 方向标记存在时)"
+msgstr ""
+"通过更改 EXIF 方向值旋转 JPEG 文件\n"
+"(仅当 EXIF 方向标记存在时)"
 
 #: ../data/pref-dlg.glade.h:11
 msgid "Slideshow interval\t"
@@ -256,7 +267,3 @@ msgstr "秒\t"
 
 #~ msgid " Full Screen"
 #~ msgstr "全屏幕浏览"
-
-#: gpicview.desktop.in:13
-msgid "View your images easily"
-msgstr "轻松查看数码相片和图片"

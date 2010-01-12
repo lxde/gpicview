@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gpicview 0.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-26 08:46-0400\n"
+"POT-Creation-Date: 2010-01-12 01:09+0100\n"
 "PO-Revision-Date: 2009-07-19 13:42+0100\n"
 "Last-Translator: Mario Blättermann <mariobl@gnome.org>\n"
 "Language-Team: German <translation@mailinglist.lxde.org>\n"
@@ -15,31 +15,39 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Pootle 1.1.0\n"
 
-#: ../src/gpicview.c:37
+#: ../src/gpicview.c:38
 msgid "[FILE]"
 msgstr "[DATEI]"
 
-#: ../src/gpicview.c:39
+#: ../src/gpicview.c:40
 msgid "Print version information and exit"
 msgstr "Versionsinformation anzeigen und beenden"
 
-#: ../src/main-win.c:145 ../src/main-win.c:1293
+#: ../src/gpicview.c:42
+msgid "Start slideshow"
+msgstr "Diaschau starten"
+
+#: ../src/main-win.c:152 ../src/main-win.c:1373 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
 msgstr "Bildbetrachter"
 
-#: ../src/main-win.c:221 ../src/main-win.c:1305
+#: ../src/main-win.c:228 ../src/main-win.c:1385
 msgid "Previous"
 msgstr "Vorheriges"
 
-#: ../src/main-win.c:222 ../src/main-win.c:1306
+#: ../src/main-win.c:229 ../src/main-win.c:1386
 msgid "Next"
 msgstr "Nächstes"
 
-#: ../src/main-win.c:226 ../src/main-win.c:1308
+#: ../src/main-win.c:230 ../src/main-win.c:728
+msgid "Start Slideshow"
+msgstr "Diaschau starten"
+
+#: ../src/main-win.c:234 ../src/main-win.c:1389
 msgid "Zoom Out"
 msgstr "Herauszoomen"
 
-#: ../src/main-win.c:227 ../src/main-win.c:1309
+#: ../src/main-win.c:235 ../src/main-win.c:1390
 msgid "Zoom In"
 msgstr "Hineinzoomen"
 
@@ -47,60 +55,64 @@ msgstr "Hineinzoomen"
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
 #. gtk_widget_set_size_request( percent, 45, -1 );
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
-#: ../src/main-win.c:234 ../src/main-win.c:1310
+#: ../src/main-win.c:242 ../src/main-win.c:1391
 msgid "Fit Image To Window Size"
 msgstr "Bild an Fenstergröße anpassen"
 
-#: ../src/main-win.c:236 ../src/main-win.c:1311
+#: ../src/main-win.c:244 ../src/main-win.c:1392
 msgid "Original Size"
 msgstr "Originalgröße"
 
-#: ../src/main-win.c:243 ../src/main-win.c:1313
+#: ../src/main-win.c:251 ../src/main-win.c:1394
 msgid "Full Screen"
 msgstr "Vollbildmodus"
 
-#: ../src/main-win.c:247 ../src/main-win.c:1315
+#: ../src/main-win.c:255 ../src/main-win.c:1396
 msgid "Rotate Counterclockwise"
 msgstr "Entgegen dem Uhrzeigersinn drehen"
 
-#: ../src/main-win.c:248 ../src/main-win.c:1316
+#: ../src/main-win.c:256 ../src/main-win.c:1397
 msgid "Rotate Clockwise"
 msgstr "Im Uhrzeigersinn drehen"
 
-#: ../src/main-win.c:250 ../src/main-win.c:1317
+#: ../src/main-win.c:258 ../src/main-win.c:1398
 msgid "Flip Horizontal"
 msgstr "Horizontal spiegeln"
 
-#: ../src/main-win.c:251 ../src/main-win.c:1318
+#: ../src/main-win.c:259 ../src/main-win.c:1399
 msgid "Flip Vertical"
 msgstr "Vertikal spiegeln"
 
-#: ../src/main-win.c:255 ../src/main-win.c:1320
+#: ../src/main-win.c:263 ../src/main-win.c:1401
 msgid "Open File"
 msgstr "Datei öffnen"
 
-#: ../src/main-win.c:256 ../src/main-win.c:1321
+#: ../src/main-win.c:264 ../src/main-win.c:1402
 msgid "Save File"
 msgstr "Datei speichern"
 
-#: ../src/main-win.c:257
+#: ../src/main-win.c:265
 msgid "Save File As"
 msgstr "Datei speichern unter"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
-#: ../src/main-win.c:258 ../src/main-win.c:1324
+#: ../src/main-win.c:266 ../src/main-win.c:1405
 msgid "Delete File"
 msgstr "Datei löschen"
 
-#: ../src/main-win.c:261 ../src/main-win.c:1326 ../data/pref-dlg.glade.h:8
+#: ../src/main-win.c:269 ../src/main-win.c:1407 ../data/pref-dlg.glade.h:8
 msgid "Preferences"
 msgstr "Einstellungen"
 
-#: ../src/main-win.c:262 ../src/main-win.c:1329
+#: ../src/main-win.c:270 ../src/main-win.c:1410
 msgid "Quit"
 msgstr "Beenden"
 
-#: ../src/main-win.c:1184
+#: ../src/main-win.c:736
+msgid "Stop Slideshow"
+msgstr "Diaschau beenden"
+
+#: ../src/main-win.c:1263
 msgid ""
 "The file name you selected already exists.\n"
 "Do you want to overwrite existing file?\n"
@@ -110,11 +122,11 @@ msgstr ""
 "Möchten Sie die vorhandene Datei überschreiben?\n"
 "(Warnung: Die Qualität des Originalbildes kann verloren gehen)"
 
-#: ../src/main-win.c:1225
+#: ../src/main-win.c:1304
 msgid "Writing this image format is not supported."
 msgstr "Dieses Bildformat kann nicht gespeichert werden."
 
-#: ../src/main-win.c:1262
+#: ../src/main-win.c:1342
 msgid ""
 "Are you sure you want to delete current file?\n"
 "\n"
@@ -125,35 +137,39 @@ msgstr ""
 "Warnung: Nach dem Löschen kann diese\n"
 "Datei nicht mehr wieder hergestellt werden."
 
-#: ../src/main-win.c:1322
+#: ../src/main-win.c:1387
+msgid "Start/Stop Slideshow"
+msgstr "Diaschau starten/beenden"
+
+#: ../src/main-win.c:1403
 msgid "Save As"
 msgstr "Speichern unter"
 
-#: ../src/main-win.c:1391
+#: ../src/main-win.c:1473
 msgid " * Refer to source code of EOG image viewer and GThumb"
 msgstr " * Basierend auf Quellcode des EOG-Bildbetrachters und GThumb"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../src/main-win.c:1395
+#: ../src/main-win.c:1477
 msgid "translator-credits"
 msgstr ""
 "Martin Siggel\n"
 "Mario Blättermann <mario.blaettermann@gnome.org>\n"
 "Christoph Wickert <cwickert@fedoraproject.org>"
 
-#: ../src/main-win.c:1403
+#: ../src/main-win.c:1485
 msgid "GPicView"
 msgstr "GPicView"
 
-#: ../src/main-win.c:1405
+#: ../src/main-win.c:1487
 msgid "Copyright (C) 2007 - 2009"
 msgstr "Copyright (C) 2007 - 2009"
 
-#: ../src/main-win.c:1406
+#: ../src/main-win.c:1488
 msgid "Lightweight image viewer from LXDE project"
 msgstr "Leichtgewichtiger Bildbetrachter des LXDE-Projekts"
 
-#: ../src/pref.c:152
+#: ../src/pref.c:157
 msgid ""
 "GPicView will become the default viewer for all supported image files on "
 "your system.\n"
@@ -199,6 +215,10 @@ msgstr ""
 "Eine höhere Komprimierung führt zu kleineren Dateigrößen,\n"
 "aber die Komprimierung nimmt mehr Zeit in Anspruch."
 
+#: ../gpicview.desktop.in.h:2
+msgid "View your images easily"
+msgstr "Bilder einfach betrachten"
+
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
 msgstr "<b>Hintergrundfarben</b>"
@@ -235,23 +255,13 @@ msgstr ""
 "JPEG-Dateien auf Basis der EXIF-Ausrichtung drehen\n"
 "(nur wenn EXIF-Information zur Ausrichtung vorhanden ist)"
 
-#~ msgid "Start slideshow"
-#~ msgstr "Diaschau starten"
+#: ../data/pref-dlg.glade.h:11
+msgid "Slideshow interval\t"
+msgstr "Bildwechselintervall\t"
 
-#~ msgid "Start Slideshow"
-#~ msgstr "Diaschau starten"
-
-#~ msgid "Stop Slideshow"
-#~ msgstr "Diaschau beenden"
-
-#~ msgid "Start/Stop Slideshow"
-#~ msgstr "Diaschau starten/beenden"
-
-#~ msgid "Slideshow interval\t"
-#~ msgstr "Bildwechselintervall\t"
-
-#~ msgid "sec\t"
-#~ msgstr "s\t"
+#: ../data/pref-dlg.glade.h:12
+msgid "sec\t"
+msgstr "s\t"
 
 #~ msgid " Full Screen"
 #~ msgstr " Vollbildmodus"
@@ -267,7 +277,3 @@ msgstr ""
 #~ "Schneller Bildbetrachter\n"
 #~ "\n"
 #~ "Entwickelt von Hon Jen Yee (PCMan)"
-
-#: gpicview.desktop.in:13
-msgid "View your images easily"
-msgstr "Bilder einfach betrachten"
