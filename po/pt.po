@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: 0.1.99\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-12 01:09+0100\n"
-"PO-Revision-Date: 2009-05-19 12:13-0000\n"
+"PO-Revision-Date: 2010-01-12 14:45+0100\n"
 "Last-Translator: Sérgio Marques <smarquespt@gmail.com>\n"
 "Language-Team: Portuguese PT <alvarommorais@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 1.1.0\n"
 "X-Poedit-Language: Portuguese\n"
 "X-Poedit-Country: PORTUGAL\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
@@ -28,7 +29,7 @@ msgstr "Imprime informação sobre a versão e sai"
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
-msgstr ""
+msgstr "Iniciar apresentação"
 
 #: ../src/main-win.c:152 ../src/main-win.c:1373 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
@@ -44,7 +45,7 @@ msgstr "Próximo"
 
 #: ../src/main-win.c:230 ../src/main-win.c:728
 msgid "Start Slideshow"
-msgstr ""
+msgstr "Iniciar Apresentação"
 
 #: ../src/main-win.c:234 ../src/main-win.c:1389
 msgid "Zoom Out"
@@ -113,7 +114,7 @@ msgstr "Sair"
 
 #: ../src/main-win.c:736
 msgid "Stop Slideshow"
-msgstr ""
+msgstr "Parar Apresentação"
 
 #: ../src/main-win.c:1263
 msgid ""
@@ -127,7 +128,7 @@ msgstr ""
 
 #: ../src/main-win.c:1304
 msgid "Writing this image format is not supported."
-msgstr "Escrita neste formato de imagem não é suportado."
+msgstr "Escrita neste formato de imagem não é suportada."
 
 #: ../src/main-win.c:1342
 msgid ""
@@ -141,7 +142,7 @@ msgstr ""
 
 #: ../src/main-win.c:1387
 msgid "Start/Stop Slideshow"
-msgstr ""
+msgstr "Iniciar/Parar Apresentação"
 
 #: ../src/main-win.c:1403
 msgid "Save As"
@@ -201,7 +202,7 @@ msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
 msgstr ""
-"Valores de qualidade baixa implicam menores tamanhos,\n"
+"Valores baixos de qualidade implicam ficheiros menores\n"
 "mas a qualidade da imagem será inferior."
 
 #: ../src/file-dlgs.c:118
@@ -258,11 +259,11 @@ msgstr ""
 
 #: ../data/pref-dlg.glade.h:11
 msgid "Slideshow interval\t"
-msgstr ""
+msgstr "Intervalo de apresentação\t"
 
 #: ../data/pref-dlg.glade.h:12
 msgid "sec\t"
-msgstr ""
+msgstr "seg\t"
 
 #~ msgid " Full Screen"
 #~ msgstr "Ecrã Inteiro"
