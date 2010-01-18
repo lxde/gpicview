@@ -8,12 +8,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-12 01:09+0100\n"
-"PO-Revision-Date: 2009-09-03 00:59+0100\n"
-"Last-Translator: Oriol Piera <cortsenc@gmail.com\n"
+"PO-Revision-Date: 2010-01-13 23:01+0200\n"
+"Last-Translator: Josep Sanchez <papapep@gmail.com>\n"
 "Language-Team: LXDE Catalan translators group\n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.0\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
@@ -25,7 +28,7 @@ msgstr "Mostra informació de la versió i surt"
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
-msgstr ""
+msgstr "Inicia la transició"
 
 #: ../src/main-win.c:152 ../src/main-win.c:1373 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
@@ -41,7 +44,7 @@ msgstr "Següent"
 
 #: ../src/main-win.c:230 ../src/main-win.c:728
 msgid "Start Slideshow"
-msgstr ""
+msgstr "Inicia la transició"
 
 #: ../src/main-win.c:234 ../src/main-win.c:1389
 msgid "Zoom Out"
@@ -110,7 +113,7 @@ msgstr "Surt"
 
 #: ../src/main-win.c:736
 msgid "Stop Slideshow"
-msgstr ""
+msgstr "Atura la transició"
 
 #: ../src/main-win.c:1263
 msgid ""
@@ -138,7 +141,7 @@ msgstr ""
 
 #: ../src/main-win.c:1387
 msgid "Start/Stop Slideshow"
-msgstr ""
+msgstr "Engega/Atura la transició"
 
 #: ../src/main-win.c:1403
 msgid "Save As"
@@ -212,7 +215,7 @@ msgstr ""
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
-msgstr ""
+msgstr "Visualitzeu les vostres imatges de manera simple"
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
@@ -252,8 +255,8 @@ msgstr ""
 
 #: ../data/pref-dlg.glade.h:11
 msgid "Slideshow interval\t"
-msgstr ""
+msgstr "Intèrval de la transició\t"
 
 #: ../data/pref-dlg.glade.h:12
 msgid "sec\t"
-msgstr ""
+msgstr "seg\t"
