@@ -8,20 +8,22 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-12 01:09+0100\n"
-"PO-Revision-Date: 2010-01-25 00:52+0330\n"
-"Last-Translator: Hamidreza Davoodi <hrdavodi@gmail.com>\n"
+"PO-Revision-Date: 2010-01-25 13:14+0200\n"
+"Last-Translator: Ali <aysabzevar@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.0.1\n"
 
 # we don't have these symbols([]) in persian keyboard :?
 #: ../src/gpicview.c:38
 msgid "[FILE]"
-msgstr "[فایل]"
+msgstr "[پرونده]"
 
 #: ../src/gpicview.c:40
-#, fuzzy
 msgid "Print version information and exit"
 msgstr "اطلاعات نسخه را چاپ کرده و خارج شو"
 
@@ -32,7 +34,6 @@ msgstr "شروع نمایش پرده ای"
 #: ../src/main-win.c:152
 #: ../src/main-win.c:1373
 #: ../gpicview.desktop.in.h:1
-#, fuzzy
 msgid "Image Viewer"
 msgstr "نمایشگر تصویر"
 
@@ -49,17 +50,17 @@ msgstr "بعدی"
 #: ../src/main-win.c:230
 #: ../src/main-win.c:728
 msgid "Start Slideshow"
-msgstr "شروع در نمایش پرده ای"
+msgstr "شروع در نمایش پرده‌ای"
 
 #: ../src/main-win.c:234
 #: ../src/main-win.c:1389
 msgid "Zoom Out"
-msgstr "بزرگ نمایی"
+msgstr "کوچک نمایی"
 
 #: ../src/main-win.c:235
 #: ../src/main-win.c:1390
 msgid "Zoom In"
-msgstr "کوچک نمایی"
+msgstr "بزرگ نمایی"
 
 #. percent = gtk_entry_new();    // show scale (in percentage)
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
@@ -68,12 +69,12 @@ msgstr "کوچک نمایی"
 #: ../src/main-win.c:242
 #: ../src/main-win.c:1391
 msgid "Fit Image To Window Size"
-msgstr "تنظیم با اندازه ی پنجره"
+msgstr "تنظیم به اندازه‌ی پنجره"
 
 #: ../src/main-win.c:244
 #: ../src/main-win.c:1392
 msgid "Original Size"
-msgstr "نمای اصلی"
+msgstr "اندازه اصلی"
 
 #: ../src/main-win.c:251
 #: ../src/main-win.c:1394
@@ -96,22 +97,22 @@ msgstr "چرخش ساعتگرد"
 #: ../src/main-win.c:258
 #: ../src/main-win.c:1398
 msgid "Flip Horizontal"
-msgstr "افقی"
+msgstr "چرخش افقی"
 
 #: ../src/main-win.c:259
 #: ../src/main-win.c:1399
 msgid "Flip Vertical"
-msgstr "عمودی"
+msgstr "چرخش عمودی"
 
 #: ../src/main-win.c:263
 #: ../src/main-win.c:1401
 msgid "Open File"
-msgstr "باز کردن فایل"
+msgstr "باز کردن پرونده"
 
 #: ../src/main-win.c:264
 #: ../src/main-win.c:1402
 msgid "Save File"
-msgstr "ذخیر فایل"
+msgstr "ذخیره پرونده"
 
 #: ../src/main-win.c:265
 msgid "Save File As"
@@ -121,7 +122,7 @@ msgstr "ذخیره با عنوان"
 #: ../src/main-win.c:266
 #: ../src/main-win.c:1405
 msgid "Delete File"
-msgstr "حذف فایل"
+msgstr "حذف پرونده"
 
 #: ../src/main-win.c:269
 #: ../src/main-win.c:1407
@@ -273,4 +274,3 @@ msgstr "نمایش پرده ای زمان دار/t"
 #: ../data/pref-dlg.glade.h:12
 msgid "sec\t"
 msgstr "ثانیه/t"
-

@@ -1,0 +1,260 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: LXDE\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-01-12 01:09+0100\n"
+"PO-Revision-Date: 2010-01-24 11:10-0800\n"
+"Last-Translator: alexxed <alexxed@gmail.com>\n"
+"Language-Team: Romanian <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms:  nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2;\n"
+"X-Generator: Narro 0.9.4 on http://tradu.softwareliber.ro\n"
+
+#: ../src/gpicview.c:38
+msgid "[FILE]"
+msgstr "[FIȘIER]"
+
+#: ../src/gpicview.c:40
+msgid "Print version information and exit"
+msgstr "Tipărește informații despre versiune și ieși"
+
+#: ../src/gpicview.c:42
+msgid "Start slideshow"
+msgstr "Pornește prezentarea"
+
+#: ../src/main-win.c:152 ../src/main-win.c:1373 ../gpicview.desktop.in.h:1
+msgid "Image Viewer"
+msgstr "Vizualizator de imagini"
+
+#: ../src/main-win.c:228 ../src/main-win.c:1385
+msgid "Previous"
+msgstr "Precedenta"
+
+#: ../src/main-win.c:229 ../src/main-win.c:1386
+msgid "Next"
+msgstr "Următoarea"
+
+#: ../src/main-win.c:230 ../src/main-win.c:728
+msgid "Start Slideshow"
+msgstr "Pornește prezentarea"
+
+#: ../src/main-win.c:234 ../src/main-win.c:1389
+msgid "Zoom Out"
+msgstr "Depărtează"
+
+#: ../src/main-win.c:235 ../src/main-win.c:1390
+msgid "Zoom In"
+msgstr "Apropie"
+
+#. percent = gtk_entry_new();    // show scale (in percentage)
+#. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
+#. gtk_widget_set_size_request( percent, 45, -1 );
+#. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
+#: ../src/main-win.c:242 ../src/main-win.c:1391
+msgid "Fit Image To Window Size"
+msgstr "Potrivește imaginea la dimensiunea ferestrei"
+
+#: ../src/main-win.c:244 ../src/main-win.c:1392
+msgid "Original Size"
+msgstr "Mărime originală"
+
+#: ../src/main-win.c:251 ../src/main-win.c:1394
+msgid "Full Screen"
+msgstr "Pe tot ecranul"
+
+#: ../src/main-win.c:255 ../src/main-win.c:1396
+msgid "Rotate Counterclockwise"
+msgstr "Rotește spre stânga"
+
+#: ../src/main-win.c:256 ../src/main-win.c:1397
+msgid "Rotate Clockwise"
+msgstr "Rotește spre dreapta"
+
+#: ../src/main-win.c:258 ../src/main-win.c:1398
+msgid "Flip Horizontal"
+msgstr "Întoarce pe orizontală"
+
+#: ../src/main-win.c:259 ../src/main-win.c:1399
+msgid "Flip Vertical"
+msgstr "Întoarce pe verticală"
+
+#: ../src/main-win.c:263 ../src/main-win.c:1401
+msgid "Open File"
+msgstr "Deschide un fișier"
+
+#: ../src/main-win.c:264 ../src/main-win.c:1402
+msgid "Save File"
+msgstr "Salvează fișierul"
+
+#: ../src/main-win.c:265
+msgid "Save File As"
+msgstr "Salvează fișierul ca"
+
+#. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
+#: ../src/main-win.c:266 ../src/main-win.c:1405
+msgid "Delete File"
+msgstr "Șterge fișierul"
+
+#: ../src/main-win.c:269 ../src/main-win.c:1407 ../data/pref-dlg.glade.h:8
+msgid "Preferences"
+msgstr "Preferințe"
+
+#: ../src/main-win.c:270 ../src/main-win.c:1410
+msgid "Quit"
+msgstr "Ieșire"
+
+#: ../src/main-win.c:736
+msgid "Stop Slideshow"
+msgstr "Oprește prezentarea"
+
+#: ../src/main-win.c:1263
+msgid ""
+"The file name you selected already exists.\n"
+"Do you want to overwrite existing file?\n"
+"(Warning: The quality of original image might be lost)"
+msgstr ""
+"Numele fișierului ales există deja.\n"
+"Doriți să înlocuiți fișierul existent?\n"
+"(Atenție: Calitatea originală a imaginii poate fi pierdută)"
+
+#: ../src/main-win.c:1304
+msgid "Writing this image format is not supported."
+msgstr "Scrierea acestui format de imagine nu este suportată."
+
+#: ../src/main-win.c:1342
+msgid ""
+"Are you sure you want to delete current file?\n"
+"\n"
+"Warning: Once deleted, the file cannot be recovered."
+msgstr ""
+"Sigur doriți să ștergeți fișierul selectat?\n"
+"\n"
+"Atenție: Odată șters, fișierul nu mai poate fi recuperat."
+
+#: ../src/main-win.c:1387
+msgid "Start/Stop Slideshow"
+msgstr "Pornește sau oprește prezentarea"
+
+#: ../src/main-win.c:1403
+msgid "Save As"
+msgstr "Salvează ca"
+
+#: ../src/main-win.c:1473
+msgid " * Refer to source code of EOG image viewer and GThumb"
+msgstr ""
+" * Consultați codul sursă al programului de vizualizat imagini EOG sau al "
+"GThumb"
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: ../src/main-win.c:1477
+msgid "translator-credits"
+msgstr "Comunitatea de traducători de pe tradu.softwareliber.ro"
+
+#: ../src/main-win.c:1485
+msgid "GPicView"
+msgstr "GPicView"
+
+#: ../src/main-win.c:1487
+msgid "Copyright (C) 2007 - 2009"
+msgstr "Drepturi de autor pe 2007 - 2009"
+
+#: ../src/main-win.c:1488
+msgid "Lightweight image viewer from LXDE project"
+msgstr "Vizualizator simplu de imagini de la proiectul LXDE"
+
+#: ../src/pref.c:157
+msgid ""
+"GPicView will become the default viewer for all supported image files on your "
+"system.\n"
+"(This will be done through 'xdg-mime' program)\n"
+"\n"
+"<b>Are you sure you really want to do this?</b>"
+msgstr ""
+"GPicView va deveni vizualizatorul implicit pentru toate imaginile suportate "
+"din sistem.\n"
+"(Acest lucru va fi realizat prin programul „xdg-mime”)\n"
+"\n"
+"<b>Sigur doriți să faceți asta?</b>"
+
+#: ../src/file-dlgs.c:62
+msgid "All Supported Images"
+msgstr "Toate imaginile suportate"
+
+#: ../src/file-dlgs.c:67
+msgid "All Files"
+msgstr "Toate fișierele"
+
+#: ../src/file-dlgs.c:103
+msgid "JPEG Quality:"
+msgstr "Calitate JPEG:"
+
+#: ../src/file-dlgs.c:104
+msgid ""
+"Lower quality values yield smaller file sizes,\n"
+"but the image quality will be poorer."
+msgstr ""
+"Valori mici pentru calitate duc la dimensiuni mici ale fișierului,\n"
+"dar calitatea imaginii va fi mai slabă."
+
+#: ../src/file-dlgs.c:118
+msgid "PNG Compression Level:"
+msgstr "Nivelul de compresie PNG:"
+
+#: ../src/file-dlgs.c:119
+msgid ""
+"Higher compression levels yield smaller file sizes,\n"
+"but takes more time to do the compression."
+msgstr ""
+"Valori mari ale compresiei duc la fișiere mai mici,\n"
+"dar comprimarea durează mai mult."
+
+#: ../gpicview.desktop.in.h:2
+msgid "View your images easily"
+msgstr "Vedeți imagini cu ușurință"
+
+#: ../data/pref-dlg.glade.h:1
+msgid "<b>Background colors</b>"
+msgstr "<b>Culori de fundal</b>"
+
+#: ../data/pref-dlg.glade.h:2
+msgid "Ask before deleting images"
+msgstr "Întreabă înainte de a șterge imaginile"
+
+#: ../data/pref-dlg.glade.h:3
+msgid "Ask before saving images"
+msgstr "Întreabă înainte de a salva imaginile"
+
+#: ../data/pref-dlg.glade.h:4
+msgid "Automatically save rotated images"
+msgstr "Salvează automat imaginile rotite"
+
+#: ../data/pref-dlg.glade.h:5
+msgid "Fullscreen:"
+msgstr "Ecran complet:"
+
+#: ../data/pref-dlg.glade.h:6
+msgid "Make GPicView the default viewer for images"
+msgstr "Marchează GPicView ca aplicație principală de vizualizat imagini"
+
+#: ../data/pref-dlg.glade.h:7
+msgid "Normal:"
+msgstr "Normal:"
+
+#: ../data/pref-dlg.glade.h:9
+msgid ""
+"Rotate JPEG file by changing EXIF orientation value\n"
+"(only if EXIF orientation tag exists)"
+msgstr ""
+"Rotește fișierul JPEG prin schimbarea valorii de orientare din EXIF\n"
+"(numai dacă există etichetă de orientare în EXIF)"
+
+#: ../data/pref-dlg.glade.h:11
+msgid "Slideshow interval\t"
+msgstr "Interval între diapozitive\t"
+
+#: ../data/pref-dlg.glade.h:12
+msgid "sec\t"
+msgstr "sec\t"
