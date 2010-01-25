@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-12 01:09+0100\n"
-"PO-Revision-Date: 2010-01-23 19:20+0330\n"
+"PO-Revision-Date: 2010-01-25 00:52+0330\n"
 "Last-Translator: Hamidreza Davoodi <hrdavodi@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -32,6 +32,7 @@ msgstr "شروع نمایش پرده ای"
 #: ../src/main-win.c:152
 #: ../src/main-win.c:1373
 #: ../gpicview.desktop.in.h:1
+#, fuzzy
 msgid "Image Viewer"
 msgstr "نمایشگر تصویر"
 
@@ -94,15 +95,13 @@ msgstr "چرخش ساعتگرد"
 # تغییر=change
 #: ../src/main-win.c:258
 #: ../src/main-win.c:1398
-#, fuzzy
 msgid "Flip Horizontal"
-msgstr "تغییر به افقی"
+msgstr "افقی"
 
 #: ../src/main-win.c:259
 #: ../src/main-win.c:1399
-#, fuzzy
 msgid "Flip Vertical"
-msgstr "تغییر به عمودی"
+msgstr "عمودی"
 
 #: ../src/main-win.c:263
 #: ../src/main-win.c:1401
@@ -116,7 +115,7 @@ msgstr "ذخیر فایل"
 
 #: ../src/main-win.c:265
 msgid "Save File As"
-msgstr "ذخیره به عنوان ... "
+msgstr "ذخیره با عنوان"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
 #: ../src/main-win.c:266
@@ -145,7 +144,7 @@ msgid ""
 "The file name you selected already exists.\n"
 "Do you want to overwrite existing file?\n"
 "(Warning: The quality of original image might be lost)"
-msgstr "فایلی که انتخاب کرده اید از وجود دارد. /nآیا می خواهید بر روی آن بنویسید(ذخیره) کنید ؟ /n(اخطار: ممکن است کیفیت تصویر واقعی از بین برود.)"
+msgstr "فایلی که انتخاب کرده اید وجود دارد. /nآیا می خواهید بر روی آن بنویسید(ذخیره) کنید ؟ /n(اخطار: ممکن است کیفیت تصویر واقعی از بین برود.)"
 
 #: ../src/main-win.c:1304
 msgid "Writing this image format is not supported."
@@ -164,15 +163,14 @@ msgstr "شروع/پایان نمایش پرده ای"
 
 #: ../src/main-win.c:1403
 msgid "Save As"
-msgstr "ذخیره به عنوان..."
+msgstr "ذخیره با عنوان"
 
 # And so.
 # This is another problem for tanslators ;)
 # what should i do with these Names?
 #: ../src/main-win.c:1473
-#, fuzzy
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr "*ارجاع داده می شود به کد و متن های EOG image viewer و GThumb ."
+msgstr "*ارجاع داده می شود به کد و سورس های EOG image viewer و GThumb ."
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1477
@@ -180,7 +178,6 @@ msgid "translator-credits"
 msgstr "ترجمه کنندگان"
 
 #: ../src/main-win.c:1485
-#, fuzzy
 msgid "GPicView"
 msgstr "جی‌پیک‌ویو(GPicView)"
 
@@ -190,7 +187,7 @@ msgstr "کپی رایت ۲۰۰۷ - ۲۰۰۹"
 
 #: ../src/main-win.c:1488
 msgid "Lightweight image viewer from LXDE project"
-msgstr "نمایشگر تصویر سبک وزن از پروژه ی LXDE ."
+msgstr "نمایشگر تصویر سبک وزن پروژه ی LXDE ."
 
 #: ../src/pref.c:157
 msgid ""
@@ -198,7 +195,7 @@ msgid ""
 "(This will be done through 'xdg-mime' program)\n"
 "\n"
 "<b>Are you sure you really want to do this?</b>"
-msgstr "جی‌پیک‌ویو(GPicView) نمایشگر تصویرهای پشتیبانی شده در سیستم شما خواهد شد. /n(این کار بواسطه ی ابزار «xdg-mime» انجام خواهد شد)/n<b>آیا واقعا می خواهید این کار را انجام بدهید ؟</b>"
+msgstr "جی‌پیک‌ویو(GPicView) نمایشگر تصویرهای پشتیبانی شده در سیستم شما خواهد شد. /n (این کار بواسطه ی ابزار «xdg-mime» انجام خواهد شد) /n <b>آیا واقعا می خواهید این کار را انجام بدهید ؟</b>"
 
 #: ../src/file-dlgs.c:62
 msgid "All Supported Images"
@@ -216,22 +213,21 @@ msgstr "کیفیت تصویر(JPEG):"
 msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
-msgstr "کیفیت کم تصویر باعث کوچک شدن اندازه ی فایل می شود./nاما تصویر موردنظر نامرغوب تر خواهد شد."
+msgstr "کیفیت کم تصویر باعث کوچک شدن اندازه ی فایل می شود./n اما تصویر موردنظر نامرغوب تر خواهد شد."
 
 #: ../src/file-dlgs.c:118
 msgid "PNG Compression Level:"
-msgstr "سطح ترکمی و فشردگی(اندازه) تصویر (PNG):"
+msgstr "سطح تراکمی و فشردگی(اندازه) تصویر (PNG):"
 
 #: ../src/file-dlgs.c:119
-#, fuzzy
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
-msgstr "بالا بردن سطح تراکم باعث کوچک شد اندازه ی فایل های می شود. /nاما اینکار وقت بیشتر را می طلبد !"
+msgstr "بالا بردن سطح تراکم باعث کوچک شد اندازه ی فایل های می شود. /nاما اینکار وقت بیشتری را می طلبد !"
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
-msgstr "تصاویرتان را به آسانی نگاه کنید"
+msgstr "نگاهی سریع و آسان"
 
 # should i write down these tags ?
 # </b>
@@ -245,11 +241,11 @@ msgstr "پیش از پاک کردن تصاویر ، بپرس"
 
 #: ../data/pref-dlg.glade.h:3
 msgid "Ask before saving images"
-msgstr "پیش از ذخیره ی تصاویر بپرس."
+msgstr "پیش از ذخیره ی تصاویر بپرس"
 
 #: ../data/pref-dlg.glade.h:4
 msgid "Automatically save rotated images"
-msgstr "چرخش خودکار دورانی عکس ها"
+msgstr "چرخش دورانی خودکار عکس ها"
 
 #: ../data/pref-dlg.glade.h:5
 msgid "Fullscreen:"
