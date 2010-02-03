@@ -8,14 +8,15 @@ msgstr ""
 "Project-Id-Version: gpicview 0.1.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-12 01:09+0100\n"
-"PO-Revision-Date: 2009-05-19 13:29+0200\n"
-"Last-Translator: Sander De Voogdt <celettu@gmail.com>\n"
+"PO-Revision-Date: 2010-02-03 01:24+0200\n"
+"Last-Translator: Horatio <hosoka@hotmail.com>\n"
 "Language-Team: Dutch\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ASCII\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 1.1.0\n"
+"X-Generator: Pootle 2.0.1\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
@@ -27,7 +28,7 @@ msgstr "Versie-informatie printen en programma afsluiten"
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
-msgstr ""
+msgstr "Begin presentatie"
 
 #: ../src/main-win.c:152 ../src/main-win.c:1373 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
@@ -112,7 +113,7 @@ msgstr "Afsluiten"
 
 #: ../src/main-win.c:736
 msgid "Stop Slideshow"
-msgstr ""
+msgstr "Stop presentatie"
 
 #: ../src/main-win.c:1263
 msgid ""
@@ -141,7 +142,7 @@ msgstr ""
 
 #: ../src/main-win.c:1387
 msgid "Start/Stop Slideshow"
-msgstr ""
+msgstr "Begin/Stop Presentatie"
 
 #: ../src/main-win.c:1403
 msgid "Save As"
@@ -216,7 +217,7 @@ msgstr ""
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
-msgstr ""
+msgstr "Bekijk uw afbeeldingen makkelijker"
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
@@ -255,12 +256,13 @@ msgstr ""
 "orientatie tag bestaat)"
 
 #: ../data/pref-dlg.glade.h:11
+#, fuzzy
 msgid "Slideshow interval\t"
-msgstr ""
+msgstr "Presentatie interval\t"
 
 #: ../data/pref-dlg.glade.h:12
 msgid "sec\t"
-msgstr ""
+msgstr "sec\t"
 
 #~ msgid " Full Screen"
 #~ msgstr " Volledig scherm"
