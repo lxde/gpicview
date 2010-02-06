@@ -3,12 +3,12 @@
 # This file is distributed under the same license as the GPicView package.
 # Henrique P. Machado <zehrique@gmail.com>, 2009.
 # Thiago Avelino <thiagoavelinoster@gmail.com>, 2009.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-12 01:09+0100\n"
+"POT-Creation-Date: 2010-02-06 15:27+0000\n"
 "PO-Revision-Date: 2009-05-21 00:58-0300\n"
 "Last-Translator: Thiago Avelino <thiagoavelinoster@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
@@ -28,7 +28,7 @@ msgstr "Mostra a versão e sai"
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
-msgstr ""
+msgstr "Iniciar apresentação de slides"
 
 #: ../src/main-win.c:152 ../src/main-win.c:1373 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
@@ -44,7 +44,7 @@ msgstr "Próximo"
 
 #: ../src/main-win.c:230 ../src/main-win.c:728
 msgid "Start Slideshow"
-msgstr ""
+msgstr "Inicia a apresentação de slides"
 
 #: ../src/main-win.c:234 ../src/main-win.c:1389
 msgid "Zoom Out"
@@ -98,7 +98,8 @@ msgstr "Salvar arquivo"
 msgid "Save File As"
 msgstr "Salvar arquivo como"
 
-#. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
+#. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS,
+#. G_CALLBACK(on_save_as), GDK_A, 0 ),
 #: ../src/main-win.c:266 ../src/main-win.c:1405
 msgid "Delete File"
 msgstr "Excluir arquivo"
@@ -113,7 +114,7 @@ msgstr "Sair"
 
 #: ../src/main-win.c:736
 msgid "Stop Slideshow"
-msgstr ""
+msgstr "Parar apresentação de slides"
 
 #: ../src/main-win.c:1263
 msgid ""
@@ -141,7 +142,7 @@ msgstr ""
 
 #: ../src/main-win.c:1387
 msgid "Start/Stop Slideshow"
-msgstr ""
+msgstr "Iniciar/Parar apresentação de slides"
 
 #: ../src/main-win.c:1403
 msgid "Save As"
@@ -172,14 +173,12 @@ msgstr "Visualizador de imagem leve e rápido do projeto LXDE"
 
 #: ../src/pref.c:157
 msgid ""
-"GPicView will become the default viewer for all supported image files on "
-"your system.\n"
+"GPicView will become the default viewer for all supported image files on your system.\n"
 "(This will be done through 'xdg-mime' program)\n"
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"GPicView se tornará o visualizador padrão para os arquivos de imagens "
-"suportados em seu sistema.\n"
+"GPicView se tornará o visualizador padrão para os arquivos de imagens suportados em seu sistema.\n"
 "(Isso será feito através do programa 'xdg-mime')\n"
 "\n"
 "<b>Tem certeza que deseja fazer isso?</b>"
@@ -218,7 +217,7 @@ msgstr ""
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
-msgstr ""
+msgstr "Visualize suas imagens de forma fácil"
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
@@ -258,11 +257,11 @@ msgstr ""
 
 #: ../data/pref-dlg.glade.h:11
 msgid "Slideshow interval\t"
-msgstr ""
+msgstr "Intervalo para a apresentação de slides\t"
 
 #: ../data/pref-dlg.glade.h:12
 msgid "sec\t"
-msgstr ""
+msgstr "seg\t"
 
 #~ msgid " Full Screen"
 #~ msgstr " Tela cheia"
