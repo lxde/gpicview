@@ -8,10 +8,9 @@ msgstr ""
 "Project-Id-Version: gpicview\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-12 01:09+0100\n"
-"PO-Revision-Date: 2009-10-09 22:13+0200\n"
-"Last-Translator: Rossen Karpuzov <gustav@cointech.net>\n"
-"Language-Team: Mandriva User Group - Bulgaria <mandriva-bg@googlegroups."
-"com>\n"
+"PO-Revision-Date: 2010-02-04 20:34+0200\n"
+"Last-Translator: Radoslav Ivanov <rec_ku@hotmail.com>\n"
+"Language-Team: Mandriva User Group - Bulgaria <mandriva-bg@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,37 +18,44 @@ msgstr ""
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
-msgstr "[FILE]"
+msgstr "[ФАЙЛ]"
 
 #: ../src/gpicview.c:40
 msgid "Print version information and exit"
-msgstr "Отпечатва информация за версията и излиза"
+msgstr "Отпечатай версията на програмата и излез"
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
-msgstr ""
+msgstr "Стартирай слайдшоу"
 
-#: ../src/main-win.c:152 ../src/main-win.c:1373 ../gpicview.desktop.in.h:1
+#: ../src/main-win.c:152
+#: ../src/main-win.c:1373
+#: ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
 msgstr "Показване на снимки"
 
-#: ../src/main-win.c:228 ../src/main-win.c:1385
+#: ../src/main-win.c:228
+#: ../src/main-win.c:1385
 msgid "Previous"
 msgstr "Предишна"
 
-#: ../src/main-win.c:229 ../src/main-win.c:1386
+#: ../src/main-win.c:229
+#: ../src/main-win.c:1386
 msgid "Next"
 msgstr "Следваща"
 
-#: ../src/main-win.c:230 ../src/main-win.c:728
+#: ../src/main-win.c:230
+#: ../src/main-win.c:728
 msgid "Start Slideshow"
-msgstr ""
+msgstr "Стартирай Слайдшоу"
 
-#: ../src/main-win.c:234 ../src/main-win.c:1389
+#: ../src/main-win.c:234
+#: ../src/main-win.c:1389
 msgid "Zoom Out"
 msgstr "Намаляване"
 
-#: ../src/main-win.c:235 ../src/main-win.c:1390
+#: ../src/main-win.c:235
+#: ../src/main-win.c:1390
 msgid "Zoom In"
 msgstr "Увеличаване"
 
@@ -57,39 +63,48 @@ msgstr "Увеличаване"
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
 #. gtk_widget_set_size_request( percent, 45, -1 );
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
-#: ../src/main-win.c:242 ../src/main-win.c:1391
+#: ../src/main-win.c:242
+#: ../src/main-win.c:1391
 msgid "Fit Image To Window Size"
 msgstr "Напасва картинката до размера на прозореца"
 
-#: ../src/main-win.c:244 ../src/main-win.c:1392
+#: ../src/main-win.c:244
+#: ../src/main-win.c:1392
 msgid "Original Size"
 msgstr "Оригинален размер"
 
-#: ../src/main-win.c:251 ../src/main-win.c:1394
+#: ../src/main-win.c:251
+#: ../src/main-win.c:1394
 msgid "Full Screen"
 msgstr "Пълен екран"
 
-#: ../src/main-win.c:255 ../src/main-win.c:1396
+#: ../src/main-win.c:255
+#: ../src/main-win.c:1396
 msgid "Rotate Counterclockwise"
 msgstr "Обърни обратно на часовниковата стрелка"
 
-#: ../src/main-win.c:256 ../src/main-win.c:1397
+#: ../src/main-win.c:256
+#: ../src/main-win.c:1397
 msgid "Rotate Clockwise"
 msgstr "Обърни по часовниковата стрелка"
 
-#: ../src/main-win.c:258 ../src/main-win.c:1398
+#: ../src/main-win.c:258
+#: ../src/main-win.c:1398
 msgid "Flip Horizontal"
 msgstr "Хоризонтално обръщане"
 
-#: ../src/main-win.c:259 ../src/main-win.c:1399
+#: ../src/main-win.c:259
+#: ../src/main-win.c:1399
 msgid "Flip Vertical"
 msgstr "Вертикално обръщане"
 
-#: ../src/main-win.c:263 ../src/main-win.c:1401
+#: ../src/main-win.c:263
+#: ../src/main-win.c:1401
 msgid "Open File"
 msgstr "Отвори файл"
 
-#: ../src/main-win.c:264 ../src/main-win.c:1402
+#: ../src/main-win.c:264
+#: ../src/main-win.c:1402
 msgid "Save File"
 msgstr "Запази файл"
 
@@ -98,21 +113,25 @@ msgid "Save File As"
 msgstr "Запази файл като"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
-#: ../src/main-win.c:266 ../src/main-win.c:1405
+#: ../src/main-win.c:266
+#: ../src/main-win.c:1405
 msgid "Delete File"
 msgstr "Изтрий файл"
 
-#: ../src/main-win.c:269 ../src/main-win.c:1407 ../data/pref-dlg.glade.h:8
+#: ../src/main-win.c:269
+#: ../src/main-win.c:1407
+#: ../data/pref-dlg.glade.h:8
 msgid "Preferences"
 msgstr "Предпочитания"
 
-#: ../src/main-win.c:270 ../src/main-win.c:1410
+#: ../src/main-win.c:270
+#: ../src/main-win.c:1410
 msgid "Quit"
 msgstr "Изход"
 
 #: ../src/main-win.c:736
 msgid "Stop Slideshow"
-msgstr ""
+msgstr "Спри слайдшоу"
 
 #: ../src/main-win.c:1263
 msgid ""
@@ -140,7 +159,7 @@ msgstr ""
 
 #: ../src/main-win.c:1387
 msgid "Start/Stop Slideshow"
-msgstr ""
+msgstr "Пусни/Спри слайдшоу"
 
 #: ../src/main-win.c:1403
 msgid "Save As"
@@ -148,7 +167,7 @@ msgstr "Запис като"
 
 #: ../src/main-win.c:1473
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr ""
+msgstr "* Изисквай код за EOG графичен илюстратор и GThumb"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1477
@@ -165,16 +184,19 @@ msgstr "Права за разпространение (C) 2007 - 2009"
 
 #: ../src/main-win.c:1488
 msgid "Lightweight image viewer from LXDE project"
-msgstr ""
+msgstr "Графичен разглеждач Lightweight от LXDE проекта"
 
 #: ../src/pref.c:157
 msgid ""
-"GPicView will become the default viewer for all supported image files on "
-"your system.\n"
+"GPicView will become the default viewer for all supported image files on your system.\n"
 "(This will be done through 'xdg-mime' program)\n"
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
+"GPicView ще бъде разглеждача по подразбиране за всички поддържани файлове на вашата система.\n"
+"(Това ще се изпълни чрез 'xdg-mime')\n"
+"\n"
+"<b> Сигурни ли сте, че искате да продължите? </b>"
 
 #: ../src/file-dlgs.c:62
 msgid "All Supported Images"
@@ -205,10 +227,12 @@ msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
 msgstr ""
+"По-голямата компресация заема по-малко място,\n"
+"но ще отнеме известно време."
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
-msgstr ""
+msgstr "Плавен преглед на вашите картини"
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
@@ -216,15 +240,15 @@ msgstr "<b>Цветове за фона</b>"
 
 #: ../data/pref-dlg.glade.h:2
 msgid "Ask before deleting images"
-msgstr ""
+msgstr "Запитай преди изтриване на картина"
 
 #: ../data/pref-dlg.glade.h:3
 msgid "Ask before saving images"
-msgstr ""
+msgstr "Запитай преди запаметяване на картина"
 
 #: ../data/pref-dlg.glade.h:4
 msgid "Automatically save rotated images"
-msgstr ""
+msgstr "Запамети автоматично, завъртяните картини"
 
 #: ../data/pref-dlg.glade.h:5
 msgid "Fullscreen:"
@@ -243,11 +267,16 @@ msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
+"Завърти JPEG файл чрез промяна на EXIF ориентацията\n"
+"(единствено ако съществува EXIF позиция)"
 
 #: ../data/pref-dlg.glade.h:11
 msgid "Slideshow interval\t"
-msgstr ""
+msgstr "Изчакване в Слайдшоуто\t"
 
 #: ../data/pref-dlg.glade.h:12
 msgid "sec\t"
-msgstr ""
+msgstr "Секунди\t"
+
+
+ 	  	 
