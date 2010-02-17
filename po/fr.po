@@ -1,15 +1,15 @@
 # French translation of GPicView.
 # Copyright (C) 2007-2008 洪任諭 (Hon Jen Yee, aka PCMan)
 # This file is distributed under the same license as the GPicView package.
-#
+# 
 # ElGeneralMidi <ElGeneralMidi@jabber.ubuntu-fr.org>, 2007.
 # Robert-André Mauchin <zebob.m@pengzone.org>, 2008.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: gpicview r846\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-12 01:09+0100\n"
+"POT-Creation-Date: 2010-02-17 04:04+0000\n"
 "PO-Revision-Date: 2009-12-02 22:11+0100\n"
 "Last-Translator: Mouillon <pci21@free.fr>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
@@ -29,7 +29,7 @@ msgstr "Affiche les informations de version et quitte"
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
-msgstr ""
+msgstr "Démarrer le diaporama"
 
 #: ../src/main-win.c:152 ../src/main-win.c:1373 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
@@ -45,7 +45,7 @@ msgstr "Suivant"
 
 #: ../src/main-win.c:230 ../src/main-win.c:728
 msgid "Start Slideshow"
-msgstr ""
+msgstr "Démarrer le diaporama"
 
 #: ../src/main-win.c:234 ../src/main-win.c:1389
 msgid "Zoom Out"
@@ -99,7 +99,8 @@ msgstr "Enregistrer le fichier"
 msgid "Save File As"
 msgstr "Enregistrer le fichier sous"
 
-#. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
+#. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS,
+#. G_CALLBACK(on_save_as), GDK_A, 0 ),
 #: ../src/main-win.c:266 ../src/main-win.c:1405
 msgid "Delete File"
 msgstr "Supprimer le fichier"
@@ -114,7 +115,7 @@ msgstr "Quitter"
 
 #: ../src/main-win.c:736
 msgid "Stop Slideshow"
-msgstr ""
+msgstr "Arrêter le diaporama"
 
 #: ../src/main-win.c:1263
 msgid ""
@@ -142,7 +143,7 @@ msgstr ""
 
 #: ../src/main-win.c:1387
 msgid "Start/Stop Slideshow"
-msgstr ""
+msgstr "Démarrer/Arrêter le diaporama"
 
 #: ../src/main-win.c:1403
 msgid "Save As"
@@ -174,14 +175,12 @@ msgstr "Visionneur d'images léger du projet LXDE"
 
 #: ../src/pref.c:157
 msgid ""
-"GPicView will become the default viewer for all supported image files on "
-"your system.\n"
+"GPicView will become the default viewer for all supported image files on your system.\n"
 "(This will be done through 'xdg-mime' program)\n"
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"GPicView deviendra votre visionneur d'images par défaut pour tous les types "
-"d'images pris en charge sur votre système.\n"
+"GPicView deviendra votre visionneur d'images par défaut pour tous les types d'images pris en charge sur votre système.\n"
 "(ceci sera effectué grâce au programme « xdg-mime »)\n"
 "\n"
 "<b>Voulez-vous vraiment effectuer ceci ?</b>"
@@ -260,7 +259,7 @@ msgstr ""
 
 #: ../data/pref-dlg.glade.h:11
 msgid "Slideshow interval\t"
-msgstr ""
+msgstr "Intervalle entre les diapo"
 
 #: ../data/pref-dlg.glade.h:12
 msgid "sec\t"
