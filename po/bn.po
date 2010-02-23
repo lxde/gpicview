@@ -1,14 +1,13 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-
 # Sadia Afroz <sadia@ankur.org.bd>, 2010. 
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: bn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-12 01:09+0100\n"
+"POT-Creation-Date: 2010-02-15 23:40+0100\n"
 "PO-Revision-Date: 2010-01-31 15:44+0600\n"
 "Last-Translator: Sadia Afroz <sadia@ankur.org.bd>\n"
 "Language-Team: Bengali <ankur-bd-l10n@googlegroups.com>\n"
@@ -119,9 +118,9 @@ msgid ""
 "Do you want to overwrite existing file?\n"
 "(Warning: The quality of original image might be lost)"
 msgstr ""
-"আপনি যে ফাইলের নাম নির্বাচন করেছেন তা ইতিমধ্যেই বিদ্যমান রয়েছে।\nআপনি কি "
-"বিদ্যমান ফাইলটি প্রতিস্থাপন করতে চান?\n(সতর্কীকরণ: আসল ছবির গুণগত মান হয়ত "
-"নষ্ট হয়ে যেতে পারে)"
+"আপনি যে ফাইলের নাম নির্বাচন করেছেন তা ইতিমধ্যেই বিদ্যমান রয়েছে।\n"
+"আপনি কি বিদ্যমান ফাইলটি প্রতিস্থাপন করতে চান?\n"
+"(সতর্কীকরণ: আসল ছবির গুণগত মান হয়ত নষ্ট হয়ে যেতে পারে)"
 
 #: ../src/main-win.c:1304
 msgid "Writing this image format is not supported."
@@ -133,8 +132,9 @@ msgid ""
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
-"আপনি কি নিশ্চিত আপনি বর্তমান ফাইলটি মুছে ফেলতে চান?\n\nসতর্কীকরণ: একবার মুছে "
-"ফেললে, ফাইলটি পুনরুদ্ধার করা সম্ভব হবে না।"
+"আপনি কি নিশ্চিত আপনি বর্তমান ফাইলটি মুছে ফেলতে চান?\n"
+"\n"
+"সতর্কীকরণ: একবার মুছে ফেললে, ফাইলটি পুনরুদ্ধার করা সম্ভব হবে না।"
 
 #: ../src/main-win.c:1387
 msgid "Start/Stop Slideshow"
@@ -173,9 +173,11 @@ msgid ""
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"আপনার সিস্টেমের সকল সমর্থিত ছবির ফাইলের জন্য GPicView পূর্বনির্ধারিত "
-"প্রদর্শক হিসেবে নির্ধারিত হবে।\n(এটি 'xdg-mime' প্রোগ্রামের মধ্যমে সম্পন্ন "
-"হবে)\n\n<b>আপনি কি নিশ্চিত আপনি সত্যিই এটা করতে চান?</b>"
+"আপনার সিস্টেমের সকল সমর্থিত ছবির ফাইলের জন্য GPicView পূর্বনির্ধারিত প্রদর্শক হিসেবে "
+"নির্ধারিত হবে।\n"
+"(এটি 'xdg-mime' প্রোগ্রামের মধ্যমে সম্পন্ন হবে)\n"
+"\n"
+"<b>আপনি কি নিশ্চিত আপনি সত্যিই এটা করতে চান?</b>"
 
 #: ../src/file-dlgs.c:62
 msgid "All Supported Images"
@@ -194,8 +196,8 @@ msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
 msgstr ""
-"কম গুণগত মানের ফলে অপেক্ষাকৃত ছোট আকারের ফাইল তৈরী হয়,\nকিন্তু ছবির গুণগত "
-"মান খুবই খারাপ হয়।"
+"কম গুণগত মানের ফলে অপেক্ষাকৃত ছোট আকারের ফাইল তৈরী হয়,\n"
+"কিন্তু ছবির গুণগত মান খুবই খারাপ হয়।"
 
 #: ../src/file-dlgs.c:118
 msgid "PNG Compression Level:"
@@ -206,8 +208,8 @@ msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
 msgstr ""
-"উচ্চতর কম্প্রেশনের ফলে অপেক্ষাকৃত ছোট আকারের ফাইল তৈরী হয়,\nকিন্তু কম্প্রেশন "
-"করতে অধিক সময়ের প্রয়োজন হয়।"
+"উচ্চতর কম্প্রেশনের ফলে অপেক্ষাকৃত ছোট আকারের ফাইল তৈরী হয়,\n"
+"কিন্তু কম্প্রেশন করতে অধিক সময়ের প্রয়োজন হয়।"
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
@@ -246,8 +248,8 @@ msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
-"EXIF স্থিতিবিন্যাসের মান পরিবর্তন করে  JPEG ফাইল আবর্তন\n(শুধুমাত্র যদি EXIF "
-"স্থিতিবিন্যাস ট্যাগ বিদ্যমান থাকে)"
+"EXIF স্থিতিবিন্যাসের মান পরিবর্তন করে  JPEG ফাইল আবর্তন\n"
+"(শুধুমাত্র যদি EXIF স্থিতিবিন্যাস ট্যাগ বিদ্যমান থাকে)"
 
 #: ../data/pref-dlg.glade.h:11
 msgid "Slideshow interval\t"

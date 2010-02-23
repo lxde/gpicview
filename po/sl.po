@@ -6,16 +6,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gpicview 0.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-12 01:09+0100\n"
-"PO-Revision-Date: 2009-06-28 17:06+0100\n"
-"Last-Translator: Matej Gačnik <paxmanpwnz@gmail.com>\n"
+"POT-Creation-Date: 2010-02-15 23:40+0100\n"
+"PO-Revision-Date: 2010-02-17 15:14+0200\n"
+"Last-Translator: Matej <paxmanpwnz@gmail.com>\n"
 "Language-Team: Slovenian <paxmanpwnz@gmail.com>\n"
+"Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
-"%100==4 ? 2 : 3);\n"
-"X-Generator: Pootle 1.1.0\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3);\n"
+"X-Generator: Pootle 2.0.1\n"
 "X-Poedit-Language: Slovenian\n"
 "X-Poedit-Country: SLOVENIA\n"
 
@@ -29,7 +30,7 @@ msgstr "Izpiši informacijo o različici in končaj"
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
-msgstr ""
+msgstr "Začni predstavitev"
 
 #: ../src/main-win.c:152 ../src/main-win.c:1373 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
@@ -45,7 +46,7 @@ msgstr "Naslednja"
 
 #: ../src/main-win.c:230 ../src/main-win.c:728
 msgid "Start Slideshow"
-msgstr ""
+msgstr "Začni predstavitev"
 
 #: ../src/main-win.c:234 ../src/main-win.c:1389
 msgid "Zoom Out"
@@ -114,7 +115,7 @@ msgstr "Izhod"
 
 #: ../src/main-win.c:736
 msgid "Stop Slideshow"
-msgstr ""
+msgstr "Ustavi predstavitev"
 
 #: ../src/main-win.c:1263
 msgid ""
@@ -142,7 +143,7 @@ msgstr ""
 
 #: ../src/main-win.c:1387
 msgid "Start/Stop Slideshow"
-msgstr ""
+msgstr "Začni/ustavi predstavitev"
 
 #: ../src/main-win.c:1403
 msgid "Save As"
@@ -212,7 +213,7 @@ msgstr "Višji nivoji pomenijo manjše velikosti slik, a daljše stiskanje."
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
-msgstr ""
+msgstr "Enostavno pregledovanje slik"
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
@@ -252,11 +253,11 @@ msgstr ""
 
 #: ../data/pref-dlg.glade.h:11
 msgid "Slideshow interval\t"
-msgstr ""
+msgstr "Interval predstavitve"
 
 #: ../data/pref-dlg.glade.h:12
 msgid "sec\t"
-msgstr ""
+msgstr "sekund\t"
 
 #~ msgid " Full Screen"
 #~ msgstr "Celozaslonski način"

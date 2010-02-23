@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # azamat@belyjsoft.ru, 11.04.2008.
 # Alexander Kazancev kazancas@mandriva.ru, 2010
-
 msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-12 01:09+0100\n"
+"POT-Creation-Date: 2010-02-15 23:40+0100\n"
 "PO-Revision-Date: 2009-06-03 13:11+0200\n"
 "Last-Translator: Vitaly Pashkov <admin@fluda.net>\n"
 "Language-Team: RUSSIAN <ru@li.org>\n"
@@ -266,5 +265,3 @@ msgstr "сек\t"
 
 #~ msgid " Full Screen"
 #~ msgstr " На полный экран"
-
- 	  	 
