@@ -1,7 +1,7 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Danish translation for gpicview.
+# Copyright (C) 2010 gpicview & nedenstående oversættere.
+# This file is distributed under the same license as the gpicview package.
+# Joe Hansen (joedalton2@yahoo.dk), 2010.
 #
 msgid ""
 msgstr ""
@@ -14,10 +14,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Pootle 1.1.0\n"
-"X-Poedit-Language: Danish\n"
-"X-Poedit-Country: DENMARK\n"
-"X-Poedit-SourceCharset: utf-8\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
@@ -25,11 +21,11 @@ msgstr "[FIL]"
 
 #: ../src/gpicview.c:40
 msgid "Print version information and exit"
-msgstr "Print version information og afslut"
+msgstr "Udskriv versionsinformation og afslut"
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
-msgstr ""
+msgstr "Start diasshow"
 
 #: ../src/main-win.c:152 ../src/main-win.c:1373 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
@@ -45,7 +41,7 @@ msgstr "Næste"
 
 #: ../src/main-win.c:230 ../src/main-win.c:728
 msgid "Start Slideshow"
-msgstr ""
+msgstr "Start diasshow"
 
 #: ../src/main-win.c:234 ../src/main-win.c:1389
 msgid "Zoom Out"
@@ -69,7 +65,7 @@ msgstr "Oprindelig størrelse"
 
 #: ../src/main-win.c:251 ../src/main-win.c:1394
 msgid "Full Screen"
-msgstr "Fuld skærm"
+msgstr "Fuldskærm"
 
 #: ../src/main-win.c:255 ../src/main-win.c:1396
 msgid "Rotate Counterclockwise"
@@ -89,20 +85,20 @@ msgstr "Vend lodret"
 
 #: ../src/main-win.c:263 ../src/main-win.c:1401
 msgid "Open File"
-msgstr "Åben"
+msgstr "Åbn fil"
 
 #: ../src/main-win.c:264 ../src/main-win.c:1402
 msgid "Save File"
-msgstr "Gem"
+msgstr "Gem fil"
 
 #: ../src/main-win.c:265
 msgid "Save File As"
-msgstr "Gem som"
+msgstr "Gem fil som"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
 #: ../src/main-win.c:266 ../src/main-win.c:1405
 msgid "Delete File"
-msgstr "Slet"
+msgstr "Slet fil"
 
 #: ../src/main-win.c:269 ../src/main-win.c:1407 ../data/pref-dlg.glade.h:8
 msgid "Preferences"
@@ -114,7 +110,7 @@ msgstr "Afslut"
 
 #: ../src/main-win.c:736
 msgid "Stop Slideshow"
-msgstr ""
+msgstr "Stop diasshow"
 
 #: ../src/main-win.c:1263
 msgid ""
@@ -124,7 +120,7 @@ msgid ""
 msgstr ""
 "Det valgte filnavn findes allerede.\n"
 "Vil du overskrive den eksisterende fil?\n"
-"(Advarsel: Kvaliteten til det oprindelige billede kan gå tabt)"
+"(Advarsel: Kvaliteten på det oprindelige billede kan gå tabt)"
 
 #: ../src/main-win.c:1304
 msgid "Writing this image format is not supported."
@@ -142,7 +138,7 @@ msgstr ""
 
 #: ../src/main-win.c:1387
 msgid "Start/Stop Slideshow"
-msgstr ""
+msgstr "Start/stop diasshow"
 
 #: ../src/main-win.c:1403
 msgid "Save As"
@@ -150,14 +146,18 @@ msgstr "Gem som"
 
 #: ../src/main-win.c:1473
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr "* Referer til kildekoden til EOG Billedfremviser og GThumb"
+msgstr "* Referer til kildekoden til EOG-billedfremviseren og GThumb"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1477
 msgid "translator-credits"
 msgstr ""
+"Joe Hansen, 2010\n"
 "Vidar Jon Bauge <vidarjb@gmail.com>\n"
-"Charlie Tyrrestrup <chalze06@gmail.com>"
+"Charlie Tyrrestrup <chalze06@gmail.com>\n"
+"\n"
+"Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
+"Mere info: http://www.dansk-gruppen.dk"
 
 #: ../src/main-win.c:1485
 msgid "GPicView"
@@ -165,11 +165,11 @@ msgstr "GPicView"
 
 #: ../src/main-win.c:1487
 msgid "Copyright (C) 2007 - 2009"
-msgstr "Ophavsret (C) 2007 - 2009"
+msgstr "Ophavsret 2007 - 2009"
 
 #: ../src/main-win.c:1488
 msgid "Lightweight image viewer from LXDE project"
-msgstr "Letvægts billedfremviser fra LXDE projektet"
+msgstr "Letvægtsbilledfremviser fra LXDE-projektet"
 
 #: ../src/pref.c:157
 msgid ""
@@ -179,11 +179,11 @@ msgid ""
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"GPicView vil blive standard fremviser for alle understøttede billed filer på "
+"GPicView vil blive standardfremviser for alle understøttede billedfiler på "
 "dit system.\n"
-"(Dette sker ved hjælp af 'xdg-mime')\n"
+"(Dette sker ved hjælp af programmet xdg-mime)\n"
 "\n"
-"<b>Er du sikker på at du vil dette?</b>"
+"<b>Er du sikker på, at du vil dette?</b>"
 
 #: ../src/file-dlgs.c:62
 msgid "All Supported Images"
@@ -195,31 +195,31 @@ msgstr "Alle filer"
 
 #: ../src/file-dlgs.c:103
 msgid "JPEG Quality:"
-msgstr "Jpeg kvalitet:"
+msgstr "JPEG-kvalitet:"
 
 #: ../src/file-dlgs.c:104
 msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
 msgstr ""
-"Laver kvalitetsværdier giver mindre fil størrelse,\n"
-"men billed kvaliteten vil blive lavere."
+"Laver kvalitetsværdier giver mindre filstørrelse,\n"
+"men billedkvaliteten vil blive lavere."
 
 #: ../src/file-dlgs.c:118
 msgid "PNG Compression Level:"
-msgstr "PNG kompressionsniveau:"
+msgstr "PNG-kompressionsniveau:"
 
 #: ../src/file-dlgs.c:119
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
 msgstr ""
-"Højere kompressionsniveau giver mindre fil størrelse,\n"
-"men det tager længere tid at komprimerer."
+"Højere kompressionsniveau giver mindre filstørrelse,\n"
+"men det tager længere tid at komprimere."
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
-msgstr ""
+msgstr "Fremvis nemt dine billeder"
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
@@ -239,11 +239,11 @@ msgstr "Gem roterede billeder automatisk"
 
 #: ../data/pref-dlg.glade.h:5
 msgid "Fullscreen:"
-msgstr "Fuld skærm"
+msgstr "Fuldskærm:"
 
 #: ../data/pref-dlg.glade.h:6
 msgid "Make GPicView the default viewer for images"
-msgstr "Gør GPicview til standard fremviser for billeder"
+msgstr "Gør GPicview til standardfremviser for billeder"
 
 #: ../data/pref-dlg.glade.h:7
 msgid "Normal:"
@@ -254,16 +254,15 @@ msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
-"Skift kun EXIF orientering ved rotation og flip, hvis der eksisterer en EXIF "
-"Orientation tag."
+"Roter JPEG-fil ved at ændre retningsværdien i EXIF\n"
+"(kun hvis mærket for retningværdien i EXIF eksisterer)"
 
 #: ../data/pref-dlg.glade.h:11
 msgid "Slideshow interval\t"
-msgstr ""
+msgstr "Interval for diasshow\t"
 
 #: ../data/pref-dlg.glade.h:12
 msgid "sec\t"
-msgstr ""
+msgstr "sek\t"
 
-#~ msgid " Full Screen"
-#~ msgstr "Fuld Skærm"
+
