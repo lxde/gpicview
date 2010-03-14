@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: gpicview 0.1.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-02-23 14:08+0100\n"
-"PO-Revision-Date: 2010-02-03 01:24+0200\n"
-"Last-Translator: Horatio <hosoka@hotmail.com>\n"
+"PO-Revision-Date: 2010-02-26 14:57+0200\n"
+"Last-Translator: Sander <celettu@gmail.com>\n"
 "Language-Team: Dutch\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ASCII\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.1\n"
 
@@ -44,7 +44,7 @@ msgstr "Volgende"
 
 #: ../src/main-win.c:230 ../src/main-win.c:728
 msgid "Start Slideshow"
-msgstr ""
+msgstr "Begin dia-voorstelling"
 
 #: ../src/main-win.c:234 ../src/main-win.c:1389
 msgid "Zoom Out"
@@ -256,9 +256,8 @@ msgstr ""
 "orientatie tag bestaat)"
 
 #: ../data/pref-dlg.glade.h:11
-#, fuzzy
 msgid "Slideshow interval\t"
-msgstr "Presentatie interval\t"
+msgstr "Dia-presentatie interval\t"
 
 #: ../data/pref-dlg.glade.h:12
 msgid "sec\t"
