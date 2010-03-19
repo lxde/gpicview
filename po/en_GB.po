@@ -123,142 +123,189 @@ msgid "Delete File"
 msgstr "Delete File"
 
 #: ../src/main-win.c:269 ../src/main-win.c:1407 ../data/pref-dlg.glade.h:8
+#, fuzzy
 msgid "Preferences"
-msgstr ""
+msgstr "Preferences"
 
 #: ../src/main-win.c:270 ../src/main-win.c:1410
+#, fuzzy
 msgid "Quit"
-msgstr ""
+msgstr "Quit"
 
 #: ../src/main-win.c:736
+#, fuzzy
 msgid "Stop Slideshow"
-msgstr ""
+msgstr "Stop Slideshow"
 
 #: ../src/main-win.c:1263
+#, fuzzy
 msgid ""
 "The file name you selected already exists.\n"
 "Do you want to overwrite existing file?\n"
 "(Warning: The quality of original image might be lost)"
 msgstr ""
+"The file name you selected already exists.\n"
+"Do you want to overwrite existing file?\n"
+"(Warning: The quality of original image might be lost)"
 
 #: ../src/main-win.c:1304
+#, fuzzy
 msgid "Writing this image format is not supported."
-msgstr ""
+msgstr "Writing this image format is not supported."
 
 #: ../src/main-win.c:1342
+#, fuzzy
 msgid ""
 "Are you sure you want to delete current file?\n"
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
+"Are you sure you want to delete current file?\n"
+"\n"
+"Warning: Once deleted, the file cannot be recovered."
 
 #: ../src/main-win.c:1387
+#, fuzzy
 msgid "Start/Stop Slideshow"
-msgstr ""
+msgstr "Start/Stop Slideshow"
 
 #: ../src/main-win.c:1403
+#, fuzzy
 msgid "Save As"
-msgstr ""
+msgstr "Save As"
 
 #: ../src/main-win.c:1473
+#, fuzzy
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr ""
+msgstr " * Refer to source code of EOG image viewer and GThumb"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1477
+#, fuzzy
 msgid "translator-credits"
-msgstr ""
+msgstr "translator-credits"
 
 #: ../src/main-win.c:1485
+#, fuzzy
 msgid "GPicView"
-msgstr ""
+msgstr "GPicView"
 
 #: ../src/main-win.c:1487
+#, fuzzy
 msgid "Copyright (C) 2007 - 2009"
-msgstr ""
+msgstr "Copyright (C) 2007 - 2009"
 
 #: ../src/main-win.c:1488
+#, fuzzy
 msgid "Lightweight image viewer from LXDE project"
-msgstr ""
+msgstr "Lightweight image viewer from LXDE project"
 
 #: ../src/pref.c:157
+#, fuzzy
 msgid ""
 "GPicView will become the default viewer for all supported image files on your system.\n"
 "(This will be done through 'xdg-mime' program)\n"
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
+"GPicView will become the default viewer for all supported image files on your system.\n"
+"(This will be done through 'xdg-mime' program)\n"
+"\n"
+"<b>Are you sure you really want to do this?</b>"
 
 #: ../src/file-dlgs.c:62
+#, fuzzy
 msgid "All Supported Images"
-msgstr ""
+msgstr "All Supported Images"
 
 #: ../src/file-dlgs.c:67
+#, fuzzy
 msgid "All Files"
-msgstr ""
+msgstr "All Files"
 
 #: ../src/file-dlgs.c:103
+#, fuzzy
 msgid "JPEG Quality:"
-msgstr ""
+msgstr "JPEG Quality:"
 
 #: ../src/file-dlgs.c:104
+#, fuzzy
 msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
 msgstr ""
+"Lower quality values yield smaller file sizes,\n"
+"but the image quality will be poorer."
 
 #: ../src/file-dlgs.c:118
+#, fuzzy
 msgid "PNG Compression Level:"
-msgstr ""
+msgstr "PNG Compression Level:"
 
 #: ../src/file-dlgs.c:119
+#, fuzzy
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
 msgstr ""
+"Higher compression levels yield smaller file sizes,\n"
+"but takes more time to do the compression."
 
 #: ../gpicview.desktop.in.h:2
+#, fuzzy
 msgid "View your images easily"
-msgstr ""
+msgstr "View your images easily"
 
 #: ../data/pref-dlg.glade.h:1
+#, fuzzy
 msgid "<b>Background colors</b>"
-msgstr ""
+msgstr "<b>Background colors</b>"
 
 #: ../data/pref-dlg.glade.h:2
+#, fuzzy
 msgid "Ask before deleting images"
-msgstr ""
+msgstr "Ask before deleting images"
 
 #: ../data/pref-dlg.glade.h:3
+#, fuzzy
 msgid "Ask before saving images"
-msgstr ""
+msgstr "Ask before saving images"
 
 #: ../data/pref-dlg.glade.h:4
+#, fuzzy
 msgid "Automatically save rotated images"
-msgstr ""
+msgstr "Automatically save rotated images"
 
 #: ../data/pref-dlg.glade.h:5
+#, fuzzy
 msgid "Fullscreen:"
-msgstr ""
+msgstr "Fullscreen:"
 
 #: ../data/pref-dlg.glade.h:6
+#, fuzzy
 msgid "Make GPicView the default viewer for images"
-msgstr ""
+msgstr "Make GPicView the default viewer for images"
 
 #: ../data/pref-dlg.glade.h:7
+#, fuzzy
 msgid "Normal:"
-msgstr ""
+msgstr "Normal:"
 
 #: ../data/pref-dlg.glade.h:9
+#, fuzzy
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
+"Rotate JPEG file by changing EXIF orientation value\n"
+"(only if EXIF orientation tag exists)"
 
 #: ../data/pref-dlg.glade.h:11
+#, fuzzy
 msgid "Slideshow interval\t"
-msgstr ""
+msgstr "Slideshow interval\t"
 
 #: ../data/pref-dlg.glade.h:12
+#, fuzzy
 msgid "sec\t"
-msgstr ""
+msgstr "sec\t"
