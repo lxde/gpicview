@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-14 19:24+0100\n"
-"PO-Revision-Date: 2010-03-01 23:21+0200\n"
+"PO-Revision-Date: 2010-03-19 20:12+0200\n"
 "Last-Translator: Gunleif <gunleif@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fo\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.1\n"
 
@@ -27,7 +27,6 @@ msgid "Print version information and exit"
 msgstr "Prenta útgávu upplýsningar, og gevst"
 
 #: ../src/gpicview.c:42
-#, fuzzy
 msgid "Start slideshow"
 msgstr "Byrja ljósmyndasýning"
 
@@ -44,7 +43,6 @@ msgid "Next"
 msgstr "Næsta"
 
 #: ../src/main-win.c:230 ../src/main-win.c:728
-#, fuzzy
 msgid "Start Slideshow"
 msgstr "Byrja ljósmyndasýning"
 
@@ -123,10 +121,13 @@ msgid ""
 "Do you want to overwrite existing file?\n"
 "(Warning: The quality of original image might be lost)"
 msgstr ""
+"Fílunavnið tú valdi finnst longu.\n"
+"Vil tú yvurskriva fíluna?\n"
+"(Ávaring: Góðskan á upprunamynduni kann fara fyri skeyti)"
 
 #: ../src/main-win.c:1304
 msgid "Writing this image format is not supported."
-msgstr ""
+msgstr "Skrivan av hesum fíluslagi er ikki stuðla."
 
 #: ../src/main-win.c:1342
 msgid ""
@@ -134,35 +135,38 @@ msgid ""
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
+"Er tú vissur í at strika fíluna?\n"
+"\n"
+"Ávaring: Um tú strikar, kann fílan ikki endurskapast."
 
 #: ../src/main-win.c:1387
 msgid "Start/Stop Slideshow"
-msgstr ""
+msgstr "Byrja/steðga ljósmyndasýning"
 
 #: ../src/main-win.c:1403
 msgid "Save As"
-msgstr ""
+msgstr "Goym sum"
 
 #: ../src/main-win.c:1473
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr ""
+msgstr "* vísa til keldukotu til EOG myndasynaran og GThumb"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1477
 msgid "translator-credits"
-msgstr ""
+msgstr "Gunleif Joensen, 2010 <fo.umseting@gmail.com>\n"
 
 #: ../src/main-win.c:1485
 msgid "GPicView"
-msgstr ""
+msgstr "GpicView"
 
 #: ../src/main-win.c:1487
 msgid "Copyright (C) 2007 - 2009"
-msgstr ""
+msgstr "Upphavsrætt (C) 2007 - 2009"
 
 #: ../src/main-win.c:1488
 msgid "Lightweight image viewer from LXDE project"
-msgstr ""
+msgstr "Lættvekts-myndasýnari úr LXDE verkætlanini"
 
 #: ../src/pref.c:157
 msgid ""
@@ -172,77 +176,88 @@ msgid ""
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
+"GPicView gerst forsetti myndasýnarin, til allar stuðlaðar myndafílur á tínum "
+"kervi.\n"
+"(xdg-mime forritið stendur fyri hesum)\n"
+"\n"
+"<b>er tú vissur í hesum?</b>"
 
 #: ../src/file-dlgs.c:62
 msgid "All Supported Images"
-msgstr ""
+msgstr "Øll stuðlað fílusløg"
 
 #: ../src/file-dlgs.c:67
 msgid "All Files"
-msgstr ""
+msgstr "Allar fílur"
 
 #: ../src/file-dlgs.c:103
 msgid "JPEG Quality:"
-msgstr ""
+msgstr "JPEG góðska:"
 
 #: ../src/file-dlgs.c:104
 msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
 msgstr ""
+"Lægri góðska, hevur smærri fílustødd við sær,\n"
+"men góðskan á myndini gerst eisini verri."
 
 #: ../src/file-dlgs.c:118
 msgid "PNG Compression Level:"
-msgstr ""
+msgstr "PNG tættingarstig"
 
 #: ../src/file-dlgs.c:119
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
 msgstr ""
+"Hægri tættingarstig gevur minni fílustødd,\n"
+"men tekur longri tíð at tætta"
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
-msgstr ""
+msgstr "Sýn myndir tínar lættliga"
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
-msgstr ""
+msgstr "<b>Bakgrundslitir</b>"
 
 #: ../data/pref-dlg.glade.h:2
 msgid "Ask before deleting images"
-msgstr ""
+msgstr "Spyr áðrenn myndir verð strikaðar"
 
 #: ../data/pref-dlg.glade.h:3
 msgid "Ask before saving images"
-msgstr ""
+msgstr "Spyr áðrenn myndir verða goymdar"
 
 #: ../data/pref-dlg.glade.h:4
 msgid "Automatically save rotated images"
-msgstr ""
+msgstr "Sjálvirkandi goym snaraðar myndir"
 
 #: ../data/pref-dlg.glade.h:5
 msgid "Fullscreen:"
-msgstr ""
+msgstr "Fullskýggja:"
 
 #: ../data/pref-dlg.glade.h:6
 msgid "Make GPicView the default viewer for images"
-msgstr ""
+msgstr "Gerð GPicView til forsettan myndasýnara"
 
 #: ../data/pref-dlg.glade.h:7
 msgid "Normal:"
-msgstr ""
+msgstr "Vanligur:"
 
 #: ../data/pref-dlg.glade.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
+"Snara JPEG-fílu, við at broyta EXIF støðuvirðið\n"
+"(bert um EXIF støðufrámerki finnst)"
 
 #: ../data/pref-dlg.glade.h:11
 msgid "Slideshow interval\t"
-msgstr ""
+msgstr "Tíðarbil fyri ljósmyndasýning\t"
 
 #: ../data/pref-dlg.glade.h:12
 msgid "sec\t"
-msgstr ""
+msgstr "sek\t"
