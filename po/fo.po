@@ -154,7 +154,7 @@ msgstr "* vísa til keldukotu til EOG myndasynaran og GThumb"
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1477
 msgid "translator-credits"
-msgstr "Gunleif Joensen, 2010 <fo.umseting@gmail.com>\n"
+msgstr "Gunleif Joensen, 2010 <fo.umseting@gmail.com>"
 
 #: ../src/main-win.c:1485
 msgid "GPicView"
