@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: gpicview r846\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-14 19:24+0100\n"
-"PO-Revision-Date: 2010-03-19 10:21+0200\n"
+"PO-Revision-Date: 2010-04-08 10:12+0200\n"
 "Last-Translator: Cilyan <gaknar@gmail.com>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "Language: fr\n"
@@ -261,7 +261,7 @@ msgstr ""
 
 #: ../data/pref-dlg.glade.h:11
 msgid "Slideshow interval\t"
-msgstr "Intervalle entre les diapo"
+msgstr "Intervalle entre les diapo\t"
 
 #: ../data/pref-dlg.glade.h:12
 msgid "sec\t"
