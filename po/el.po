@@ -8,13 +8,15 @@ msgstr ""
 "Project-Id-Version: gpicview\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-14 19:24+0100\n"
-"PO-Revision-Date: 2010-01-12 14:33+0100\n"
-"Last-Translator: George Vasilakos <forfolias@linuxteam.cs.teilar.gr>\n"
+"PO-Revision-Date: 2010-04-08 21:02+0200\n"
+"Last-Translator:  <edhunter@sidux.com>\n"
 "Language-Team: Greek <LL@li.org>\n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Pootle 1.1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.1\n"
 "X-Poedit-Language: Greek\n"
 "X-Poedit-Country: GREECE\n"
 
@@ -24,7 +26,7 @@ msgstr "[ΑΡΧΕΙΟ]"
 
 #: ../src/gpicview.c:40
 msgid "Print version information and exit"
-msgstr "Εκτύπωση πληροφοριών έκδοσης και έξοδος "
+msgstr "Εκτύπωση πληροφοριών έκδοσης και έξοδος"
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
@@ -52,7 +54,7 @@ msgstr "Σμίκρυνση"
 
 #: ../src/main-win.c:235 ../src/main-win.c:1390
 msgid "Zoom In"
-msgstr "Μεγένθυση"
+msgstr "Μεγέθυνση"
 
 #. percent = gtk_entry_new();    // show scale (in percentage)
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
@@ -127,7 +129,7 @@ msgstr ""
 
 #: ../src/main-win.c:1304
 msgid "Writing this image format is not supported."
-msgstr "Η εγγραφή τέτοιου τύπου εικόνας δεν υποστηρίζεται. "
+msgstr "Η εγγραφή τέτοιου τύπου εικόνας δεν υποστηρίζεται."
 
 #: ../src/main-win.c:1342
 msgid ""
@@ -156,7 +158,7 @@ msgstr "* Αναφορά στον πηγαίο κώδικα του EOG image vie
 msgid "translator-credits"
 msgstr ""
 "Κούτσικος Γιώργος <oege89@hotmail.com>\n"
-"Βασιλάκος Γιώργος  <forfolias@linuxteam.cs.teilar.gr>\n"
+"Βασιλάκος Γιώργος <forfolias@linuxteam.cs.teilar.gr>\n"
 "Ριζόπουλος Γιώργος <georgerizopoulos28@gmail.com>"
 
 #: ../src/main-win.c:1485
@@ -183,7 +185,7 @@ msgstr ""
 "υποστηριζόμενους τύπους αρχείων στο σύστημά σας.\n"
 "(Αυτό θα γίνει μέσο του προγράμματος 'xdg-mime')\n"
 "\n"
-"<b>Είστε σίγουροι ότι θέλετε να το κάνετε αυτό;<b>"
+"<b>Είστε σίγουροι ότι θέλετε να το κάνετε αυτό;</b>"
 
 #: ../src/file-dlgs.c:62
 msgid "All Supported Images"
@@ -259,7 +261,7 @@ msgstr ""
 
 #: ../data/pref-dlg.glade.h:11
 msgid "Slideshow interval\t"
-msgstr "Χρονικό διάστημα παρουσίασης\t "
+msgstr "Χρονικό διάστημα παρουσίασης\t"
 
 #: ../data/pref-dlg.glade.h:12
 msgid "sec\t"
