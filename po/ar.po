@@ -5,14 +5,16 @@
 #
 # أحمد فرغل <ahmad.farghal@gmail.com>, 2009.
 # Khaled Hosny <khaledhosny@eglug.org>, 2009.
+# Tareq Al Jurf <taljurf@fedoraproject.org>, 2010.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: GPicView\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-14 19:24+0100\n"
-"PO-Revision-Date: 2009-05-19 17:10+0200\n"
-"Last-Translator: Ahmad Farghal <ahmad.farghal@gmail.com>\n"
-"Language-Team: Arabic <doc@arabeyes.org>\n"
+"POT-Creation-Date: 2010-04-14 04:09+0000\n"
+"PO-Revision-Date: 2010-04-14 19:47+0300\n"
+"Last-Translator: Tareq Al Jurf <taljurf@fedoraproject.org>\n"
+"Language-Team: Arabic <trans-ar@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -30,7 +32,7 @@ msgstr "اكتب معلومات الإصدار ثم اخرج"
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
-msgstr ""
+msgstr "ابدأ عرض الشرائح"
 
 #: ../src/main-win.c:152 ../src/main-win.c:1373 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
@@ -46,7 +48,7 @@ msgstr "التالية"
 
 #: ../src/main-win.c:230 ../src/main-win.c:728
 msgid "Start Slideshow"
-msgstr ""
+msgstr "ابدأ عرض الشرائح"
 
 #: ../src/main-win.c:234 ../src/main-win.c:1389
 msgid "Zoom Out"
@@ -115,7 +117,7 @@ msgstr "أنهِ"
 
 #: ../src/main-win.c:736
 msgid "Stop Slideshow"
-msgstr ""
+msgstr "أوقف عرض الشرائح"
 
 #: ../src/main-win.c:1263
 msgid ""
@@ -143,7 +145,7 @@ msgstr ""
 
 #: ../src/main-win.c:1387
 msgid "Start/Stop Slideshow"
-msgstr ""
+msgstr "ابدأ/أوقف عرض الشرائح"
 
 #: ../src/main-win.c:1403
 msgid "Save As"
@@ -217,7 +219,7 @@ msgstr ""
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
-msgstr ""
+msgstr "اعرض صورك بسهولة"
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
@@ -257,11 +259,11 @@ msgstr ""
 
 #: ../data/pref-dlg.glade.h:11
 msgid "Slideshow interval\t"
-msgstr ""
+msgstr "فترة عرض الشرائح"
 
 #: ../data/pref-dlg.glade.h:12
 msgid "sec\t"
-msgstr ""
+msgstr "ثانية"
 
 #~ msgid " Full Screen"
 #~ msgstr "ملء الشاشة"
