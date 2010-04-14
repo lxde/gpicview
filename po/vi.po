@@ -24,7 +24,6 @@ msgid "Print version information and exit"
 msgstr "In thông tin phiên bản và thoát"
 
 #: ../src/gpicview.c:42
-#, fuzzy
 msgid "Start slideshow"
 msgstr "Bắt đầu trình diễn ảnh"
 
