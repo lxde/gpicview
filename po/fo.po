@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-14 19:24+0100\n"
-"PO-Revision-Date: 2010-04-05 18:52+0200\n"
+"PO-Revision-Date: 2010-04-18 00:29+0200\n"
 "Last-Translator: Gunleif <gunleif@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: fo\n"
@@ -149,12 +149,14 @@ msgstr "Goym sum"
 
 #: ../src/main-win.c:1473
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr "* vísa til keldukotu til EOG myndasynaran og GThumb"
+msgstr " * vísa til keldukotu til EOG myndasynaran og GThumb"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1477
 msgid "translator-credits"
-msgstr "Gunleif Joensen, 2010 <fo.umseting@gmail.com>"
+msgstr ""
+"Gunleif Joensen 2010\n"
+"<fo.umseting@gmail.com>"
 
 #: ../src/main-win.c:1485
 msgid "GPicView"
