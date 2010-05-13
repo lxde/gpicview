@@ -3,21 +3,20 @@
 # This file is distributed under the same license as the GPicView package.
 # Grzegorz Gibas <amigib@gmail.com>, 2007, 2008, 2009.
 # Piotr Sokół <piotr.sokol@10g.pl>, 2009.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-14 19:24+0100\n"
+"POT-Creation-Date: 2010-05-13 08:32+0000\n"
 "PO-Revision-Date: 2010-04-06 18:33+0200\n"
 "Last-Translator: Artur <mazdac@gmail.com>\n"
 "Language-Team: Polish\n"
-"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
+"Language: pl\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.0.1\n"
 
 #: ../src/gpicview.c:38
@@ -100,7 +99,8 @@ msgstr "Zapisz"
 msgid "Save File As"
 msgstr "Zapisz plik jako"
 
-#. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
+#. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS,
+#. G_CALLBACK(on_save_as), GDK_A, 0 ),
 #: ../src/main-win.c:266 ../src/main-win.c:1405
 msgid "Delete File"
 msgstr "Usuń"
@@ -167,7 +167,7 @@ msgstr "GPicView"
 
 #: ../src/main-win.c:1487
 msgid "Copyright (C) 2007 - 2009"
-msgstr "Copyright (C) 2007 - 2010"
+msgstr "Prawa autorskie (C) 2007 - 2010"
 
 #: ../src/main-win.c:1488
 msgid "Lightweight image viewer from LXDE project"
@@ -175,14 +175,12 @@ msgstr "Przeglądarka obrazów dla środowiska LXDE"
 
 #: ../src/pref.c:157
 msgid ""
-"GPicView will become the default viewer for all supported image files on "
-"your system.\n"
+"GPicView will become the default viewer for all supported image files on your system.\n"
 "(This will be done through 'xdg-mime' program)\n"
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"Program GPicView stanie się domyślną przeglądarką dla wszystkich "
-"obsługiwanych obrazów w systemie.\n"
+"Program GPicView stanie się domyślną przeglądarką dla wszystkich obsługiwanych obrazów w systemie.\n"
 "(Operacja zostanie wykonana przy użyciu programu 'xdg-mime')\n"
 "\n"
 "<b>Kontynuować?</b>"
