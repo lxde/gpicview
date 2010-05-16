@@ -139,7 +139,7 @@ msgid ""
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
-"¿Seguro que desea eliminar el archivo actual?\n"
+"¿Quieres eliminar este archivo?\n"
 "\n"
 "Advertencia: Una vez eliminado, el archivo no podrá recuperarse."
 
