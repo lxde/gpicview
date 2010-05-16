@@ -1,15 +1,15 @@
 # Spanish translation of GPicView
 # Copyright (C) 2008 THE GPicView'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the GPicView package.
-#
+# 
 # Festor Wailon Dacoba, 2007
 # Julio Napurí Carlos <julionc@gmail.com>, 2008.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: gpicview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-14 19:24+0100\n"
+"POT-Creation-Date: 2010-05-16 04:12+0000\n"
 "PO-Revision-Date: 2010-01-20 15:04+0200\n"
 "Last-Translator: Hugo Florentino <sysadmin@cips.cu>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -18,8 +18,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.1\n"
 "X-Poedit-Language: Spanish\n"
+"X-Generator: Pootle 2.0.1\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
@@ -101,7 +101,8 @@ msgstr "Guardar archivo"
 msgid "Save File As"
 msgstr "Guardar archivo como"
 
-#. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
+#. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS,
+#. G_CALLBACK(on_save_as), GDK_A, 0 ),
 #: ../src/main-win.c:266 ../src/main-win.c:1405
 msgid "Delete File"
 msgstr "Eliminar archivo"
@@ -124,9 +125,9 @@ msgid ""
 "Do you want to overwrite existing file?\n"
 "(Warning: The quality of original image might be lost)"
 msgstr ""
-"El nombre del archivo que has seleccionado ya existe.\n"
-"¿Seguro que desea sobrescribir el archivo existente?\n"
-"(Atención: puede perderse la calidad de la imagen original)"
+"El nombre de archivo que has elegido ya existe.\n"
+"¿Quieres sobrescribir el archivo existente?\n"
+"(Atención: Puede perderse la calidad de la imagen original)"
 
 #: ../src/main-win.c:1304
 msgid "Writing this image format is not supported."
@@ -161,7 +162,8 @@ msgstr ""
 "Festor Wailon Dacoba, 2007\n"
 "Julio Napurí Carlos <julionc@gmail.com>, 2008\n"
 "Guillermo Iguarán <tronador@cuteam.org>, 2009\n"
-"Hugo Florentino <sysadmin@cips.cu>, 2009"
+"Hugo Florentino <sysadmin@cips.cu>, 2009\n"
+"Lino Sotomayor <ljsp1@hotmail.com>, 2010"
 
 #: ../src/main-win.c:1485
 msgid "GPicView"
@@ -177,17 +179,15 @@ msgstr "Visor de imágenes ligero del proyecto LXDE"
 
 #: ../src/pref.c:157
 msgid ""
-"GPicView will become the default viewer for all supported image files on "
-"your system.\n"
+"GPicView will become the default viewer for all supported image files on your system.\n"
 "(This will be done through 'xdg-mime' program)\n"
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"GPicView se convertirá en el visor predeterminado para todos los archivos de "
-"imagen en el sistema.\n"
+"GPicView se convertirá en el visor predeterminado para todos los archivos de imagen en el sistema.\n"
 "(Esto se hará a través del programa 'xdg-mime')\n"
 "\n"
-"<b>¿Estás seguro de desear hacer esto?</b>"
+"<b>¿Estás seguro que quieres hacer esto?</b>"
 
 #: ../src/file-dlgs.c:62
 msgid "All Supported Images"
@@ -223,51 +223,59 @@ msgstr ""
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
-msgstr "Vea sus imágenes fácilmente"
+msgstr "Preferencias"
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
-msgstr "<b>Colores de fondo</b>"
+msgstr "Salir"
 
 #: ../data/pref-dlg.glade.h:2
 msgid "Ask before deleting images"
-msgstr "Preguntar antes de eliminar las imágenes"
+msgstr "Detener presentación"
 
 #: ../data/pref-dlg.glade.h:3
 msgid "Ask before saving images"
-msgstr "Preguntar antes de guardar imágenes"
+msgstr ""
+"El nombre del archivo que has seleccionado ya existe.\n"
+"¿Seguro que desea sobrescribir el archivo existente?\n"
+"(Atención: puede perderse la calidad de la imagen original)"
 
 #: ../data/pref-dlg.glade.h:4
 msgid "Automatically save rotated images"
-msgstr "Guardar automáticamente las imágenes rotadas"
+msgstr "No se admite la escritura para este formato de imagen."
 
 #: ../data/pref-dlg.glade.h:5
 msgid "Fullscreen:"
-msgstr "Pantalla completa:"
+msgstr ""
+"¿Seguro que desea eliminar el archivo actual?\n"
+"\n"
+"Advertencia: Una vez eliminado, el archivo no podrá recuperarse."
 
 #: ../data/pref-dlg.glade.h:6
 msgid "Make GPicView the default viewer for images"
-msgstr "Hacer de GPicview el visor de imágenes predeterminado"
+msgstr "Iniciar/Detener presentación"
 
 #: ../data/pref-dlg.glade.h:7
 msgid "Normal:"
-msgstr "Normal:"
+msgstr "Guardar como"
 
 #: ../data/pref-dlg.glade.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
-msgstr ""
-"Rotar imagen JPEG cambiando el valor de orientación EXIF\n"
-"(solo si tal etiqueta existe)"
+msgstr " * Consulte el código fuente del visor de imágenes EOG y del GThumb"
 
 #: ../data/pref-dlg.glade.h:11
 msgid "Slideshow interval\t"
-msgstr "Intervalo de la presentación\t"
+msgstr ""
+"Festor Wailon Dacoba, 2007\n"
+"Julio Napurí Carlos <julionc@gmail.com>, 2008\n"
+"Guillermo Iguarán <tronador@cuteam.org>, 2009\n"
+"Hugo Florentino <sysadmin@cips.cu>, 2009"
 
 #: ../data/pref-dlg.glade.h:12
 msgid "sec\t"
-msgstr "seg\t"
+msgstr "GPicView"
 
 #~ msgid " Full Screen"
 #~ msgstr " Pantalla completa"
