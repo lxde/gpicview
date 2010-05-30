@@ -2,12 +2,12 @@
 # Copyright (C) 2009 Hong Jen Yee (PCMan)
 # This file is distributed under the same license as the GPicView package.
 # Frank Bolkovich Boljsa <asjlob@vip.hr>, 2009.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: gpicview_hr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-14 19:24+0100\n"
+"POT-Creation-Date: 2010-05-30 04:11+0000\n"
 "PO-Revision-Date: 2009-05-21 20:47+0100\n"
 "Last-Translator: \n"
 "Language-Team: Croatian <asjlob AT vip.hr>\n"
@@ -27,7 +27,7 @@ msgstr "Ispiši informacije o verziji i izađi"
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
-msgstr ""
+msgstr "Pokreni prikaz u slijedu"
 
 #: ../src/main-win.c:152 ../src/main-win.c:1373 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
@@ -43,7 +43,7 @@ msgstr "Sljedeće"
 
 #: ../src/main-win.c:230 ../src/main-win.c:728
 msgid "Start Slideshow"
-msgstr ""
+msgstr "Pokreni prikaz u slijedu"
 
 #: ../src/main-win.c:234 ../src/main-win.c:1389
 msgid "Zoom Out"
@@ -97,7 +97,8 @@ msgstr "Spremi Datoteku"
 msgid "Save File As"
 msgstr "Spremi Datoteku Kao"
 
-#. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
+#. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS,
+#. G_CALLBACK(on_save_as), GDK_A, 0 ),
 #: ../src/main-win.c:266 ../src/main-win.c:1405
 msgid "Delete File"
 msgstr "Obriši Datoteku"
@@ -112,7 +113,7 @@ msgstr "Izađi"
 
 #: ../src/main-win.c:736
 msgid "Stop Slideshow"
-msgstr ""
+msgstr "Zaustavi prikaz u slijedu"
 
 #: ../src/main-win.c:1263
 msgid ""
@@ -140,7 +141,7 @@ msgstr ""
 
 #: ../src/main-win.c:1387
 msgid "Start/Stop Slideshow"
-msgstr ""
+msgstr "Pokreni/zaustavi prikaz u slijedu"
 
 #: ../src/main-win.c:1403
 msgid "Save As"
@@ -169,14 +170,12 @@ msgstr "Lagani preglednik slika iz LXDE projekta"
 
 #: ../src/pref.c:157
 msgid ""
-"GPicView will become the default viewer for all supported image files on "
-"your system.\n"
+"GPicView will become the default viewer for all supported image files on your system.\n"
 "(This will be done through 'xdg-mime' program)\n"
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"GPicView će postati standardni preglednik za sve podržane slikovne datoteke "
-"na vašem sustavu.\n"
+"GPicView će postati standardni preglednik za sve podržane slikovne datoteke na vašem sustavu.\n"
 "(Ovo će biti učinjeno kroz 'xdg-mime' program)\n"
 "\n"
 "<b>Jeste li sigurno da želite ovo učiniti?</b>"
@@ -215,7 +214,7 @@ msgstr ""
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
-msgstr ""
+msgstr "Pogledajte lako svoje slike"
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
@@ -255,11 +254,11 @@ msgstr ""
 
 #: ../data/pref-dlg.glade.h:11
 msgid "Slideshow interval\t"
-msgstr ""
+msgstr "Interval prikaza u slijedu\t"
 
 #: ../data/pref-dlg.glade.h:12
 msgid "sec\t"
-msgstr ""
+msgstr "sec\t"
 
 #~ msgid " Full Screen"
 #~ msgstr " Cijeli Zaslon"
