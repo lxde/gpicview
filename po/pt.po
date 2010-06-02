@@ -2,12 +2,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: gpicview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-14 19:24+0100\n"
+"POT-Creation-Date: 2010-06-02 04:12+0000\n"
 "PO-Revision-Date: 2010-02-13 19:00-0000\n"
 "Last-Translator: Sergio Marques <smarquespt@gmail.com>\n"
 "Language-Team: Portuguese PT <alvarommorais@gmail.com>\n"
@@ -15,9 +15,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 1.1.0\n"
 "X-Poedit-Language: Portuguese\n"
 "X-Poedit-Country: PORTUGAL\n"
+"X-Generator: Pootle 1.1.0\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
@@ -49,11 +49,11 @@ msgstr "Iniciar Apresentação"
 
 #: ../src/main-win.c:234 ../src/main-win.c:1389
 msgid "Zoom Out"
-msgstr "Menos Zoom"
+msgstr "Ampliar"
 
 #: ../src/main-win.c:235 ../src/main-win.c:1390
 msgid "Zoom In"
-msgstr "Mais Zoom"
+msgstr "Reduzir"
 
 #. percent = gtk_entry_new();    // show scale (in percentage)
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
@@ -81,11 +81,11 @@ msgstr "Rodar no sentido Horário"
 
 #: ../src/main-win.c:258 ../src/main-win.c:1398
 msgid "Flip Horizontal"
-msgstr "Inverter na Horizontal"
+msgstr "Inversão Horizontal"
 
 #: ../src/main-win.c:259 ../src/main-win.c:1399
 msgid "Flip Vertical"
-msgstr "Inverter na Vertical"
+msgstr "Inversão Vertical"
 
 #: ../src/main-win.c:263 ../src/main-win.c:1401
 msgid "Open File"
@@ -99,7 +99,8 @@ msgstr "Gravar Ficheiro"
 msgid "Save File As"
 msgstr "Gravar Ficheiro Como"
 
-#. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
+#. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS,
+#. G_CALLBACK(on_save_as), GDK_A, 0 ),
 #: ../src/main-win.c:266 ../src/main-win.c:1405
 msgid "Delete File"
 msgstr "Apagar Ficheiro"
@@ -169,18 +170,16 @@ msgstr "Copyright (C) 2007 - 2009"
 
 #: ../src/main-win.c:1488
 msgid "Lightweight image viewer from LXDE project"
-msgstr "Visualizador de imagem leve e rápido para o LXDE"
+msgstr "Visualizador de imagens leve e rápido para o LXDE"
 
 #: ../src/pref.c:157
 msgid ""
-"GPicView will become the default viewer for all supported image files on "
-"your system.\n"
+"GPicView will become the default viewer for all supported image files on your system.\n"
 "(This will be done through 'xdg-mime' program)\n"
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"GPicView tornar-se-á o visualizador por omissão para as imagens suportados "
-"pelo seu sistema.\n"
+"GPicView tornar-se-á o visualizador por omissão para todas as imagens suportadas pelo seu sistema.\n"
 "(Isto será feito através do programa 'xdg-mime')\n"
 "\n"
 "<b>Tem a certeza de que é isto que quer?</b>"
