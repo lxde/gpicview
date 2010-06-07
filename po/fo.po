@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-14 19:24+0100\n"
-"PO-Revision-Date: 2010-04-18 00:29+0200\n"
+"PO-Revision-Date: 2010-06-07 16:14+0200\n"
 "Last-Translator: Gunleif <gunleif@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: fo\n"
@@ -154,13 +154,11 @@ msgstr " * vísa til keldukotu til EOG myndasynaran og GThumb"
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1477
 msgid "translator-credits"
-msgstr ""
-"Gunleif Joensen 2010\n"
-"<fo.umseting@gmail.com>"
+msgstr "Gunleif Joensen"
 
 #: ../src/main-win.c:1485
 msgid "GPicView"
-msgstr "GpicView"
+msgstr "GPicView"
 
 #: ../src/main-win.c:1487
 msgid "Copyright (C) 2007 - 2009"
@@ -180,7 +178,7 @@ msgid ""
 msgstr ""
 "GPicView gerst forsetti myndasýnarin, til allar stuðlaðar myndafílur á tínum "
 "kervi.\n"
-"(xdg-mime forritið stendur fyri hesum)\n"
+"('xdg-mime' forritið stendur fyri hesum)\n"
 "\n"
 "<b>er tú vissur í hesum?</b>"
 
@@ -206,7 +204,7 @@ msgstr ""
 
 #: ../src/file-dlgs.c:118
 msgid "PNG Compression Level:"
-msgstr "PNG tættingarstig"
+msgstr "PNG tættingarstig:"
 
 #: ../src/file-dlgs.c:119
 msgid ""
@@ -214,7 +212,7 @@ msgid ""
 "but takes more time to do the compression."
 msgstr ""
 "Hægri tættingarstig gevur minni fílustødd,\n"
-"men tekur longri tíð at tætta"
+"men tekur longri tíð at tætta."
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
