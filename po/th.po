@@ -119,10 +119,13 @@ msgid ""
 "Do you want to overwrite existing file?\n"
 "(Warning: The quality of original image might be lost)"
 msgstr ""
+"มีชื่อไฟล์ที่เลือกแล้ว\n"
+"ต้องการบันทึกทับไฟล์ที่มีอยู่แล้วหรือไม่\n"
+"(คำเตือน: ภาพต้นฉบับจะถูกแทนที่)"
 
 #: ../src/main-win.c:1304
 msgid "Writing this image format is not supported."
-msgstr ""
+msgstr "ไม่สนับสนุนรูปแบบการเขียนไฟล์ภาพนี้"
 
 #: ../src/main-win.c:1342
 msgid ""
@@ -130,6 +133,9 @@ msgid ""
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
+"ต้องการลบไฟล์นี้หรือไม่?\n"
+"\n"
+"คำเตือน: เมื่อลบแล้วไม่สามารถนำกลับคืนได้"
 
 #: ../src/main-win.c:1387
 msgid "Start/Stop Slideshow"
@@ -141,12 +147,12 @@ msgstr "บันทึกเป็น"
 
 #: ../src/main-win.c:1473
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr ""
+msgstr "* อ้างอิง source code ของโปรแกรมดูภาพ EOG และ GThumb"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1477
 msgid "translator-credits"
-msgstr ""
+msgstr "ผู้แปล"
 
 #: ../src/main-win.c:1485
 msgid "GPicView"
@@ -170,6 +176,10 @@ msgid ""
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
+"GPicView จะถูกตั้งให้เป็นตัวดูภาพกับรูปแบบภาพทั้งหมดของเครื่องคุณ\n"
+"(โดยใช้โปรแกรม 'xdg-mime' )\n"
+"\n"
+"<b>คุณต้องการทำแบบนี้หรือไม่?</b>"
 
 #: ../src/file-dlgs.c:62
 msgid "All Supported Images"
@@ -188,6 +198,8 @@ msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
 msgstr ""
+"ค่าคุณภาพน้อยทำให้ภาพเล็กลง,\n"
+"แต่จะทำให้ภาพไม่ชัดเจน"
 
 #: ../src/file-dlgs.c:118
 msgid "PNG Compression Level:"
@@ -198,10 +210,12 @@ msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
 msgstr ""
+"การบีบอัดมากทำให้ภาพเล็กลง,\n"
+"แต่จะใช้เวลาในการบีบอัดมาก"
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
-msgstr ""
+msgstr "ดูภาพอย่างง่ายดาย"
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
@@ -209,38 +223,40 @@ msgstr "<b>สีภาพพื้นหลัง</b>"
 
 #: ../data/pref-dlg.glade.h:2
 msgid "Ask before deleting images"
-msgstr ""
+msgstr "ถามก่อนลบภาพ"
 
 #: ../data/pref-dlg.glade.h:3
 msgid "Ask before saving images"
-msgstr ""
+msgstr "ถามก่อนบันทึกภาพ"
 
 #: ../data/pref-dlg.glade.h:4
 msgid "Automatically save rotated images"
-msgstr ""
+msgstr "บันทึกภาพที่หมุนอัตโนมัติ"
 
 #: ../data/pref-dlg.glade.h:5
 msgid "Fullscreen:"
-msgstr ""
+msgstr "เต็มจอ:"
 
 #: ../data/pref-dlg.glade.h:6
 msgid "Make GPicView the default viewer for images"
-msgstr ""
+msgstr "ตั้งให้ GPicView เป็นตัวดูภาพหลัก"
 
 #: ../data/pref-dlg.glade.h:7
 msgid "Normal:"
-msgstr ""
+msgstr "ทั่วไป:"
 
 #: ../data/pref-dlg.glade.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
+"หมุนภาพ JPEG โดยเปลี่ยนค่า EXIF \n"
+"(เฉพาะเมื่อมีแท็กในค่า  EXIF อยู่แล้ว)"
 
 #: ../data/pref-dlg.glade.h:11
 msgid "Slideshow interval\t"
-msgstr ""
+msgstr "เวลาหน่องการนำเสนอภาพนิ่ง\t"
 
 #: ../data/pref-dlg.glade.h:12
 msgid "sec\t"
-msgstr ""
+msgstr "วินาที่\t"
