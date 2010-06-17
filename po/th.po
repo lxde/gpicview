@@ -2,13 +2,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-14 19:24+0100\n"
+"POT-Creation-Date: 2010-06-17 04:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,39 +17,39 @@ msgstr ""
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
-msgstr ""
+msgstr "[ไฟล์]"
 
 #: ../src/gpicview.c:40
 msgid "Print version information and exit"
-msgstr ""
+msgstr "พิมพ์ข้อมูลรุ่นแล้วออก"
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
-msgstr ""
+msgstr "เริ่มการนำเสนอภาพนิ่ง"
 
 #: ../src/main-win.c:152 ../src/main-win.c:1373 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
-msgstr ""
+msgstr "ตัวดูภาพ"
 
 #: ../src/main-win.c:228 ../src/main-win.c:1385
 msgid "Previous"
-msgstr ""
+msgstr "ที่แล้ว"
 
 #: ../src/main-win.c:229 ../src/main-win.c:1386
 msgid "Next"
-msgstr ""
+msgstr "ต่อไป"
 
 #: ../src/main-win.c:230 ../src/main-win.c:728
 msgid "Start Slideshow"
-msgstr ""
+msgstr "เริ่มการนำเสนอภาพนิ่ง"
 
 #: ../src/main-win.c:234 ../src/main-win.c:1389
 msgid "Zoom Out"
-msgstr ""
+msgstr "ขยาย"
 
 #: ../src/main-win.c:235 ../src/main-win.c:1390
 msgid "Zoom In"
-msgstr ""
+msgstr "ย่อ"
 
 #. percent = gtk_entry_new();    // show scale (in percentage)
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
@@ -58,60 +57,61 @@ msgstr ""
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
 #: ../src/main-win.c:242 ../src/main-win.c:1391
 msgid "Fit Image To Window Size"
-msgstr ""
+msgstr "จัดภาพตามขนาดหน้าต่าง"
 
 #: ../src/main-win.c:244 ../src/main-win.c:1392
 msgid "Original Size"
-msgstr ""
+msgstr "ขนาดดั้งเดิม"
 
 #: ../src/main-win.c:251 ../src/main-win.c:1394
 msgid "Full Screen"
-msgstr ""
+msgstr "เต็มจอ"
 
 #: ../src/main-win.c:255 ../src/main-win.c:1396
 msgid "Rotate Counterclockwise"
-msgstr ""
+msgstr "หมุนทวนเข็มนาฬิกา"
 
 #: ../src/main-win.c:256 ../src/main-win.c:1397
 msgid "Rotate Clockwise"
-msgstr ""
+msgstr "หมุนตามเข็มนาฬิกา"
 
 #: ../src/main-win.c:258 ../src/main-win.c:1398
 msgid "Flip Horizontal"
-msgstr ""
+msgstr "หมุนกลับหัว"
 
 #: ../src/main-win.c:259 ../src/main-win.c:1399
 msgid "Flip Vertical"
-msgstr ""
+msgstr "หมุนกลับข้าง"
 
 #: ../src/main-win.c:263 ../src/main-win.c:1401
 msgid "Open File"
-msgstr ""
+msgstr "เปิดไฟล์"
 
 #: ../src/main-win.c:264 ../src/main-win.c:1402
 msgid "Save File"
-msgstr ""
+msgstr "บันทึกไฟล์"
 
 #: ../src/main-win.c:265
 msgid "Save File As"
-msgstr ""
+msgstr "บันทึกไฟล์เป็น"
 
-#. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
+#. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS,
+#. G_CALLBACK(on_save_as), GDK_A, 0 ),
 #: ../src/main-win.c:266 ../src/main-win.c:1405
 msgid "Delete File"
-msgstr ""
+msgstr "ลบไฟล์"
 
 #: ../src/main-win.c:269 ../src/main-win.c:1407 ../data/pref-dlg.glade.h:8
 msgid "Preferences"
-msgstr ""
+msgstr "การปับแต่ง"
 
 #: ../src/main-win.c:270 ../src/main-win.c:1410
 msgid "Quit"
-msgstr ""
+msgstr "ออก"
 
 #: ../src/main-win.c:736
 msgid "Stop Slideshow"
-msgstr ""
+msgstr "หยุดการเสนอภาพนิ่ง"
 
 #: ../src/main-win.c:1263
 msgid ""
@@ -133,11 +133,11 @@ msgstr ""
 
 #: ../src/main-win.c:1387
 msgid "Start/Stop Slideshow"
-msgstr ""
+msgstr "เริ่ม/หยุดการเสนอภาพนิ่ง"
 
 #: ../src/main-win.c:1403
 msgid "Save As"
-msgstr ""
+msgstr "บันทึกเป็น"
 
 #: ../src/main-win.c:1473
 msgid " * Refer to source code of EOG image viewer and GThumb"
@@ -151,19 +151,21 @@ msgstr ""
 #: ../src/main-win.c:1485
 msgid "GPicView"
 msgstr ""
+" \t\r\n"
+"\r\n"
+"GPicView"
 
 #: ../src/main-win.c:1487
 msgid "Copyright (C) 2007 - 2009"
-msgstr ""
+msgstr "สงวนลิขสิทธิ์ (C) 2007 - 2009"
 
 #: ../src/main-win.c:1488
 msgid "Lightweight image viewer from LXDE project"
-msgstr ""
+msgstr "ตัวดูรูบภาพแบบเบาๆ จากโครงการ LXDE "
 
 #: ../src/pref.c:157
 msgid ""
-"GPicView will become the default viewer for all supported image files on "
-"your system.\n"
+"GPicView will become the default viewer for all supported image files on your system.\n"
 "(This will be done through 'xdg-mime' program)\n"
 "\n"
 "<b>Are you sure you really want to do this?</b>"
@@ -171,15 +173,15 @@ msgstr ""
 
 #: ../src/file-dlgs.c:62
 msgid "All Supported Images"
-msgstr ""
+msgstr "รูปแบบภาพทั้งหมดที่สนับสนุน"
 
 #: ../src/file-dlgs.c:67
 msgid "All Files"
-msgstr ""
+msgstr "ไฟล์ทั้งหมด"
 
 #: ../src/file-dlgs.c:103
 msgid "JPEG Quality:"
-msgstr ""
+msgstr "คุณภาพของ JPEG:"
 
 #: ../src/file-dlgs.c:104
 msgid ""
@@ -189,7 +191,7 @@ msgstr ""
 
 #: ../src/file-dlgs.c:118
 msgid "PNG Compression Level:"
-msgstr ""
+msgstr "ระดับการบีบอัดของ PNG:"
 
 #: ../src/file-dlgs.c:119
 msgid ""
@@ -203,7 +205,7 @@ msgstr ""
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
-msgstr ""
+msgstr "<b>สีภาพพื้นหลัง</b>"
 
 #: ../data/pref-dlg.glade.h:2
 msgid "Ask before deleting images"
