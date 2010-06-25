@@ -2,12 +2,12 @@
 # Copyright (C) 2008
 # This file is distributed under the same license as the GPicView package.
 # Elias Julkunen <elias.julkunen@gmail.com>, 2008.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-14 19:24+0100\n"
+"POT-Creation-Date: 2010-06-25 04:21+0000\n"
 "PO-Revision-Date: 2008-11-25 17:12+0200\n"
 "Last-Translator: Elias Julkunen <elias.julkunen@gmail.com>\n"
 "Language-Team: \n"
@@ -21,11 +21,11 @@ msgstr "[TIEDOSTO]"
 
 #: ../src/gpicview.c:40
 msgid "Print version information and exit"
-msgstr ""
+msgstr "Näytä versiotiedot ja poistu"
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
-msgstr ""
+msgstr "Käynnistä diaesitys"
 
 #: ../src/main-win.c:152 ../src/main-win.c:1373 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
@@ -41,7 +41,7 @@ msgstr "Seuraava"
 
 #: ../src/main-win.c:230 ../src/main-win.c:728
 msgid "Start Slideshow"
-msgstr ""
+msgstr "Aloita diaesitys"
 
 #: ../src/main-win.c:234 ../src/main-win.c:1389
 msgid "Zoom Out"
@@ -77,11 +77,11 @@ msgstr "Käännä myötäpäivään"
 
 #: ../src/main-win.c:258 ../src/main-win.c:1398
 msgid "Flip Horizontal"
-msgstr ""
+msgstr "Peilaa vaakasuunnassa"
 
 #: ../src/main-win.c:259 ../src/main-win.c:1399
 msgid "Flip Vertical"
-msgstr ""
+msgstr "Peilaa pystysuunnassa"
 
 #: ../src/main-win.c:263 ../src/main-win.c:1401
 msgid "Open File"
@@ -95,7 +95,8 @@ msgstr "Tallenna"
 msgid "Save File As"
 msgstr "Tallenna nimellä"
 
-#. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
+#. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS,
+#. G_CALLBACK(on_save_as), GDK_A, 0 ),
 #: ../src/main-win.c:266 ../src/main-win.c:1405
 msgid "Delete File"
 msgstr "Poista"
@@ -106,14 +107,13 @@ msgstr "Asetukset"
 
 #: ../src/main-win.c:270 ../src/main-win.c:1410
 msgid "Quit"
-msgstr ""
+msgstr "Lopeta"
 
 #: ../src/main-win.c:736
 msgid "Stop Slideshow"
-msgstr ""
+msgstr "Pysäytä diaesitys"
 
 #: ../src/main-win.c:1263
-#, fuzzy
 msgid ""
 "The file name you selected already exists.\n"
 "Do you want to overwrite existing file?\n"
@@ -125,7 +125,7 @@ msgstr ""
 
 #: ../src/main-win.c:1304
 msgid "Writing this image format is not supported."
-msgstr ""
+msgstr "Tähän kuvamuotoon tallentamiselle ei ole tukea."
 
 #: ../src/main-win.c:1342
 msgid ""
@@ -139,7 +139,7 @@ msgstr ""
 
 #: ../src/main-win.c:1387
 msgid "Start/Stop Slideshow"
-msgstr ""
+msgstr "Käynnistä/pysäytä diaesitys"
 
 #: ../src/main-win.c:1403
 msgid "Save As"
@@ -159,9 +159,8 @@ msgid "GPicView"
 msgstr "GPicView"
 
 #: ../src/main-win.c:1487
-#, fuzzy
 msgid "Copyright (C) 2007 - 2009"
-msgstr "Tekijänoikeudet (C) 2007"
+msgstr "Tekijänoikeudet (C) 2007 - 2009"
 
 #: ../src/main-win.c:1488
 msgid "Lightweight image viewer from LXDE project"
@@ -169,14 +168,12 @@ msgstr "Kevyt kuvankatselin LXDE-projektista"
 
 #: ../src/pref.c:157
 msgid ""
-"GPicView will become the default viewer for all supported image files on "
-"your system.\n"
+"GPicView will become the default viewer for all supported image files on your system.\n"
 "(This will be done through 'xdg-mime' program)\n"
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"GPicViewistä tulee järjestelmän oletuskatselin kaikille tuetuille "
-"kuvatiedostoille.\n"
+"GPicViewistä tulee järjestelmän oletuskatselin kaikille tuetuille kuvatiedostoille.\n"
 "Tämä tehdään \"xdg-mime\"-ohjelman avulla.\n"
 "\n"
 "<b>Tehdäänkö näin?</b>"
@@ -191,23 +188,27 @@ msgstr "Kaikki tiedostot"
 
 #: ../src/file-dlgs.c:103
 msgid "JPEG Quality:"
-msgstr ""
+msgstr "JPEG-laatu:"
 
 #: ../src/file-dlgs.c:104
 msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
 msgstr ""
+"Pienemmät arvot tarkoittavat pienempiä tiedostoja,\n"
+"mutta kuvan laatu myös huononee."
 
 #: ../src/file-dlgs.c:118
 msgid "PNG Compression Level:"
-msgstr ""
+msgstr "PNG-pakkaustaso:"
 
 #: ../src/file-dlgs.c:119
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
 msgstr ""
+"Mitä suurempi pakkaustaso, sitä pienempi koko,\n"
+"mutta pakkaukseen kuluu myös enemmän aikaa."
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
@@ -215,53 +216,45 @@ msgstr "Katso kuviasi helposti"
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
-msgstr ""
+msgstr "<b>Taustavärit</b>"
 
 #: ../data/pref-dlg.glade.h:2
-#, fuzzy
 msgid "Ask before deleting images"
-msgstr "Kysy ennen kuvien tallentamista"
+msgstr "Kysy ennen kuvien poistamista"
 
 #: ../data/pref-dlg.glade.h:3
-#, fuzzy
 msgid "Ask before saving images"
 msgstr "Kysy ennen kuvien tallentamista"
 
 #: ../data/pref-dlg.glade.h:4
-#, fuzzy
 msgid "Automatically save rotated images"
-msgstr "Tallenna automaattisesti käännetyt kuvat (tukee ainoastaan JPEG-kuvia)"
+msgstr "Tallenna automaattisesti käännetyt kuvat"
 
 #: ../data/pref-dlg.glade.h:5
-#, fuzzy
 msgid "Fullscreen:"
-msgstr "Kokoruutu"
+msgstr "Kokoruutu:"
 
 #: ../data/pref-dlg.glade.h:6
-#, fuzzy
 msgid "Make GPicView the default viewer for images"
 msgstr "Tee GPicviewistä oletuskuvankatselin"
 
 #: ../data/pref-dlg.glade.h:7
 msgid "Normal:"
-msgstr ""
+msgstr "Normaali:"
 
 #: ../data/pref-dlg.glade.h:9
-#, fuzzy
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
-msgstr ""
-"Muuta EXIF-asennon arvoa käännettäessä vain, jos EXIF-asentotunniste on jo "
-"olemassa (vain JPEG)."
+msgstr "Käännä JPEG-tiedosto vaihtaen EXIF-asentoarvoa (vain jos EXIF-asentotunniste on jo olemassa)"
 
 #: ../data/pref-dlg.glade.h:11
 msgid "Slideshow interval\t"
-msgstr ""
+msgstr "Diaesityksen nopeus\t"
 
 #: ../data/pref-dlg.glade.h:12
 msgid "sec\t"
-msgstr ""
+msgstr "sek\t"
 
 #~ msgid " Full Screen"
 #~ msgstr " Kokoruutu"
