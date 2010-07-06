@@ -8,20 +8,20 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-14 19:24+0100\n"
-"PO-Revision-Date: 2010-01-25 13:14+0200\n"
-"Last-Translator: Ali <aysabzevar@gmail.com>\n"
+"PO-Revision-Date: 2010-07-06 06:54+0200\n"
+"Last-Translator: Hamidreza <n3gb0y@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fa\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 2.0.1\n"
 
 # we don't have these symbols([]) in persian keyboard :?
 #: ../src/gpicview.c:38
 msgid "[FILE]"
-msgstr "[پرونده]"
+msgstr "[FILE]"
 
 #: ../src/gpicview.c:40
 msgid "Print version information and exit"
@@ -126,8 +126,9 @@ msgid ""
 "Do you want to overwrite existing file?\n"
 "(Warning: The quality of original image might be lost)"
 msgstr ""
-"فایلی که انتخاب کرده اید وجود دارد. /nآیا می خواهید بر روی آن بنویسید(ذخیره) "
-"کنید ؟ /n(اخطار: ممکن است کیفیت تصویر واقعی از بین برود.)"
+"فایلی که انتخاب کرده اید وجود دارد.\n"
+"آیا می خواهید بر روی فایل موجود رونویسی کنید؟\n"
+"(اخطار: ممکن است کیفیت تصویر واقعی از بین برود)"
 
 #: ../src/main-win.c:1304
 msgid "Writing this image format is not supported."
@@ -139,8 +140,9 @@ msgid ""
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
-"آیا مطمئنید که می خواهید فایل فعلی را حذف کنید؟/n/nاخطار: یکبار حذف کردن یک "
-"عمر پشیمانی !"
+"آیا مطمئنید که می خواهید فایل فعلی را حذف کنید؟\n"
+"\n"
+"اخطار: یکبار حذف کردن یک عمر پشیمانی و بازگشت غیر ممکن."
 
 #: ../src/main-win.c:1387
 msgid "Start/Stop Slideshow"
@@ -155,7 +157,7 @@ msgstr "ذخیره با عنوان"
 # what should i do with these Names?
 #: ../src/main-win.c:1473
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr "*ارجاع داده می شود به کد و سورس های EOG image viewer و GThumb ."
+msgstr " * ارجاع داده می شود به سورس هایEOG image viewer و GThumb"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1477
@@ -164,15 +166,15 @@ msgstr "ترجمه کنندگان"
 
 #: ../src/main-win.c:1485
 msgid "GPicView"
-msgstr "جی‌پیک‌ویو(GPicView)"
+msgstr "جی‌پیک‌ویو"
 
 #: ../src/main-win.c:1487
 msgid "Copyright (C) 2007 - 2009"
-msgstr "کپی رایت ۲۰۰۷ - ۲۰۰۹"
+msgstr "کپی رایت(c) 2007 - 2009"
 
 #: ../src/main-win.c:1488
 msgid "Lightweight image viewer from LXDE project"
-msgstr "نمایشگر تصویر سبک وزن پروژه ی LXDE ."
+msgstr "نمایشگر تصویر سبک وزن پروژه ی LXDE"
 
 #: ../src/pref.c:157
 msgid ""
@@ -182,9 +184,10 @@ msgid ""
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"جی‌پیک‌ویو(GPicView) نمایشگر تصویرهای پشتیبانی شده در سیستم شما خواهد شد. /n "
-"(این کار بواسطه ی ابزار «xdg-mime» انجام خواهد شد) /n <b>آیا واقعا می خواهید "
-"این کار را انجام بدهید ؟</b>"
+"جی‌پیک‌ویو نمایشگر تصویرهای پشتیبانی شده در سیستم شما خواهد شد.\n"
+"(این کار بواسطه ی ابزار 'xdg-mime' انجام خواهد شد)\n"
+"\n"
+"<b>آیا واقعا می خواهید این کار را انجام بدهید؟</b>"
 
 #: ../src/file-dlgs.c:62
 msgid "All Supported Images"
@@ -196,27 +199,27 @@ msgstr "همه ی فایل ها"
 
 #: ../src/file-dlgs.c:103
 msgid "JPEG Quality:"
-msgstr "کیفیت تصویر(JPEG):"
+msgstr "کیفیت تصویرJPEG:"
 
 #: ../src/file-dlgs.c:104
 msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
 msgstr ""
-"کیفیت کم تصویر باعث کوچک شدن اندازه ی فایل می شود./n اما تصویر موردنظر "
-"نامرغوب تر خواهد شد."
+"کیفیت کم تصویر باعث کوچک شدن اندازه ی فایل می شود،\n"
+" اما تصویر موردنظر کم کیفیت تر خواهد شد."
 
 #: ../src/file-dlgs.c:118
 msgid "PNG Compression Level:"
-msgstr "سطح تراکمی و فشردگی(اندازه) تصویر (PNG):"
+msgstr "سطح تراکمی و فشردگی اندازه تصویر PNG:"
 
 #: ../src/file-dlgs.c:119
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
 msgstr ""
-"بالا بردن سطح تراکم باعث کوچک شد اندازه ی فایل های می شود. /nاما اینکار وقت "
-"بیشتری را می طلبد !"
+"بالا بردن سطح تراکم باعث کوچک شدن اندازه ی فایل های می شود, \n"
+"اما اینکار وقت بیشتری را می طلبد."
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
@@ -246,7 +249,7 @@ msgstr "تمام صفحه:"
 
 #: ../data/pref-dlg.glade.h:6
 msgid "Make GPicView the default viewer for images"
-msgstr "نرم افزار  GPicView را نمایشگر عکس پیشفرض کن."
+msgstr "نرم افزار GPicView را نمایشگر عکس پیشفرض کن"
 
 #: ../data/pref-dlg.glade.h:7
 msgid "Normal:"
@@ -257,12 +260,14 @@ msgstr "معمولی:"
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
-msgstr "چرخش JPEG با تغییر جهت یابی مقدار EXIF /n ."
+msgstr ""
+"چرخش JPEG با تغییر جهت یابی مقدار EXIF \n"
+"(فقط در صورت وجود برچسب گرایش EXIF )"
 
 #: ../data/pref-dlg.glade.h:11
 msgid "Slideshow interval\t"
-msgstr "نمایش پرده ای زمان دار/t"
+msgstr "نمایش پرده ای زمان دار\t"
 
 #: ../data/pref-dlg.glade.h:12
 msgid "sec\t"
-msgstr "ثانیه/t"
+msgstr "ثانیه\t"
