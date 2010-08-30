@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-14 19:24+0100\n"
-"PO-Revision-Date: 2010-04-05 12:51+0200\n"
+"PO-Revision-Date: 2010-08-30 18:22+0200\n"
 "Last-Translator: Sankarshan <sankarshan.mukhopadhyay@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: bn_IN\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
@@ -135,6 +135,8 @@ msgid ""
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
+"আপনি নিশ্চিত যে বর্তমান ফাইলটি মুছে ফেলবেন?\n"
+"সতর্কবার্তা: মুছে ফেলার পরে ফাইলটি ফিরিয়ে আনা সম্ভব নয়।"
 
 #: ../src/main-win.c:1387
 msgid "Start/Stop Slideshow"
@@ -146,7 +148,7 @@ msgstr "এই রূপে সংরক্ষণ করুন"
 
 #: ../src/main-win.c:1473
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr ""
+msgstr " * EOG image viewer এবং GThumb এর সোর্স কোড দেখে নিন"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1477
@@ -163,7 +165,7 @@ msgstr "সত্ত্বাধিকার (C) ২০০৭ - ২০০৯"
 
 #: ../src/main-win.c:1488
 msgid "Lightweight image viewer from LXDE project"
-msgstr ""
+msgstr "LXDE প্রকল্পের একটি লাইটওয়েট ইমেজ প্রদর্শক"
 
 #: ../src/pref.c:157
 msgid ""
@@ -176,15 +178,15 @@ msgstr ""
 
 #: ../src/file-dlgs.c:62
 msgid "All Supported Images"
-msgstr ""
+msgstr "সকল সমর্থিত ছবি"
 
 #: ../src/file-dlgs.c:67
 msgid "All Files"
-msgstr ""
+msgstr "সকল ফাইল"
 
 #: ../src/file-dlgs.c:103
 msgid "JPEG Quality:"
-msgstr ""
+msgstr "JPEG গুণমান:"
 
 #: ../src/file-dlgs.c:104
 msgid ""
@@ -194,7 +196,7 @@ msgstr ""
 
 #: ../src/file-dlgs.c:118
 msgid "PNG Compression Level:"
-msgstr ""
+msgstr "PNG Compression Level:"
 
 #: ../src/file-dlgs.c:119
 msgid ""
@@ -204,15 +206,16 @@ msgstr ""
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
-msgstr ""
+msgstr "আপনার ছবিগুলি সহজে দেখে নিন"
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
 msgstr ""
 
 #: ../data/pref-dlg.glade.h:2
+#, fuzzy
 msgid "Ask before deleting images"
-msgstr ""
+msgstr "ছবি মুছে ফেলার আগে জানিয়ে নিন"
 
 #: ../data/pref-dlg.glade.h:3
 msgid "Ask before saving images"
@@ -224,7 +227,7 @@ msgstr ""
 
 #: ../data/pref-dlg.glade.h:5
 msgid "Fullscreen:"
-msgstr ""
+msgstr "পুরো পর্দা জুড়ে:"
 
 #: ../data/pref-dlg.glade.h:6
 msgid "Make GPicView the default viewer for images"
@@ -232,7 +235,7 @@ msgstr ""
 
 #: ../data/pref-dlg.glade.h:7
 msgid "Normal:"
-msgstr ""
+msgstr "স্বাভাবিক:"
 
 #: ../data/pref-dlg.glade.h:9
 msgid ""
@@ -246,4 +249,4 @@ msgstr ""
 
 #: ../data/pref-dlg.glade.h:12
 msgid "sec\t"
-msgstr ""
+msgstr "sec\t"
