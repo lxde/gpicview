@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-14 19:24+0100\n"
-"PO-Revision-Date: 2010-01-25 07:18+0200\n"
-"Last-Translator: Kılıç <kilickoken@gmail.com>\n"
+"POT-Creation-Date: 2010-09-05 04:30+0000\n"
+"PO-Revision-Date: 2010-09-05 23:30+0200\n"
+"Last-Translator: Mehmet Gülmen <memetgulmen@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -30,27 +30,34 @@ msgstr "Sürüm bilgisini yazdır ve çık"
 msgid "Start slideshow"
 msgstr "Sunu gösterimi başlat"
 
-#: ../src/main-win.c:152 ../src/main-win.c:1373 ../gpicview.desktop.in.h:1
+#: ../src/main-win.c:152
+#: ../src/main-win.c:1373
+#: ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
-msgstr "İmge Görüntüleyici"
+msgstr "Resim Görüntüleyici"
 
-#: ../src/main-win.c:228 ../src/main-win.c:1385
+#: ../src/main-win.c:228
+#: ../src/main-win.c:1385
 msgid "Previous"
 msgstr "Önceki"
 
-#: ../src/main-win.c:229 ../src/main-win.c:1386
+#: ../src/main-win.c:229
+#: ../src/main-win.c:1386
 msgid "Next"
 msgstr "Sonraki"
 
-#: ../src/main-win.c:230 ../src/main-win.c:728
+#: ../src/main-win.c:230
+#: ../src/main-win.c:728
 msgid "Start Slideshow"
 msgstr "Sunu Gösterimi Başlat"
 
-#: ../src/main-win.c:234 ../src/main-win.c:1389
+#: ../src/main-win.c:234
+#: ../src/main-win.c:1389
 msgid "Zoom Out"
 msgstr "Uzaklaştır"
 
-#: ../src/main-win.c:235 ../src/main-win.c:1390
+#: ../src/main-win.c:235
+#: ../src/main-win.c:1390
 msgid "Zoom In"
 msgstr "Yakınlaştır"
 
@@ -58,56 +65,69 @@ msgstr "Yakınlaştır"
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
 #. gtk_widget_set_size_request( percent, 45, -1 );
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
-#: ../src/main-win.c:242 ../src/main-win.c:1391
+#: ../src/main-win.c:242
+#: ../src/main-win.c:1391
 msgid "Fit Image To Window Size"
-msgstr "İmgeyi Pencereye Sığdır"
+msgstr "Resmi Pencereye Sığdır"
 
-#: ../src/main-win.c:244 ../src/main-win.c:1392
+#: ../src/main-win.c:244
+#: ../src/main-win.c:1392
 msgid "Original Size"
 msgstr "Özgün Boyut"
 
-#: ../src/main-win.c:251 ../src/main-win.c:1394
+#: ../src/main-win.c:251
+#: ../src/main-win.c:1394
 msgid "Full Screen"
-msgstr "Tüm Ekran"
+msgstr "Tam Ekran"
 
-#: ../src/main-win.c:255 ../src/main-win.c:1396
+#: ../src/main-win.c:255
+#: ../src/main-win.c:1396
 msgid "Rotate Counterclockwise"
 msgstr "Saatin Tersi Yönünde Döndür"
 
-#: ../src/main-win.c:256 ../src/main-win.c:1397
+#: ../src/main-win.c:256
+#: ../src/main-win.c:1397
 msgid "Rotate Clockwise"
 msgstr "Saat Yönünde Döndür"
 
-#: ../src/main-win.c:258 ../src/main-win.c:1398
+#: ../src/main-win.c:258
+#: ../src/main-win.c:1398
 msgid "Flip Horizontal"
 msgstr "Yatay Döndür"
 
-#: ../src/main-win.c:259 ../src/main-win.c:1399
+#: ../src/main-win.c:259
+#: ../src/main-win.c:1399
 msgid "Flip Vertical"
 msgstr "Dikey Döndür"
 
-#: ../src/main-win.c:263 ../src/main-win.c:1401
+#: ../src/main-win.c:263
+#: ../src/main-win.c:1401
 msgid "Open File"
 msgstr "Dosya Aç"
 
-#: ../src/main-win.c:264 ../src/main-win.c:1402
+#: ../src/main-win.c:264
+#: ../src/main-win.c:1402
 msgid "Save File"
-msgstr "Dosyayı Yazgıla"
+msgstr "Dosyayı Kaydet"
 
 #: ../src/main-win.c:265
 msgid "Save File As"
-msgstr "Dosyayı Farklı Yazgıla"
+msgstr "Dosyayı Farklı Kaydet"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
-#: ../src/main-win.c:266 ../src/main-win.c:1405
+#: ../src/main-win.c:266
+#: ../src/main-win.c:1405
 msgid "Delete File"
 msgstr "Dosyayı Sil"
 
-#: ../src/main-win.c:269 ../src/main-win.c:1407 ../data/pref-dlg.glade.h:8
+#: ../src/main-win.c:269
+#: ../src/main-win.c:1407
+#: ../data/pref-dlg.glade.h:8
 msgid "Preferences"
-msgstr "Yeğlenenler"
+msgstr "Tercihler"
 
-#: ../src/main-win.c:270 ../src/main-win.c:1410
+#: ../src/main-win.c:270
+#: ../src/main-win.c:1410
 msgid "Quit"
 msgstr "Çık"
 
@@ -123,11 +143,11 @@ msgid ""
 msgstr ""
 "Seçtiğiniz dosya adı zaten var.\n"
 "Var olan dosyanın üstüne yazmak istiyor musunuz?\n"
-"(Uyarı: Özgün fotonun niteliği yitirilebilir)"
+"(Uyarı: Özgün resmin niteliği kaybolabilir)"
 
 #: ../src/main-win.c:1304
 msgid "Writing this image format is not supported."
-msgstr "Bu imge biçiminin yazımı desteklenmiyor."
+msgstr "Bu resim biçiminin yazımı desteklenmiyor."
 
 #: ../src/main-win.c:1342
 msgid ""
@@ -135,7 +155,7 @@ msgid ""
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
-"Yürürlükteki dosyayı silmek istediğinizden emin misiniz?\n"
+"Mevcut dosyayı silmek istediğinizden emin misiniz?\n"
 "\n"
 "Uyarı: Dosya bir kere silinirse, yeniden kurtarılamaz. "
 
@@ -145,17 +165,18 @@ msgstr "Sunu Gösterimini Başlat/Durdur"
 
 #: ../src/main-win.c:1403
 msgid "Save As"
-msgstr "Farklı Yazgıla"
+msgstr "Farklı Kaydet"
 
 #: ../src/main-win.c:1473
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr ""
-" * EOG imge görüntüleyici ve GThumb uygulamalarının kaynak koduna başvurun"
+msgstr " * EOG imge görüntüleyici ve GThumb uygulamalarının kaynak koduna başvurun"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1477
 msgid "translator-credits"
-msgstr "Kılıç Köken"
+msgstr ""
+"Mehmet Gülmen (memetgulmen@gmail.com)\n"
+"Kılıç Köken"
 
 #: ../src/main-win.c:1485
 msgid "GPicView"
@@ -163,29 +184,27 @@ msgstr "GPicView"
 
 #: ../src/main-win.c:1487
 msgid "Copyright (C) 2007 - 2009"
-msgstr "Yayım Hakkı (YH) 2007 - 2009"
+msgstr "Telif Hakkı (C) 2007 - 2009"
 
 #: ../src/main-win.c:1488
 msgid "Lightweight image viewer from LXDE project"
-msgstr "LXDE girişiminden, yeğnice imge görüntüleyici"
+msgstr "LXDE girişiminden, hafif resim görüntüleyici"
 
 #: ../src/pref.c:157
 msgid ""
-"GPicView will become the default viewer for all supported image files on "
-"your system.\n"
+"GPicView will become the default viewer for all supported image files on your system.\n"
 "(This will be done through 'xdg-mime' program)\n"
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"GPicView, sisteiminizdeki bütün desteklenen imge dosyaları için öntanımlı "
-"görüntüleyici olacak.\n"
+"GPicView, sisteiminizdeki bütün desteklenen resim dosyaları için öntanımlı görüntüleyici olacak.\n"
 "('xdg-mime' uygulaması aracılığıyla yapılacak)\n"
 "\n"
 "<b>Bunu gerçekten yapmak istediğinizden emin misiniz?</b>"
 
 #: ../src/file-dlgs.c:62
 msgid "All Supported Images"
-msgstr "Bütün Desteklenen İmgeler"
+msgstr "Bütün Desteklenen Resimler"
 
 #: ../src/file-dlgs.c:67
 msgid "All Files"
@@ -201,7 +220,7 @@ msgid ""
 "but the image quality will be poorer."
 msgstr ""
 "Düşük nitelikli değerler, küçük dosya boyutları sağlarlar,\n"
-"ama imgenin niteliği de düşük olur."
+"ama resmin kalitesi de düşük olur."
 
 #: ../src/file-dlgs.c:118
 msgid "PNG Compression Level:"
@@ -217,23 +236,23 @@ msgstr ""
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
-msgstr "İmgelerinizi kolaylıkla görün"
+msgstr "Resimlerinizi kolaylıkla görün"
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
-msgstr "<b>Artalan renkleri</b>"
+msgstr "<b>Arkaplan renkleri</b>"
 
 #: ../data/pref-dlg.glade.h:2
 msgid "Ask before deleting images"
-msgstr "İmgeleri silmeden önce sor"
+msgstr "Resimleri silmeden önce sor"
 
 #: ../data/pref-dlg.glade.h:3
 msgid "Ask before saving images"
-msgstr "İmgeleri yazgılamadan önce sor"
+msgstr "Resimleri kaydetmeden önce sor"
 
 #: ../data/pref-dlg.glade.h:4
 msgid "Automatically save rotated images"
-msgstr "Döndürülen imgeleri kendiliğinden yazgıla"
+msgstr "Döndürülen resimleri kendiliğinden kaydet"
 
 #: ../data/pref-dlg.glade.h:5
 msgid "Fullscreen:"
@@ -241,11 +260,11 @@ msgstr "Tam Ekran:"
 
 #: ../data/pref-dlg.glade.h:6
 msgid "Make GPicView the default viewer for images"
-msgstr "GPicView uygulamasını, imgeler için öntanımlı görüntüleyici yap"
+msgstr "GPicView uygulamasını resimler için öntanımlı görüntüleyici yap"
 
 #: ../data/pref-dlg.glade.h:7
 msgid "Normal:"
-msgstr "Olağan:"
+msgstr "Normal:"
 
 #: ../data/pref-dlg.glade.h:9
 msgid ""
@@ -253,7 +272,7 @@ msgid ""
 "(only if EXIF orientation tag exists)"
 msgstr ""
 "JPEG dosyasını EXIF yönlendirme değerini değiştirerek döndürün\n"
-"(yalnız eğer EXIF yönlendirme etiketi varsa)"
+"(yalnızca EXIF yönlendirme etiketi varsa)"
 
 #: ../data/pref-dlg.glade.h:11
 msgid "Slideshow interval\t"
@@ -262,3 +281,4 @@ msgstr "Sunu gösterimi aralığı\t"
 #: ../data/pref-dlg.glade.h:12
 msgid "sec\t"
 msgstr "sn\t"
+
