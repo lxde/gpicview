@@ -1,0 +1,263 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-14 19:24+0100\n"
+"PO-Revision-Date: 2010-08-25 17:35+0200\n"
+"Last-Translator: Анік <xabzan9tka@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: be\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Pootle 2.0.5\n"
+
+#: ../src/gpicview.c:38
+msgid "[FILE]"
+msgstr "[ФАЙЛ]"
+
+#: ../src/gpicview.c:40
+msgid "Print version information and exit"
+msgstr "Паказаць інфармацыю пра версію і выйсці"
+
+#: ../src/gpicview.c:42
+msgid "Start slideshow"
+msgstr "Пачаць слайдшоў"
+
+#: ../src/main-win.c:152 ../src/main-win.c:1373 ../gpicview.desktop.in.h:1
+msgid "Image Viewer"
+msgstr "Прагляд малюнкаў"
+
+#: ../src/main-win.c:228 ../src/main-win.c:1385
+msgid "Previous"
+msgstr "Папярэдні"
+
+#: ../src/main-win.c:229 ../src/main-win.c:1386
+msgid "Next"
+msgstr "Наступны"
+
+#: ../src/main-win.c:230 ../src/main-win.c:728
+msgid "Start Slideshow"
+msgstr "Пачаць слайдшоў"
+
+#: ../src/main-win.c:234 ../src/main-win.c:1389
+msgid "Zoom Out"
+msgstr "Паменшыць"
+
+#: ../src/main-win.c:235 ../src/main-win.c:1390
+msgid "Zoom In"
+msgstr "Павяліцыць"
+
+#. percent = gtk_entry_new();    // show scale (in percentage)
+#. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
+#. gtk_widget_set_size_request( percent, 45, -1 );
+#. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
+#: ../src/main-win.c:242 ../src/main-win.c:1391
+msgid "Fit Image To Window Size"
+msgstr "Маштабаваць да памера вакна"
+
+#: ../src/main-win.c:244 ../src/main-win.c:1392
+msgid "Original Size"
+msgstr "Сапраўдны памер"
+
+#: ../src/main-win.c:251 ../src/main-win.c:1394
+msgid "Full Screen"
+msgstr "На поўны экран"
+
+#: ../src/main-win.c:255 ../src/main-win.c:1396
+msgid "Rotate Counterclockwise"
+msgstr "Павярнуць супраць гадзіннікавай стрэлцы"
+
+#: ../src/main-win.c:256 ../src/main-win.c:1397
+msgid "Rotate Clockwise"
+msgstr "Павярнуць па гадзіннікавай стрэлцы"
+
+#: ../src/main-win.c:258 ../src/main-win.c:1398
+msgid "Flip Horizontal"
+msgstr "Павярнуць па гарызанталі"
+
+#: ../src/main-win.c:259 ../src/main-win.c:1399
+msgid "Flip Vertical"
+msgstr "Павярнуць па вертыкалі"
+
+#: ../src/main-win.c:263 ../src/main-win.c:1401
+msgid "Open File"
+msgstr "Адчыніць файл"
+
+#: ../src/main-win.c:264 ../src/main-win.c:1402
+msgid "Save File"
+msgstr "Захаваць файл"
+
+#: ../src/main-win.c:265
+msgid "Save File As"
+msgstr "Захаваць файл як"
+
+#. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
+#: ../src/main-win.c:266 ../src/main-win.c:1405
+msgid "Delete File"
+msgstr "Выдаліць файл"
+
+#: ../src/main-win.c:269 ../src/main-win.c:1407 ../data/pref-dlg.glade.h:8
+msgid "Preferences"
+msgstr "Налады"
+
+#: ../src/main-win.c:270 ../src/main-win.c:1410
+msgid "Quit"
+msgstr "Выйсці"
+
+#: ../src/main-win.c:736
+msgid "Stop Slideshow"
+msgstr "Спыніць слайдшоў"
+
+#: ../src/main-win.c:1263
+msgid ""
+"The file name you selected already exists.\n"
+"Do you want to overwrite existing file?\n"
+"(Warning: The quality of original image might be lost)"
+msgstr ""
+"Файл з такім імём ужо існуе.\n"
+"Вы жадаеце перапісаць існуючы файл?\n"
+"(Увага: Якасць арыгінала можа быць згублена)"
+
+#: ../src/main-win.c:1304
+msgid "Writing this image format is not supported."
+msgstr "Запіс малюнка ў гэтым фармаце не падтрымліваецца"
+
+#: ../src/main-win.c:1342
+msgid ""
+"Are you sure you want to delete current file?\n"
+"\n"
+"Warning: Once deleted, the file cannot be recovered."
+msgstr ""
+"Вы ўпэнены што жадаеце выдаліць гэты файл?\n"
+"Увага: Выдалены файл нельга будзе аднавіць."
+
+#: ../src/main-win.c:1387
+msgid "Start/Stop Slideshow"
+msgstr "Пачаць/Спыніць слайдшоў"
+
+#: ../src/main-win.c:1403
+msgid "Save As"
+msgstr "Захаваць як"
+
+#: ../src/main-win.c:1473
+msgid " * Refer to source code of EOG image viewer and GThumb"
+msgstr " * Глядзіце зыходны код праглядальніка малюнкаў EOG і GThum"
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: ../src/main-win.c:1477
+msgid "translator-credits"
+msgstr "Анік Кіна <son_of_the_photographer@tut.by>"
+
+#: ../src/main-win.c:1485
+msgid "GPicView"
+msgstr "GPicView"
+
+#: ../src/main-win.c:1487
+msgid "Copyright (C) 2007 - 2009"
+msgstr "Copyright (C) 2007 - 2009"
+
+#: ../src/main-win.c:1488
+msgid "Lightweight image viewer from LXDE project"
+msgstr "Лёгкі праглядальнік малюнкаў для праекта LXDE"
+
+#: ../src/pref.c:157
+msgid ""
+"GPicView will become the default viewer for all supported image files on "
+"your system.\n"
+"(This will be done through 'xdg-mime' program)\n"
+"\n"
+"<b>Are you sure you really want to do this?</b>"
+msgstr ""
+"GPicView стане праглядальнікам малюнкаў па-змаўчанні для ўсіх патрымліваймых "
+"файлаў у вашай сістэме.\n"
+"(Гэта будзе зроблена праз праграму 'xdg-mime')\n"
+"\n"
+"<b>Вы сапраўды жадаеце зрабіць гэта?</b>"
+
+#: ../src/file-dlgs.c:62
+msgid "All Supported Images"
+msgstr "Усе падтрымліваймыя малюнкі"
+
+#: ../src/file-dlgs.c:67
+msgid "All Files"
+msgstr "Усе файлы"
+
+#: ../src/file-dlgs.c:103
+msgid "JPEG Quality:"
+msgstr "Якасць JPEG:"
+
+#: ../src/file-dlgs.c:104
+msgid ""
+"Lower quality values yield smaller file sizes,\n"
+"but the image quality will be poorer."
+msgstr ""
+"Меншае значэнне якасці прыводзіць да меншых памераў,\n"
+"але якасць малюнка будзе горш."
+
+#: ../src/file-dlgs.c:118
+msgid "PNG Compression Level:"
+msgstr "Узровень сціскання PNG:"
+
+#: ../src/file-dlgs.c:119
+msgid ""
+"Higher compression levels yield smaller file sizes,\n"
+"but takes more time to do the compression."
+msgstr ""
+"Вышэйшы узровень сціскання прыводзіць да меншых памераў,\n"
+"але патрабуе больш часа на сцісканне."
+
+#: ../gpicview.desktop.in.h:2
+msgid "View your images easily"
+msgstr "Праглядайце малюнкі без клапот і турбот."
+
+#: ../data/pref-dlg.glade.h:1
+msgid "<b>Background colors</b>"
+msgstr "<b>Колер фона</b>"
+
+#: ../data/pref-dlg.glade.h:2
+msgid "Ask before deleting images"
+msgstr "Запытаць перад выдаленнем малюнкаў"
+
+#: ../data/pref-dlg.glade.h:3
+msgid "Ask before saving images"
+msgstr "Запытаць перад захаваннем малюнкаў"
+
+#: ../data/pref-dlg.glade.h:4
+msgid "Automatically save rotated images"
+msgstr "Аўтаматычна захоўваць павернутыя малюнкі"
+
+#: ../data/pref-dlg.glade.h:5
+msgid "Fullscreen:"
+msgstr "На поўны экран:"
+
+#: ../data/pref-dlg.glade.h:6
+msgid "Make GPicView the default viewer for images"
+msgstr "Зрабіць GPicView праглядальнікам малюнкаў па змаўчанні"
+
+#: ../data/pref-dlg.glade.h:7
+msgid "Normal:"
+msgstr "Звычайна:"
+
+#: ../data/pref-dlg.glade.h:9
+msgid ""
+"Rotate JPEG file by changing EXIF orientation value\n"
+"(only if EXIF orientation tag exists)"
+msgstr ""
+"Паварочваць JPEG файл змяняя значэнне арыентацыі EXIF\n"
+"(толькі калі існуе параметр арыентацыі EXIF)"
+
+#: ../data/pref-dlg.glade.h:11
+msgid "Slideshow interval\t"
+msgstr "Інтэрвал слайшоў\t"
+
+#: ../data/pref-dlg.glade.h:12
+msgid "sec\t"
+msgstr "сек\t"
