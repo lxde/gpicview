@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-14 19:24+0100\n"
-"PO-Revision-Date: 2010-10-15 07:30+0200\n"
+"PO-Revision-Date: 2010-10-20 06:20+0200\n"
 "Last-Translator: Yinghua_Wang <wantinghard@gmail.com>\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Language: zh_CN\n"
@@ -159,7 +159,7 @@ msgstr " * 参考 EOG 及 GThumb 的源代码"
 #: ../src/main-win.c:1477
 msgid "translator-credits"
 msgstr ""
-"程任全 (cheng) <crquan@gmail.com>\n"
+"程任全(cheng) <crquan@gmail.com>\n"
 "商源纯 <05281253@bjtu.edu.cn>"
 
 #: ../src/main-win.c:1485
