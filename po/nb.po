@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gpicview 0.1.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-14 19:24+0100\n"
-"PO-Revision-Date: 2010-11-03 19:12+0200\n"
+"PO-Revision-Date: 2010-11-04 15:52+0200\n"
 "Last-Translator: Sam <wilsonsamm@hotmail.com>\n"
 "Language-Team: Norwegian Bokmål\n"
 "Language: nb\n"
@@ -154,7 +154,9 @@ msgstr " * Se kildekode for EOG bildevisning og GThumb"
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1477
 msgid "translator-credits"
-msgstr "Jon Ole Killie"
+msgstr ""
+"Jon Ole Killie\n"
+"Sam Magnus Wilson"
 
 #: ../src/main-win.c:1485
 msgid "GPicView"
@@ -162,7 +164,7 @@ msgstr "GPicView"
 
 #: ../src/main-win.c:1487
 msgid "Copyright (C) 2007 - 2009"
-msgstr "Copyright (C) 2007 - 2009"
+msgstr "Copyright (C) 2007-2009"
 
 #: ../src/main-win.c:1488
 msgid "Lightweight image viewer from LXDE project"
@@ -215,7 +217,7 @@ msgstr ""
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
-msgstr ""
+msgstr "Vis bilder lettvint"
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
@@ -255,7 +257,7 @@ msgstr ""
 
 #: ../data/pref-dlg.glade.h:11
 msgid "Slideshow interval\t"
-msgstr ""
+msgstr "Pause mellom hvert bilde\t"
 
 # Ifølge språkrådet kan også "s" brukes, men jeg valgte "sek" ettersom det synes litt mer tydelig hva som egentlig menes.
 #: ../data/pref-dlg.glade.h:12
