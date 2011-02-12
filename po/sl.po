@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: gpicview 0.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-14 19:24+0100\n"
-"PO-Revision-Date: 2011-01-28 13:47+0200\n"
-"Last-Translator: Andrej <andrej.znidarsic@gmail.com>\n"
+"PO-Revision-Date: 2011-02-12 18:49+0200\n"
+"Last-Translator: Klemen <klemen.kosir@gmx.com>\n"
 "Language-Team: Slovenian <paxmanpwnz@gmail.com>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr "[DATOTEKA]"
 
 #: ../src/gpicview.c:40
 msgid "Print version information and exit"
-msgstr "Izpiši podrobnosti o različici in končaj"
+msgstr "Izpiše podatke o različici"
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
@@ -38,7 +38,7 @@ msgstr "Pregledovalnik slik"
 
 #: ../src/main-win.c:228 ../src/main-win.c:1385
 msgid "Previous"
-msgstr "Predhodna"
+msgstr "Prejšnja"
 
 #: ../src/main-win.c:229 ../src/main-win.c:1386
 msgid "Next"
@@ -70,7 +70,7 @@ msgstr "Izvirna velikost"
 
 #: ../src/main-win.c:251 ../src/main-win.c:1394
 msgid "Full Screen"
-msgstr "Cel zaslon"
+msgstr "Celozaslonski način"
 
 #: ../src/main-win.c:255 ../src/main-win.c:1396
 msgid "Rotate Counterclockwise"
@@ -139,7 +139,7 @@ msgid ""
 msgstr ""
 "Ali res želite izbrisati trenutno datoteko?\n"
 "\n"
-" Opozorilo: izbrisane datoteke ni mogoče obnoviti."
+"Opozorilo: Izbrisane datoteke ni mogoče obnoviti."
 
 #: ../src/main-win.c:1387
 msgid "Start/Stop Slideshow"
@@ -151,14 +151,15 @@ msgstr "Shrani kot"
 
 #: ../src/main-win.c:1473
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr " * Oglejte si izvorno kodo pregledovalnika slik EOG in programa GThumb"
+msgstr " * Oglejte si izvorno kodo pregledovalnika slik EOG in GThumb"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1477
 msgid "translator-credits"
 msgstr ""
+"Andrej Žnidaršič <andrej.znidarsic@gmail.com>Klemen Košir "
+"<https://launchpad.net/~klemen913>\n"
 "paxman <paxmanpwnz@gmail.com>\n"
-"Andrej Žnidaršič <andrej.znidarsic@gmail.com>"
 
 #: ../src/main-win.c:1485
 msgid "GPicView"
@@ -166,11 +167,11 @@ msgstr "GPicView"
 
 #: ../src/main-win.c:1487
 msgid "Copyright (C) 2007 - 2009"
-msgstr "Vse pravice pridržane (C) 2007 - 2009"
+msgstr "Avtorske pravice (C) 2007 - 2009"
 
 #: ../src/main-win.c:1488
 msgid "Lightweight image viewer from LXDE project"
-msgstr "Pregledovalnik slik okenskega okolja LXDE"
+msgstr "Pregledovalnik slik iz projekta LXDE"
 
 #: ../src/pref.c:157
 msgid ""
@@ -182,6 +183,7 @@ msgid ""
 msgstr ""
 "GPicView bo na vašem sistemu postal privzeti pregledovalnik za vse podprte "
 "slikovne datoteke.\n"
+"(To bo opravljeno skozi program 'xdg-mime')\n"
 "\n"
 "<b>Ali ste prepričani, da želite to storiti?</b>"
 
@@ -202,8 +204,8 @@ msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
 msgstr ""
-"Nižja vrednost pomeni manjšo velikost,\n"
-"a slabšo kakovost slike."
+"Nižja vrednost pomeni ne samo manjšo velikost datoteke,\n"
+"ampak tudi slabšo kakovost slike."
 
 #: ../src/file-dlgs.c:118
 msgid "PNG Compression Level:"
@@ -214,12 +216,12 @@ msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
 msgstr ""
-"Višje ravni nivoji pomenijo manjše velikosti slik,\n"
-"vendar stiskanje traja dlje."
+"Višje ravni stiskanja pomenijo manjše velikosti slik,\n"
+"vendar bo stiskanje trajalo dlje."
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
-msgstr "Enostavno pregledovanje slik"
+msgstr "Enostavno si oglejte svoje slike"
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
@@ -239,11 +241,11 @@ msgstr "Samodejno shrani zavrtene slike"
 
 #: ../data/pref-dlg.glade.h:5
 msgid "Fullscreen:"
-msgstr "Cel zaslon:"
+msgstr "Celozaslonski način:"
 
 #: ../data/pref-dlg.glade.h:6
 msgid "Make GPicView the default viewer for images"
-msgstr "Nastavi GPicView za privzeti pregledovalnik slik"
+msgstr "Nastavi GPicView kot privzeti pregledovalnik slik"
 
 #: ../data/pref-dlg.glade.h:7
 msgid "Normal:"
@@ -254,8 +256,8 @@ msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
-"Zasuči JPEG datoteko s spremembo orientacijske značke v glavi EXIF (samo, če "
-"le-ta obstaja)"
+"Zavrti datoteko JPEG s spremembo vrednosti usmerjenosti EXIF\n"
+"(samo, če le-ta obstaja)"
 
 #: ../data/pref-dlg.glade.h:11
 msgid "Slideshow interval\t"
