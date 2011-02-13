@@ -159,7 +159,7 @@ msgid "translator-credits"
 msgstr ""
 "Andrej Žnidaršič <andrej.znidarsic@gmail.com>Klemen Košir "
 "<https://launchpad.net/~klemen913>\n"
-"paxman <paxmanpwnz@gmail.com>\n"
+"paxman <paxmanpwnz@gmail.com>"
 
 #: ../src/main-win.c:1485
 msgid "GPicView"
