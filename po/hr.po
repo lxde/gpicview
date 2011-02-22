@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gpicview_hr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-05-30 04:11+0000\n"
-"PO-Revision-Date: 2011-01-04 11:21+0200\n"
+"PO-Revision-Date: 2011-02-23 00:14+0200\n"
 "Last-Translator: zvacet <ikoli@yahoo.com>\n"
 "Language-Team: Croatian <asjlob AT vip.hr>\n"
 "Language: hr\n"
@@ -153,7 +153,7 @@ msgstr "Spremi kao"
 
 #: ../src/main-win.c:1473
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr "* Odnosi se na izvorni kod EOG preglednika datoteka i GThumb"
+msgstr " * Odnosi se na izvorni kod EOG preglednika datoteka i GThumb"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1477
