@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gpicview_hr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-05-30 04:11+0000\n"
-"PO-Revision-Date: 2011-02-23 00:14+0200\n"
+"PO-Revision-Date: 2011-04-18 00:05+0200\n"
 "Last-Translator: zvacet <ikoli@yahoo.com>\n"
 "Language-Team: Croatian <asjlob AT vip.hr>\n"
 "Language: hr\n"
@@ -159,7 +159,7 @@ msgstr " * Odnosi se na izvorni kod EOG preglednika datoteka i GThumb"
 #: ../src/main-win.c:1477
 msgid "translator-credits"
 msgstr ""
-"Ivica Kolić <ikoli@yahoo.com>\n"
+"Ivica Kolić ikoli@yahoo.com\n"
 "Boljsa"
 
 #: ../src/main-win.c:1485
