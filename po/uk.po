@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-17 04:07+0000\n"
-"PO-Revision-Date: 2011-04-15 16:06+0200\n"
+"PO-Revision-Date: 2011-05-06 10:16+0200\n"
 "Last-Translator: Y P <yupadmin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: uk\n"
@@ -138,6 +138,7 @@ msgid ""
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
 "Ви впевнені, що бажаєте видалити цей файл?\n"
+"\n"
 "Попередження: Видаливши цей файл Ви не зможете його відновити."
 
 #: ../src/main-win.c:1387
@@ -150,7 +151,7 @@ msgstr "Зберегти як"
 
 #: ../src/main-win.c:1473
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr "* Зверніться до джерельного коду переглядача малюнків EOG і GThumb"
+msgstr " * Зверніться до джерельного коду переглядача малюнків EOG і GThumb"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1477
