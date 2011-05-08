@@ -14,6 +14,10 @@ AM_PROG_CC_STDC
 AM_PROG_CC_C_O
 AC_HEADER_STDC
 
+# Support silent build rules. Disable by either passing --disable-silent-rules
+# to configure or passing V=1 to make
+AM_SILENT_RULES([yes])
+
 AM_GLIB_GNU_GETTEXT
 IT_PROG_INTLTOOL([0.40.0])
 
