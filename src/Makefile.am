@@ -3,6 +3,7 @@
 # set the include path found by configure
 INCLUDES = $(all_includes) \
 	@PACKAGE_CFLAGS@ \
+        $(ADDITIONAL_FLAGS) \
 	-I$(top_srcdir) \
 	-DPACKAGE_DATA_DIR=\""$(datadir)"\" \
 	-DPACKAGE_LOCALE_DIR=\""$(prefix)/$(DATADIRNAME)/locale"\"
