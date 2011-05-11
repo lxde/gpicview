@@ -51,6 +51,8 @@ static GtkTargetEntry drop_targets[] =
 };
 
 extern int ExifRotate(const char * fname, int new_angle);
+// defined in exif.c
+extern int ExifRotateFlipMapping[9][9];
 
 static void main_win_init( MainWin*mw );
 static void main_win_finalize( GObject* obj );
@@ -97,6 +99,7 @@ static void on_drag_data_received( GtkWidget* widget, GdkDragContext *drag_conte
                 int x, int y, GtkSelectionData* data, guint info, guint time, MainWin* mw );
 static void on_delete( GtkWidget* btn, MainWin* mw );
 static void on_about( GtkWidget* menu, MainWin* mw );
+static gboolean on_animation_timeout( MainWin* mw );
 
 static void update_title(const char *filename, MainWin *mw );
 
@@ -158,7 +161,11 @@ void main_win_init( MainWin*mw )
 
     // image area
     mw->evt_box = gtk_event_box_new();
+#if GTK_CHECK_VERSION(2, 18, 0)
+    gtk_widget_set_can_focus(mw->evt_box,TRUE);
+#else
     GTK_WIDGET_SET_FLAGS( mw->evt_box, GTK_CAN_FOCUS );
+#endif
     gtk_widget_add_events( mw->evt_box,
                            GDK_POINTER_MOTION_MASK|GDK_BUTTON_PRESS_MASK|
                            GDK_BUTTON_RELEASE_MASK|GDK_SCROLL_MASK );
@@ -480,7 +487,11 @@ void main_win_show_error( MainWin* mw, const char* message )
 void on_size_allocate( GtkWidget* widget, GtkAllocation    *allocation )
 {
     GTK_WIDGET_CLASS(main_win_parent_class)->size_allocate( widget, allocation );
+#if GTK_CHECK_VERSION(2, 20, 0)
+    if(gtk_widget_get_realized (widget) )
+#else
     if( GTK_WIDGET_REALIZED (widget) )
+#endif
     {
         MainWin* mw = (MainWin*)widget;
 
@@ -755,7 +766,6 @@ static int trans_angle_to_id(int i)
 static int get_new_angle( int orig_angle, int rotate_angle )
 {
     // defined in exif.c
-    extern int ExifRotateFlipMapping[9][9];
     static int angle_trans_back[] = {0, 0, -90, 180, -180, -135, 90, -45, 270};
 
     orig_angle = trans_angle_to_id(orig_angle);
@@ -955,7 +965,11 @@ void on_quit( GtkWidget* btn, MainWin* mw )
 
 gboolean on_button_press( GtkWidget* widget, GdkEventButton* evt, MainWin* mw )
 {
+#if GTK_CHECK_VERSION(2, 14, 0)
+    if( ! gtk_widget_has_focus( widget ) )
+#else
     if( ! GTK_WIDGET_HAS_FOCUS( widget ) )
+#endif
         gtk_widget_grab_focus( widget );
 
     if( evt->type == GDK_BUTTON_PRESS)
@@ -1476,13 +1490,11 @@ void on_about( GtkWidget* menu, MainWin* mw )
     /* TRANSLATORS: Replace this string with your names, one name per line. */
     gchar *translators = _( "translator-credits" );
 
-    gtk_about_dialog_set_url_hook( open_url, mw, NULL);
-
     about_dlg = gtk_about_dialog_new ();
 
     gtk_container_set_border_width ( ( GtkContainer*)about_dlg , 2 );
     gtk_about_dialog_set_version ( (GtkAboutDialog*)about_dlg, VERSION );
-    gtk_about_dialog_set_name ( (GtkAboutDialog*)about_dlg, _( "GPicView" ) );
+    gtk_about_dialog_set_program_name ( (GtkAboutDialog*)about_dlg, _( "GPicView" ) );
     gtk_about_dialog_set_logo( (GtkAboutDialog*)about_dlg, gdk_pixbuf_new_from_file(  PACKAGE_DATA_DIR"/pixmaps/gpicview.png", NULL ) );
     gtk_about_dialog_set_copyright ( (GtkAboutDialog*)about_dlg, _( "Copyright (C) 2007 - 2009" ) );
     gtk_about_dialog_set_comments ( (GtkAboutDialog*)about_dlg, _( "Lightweight image viewer from LXDE project" ) );
