@@ -41,7 +41,12 @@ void image_view_init( ImageView* iv )
     iv->scale =  1.0;
     iv->interp_type = GDK_INTERP_BILINEAR;
     iv->idle_handler = 0;
+#if GTK_CHECK_VERSION(2, 18, 0)
+    gtk_widget_set_can_focus((GtkWidget*)iv, TRUE );
+    gtk_widget_set_app_paintable((GtkWidget*)iv, TRUE );
+#else
     GTK_WIDGET_SET_FLAGS( (GtkWidget*)iv, GTK_CAN_FOCUS | GTK_APP_PAINTABLE );
+#endif
 }
 
 void image_view_class_init( ImageViewClass* klass )
@@ -159,7 +164,11 @@ void on_size_allocate( GtkWidget* widget, GtkAllocation   *allocation )
 gboolean on_expose_event( GtkWidget* widget, GdkEventExpose* evt )
 {
     ImageView* iv = (ImageView*)widget;
+#if GTK_CHECK_VERSION(2, 20, 0)
+    if ( gtk_widget_get_mapped(widget) ) 
+#else
     if( GTK_WIDGET_MAPPED (widget) )
+#endif
         image_view_paint( iv, evt );
     return FALSE;
 }
@@ -439,6 +448,7 @@ void paint( ImageView* iv, GdkRectangle* invalid_rect, GdkInterpType type )
     if( G_LIKELY(src_pix) )
     {
         GtkWidget* widget = (GtkWidget*)iv;
+/*
         gdk_draw_pixbuf( widget->window,
                          widget->style->fg_gc[GTK_STATE_NORMAL],
                          src_pix,
@@ -446,6 +456,13 @@ void paint( ImageView* iv, GdkRectangle* invalid_rect, GdkInterpType type )
                          dest_x, dest_y,
                          rect.width, rect.height,
                          GDK_RGB_DITHER_NORMAL, 0, 0 );
+*/
+        // New function with cairo
+        cairo_t *cr = gdk_cairo_create (gtk_widget_get_window(widget));
+        gdk_cairo_set_source_pixbuf (cr, src_pix, dest_x, dest_y);
+        cairo_paint (cr);
+        cairo_destroy (cr);
+
         g_object_unref( src_pix );
     }
 }
