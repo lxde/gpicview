@@ -48,6 +48,12 @@
 #include "tran-supp.h"      /* Support routines for jpegtran */
 #include <limits.h>
 #include <errno.h>
+#include <glib.h>
+#include <glib/gstdio.h>
+
+int jpegtran (char *input_filename, char *output_filename, JXFORM_CODE  transformation);
+
+int rotate_and_save_jpeg_lossless(char *  filename,int angle);
 
 int
 jpegtran (char        *input_filename,
