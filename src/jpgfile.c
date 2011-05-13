@@ -17,7 +17,7 @@ static int SectionsAllocated;
 static int SectionsRead;
 static int HaveAll;
 
-
+void CheckSectionsAllocated(void);
 
 #define PSEUDO_IMAGE_MARKER 0x123; // Extra value.
 //--------------------------------------------------------------------------
