@@ -28,6 +28,7 @@ typedef struct {
     char * Desc;
 }TagTable_t;
 
+int ExifRotate(const char * fname, int new_angle);
 
 //--------------------------------------------------------------------------
 // Table of Jpeg encoding process names
@@ -1560,23 +1561,23 @@ void ShowConciseImageInfo(void)
 int ExifRotateFlipMapping[9][9]=
 {
 //0 undef
-0, 0, 0, 0, 0, 0, 0, 0, 0,
+{0, 0, 0, 0, 0, 0, 0, 0, 0},
 //1 normal
-0, 1, 2, 3, 4, 5, 6, 7, 8,
+{0, 1, 2, 3, 4, 5, 6, 7, 8},
 //2 flip horizontal
-0, 2, 1, 4, 3, 6, 5, 8, 7,
+{0, 2, 1, 4, 3, 6, 5, 8, 7},
 //3 rotate 180
-0, 3, 4, 1, 2, 7, 8, 5, 6,
+{0, 3, 4, 1, 2, 7, 8, 5, 6},
 //4 flip vertical 
-0, 4, 3, 2, 1, 8, 7, 6, 5,
+{0, 4, 3, 2, 1, 8, 7, 6, 5},
 //5 transpose: Flipped about top-left <--> bottom-right axis. 
-0, 5, 8, 7, 6, 1, 4, 3, 2,
+{0, 5, 8, 7, 6, 1, 4, 3, 2},
 //6 rotate 90
-0, 6, 7, 8, 5, 2, 3, 4, 1,
+{0, 6, 7, 8, 5, 2, 3, 4, 1},
 //7 transverse: flipped about top-right <--> bottom-left axis
-0, 7, 6, 5, 8, 3, 2, 1, 4, 
+{0, 7, 6, 5, 8, 3, 2, 1, 4}, 
 //8 rotate 270
-0, 8, 5, 6, 7, 4, 1, 2, 3
+{0, 8, 5, 6, 7, 4, 1, 2, 3},
 };
 
 int ExifRotate(const char * fname, int new_angle)
