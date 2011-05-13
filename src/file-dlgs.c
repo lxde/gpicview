@@ -104,7 +104,10 @@ static void on_file_save_filter_changed(GObject* obj, GParamSpec* pspec, gpointe
             label2 = gtk_label_new(_("Lower quality values yield smaller file sizes,\nbut the image quality will be poorer."));
             scale = gtk_hscale_new_with_range( 0, 100, 5 );
             gtk_range_set_value(GTK_RANGE(scale), pref.jpg_quality);
+#if GTK_CHECK_VERSION(2, 24, 0) 
+#else
             gtk_range_set_update_policy(GTK_RANGE(scale), GTK_UPDATE_DISCONTINUOUS);
+#endif
             g_signal_connect(G_OBJECT(scale), "value-changed", G_CALLBACK(on_int_val_changed), &pref.jpg_quality);
             gtk_scale_set_draw_value(GTK_SCALE(scale), TRUE);
             gtk_scale_set_value_pos(GTK_SCALE(scale), GTK_POS_RIGHT);
@@ -119,7 +122,10 @@ static void on_file_save_filter_changed(GObject* obj, GParamSpec* pspec, gpointe
             label2 = gtk_label_new(_("Higher compression levels yield smaller file sizes,\nbut takes more time to do the compression."));
             scale = gtk_hscale_new_with_range( 0, 9, 1 );
             gtk_range_set_value(GTK_RANGE(scale), pref.png_compression);
+#if GTK_CHECK_VERSION(2, 24, 0)
+#else
             gtk_range_set_update_policy(GTK_RANGE(scale), GTK_UPDATE_DISCONTINUOUS);
+#endif
             g_signal_connect(G_OBJECT(scale), "value-changed", G_CALLBACK(on_int_val_changed), &pref.png_compression);
             gtk_scale_set_draw_value(GTK_SCALE(scale), TRUE);
             gtk_scale_set_value_pos(GTK_SCALE(scale), GTK_POS_RIGHT);
