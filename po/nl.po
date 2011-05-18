@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: gpicview 0.1.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-14 19:24+0100\n"
-"PO-Revision-Date: 2010-02-26 14:57+0200\n"
-"Last-Translator: Sander <celettu@gmail.com>\n"
+"PO-Revision-Date: 2011-05-18 16:44+0200\n"
+"Last-Translator: Pjotr <pliniusminor@gmail.com>\n"
 "Language-Team: Dutch\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ASCII\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
@@ -24,15 +24,15 @@ msgstr "[BESTAND]"
 
 #: ../src/gpicview.c:40
 msgid "Print version information and exit"
-msgstr "Versie-informatie printen en programma afsluiten"
+msgstr "Versie-informatie afdrukken en afsluiten"
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
-msgstr "Begin presentatie"
+msgstr "Begin diavoorstelling"
 
 #: ../src/main-win.c:152 ../src/main-win.c:1373 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
-msgstr "Afbeeldingsweergave"
+msgstr "Afbeeldingskijker"
 
 #: ../src/main-win.c:228 ../src/main-win.c:1385
 msgid "Previous"
@@ -44,7 +44,7 @@ msgstr "Volgende"
 
 #: ../src/main-win.c:230 ../src/main-win.c:728
 msgid "Start Slideshow"
-msgstr "Begin dia-voorstelling"
+msgstr "Begin Diavoorstelling"
 
 #: ../src/main-win.c:234 ../src/main-win.c:1389
 msgid "Zoom Out"
@@ -60,11 +60,11 @@ msgstr "Inzoomen"
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
 #: ../src/main-win.c:242 ../src/main-win.c:1391
 msgid "Fit Image To Window Size"
-msgstr "Afbeelding aanpassen aan venstergrootte"
+msgstr "Afbeelding aanpassen aan Venstergrootte"
 
 #: ../src/main-win.c:244 ../src/main-win.c:1392
 msgid "Original Size"
-msgstr "Originele grootte"
+msgstr "Oorspronkelijke Grootte"
 
 #: ../src/main-win.c:251 ../src/main-win.c:1394
 msgid "Full Screen"
@@ -80,23 +80,23 @@ msgstr "Rechtsom draaien"
 
 #: ../src/main-win.c:258 ../src/main-win.c:1398
 msgid "Flip Horizontal"
-msgstr "Horizontaal spiegelen"
+msgstr "Horizontaal omdraaien"
 
 #: ../src/main-win.c:259 ../src/main-win.c:1399
 msgid "Flip Vertical"
-msgstr "Verticaal spiegelen"
+msgstr "Verticaal omdraaien"
 
 #: ../src/main-win.c:263 ../src/main-win.c:1401
 msgid "Open File"
-msgstr "Bestand openen"
+msgstr "Bestand Openen"
 
 #: ../src/main-win.c:264 ../src/main-win.c:1402
 msgid "Save File"
-msgstr "Bestand opslaan"
+msgstr "Bestand Opslaan"
 
 #: ../src/main-win.c:265
 msgid "Save File As"
-msgstr "Bestand opslaan als"
+msgstr "Bestand Opslaan Als"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
 #: ../src/main-win.c:266 ../src/main-win.c:1405
@@ -113,7 +113,7 @@ msgstr "Afsluiten"
 
 #: ../src/main-win.c:736
 msgid "Stop Slideshow"
-msgstr "Stop presentatie"
+msgstr "Staak Diavoorstelling"
 
 #: ../src/main-win.c:1263
 msgid ""
@@ -122,12 +122,13 @@ msgid ""
 "(Warning: The quality of original image might be lost)"
 msgstr ""
 "Een bestand met deze naam bestaat al.\n"
-"Wilt U het bestaande bestand overschrijven?\n"
+"Wilt u het bestaande bestand overschrijven?\n"
 "(Waarschuwing: De kwaliteit van de originele afbeelding kan verloren gaan)"
 
 #: ../src/main-win.c:1304
 msgid "Writing this image format is not supported."
-msgstr "Het wegschrijven naar dit beeldformaat is niet ondersteund."
+msgstr ""
+"Het wegschrijven naar dit type afbeeldingsbestand wordt niet ondersteund."
 
 #: ../src/main-win.c:1342
 msgid ""
@@ -135,27 +136,28 @@ msgid ""
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
-"Weet U zeker dat u het huidige bestand wilt verwijderen?\n"
+"Weet u zeker dat u het huidige bestand wilt verwijderen?\n"
 "\n"
-"Waarschuwing: nadat het is verwijderd kan het niet meer worden "
+"Waarschuwing: nadat het is verwijderd, kan het bestand niet meer worden "
 "teruggeplaatst."
 
 #: ../src/main-win.c:1387
 msgid "Start/Stop Slideshow"
-msgstr "Begin/Stop Presentatie"
+msgstr "Begin/Staak Diavoorstelling"
 
 #: ../src/main-win.c:1403
 msgid "Save As"
-msgstr "Opslaan als"
+msgstr "Opslaan Als"
 
 #: ../src/main-win.c:1473
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr " * Refereer naar de broncode van de EOG afbeeldingsviewer en GThumb"
+msgstr "* Verwijs naar de broncode van de EOG-afbeeldingskijker en GThumb"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1477
 msgid "translator-credits"
-msgstr "Stephan Arts <stephan@xfce.org>Sander De Voogdt <celettu@gmail.com>"
+msgstr ""
+"Stephan Arts <stephan@xfce.org>Sander De Voogdt <celettu@gmail.com>Pjotr"
 
 #: ../src/main-win.c:1485
 msgid "GPicView"
@@ -163,11 +165,11 @@ msgstr "GPicView"
 
 #: ../src/main-win.c:1487
 msgid "Copyright (C) 2007 - 2009"
-msgstr "Copyright (C) 2007-2009"
+msgstr "Auteursrecht (C) 2007-2009"
 
 #: ../src/main-win.c:1488
 msgid "Lightweight image viewer from LXDE project"
-msgstr "Lichtgewicht afbeeldingsviewer van LXDE project"
+msgstr "Lichtgewicht afbeeldingskijker van het LXDE-project"
 
 #: ../src/pref.c:157
 msgid ""
@@ -177,23 +179,23 @@ msgid ""
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"Alle ondersteunde afbeeldingsbestanden op uw computer zullen geopend worden "
-"met GPicView.\n"
-"(Dit gebeurt door middel met het 'xdg-mime' programma)\n"
+"GPicview zal de standaardkijker worden voor alle ondersteunde "
+"afbeeldingbestanden op uw computer.\n"
+"(Dit gebeurt door middel van het 'xdg-mime' programma)\n"
 "\n"
-"<b>Bent u zeker dat u wilt doen?</b>"
+"<b>Weet u zeker dat u wilt doen?</b>"
 
 #: ../src/file-dlgs.c:62
 msgid "All Supported Images"
-msgstr "Alle ondersteunde afbeeldingen"
+msgstr "Alle ondersteunde Afbeeldingen"
 
 #: ../src/file-dlgs.c:67
 msgid "All Files"
-msgstr "Alle bestanden"
+msgstr "Alle Bestanden"
 
 #: ../src/file-dlgs.c:103
 msgid "JPEG Quality:"
-msgstr "JPEG kwaliteit:"
+msgstr "JPEG-kwaliteit:"
 
 #: ../src/file-dlgs.c:104
 msgid ""
@@ -205,7 +207,7 @@ msgstr ""
 
 #: ../src/file-dlgs.c:118
 msgid "PNG Compression Level:"
-msgstr "PNG compressiewaarde:"
+msgstr "PNG-Compressiewaarde:"
 
 #: ../src/file-dlgs.c:119
 msgid ""
@@ -217,7 +219,7 @@ msgstr ""
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
-msgstr "Bekijk uw afbeeldingen makkelijker"
+msgstr "Bekijk uw afbeeldingen op een makkelijke manier"
 
 #: ../data/pref-dlg.glade.h:1
 msgid "<b>Background colors</b>"
@@ -241,7 +243,7 @@ msgstr "Volledig scherm:"
 
 #: ../data/pref-dlg.glade.h:6
 msgid "Make GPicView the default viewer for images"
-msgstr "Afbeeldingen standaard openen met GPicview"
+msgstr "Maak GPicView de standaardkijker voor afbeeldingen"
 
 #: ../data/pref-dlg.glade.h:7
 msgid "Normal:"
@@ -252,12 +254,12 @@ msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
-"EXIF orientatie enkel veranderen tijdens roteren en spiegelen (indien EXIF "
-"orientatie tag bestaat)"
+"Draai JPEG-bestand door de EXIF-orientatiewaarde te veranderen\n"
+"(alleen indien EXIF-orientatie-etiket bestaat)"
 
 #: ../data/pref-dlg.glade.h:11
 msgid "Slideshow interval\t"
-msgstr "Dia-presentatie interval\t"
+msgstr "Diavoorstelling interval\t"
 
 #: ../data/pref-dlg.glade.h:12
 msgid "sec\t"
