@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gpicview 0.1.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-14 19:24+0100\n"
-"PO-Revision-Date: 2011-05-18 16:44+0200\n"
+"PO-Revision-Date: 2011-05-19 12:46+0200\n"
 "Last-Translator: Pjotr <pliniusminor@gmail.com>\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
@@ -151,7 +151,7 @@ msgstr "Opslaan Als"
 
 #: ../src/main-win.c:1473
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr "* Verwijs naar de broncode van de EOG-afbeeldingskijker en GThumb"
+msgstr " * Verwijs naar de broncode van de EOG-afbeeldingskijker en GThumb"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1477
@@ -207,7 +207,7 @@ msgstr ""
 
 #: ../src/file-dlgs.c:118
 msgid "PNG Compression Level:"
-msgstr "PNG-Compressiewaarde:"
+msgstr "PNG-Compressieniveau:"
 
 #: ../src/file-dlgs.c:119
 msgid ""
@@ -239,7 +239,7 @@ msgstr "Geroteerde afbeeldingen automatisch opslaan"
 
 #: ../data/pref-dlg.glade.h:5
 msgid "Fullscreen:"
-msgstr "Volledig scherm:"
+msgstr "Schermvullend:"
 
 #: ../data/pref-dlg.glade.h:6
 msgid "Make GPicView the default viewer for images"
