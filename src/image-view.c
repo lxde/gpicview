@@ -161,14 +161,95 @@ void on_size_allocate( GtkWidget* widget, GtkAllocation   *allocation )
     calc_image_area( iv );
 }
 
+#if GTK_CHECK_VERSION(3, 0, 0)
+
+static cairo_region_t *
+eel_cairo_get_clip_region (cairo_t *cr)
+/* From nautilus http://git.gnome.org/browse/nautilus/tree/eel/eel-canvas.c */
+{
+        cairo_rectangle_list_t *list;
+        cairo_region_t *region;
+        int i;
+
+        list = cairo_copy_clip_rectangle_list (cr);
+        if (list->status == CAIRO_STATUS_CLIP_NOT_REPRESENTABLE) {
+                cairo_rectangle_int_t clip_rect;
+
+                cairo_rectangle_list_destroy (list);
+
+                if (!gdk_cairo_get_clip_rectangle (cr, &clip_rect))
+                        return NULL;
+                return cairo_region_create_rectangle (&clip_rect);
+        }
+
+
+        region = cairo_region_create ();
+        for (i = list->num_rectangles - 1; i >= 0; --i) {
+                cairo_rectangle_t *rect = &list->rectangles[i];
+                cairo_rectangle_int_t clip_rect;
+
+                clip_rect.x = floor (rect->x);
+                clip_rect.y = floor (rect->y);
+                clip_rect.width = ceil (rect->x + rect->width) - clip_rect.x;
+                clip_rect.height = ceil (rect->y + rect->height) - clip_rect.y;
+
+                if (cairo_region_union_rectangle (region, &clip_rect) != CAIRO_STATUS_SUCCESS) {
+                        cairo_region_destroy (region);
+                        region = NULL;
+                        break;
+                }
+        }
+
+        cairo_rectangle_list_destroy (list);
+        return region;
+}
+
+gboolean on_draw_event( GtkWidget* widget, cairo_t *cr )
+{
+
+    ImageView* iv = (ImageView*)widget;
+    if ( gtk_widget_get_mapped(widget) ) 
+        image_view_paint( iv, cr );
+    return FALSE;
+
+}
+void image_view_paint( ImageView* iv, cairo_t *cr )
+{
+    if( iv->pix )
+    {
+        GdkRectangle* rects = NULL;
+        int i = 0;
+        cairo_rectangle_int_t n_rects = 0;
+
+/*
+        int                 cairo_region_num_rectangles         (const cairo_region_t *region);
+        void                cairo_region_get_rectangle          (const cairo_region_t *region,
+                                                         int nth,
+                                                         cairo_rectangle_int_t *rectangle);
+
+void                gdk_region_get_rectangles           (const GdkRegion *region,
+                                                         GdkRectangle **rectangles,
+                                                         gint *n_rectangles);
+*/
+
+        cairo_region_get_rectangle(eel_cairo_get_clip_region(cr), &rects, &n_rects);
+
+        for( i = 0; i < n_rects; ++i )
+        {
+            paint( iv, rects + i, GDK_INTERP_NEAREST );
+        }
+        g_free( rects );
+
+        if( 0 == iv->idle_handler )
+            iv->idle_handler = g_idle_add( (GSourceFunc)on_idle, iv );
+    }
+}
+#else
+
 gboolean on_expose_event( GtkWidget* widget, GdkEventExpose* evt )
 {
     ImageView* iv = (ImageView*)widget;
-#if GTK_CHECK_VERSION(2, 20, 0)
-    if ( gtk_widget_get_mapped(widget) ) 
-#else
     if( GTK_WIDGET_MAPPED (widget) )
-#endif
         image_view_paint( iv, evt );
     return FALSE;
 }
@@ -262,6 +343,7 @@ void image_view_paint( ImageView* iv, GdkEventExpose* evt )
     }
 }
 
+#endif
 void image_view_clear( ImageView* iv )
 {
     if( iv->idle_handler )
