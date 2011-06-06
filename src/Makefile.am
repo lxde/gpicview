@@ -2,7 +2,8 @@
 
 # set the include path found by configure
 INCLUDES = $(all_includes) \
-	@PACKAGE_CFLAGS@ \
+	$(PACKAGE_CFLAGS) \
+        $(GTK_CFLAGS) \
         $(ADDITIONAL_FLAGS) \
 	-I$(top_srcdir) \
 	-DPACKAGE_DATA_DIR=\""$(datadir)"\" \
@@ -26,7 +27,7 @@ gpicview_SOURCES = \
 
 # the library search path.
 # use -nodefaultlibs to prevent linking libstdc++
-gpicview_LDADD = @PACKAGE_LIBS@
+gpicview_LDADD = $(PACKAGE_LIBS) $(GTK_LIBS)
 
 noinst_HEADERS = \
 	glib-mem.h \
