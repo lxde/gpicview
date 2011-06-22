@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-14 19:24+0100\n"
+"POT-Creation-Date: 2011-06-23 00:06+0200\n"
 "PO-Revision-Date: 2010-10-19 21:58+0200\n"
 "Last-Translator: kizito <kbirabwa@yahoo.co.uk>\n"
 "Language-Team: Luganda <kbirabwa@yahoo.co.uk>\n"
@@ -30,27 +30,27 @@ msgstr "Kiwandike ebifa ku olwandika lwa kyo kiryoke kimale"
 msgid "Start slideshow"
 msgstr "Omwoleso gw'ebifaananyi gutandike"
 
-#: ../src/main-win.c:152 ../src/main-win.c:1373 ../gpicview.desktop.in.h:1
+#: ../src/main-win.c:155 ../src/main-win.c:1387 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
 msgstr "Puloguramu ey'okukebera bifaananyi"
 
-#: ../src/main-win.c:228 ../src/main-win.c:1385
+#: ../src/main-win.c:235 ../src/main-win.c:1399
 msgid "Previous"
 msgstr "Ekikulembera"
 
-#: ../src/main-win.c:229 ../src/main-win.c:1386
+#: ../src/main-win.c:236 ../src/main-win.c:1400
 msgid "Next"
 msgstr "Ekiddako"
 
-#: ../src/main-win.c:230 ../src/main-win.c:728
+#: ../src/main-win.c:237 ../src/main-win.c:739
 msgid "Start Slideshow"
 msgstr "Omwoleso gw'ebifaananyi gutandike"
 
-#: ../src/main-win.c:234 ../src/main-win.c:1389
+#: ../src/main-win.c:241 ../src/main-win.c:1403
 msgid "Zoom Out"
 msgstr "Kendeeza kifaananyi"
 
-#: ../src/main-win.c:235 ../src/main-win.c:1390
+#: ../src/main-win.c:242 ../src/main-win.c:1404
 msgid "Zoom In"
 msgstr "Gejjesa kifaananyi"
 
@@ -58,64 +58,64 @@ msgstr "Gejjesa kifaananyi"
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
 #. gtk_widget_set_size_request( percent, 45, -1 );
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
-#: ../src/main-win.c:242 ../src/main-win.c:1391
+#: ../src/main-win.c:249 ../src/main-win.c:1405
 msgid "Fit Image To Window Size"
 msgstr "Ekifaananyi kyonna kijje mu kadirisa"
 
-#: ../src/main-win.c:244 ../src/main-win.c:1392
+#: ../src/main-win.c:251 ../src/main-win.c:1406
 msgid "Original Size"
 msgstr "Ekifaananyi kiragire ku bunene bwakyo obwa ddala"
 
-#: ../src/main-win.c:251 ../src/main-win.c:1394
+#: ../src/main-win.c:258 ../src/main-win.c:1408
 msgid "Full Screen"
 msgstr "Ekifaananyi kimaleyo olutimbe"
 
-#: ../src/main-win.c:255 ../src/main-win.c:1396
+#: ../src/main-win.c:262 ../src/main-win.c:1410
 msgid "Rotate Counterclockwise"
 msgstr "Ekifaananyi kiwunzikire ku kkono"
 
-#: ../src/main-win.c:256 ../src/main-win.c:1397
+#: ../src/main-win.c:263 ../src/main-win.c:1411
 msgid "Rotate Clockwise"
 msgstr "Ekifaananyi kiwunzikire ku ddyo"
 
-#: ../src/main-win.c:258 ../src/main-win.c:1398
+#: ../src/main-win.c:265 ../src/main-win.c:1412
 msgid "Flip Horizontal"
 msgstr "Ekifaananyi kivuunikire mu bugazi"
 
-#: ../src/main-win.c:259 ../src/main-win.c:1399
+#: ../src/main-win.c:266 ../src/main-win.c:1413
 msgid "Flip Vertical"
 msgstr "Ekifaananyi kivuunikire mu busimba"
 
-#: ../src/main-win.c:263 ../src/main-win.c:1401
+#: ../src/main-win.c:270 ../src/main-win.c:1415
 msgid "Open File"
 msgstr "Keberayo ekifaananyi"
 
-#: ../src/main-win.c:264 ../src/main-win.c:1402
+#: ../src/main-win.c:271 ../src/main-win.c:1416
 msgid "Save File"
 msgstr "Kaza fayiro"
 
-#: ../src/main-win.c:265
+#: ../src/main-win.c:272
 msgid "Save File As"
 msgstr "Fayiro gigyemu koppi"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
-#: ../src/main-win.c:266 ../src/main-win.c:1405
+#: ../src/main-win.c:273 ../src/main-win.c:1419
 msgid "Delete File"
 msgstr "Fayiro gigyewo"
 
-#: ../src/main-win.c:269 ../src/main-win.c:1407 ../data/pref-dlg.glade.h:8
+#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:8
 msgid "Preferences"
 msgstr "Enteekateeka"
 
-#: ../src/main-win.c:270 ../src/main-win.c:1410
+#: ../src/main-win.c:277 ../src/main-win.c:1424
 msgid "Quit"
 msgstr "Mala"
 
-#: ../src/main-win.c:736
+#: ../src/main-win.c:747
 msgid "Stop Slideshow"
 msgstr "Omwoleso gukome"
 
-#: ../src/main-win.c:1263
+#: ../src/main-win.c:1277
 msgid ""
 "The file name you selected already exists.\n"
 "Do you want to overwrite existing file?\n"
@@ -125,11 +125,11 @@ msgstr ""
 "Fayiro eyo eggibwewo ozzewo eno?\n"
 "(Kulabula: Gy'okolowo eyinz'okwonoonekamu)"
 
-#: ../src/main-win.c:1304
+#: ../src/main-win.c:1318
 msgid "Writing this image format is not supported."
 msgstr "Puloguramu eno temanyi kuwandika fayiro ez'ekika kino."
 
-#: ../src/main-win.c:1342
+#: ../src/main-win.c:1356
 msgid ""
 "Are you sure you want to delete current file?\n"
 "\n"
@@ -139,34 +139,34 @@ msgstr ""
 "\n"
 "Kulabula: Kasita fayiro eno eggibwawo, teyinza kukomezebwawo."
 
-#: ../src/main-win.c:1387
+#: ../src/main-win.c:1401
 msgid "Start/Stop Slideshow"
 msgstr "Tandika/komya omwoleso gw'ebifaananyi"
 
-#: ../src/main-win.c:1403
+#: ../src/main-win.c:1417
 msgid "Save As"
 msgstr "Fayiro gigyemu koppi"
 
-#: ../src/main-win.c:1473
+#: ../src/main-win.c:1487
 msgid " * Refer to source code of EOG image viewer and GThumb"
 msgstr ""
 " * Kebera obulambe obw'ennono obwa puloguramu ez'okukebera bifaananyi EOG ne "
 "GThumb"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../src/main-win.c:1477
+#: ../src/main-win.c:1491
 msgid "translator-credits"
 msgstr "Kizito Birabwa <kbirabwa@yahoo.co.uk>"
 
-#: ../src/main-win.c:1485
+#: ../src/main-win.c:1497
 msgid "GPicView"
 msgstr "GPicView"
 
-#: ../src/main-win.c:1487
+#: ../src/main-win.c:1499
 msgid "Copyright (C) 2007 - 2009"
 msgstr "Copyright (C) 2007 - 2009"
 
-#: ../src/main-win.c:1488
+#: ../src/main-win.c:1500
 msgid "Lightweight image viewer from LXDE project"
 msgstr "Puloguramu ey'okukebera bifaananyi ey'omu LXDE etanyunyunta kompyuta"
 
@@ -203,11 +203,11 @@ msgstr ""
 "Obulongoofu gye bukoma butono ne fayiro gy'ekoma okuba ntono,\n"
 "naye ekifaananyi kijjakukendeera okulabika obulungi."
 
-#: ../src/file-dlgs.c:118
+#: ../src/file-dlgs.c:121
 msgid "PNG Compression Level:"
 msgstr "Obupakivu obwa PNG:"
 
-#: ../src/file-dlgs.c:119
+#: ../src/file-dlgs.c:122
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
@@ -219,35 +219,35 @@ msgstr ""
 msgid "View your images easily"
 msgstr "Ekyanguya okukebera bifaananyi byo"
 
-#: ../data/pref-dlg.glade.h:1
+#: ../data/pref-dlg.ui.h:1
 msgid "<b>Background colors</b>"
 msgstr "<b>Langi ez'oku bwaliriro</b>"
 
-#: ../data/pref-dlg.glade.h:2
+#: ../data/pref-dlg.ui.h:2
 msgid "Ask before deleting images"
 msgstr "Puloguramu esookenga okukubuuza buli lw'oyagala okugyawo ekifaananyi"
 
-#: ../data/pref-dlg.glade.h:3
+#: ../data/pref-dlg.ui.h:3
 msgid "Ask before saving images"
 msgstr "Puloguramu esookenga okukubuuza buli lw'oyagala okukaza ekifaananyi"
 
-#: ../data/pref-dlg.glade.h:4
+#: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
 msgstr "Ebifaananyi byenpunzisizza bikazibwenga"
 
-#: ../data/pref-dlg.glade.h:5
+#: ../data/pref-dlg.ui.h:5
 msgid "Fullscreen:"
 msgstr "Nga ekifaananyi kimazeyo olutimbe:"
 
-#: ../data/pref-dlg.glade.h:6
+#: ../data/pref-dlg.ui.h:6
 msgid "Make GPicView the default viewer for images"
 msgstr "GPicView efuuke puloguramu sistemu gy'ekozesa okukulaga ebifaananyi"
 
-#: ../data/pref-dlg.glade.h:7
+#: ../data/pref-dlg.ui.h:7
 msgid "Normal:"
 msgstr "Nga ekifaananyi kiri mu kadirisa:"
 
-#: ../data/pref-dlg.glade.h:9
+#: ../data/pref-dlg.ui.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
@@ -255,10 +255,12 @@ msgstr ""
 "Okuwunzika ekifaananyi eky'ekika kya JPEG, kyusa omuwendo\n"
 "ogw'omu EXIF ya kyo ogufuga entereera yakyo (singa kiba nga EXIF kigirina)"
 
-#: ../data/pref-dlg.glade.h:11
-msgid "Slideshow interval\t"
+#: ../data/pref-dlg.ui.h:11
+#, fuzzy
+msgid "Slideshow interval"
 msgstr "Ekiseera ekifaananyi lye kimala nga kikulagibwa mu mwoleso\t"
 
-#: ../data/pref-dlg.glade.h:12
-msgid "sec\t"
+#: ../data/pref-dlg.ui.h:12
+#, fuzzy
+msgid "sec"
 msgstr "sikonda\t"

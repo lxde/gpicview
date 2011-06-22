@@ -2,20 +2,22 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the GPicView package.
 # Jay A. Fleming <tito.nehru.naser@gmail.com>, 2009.
-# 
-# 
+#
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: GPicView 0.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-25 04:11+0000\n"
+"POT-Creation-Date: 2011-06-23 00:06+0200\n"
 "PO-Revision-Date: 2009-09-02 12:48+0100\n"
 "Last-Translator: Jay A. Fleming <tito.nehru.naser@gmail.com>\n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
@@ -29,27 +31,27 @@ msgstr "Испиши информације о верзији и изађи"
 msgid "Start slideshow"
 msgstr "Аутоматски покретни приказ"
 
-#: ../src/main-win.c:152 ../src/main-win.c:1373 ../gpicview.desktop.in.h:1
+#: ../src/main-win.c:155 ../src/main-win.c:1387 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
 msgstr "Прегледач слика"
 
-#: ../src/main-win.c:228 ../src/main-win.c:1385
+#: ../src/main-win.c:235 ../src/main-win.c:1399
 msgid "Previous"
 msgstr "Претходна"
 
-#: ../src/main-win.c:229 ../src/main-win.c:1386
+#: ../src/main-win.c:236 ../src/main-win.c:1400
 msgid "Next"
 msgstr "Следећа"
 
-#: ../src/main-win.c:230 ../src/main-win.c:728
+#: ../src/main-win.c:237 ../src/main-win.c:739
 msgid "Start Slideshow"
 msgstr "Аутоматски покретни приказ"
 
-#: ../src/main-win.c:234 ../src/main-win.c:1389
+#: ../src/main-win.c:241 ../src/main-win.c:1403
 msgid "Zoom Out"
 msgstr "Умањи"
 
-#: ../src/main-win.c:235 ../src/main-win.c:1390
+#: ../src/main-win.c:242 ../src/main-win.c:1404
 msgid "Zoom In"
 msgstr "Увећај"
 
@@ -57,65 +59,64 @@ msgstr "Увећај"
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
 #. gtk_widget_set_size_request( percent, 45, -1 );
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
-#: ../src/main-win.c:242 ../src/main-win.c:1391
+#: ../src/main-win.c:249 ../src/main-win.c:1405
 msgid "Fit Image To Window Size"
 msgstr "Прилагоди величину слике према прозору"
 
-#: ../src/main-win.c:244 ../src/main-win.c:1392
+#: ../src/main-win.c:251 ../src/main-win.c:1406
 msgid "Original Size"
 msgstr "Оригинална величина сике"
 
-#: ../src/main-win.c:251 ../src/main-win.c:1394
+#: ../src/main-win.c:258 ../src/main-win.c:1408
 msgid "Full Screen"
 msgstr "Прикажи преко целог екрана"
 
-#: ../src/main-win.c:255 ../src/main-win.c:1396
+#: ../src/main-win.c:262 ../src/main-win.c:1410
 msgid "Rotate Counterclockwise"
 msgstr "Окрени на лево"
 
-#: ../src/main-win.c:256 ../src/main-win.c:1397
+#: ../src/main-win.c:263 ../src/main-win.c:1411
 msgid "Rotate Clockwise"
 msgstr "Окрени на десно"
 
-#: ../src/main-win.c:258 ../src/main-win.c:1398
+#: ../src/main-win.c:265 ../src/main-win.c:1412
 msgid "Flip Horizontal"
 msgstr "Окрени хоризонтално"
 
-#: ../src/main-win.c:259 ../src/main-win.c:1399
+#: ../src/main-win.c:266 ../src/main-win.c:1413
 msgid "Flip Vertical"
 msgstr "Окрени вертикално"
 
-#: ../src/main-win.c:263 ../src/main-win.c:1401
+#: ../src/main-win.c:270 ../src/main-win.c:1415
 msgid "Open File"
 msgstr "Отвори датотеку"
 
-#: ../src/main-win.c:264 ../src/main-win.c:1402
+#: ../src/main-win.c:271 ../src/main-win.c:1416
 msgid "Save File"
 msgstr "Сачувај датотеку"
 
-#: ../src/main-win.c:265
+#: ../src/main-win.c:272
 msgid "Save File As"
 msgstr "Сачувај под другим именом"
 
-#. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS,
-#. G_CALLBACK(on_save_as), GDK_A, 0 ),
-#: ../src/main-win.c:266 ../src/main-win.c:1405
+#. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
+#: ../src/main-win.c:273 ../src/main-win.c:1419
 msgid "Delete File"
 msgstr "Обриши датотеку"
 
-#: ../src/main-win.c:269 ../src/main-win.c:1407 ../data/pref-dlg.glade.h:8
+#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:8
 msgid "Preferences"
 msgstr "Поставке"
 
-#: ../src/main-win.c:270 ../src/main-win.c:1410
+#: ../src/main-win.c:277 ../src/main-win.c:1424
 msgid "Quit"
 msgstr "Излаз"
 
-#: ../src/main-win.c:736
+#: ../src/main-win.c:747
 msgid "Stop Slideshow"
 msgstr "Заустави покретни приказ"
 
-#: ../src/main-win.c:1263
+#: ../src/main-win.c:1277
 msgid ""
 "The file name you selected already exists.\n"
 "Do you want to overwrite existing file?\n"
@@ -125,11 +126,11 @@ msgstr ""
 "Да ли желите да пишем преко постојеће датотеке?\n"
 "(УПОЗОРЕЊЕ: Овим можете изгубити на квалитету слике)"
 
-#: ../src/main-win.c:1304
+#: ../src/main-win.c:1318
 msgid "Writing this image format is not supported."
 msgstr "Није подржан запис у овом формату."
 
-#: ../src/main-win.c:1342
+#: ../src/main-win.c:1356
 msgid ""
 "Are you sure you want to delete current file?\n"
 "\n"
@@ -139,38 +140,39 @@ msgstr ""
 "\n"
 "УПОЗОРЕЊЕ: Касније не можете повратити ову слику."
 
-#: ../src/main-win.c:1387
+#: ../src/main-win.c:1401
 msgid "Start/Stop Slideshow"
 msgstr "Покрени/Заустави покретни приказ"
 
-#: ../src/main-win.c:1403
+#: ../src/main-win.c:1417
 msgid "Save As"
 msgstr "Сачувај под другим именом"
 
-#: ../src/main-win.c:1473
+#: ../src/main-win.c:1487
 msgid " * Refer to source code of EOG image viewer and GThumb"
 msgstr " * Погледајте изворни код „EOG“ и „GThumb“ програма"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../src/main-win.c:1477
+#: ../src/main-win.c:1491
 msgid "translator-credits"
 msgstr "Serbian (sr) — Jay A. Fleming <tito.nehru.naser@gmail.com>"
 
-#: ../src/main-win.c:1485
+#: ../src/main-win.c:1497
 msgid "GPicView"
 msgstr "Прегледач слика"
 
-#: ../src/main-win.c:1487
+#: ../src/main-win.c:1499
 msgid "Copyright (C) 2007 - 2009"
 msgstr "2007-2009. Сва права задржана."
 
-#: ../src/main-win.c:1488
+#: ../src/main-win.c:1500
 msgid "Lightweight image viewer from LXDE project"
 msgstr "Олакшани прегледач слика за LXDE радно окружење"
 
 #: ../src/pref.c:157
 msgid ""
-"GPicView will become the default viewer for all supported image files on your system.\n"
+"GPicView will become the default viewer for all supported image files on "
+"your system.\n"
 "(This will be done through 'xdg-mime' program)\n"
 "\n"
 "<b>Are you sure you really want to do this?</b>"
@@ -201,11 +203,11 @@ msgstr ""
 "датотека буде мање величине, али ће,\n"
 "у том случају, квалитет слике бити лошији."
 
-#: ../src/file-dlgs.c:118
+#: ../src/file-dlgs.c:121
 msgid "PNG Compression Level:"
 msgstr "Ниво компресије „PNG“ слике:"
 
-#: ../src/file-dlgs.c:119
+#: ../src/file-dlgs.c:122
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
@@ -218,35 +220,35 @@ msgstr ""
 msgid "View your images easily"
 msgstr "Лагано прегледање слика"
 
-#: ../data/pref-dlg.glade.h:1
+#: ../data/pref-dlg.ui.h:1
 msgid "<b>Background colors</b>"
 msgstr "<b>Позадинске боје</b>"
 
-#: ../data/pref-dlg.glade.h:2
+#: ../data/pref-dlg.ui.h:2
 msgid "Ask before deleting images"
 msgstr "Питај пре брисања слика"
 
-#: ../data/pref-dlg.glade.h:3
+#: ../data/pref-dlg.ui.h:3
 msgid "Ask before saving images"
 msgstr "Питај пре чувања слика"
 
-#: ../data/pref-dlg.glade.h:4
+#: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
 msgstr "Аутоматски сачувај изокретане слике"
 
-#: ../data/pref-dlg.glade.h:5
+#: ../data/pref-dlg.ui.h:5
 msgid "Fullscreen:"
 msgstr "Цео екран:"
 
-#: ../data/pref-dlg.glade.h:6
+#: ../data/pref-dlg.ui.h:6
 msgid "Make GPicView the default viewer for images"
 msgstr "Постави овај програм за подразумевани прегледач слика"
 
-#: ../data/pref-dlg.glade.h:7
+#: ../data/pref-dlg.ui.h:7
 msgid "Normal:"
 msgstr "Нормално:"
 
-#: ../data/pref-dlg.glade.h:9
+#: ../data/pref-dlg.ui.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
@@ -254,10 +256,12 @@ msgstr ""
 "Окрени „JPEG“ слику према „EXIF“ вредностима\n"
 "(само ако „EXIF“ таг за оријентацију слике постоји)"
 
-#: ../data/pref-dlg.glade.h:11
-msgid "Slideshow interval\t"
+#: ../data/pref-dlg.ui.h:11
+#, fuzzy
+msgid "Slideshow interval"
 msgstr "Следећа слика после\t"
 
-#: ../data/pref-dlg.glade.h:12
-msgid "sec\t"
+#: ../data/pref-dlg.ui.h:12
+#, fuzzy
+msgid "sec"
 msgstr "сек\t"
