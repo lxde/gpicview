@@ -253,26 +253,9 @@ msgstr ""
 "(iba ak už EXIF značka orientácie existuje)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "Interval prezetácie\t"
+msgstr "Interval prezetácie"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "sek\t"
-
-#~ msgid " Full Screen"
-#~ msgstr " Celá obrazovka"
-
-#~ msgid " * Some icons are taken from gimmage"
-#~ msgstr " * Niektoré ikony pochádzajú z gimmage"
-
-#~ msgid ""
-#~ "Lightweight image viewer\n"
-#~ "\n"
-#~ "Developed by Hon Jen Yee (PCMan)"
-#~ msgstr ""
-#~ "Odľahčený prehliadač obrázkov\n"
-#~ "\n"
-#~ "Vyvinul Hon Jen Yee (PCMan)"
+msgstr "sek"

@@ -261,11 +261,9 @@ msgstr ""
 "(solo si existe la etiqueta de orientación EXIF)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "Intervalo de la presentación\t"
+msgstr "Intervalo de la presentación"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "seg\t"
+msgstr "seg"

@@ -269,6 +269,3 @@ msgstr ""
 #: ../data/pref-dlg.ui.h:12
 msgid "sec"
 msgstr ""
-
-#~ msgid " Full Screen"
-#~ msgstr "پوری سکرین"

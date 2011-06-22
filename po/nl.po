@@ -260,17 +260,9 @@ msgstr ""
 "(alleen indien EXIF-oriëntatie-etiket bestaat)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "Diavoorstelling interval\t"
+msgstr "Diavoorstelling interval"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "sec\t"
-
-#~ msgid " Full Screen"
-#~ msgstr " Schermvullend"
-
-#~ msgid " * Some icons are taken from gimmage"
-#~ msgstr " * Sommige pictogrammen zijn overgenomen van gimmage"
+msgstr "sec"

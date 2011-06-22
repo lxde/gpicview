@@ -255,11 +255,9 @@ msgstr ""
 "(slegs as die EXIF-oriëntasie-etiket bestaan)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "Interval vir skyvievertoning\t"
+msgstr "Interval vir skyvievertoning"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "sek\t"
+msgstr "sek"

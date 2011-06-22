@@ -253,11 +253,9 @@ msgstr ""
 "(chỉ khi thẻ định hướng EXIF tồn tại)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "Khoảng cách trình diễn\t"
+msgstr "Khoảng cách trình diễn"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "giây\t"
+msgstr "giây"

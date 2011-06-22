@@ -253,14 +253,9 @@ msgstr ""
 "on jo olemassa)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "Diaesityksen nopeus\t"
+msgstr "Diaesityksen nopeus"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "sek\t"
-
-#~ msgid " Full Screen"
-#~ msgstr " Kokoruutu"
+msgstr "sek"

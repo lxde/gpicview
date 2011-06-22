@@ -260,14 +260,9 @@ msgstr ""
 "(samo ako postoji EXIF orijentacijska oznaka)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "Interval prikaza u slijedu\t"
+msgstr "Interval prikaza u slijedu"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "sec\t"
-
-#~ msgid " Full Screen"
-#~ msgstr " Cijeli Zaslon"
+msgstr "sec"

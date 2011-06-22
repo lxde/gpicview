@@ -255,11 +255,9 @@ msgstr ""
 "(berre viss det alt finst ein EXIF-retningsverdi)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "Pause mellom kvart bilete\t"
+msgstr "Pause mellom kvart bilete"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "sekund\t"
+msgstr "sekund"

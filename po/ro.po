@@ -253,11 +253,9 @@ msgstr ""
 "(numai dacă există etichetă de orientare în EXIF)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "Interval între diapozitive\t"
+msgstr "Interval între diapozitive"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "sec\t"
+msgstr "sec"

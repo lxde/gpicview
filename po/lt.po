@@ -253,14 +253,9 @@ msgstr ""
 "(jei ji egzistuoja)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "Skaidrių keitimo intervalas\t"
+msgstr "Skaidrių keitimo intervalas"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "sek.\t"
-
-#~ msgid " Full Screen"
-#~ msgstr "Per visą ekraną"
+msgstr "sek."

@@ -260,14 +260,9 @@ msgstr ""
 "(Uniquement si le champ EXIF orientation est présent.)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "Intervalle entre les diapo\t"
+msgstr "Intervalle entre les diapo"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "sec.\t"
-
-#~ msgid " Full Screen"
-#~ msgstr " Plein écran"
+msgstr "sec."

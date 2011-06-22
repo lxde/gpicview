@@ -256,14 +256,9 @@ msgstr ""
 "опція існує в EXIF)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "Інтервал слайдшоу\t"
+msgstr "Інтервал слайдшоу"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "сек\t"
-
-#~ msgid " Full Screen"
-#~ msgstr " На повний екран"
+msgstr "сек"

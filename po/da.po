@@ -259,11 +259,9 @@ msgstr ""
 "(kun hvis mærket for retningværdien i EXIF eksisterer)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "Interval for diasshow\t"
+msgstr "Interval for diasshow"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "sek\t"
+msgstr "sek"

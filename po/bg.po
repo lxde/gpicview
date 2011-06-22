@@ -255,11 +255,9 @@ msgstr ""
 "(Единствено ако съществува EXIF позиция)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "Изчакване в Слайдшоуто\t"
+msgstr "Изчакване в Слайдшоуто"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "Сек.\t"
+msgstr "Сек."

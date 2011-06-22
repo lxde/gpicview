@@ -256,11 +256,9 @@ msgstr ""
 "ogw'omu EXIF ya kyo ogufuga entereera yakyo (singa kiba nga EXIF kigirina)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "Ekiseera ekifaananyi lye kimala nga kikulagibwa mu mwoleso\t"
+msgstr "Ekiseera ekifaananyi lye kimala nga kikulagibwa mu mwoleso"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "sikonda\t"
+msgstr "sikonda"

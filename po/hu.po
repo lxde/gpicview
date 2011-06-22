@@ -258,11 +258,9 @@ msgstr ""
 "(csak ha az EXIF tájolási tag létezik)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "Diavetítés időköze\t"
+msgstr "Diavetítés időköze"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "mp\t"
+msgstr "mp"

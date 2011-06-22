@@ -259,14 +259,9 @@ msgstr ""
 "(только если параметр ориентации EXIF существует)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "Интервал слайдшоу\t"
+msgstr "Интервал слайдшоу"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "сек\t"
-
-#~ msgid " Full Screen"
-#~ msgstr " На полный экран"
+msgstr "сек"

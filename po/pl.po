@@ -260,11 +260,9 @@ msgstr ""
 "(tylko jeśli istnieje etykieta orientacji EXIF)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "Czas przejścia pomiędzy slajdami prezentacji\t"
+msgstr "Czas przejścia pomiędzy slajdami prezentacji"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "s\t"
+msgstr "s"

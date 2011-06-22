@@ -255,11 +255,9 @@ msgstr ""
 "(толькі калі існуе параметр арыентацыі EXIF)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "Інтэрвал слайшоў\t"
+msgstr "Інтэрвал слайшоў"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "сек\t"
+msgstr "сек"

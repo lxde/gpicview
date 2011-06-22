@@ -258,26 +258,9 @@ msgstr ""
 "(solo se la voce orientamento EXIF esiste)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "Intervallo presentazione\t"
+msgstr "Intervallo presentazione"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "sec\t"
-
-#~ msgid " Full Screen"
-#~ msgstr " Schermo Intero"
-
-#~ msgid " * Some icons are taken from gimmage"
-#~ msgstr " * Einige Icons wurden von gimmage verwendet"
-
-#~ msgid ""
-#~ "Lightweight image viewer\n"
-#~ "\n"
-#~ "Developed by Hon Jen Yee (PCMan)"
-#~ msgstr ""
-#~ "Schneller Bildbetrachter\n"
-#~ "\n"
-#~ "Entwickelt von Hon Jen Yee (PCMan)"
+msgstr "sec"

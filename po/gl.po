@@ -255,26 +255,9 @@ msgstr ""
 "(só se a etiqueta existe)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "Intervalo de diapositivas\t"
+msgstr "Intervalo de diapositivas"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "seg\t"
-
-#~ msgid " Full Screen"
-#~ msgstr " Pantalla completa"
-
-#~ msgid " * Some icons are taken from gimmage"
-#~ msgstr "* Alguns iconos foron extraídos de gimmage"
-
-#~ msgid ""
-#~ "Lightweight image viewer\n"
-#~ "\n"
-#~ "Developed by Hon Jen Yee (PCMan)"
-#~ msgstr ""
-#~ "Lightweight image viewer\n"
-#~ "\n"
-#~ "Desarrollador por Hon Jen Yee (PCMan)"
+msgstr "seg"

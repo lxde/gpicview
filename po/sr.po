@@ -257,11 +257,9 @@ msgstr ""
 "(само ако „EXIF“ таг за оријентацију слике постоји)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "Следећа слика после\t"
+msgstr "Следећа слика после"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "сек\t"
+msgstr "сек"

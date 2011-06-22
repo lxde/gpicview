@@ -255,11 +255,9 @@ msgstr ""
 "(тек EXIF бағдарлау тегі бар болса)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "Слайдшоу кідірісі\t"
+msgstr "Слайдшоу кідірісі"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "сек\t"
+msgstr "сек"

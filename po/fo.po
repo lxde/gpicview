@@ -259,11 +259,9 @@ msgstr ""
 "(bert um EXIF støðufrámerki finnst)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "Tíðarbil fyri ljósmyndasýning\t"
+msgstr "Tíðarbil fyri ljósmyndasýning"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "sek\t"
+msgstr "sek"

@@ -256,18 +256,10 @@ msgstr ""
 "(kun hvis orientasjonsverdi finnes i EXIF-infoen)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "Pause mellom hvert bilde\t"
+msgstr "Pause mellom hvert bilde"
 
 # Ifølge språkrådet kan også "s" brukes, men jeg valgte "sek" ettersom det synes litt mer tydelig hva som egentlig menes.
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "sek\t"
-
-#~ msgid " Full Screen"
-#~ msgstr "Fullskjerm"
-
-#~ msgid " * Some icons are taken from gimmage"
-#~ msgstr " * Enkelte ikoner er tatt fra gimmage"
+msgstr "sek"

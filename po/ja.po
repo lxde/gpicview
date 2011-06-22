@@ -253,11 +253,9 @@ msgstr ""
 "(EXIF に回転方向が保存されている場合のみ)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "スライドショーの間隔\t"
+msgstr "スライドショーの間隔"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "秒\t"
+msgstr "秒"

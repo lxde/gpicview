@@ -260,14 +260,9 @@ msgstr ""
 "(仅当 EXIF 方向标记存在时)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "幻灯片放映间隔\t"
+msgstr "幻灯片放映间隔"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "秒\t"
-
-#~ msgid " Full Screen"
-#~ msgstr "全屏幕浏览"
+msgstr "秒"

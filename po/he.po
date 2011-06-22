@@ -254,11 +254,9 @@ msgstr ""
 "(רק אם קיימות תגיות כיווניות ב־EXIF)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "ההפרש בין הצגת התמונות\t"
+msgstr "ההפרש בין הצגת התמונות"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "שניות\t"
+msgstr "שניות"

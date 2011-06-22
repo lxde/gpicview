@@ -254,11 +254,9 @@ msgstr ""
 "(només si l'etiqueta EXIF d'orientació existeix)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "Intèrval de la transició\t"
+msgstr "Intèrval de la transició"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "seg\t"
+msgstr "seg"

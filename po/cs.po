@@ -255,26 +255,9 @@ msgstr ""
 "orientaci v metadatech EXIF (pouze pokud je tato hodnota již přítomna)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "Interval prezentace\t"
+msgstr "Interval prezentace"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "sekund\t"
-
-#~ msgid " Full Screen"
-#~ msgstr " Celá obrazovka"
-
-#~ msgid " * Some icons are taken from gimmage"
-#~ msgstr " * Některé ikony pocházejí z gimmage"
-
-#~ msgid ""
-#~ "Lightweight image viewer\n"
-#~ "\n"
-#~ "Developed by Hon Jen Yee (PCMan)"
-#~ msgstr ""
-#~ "Odlehčený prohlížeč obrázků\n"
-#~ "\n"
-#~ "Vyvinul Hon Jen Yee (PCMan)"
+msgstr "sekund"

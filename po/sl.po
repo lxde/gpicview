@@ -260,14 +260,9 @@ msgstr ""
 "(samo, če le-ta obstaja)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "Interval predstavitve\t"
+msgstr "Interval predstavitve"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "sekund\t"
-
-#~ msgid " Full Screen"
-#~ msgstr "Celozaslonski način"
+msgstr "sekund"

@@ -257,14 +257,9 @@ msgstr ""
 "(namái si esiste tala etiqueta)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "Intervalu de la presentación\t"
+msgstr "Intervalu de la presentación"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "seg\t"
-
-#~ msgid " Full Screen"
-#~ msgstr " Pantalla completa"
+msgstr "seg"

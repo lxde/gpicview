@@ -257,11 +257,9 @@ msgstr ""
 "(yalnızca EXIF yönlendirme etiketi varsa)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "Sunu gösterimi aralığı\t"
+msgstr "Sunu gösterimi aralığı"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "sn\t"
+msgstr "sn"

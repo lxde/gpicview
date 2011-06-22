@@ -252,11 +252,9 @@ msgstr ""
 "(เฉพาะเมื่อมีแท็กในค่า  EXIF อยู่แล้ว)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "เวลาหน่องการนำเสนอภาพนิ่ง\t"
+msgstr "เวลาหน่องการนำเสนอภาพนิ่ง"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "วินาที่\t"
+msgstr "วินาที่"

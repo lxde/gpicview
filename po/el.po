@@ -257,11 +257,9 @@ msgstr ""
 "(μόνο αν το πεδίο EXIF προσανατολισμού υπάρχει)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "Χρονικό διάστημα παρουσίασης\t"
+msgstr "Χρονικό διάστημα παρουσίασης"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "δευτερόλεπτα\t"
+msgstr "δευτερόλεπτα"

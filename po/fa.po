@@ -265,11 +265,9 @@ msgstr ""
 "(فقط در صورت وجود برچسب گرایش EXIF )"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "نمایش پرده ای زمان دار\t"
+msgstr "نمایش پرده ای زمان دار"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "ثانیه\t"
+msgstr "ثانیه"
