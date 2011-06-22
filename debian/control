@@ -3,7 +3,7 @@ Section: graphics
 Priority: optional
 Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
 XSBC-Original-Maintainer: Andrew Lee <andrew@linux.org.tw>
-Build-Depends: debhelper (>= 5), libgtk2.0-dev, libjpeg62-dev, intltool
+Build-Depends: debhelper (>= 5), libgtk2.0-dev, libjpeg62-dev, intltool, autotools-dev
 Standards-Version: 3.8.1
 DM-Upload-Allowed: yes
 Homepage: http://lxde.org
