@@ -1,22 +1,22 @@
 Source: gpicview
 Section: graphics
-Priority: extra
-Maintainer: PCMan <pcman.tw@gmail.com>
-Build-Depends: debhelper (>= 5), autotools-dev, libgtk2.0-dev (>= 2.6), libglib2.0-dev (>= 2.6), automake1.9, autoconf, pkg-config, libjpeg62-dev
-Standards-Version: 3.7.2
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Andrew Lee <andrew@linux.org.tw>
+Build-Depends: debhelper (>= 5), libgtk2.0-dev, libjpeg62-dev, intltool
+Standards-Version: 3.8.1
+DM-Upload-Allowed: yes
+Homepage: http://lxde.org
 
 Package: gpicview
 Architecture: any
-Depends: libgtk2.0-0 (>= 2.6), libglib2.0-0 (>= 2.6), ${shlibs:Depends}, ${misc:Depends}
-Description: Lightweight image viewer
- GPicView is a lightweight GTK+ 2-based image viewer with following features:
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: xdg-utils
+Description: lightweight image viewer
+ GPicView is a lightweight GTK+ 2.x based image viewer with following features:
  .
   * Extremely lightweight and fast with low memory usage
   * Very suitable for default image viewer of desktop system
   * Simple and intuitive interface
   * Minimal lib dependency: Only pure GTK+ is used
   * Desktop independent: Doesn't require any specific desktop environment
-  * Open source, licensed under GNU GPL
- .
- Homepage: http://lxde.org/gpicview/
-
