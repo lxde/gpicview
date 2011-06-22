@@ -48,7 +48,6 @@ intltool-extract.in
 intltool-merge.in
 intltool-update.in
 src/xml-purge
-data/pref-dlg.ui
 gpicview.desktop
 po/.intltool-merge-cache
 src/gpicview
