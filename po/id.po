@@ -259,14 +259,9 @@ msgstr ""
 "orientasi EXIF ( hanya JPEG)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "Slideshow interval\t"
+msgstr "Slideshow interval"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
-msgstr "det\t"
-
-#~ msgid " Full Screen"
-#~ msgstr " Layar Penuh"
+msgstr "det"
