@@ -5,5 +5,5 @@ src/main-win.c
 src/pref.c
 src/file-dlgs.c
 gpicview.desktop.in
-data/pref-dlg.glade
+[type: gettext/glade]data/pref-dlg.ui
 
