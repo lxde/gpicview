@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-14 19:24+0100\n"
+"POT-Creation-Date: 2011-06-23 00:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,27 +29,27 @@ msgstr "వెర్షన్ సమాచారం ముద్రించు 
 msgid "Start slideshow"
 msgstr "పలకప్రదర్శనను ప్రారంభించు"
 
-#: ../src/main-win.c:152 ../src/main-win.c:1373 ../gpicview.desktop.in.h:1
+#: ../src/main-win.c:155 ../src/main-win.c:1387 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
 msgstr "బొమ్మ వీక్షకం"
 
-#: ../src/main-win.c:228 ../src/main-win.c:1385
+#: ../src/main-win.c:235 ../src/main-win.c:1399
 msgid "Previous"
 msgstr "మనుపటి"
 
-#: ../src/main-win.c:229 ../src/main-win.c:1386
+#: ../src/main-win.c:236 ../src/main-win.c:1400
 msgid "Next"
 msgstr "తరువాత"
 
-#: ../src/main-win.c:230 ../src/main-win.c:728
+#: ../src/main-win.c:237 ../src/main-win.c:739
 msgid "Start Slideshow"
 msgstr "పలకప్రదర్శనను ప్రారంభించు"
 
-#: ../src/main-win.c:234 ../src/main-win.c:1389
+#: ../src/main-win.c:241 ../src/main-win.c:1403
 msgid "Zoom Out"
 msgstr "చిన్నదిగాచేయి"
 
-#: ../src/main-win.c:235 ../src/main-win.c:1390
+#: ../src/main-win.c:242 ../src/main-win.c:1404
 msgid "Zoom In"
 msgstr "పెద్దదిగాచేయి"
 
@@ -56,64 +57,64 @@ msgstr "పెద్దదిగాచేయి"
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
 #. gtk_widget_set_size_request( percent, 45, -1 );
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
-#: ../src/main-win.c:242 ../src/main-win.c:1391
+#: ../src/main-win.c:249 ../src/main-win.c:1405
 msgid "Fit Image To Window Size"
 msgstr "బొమ్మను విండో పరిమాణానికి అమర్చు"
 
-#: ../src/main-win.c:244 ../src/main-win.c:1392
+#: ../src/main-win.c:251 ../src/main-win.c:1406
 msgid "Original Size"
 msgstr "అసలు పరిమాణం"
 
-#: ../src/main-win.c:251 ../src/main-win.c:1394
+#: ../src/main-win.c:258 ../src/main-win.c:1408
 msgid "Full Screen"
 msgstr "పూర్తితెర"
 
-#: ../src/main-win.c:255 ../src/main-win.c:1396
+#: ../src/main-win.c:262 ../src/main-win.c:1410
 msgid "Rotate Counterclockwise"
 msgstr "అపసవ్యదిశలో తిప్పు"
 
-#: ../src/main-win.c:256 ../src/main-win.c:1397
+#: ../src/main-win.c:263 ../src/main-win.c:1411
 msgid "Rotate Clockwise"
 msgstr "సవ్యదిశలో తిప్పు"
 
-#: ../src/main-win.c:258 ../src/main-win.c:1398
+#: ../src/main-win.c:265 ../src/main-win.c:1412
 msgid "Flip Horizontal"
 msgstr "అడ్డముగా తారుమారుచేయి"
 
-#: ../src/main-win.c:259 ../src/main-win.c:1399
+#: ../src/main-win.c:266 ../src/main-win.c:1413
 msgid "Flip Vertical"
 msgstr "నిలువుగా తారుమారుచేయి"
 
-#: ../src/main-win.c:263 ../src/main-win.c:1401
+#: ../src/main-win.c:270 ../src/main-win.c:1415
 msgid "Open File"
 msgstr "ఫైల్ తెరుచు"
 
-#: ../src/main-win.c:264 ../src/main-win.c:1402
+#: ../src/main-win.c:271 ../src/main-win.c:1416
 msgid "Save File"
 msgstr "ఫైల్ దాచు"
 
-#: ../src/main-win.c:265
+#: ../src/main-win.c:272
 msgid "Save File As"
 msgstr "ఫైలును ఇలా దాచు"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
-#: ../src/main-win.c:266 ../src/main-win.c:1405
+#: ../src/main-win.c:273 ../src/main-win.c:1419
 msgid "Delete File"
 msgstr "ఫైల్ తీసివేయి"
 
-#: ../src/main-win.c:269 ../src/main-win.c:1407 ../data/pref-dlg.glade.h:8
+#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:8
 msgid "Preferences"
 msgstr "ప్రాధాన్యతలు"
 
-#: ../src/main-win.c:270 ../src/main-win.c:1410
+#: ../src/main-win.c:277 ../src/main-win.c:1424
 msgid "Quit"
 msgstr "నిష్క్రమించు"
 
-#: ../src/main-win.c:736
+#: ../src/main-win.c:747
 msgid "Stop Slideshow"
 msgstr "పలకప్రదర్శనను ఆపు"
 
-#: ../src/main-win.c:1263
+#: ../src/main-win.c:1277
 msgid ""
 "The file name you selected already exists.\n"
 "Do you want to overwrite existing file?\n"
@@ -123,11 +124,11 @@ msgstr ""
 "ఉన్నదానిని మీరు దిద్దిరాయాలనుకుంటున్నారా?\n"
 "(హెచ్చరిక: అసలు బొమ్మ నాణ్యతను కోల్పోయే అవకాశం ఉంది)"
 
-#: ../src/main-win.c:1304
+#: ../src/main-win.c:1318
 msgid "Writing this image format is not supported."
 msgstr "ఈ బొమ్మ ఫార్మేటుకి వ్రాయుటకు కావలసిన మద్ధతు లేదు."
 
-#: ../src/main-win.c:1342
+#: ../src/main-win.c:1356
 msgid ""
 "Are you sure you want to delete current file?\n"
 "\n"
@@ -137,32 +138,32 @@ msgstr ""
 "\n"
 "హెచ్చరిక: ఒకసారి తీసివేసినట్టయితే, ఫైలుని తిరిగిపొందుట సాధ్యపడదు."
 
-#: ../src/main-win.c:1387
+#: ../src/main-win.c:1401
 msgid "Start/Stop Slideshow"
 msgstr "పలకప్రదర్శన ప్రారంభించు/ఆపు"
 
-#: ../src/main-win.c:1403
+#: ../src/main-win.c:1417
 msgid "Save As"
 msgstr "ఇలా దాచు"
 
-#: ../src/main-win.c:1473
+#: ../src/main-win.c:1487
 msgid " * Refer to source code of EOG image viewer and GThumb"
 msgstr " * EOG బొమ్మ వీక్షకం మరియు జితంబ్ యొక్క సోర్సుకోడును సూచించు"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../src/main-win.c:1477
+#: ../src/main-win.c:1491
 msgid "translator-credits"
 msgstr "Praveen Illa <mail2ipn@gmail.com>, 2011."
 
-#: ../src/main-win.c:1485
+#: ../src/main-win.c:1497
 msgid "GPicView"
 msgstr "జిపిక్‌వ్యూ"
 
-#: ../src/main-win.c:1487
+#: ../src/main-win.c:1499
 msgid "Copyright (C) 2007 - 2009"
 msgstr "నకలుహక్కు (C) 2007 - 2009"
 
-#: ../src/main-win.c:1488
+#: ../src/main-win.c:1500
 msgid "Lightweight image viewer from LXDE project"
 msgstr "LXDE ప్రోజెక్టు నుంచి తేలికపాటి బొమ్మ వీక్షకం"
 
@@ -174,8 +175,7 @@ msgid ""
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"మీ వ్యవస్థలో ఉన్న అన్ని మద్ధతుగల బొమ్మ ఫైళ్ళకు జిపిక్‌వ్యూ అప్రమేయ వీక్షకంగా "
-"ఉండబోతుంది.\n"
+"మీ వ్యవస్థలో ఉన్న అన్ని మద్ధతుగల బొమ్మ ఫైళ్ళకు జిపిక్‌వ్యూ అప్రమేయ వీక్షకంగా ఉండబోతుంది.\n"
 "(ఇది 'xdg-mime' ప్రోగ్రాము ద్వారా జరుగుతుంది)\n"
 "\n"
 "<b>మీరు నిజంగానే దీనిని చేయాలనుకుంటున్నారా?</b>"
@@ -200,11 +200,11 @@ msgstr ""
 "తక్కువ నాణ్యతతో ఉంటే ఫైల్ పరిమాణాలు చిన్నగా వుంటాయి,\n"
 "కాని బొమ్మ నాణ్యత తక్కువగా ఉంటుంది."
 
-#: ../src/file-dlgs.c:118
+#: ../src/file-dlgs.c:121
 msgid "PNG Compression Level:"
 msgstr "PNG కుదింపు స్థాయి:"
 
-#: ../src/file-dlgs.c:119
+#: ../src/file-dlgs.c:122
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
@@ -216,35 +216,35 @@ msgstr ""
 msgid "View your images easily"
 msgstr "మీ బొమ్మలను సులువుగా చూడండి"
 
-#: ../data/pref-dlg.glade.h:1
+#: ../data/pref-dlg.ui.h:1
 msgid "<b>Background colors</b>"
 msgstr "<b>నేపథ్య రంగులు</b>"
 
-#: ../data/pref-dlg.glade.h:2
+#: ../data/pref-dlg.ui.h:2
 msgid "Ask before deleting images"
 msgstr "బొమ్మలను తీసివేసేముందు అడుగు"
 
-#: ../data/pref-dlg.glade.h:3
+#: ../data/pref-dlg.ui.h:3
 msgid "Ask before saving images"
 msgstr "బొమ్మలను భద్రపరిచేముందు అడుగు"
 
-#: ../data/pref-dlg.glade.h:4
+#: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
 msgstr "తిప్పబడిన బొమ్మలను స్వయంచాలకంగా భద్రపరుచు"
 
-#: ../data/pref-dlg.glade.h:5
+#: ../data/pref-dlg.ui.h:5
 msgid "Fullscreen:"
 msgstr "పూర్తితెర:"
 
-#: ../data/pref-dlg.glade.h:6
+#: ../data/pref-dlg.ui.h:6
 msgid "Make GPicView the default viewer for images"
 msgstr "బొమ్మలను చూచుటకు జిపిక్‌వ్యూని అప్రమేయ బొమ్మ వీక్షకంగా చేయి"
 
-#: ../data/pref-dlg.glade.h:7
+#: ../data/pref-dlg.ui.h:7
 msgid "Normal:"
 msgstr "సాధారణ:"
 
-#: ../data/pref-dlg.glade.h:9
+#: ../data/pref-dlg.ui.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
@@ -252,10 +252,12 @@ msgstr ""
 "EXIF ఆధారిత విలువను బట్టి JPEG ఫైలును తిప్పు\n"
 "(ఒకవేళ EXIF ఆధార ట్యాగు ఉన్నపుడు మాత్రమే)"
 
-#: ../data/pref-dlg.glade.h:11
-msgid "Slideshow interval\t"
+#: ../data/pref-dlg.ui.h:11
+#, fuzzy
+msgid "Slideshow interval"
 msgstr "పలకప్రదర్శన విరామం\t"
 
-#: ../data/pref-dlg.glade.h:12
-msgid "sec\t"
+#: ../data/pref-dlg.ui.h:12
+#, fuzzy
+msgid "sec"
 msgstr "సెకను"
