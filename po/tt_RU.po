@@ -1,0 +1,263 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-06-23 00:06+0200\n"
+"PO-Revision-Date: 2011-07-10 08:58+0200\n"
+"Last-Translator: Айнур <ainur.shakirov.tt@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: tt_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.0.5\n"
+
+#: ../src/gpicview.c:38
+msgid "[FILE]"
+msgstr "[ФАЙЛ]"
+
+#: ../src/gpicview.c:40
+msgid "Print version information and exit"
+msgstr "Юрама турында мәгълумат күрсәтеп чыгу"
+
+#: ../src/gpicview.c:42
+msgid "Start slideshow"
+msgstr "Слайдшоу җибәрү"
+
+# Есть вариант "рәсем күрсәтүче", а также можно вообще отказаться от суффикса -чы, -че. 
+#: ../src/main-win.c:155 ../src/main-win.c:1387 ../gpicview.desktop.in.h:1
+msgid "Image Viewer"
+msgstr "Рәсем күрсәтүчесе"
+
+#: ../src/main-win.c:235 ../src/main-win.c:1399
+msgid "Previous"
+msgstr "Моннан элекке"
+
+#: ../src/main-win.c:236 ../src/main-win.c:1400
+msgid "Next"
+msgstr "Алдагы"
+
+#: ../src/main-win.c:237 ../src/main-win.c:739
+msgid "Start Slideshow"
+msgstr "Слайдшоу җибәрү"
+
+#: ../src/main-win.c:241 ../src/main-win.c:1403
+msgid "Zoom Out"
+msgstr "Кечерәйтү"
+
+#: ../src/main-win.c:242 ../src/main-win.c:1404
+msgid "Zoom In"
+msgstr "Зурайту"
+
+# Этот перевод мне не нравится.
+#. percent = gtk_entry_new();    // show scale (in percentage)
+#. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
+#. gtk_widget_set_size_request( percent, 45, -1 );
+#. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
+#: ../src/main-win.c:249 ../src/main-win.c:1405
+msgid "Fit Image To Window Size"
+msgstr "Рәсемне тәрәзәгә сыйдыру"
+
+#: ../src/main-win.c:251 ../src/main-win.c:1406
+msgid "Original Size"
+msgstr "Үз зурлыгы"
+
+#: ../src/main-win.c:258 ../src/main-win.c:1408
+msgid "Full Screen"
+msgstr "Бөтен экран"
+
+#: ../src/main-win.c:262 ../src/main-win.c:1410
+msgid "Rotate Counterclockwise"
+msgstr "Сәгать теленә каршы бору"
+
+#: ../src/main-win.c:263 ../src/main-win.c:1411
+msgid "Rotate Clockwise"
+msgstr "Сәгать теле буенча бору"
+
+#: ../src/main-win.c:265 ../src/main-win.c:1412
+msgid "Flip Horizontal"
+msgstr "Горизонталь буенча әйләндерү"
+
+#: ../src/main-win.c:266 ../src/main-win.c:1413
+msgid "Flip Vertical"
+msgstr "Вертикаль буенча әйләндерү"
+
+#: ../src/main-win.c:270 ../src/main-win.c:1415
+msgid "Open File"
+msgstr "Файл ачу"
+
+#: ../src/main-win.c:271 ../src/main-win.c:1416
+msgid "Save File"
+msgstr "Файлны саклау"
+
+#: ../src/main-win.c:272
+msgid "Save File As"
+msgstr "Файлы ... итеп саклау"
+
+#. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
+#: ../src/main-win.c:273 ../src/main-win.c:1419
+msgid "Delete File"
+msgstr "Файлны бетерү"
+
+#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:8
+msgid "Preferences"
+msgstr "Көйләүләр"
+
+#: ../src/main-win.c:277 ../src/main-win.c:1424
+msgid "Quit"
+msgstr "Чыгу"
+
+#: ../src/main-win.c:747
+msgid "Stop Slideshow"
+msgstr "Слайдшоуны туктату"
+
+#: ../src/main-win.c:1277
+msgid ""
+"The file name you selected already exists.\n"
+"Do you want to overwrite existing file?\n"
+"(Warning: The quality of original image might be lost)"
+msgstr ""
+"Мондый исем белән файл инде бар.\n"
+"Сез чыннан да бу файлны яңадан яздырасыгыз киләме?\n"
+"(Киcәтү: Төп рәсемнең сыйфаты югалуы ихтимал)"
+
+#: ../src/main-win.c:1318
+msgid "Writing this image format is not supported."
+msgstr "Бу рәсем форматын язу тотылмый."
+
+#: ../src/main-win.c:1356
+msgid ""
+"Are you sure you want to delete current file?\n"
+"\n"
+"Warning: Once deleted, the file cannot be recovered."
+msgstr ""
+"Сез чыннан да бу файлны бетерәсегез киләме?\n"
+"\n"
+"Кисәтү: Бетерелгән файлны кайтарып булмаячак."
+
+#: ../src/main-win.c:1401
+msgid "Start/Stop Slideshow"
+msgstr "Слайдшоу җибәрү/туктату"
+
+#: ../src/main-win.c:1417
+msgid "Save As"
+msgstr "...итеп саклау"
+
+#: ../src/main-win.c:1487
+msgid " * Refer to source code of EOG image viewer and GThumb"
+msgstr " * EOG һәм GThumb чыганак кодын кара."
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: ../src/main-win.c:1491
+msgid "translator-credits"
+msgstr "Ainur Shakirov <ainur.shakirov.tt@gmail.com>"
+
+#: ../src/main-win.c:1497
+msgid "GPicView"
+msgstr "GPicView"
+
+#: ../src/main-win.c:1499
+msgid "Copyright (C) 2007 - 2009"
+msgstr "Бөтен хокуклар сакланган (C) 2007 - 2009"
+
+#: ../src/main-win.c:1500
+msgid "Lightweight image viewer from LXDE project"
+msgstr "LXDE проекты өчен җиңел рәсем күрсәтүчесе"
+
+#: ../src/pref.c:157
+msgid ""
+"GPicView will become the default viewer for all supported image files on "
+"your system.\n"
+"(This will be done through 'xdg-mime' program)\n"
+"\n"
+"<b>Are you sure you really want to do this?</b>"
+msgstr ""
+"GPicView бөтен тотучы форматлар өчен рәсем күрсәтүчесе итеп куелачак.\n"
+"(Бу xdg-mime кушымтасы аша эшләнеләчәк)\n"
+"<b>Сез моны чыннан да телисезме?</b>"
+
+#: ../src/file-dlgs.c:62
+msgid "All Supported Images"
+msgstr "Барлык тотылучы рәсемнәр"
+
+#: ../src/file-dlgs.c:67
+msgid "All Files"
+msgstr "Барлык файллар"
+
+#: ../src/file-dlgs.c:103
+msgid "JPEG Quality:"
+msgstr "JPEG сыйфаты:"
+
+#: ../src/file-dlgs.c:104
+msgid ""
+"Lower quality values yield smaller file sizes,\n"
+"but the image quality will be poorer."
+msgstr ""
+"Сыйфат кимрәк булган саен файл зурлыгы азая,\n"
+"ләкин рәсем сүрәте начараячак."
+
+#: ../src/file-dlgs.c:121
+msgid "PNG Compression Level:"
+msgstr "PNG кысылу дәрәҗәсе:"
+
+#: ../src/file-dlgs.c:122
+msgid ""
+"Higher compression levels yield smaller file sizes,\n"
+"but takes more time to do the compression."
+msgstr ""
+"Кысылу дәрәҗәсе зуррак булган саен файл зурлыгы азая,\n"
+"ләкин кысу өчен күбрәк вакыт тотылачак."
+
+#: ../gpicview.desktop.in.h:2
+msgid "View your images easily"
+msgstr "Үз рәсемнәрегезне җиңел итеп карагыз."
+
+#: ../data/pref-dlg.ui.h:1
+msgid "<b>Background colors</b>"
+msgstr "<b>Җирлек төсләре</b>"
+
+#: ../data/pref-dlg.ui.h:2
+msgid "Ask before deleting images"
+msgstr "Рәсемне бетергәнче моны сорарга"
+
+#: ../data/pref-dlg.ui.h:3
+msgid "Ask before saving images"
+msgstr "Рәсемне саклаганчы моны сорарга"
+
+#: ../data/pref-dlg.ui.h:4
+msgid "Automatically save rotated images"
+msgstr "Борылган рәсемнәрне автоматик саклау"
+
+#: ../data/pref-dlg.ui.h:5
+msgid "Fullscreen:"
+msgstr "Бөтен экранга:"
+
+#: ../data/pref-dlg.ui.h:6
+msgid "Make GPicView the default viewer for images"
+msgstr "GPicView'ны үрнәк күрсәтүче итеп теркәргә"
+
+#: ../data/pref-dlg.ui.h:7
+msgid "Normal:"
+msgstr "Гадәти:"
+
+#: ../data/pref-dlg.ui.h:9
+msgid ""
+"Rotate JPEG file by changing EXIF orientation value\n"
+"(only if EXIF orientation tag exists)"
+msgstr ""
+"EXIF ориентация санын үзгәртеп JPEG файлын борырга\n"
+"(EXIF ориентация көйләве генә булса)"
+
+#: ../data/pref-dlg.ui.h:11
+msgid "Slideshow interval"
+msgstr "Сладшоуның вакыт арасы"
+
+#: ../data/pref-dlg.ui.h:12
+msgid "sec"
+msgstr "сек"
