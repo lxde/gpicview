@@ -3,19 +3,20 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-23 00:06+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2011-07-12 19:09+0200\n"
+"Last-Translator: PraveenIlla <mail2ipn@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: te\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
@@ -253,11 +254,9 @@ msgstr ""
 "(ఒకవేళ EXIF ఆధార ట్యాగు ఉన్నపుడు మాత్రమే)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "పలకప్రదర్శన విరామం\t"
+msgstr "పలకప్రదర్శన విరామం"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
 msgstr "సెకను"
