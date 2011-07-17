@@ -54,7 +54,7 @@ AC_SUBST(GTK_LIBS)
 
 pkg_modules="x11"
 
-PKG_CHECK_MODULES(PACKAGE, [$pkg_modules])
+PKG_CHECK_MODULES(X11, [$pkg_modules])
 AC_CHECK_LIB(jpeg, jpeg_start_decompress, [],
 	     [AC_MSG_ERROR([libjpeg not found])], -lm)
 AC_CHECK_HEADER(jpeglib.h, , [AC_MSG_ERROR([libjpeg not found])])
