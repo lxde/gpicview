@@ -2,7 +2,7 @@
 
 # set the include path found by configure
 INCLUDES = $(all_includes) \
-	$(PACKAGE_CFLAGS) \
+	$(X11_CFLAGS) \
         $(GTK_CFLAGS) \
         $(ADDITIONAL_FLAGS) \
 	-I$(top_srcdir) \
