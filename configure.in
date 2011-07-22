@@ -60,8 +60,8 @@ AC_CHECK_LIB(jpeg, jpeg_start_decompress, [],
 AC_CHECK_HEADER(jpeglib.h, , [AC_MSG_ERROR([libjpeg not found])])
 LIBJPEG='-ljpeg'
 
-AC_SUBST(PACKAGE_CFLAGS)
-AC_SUBST(PACKAGE_LIBS)
+AC_SUBST(X11_CFLAGS)
+AC_SUBST(X11_LIBS)
 
 GETTEXT_PACKAGE=gpicview
 AC_SUBST(GETTEXT_PACKAGE)

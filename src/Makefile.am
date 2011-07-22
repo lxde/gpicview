@@ -27,7 +27,7 @@ gpicview_SOURCES = \
 
 # the library search path.
 # use -nodefaultlibs to prevent linking libstdc++
-gpicview_LDADD = $(PACKAGE_LIBS) $(GTK_LIBS)
+gpicview_LDADD = $(X11_LIBS) $(GTK_LIBS)
 
 noinst_HEADERS = \
 	glib-mem.h \
@@ -44,6 +44,6 @@ noinst_HEADERS = \
 
 noinst_PROGRAMS=xml-purge
 xml_purge_SOURCES=xml-purge.c
-xml_purge_CFLAGS=@PACKAGE_CFLAGS@
-xml_purge_LDADD=@PACKAGE_LIBS@
+xml_purge_CFLAGS=@X11_CFLAGS@
+xml_purge_LDADD=@X11_LIBS@
 
