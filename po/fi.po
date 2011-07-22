@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-21 21:42+0200\n"
+"POT-Creation-Date: 2011-07-22 15:58+0200\n"
 "PO-Revision-Date: 2008-11-25 17:12+0200\n"
 "Last-Translator: Elias Julkunen <elias.julkunen@gmail.com>\n"
 "Language-Team: \n"
@@ -159,8 +159,8 @@ msgid "GPicView"
 msgstr "GPicView"
 
 #: ../src/main-win.c:1499
-msgid "Copyright (C) 2007 - 2009"
-msgstr "Tekijänoikeudet (C) 2007 - 2009"
+msgid "Copyright (C) 2007 - 2011"
+msgstr "Tekijänoikeudet (C) 2007 - 2011"
 
 #: ../src/main-win.c:1500
 msgid "Lightweight image viewer from LXDE project"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-21 21:42+0200\n"
+"POT-Creation-Date: 2011-07-22 15:58+0200\n"
 "PO-Revision-Date: 2011-06-30 04:55+0200\n"
 "Last-Translator: Christopher <shizen37@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -155,7 +155,7 @@ msgid "GPicView"
 msgstr ""
 
 #: ../src/main-win.c:1499
-msgid "Copyright (C) 2007 - 2009"
+msgid "Copyright (C) 2007 - 2011"
 msgstr ""
 
 #: ../src/main-win.c:1500

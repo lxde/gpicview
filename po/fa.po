@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-21 21:42+0200\n"
+"POT-Creation-Date: 2011-07-22 15:58+0200\n"
 "PO-Revision-Date: 2010-07-06 06:54+0200\n"
 "Last-Translator: Hamidreza <n3gb0y@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -169,8 +169,8 @@ msgid "GPicView"
 msgstr "جی‌پیک‌ویو"
 
 #: ../src/main-win.c:1499
-msgid "Copyright (C) 2007 - 2009"
-msgstr "کپی رایت(c) 2007 - 2009"
+msgid "Copyright (C) 2007 - 2011"
+msgstr "کپی رایت(c) 2007 - 2011"
 
 #: ../src/main-win.c:1500
 msgid "Lightweight image viewer from LXDE project"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gpicview 0.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-21 21:42+0200\n"
+"POT-Creation-Date: 2011-07-22 15:58+0200\n"
 "PO-Revision-Date: 2010-01-16 19:21+0100\n"
 "Last-Translator: Ivan Masár <helix84@centrum.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -159,8 +159,8 @@ msgid "GPicView"
 msgstr "GPicView"
 
 #: ../src/main-win.c:1499
-msgid "Copyright (C) 2007 - 2009"
-msgstr "Copyright (C) 2007 - 2009"
+msgid "Copyright (C) 2007 - 2011"
+msgstr "Copyright (C) 2007 - 2011"
 
 #: ../src/main-win.c:1500
 msgid "Lightweight image viewer from LXDE project"

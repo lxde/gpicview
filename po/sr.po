@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GPicView 0.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-21 21:42+0200\n"
+"POT-Creation-Date: 2011-07-22 15:58+0200\n"
 "PO-Revision-Date: 2009-09-02 12:48+0100\n"
 "Last-Translator: Jay A. Fleming <tito.nehru.naser@gmail.com>\n"
 "Language-Team: \n"
@@ -162,8 +162,8 @@ msgid "GPicView"
 msgstr "Прегледач слика"
 
 #: ../src/main-win.c:1499
-msgid "Copyright (C) 2007 - 2009"
-msgstr "2007-2009. Сва права задржана."
+msgid "Copyright (C) 2007 - 2011"
+msgstr "2007-2011. Сва права задржана."
 
 #: ../src/main-win.c:1500
 msgid "Lightweight image viewer from LXDE project"
