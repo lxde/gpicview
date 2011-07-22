@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-07-21 21:42+0200\n"
-"PO-Revision-Date: 2011-07-10 08:58+0200\n"
-"Last-Translator: Айнур <ainur.shakirov.tt@gmail.com>\n"
+"PO-Revision-Date: 2011-07-22 08:27+0200\n"
+"Last-Translator: Ainur <ainur.shakirov.tt@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: tt_RU\n"
 "MIME-Version: 1.0\n"
@@ -28,16 +28,15 @@ msgstr "Юрама турында мәгълумат күрсәтеп чыгу"
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
-msgstr "Слайдшоу җибәрү"
+msgstr "Слайдшоуны җибәрү"
 
-# Есть вариант "рәсем күрсәтүче", а также можно вообще отказаться от суффикса -чы, -че. 
 #: ../src/main-win.c:155 ../src/main-win.c:1387 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
 msgstr "Рәсем күрсәтүчесе"
 
 #: ../src/main-win.c:235 ../src/main-win.c:1399
 msgid "Previous"
-msgstr "Моннан элекке"
+msgstr "Алдынгы"
 
 #: ../src/main-win.c:236 ../src/main-win.c:1400
 msgid "Next"
@@ -45,7 +44,7 @@ msgstr "Алдагы"
 
 #: ../src/main-win.c:237 ../src/main-win.c:739
 msgid "Start Slideshow"
-msgstr "Слайдшоу җибәрү"
+msgstr "Слайдшоуны җибәрү"
 
 #: ../src/main-win.c:241 ../src/main-win.c:1403
 msgid "Zoom Out"
@@ -70,7 +69,7 @@ msgstr "Үз зурлыгы"
 
 #: ../src/main-win.c:258 ../src/main-win.c:1408
 msgid "Full Screen"
-msgstr "Бөтен экран"
+msgstr "Бөтен экранга"
 
 #: ../src/main-win.c:262 ../src/main-win.c:1410
 msgid "Rotate Counterclockwise"
@@ -90,7 +89,7 @@ msgstr "Вертикаль буенча әйләндерү"
 
 #: ../src/main-win.c:270 ../src/main-win.c:1415
 msgid "Open File"
-msgstr "Файл ачу"
+msgstr "Файлны ачу"
 
 #: ../src/main-win.c:271 ../src/main-win.c:1416
 msgid "Save File"
@@ -125,11 +124,11 @@ msgid ""
 msgstr ""
 "Мондый исем белән файл инде бар.\n"
 "Сез чыннан да бу файлны яңадан яздырасыгыз киләме?\n"
-"(Киcәтү: Төп рәсемнең сыйфаты югалуы ихтимал)"
+"(Киcәтү: Булган рәсемнең сыйфаты югалуы ихтимал)"
 
 #: ../src/main-win.c:1318
 msgid "Writing this image format is not supported."
-msgstr "Бу рәсем форматын язу тотылмый."
+msgstr "Бу рәсем форматын язу якланмый."
 
 #: ../src/main-win.c:1356
 msgid ""
@@ -143,15 +142,15 @@ msgstr ""
 
 #: ../src/main-win.c:1401
 msgid "Start/Stop Slideshow"
-msgstr "Слайдшоу җибәрү/туктату"
+msgstr "Слайдшоуны җибәрү/туктату"
 
 #: ../src/main-win.c:1417
 msgid "Save As"
-msgstr "...итеп саклау"
+msgstr "... итеп саклау"
 
 #: ../src/main-win.c:1487
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr " * EOG һәм GThumb чыганак кодын кара."
+msgstr " * EOG һәм GThumb чыганак кодын кара"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1491
@@ -164,7 +163,7 @@ msgstr "GPicView"
 
 #: ../src/main-win.c:1499
 msgid "Copyright (C) 2007 - 2009"
-msgstr "Бөтен хокуклар сакланган (C) 2007 - 2009"
+msgstr "Барлык хокуклар сакланган (C) 2007 - 2009"
 
 #: ../src/main-win.c:1500
 msgid "Lightweight image viewer from LXDE project"
@@ -180,11 +179,12 @@ msgid ""
 msgstr ""
 "GPicView бөтен тотучы форматлар өчен рәсем күрсәтүчесе итеп куелачак.\n"
 "(Бу xdg-mime кушымтасы аша эшләнеләчәк)\n"
+"\n"
 "<b>Сез моны чыннан да телисезме?</b>"
 
 #: ../src/file-dlgs.c:62
 msgid "All Supported Images"
-msgstr "Барлык тотылучы рәсемнәр"
+msgstr "Барлык якланган рәсемнәр"
 
 #: ../src/file-dlgs.c:67
 msgid "All Files"
@@ -199,8 +199,8 @@ msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
 msgstr ""
-"Сыйфат кимрәк булган саен файл зурлыгы азая,\n"
-"ләкин рәсем сүрәте начараячак."
+"Сыйфат кимрәк булган саен файл зурлыгы кими,\n"
+"ләкин рәсем сүрәте бозылачак."
 
 #: ../src/file-dlgs.c:121
 msgid "PNG Compression Level:"
@@ -211,12 +211,12 @@ msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
 msgstr ""
-"Кысылу дәрәҗәсе зуррак булган саен файл зурлыгы азая,\n"
+"Кысылу дәрәҗәсе зуррак булган саен файл зурлыгы кими,\n"
 "ләкин кысу өчен күбрәк вакыт тотылачак."
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
-msgstr "Үз рәсемнәрегезне җиңел итеп карагыз."
+msgstr "Үз рәсемнәрегезне җиңел итеп карагыз"
 
 #: ../data/pref-dlg.ui.h:1
 msgid "<b>Background colors</b>"
@@ -224,11 +224,11 @@ msgstr "<b>Җирлек төсләре</b>"
 
 #: ../data/pref-dlg.ui.h:2
 msgid "Ask before deleting images"
-msgstr "Рәсемне бетергәнче моны сорарга"
+msgstr "Рәсемне бетергәнче раслауны сорарга"
 
 #: ../data/pref-dlg.ui.h:3
 msgid "Ask before saving images"
-msgstr "Рәсемне саклаганчы моны сорарга"
+msgstr "Рәсемне саклаганчы раслауны сорарга"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
@@ -240,7 +240,7 @@ msgstr "Бөтен экранга:"
 
 #: ../data/pref-dlg.ui.h:6
 msgid "Make GPicView the default viewer for images"
-msgstr "GPicView'ны үрнәк күрсәтүче итеп теркәргә"
+msgstr "GPicView'ны үрнәк күрсәтүчесе итеп теркәргә"
 
 #: ../data/pref-dlg.ui.h:7
 msgid "Normal:"
