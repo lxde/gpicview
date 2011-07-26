@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-07-22 15:58+0200\n"
-"PO-Revision-Date: 2011-07-22 08:27+0200\n"
+"PO-Revision-Date: 2011-07-26 11:00+0200\n"
 "Last-Translator: Ainur <ainur.shakirov.tt@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: tt_RU\n"
@@ -97,7 +97,7 @@ msgstr "Файлны саклау"
 
 #: ../src/main-win.c:272
 msgid "Save File As"
-msgstr "Файлы ... итеп саклау"
+msgstr "Файлны ... итеп саклау"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
 #: ../src/main-win.c:273 ../src/main-win.c:1419
@@ -163,7 +163,7 @@ msgstr "GPicView"
 
 #: ../src/main-win.c:1499
 msgid "Copyright (C) 2007 - 2011"
-msgstr "Барлык хокуклар сакланган (C) 2007 - 2011"
+msgstr "Copyright (C) 2007 - 2011"
 
 #: ../src/main-win.c:1500
 msgid "Lightweight image viewer from LXDE project"
@@ -178,7 +178,7 @@ msgid ""
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
 "GPicView бөтен тотучы форматлар өчен рәсем күрсәтүчесе итеп куелачак.\n"
-"(Бу xdg-mime кушымтасы аша эшләнеләчәк)\n"
+"(Бу «xdg-mime» кушымтасы аша эшләнеләчәк)\n"
 "\n"
 "<b>Сез моны чыннан да телисезме?</b>"
 
