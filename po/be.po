@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-07-22 15:58+0200\n"
-"PO-Revision-Date: 2010-08-25 17:35+0200\n"
-"Last-Translator: Анік <xabzan9tka@gmail.com>\n"
+"PO-Revision-Date: 2011-08-09 22:52+0200\n"
+"Last-Translator: Мікалай <crom-a@tut.by>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: be\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.0.5\n"
 
 #: ../src/gpicview.c:38
@@ -33,7 +33,7 @@ msgstr "Пачаць слайдшоў"
 
 #: ../src/main-win.c:155 ../src/main-win.c:1387 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
-msgstr "Прагляд малюнкаў"
+msgstr "Прагляд выяў"
 
 #: ../src/main-win.c:235 ../src/main-win.c:1399
 msgid "Previous"
@@ -45,7 +45,7 @@ msgstr "Наступны"
 
 #: ../src/main-win.c:237 ../src/main-win.c:739
 msgid "Start Slideshow"
-msgstr "Пачаць слайдшоў"
+msgstr "Пачаць слайдшоу"
 
 #: ../src/main-win.c:241 ../src/main-win.c:1403
 msgid "Zoom Out"
@@ -53,7 +53,7 @@ msgstr "Паменшыць"
 
 #: ../src/main-win.c:242 ../src/main-win.c:1404
 msgid "Zoom In"
-msgstr "Павяліцыць"
+msgstr "Павялічыць"
 
 #. percent = gtk_entry_new();    // show scale (in percentage)
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
@@ -61,11 +61,11 @@ msgstr "Павяліцыць"
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
 #: ../src/main-win.c:249 ../src/main-win.c:1405
 msgid "Fit Image To Window Size"
-msgstr "Маштабаваць да памера вакна"
+msgstr "Маштабаваць да памеру вакна"
 
 #: ../src/main-win.c:251 ../src/main-win.c:1406
 msgid "Original Size"
-msgstr "Сапраўдны памер"
+msgstr "Арыгінальны памер"
 
 #: ../src/main-win.c:258 ../src/main-win.c:1408
 msgid "Full Screen"
@@ -73,7 +73,7 @@ msgstr "На поўны экран"
 
 #: ../src/main-win.c:262 ../src/main-win.c:1410
 msgid "Rotate Counterclockwise"
-msgstr "Павярнуць супраць гадзіннікавай стрэлцы"
+msgstr "Павярнуць супраць гадзіннікавай стрэлкі"
 
 #: ../src/main-win.c:263 ../src/main-win.c:1411
 msgid "Rotate Clockwise"
@@ -81,32 +81,32 @@ msgstr "Павярнуць па гадзіннікавай стрэлцы"
 
 #: ../src/main-win.c:265 ../src/main-win.c:1412
 msgid "Flip Horizontal"
-msgstr "Павярнуць па гарызанталі"
+msgstr "Перавярнуць гарызантальна"
 
 #: ../src/main-win.c:266 ../src/main-win.c:1413
 msgid "Flip Vertical"
-msgstr "Павярнуць па вертыкалі"
+msgstr "Перавярнуць вертыкальна"
 
 #: ../src/main-win.c:270 ../src/main-win.c:1415
 msgid "Open File"
-msgstr "Адчыніць файл"
+msgstr "Адкрыць файл"
 
 #: ../src/main-win.c:271 ../src/main-win.c:1416
 msgid "Save File"
-msgstr "Захаваць файл"
+msgstr "Запісаць файл"
 
 #: ../src/main-win.c:272
 msgid "Save File As"
-msgstr "Захаваць файл як"
+msgstr "Запісаць файл як"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
 #: ../src/main-win.c:273 ../src/main-win.c:1419
 msgid "Delete File"
-msgstr "Выдаліць файл"
+msgstr "Сцерці файл"
 
 #: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:8
 msgid "Preferences"
-msgstr "Налады"
+msgstr "Настаўленні"
 
 #: ../src/main-win.c:277 ../src/main-win.c:1424
 msgid "Quit"
@@ -114,7 +114,7 @@ msgstr "Выйсці"
 
 #: ../src/main-win.c:747
 msgid "Stop Slideshow"
-msgstr "Спыніць слайдшоў"
+msgstr "Спыніць слайдшоу"
 
 #: ../src/main-win.c:1277
 msgid ""
@@ -122,13 +122,13 @@ msgid ""
 "Do you want to overwrite existing file?\n"
 "(Warning: The quality of original image might be lost)"
 msgstr ""
-"Файл з такім імём ужо існуе.\n"
-"Вы жадаеце перапісаць існуючы файл?\n"
+"Файл з такой назвай ужо існуе.\n"
+"Жадаеце перапісаць існуючы файл?\n"
 "(Увага: Якасць арыгінала можа быць згублена)"
 
 #: ../src/main-win.c:1318
 msgid "Writing this image format is not supported."
-msgstr "Запіс малюнка ў гэтым фармаце не падтрымліваецца"
+msgstr "Запіс выявы ў гэтым фармаце не падтрымліваецца."
 
 #: ../src/main-win.c:1356
 msgid ""
@@ -137,24 +137,27 @@ msgid ""
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
 "Вы ўпэнены што жадаеце выдаліць гэты файл?\n"
+"\n"
 "Увага: Выдалены файл нельга будзе аднавіць."
 
 #: ../src/main-win.c:1401
 msgid "Start/Stop Slideshow"
-msgstr "Пачаць/Спыніць слайдшоў"
+msgstr "Пачаць/Спыніць слайдшоу"
 
 #: ../src/main-win.c:1417
 msgid "Save As"
-msgstr "Захаваць як"
+msgstr "Запісаць як"
 
 #: ../src/main-win.c:1487
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr " * Глядзіце зыходны код праглядальніка малюнкаў EOG і GThum"
+msgstr " * Глядзіце выточны код праглядальніка выяў EOG і GThumb"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1491
 msgid "translator-credits"
-msgstr "Анік Кіна <son_of_the_photographer@tut.by>"
+msgstr ""
+"Анік Кіна <son_of_the_photographer@tut.by>, 2010\n"
+"Мікалай Удодаў <crom-a@tut.by>, 2011."
 
 #: ../src/main-win.c:1497
 msgid "GPicView"
@@ -162,7 +165,7 @@ msgstr "GPicView"
 
 #: ../src/main-win.c:1499
 msgid "Copyright (C) 2007 - 2011"
-msgstr "Copyright (C) 2007 - 2011"
+msgstr "Аўтарскае права (C) 2007 - 2011"
 
 #: ../src/main-win.c:1500
 msgid "Lightweight image viewer from LXDE project"
@@ -176,7 +179,7 @@ msgid ""
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"GPicView стане праглядальнікам малюнкаў па-змаўчанні для ўсіх патрымліваймых "
+"GPicView стане прадвызначаным праглядальнікам малюнкаў для ўсіх падтрыманых "
 "файлаў у вашай сістэме.\n"
 "(Гэта будзе зроблена праз праграму 'xdg-mime')\n"
 "\n"
@@ -184,7 +187,7 @@ msgstr ""
 
 #: ../src/file-dlgs.c:62
 msgid "All Supported Images"
-msgstr "Усе падтрымліваймыя малюнкі"
+msgstr "Усе падтрыманыя выявы"
 
 #: ../src/file-dlgs.c:67
 msgid "All Files"
@@ -200,39 +203,39 @@ msgid ""
 "but the image quality will be poorer."
 msgstr ""
 "Меншае значэнне якасці прыводзіць да меншых памераў,\n"
-"але якасць малюнка будзе горш."
+"але якасць выявы будзе горшай."
 
 #: ../src/file-dlgs.c:121
 msgid "PNG Compression Level:"
-msgstr "Узровень сціскання PNG:"
+msgstr "Узровень сціску PNG:"
 
 #: ../src/file-dlgs.c:122
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
 msgstr ""
-"Вышэйшы узровень сціскання прыводзіць да меншых памераў,\n"
-"але патрабуе больш часа на сцісканне."
+"Вышэйшы узровень сціску прыводзіць да меншых памераў,\n"
+"але патрабуе больш часу на сцісканне."
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
-msgstr "Праглядайце малюнкі без клапот і турбот."
+msgstr "Праглядайце выявы без клапот і турбот"
 
 #: ../data/pref-dlg.ui.h:1
 msgid "<b>Background colors</b>"
-msgstr "<b>Колер фона</b>"
+msgstr "<b>Колер фону</b>"
 
 #: ../data/pref-dlg.ui.h:2
 msgid "Ask before deleting images"
-msgstr "Запытаць перад выдаленнем малюнкаў"
+msgstr "Запытаць перад сціраннем выяў"
 
 #: ../data/pref-dlg.ui.h:3
 msgid "Ask before saving images"
-msgstr "Запытаць перад захаваннем малюнкаў"
+msgstr "Запытаць перад запісаннем выяў"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
-msgstr "Аўтаматычна захоўваць павернутыя малюнкі"
+msgstr "Аўтаматычна запісваць павернутыя выявы"
 
 #: ../data/pref-dlg.ui.h:5
 msgid "Fullscreen:"
@@ -240,23 +243,23 @@ msgstr "На поўны экран:"
 
 #: ../data/pref-dlg.ui.h:6
 msgid "Make GPicView the default viewer for images"
-msgstr "Зрабіць GPicView праглядальнікам малюнкаў па змаўчанні"
+msgstr "Зрабіць GPicView прадвызначаным праглядальнікам выяў"
 
 #: ../data/pref-dlg.ui.h:7
 msgid "Normal:"
-msgstr "Звычайна:"
+msgstr "Звычайны:"
 
 #: ../data/pref-dlg.ui.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
-"Паварочваць JPEG файл змяняя значэнне арыентацыі EXIF\n"
+"Паварочваць JPEG файл шляхам змянення параметра арыентацыі EXIF\n"
 "(толькі калі існуе параметр арыентацыі EXIF)"
 
 #: ../data/pref-dlg.ui.h:11
 msgid "Slideshow interval"
-msgstr "Інтэрвал слайшоў"
+msgstr "Інтэрвал слайшоу"
 
 #: ../data/pref-dlg.ui.h:12
 msgid "sec"
