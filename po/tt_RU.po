@@ -1,22 +1,21 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# Ainur Shakirov <ainur.shakirov.tt@gmail.com>, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-07-22 15:58+0200\n"
-"PO-Revision-Date: 2011-07-26 11:00+0200\n"
-"Last-Translator: Ainur <ainur.shakirov.tt@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2011-08-18 01:37+0400\n"
+"Last-Translator: Ainur Shakirov <ainur.shakirov.tt@gmail.com>\n"
+"Language-Team: Tatar <>\n"
 "Language: tt_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.0.5\n"
+"X-Generator: Lokalize 1.2\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
@@ -24,7 +23,7 @@ msgstr "[ФАЙЛ]"
 
 #: ../src/gpicview.c:40
 msgid "Print version information and exit"
-msgstr "Юрама турында мәгълумат күрсәтеп чыгу"
+msgstr "Юрама турында мәгълуматны күрсәтү һәм чыгу"
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
@@ -224,11 +223,11 @@ msgstr "<b>Җирлек төсләре</b>"
 
 #: ../data/pref-dlg.ui.h:2
 msgid "Ask before deleting images"
-msgstr "Рәсемне бетергәнче раслауны сорарга"
+msgstr "Рәсемне бетергәнче раслауны сорау"
 
 #: ../data/pref-dlg.ui.h:3
 msgid "Ask before saving images"
-msgstr "Рәсемне саклаганчы раслауны сорарга"
+msgstr "Рәсемне саклаганчы раслауны сорау"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
@@ -240,7 +239,7 @@ msgstr "Бөтен экранга:"
 
 #: ../data/pref-dlg.ui.h:6
 msgid "Make GPicView the default viewer for images"
-msgstr "GPicView'ны үрнәк күрсәтүчесе итеп теркәргә"
+msgstr "GPicView'ны рәсемнәр өчен үрнәк күрсәтүчесе итеп теркәү"
 
 #: ../data/pref-dlg.ui.h:7
 msgid "Normal:"
@@ -251,7 +250,7 @@ msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
-"EXIF ориентация санын үзгәртеп JPEG файлын борырга\n"
+"EXIF ориентация санын үзгәртеп JPEG файлын бору\n"
 "(EXIF ориентация көйләве генә булса)"
 
 #: ../data/pref-dlg.ui.h:11
@@ -261,3 +260,4 @@ msgstr "Сладшоуның вакыт арасы"
 #: ../data/pref-dlg.ui.h:12
 msgid "sec"
 msgstr "сек"
+
