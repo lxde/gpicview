@@ -1,3 +1,12 @@
+gpicview (0.2.2-1) unstable; urgency=low
+
+  * New upstream release
+    - translations updates
+    - basic gtk3 support
+    - many bug fixes
+
+ -- Andrea Florio <andrea@opensuse.org>  Sat, 27 Aug 2011 09:07:
+
 gpicview (0.2.1-1) unstable; urgency=low
 
   * New upstream release
