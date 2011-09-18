@@ -27,7 +27,7 @@ gpicview_SOURCES = \
 
 # the library search path.
 # use -nodefaultlibs to prevent linking libstdc++
-gpicview_LDADD = $(X11_LIBS) $(GTK_LIBS)
+gpicview_LDADD = $(X11_LIBS) $(GTK_LIBS) -lm
 
 noinst_HEADERS = \
 	glib-mem.h \
