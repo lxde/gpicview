@@ -1,24 +1,21 @@
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Slovenian translation of gpicview.
+# Copyright (C) 2011 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gpicview package.
+# Klemen Košir <klemen.kosir@gmx.com>, 2011.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gpicview 0.2.0\n"
+"Project-Id-Version: gpicview\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-07-22 15:58+0200\n"
-"PO-Revision-Date: 2011-02-18 16:39+0200\n"
-"Last-Translator: Klemen <klemen.kosir@gmx.com>\n"
-"Language-Team: Slovenian <paxmanpwnz@gmail.com>\n"
+"PO-Revision-Date: 2011-11-25 19:46+0100\n"
+"Last-Translator: Klemen Košir <klemen.kosir@gmx.com>\n"
+"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
-"X-Generator: Pootle 2.0.5\n"
-"X-Poedit-Language: Slovenian\n"
-"X-Poedit-Country: SLOVENIA\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0);\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
@@ -26,33 +23,40 @@ msgstr "[DATOTEKA]"
 
 #: ../src/gpicview.c:40
 msgid "Print version information and exit"
-msgstr "Prikaže podatke o različici"
+msgstr "Izpiše podatke o različici."
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
 msgstr "Začni predstavitev"
 
-#: ../src/main-win.c:155 ../src/main-win.c:1387 ../gpicview.desktop.in.h:1
+#: ../src/main-win.c:155
+#: ../src/main-win.c:1387
+#: ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
 msgstr "Pregledovalnik slik"
 
-#: ../src/main-win.c:235 ../src/main-win.c:1399
+#: ../src/main-win.c:235
+#: ../src/main-win.c:1399
 msgid "Previous"
-msgstr "Prejšnja"
+msgstr "Predhodna"
 
-#: ../src/main-win.c:236 ../src/main-win.c:1400
+#: ../src/main-win.c:236
+#: ../src/main-win.c:1400
 msgid "Next"
 msgstr "Naslednja"
 
-#: ../src/main-win.c:237 ../src/main-win.c:739
+#: ../src/main-win.c:237
+#: ../src/main-win.c:739
 msgid "Start Slideshow"
 msgstr "Začni predstavitev"
 
-#: ../src/main-win.c:241 ../src/main-win.c:1403
+#: ../src/main-win.c:241
+#: ../src/main-win.c:1403
 msgid "Zoom Out"
 msgstr "Oddalji"
 
-#: ../src/main-win.c:242 ../src/main-win.c:1404
+#: ../src/main-win.c:242
+#: ../src/main-win.c:1404
 msgid "Zoom In"
 msgstr "Približaj"
 
@@ -60,39 +64,48 @@ msgstr "Približaj"
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
 #. gtk_widget_set_size_request( percent, 45, -1 );
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
-#: ../src/main-win.c:249 ../src/main-win.c:1405
+#: ../src/main-win.c:249
+#: ../src/main-win.c:1405
 msgid "Fit Image To Window Size"
 msgstr "Prilagodi sliko velikosti okna"
 
-#: ../src/main-win.c:251 ../src/main-win.c:1406
+#: ../src/main-win.c:251
+#: ../src/main-win.c:1406
 msgid "Original Size"
 msgstr "Izvirna velikost"
 
-#: ../src/main-win.c:258 ../src/main-win.c:1408
+#: ../src/main-win.c:258
+#: ../src/main-win.c:1408
 msgid "Full Screen"
 msgstr "Celozaslonski način"
 
-#: ../src/main-win.c:262 ../src/main-win.c:1410
+#: ../src/main-win.c:262
+#: ../src/main-win.c:1410
 msgid "Rotate Counterclockwise"
-msgstr "Zavrti v nasprotni smeri urinega kazalca"
+msgstr "Zavrti v nasprotni smeri urnega kazalca"
 
-#: ../src/main-win.c:263 ../src/main-win.c:1411
+#: ../src/main-win.c:263
+#: ../src/main-win.c:1411
 msgid "Rotate Clockwise"
-msgstr "Zavrti v smeri urinega kazalca"
+msgstr "Zavrti v smeri urnega kazalca"
 
-#: ../src/main-win.c:265 ../src/main-win.c:1412
+#: ../src/main-win.c:265
+#: ../src/main-win.c:1412
 msgid "Flip Horizontal"
 msgstr "Zrcali vodoravno"
 
-#: ../src/main-win.c:266 ../src/main-win.c:1413
+#: ../src/main-win.c:266
+#: ../src/main-win.c:1413
 msgid "Flip Vertical"
 msgstr "Zrcali navpično"
 
-#: ../src/main-win.c:270 ../src/main-win.c:1415
+#: ../src/main-win.c:270
+#: ../src/main-win.c:1415
 msgid "Open File"
 msgstr "Odpri datoteko"
 
-#: ../src/main-win.c:271 ../src/main-win.c:1416
+#: ../src/main-win.c:271
+#: ../src/main-win.c:1416
 msgid "Save File"
 msgstr "Shrani datoteko"
 
@@ -101,15 +114,19 @@ msgid "Save File As"
 msgstr "Shrani datoteko kot"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
-#: ../src/main-win.c:273 ../src/main-win.c:1419
+#: ../src/main-win.c:273
+#: ../src/main-win.c:1419
 msgid "Delete File"
 msgstr "Izbriši datoteko"
 
-#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:8
+#: ../src/main-win.c:276
+#: ../src/main-win.c:1421
+#: ../data/pref-dlg.ui.h:8
 msgid "Preferences"
 msgstr "Možnosti"
 
-#: ../src/main-win.c:277 ../src/main-win.c:1424
+#: ../src/main-win.c:277
+#: ../src/main-win.c:1424
 msgid "Quit"
 msgstr "Končaj"
 
@@ -124,12 +141,13 @@ msgid ""
 "(Warning: The quality of original image might be lost)"
 msgstr ""
 "Datoteka z izbranim imenom že obstaja.\n"
-"Ali res želite prepisati obstoječo datoteko?\n"
-"(Opozorilo: kakovost izvirne slike se lahko izgubi)"
+"Ali želite prepisati obstoječo datoteko?\n"
+"\n"
+"Opozorilo: kakovost izvirne slike se lahko izgubi."
 
 #: ../src/main-win.c:1318
 msgid "Writing this image format is not supported."
-msgstr "Pisanje te vrste slik ni podprto."
+msgstr "Shranjevanje te vrste slik ni podprto."
 
 #: ../src/main-win.c:1356
 msgid ""
@@ -139,11 +157,11 @@ msgid ""
 msgstr ""
 "Ali res želite izbrisati trenutno datoteko?\n"
 "\n"
-"Opozorilo: Izbrisane datoteke ni mogoče obnoviti."
+"Opozorilo: izbrisane datoteke ni mogoče obnoviti."
 
 #: ../src/main-win.c:1401
 msgid "Start/Stop Slideshow"
-msgstr "Začni/zaustavi predstavitev"
+msgstr "Začni/Zaustavi predstavitev"
 
 #: ../src/main-win.c:1417
 msgid "Save As"
@@ -151,15 +169,14 @@ msgstr "Shrani kot"
 
 #: ../src/main-win.c:1487
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr " * Oglejte si izvorno kodo pregledovalnika slik EOG in GThumb"
+msgstr " * Oglejte si izvorno kodo pregledovalnikov slik EOG in GThumb."
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1491
 msgid "translator-credits"
 msgstr ""
-"Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
-"Klemen Košir <https://launchpad.net/~klemen.kosir>\n"
-"paxman <paxmanpwnz@gmail.com>"
+"Klemen Košir <klemen.kosir@gmx.com>\n"
+"Andrej Žnidaršič <andrej.znidarsic@gmail.com>"
 
 #: ../src/main-win.c:1497
 msgid "GPicView"
@@ -167,23 +184,21 @@ msgstr "GPicView"
 
 #: ../src/main-win.c:1499
 msgid "Copyright (C) 2007 - 2011"
-msgstr "Avtorske pravice (C) 2007 - 2011"
+msgstr "Avtorske pravice © 2007 - 2011"
 
 #: ../src/main-win.c:1500
 msgid "Lightweight image viewer from LXDE project"
-msgstr "Pregledovalnik slik iz projekta LXDE"
+msgstr "Pregledovalnik slik za LXDE"
 
 #: ../src/pref.c:157
 msgid ""
-"GPicView will become the default viewer for all supported image files on "
-"your system.\n"
+"GPicView will become the default viewer for all supported image files on your system.\n"
 "(This will be done through 'xdg-mime' program)\n"
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"GPicView bo na vašem sistemu postal privzeti pregledovalnik za vse podprte "
-"slikovne datoteke.\n"
-"(To bo opravljeno s programom 'xdg-mime')\n"
+"GPicView bo postal privzeti pregledovalnik vseh podprtih slikovnih datotek.\n"
+"(Dejanje bo izvedeno s programom »xdg-mime«)\n"
 "\n"
 "<b>Ali ste prepričani, da želite to storiti?</b>"
 
@@ -197,43 +212,43 @@ msgstr "Vse datoteke"
 
 #: ../src/file-dlgs.c:103
 msgid "JPEG Quality:"
-msgstr "Kakovost JPEG:"
+msgstr "Kakovost:"
 
 #: ../src/file-dlgs.c:104
 msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
 msgstr ""
-"Nižja vrednost pomeni ne samo manjšo velikost datoteke,\n"
-"ampak tudi slabšo kakovost slike."
+"Nižja kot je vrednost, manjša bo datoteka,\n"
+"vendar bo manjša tudi kakovost slike."
 
 #: ../src/file-dlgs.c:121
 msgid "PNG Compression Level:"
-msgstr "Raven stiskanja PNG:"
+msgstr "Raven stiskanja:"
 
 #: ../src/file-dlgs.c:122
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
 msgstr ""
-"Višje ravni stiskanja pomenijo manjše velikosti slik,\n"
+"Višja kot je raven stiskanja, manjša bo datoteka,\n"
 "vendar bo stiskanje trajalo dlje."
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
-msgstr "Enostavno si oglejte svoje slike"
+msgstr "Oglejte si svoje slike"
 
 #: ../data/pref-dlg.ui.h:1
 msgid "<b>Background colors</b>"
-msgstr "<b>Barve ozadja</b>"
+msgstr "<b>Barva ozadja</b>"
 
 #: ../data/pref-dlg.ui.h:2
 msgid "Ask before deleting images"
-msgstr "Vprašaj pred brisanjem slik"
+msgstr "Zahtevaj potrditev pred izbrisom slike"
 
 #: ../data/pref-dlg.ui.h:3
 msgid "Ask before saving images"
-msgstr "Vprašaj pred shranjevanjem slik"
+msgstr "Zahtevaj potrditev pred shranitvijo slike"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
@@ -256,13 +271,14 @@ msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
-"Zavrti datoteko JPEG s spremembo vrednosti usmerjenosti EXIF\n"
-"(samo, če le-ta obstaja)"
+"Zavrti datoteko JPEG s spremembo\n"
+"vrednosti usmerjenosti EXIF"
 
 #: ../data/pref-dlg.ui.h:11
 msgid "Slideshow interval"
-msgstr "Interval predstavitve"
+msgstr "Hitrost predstavitve"
 
 #: ../data/pref-dlg.ui.h:12
 msgid "sec"
-msgstr "sekund"
+msgstr "(v sekundah)"
+
