@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: LXDE\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-07-22 15:58+0200\n"
-"PO-Revision-Date: 2010-03-09 09:53+0200\n"
-"Last-Translator: Indalecio <ifreiria@gmail.com>\n"
+"PO-Revision-Date: 2011-12-14 14:53+0200\n"
+"Last-Translator: mbouzada <mbouzada@gmail.com>\n"
 "Language-Team: Proxecto Trasno <proxecto@trasno.net>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.0.5\n"
 "X-Poedit-Language: Galician\n"
 "X-Poedit-Country: SPAIN\n"
 
@@ -29,7 +29,7 @@ msgstr "Iniciar presentación"
 
 #: ../src/main-win.c:155 ../src/main-win.c:1387 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
-msgstr "Visor de imaxe"
+msgstr "Visor de imaxes"
 
 #: ../src/main-win.c:235 ../src/main-win.c:1399
 msgid "Previous"
@@ -41,7 +41,7 @@ msgstr "Seguinte"
 
 #: ../src/main-win.c:237 ../src/main-win.c:739
 msgid "Start Slideshow"
-msgstr "Iniciar presentación"
+msgstr "Iniciar a presentación"
 
 #: ../src/main-win.c:241 ../src/main-win.c:1403
 msgid "Zoom Out"
@@ -110,7 +110,7 @@ msgstr "Saír"
 
 #: ../src/main-win.c:747
 msgid "Stop Slideshow"
-msgstr "Deter presentación"
+msgstr "Deter a presentación"
 
 #: ../src/main-win.c:1277
 msgid ""
@@ -119,8 +119,8 @@ msgid ""
 "(Warning: The quality of original image might be lost)"
 msgstr ""
 "O nome do ficheiro que elixiu xa existe.\n"
-"Quere sobrescribilo ficheiro existente?\n"
-"(Coidado: Pode perdela calidade da imaxe orixinal)"
+"Quere sobrescribir o ficheiro existente?\n"
+"(Coidado: Pode perder a calidade da imaxe orixinal)"
 
 #: ../src/main-win.c:1318
 msgid "Writing this image format is not supported."
@@ -132,13 +132,13 @@ msgid ""
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
-"Estás seguro que queres eliminar o ficheiro actual?\n"
+"Está seguro de querer eliminar o ficheiro actual?\n"
 "\n"
 "Coidado: Unha vez eliminado, o ficheiro non se pode recuperar."
 
 #: ../src/main-win.c:1401
 msgid "Start/Stop Slideshow"
-msgstr "Iniciar/Deter presentación"
+msgstr "Iniciar/Deter a presentación"
 
 #: ../src/main-win.c:1417
 msgid "Save As"
@@ -152,9 +152,10 @@ msgstr " * Consulte o código fonte do visor de imaxes EOG e do GThumb"
 #: ../src/main-win.c:1491
 msgid "translator-credits"
 msgstr ""
-"Festor Wailon Dacoba <Galician and Spanish translation> \n"
-"Indalecio Freiría Santos <Galician translation> \n"
-"Proxecto Trasno <Galician team translation>"
+"Festor Wailon Dacoba <Galician and Spanish translation>\n"
+"Indalecio Freiría Santos <ifreiria@gmail.com>\n"
+"Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
+"Proxecto Trasno <proxecto@trasno.net>"
 
 #: ../src/main-win.c:1497
 msgid "GPicView"
@@ -178,7 +179,7 @@ msgid ""
 msgstr ""
 "GPicView converterase no visor predeterminado para todos os ficheiros de "
 "imaxe no sistema.\n"
-"(Isto farase a través do aplicativo 'xdg-mime')\n"
+"(Isto farase a través do aplicativo «xdg-mime»)\n"
 "\n"
 "<b>Está seguro de querer facer isto?</b>"
 
@@ -200,7 +201,7 @@ msgid ""
 "but the image quality will be poorer."
 msgstr ""
 "Os valores máis baixos producen ficheiros de menor tamaño,\n"
-"pero a imaxe terá unha calidade máis pobre."
+"mais a imaxe terá unha calidade máis pobre."
 
 #: ../src/file-dlgs.c:121
 msgid "PNG Compression Level:"
@@ -212,7 +213,7 @@ msgid ""
 "but takes more time to do the compression."
 msgstr ""
 "Os niveis máis altos producen ficheiros de menor tamaño,\n"
-"pero a compresión leva máis tempo."
+"mais a compresión leva máis tempo."
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
@@ -228,7 +229,7 @@ msgstr "Preguntar antes de eliminar as imaxes"
 
 #: ../data/pref-dlg.ui.h:3
 msgid "Ask before saving images"
-msgstr "Preguntar antes de gardar imaxes"
+msgstr "Preguntar antes de gardar as imaxes"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
@@ -240,7 +241,7 @@ msgstr "Pantalla completa"
 
 #: ../data/pref-dlg.ui.h:6
 msgid "Make GPicView the default viewer for images"
-msgstr "Facer de GPicview o visor de imaxes predeterminado"
+msgstr "Facer de GPicView o visor de imaxes predeterminado"
 
 #: ../data/pref-dlg.ui.h:7
 msgid "Normal:"
@@ -260,4 +261,4 @@ msgstr "Intervalo de diapositivas"
 
 #: ../data/pref-dlg.ui.h:12
 msgid "sec"
-msgstr "seg"
+msgstr "seg."
