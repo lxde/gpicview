@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: LXDE\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-07-22 15:58+0200\n"
-"PO-Revision-Date: 2011-12-14 14:53+0200\n"
+"PO-Revision-Date: 2011-12-24 13:50+0200\n"
 "Last-Translator: mbouzada <mbouzada@gmail.com>\n"
 "Language-Team: Proxecto Trasno <proxecto@trasno.net>\n"
 "Language: gl\n"
@@ -21,7 +21,7 @@ msgstr "[FICHEIRO]"
 
 #: ../src/gpicview.c:40
 msgid "Print version information and exit"
-msgstr "Mostrar información da versión e saír"
+msgstr "Amosar información da versión e saír"
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
