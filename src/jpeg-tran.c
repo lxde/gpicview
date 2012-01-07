@@ -195,7 +195,7 @@ main (int    argc,
 int rotate_and_save_jpeg_lossless(char *  filename,int angle)
 {
 
-    char tmpfilename[PATH_MAX];
+    char *tmpfilename;
     int tmpfilefd;
 
 /*
@@ -219,13 +219,14 @@ int rotate_and_save_jpeg_lossless(char *  filename,int angle)
         code = JXFORM_FLIP_V;
 
     /* Length check temporary file name. */
-    if(strlen(filename) > (sizeof(tmpfilename) - 8))
+    if((tmpfilename = malloc(strlen(filename)+8)) == NULL)
 	return EINVAL;
     sprintf(tmpfilename, "%s.XXXXXX", filename);
 
     /* Create temporary file. */
     tmpfilefd = mkstemp(tmpfilename);
     if (tmpfilefd == -1) {
+      free(tmpfilename);
       return errno;
     }
     close(tmpfilefd);
@@ -235,6 +236,7 @@ int rotate_and_save_jpeg_lossless(char *  filename,int angle)
     if(error) {
 	int saved_errno = errno;
         unlink(tmpfilename);
+        free(tmpfilename);
         return saved_errno;
     }
 
@@ -243,6 +245,7 @@ int rotate_and_save_jpeg_lossless(char *  filename,int angle)
     if (error_1 == -1) {
 	int saved_errno = errno;
         unlink(tmpfilename);
+        free(tmpfilename);
         return saved_errno;
     }
     return 0;

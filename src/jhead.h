@@ -41,6 +41,10 @@ typedef unsigned char uchar;
     #define PATH_MAX _MAX_PATH
 #endif
 
+#ifdef __GNU__
+    #define PATH_MAX 4096
+#endif
+
 //--------------------------------------------------------------------------
 // This structure is used to store jpeg file sections in memory.
 typedef struct {
