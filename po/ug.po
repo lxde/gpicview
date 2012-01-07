@@ -1,22 +1,20 @@
-# SOME DESCRIPTIVE TITLE.
+# Uyghur translation for gpicview.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Gheyret Kenji <gheyret@gmail.com>, 2011.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: gpicview\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-07-22 15:58+0200\n"
-"PO-Revision-Date: 2011-11-13 15:26+0200\n"
-"Last-Translator: Yaron <sh.yaron@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: he\n"
+"PO-Revision-Date: 2011-11-09 16:10+0900\n"
+"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
+"Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.5\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
@@ -24,35 +22,35 @@ msgstr "[FILE]"
 
 #: ../src/gpicview.c:40
 msgid "Print version information and exit"
-msgstr "Print version information and exit"
+msgstr "نەشر ئۇچۇرىنى كۆرسىتىپ ئاخىرلىشىدۇ"
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
-msgstr "התחלת המצגת"
+msgstr "تام تەسۋىرىنى باشلاش"
 
 #: ../src/main-win.c:155 ../src/main-win.c:1387 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
-msgstr "מציג התמונות"
+msgstr "سۈرەت كۆرگۈ"
 
 #: ../src/main-win.c:235 ../src/main-win.c:1399
 msgid "Previous"
-msgstr "הקודם"
+msgstr "ئالدىنقى"
 
 #: ../src/main-win.c:236 ../src/main-win.c:1400
 msgid "Next"
-msgstr "הבא"
+msgstr "كېيىنكى"
 
 #: ../src/main-win.c:237 ../src/main-win.c:739
 msgid "Start Slideshow"
-msgstr "התחלת המצגת"
+msgstr "تام تەسۋىرىنى باشلاش"
 
 #: ../src/main-win.c:241 ../src/main-win.c:1403
 msgid "Zoom Out"
-msgstr "התרחקות"
+msgstr "كىچىكلىتىش"
 
 #: ../src/main-win.c:242 ../src/main-win.c:1404
 msgid "Zoom In"
-msgstr "התקרבות"
+msgstr "چوڭايتىش"
 
 #. percent = gtk_entry_new();    // show scale (in percentage)
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
@@ -60,115 +58,111 @@ msgstr "התקרבות"
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
 #: ../src/main-win.c:249 ../src/main-win.c:1405
 msgid "Fit Image To Window Size"
-msgstr "התאמת גודל התמונה לגודל החלון"
+msgstr "سۈرەتنى كۆزنەككە ماسلاشتۇرۇش"
 
 #: ../src/main-win.c:251 ../src/main-win.c:1406
 msgid "Original Size"
-msgstr "גודל מקורי"
+msgstr "ئەسلى چوڭلۇقى"
 
 #: ../src/main-win.c:258 ../src/main-win.c:1408
 msgid "Full Screen"
-msgstr "מסך מלא"
+msgstr "پۈتۈن ئېكران"
 
 #: ../src/main-win.c:262 ../src/main-win.c:1410
 msgid "Rotate Counterclockwise"
-msgstr "סיבוב נגד כיוון השעון"
+msgstr "سائەت ئىسترېلكىسىغا قارشى يۆنىلىشتە چۆرگىلىتىش"
 
 #: ../src/main-win.c:263 ../src/main-win.c:1411
 msgid "Rotate Clockwise"
-msgstr "סיבוב עם כיוון השעון"
+msgstr "سائەت ئىسترېلكىسى يۆنىلىشىدە چۆرگىلىتىش"
 
 #: ../src/main-win.c:265 ../src/main-win.c:1412
 msgid "Flip Horizontal"
-msgstr "היפוך אופקי"
+msgstr "توغرا يۆنىلىشتە چۆرگىلىتىش"
 
 #: ../src/main-win.c:266 ../src/main-win.c:1413
 msgid "Flip Vertical"
-msgstr "היפוך אנכי"
+msgstr "تىك يۆنىلىشتە چۆرگىلىتىش"
 
 #: ../src/main-win.c:270 ../src/main-win.c:1415
 msgid "Open File"
-msgstr "פתיחת קובץ"
+msgstr "ھۆججەت ئېچىش"
 
 #: ../src/main-win.c:271 ../src/main-win.c:1416
 msgid "Save File"
-msgstr "שמירת קובץ"
+msgstr "ھۆججەت ساقلاش"
 
 #: ../src/main-win.c:272
 msgid "Save File As"
-msgstr "שמירת קובץ בשם"
+msgstr "باشقا ئاتتا ساقلاش"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
 #: ../src/main-win.c:273 ../src/main-win.c:1419
 msgid "Delete File"
-msgstr "מחיקת קובץ"
+msgstr "ھۆججەت ئۆچۈرۈش"
 
 #: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:8
 msgid "Preferences"
-msgstr "העדפות"
+msgstr "مايىللىق"
 
 #: ../src/main-win.c:277 ../src/main-win.c:1424
 msgid "Quit"
-msgstr "יציאה"
+msgstr "ئاخىرلاشتۇرۇش"
 
 #: ../src/main-win.c:747
 msgid "Stop Slideshow"
-msgstr "עצירת המצגת"
+msgstr "تام تەسۋىرىنى توختىتىش"
 
 #: ../src/main-win.c:1277
 msgid ""
 "The file name you selected already exists.\n"
 "Do you want to overwrite existing file?\n"
 "(Warning: The quality of original image might be lost)"
-msgstr ""
-"שם הקובץ שנבחר כבר קיים.\n"
-"האם לשכתב את הקובץ הקיים?\n"
-"(אזהרה: איכות התמונה המקורית עלולה להפגם)"
+msgstr "سىز تاللىغان ھۆججەت ئاتى مەۋجۇت.\n"
+" قاپلامسىز؟\n"
+"(ئاگاھلاندۇرۇش: ئەسلى سۈرەتنىڭ سۈپىتى ئۇپراپ كېتىشى مۇمكىن)"
 
 #: ../src/main-win.c:1318
 msgid "Writing this image format is not supported."
-msgstr "כתיבה כסוג תמונה זה אינה נתמכת."
+msgstr "بۇ سۈرەت پىچىمىنى يېزىشنى قوللىمايدۇ."
 
 #: ../src/main-win.c:1356
 msgid ""
 "Are you sure you want to delete current file?\n"
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
-msgstr ""
-"האם למחוק את הקובץ הנוכחי?\n"
+msgstr "نۆۋەتتىكى ھۆججەتنى راستلا ئۆچۈرەمسىز؟\n"
 "\n"
-"אזהרה: לאחר מחיקת הקובץ אין כל אפשרות לשחזרו."
+"ئاگاھلاندۇرۇش: ئۆچۈرۈلسە ئەسلىگە كەلتۈرگىلى بولمايدۇ"
 
 #: ../src/main-win.c:1401
 msgid "Start/Stop Slideshow"
-msgstr "התחלת/עצירת המצגת"
+msgstr "تام تەسۋىرىنى باشلاش/توختىتىش"
 
 #: ../src/main-win.c:1417
 msgid "Save As"
-msgstr "שמירה בשם"
+msgstr "باشقا ئاتتا ساقلاش"
 
 #: ../src/main-win.c:1487
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr " * הפניה לקוד המקור של מציג התמונות EOG ושל GThumb"
+msgstr " * EOG سۈرەت كۆرگۈ ۋە GThumb نىڭ ئەسلى كودىغا قاراڭ"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1491
 msgid "translator-credits"
-msgstr ""
-"ירון שהרבני <sh.yaron@gmail.com>\n"
-"ליאל פרידמן <lielft@gmail.com>"
+msgstr "Gheyret Kenji <gheyret@gmail.com>"
 
 #: ../src/main-win.c:1497
 msgid "GPicView"
-msgstr "מציג התמונות GPicView"
+msgstr "GPicView"
 
 #: ../src/main-win.c:1499
 msgid "Copyright (C) 2007 - 2011"
-msgstr "כל הזכויות שמורות (C) ‏2007 - 2011"
+msgstr "نەشر ھوقۇقى (C) 2007 - 2011"
 
 #: ../src/main-win.c:1500
 msgid "Lightweight image viewer from LXDE project"
-msgstr "מציג תמונות קליל ממיזם LXDE"
+msgstr "LXDE قۇرۇلۇشىدىكى يېنىك سۈرەت كۆرگۈ"
 
 #: ../src/pref.c:157
 msgid ""
@@ -177,88 +171,84 @@ msgid ""
 "(This will be done through 'xdg-mime' program)\n"
 "\n"
 "<b>Are you sure you really want to do this?</b>"
-msgstr ""
-"GPicView יהפוך למציג בררת המחדל עבור כל קובצי התמונה הנתמכים שבמערכת שלך.\n"
-"(פעולה זו תתבצע דרך התוכנית ‎‏'xdg-mime‎‏')\n"
+msgstr "GPicView سىستېمىڭىز قوللايدىغان بارلىق سۈرەتلەرنىڭ كۆرگۈسى بولىدۇ.\n"
+"(بۇنى ‹xdg-mime› ئارقىلىق تاماملىغىلى بولىدۇ)\n"
 "\n"
-"‏<b>האם באמת לבצע זאת?</b>"
+"<b>سىز راستلا بۇنى قىلامسىز؟</b>"
 
 #: ../src/file-dlgs.c:62
 msgid "All Supported Images"
-msgstr "כל התמונות הנתמכות"
+msgstr "بارلىق قوللايدىغان سۈرەتلەر"
 
 #: ../src/file-dlgs.c:67
 msgid "All Files"
-msgstr "כל הקבצים"
+msgstr "بارلىق ھۆججەتلەر"
 
 #: ../src/file-dlgs.c:103
 msgid "JPEG Quality:"
-msgstr "איכות ה־JPEG:"
+msgstr "JPEG سۈپىتى:"
 
 #: ../src/file-dlgs.c:104
 msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
-msgstr ""
-"ערכי איכות נמוכים יותר מניבים קבצים קטנים יותר,\n"
-"אך איכות התמונה תהיה נמוכה יותר."
+msgstr "سۈپەت قىممىتى توۋەن بولسا ھۆججەت چوڭلۇقى كىچىك بولىدۇ،\n"
+"بىراق سۈرەتنىڭ سۈپىتىمۇ توۋەن بولىدۇ."
 
 #: ../src/file-dlgs.c:121
 msgid "PNG Compression Level:"
-msgstr "רמת דחיסת ה־PNG:"
+msgstr "PNG پرېسلاش دەرىجىسى:"
 
 #: ../src/file-dlgs.c:122
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
-msgstr ""
-"ערכי דחיסה גבוהים יותר מניבים קבצים קטנים יותר,\n"
-"אך נדרש זמן רב יותר לדחוס אותם."
+msgstr "پرېسلاش دەرىجىسى يۇقىرى بولسا ھۆججەت چوڭلۇقى كىچىك بولىدۇ،\n"
+"بىراق پرېسلاش ئۈچۈن جىقراق ۋاقىت كېتىدۇ."
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
-msgstr "צפייה בהודעות האישיות בקלות"
+msgstr "سۈرەتنى ئوڭايلا كۆرگىلى بولىدۇ"
 
 #: ../data/pref-dlg.ui.h:1
 msgid "<b>Background colors</b>"
-msgstr "<b>צבעי הרקע</b>"
+msgstr "<b>تەگلىك رەڭلىرى</b>"
 
 #: ../data/pref-dlg.ui.h:2
 msgid "Ask before deleting images"
-msgstr "הצגת שאלה בטרם מחיקת תמונות"
+msgstr "سۈرەتلەرنى ئۆچۈرۈشتىن ئاۋۋال سورىسۇن"
 
 #: ../data/pref-dlg.ui.h:3
 msgid "Ask before saving images"
-msgstr "הצגת שאלה בטרם שמירת תמונות"
+msgstr "سۈرەتلەرنى ساقلاشتىن ئاۋۋال سورىسۇن"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
-msgstr "שמירה אוטומטית של תמונות מסובבות"
+msgstr "چۆرگىلىتىلگەن سۈرەتلەرنى ئاپتوماتىك ساقلىسۇن"
 
 #: ../data/pref-dlg.ui.h:5
 msgid "Fullscreen:"
-msgstr "מסך מלא:"
+msgstr "تولۇق ئېكران:"
 
 #: ../data/pref-dlg.ui.h:6
 msgid "Make GPicView the default viewer for images"
-msgstr "הפיכת GPicView למציג בררת המחדל עבור תמונות"
+msgstr "كۆڭۈلدىكى سۈرەت كۆرگۈ بولسۇن(GPicView)"
 
 #: ../data/pref-dlg.ui.h:7
 msgid "Normal:"
-msgstr "רגיל:"
+msgstr "نورمال:"
 
 #: ../data/pref-dlg.ui.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
-msgstr ""
-"סיבוב קובץ JPEG על ידי שינוי ערך הכיווניות ב־EXIF\n"
-"(רק אם קיימות תגיות כיווניות ב־EXIF)"
+msgstr "JPEG ھۆججىتىنى EXIF دېگەن يۆنىلىش قىممىتىنى ئۆزگەرتىش ئارقىلىق چۆرگىلىتىش\n"
+"(پەقەت EXIF  دېگەن يۆنىلىش قىممىتى مەۋجۇت بولسا)"
 
 #: ../data/pref-dlg.ui.h:11
 msgid "Slideshow interval"
-msgstr "ההפרש בין הצגת התמונות"
+msgstr "تام تەسۋىرىنىڭ ئىنتېرۋالى"
 
 #: ../data/pref-dlg.ui.h:12
 msgid "sec"
-msgstr "שניות"
+msgstr "سېكۇنت"
