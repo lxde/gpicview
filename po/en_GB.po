@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-07-22 15:58+0200\n"
-"PO-Revision-Date: 2011-07-22 16:09+0200\n"
+"PO-Revision-Date: 2012-01-25 00:20+0200\n"
 "Last-Translator: Steve <yorvik.ubunto@gmail.com>\n"
 "Language-Team: English Uk en_GB\n"
 "Language: en_GB\n"
@@ -162,7 +162,7 @@ msgstr "GPicView"
 
 #: ../src/main-win.c:1499
 msgid "Copyright (C) 2007 - 2011"
-msgstr "Copyright © 2007 - 2009"
+msgstr "Copyright © 2007 - 2012"
 
 #: ../src/main-win.c:1500
 msgid "Lightweight image viewer from LXDE project"
