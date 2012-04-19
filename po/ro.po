@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: LXDE\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-07-22 15:58+0200\n"
-"PO-Revision-Date: 2012-03-08 12:15+0200\n"
+"PO-Revision-Date: 2012-04-19 13:35+0200\n"
 "Last-Translator: Mișu <dumol@l10n.ro>\n"
 "Language-Team: Romanian <LL@li.org>\n"
 "Language: ro\n"
@@ -56,7 +56,7 @@ msgstr "Apropie"
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
 #: ../src/main-win.c:249 ../src/main-win.c:1405
 msgid "Fit Image To Window Size"
-msgstr "Potrivește imaginea la fereastră"
+msgstr "Potrivește la fereastră"
 
 #: ../src/main-win.c:251 ../src/main-win.c:1406
 msgid "Original Size"
