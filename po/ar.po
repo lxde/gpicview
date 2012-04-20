@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: GPicView\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-07-22 15:58+0200\n"
-"PO-Revision-Date: 2010-04-14 19:47+0300\n"
-"Last-Translator: Tareq Al Jurf <taljurf@fedoraproject.org>\n"
+"PO-Revision-Date: 2012-02-24 23:58+0200\n"
+"Last-Translator: كريم <herr-linux@hotmail.fr>\n"
 "Language-Team: Arabic <trans-ar@lists.fedoraproject.org>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: Pootle 1.1.0\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
@@ -159,11 +159,13 @@ msgstr "* راجع الشفرة المصدرية لعارض الصور عين ج
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1491
 msgid "translator-credits"
-msgstr "أحمد فرغل <ahmad.farghal@gmail.com>"
+msgstr ""
+"أحمد فرغل <ahmad.farghal@gmail.com>كريم أولاد الشلحة "
+"<herr.linux88@gmail.com>"
 
 #: ../src/main-win.c:1497
 msgid "GPicView"
-msgstr "GPicView"
+msgstr "عارض الصور ج"
 
 #: ../src/main-win.c:1499
 msgid "Copyright (C) 2007 - 2011"
@@ -259,12 +261,10 @@ msgstr ""
 "(فقط إذا كان وسم الاتجاه موجودا في EXIF)"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Slideshow interval"
-msgstr "فترة عرض الشرائح"
+msgstr "مدة عرض الشرائح"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
 msgid "sec"
 msgstr "ثانية"
 
