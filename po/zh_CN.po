@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-22 15:58+0200\n"
+"POT-Creation-Date: 2012-04-20 22:25+0200\n"
 "PO-Revision-Date: 2010-10-20 06:20+0200\n"
 "Last-Translator: Yinghua_Wang <wantinghard@gmail.com>\n"
 "Language-Team: zh_CN <LL@li.org>\n"
@@ -107,7 +107,7 @@ msgstr "另存为文件"
 msgid "Delete File"
 msgstr "删除文件"
 
-#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:8
+#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:1
 msgid "Preferences"
 msgstr "首选项"
 
@@ -223,35 +223,19 @@ msgstr ""
 msgid "View your images easily"
 msgstr "轻松查看数码相片和图片"
 
-#: ../data/pref-dlg.ui.h:1
-msgid "<b>Background colors</b>"
-msgstr "<b>背景颜色</b>"
-
 #: ../data/pref-dlg.ui.h:2
-msgid "Ask before deleting images"
-msgstr "删除图片前先询问"
-
-#: ../data/pref-dlg.ui.h:3
 msgid "Ask before saving images"
 msgstr "保存图片前先询问"
+
+#: ../data/pref-dlg.ui.h:3
+msgid "Ask before deleting images"
+msgstr "删除图片前先询问"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
 msgstr "自动保存经过旋转的图像"
 
 #: ../data/pref-dlg.ui.h:5
-msgid "Fullscreen:"
-msgstr "全屏幕："
-
-#: ../data/pref-dlg.ui.h:6
-msgid "Make GPicView the default viewer for images"
-msgstr "设置 GPicview 为默认图片查看器"
-
-#: ../data/pref-dlg.ui.h:7
-msgid "Normal:"
-msgstr "普通："
-
-#: ../data/pref-dlg.ui.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
@@ -259,10 +243,26 @@ msgstr ""
 "通过更改 EXIF 方向值旋转 JPEG 文件\n"
 "(仅当 EXIF 方向标记存在时)"
 
-#: ../data/pref-dlg.ui.h:11
+#: ../data/pref-dlg.ui.h:7
 msgid "Slideshow interval"
 msgstr "幻灯片放映间隔"
 
-#: ../data/pref-dlg.ui.h:12
+#: ../data/pref-dlg.ui.h:8
 msgid "sec"
 msgstr "秒"
+
+#: ../data/pref-dlg.ui.h:9
+msgid "Make GPicView the default viewer for images"
+msgstr "设置 GPicview 为默认图片查看器"
+
+#: ../data/pref-dlg.ui.h:10
+msgid "Normal:"
+msgstr "普通："
+
+#: ../data/pref-dlg.ui.h:11
+msgid "Fullscreen:"
+msgstr "全屏幕："
+
+#: ../data/pref-dlg.ui.h:12
+msgid "<b>Background colors</b>"
+msgstr "<b>背景颜色</b>"

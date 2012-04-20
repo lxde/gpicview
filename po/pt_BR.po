@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gpicview 0.2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-22 15:58+0200\n"
+"POT-Creation-Date: 2012-04-20 22:25+0200\n"
 "PO-Revision-Date: 2011-06-01 07:44-0300\n"
 "Last-Translator: Sérgio Cipolla <secipolla@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
@@ -107,7 +107,7 @@ msgstr "Salvar arquivo como"
 msgid "Delete File"
 msgstr "Excluir arquivo"
 
-#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:8
+#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:1
 msgid "Preferences"
 msgstr "Preferências"
 
@@ -225,35 +225,19 @@ msgstr ""
 msgid "View your images easily"
 msgstr "Visualize suas imagens de forma fácil"
 
-#: ../data/pref-dlg.ui.h:1
-msgid "<b>Background colors</b>"
-msgstr "<b>Cor de fundo</b>"
-
 #: ../data/pref-dlg.ui.h:2
-msgid "Ask before deleting images"
-msgstr "Perguntar antes de excluir imagens"
-
-#: ../data/pref-dlg.ui.h:3
 msgid "Ask before saving images"
 msgstr "Perguntar antes de salvar imagens"
+
+#: ../data/pref-dlg.ui.h:3
+msgid "Ask before deleting images"
+msgstr "Perguntar antes de excluir imagens"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
 msgstr "Salvar automaticamente imagens rotacionadas"
 
 #: ../data/pref-dlg.ui.h:5
-msgid "Fullscreen:"
-msgstr "Tela cheia:"
-
-#: ../data/pref-dlg.ui.h:6
-msgid "Make GPicView the default viewer for images"
-msgstr "Tornar o GPicview o visualizador padrão de imagens"
-
-#: ../data/pref-dlg.ui.h:7
-msgid "Normal:"
-msgstr "Normal:"
-
-#: ../data/pref-dlg.ui.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
@@ -261,13 +245,29 @@ msgstr ""
 "Rotacionar o arquivo JPEG alterando o valor de orientação EXIF\n"
 "(somente se a etiqueta EXIF existir)"
 
-#: ../data/pref-dlg.ui.h:11
+#: ../data/pref-dlg.ui.h:7
 msgid "Slideshow interval"
 msgstr "Intervalo entre os slides"
 
-#: ../data/pref-dlg.ui.h:12
+#: ../data/pref-dlg.ui.h:8
 msgid "sec"
 msgstr "segundo(s)"
+
+#: ../data/pref-dlg.ui.h:9
+msgid "Make GPicView the default viewer for images"
+msgstr "Tornar o GPicview o visualizador padrão de imagens"
+
+#: ../data/pref-dlg.ui.h:10
+msgid "Normal:"
+msgstr "Normal:"
+
+#: ../data/pref-dlg.ui.h:11
+msgid "Fullscreen:"
+msgstr "Tela cheia:"
+
+#: ../data/pref-dlg.ui.h:12
+msgid "<b>Background colors</b>"
+msgstr "<b>Cor de fundo</b>"
 
 #~ msgid " Full Screen"
 #~ msgstr " Tela cheia"

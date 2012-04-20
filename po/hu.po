@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gpicview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-22 15:58+0200\n"
+"POT-Creation-Date: 2012-04-20 22:25+0200\n"
 "PO-Revision-Date: 2010-01-27 17:43+0100\n"
 "Last-Translator: Laszlo Dvornik <dvornik@gnome.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -103,7 +103,7 @@ msgstr "Mentés másként"
 msgid "Delete File"
 msgstr "Törlés"
 
-#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:8
+#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:1
 msgid "Preferences"
 msgstr "Beállítások"
 
@@ -221,35 +221,19 @@ msgstr ""
 msgid "View your images easily"
 msgstr "Képek megtekintése egyszerűen"
 
-#: ../data/pref-dlg.ui.h:1
-msgid "<b>Background colors</b>"
-msgstr "<b>Háttérszínek</b>"
-
 #: ../data/pref-dlg.ui.h:2
-msgid "Ask before deleting images"
-msgstr "Kérdés a képek törlése előtt"
-
-#: ../data/pref-dlg.ui.h:3
 msgid "Ask before saving images"
 msgstr "Kérdés a képek mentése előtt"
+
+#: ../data/pref-dlg.ui.h:3
+msgid "Ask before deleting images"
+msgstr "Kérdés a képek törlése előtt"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
 msgstr "Az elforgatott képek automatikus mentése"
 
 #: ../data/pref-dlg.ui.h:5
-msgid "Fullscreen:"
-msgstr "Teljes képernyő:"
-
-#: ../data/pref-dlg.ui.h:6
-msgid "Make GPicView the default viewer for images"
-msgstr "Legyen a GPicView az alapértelmezett képmegjelenítő"
-
-#: ../data/pref-dlg.ui.h:7
-msgid "Normal:"
-msgstr "Normál:"
-
-#: ../data/pref-dlg.ui.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
@@ -257,10 +241,26 @@ msgstr ""
 "JPEG-fájl elforgatása az EXIF tájolási értékének cseréjével\n"
 "(csak ha az EXIF tájolási tag létezik)"
 
-#: ../data/pref-dlg.ui.h:11
+#: ../data/pref-dlg.ui.h:7
 msgid "Slideshow interval"
 msgstr "Diavetítés időköze"
 
-#: ../data/pref-dlg.ui.h:12
+#: ../data/pref-dlg.ui.h:8
 msgid "sec"
 msgstr "mp"
+
+#: ../data/pref-dlg.ui.h:9
+msgid "Make GPicView the default viewer for images"
+msgstr "Legyen a GPicView az alapértelmezett képmegjelenítő"
+
+#: ../data/pref-dlg.ui.h:10
+msgid "Normal:"
+msgstr "Normál:"
+
+#: ../data/pref-dlg.ui.h:11
+msgid "Fullscreen:"
+msgstr "Teljes képernyő:"
+
+#: ../data/pref-dlg.ui.h:12
+msgid "<b>Background colors</b>"
+msgstr "<b>Háttérszínek</b>"

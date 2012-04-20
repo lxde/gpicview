@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-22 15:58+0200\n"
+"POT-Creation-Date: 2012-04-20 22:25+0200\n"
 "PO-Revision-Date: 2011-03-11 17:34+0200\n"
 "Last-Translator: enginmanap <enginmanap@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -103,7 +103,7 @@ msgstr "Dosyayı Farklı Kaydet"
 msgid "Delete File"
 msgstr "Dosyayı Sil"
 
-#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:8
+#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:1
 msgid "Preferences"
 msgstr "Tercihler"
 
@@ -220,35 +220,19 @@ msgstr ""
 msgid "View your images easily"
 msgstr "Resimlerinizi kolaylıkla görün"
 
-#: ../data/pref-dlg.ui.h:1
-msgid "<b>Background colors</b>"
-msgstr "<b>Arkaplan renkleri</b>"
-
 #: ../data/pref-dlg.ui.h:2
-msgid "Ask before deleting images"
-msgstr "Resimleri silmeden önce sor"
-
-#: ../data/pref-dlg.ui.h:3
 msgid "Ask before saving images"
 msgstr "Resimleri kaydetmeden önce sor"
+
+#: ../data/pref-dlg.ui.h:3
+msgid "Ask before deleting images"
+msgstr "Resimleri silmeden önce sor"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
 msgstr "Döndürülen resimleri kendiliğinden kaydet"
 
 #: ../data/pref-dlg.ui.h:5
-msgid "Fullscreen:"
-msgstr "Tam Ekran:"
-
-#: ../data/pref-dlg.ui.h:6
-msgid "Make GPicView the default viewer for images"
-msgstr "GPicView uygulamasını resimler için öntanımlı görüntüleyici yap"
-
-#: ../data/pref-dlg.ui.h:7
-msgid "Normal:"
-msgstr "Normal:"
-
-#: ../data/pref-dlg.ui.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
@@ -256,10 +240,26 @@ msgstr ""
 "JPEG dosyasını EXIF yönlendirme değerini değiştirerek döndürün\n"
 "(yalnızca EXIF yönlendirme etiketi varsa)"
 
-#: ../data/pref-dlg.ui.h:11
+#: ../data/pref-dlg.ui.h:7
 msgid "Slideshow interval"
 msgstr "Sunu gösterimi aralığı"
 
-#: ../data/pref-dlg.ui.h:12
+#: ../data/pref-dlg.ui.h:8
 msgid "sec"
 msgstr "sn"
+
+#: ../data/pref-dlg.ui.h:9
+msgid "Make GPicView the default viewer for images"
+msgstr "GPicView uygulamasını resimler için öntanımlı görüntüleyici yap"
+
+#: ../data/pref-dlg.ui.h:10
+msgid "Normal:"
+msgstr "Normal:"
+
+#: ../data/pref-dlg.ui.h:11
+msgid "Fullscreen:"
+msgstr "Tam Ekran:"
+
+#: ../data/pref-dlg.ui.h:12
+msgid "<b>Background colors</b>"
+msgstr "<b>Arkaplan renkleri</b>"

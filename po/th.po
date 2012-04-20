@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-22 15:58+0200\n"
+"POT-Creation-Date: 2012-04-20 22:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -101,7 +101,7 @@ msgstr "บันทึกไฟล์เป็น"
 msgid "Delete File"
 msgstr "ลบไฟล์"
 
-#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:8
+#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:1
 msgid "Preferences"
 msgstr "การปับแต่ง"
 
@@ -215,35 +215,19 @@ msgstr ""
 msgid "View your images easily"
 msgstr "ดูภาพอย่างง่ายดาย"
 
-#: ../data/pref-dlg.ui.h:1
-msgid "<b>Background colors</b>"
-msgstr "<b>สีภาพพื้นหลัง</b>"
-
 #: ../data/pref-dlg.ui.h:2
-msgid "Ask before deleting images"
-msgstr "ถามก่อนลบภาพ"
-
-#: ../data/pref-dlg.ui.h:3
 msgid "Ask before saving images"
 msgstr "ถามก่อนบันทึกภาพ"
+
+#: ../data/pref-dlg.ui.h:3
+msgid "Ask before deleting images"
+msgstr "ถามก่อนลบภาพ"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
 msgstr "บันทึกภาพที่หมุนอัตโนมัติ"
 
 #: ../data/pref-dlg.ui.h:5
-msgid "Fullscreen:"
-msgstr "เต็มจอ:"
-
-#: ../data/pref-dlg.ui.h:6
-msgid "Make GPicView the default viewer for images"
-msgstr "ตั้งให้ GPicView เป็นตัวดูภาพหลัก"
-
-#: ../data/pref-dlg.ui.h:7
-msgid "Normal:"
-msgstr "ทั่วไป:"
-
-#: ../data/pref-dlg.ui.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
@@ -251,10 +235,26 @@ msgstr ""
 "หมุนภาพ JPEG โดยเปลี่ยนค่า EXIF \n"
 "(เฉพาะเมื่อมีแท็กในค่า  EXIF อยู่แล้ว)"
 
-#: ../data/pref-dlg.ui.h:11
+#: ../data/pref-dlg.ui.h:7
 msgid "Slideshow interval"
 msgstr "เวลาหน่องการนำเสนอภาพนิ่ง"
 
-#: ../data/pref-dlg.ui.h:12
+#: ../data/pref-dlg.ui.h:8
 msgid "sec"
 msgstr "วินาที่"
+
+#: ../data/pref-dlg.ui.h:9
+msgid "Make GPicView the default viewer for images"
+msgstr "ตั้งให้ GPicView เป็นตัวดูภาพหลัก"
+
+#: ../data/pref-dlg.ui.h:10
+msgid "Normal:"
+msgstr "ทั่วไป:"
+
+#: ../data/pref-dlg.ui.h:11
+msgid "Fullscreen:"
+msgstr "เต็มจอ:"
+
+#: ../data/pref-dlg.ui.h:12
+msgid "<b>Background colors</b>"
+msgstr "<b>สีภาพพื้นหลัง</b>"

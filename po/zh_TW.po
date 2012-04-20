@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-22 15:58+0200\n"
+"POT-Creation-Date: 2012-04-20 22:25+0200\n"
 "PO-Revision-Date: 2012-04-14 10:43+0200\n"
 "Last-Translator: Walter <wwycheuk@gmail.com>\n"
 "Language-Team: zh_TW <LL@li.org>\n"
@@ -106,7 +106,7 @@ msgstr "另存新檔"
 msgid "Delete File"
 msgstr "刪除檔案"
 
-#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:8
+#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:1
 msgid "Preferences"
 msgstr "偏好設定"
 
@@ -220,35 +220,19 @@ msgstr ""
 msgid "View your images easily"
 msgstr "輕鬆檢視數位相片和圖片"
 
-#: ../data/pref-dlg.ui.h:1
-msgid "<b>Background colors</b>"
-msgstr "<b>背景色彩</b>"
-
 #: ../data/pref-dlg.ui.h:2
-msgid "Ask before deleting images"
-msgstr "刪除影像前先詢問"
-
-#: ../data/pref-dlg.ui.h:3
 msgid "Ask before saving images"
 msgstr "儲存影像前先詢問"
+
+#: ../data/pref-dlg.ui.h:3
+msgid "Ask before deleting images"
+msgstr "刪除影像前先詢問"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
 msgstr "自動儲存經過旋轉的影像 (目前只支援 JPEG 格式)"
 
 #: ../data/pref-dlg.ui.h:5
-msgid "Fullscreen:"
-msgstr "全螢幕："
-
-#: ../data/pref-dlg.ui.h:6
-msgid "Make GPicView the default viewer for images"
-msgstr "將 GPicView 設為預設的圖片檢視程式"
-
-#: ../data/pref-dlg.ui.h:7
-msgid "Normal:"
-msgstr "正常："
-
-#: ../data/pref-dlg.ui.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
@@ -256,13 +240,29 @@ msgstr ""
 "透過改變 EXIF orientation 數值來旋轉 JPEG 圖檔\n"
 "(只有當 EXIF orientation 標籤存在時有效)"
 
-#: ../data/pref-dlg.ui.h:11
+#: ../data/pref-dlg.ui.h:7
 msgid "Slideshow interval"
 msgstr "投影間隔"
 
-#: ../data/pref-dlg.ui.h:12
+#: ../data/pref-dlg.ui.h:8
 msgid "sec"
 msgstr "秒"
+
+#: ../data/pref-dlg.ui.h:9
+msgid "Make GPicView the default viewer for images"
+msgstr "將 GPicView 設為預設的圖片檢視程式"
+
+#: ../data/pref-dlg.ui.h:10
+msgid "Normal:"
+msgstr "正常："
+
+#: ../data/pref-dlg.ui.h:11
+msgid "Fullscreen:"
+msgstr "全螢幕："
+
+#: ../data/pref-dlg.ui.h:12
+msgid "<b>Background colors</b>"
+msgstr "<b>背景色彩</b>"
 
 #~ msgid " Full Screen"
 #~ msgstr "全螢幕瀏覽"

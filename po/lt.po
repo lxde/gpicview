@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GPicView\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-22 15:58+0200\n"
+"POT-Creation-Date: 2012-04-20 22:25+0200\n"
 "PO-Revision-Date: 2010-01-14 10:49+0200\n"
 "Last-Translator: Julius Vitkauskas <zadintuvas@gmail.com>\n"
 "Language-Team: \n"
@@ -101,7 +101,7 @@ msgstr "Išsaugoti failą kaip"
 msgid "Delete File"
 msgstr "Ištrinti failą"
 
-#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:8
+#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:1
 msgid "Preferences"
 msgstr "Nustatymai"
 
@@ -216,35 +216,19 @@ msgstr ""
 msgid "View your images easily"
 msgstr "Lengvai peržiūrėkite paveikslėlius"
 
-#: ../data/pref-dlg.ui.h:1
-msgid "<b>Background colors</b>"
-msgstr "<b>Fono spalvos</b>"
-
 #: ../data/pref-dlg.ui.h:2
-msgid "Ask before deleting images"
-msgstr "Paklausti prieš ištrinant paveikslėlius"
-
-#: ../data/pref-dlg.ui.h:3
 msgid "Ask before saving images"
 msgstr "Paklausti prieš išsaugant paveikslėlius"
+
+#: ../data/pref-dlg.ui.h:3
+msgid "Ask before deleting images"
+msgstr "Paklausti prieš ištrinant paveikslėlius"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
 msgstr "Automatiškai išsaugoti pasuktus paveikslėlius"
 
 #: ../data/pref-dlg.ui.h:5
-msgid "Fullscreen:"
-msgstr "Per visą ekraną:"
-
-#: ../data/pref-dlg.ui.h:6
-msgid "Make GPicView the default viewer for images"
-msgstr "Padaryti GPicview numatytaja paveikslėlių peržiūros programa"
-
-#: ../data/pref-dlg.ui.h:7
-msgid "Normal:"
-msgstr "Normalus:"
-
-#: ../data/pref-dlg.ui.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
@@ -252,10 +236,26 @@ msgstr ""
 "Pasukant ir apverčiant pakeisti EXIF orientacijos reikšmę\n"
 "(jei ji egzistuoja)"
 
-#: ../data/pref-dlg.ui.h:11
+#: ../data/pref-dlg.ui.h:7
 msgid "Slideshow interval"
 msgstr "Skaidrių keitimo intervalas"
 
-#: ../data/pref-dlg.ui.h:12
+#: ../data/pref-dlg.ui.h:8
 msgid "sec"
 msgstr "sek."
+
+#: ../data/pref-dlg.ui.h:9
+msgid "Make GPicView the default viewer for images"
+msgstr "Padaryti GPicview numatytaja paveikslėlių peržiūros programa"
+
+#: ../data/pref-dlg.ui.h:10
+msgid "Normal:"
+msgstr "Normalus:"
+
+#: ../data/pref-dlg.ui.h:11
+msgid "Fullscreen:"
+msgstr "Per visą ekraną:"
+
+#: ../data/pref-dlg.ui.h:12
+msgid "<b>Background colors</b>"
+msgstr "<b>Fono spalvos</b>"

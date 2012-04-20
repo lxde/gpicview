@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-22 15:58+0200\n"
+"POT-Creation-Date: 2012-04-20 22:25+0200\n"
 "PO-Revision-Date: 2010-10-19 21:58+0200\n"
 "Last-Translator: kizito <kbirabwa@yahoo.co.uk>\n"
 "Language-Team: Luganda <kbirabwa@yahoo.co.uk>\n"
@@ -103,7 +103,7 @@ msgstr "Fayiro gigyemu koppi"
 msgid "Delete File"
 msgstr "Fayiro gigyewo"
 
-#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:8
+#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:1
 msgid "Preferences"
 msgstr "Enteekateeka"
 
@@ -219,35 +219,19 @@ msgstr ""
 msgid "View your images easily"
 msgstr "Ekyanguya okukebera bifaananyi byo"
 
-#: ../data/pref-dlg.ui.h:1
-msgid "<b>Background colors</b>"
-msgstr "<b>Langi ez'oku bwaliriro</b>"
-
 #: ../data/pref-dlg.ui.h:2
-msgid "Ask before deleting images"
-msgstr "Puloguramu esookenga okukubuuza buli lw'oyagala okugyawo ekifaananyi"
-
-#: ../data/pref-dlg.ui.h:3
 msgid "Ask before saving images"
 msgstr "Puloguramu esookenga okukubuuza buli lw'oyagala okukaza ekifaananyi"
+
+#: ../data/pref-dlg.ui.h:3
+msgid "Ask before deleting images"
+msgstr "Puloguramu esookenga okukubuuza buli lw'oyagala okugyawo ekifaananyi"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
 msgstr "Ebifaananyi byenpunzisizza bikazibwenga"
 
 #: ../data/pref-dlg.ui.h:5
-msgid "Fullscreen:"
-msgstr "Nga ekifaananyi kimazeyo olutimbe:"
-
-#: ../data/pref-dlg.ui.h:6
-msgid "Make GPicView the default viewer for images"
-msgstr "GPicView efuuke puloguramu sistemu gy'ekozesa okukulaga ebifaananyi"
-
-#: ../data/pref-dlg.ui.h:7
-msgid "Normal:"
-msgstr "Nga ekifaananyi kiri mu kadirisa:"
-
-#: ../data/pref-dlg.ui.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
@@ -255,10 +239,26 @@ msgstr ""
 "Okuwunzika ekifaananyi eky'ekika kya JPEG, kyusa omuwendo\n"
 "ogw'omu EXIF ya kyo ogufuga entereera yakyo (singa kiba nga EXIF kigirina)"
 
-#: ../data/pref-dlg.ui.h:11
+#: ../data/pref-dlg.ui.h:7
 msgid "Slideshow interval"
 msgstr "Ekiseera ekifaananyi lye kimala nga kikulagibwa mu mwoleso"
 
-#: ../data/pref-dlg.ui.h:12
+#: ../data/pref-dlg.ui.h:8
 msgid "sec"
 msgstr "sikonda"
+
+#: ../data/pref-dlg.ui.h:9
+msgid "Make GPicView the default viewer for images"
+msgstr "GPicView efuuke puloguramu sistemu gy'ekozesa okukulaga ebifaananyi"
+
+#: ../data/pref-dlg.ui.h:10
+msgid "Normal:"
+msgstr "Nga ekifaananyi kiri mu kadirisa:"
+
+#: ../data/pref-dlg.ui.h:11
+msgid "Fullscreen:"
+msgstr "Nga ekifaananyi kimazeyo olutimbe:"
+
+#: ../data/pref-dlg.ui.h:12
+msgid "<b>Background colors</b>"
+msgstr "<b>Langi ez'oku bwaliriro</b>"

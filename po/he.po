@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-22 15:58+0200\n"
+"POT-Creation-Date: 2012-04-20 22:25+0200\n"
 "PO-Revision-Date: 2011-11-13 15:26+0200\n"
 "Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -103,7 +103,7 @@ msgstr "שמירת קובץ בשם"
 msgid "Delete File"
 msgstr "מחיקת קובץ"
 
-#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:8
+#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:1
 msgid "Preferences"
 msgstr "העדפות"
 
@@ -219,35 +219,19 @@ msgstr ""
 msgid "View your images easily"
 msgstr "צפייה בהודעות האישיות בקלות"
 
-#: ../data/pref-dlg.ui.h:1
-msgid "<b>Background colors</b>"
-msgstr "<b>צבעי הרקע</b>"
-
 #: ../data/pref-dlg.ui.h:2
-msgid "Ask before deleting images"
-msgstr "הצגת שאלה בטרם מחיקת תמונות"
-
-#: ../data/pref-dlg.ui.h:3
 msgid "Ask before saving images"
 msgstr "הצגת שאלה בטרם שמירת תמונות"
+
+#: ../data/pref-dlg.ui.h:3
+msgid "Ask before deleting images"
+msgstr "הצגת שאלה בטרם מחיקת תמונות"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
 msgstr "שמירה אוטומטית של תמונות מסובבות"
 
 #: ../data/pref-dlg.ui.h:5
-msgid "Fullscreen:"
-msgstr "מסך מלא:"
-
-#: ../data/pref-dlg.ui.h:6
-msgid "Make GPicView the default viewer for images"
-msgstr "הפיכת GPicView למציג בררת המחדל עבור תמונות"
-
-#: ../data/pref-dlg.ui.h:7
-msgid "Normal:"
-msgstr "רגיל:"
-
-#: ../data/pref-dlg.ui.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
@@ -255,10 +239,26 @@ msgstr ""
 "סיבוב קובץ JPEG על ידי שינוי ערך הכיווניות ב־EXIF\n"
 "(רק אם קיימות תגיות כיווניות ב־EXIF)"
 
-#: ../data/pref-dlg.ui.h:11
+#: ../data/pref-dlg.ui.h:7
 msgid "Slideshow interval"
 msgstr "ההפרש בין הצגת התמונות"
 
-#: ../data/pref-dlg.ui.h:12
+#: ../data/pref-dlg.ui.h:8
 msgid "sec"
 msgstr "שניות"
+
+#: ../data/pref-dlg.ui.h:9
+msgid "Make GPicView the default viewer for images"
+msgstr "הפיכת GPicView למציג בררת המחדל עבור תמונות"
+
+#: ../data/pref-dlg.ui.h:10
+msgid "Normal:"
+msgstr "רגיל:"
+
+#: ../data/pref-dlg.ui.h:11
+msgid "Fullscreen:"
+msgstr "מסך מלא:"
+
+#: ../data/pref-dlg.ui.h:12
+msgid "<b>Background colors</b>"
+msgstr "<b>צבעי הרקע</b>"

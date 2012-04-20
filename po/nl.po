@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gpicview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-22 15:58+0200\n"
+"POT-Creation-Date: 2012-04-20 22:25+0200\n"
 "PO-Revision-Date: 2011-09-08 12:00+0200\n"
 "Last-Translator: Pjotr\n"
 "Language-Team: Dutch\n"
@@ -103,7 +103,7 @@ msgstr "Bestand opslaan als"
 msgid "Delete File"
 msgstr "Bestand verwijderen"
 
-#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:8
+#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:1
 msgid "Preferences"
 msgstr "Voorkeuren"
 
@@ -123,7 +123,8 @@ msgid ""
 msgstr ""
 "Een bestand met deze naam bestaat al.\n"
 "Wilt u het bestaande bestand overschrijven?\n"
-"(Waarschuwing: de kwaliteit van de oorspronkelijke afbeelding kan verloren gegaan zijn)"
+"(Waarschuwing: de kwaliteit van de oorspronkelijke afbeelding kan verloren "
+"gegaan zijn)"
 
 #: ../src/main-win.c:1318
 msgid "Writing this image format is not supported."
@@ -223,35 +224,19 @@ msgstr ""
 msgid "View your images easily"
 msgstr "Bekijk uw afbeeldingen op een makkelijke manier"
 
-#: ../data/pref-dlg.ui.h:1
-msgid "<b>Background colors</b>"
-msgstr "<b>Achtergrondkleuren</b>"
-
 #: ../data/pref-dlg.ui.h:2
-msgid "Ask before deleting images"
-msgstr "Vraag bevestiging voor verwijderen van afbeeldingen"
-
-#: ../data/pref-dlg.ui.h:3
 msgid "Ask before saving images"
 msgstr "Vraag bevestiging voor opslaan van afbeeldingen"
+
+#: ../data/pref-dlg.ui.h:3
+msgid "Ask before deleting images"
+msgstr "Vraag bevestiging voor verwijderen van afbeeldingen"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
 msgstr "Gedraaide afbeeldingen automatisch opslaan"
 
 #: ../data/pref-dlg.ui.h:5
-msgid "Fullscreen:"
-msgstr "Schermvullend:"
-
-#: ../data/pref-dlg.ui.h:6
-msgid "Make GPicView the default viewer for images"
-msgstr "Maak GPicView de standaardkijker voor afbeeldingen"
-
-#: ../data/pref-dlg.ui.h:7
-msgid "Normal:"
-msgstr "Normaal:"
-
-#: ../data/pref-dlg.ui.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
@@ -259,10 +244,26 @@ msgstr ""
 "Draai JPEG-bestand door de EXIF-oriëntatiewaarde te veranderen\n"
 "(alleen indien EXIF-oriëntatie-etiket bestaat)"
 
-#: ../data/pref-dlg.ui.h:11
+#: ../data/pref-dlg.ui.h:7
 msgid "Slideshow interval"
 msgstr "Diavoorstelling interval"
 
-#: ../data/pref-dlg.ui.h:12
+#: ../data/pref-dlg.ui.h:8
 msgid "sec"
 msgstr "sec"
+
+#: ../data/pref-dlg.ui.h:9
+msgid "Make GPicView the default viewer for images"
+msgstr "Maak GPicView de standaardkijker voor afbeeldingen"
+
+#: ../data/pref-dlg.ui.h:10
+msgid "Normal:"
+msgstr "Normaal:"
+
+#: ../data/pref-dlg.ui.h:11
+msgid "Fullscreen:"
+msgstr "Schermvullend:"
+
+#: ../data/pref-dlg.ui.h:12
+msgid "<b>Background colors</b>"
+msgstr "<b>Achtergrondkleuren</b>"

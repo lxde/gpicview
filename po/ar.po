@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GPicView\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-22 15:58+0200\n"
+"POT-Creation-Date: 2012-04-20 22:25+0200\n"
 "PO-Revision-Date: 2012-02-24 23:58+0200\n"
 "Last-Translator: كريم <herr-linux@hotmail.fr>\n"
 "Language-Team: Arabic <trans-ar@lists.fedoraproject.org>\n"
@@ -108,7 +108,7 @@ msgstr "احفظ الملف كـ"
 msgid "Delete File"
 msgstr "احذف الملف"
 
-#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:8
+#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:1
 msgid "Preferences"
 msgstr "التفضيلات"
 
@@ -160,8 +160,7 @@ msgstr "* راجع الشفرة المصدرية لعارض الصور عين ج
 #: ../src/main-win.c:1491
 msgid "translator-credits"
 msgstr ""
-"أحمد فرغل <ahmad.farghal@gmail.com>كريم أولاد الشلحة "
-"<herr.linux88@gmail.com>"
+"أحمد فرغل <ahmad.farghal@gmail.com>كريم أولاد الشلحة <herr.linux88@gmail.com>"
 
 #: ../src/main-win.c:1497
 msgid "GPicView"
@@ -224,35 +223,19 @@ msgstr ""
 msgid "View your images easily"
 msgstr "اعرض صورك بسهولة"
 
-#: ../data/pref-dlg.ui.h:1
-msgid "<b>Background colors</b>"
-msgstr "<b>ألوان الخلفية</b>"
-
 #: ../data/pref-dlg.ui.h:2
-msgid "Ask before deleting images"
-msgstr "اسأل قبل حذف الصور"
-
-#: ../data/pref-dlg.ui.h:3
 msgid "Ask before saving images"
 msgstr "اسأل قبل حفظ الصور"
+
+#: ../data/pref-dlg.ui.h:3
+msgid "Ask before deleting images"
+msgstr "اسأل قبل حذف الصور"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
 msgstr "احفظ الصور آليا بعد لفها"
 
 #: ../data/pref-dlg.ui.h:5
-msgid "Fullscreen:"
-msgstr "ملء الشاشة:"
-
-#: ../data/pref-dlg.ui.h:6
-msgid "Make GPicView the default viewer for images"
-msgstr "اجعل GPicView عارض الصور الافتراضي"
-
-#: ../data/pref-dlg.ui.h:7
-msgid "Normal:"
-msgstr "الوضع العادي:"
-
-#: ../data/pref-dlg.ui.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
@@ -260,13 +243,29 @@ msgstr ""
 "لف صور JPEG عن طريق تغيير قيمة الاتجاه في EXIF\n"
 "(فقط إذا كان وسم الاتجاه موجودا في EXIF)"
 
-#: ../data/pref-dlg.ui.h:11
+#: ../data/pref-dlg.ui.h:7
 msgid "Slideshow interval"
 msgstr "مدة عرض الشرائح"
 
-#: ../data/pref-dlg.ui.h:12
+#: ../data/pref-dlg.ui.h:8
 msgid "sec"
 msgstr "ثانية"
+
+#: ../data/pref-dlg.ui.h:9
+msgid "Make GPicView the default viewer for images"
+msgstr "اجعل GPicView عارض الصور الافتراضي"
+
+#: ../data/pref-dlg.ui.h:10
+msgid "Normal:"
+msgstr "الوضع العادي:"
+
+#: ../data/pref-dlg.ui.h:11
+msgid "Fullscreen:"
+msgstr "ملء الشاشة:"
+
+#: ../data/pref-dlg.ui.h:12
+msgid "<b>Background colors</b>"
+msgstr "<b>ألوان الخلفية</b>"
 
 #~ msgid " Full Screen"
 #~ msgstr "ملء الشاشة"

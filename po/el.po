@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gpicview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-22 15:58+0200\n"
+"POT-Creation-Date: 2012-04-20 22:25+0200\n"
 "PO-Revision-Date: 2011-02-10 03:24+0200\n"
 "Last-Translator: George <forfolias@gmail.com>\n"
 "Language-Team: Greek <LL@li.org>\n"
@@ -105,7 +105,7 @@ msgstr "Αποθήκευση αρχείου ως"
 msgid "Delete File"
 msgstr "Διαγραφή αρχείου"
 
-#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:8
+#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:1
 msgid "Preferences"
 msgstr "Προτιμήσεις"
 
@@ -220,35 +220,19 @@ msgstr ""
 msgid "View your images easily"
 msgstr "Προβάλετε τις εικόνες σας εύκολα"
 
-#: ../data/pref-dlg.ui.h:1
-msgid "<b>Background colors</b>"
-msgstr "<b>Χρώματα παρασκηνίου</b>"
-
 #: ../data/pref-dlg.ui.h:2
-msgid "Ask before deleting images"
-msgstr "Ερώτηση πριν τη διαγραφή αρχείων"
-
-#: ../data/pref-dlg.ui.h:3
 msgid "Ask before saving images"
 msgstr "Ερώτηση πριν την αποθήκευση αρχείων"
+
+#: ../data/pref-dlg.ui.h:3
+msgid "Ask before deleting images"
+msgstr "Ερώτηση πριν τη διαγραφή αρχείων"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
 msgstr "Αυτόματη αποθήκευση εικόνων που έχουν περιστραφεί"
 
 #: ../data/pref-dlg.ui.h:5
-msgid "Fullscreen:"
-msgstr "Πλήρης οθόνη:"
-
-#: ../data/pref-dlg.ui.h:6
-msgid "Make GPicView the default viewer for images"
-msgstr "Κάνε το GPicView το προεπιλεγμένο πρόγραμμα προβολής εικόνων"
-
-#: ../data/pref-dlg.ui.h:7
-msgid "Normal:"
-msgstr "Κανονικά:"
-
-#: ../data/pref-dlg.ui.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
@@ -256,10 +240,26 @@ msgstr ""
 "Περιστροφή του αρχείου JPEG αλλάζοντας το EXIF προσανατολισμό\n"
 "(μόνο αν το πεδίο EXIF προσανατολισμού υπάρχει)"
 
-#: ../data/pref-dlg.ui.h:11
+#: ../data/pref-dlg.ui.h:7
 msgid "Slideshow interval"
 msgstr "Χρονικό διάστημα παρουσίασης"
 
-#: ../data/pref-dlg.ui.h:12
+#: ../data/pref-dlg.ui.h:8
 msgid "sec"
 msgstr "δευτερόλεπτα"
+
+#: ../data/pref-dlg.ui.h:9
+msgid "Make GPicView the default viewer for images"
+msgstr "Κάνε το GPicView το προεπιλεγμένο πρόγραμμα προβολής εικόνων"
+
+#: ../data/pref-dlg.ui.h:10
+msgid "Normal:"
+msgstr "Κανονικά:"
+
+#: ../data/pref-dlg.ui.h:11
+msgid "Fullscreen:"
+msgstr "Πλήρης οθόνη:"
+
+#: ../data/pref-dlg.ui.h:12
+msgid "<b>Background colors</b>"
+msgstr "<b>Χρώματα παρασκηνίου</b>"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gpicview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-22 15:58+0200\n"
+"POT-Creation-Date: 2012-04-20 22:25+0200\n"
 "PO-Revision-Date: 2011-11-09 16:10+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -101,7 +101,7 @@ msgstr "باشقا ئاتتا ساقلاش"
 msgid "Delete File"
 msgstr "ھۆججەت ئۆچۈرۈش"
 
-#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:8
+#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:1
 msgid "Preferences"
 msgstr "مايىللىق"
 
@@ -118,7 +118,8 @@ msgid ""
 "The file name you selected already exists.\n"
 "Do you want to overwrite existing file?\n"
 "(Warning: The quality of original image might be lost)"
-msgstr "سىز تاللىغان ھۆججەت ئاتى مەۋجۇت.\n"
+msgstr ""
+"سىز تاللىغان ھۆججەت ئاتى مەۋجۇت.\n"
 " قاپلامسىز؟\n"
 "(ئاگاھلاندۇرۇش: ئەسلى سۈرەتنىڭ سۈپىتى ئۇپراپ كېتىشى مۇمكىن)"
 
@@ -131,7 +132,8 @@ msgid ""
 "Are you sure you want to delete current file?\n"
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
-msgstr "نۆۋەتتىكى ھۆججەتنى راستلا ئۆچۈرەمسىز؟\n"
+msgstr ""
+"نۆۋەتتىكى ھۆججەتنى راستلا ئۆچۈرەمسىز؟\n"
 "\n"
 "ئاگاھلاندۇرۇش: ئۆچۈرۈلسە ئەسلىگە كەلتۈرگىلى بولمايدۇ"
 
@@ -171,7 +173,8 @@ msgid ""
 "(This will be done through 'xdg-mime' program)\n"
 "\n"
 "<b>Are you sure you really want to do this?</b>"
-msgstr "GPicView سىستېمىڭىز قوللايدىغان بارلىق سۈرەتلەرنىڭ كۆرگۈسى بولىدۇ.\n"
+msgstr ""
+"GPicView سىستېمىڭىز قوللايدىغان بارلىق سۈرەتلەرنىڭ كۆرگۈسى بولىدۇ.\n"
 "(بۇنى ‹xdg-mime› ئارقىلىق تاماملىغىلى بولىدۇ)\n"
 "\n"
 "<b>سىز راستلا بۇنى قىلامسىز؟</b>"
@@ -192,7 +195,8 @@ msgstr "JPEG سۈپىتى:"
 msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
-msgstr "سۈپەت قىممىتى توۋەن بولسا ھۆججەت چوڭلۇقى كىچىك بولىدۇ،\n"
+msgstr ""
+"سۈپەت قىممىتى توۋەن بولسا ھۆججەت چوڭلۇقى كىچىك بولىدۇ،\n"
 "بىراق سۈرەتنىڭ سۈپىتىمۇ توۋەن بولىدۇ."
 
 #: ../src/file-dlgs.c:121
@@ -203,52 +207,54 @@ msgstr "PNG پرېسلاش دەرىجىسى:"
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
-msgstr "پرېسلاش دەرىجىسى يۇقىرى بولسا ھۆججەت چوڭلۇقى كىچىك بولىدۇ،\n"
+msgstr ""
+"پرېسلاش دەرىجىسى يۇقىرى بولسا ھۆججەت چوڭلۇقى كىچىك بولىدۇ،\n"
 "بىراق پرېسلاش ئۈچۈن جىقراق ۋاقىت كېتىدۇ."
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
 msgstr "سۈرەتنى ئوڭايلا كۆرگىلى بولىدۇ"
 
-#: ../data/pref-dlg.ui.h:1
-msgid "<b>Background colors</b>"
-msgstr "<b>تەگلىك رەڭلىرى</b>"
-
 #: ../data/pref-dlg.ui.h:2
-msgid "Ask before deleting images"
-msgstr "سۈرەتلەرنى ئۆچۈرۈشتىن ئاۋۋال سورىسۇن"
-
-#: ../data/pref-dlg.ui.h:3
 msgid "Ask before saving images"
 msgstr "سۈرەتلەرنى ساقلاشتىن ئاۋۋال سورىسۇن"
+
+#: ../data/pref-dlg.ui.h:3
+msgid "Ask before deleting images"
+msgstr "سۈرەتلەرنى ئۆچۈرۈشتىن ئاۋۋال سورىسۇن"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
 msgstr "چۆرگىلىتىلگەن سۈرەتلەرنى ئاپتوماتىك ساقلىسۇن"
 
 #: ../data/pref-dlg.ui.h:5
-msgid "Fullscreen:"
-msgstr "تولۇق ئېكران:"
-
-#: ../data/pref-dlg.ui.h:6
-msgid "Make GPicView the default viewer for images"
-msgstr "كۆڭۈلدىكى سۈرەت كۆرگۈ بولسۇن(GPicView)"
-
-#: ../data/pref-dlg.ui.h:7
-msgid "Normal:"
-msgstr "نورمال:"
-
-#: ../data/pref-dlg.ui.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
-msgstr "JPEG ھۆججىتىنى EXIF دېگەن يۆنىلىش قىممىتىنى ئۆزگەرتىش ئارقىلىق چۆرگىلىتىش\n"
+msgstr ""
+"JPEG ھۆججىتىنى EXIF دېگەن يۆنىلىش قىممىتىنى ئۆزگەرتىش ئارقىلىق چۆرگىلىتىش\n"
 "(پەقەت EXIF  دېگەن يۆنىلىش قىممىتى مەۋجۇت بولسا)"
 
-#: ../data/pref-dlg.ui.h:11
+#: ../data/pref-dlg.ui.h:7
 msgid "Slideshow interval"
 msgstr "تام تەسۋىرىنىڭ ئىنتېرۋالى"
 
-#: ../data/pref-dlg.ui.h:12
+#: ../data/pref-dlg.ui.h:8
 msgid "sec"
 msgstr "سېكۇنت"
+
+#: ../data/pref-dlg.ui.h:9
+msgid "Make GPicView the default viewer for images"
+msgstr "كۆڭۈلدىكى سۈرەت كۆرگۈ بولسۇن(GPicView)"
+
+#: ../data/pref-dlg.ui.h:10
+msgid "Normal:"
+msgstr "نورمال:"
+
+#: ../data/pref-dlg.ui.h:11
+msgid "Fullscreen:"
+msgstr "تولۇق ئېكران:"
+
+#: ../data/pref-dlg.ui.h:12
+msgid "<b>Background colors</b>"
+msgstr "<b>تەگلىك رەڭلىرى</b>"

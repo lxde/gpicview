@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gpicview 0.2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-22 15:58+0200\n"
+"POT-Creation-Date: 2012-04-20 22:25+0200\n"
 "PO-Revision-Date: 2009-08-27 13:44+0900\n"
 "Last-Translator: Hironao Komatsu <hironao@users.sourceforge.net>\n"
 "Language-Team: Japanese <hironao@users.sourceforge.net>\n"
@@ -101,7 +101,7 @@ msgstr "名前をつけて保存"
 msgid "Delete File"
 msgstr "ファイルを削除する"
 
-#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:8
+#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:1
 msgid "Preferences"
 msgstr "設定"
 
@@ -216,35 +216,19 @@ msgstr ""
 msgid "View your images easily"
 msgstr "簡単に画像を見ることができます"
 
-#: ../data/pref-dlg.ui.h:1
-msgid "<b>Background colors</b>"
-msgstr "<b>背景色</b>"
-
 #: ../data/pref-dlg.ui.h:2
-msgid "Ask before deleting images"
-msgstr "画像を削除する際に確認する"
-
-#: ../data/pref-dlg.ui.h:3
 msgid "Ask before saving images"
 msgstr "画像を保存する際に確認する"
+
+#: ../data/pref-dlg.ui.h:3
+msgid "Ask before deleting images"
+msgstr "画像を削除する際に確認する"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
 msgstr "回転された画像を自動で保存する"
 
 #: ../data/pref-dlg.ui.h:5
-msgid "Fullscreen:"
-msgstr "フルスクリーン:"
-
-#: ../data/pref-dlg.ui.h:6
-msgid "Make GPicView the default viewer for images"
-msgstr "GPicView を標準のイメージビューワにする"
-
-#: ../data/pref-dlg.ui.h:7
-msgid "Normal:"
-msgstr "通常:"
-
-#: ../data/pref-dlg.ui.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
@@ -252,10 +236,26 @@ msgstr ""
 "JPEG ファイルの回転は EXIF タグを変更することで行う\n"
 "(EXIF に回転方向が保存されている場合のみ)"
 
-#: ../data/pref-dlg.ui.h:11
+#: ../data/pref-dlg.ui.h:7
 msgid "Slideshow interval"
 msgstr "スライドショーの間隔"
 
-#: ../data/pref-dlg.ui.h:12
+#: ../data/pref-dlg.ui.h:8
 msgid "sec"
 msgstr "秒"
+
+#: ../data/pref-dlg.ui.h:9
+msgid "Make GPicView the default viewer for images"
+msgstr "GPicView を標準のイメージビューワにする"
+
+#: ../data/pref-dlg.ui.h:10
+msgid "Normal:"
+msgstr "通常:"
+
+#: ../data/pref-dlg.ui.h:11
+msgid "Fullscreen:"
+msgstr "フルスクリーン:"
+
+#: ../data/pref-dlg.ui.h:12
+msgid "<b>Background colors</b>"
+msgstr "<b>背景色</b>"

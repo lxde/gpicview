@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-22 15:58+0200\n"
+"POT-Creation-Date: 2012-04-20 22:25+0200\n"
 "PO-Revision-Date: 2011-08-18 01:37+0400\n"
 "Last-Translator: Ainur Shakirov <ainur.shakirov.tt@gmail.com>\n"
 "Language-Team: Tatar <>\n"
@@ -103,7 +103,7 @@ msgstr "Файлны ... итеп саклау"
 msgid "Delete File"
 msgstr "Файлны бетерү"
 
-#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:8
+#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:1
 msgid "Preferences"
 msgstr "Көйләүләр"
 
@@ -217,35 +217,19 @@ msgstr ""
 msgid "View your images easily"
 msgstr "Үз рәсемнәрегезне җиңел итеп карагыз"
 
-#: ../data/pref-dlg.ui.h:1
-msgid "<b>Background colors</b>"
-msgstr "<b>Җирлек төсләре</b>"
-
 #: ../data/pref-dlg.ui.h:2
-msgid "Ask before deleting images"
-msgstr "Рәсемне бетергәнче раслауны сорау"
-
-#: ../data/pref-dlg.ui.h:3
 msgid "Ask before saving images"
 msgstr "Рәсемне саклаганчы раслауны сорау"
+
+#: ../data/pref-dlg.ui.h:3
+msgid "Ask before deleting images"
+msgstr "Рәсемне бетергәнче раслауны сорау"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
 msgstr "Борылган рәсемнәрне автоматик саклау"
 
 #: ../data/pref-dlg.ui.h:5
-msgid "Fullscreen:"
-msgstr "Бөтен экранга:"
-
-#: ../data/pref-dlg.ui.h:6
-msgid "Make GPicView the default viewer for images"
-msgstr "GPicView'ны рәсемнәр өчен үрнәк күрсәтүчесе итеп теркәү"
-
-#: ../data/pref-dlg.ui.h:7
-msgid "Normal:"
-msgstr "Гадәти:"
-
-#: ../data/pref-dlg.ui.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
@@ -253,11 +237,26 @@ msgstr ""
 "EXIF ориентация санын үзгәртеп JPEG файлын бору\n"
 "(EXIF ориентация көйләве генә булса)"
 
-#: ../data/pref-dlg.ui.h:11
+#: ../data/pref-dlg.ui.h:7
 msgid "Slideshow interval"
 msgstr "Сладшоуның вакыт арасы"
 
-#: ../data/pref-dlg.ui.h:12
+#: ../data/pref-dlg.ui.h:8
 msgid "sec"
 msgstr "сек"
 
+#: ../data/pref-dlg.ui.h:9
+msgid "Make GPicView the default viewer for images"
+msgstr "GPicView'ны рәсемнәр өчен үрнәк күрсәтүчесе итеп теркәү"
+
+#: ../data/pref-dlg.ui.h:10
+msgid "Normal:"
+msgstr "Гадәти:"
+
+#: ../data/pref-dlg.ui.h:11
+msgid "Fullscreen:"
+msgstr "Бөтен экранга:"
+
+#: ../data/pref-dlg.ui.h:12
+msgid "<b>Background colors</b>"
+msgstr "<b>Җирлек төсләре</b>"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LXDE\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-22 15:58+0200\n"
+"POT-Creation-Date: 2012-04-20 22:25+0200\n"
 "PO-Revision-Date: 2012-04-19 13:35+0200\n"
 "Last-Translator: Mișu <dumol@l10n.ro>\n"
 "Language-Team: Romanian <LL@li.org>\n"
@@ -99,7 +99,7 @@ msgstr "Salvează fișierul ca"
 msgid "Delete File"
 msgstr "Șterge fișierul"
 
-#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:8
+#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:1
 msgid "Preferences"
 msgstr "Preferințe"
 
@@ -216,35 +216,19 @@ msgstr ""
 msgid "View your images easily"
 msgstr "Vizualizare facilă de imagini"
 
-#: ../data/pref-dlg.ui.h:1
-msgid "<b>Background colors</b>"
-msgstr "<b>Culori de fundal</b>"
-
 #: ../data/pref-dlg.ui.h:2
-msgid "Ask before deleting images"
-msgstr "Întreabă înainte de a șterge imaginile"
-
-#: ../data/pref-dlg.ui.h:3
 msgid "Ask before saving images"
 msgstr "Întreabă înainte de a salva imaginile"
+
+#: ../data/pref-dlg.ui.h:3
+msgid "Ask before deleting images"
+msgstr "Întreabă înainte de a șterge imaginile"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
 msgstr "Salvează automat imaginile rotite"
 
 #: ../data/pref-dlg.ui.h:5
-msgid "Fullscreen:"
-msgstr "Ecran complet:"
-
-#: ../data/pref-dlg.ui.h:6
-msgid "Make GPicView the default viewer for images"
-msgstr "Asociază implicit GPicView fișierelor de tip imagine"
-
-#: ../data/pref-dlg.ui.h:7
-msgid "Normal:"
-msgstr "Obișnuit:"
-
-#: ../data/pref-dlg.ui.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
@@ -252,10 +236,26 @@ msgstr ""
 "Rotește fișierele JPEG prin schimbarea orientării EXIF\n"
 "(doar dacă există o etichetă de orientare EXIF)"
 
-#: ../data/pref-dlg.ui.h:11
+#: ../data/pref-dlg.ui.h:7
 msgid "Slideshow interval"
 msgstr "Interval între cadrele prezentării"
 
-#: ../data/pref-dlg.ui.h:12
+#: ../data/pref-dlg.ui.h:8
 msgid "sec"
 msgstr "sec"
+
+#: ../data/pref-dlg.ui.h:9
+msgid "Make GPicView the default viewer for images"
+msgstr "Asociază implicit GPicView fișierelor de tip imagine"
+
+#: ../data/pref-dlg.ui.h:10
+msgid "Normal:"
+msgstr "Obișnuit:"
+
+#: ../data/pref-dlg.ui.h:11
+msgid "Fullscreen:"
+msgstr "Ecran complet:"
+
+#: ../data/pref-dlg.ui.h:12
+msgid "<b>Background colors</b>"
+msgstr "<b>Culori de fundal</b>"

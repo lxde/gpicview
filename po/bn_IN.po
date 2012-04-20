@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-22 15:58+0200\n"
+"POT-Creation-Date: 2012-04-20 22:25+0200\n"
 "PO-Revision-Date: 2010-08-30 18:22+0200\n"
 "Last-Translator: Sankarshan <sankarshan.mukhopadhyay@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -103,7 +103,7 @@ msgstr "এই নামে ফাইল সংরক্ষণ করা হব�
 msgid "Delete File"
 msgstr "ফাইল মুছে ফেলা হবে"
 
-#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:8
+#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:1
 msgid "Preferences"
 msgstr "পছন্দ"
 
@@ -209,46 +209,46 @@ msgstr ""
 msgid "View your images easily"
 msgstr "আপনার ছবিগুলি সহজে দেখে নিন"
 
-#: ../data/pref-dlg.ui.h:1
-msgid "<b>Background colors</b>"
+#: ../data/pref-dlg.ui.h:2
+msgid "Ask before saving images"
 msgstr ""
 
-#: ../data/pref-dlg.ui.h:2
+#: ../data/pref-dlg.ui.h:3
 #, fuzzy
 msgid "Ask before deleting images"
 msgstr "ছবি মুছে ফেলার আগে জানিয়ে নিন"
-
-#: ../data/pref-dlg.ui.h:3
-msgid "Ask before saving images"
-msgstr ""
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
 msgstr ""
 
 #: ../data/pref-dlg.ui.h:5
-msgid "Fullscreen:"
-msgstr "পুরো পর্দা জুড়ে:"
-
-#: ../data/pref-dlg.ui.h:6
-msgid "Make GPicView the default viewer for images"
-msgstr ""
-
-#: ../data/pref-dlg.ui.h:7
-msgid "Normal:"
-msgstr "স্বাভাবিক:"
-
-#: ../data/pref-dlg.ui.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
 
-#: ../data/pref-dlg.ui.h:11
+#: ../data/pref-dlg.ui.h:7
 msgid "Slideshow interval"
 msgstr ""
 
-#: ../data/pref-dlg.ui.h:12
+#: ../data/pref-dlg.ui.h:8
 #, fuzzy
 msgid "sec"
 msgstr "sec\t"
+
+#: ../data/pref-dlg.ui.h:9
+msgid "Make GPicView the default viewer for images"
+msgstr ""
+
+#: ../data/pref-dlg.ui.h:10
+msgid "Normal:"
+msgstr "স্বাভাবিক:"
+
+#: ../data/pref-dlg.ui.h:11
+msgid "Fullscreen:"
+msgstr "পুরো পর্দা জুড়ে:"
+
+#: ../data/pref-dlg.ui.h:12
+msgid "<b>Background colors</b>"
+msgstr ""

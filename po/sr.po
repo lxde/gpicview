@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GPicView 0.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-22 15:58+0200\n"
+"POT-Creation-Date: 2012-04-20 22:25+0200\n"
 "PO-Revision-Date: 2009-09-02 12:48+0100\n"
 "Last-Translator: Jay A. Fleming <tito.nehru.naser@gmail.com>\n"
 "Language-Team: \n"
@@ -104,7 +104,7 @@ msgstr "Сачувај под другим именом"
 msgid "Delete File"
 msgstr "Обриши датотеку"
 
-#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:8
+#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:1
 msgid "Preferences"
 msgstr "Поставке"
 
@@ -220,35 +220,19 @@ msgstr ""
 msgid "View your images easily"
 msgstr "Лагано прегледање слика"
 
-#: ../data/pref-dlg.ui.h:1
-msgid "<b>Background colors</b>"
-msgstr "<b>Позадинске боје</b>"
-
 #: ../data/pref-dlg.ui.h:2
-msgid "Ask before deleting images"
-msgstr "Питај пре брисања слика"
-
-#: ../data/pref-dlg.ui.h:3
 msgid "Ask before saving images"
 msgstr "Питај пре чувања слика"
+
+#: ../data/pref-dlg.ui.h:3
+msgid "Ask before deleting images"
+msgstr "Питај пре брисања слика"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
 msgstr "Аутоматски сачувај изокретане слике"
 
 #: ../data/pref-dlg.ui.h:5
-msgid "Fullscreen:"
-msgstr "Цео екран:"
-
-#: ../data/pref-dlg.ui.h:6
-msgid "Make GPicView the default viewer for images"
-msgstr "Постави овај програм за подразумевани прегледач слика"
-
-#: ../data/pref-dlg.ui.h:7
-msgid "Normal:"
-msgstr "Нормално:"
-
-#: ../data/pref-dlg.ui.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
@@ -256,10 +240,26 @@ msgstr ""
 "Окрени „JPEG“ слику према „EXIF“ вредностима\n"
 "(само ако „EXIF“ таг за оријентацију слике постоји)"
 
-#: ../data/pref-dlg.ui.h:11
+#: ../data/pref-dlg.ui.h:7
 msgid "Slideshow interval"
 msgstr "Следећа слика после"
 
-#: ../data/pref-dlg.ui.h:12
+#: ../data/pref-dlg.ui.h:8
 msgid "sec"
 msgstr "сек"
+
+#: ../data/pref-dlg.ui.h:9
+msgid "Make GPicView the default viewer for images"
+msgstr "Постави овај програм за подразумевани прегледач слика"
+
+#: ../data/pref-dlg.ui.h:10
+msgid "Normal:"
+msgstr "Нормално:"
+
+#: ../data/pref-dlg.ui.h:11
+msgid "Fullscreen:"
+msgstr "Цео екран:"
+
+#: ../data/pref-dlg.ui.h:12
+msgid "<b>Background colors</b>"
+msgstr "<b>Позадинске боје</b>"

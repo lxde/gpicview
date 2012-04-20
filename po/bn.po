@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-22 15:58+0200\n"
+"POT-Creation-Date: 2012-04-20 22:25+0200\n"
 "PO-Revision-Date: 2010-01-31 15:44+0600\n"
 "Last-Translator: Sadia Afroz <sadia@ankur.org.bd>\n"
 "Language-Team: Bengali <ankur-bd-l10n@googlegroups.com>\n"
@@ -101,7 +101,7 @@ msgstr "ফাইল নতুনভাবে সংরক্ষণ"
 msgid "Delete File"
 msgstr "ফাইল মুছে ফেলা হবে"
 
-#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:8
+#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:1
 msgid "Preferences"
 msgstr "পছন্দসমূহ"
 
@@ -217,35 +217,19 @@ msgstr ""
 msgid "View your images easily"
 msgstr "সহজেই আপনার ছবিগুলো দেখুন"
 
-#: ../data/pref-dlg.ui.h:1
-msgid "<b>Background colors</b>"
-msgstr "<b>পটভূমির রং</b>"
-
 #: ../data/pref-dlg.ui.h:2
-msgid "Ask before deleting images"
-msgstr "ছবি মুছে ফেলার আগে জিজ্ঞেস করা হবে"
-
-#: ../data/pref-dlg.ui.h:3
 msgid "Ask before saving images"
 msgstr "ছবি সংরক্ষণ করার আগে জিজ্ঞেস করা হবে"
+
+#: ../data/pref-dlg.ui.h:3
+msgid "Ask before deleting images"
+msgstr "ছবি মুছে ফেলার আগে জিজ্ঞেস করা হবে"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
 msgstr "স্বয়ংক্রিয়ভাবে আবর্তিত ছবি সংরক্ষণ"
 
 #: ../data/pref-dlg.ui.h:5
-msgid "Fullscreen:"
-msgstr "পর্দা জুড়ে প্রদর্শন:"
-
-#: ../data/pref-dlg.ui.h:6
-msgid "Make GPicView the default viewer for images"
-msgstr "GPicView-কে পূর্বনির্ধারিত ছবি প্রদর্শক হিসেবে নির্ধারণ করুন"
-
-#: ../data/pref-dlg.ui.h:7
-msgid "Normal:"
-msgstr "সাধারণ:"
-
-#: ../data/pref-dlg.ui.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
@@ -253,12 +237,28 @@ msgstr ""
 "EXIF স্থিতিবিন্যাসের মান পরিবর্তন করে  JPEG ফাইল আবর্তন\n"
 "(শুধুমাত্র যদি EXIF স্থিতিবিন্যাস ট্যাগ বিদ্যমান থাকে)"
 
-#: ../data/pref-dlg.ui.h:11
+#: ../data/pref-dlg.ui.h:7
 #, fuzzy
 msgid "Slideshow interval"
 msgstr "স্লাইড প্রদর্শনের বিরতি\t"
 
-#: ../data/pref-dlg.ui.h:12
+#: ../data/pref-dlg.ui.h:8
 #, fuzzy
 msgid "sec"
 msgstr "সেকেন্ড\t"
+
+#: ../data/pref-dlg.ui.h:9
+msgid "Make GPicView the default viewer for images"
+msgstr "GPicView-কে পূর্বনির্ধারিত ছবি প্রদর্শক হিসেবে নির্ধারণ করুন"
+
+#: ../data/pref-dlg.ui.h:10
+msgid "Normal:"
+msgstr "সাধারণ:"
+
+#: ../data/pref-dlg.ui.h:11
+msgid "Fullscreen:"
+msgstr "পর্দা জুড়ে প্রদর্শন:"
+
+#: ../data/pref-dlg.ui.h:12
+msgid "<b>Background colors</b>"
+msgstr "<b>পটভূমির রং</b>"

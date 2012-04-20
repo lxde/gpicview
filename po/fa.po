@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-22 15:58+0200\n"
+"POT-Creation-Date: 2012-04-20 22:25+0200\n"
 "PO-Revision-Date: 2010-07-06 06:54+0200\n"
 "Last-Translator: Hamidreza <n3gb0y@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -107,7 +107,7 @@ msgstr "ذخیره با عنوان"
 msgid "Delete File"
 msgstr "حذف پرونده"
 
-#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:8
+#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:1
 msgid "Preferences"
 msgstr "تنظیمات"
 
@@ -225,38 +225,20 @@ msgstr ""
 msgid "View your images easily"
 msgstr "نگاهی سریع و آسان"
 
-# should i write down these tags ?
-# </b>
-#: ../data/pref-dlg.ui.h:1
-msgid "<b>Background colors</b>"
-msgstr "<b>رنگ پس زمینه</b>"
-
 #: ../data/pref-dlg.ui.h:2
-msgid "Ask before deleting images"
-msgstr "پیش از پاک کردن تصاویر ، بپرس"
-
-#: ../data/pref-dlg.ui.h:3
 msgid "Ask before saving images"
 msgstr "پیش از ذخیره ی تصاویر بپرس"
+
+#: ../data/pref-dlg.ui.h:3
+msgid "Ask before deleting images"
+msgstr "پیش از پاک کردن تصاویر ، بپرس"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
 msgstr "چرخش دورانی خودکار عکس ها"
 
-#: ../data/pref-dlg.ui.h:5
-msgid "Fullscreen:"
-msgstr "تمام صفحه:"
-
-#: ../data/pref-dlg.ui.h:6
-msgid "Make GPicView the default viewer for images"
-msgstr "نرم افزار GPicView را نمایشگر عکس پیشفرض کن"
-
-#: ../data/pref-dlg.ui.h:7
-msgid "Normal:"
-msgstr "معمولی:"
-
 # I don't know what the EXIF is .
-#: ../data/pref-dlg.ui.h:9
+#: ../data/pref-dlg.ui.h:5
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
@@ -264,10 +246,28 @@ msgstr ""
 "چرخش JPEG با تغییر جهت یابی مقدار EXIF \n"
 "(فقط در صورت وجود برچسب گرایش EXIF )"
 
-#: ../data/pref-dlg.ui.h:11
+#: ../data/pref-dlg.ui.h:7
 msgid "Slideshow interval"
 msgstr "نمایش پرده ای زمان دار"
 
-#: ../data/pref-dlg.ui.h:12
+#: ../data/pref-dlg.ui.h:8
 msgid "sec"
 msgstr "ثانیه"
+
+#: ../data/pref-dlg.ui.h:9
+msgid "Make GPicView the default viewer for images"
+msgstr "نرم افزار GPicView را نمایشگر عکس پیشفرض کن"
+
+#: ../data/pref-dlg.ui.h:10
+msgid "Normal:"
+msgstr "معمولی:"
+
+#: ../data/pref-dlg.ui.h:11
+msgid "Fullscreen:"
+msgstr "تمام صفحه:"
+
+# should i write down these tags ?
+# </b>
+#: ../data/pref-dlg.ui.h:12
+msgid "<b>Background colors</b>"
+msgstr "<b>رنگ پس زمینه</b>"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-22 15:58+0200\n"
+"POT-Creation-Date: 2012-04-20 22:25+0200\n"
 "PO-Revision-Date: 2011-07-12 19:09+0200\n"
 "Last-Translator: PraveenIlla <mail2ipn@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -103,7 +103,7 @@ msgstr "ఫైలును ఇలా దాచు"
 msgid "Delete File"
 msgstr "ఫైల్ తీసివేయి"
 
-#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:8
+#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:1
 msgid "Preferences"
 msgstr "ప్రాధాన్యతలు"
 
@@ -217,35 +217,19 @@ msgstr ""
 msgid "View your images easily"
 msgstr "మీ బొమ్మలను సులువుగా చూడండి"
 
-#: ../data/pref-dlg.ui.h:1
-msgid "<b>Background colors</b>"
-msgstr "<b>నేపథ్య రంగులు</b>"
-
 #: ../data/pref-dlg.ui.h:2
-msgid "Ask before deleting images"
-msgstr "బొమ్మలను తీసివేసేముందు అడుగు"
-
-#: ../data/pref-dlg.ui.h:3
 msgid "Ask before saving images"
 msgstr "బొమ్మలను భద్రపరిచేముందు అడుగు"
+
+#: ../data/pref-dlg.ui.h:3
+msgid "Ask before deleting images"
+msgstr "బొమ్మలను తీసివేసేముందు అడుగు"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
 msgstr "తిప్పబడిన బొమ్మలను స్వయంచాలకంగా భద్రపరుచు"
 
 #: ../data/pref-dlg.ui.h:5
-msgid "Fullscreen:"
-msgstr "పూర్తితెర:"
-
-#: ../data/pref-dlg.ui.h:6
-msgid "Make GPicView the default viewer for images"
-msgstr "బొమ్మలను చూచుటకు జిపిక్‌వ్యూని అప్రమేయ బొమ్మ వీక్షకంగా చేయి"
-
-#: ../data/pref-dlg.ui.h:7
-msgid "Normal:"
-msgstr "సాధారణ:"
-
-#: ../data/pref-dlg.ui.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
@@ -253,10 +237,26 @@ msgstr ""
 "EXIF ఆధారిత విలువను బట్టి JPEG ఫైలును తిప్పు\n"
 "(ఒకవేళ EXIF ఆధార ట్యాగు ఉన్నపుడు మాత్రమే)"
 
-#: ../data/pref-dlg.ui.h:11
+#: ../data/pref-dlg.ui.h:7
 msgid "Slideshow interval"
 msgstr "పలకప్రదర్శన విరామం"
 
-#: ../data/pref-dlg.ui.h:12
+#: ../data/pref-dlg.ui.h:8
 msgid "sec"
 msgstr "సెకను"
+
+#: ../data/pref-dlg.ui.h:9
+msgid "Make GPicView the default viewer for images"
+msgstr "బొమ్మలను చూచుటకు జిపిక్‌వ్యూని అప్రమేయ బొమ్మ వీక్షకంగా చేయి"
+
+#: ../data/pref-dlg.ui.h:10
+msgid "Normal:"
+msgstr "సాధారణ:"
+
+#: ../data/pref-dlg.ui.h:11
+msgid "Fullscreen:"
+msgstr "పూర్తితెర:"
+
+#: ../data/pref-dlg.ui.h:12
+msgid "<b>Background colors</b>"
+msgstr "<b>నేపథ్య రంగులు</b>"

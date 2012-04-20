@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GPicView 0.2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-22 15:58+0200\n"
+"POT-Creation-Date: 2012-04-20 22:25+0200\n"
 "PO-Revision-Date: 2010-04-14 22:56+0700\n"
 "Last-Translator: Tran Duy Hung <nguyentieuhau@gmail.com>\n"
 "Language-Team: \n"
@@ -101,7 +101,7 @@ msgstr "Lưu Bản sao"
 msgid "Delete File"
 msgstr "Xóa Tập tin"
 
-#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:8
+#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:1
 msgid "Preferences"
 msgstr "Tùy chỉnh"
 
@@ -216,35 +216,19 @@ msgstr ""
 msgid "View your images easily"
 msgstr "Xem hình ảnh của bạn một cách dễ dàng"
 
-#: ../data/pref-dlg.ui.h:1
-msgid "<b>Background colors</b>"
-msgstr "<b>Màu nền</b>"
-
 #: ../data/pref-dlg.ui.h:2
-msgid "Ask before deleting images"
-msgstr "Hỏi trước khi xóa ảnh"
-
-#: ../data/pref-dlg.ui.h:3
 msgid "Ask before saving images"
 msgstr "Hỏi trước khi lưu ảnh"
+
+#: ../data/pref-dlg.ui.h:3
+msgid "Ask before deleting images"
+msgstr "Hỏi trước khi xóa ảnh"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
 msgstr "Tự động lưu ảnh đã được xoay"
 
 #: ../data/pref-dlg.ui.h:5
-msgid "Fullscreen:"
-msgstr "Toàn màn hình:"
-
-#: ../data/pref-dlg.ui.h:6
-msgid "Make GPicView the default viewer for images"
-msgstr "Sử dụng GPicView là chương trình xem ảnh mặc định"
-
-#: ../data/pref-dlg.ui.h:7
-msgid "Normal:"
-msgstr "Bình thường:"
-
-#: ../data/pref-dlg.ui.h:9
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
@@ -252,10 +236,26 @@ msgstr ""
 "Xoay tập tin JPEG bằng cách thay đổi giá trị định hướng EXIF\n"
 "(chỉ khi thẻ định hướng EXIF tồn tại)"
 
-#: ../data/pref-dlg.ui.h:11
+#: ../data/pref-dlg.ui.h:7
 msgid "Slideshow interval"
 msgstr "Khoảng cách trình diễn"
 
-#: ../data/pref-dlg.ui.h:12
+#: ../data/pref-dlg.ui.h:8
 msgid "sec"
 msgstr "giây"
+
+#: ../data/pref-dlg.ui.h:9
+msgid "Make GPicView the default viewer for images"
+msgstr "Sử dụng GPicView là chương trình xem ảnh mặc định"
+
+#: ../data/pref-dlg.ui.h:10
+msgid "Normal:"
+msgstr "Bình thường:"
+
+#: ../data/pref-dlg.ui.h:11
+msgid "Fullscreen:"
+msgstr "Toàn màn hình:"
+
+#: ../data/pref-dlg.ui.h:12
+msgid "<b>Background colors</b>"
+msgstr "<b>Màu nền</b>"
