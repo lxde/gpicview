@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: gpicview\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-20 22:25+0200\n"
-"PO-Revision-Date: 2012-05-18 10:16-0000\n"
-"Last-Translator: Sérgio Marques <smarquespt@gmail.com>\n"
+"PO-Revision-Date: 2012-05-19 16:24+0200\n"
+"Last-Translator: Sérgio <smarquespt@gmail.com>\n"
 "Language-Team: Portuguese\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
@@ -56,12 +56,12 @@ msgstr "Iniciar apresentação"
 #: ../src/main-win.c:241
 #: ../src/main-win.c:1403
 msgid "Zoom Out"
-msgstr "Ampliar"
+msgstr "Reduzir"
 
 #: ../src/main-win.c:242
 #: ../src/main-win.c:1404
 msgid "Zoom In"
-msgstr "Reduzir"
+msgstr "Aumentar"
 
 #. percent = gtk_entry_new();    // show scale (in percentage)
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
@@ -283,4 +283,3 @@ msgstr "Ecrã completo:"
 #: ../data/pref-dlg.ui.h:12
 msgid "<b>Background colors</b>"
 msgstr "<b>Cores de fundo</b>"
-
