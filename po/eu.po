@@ -3,13 +3,15 @@ msgstr ""
 "Project-Id-Version: GPicView 0.1.10\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-20 22:25+0200\n"
-"PO-Revision-Date: \n"
-"Last-Translator: Alain Mendizabal <alainmendi@gmail.com>\n"
-"Language-Team:  <alainmendi@gmail.com>\n"
-"Language: \n"
+"PO-Revision-Date: 2012-07-09 00:24+0200\n"
+"Last-Translator: Asier_Iturralde_Sarasola <asier.iturralde@gmail.com>\n"
+"Language-Team: <alainmendi@gmail.com>\n"
+"Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
 "X-Poedit-Language: Basque\n"
 
 #: ../src/gpicview.c:38
@@ -18,11 +20,11 @@ msgstr "[FITXATEGIA]"
 
 #: ../src/gpicview.c:40
 msgid "Print version information and exit"
-msgstr ""
+msgstr "Inprimatu bertsio-informazioa eta irten"
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
-msgstr ""
+msgstr "Hasi diapositiba-aurkezpena"
 
 #: ../src/main-win.c:155 ../src/main-win.c:1387 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
@@ -38,15 +40,15 @@ msgstr "Hurrengoa"
 
 #: ../src/main-win.c:237 ../src/main-win.c:739
 msgid "Start Slideshow"
-msgstr ""
+msgstr "Hasi diapositiba-aurkezpena"
 
 #: ../src/main-win.c:241 ../src/main-win.c:1403
 msgid "Zoom Out"
-msgstr "Urrundu"
+msgstr "Txikiagotu"
 
 #: ../src/main-win.c:242 ../src/main-win.c:1404
 msgid "Zoom In"
-msgstr "Hurbildu"
+msgstr "Handiagotu"
 
 #. percent = gtk_entry_new();    // show scale (in percentage)
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
@@ -54,7 +56,7 @@ msgstr "Hurbildu"
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
 #: ../src/main-win.c:249 ../src/main-win.c:1405
 msgid "Fit Image To Window Size"
-msgstr "Irudia leihoaren tamainara egokitu"
+msgstr "Doitu irudia leihoaren tamainara"
 
 #: ../src/main-win.c:251 ../src/main-win.c:1406
 msgid "Original Size"
@@ -74,11 +76,11 @@ msgstr "Biratu eskuinera"
 
 #: ../src/main-win.c:265 ../src/main-win.c:1412
 msgid "Flip Horizontal"
-msgstr ""
+msgstr "Irauli horizontalki"
 
 #: ../src/main-win.c:266 ../src/main-win.c:1413
 msgid "Flip Vertical"
-msgstr ""
+msgstr "Irauli bertikalki"
 
 #: ../src/main-win.c:270 ../src/main-win.c:1415
 msgid "Open File"
@@ -103,26 +105,25 @@ msgstr "Hobespenak"
 
 #: ../src/main-win.c:277 ../src/main-win.c:1424
 msgid "Quit"
-msgstr ""
+msgstr "Irten"
 
 #: ../src/main-win.c:747
 msgid "Stop Slideshow"
-msgstr ""
+msgstr "Gelditu diapositiba-aurkezpena"
 
 #: ../src/main-win.c:1277
-#, fuzzy
 msgid ""
 "The file name you selected already exists.\n"
 "Do you want to overwrite existing file?\n"
 "(Warning: The quality of original image might be lost)"
 msgstr ""
-"Aukeratu duzun fitxategi-izena lehendik existitzen da.\n"
-"Fitxategia gainidatzi nahi al duzu?\n"
+"Hautatu duzun fitxategi-izena dagoeneko existitzen da.\n"
+"Fitxategia gainidatzi nahi duzu?\n"
 "(Kontuz: jatorrizko irudiaren kalitatea galdu daiteke)"
 
 #: ../src/main-win.c:1318
 msgid "Writing this image format is not supported."
-msgstr ""
+msgstr "Ez da onartzen irudi formatu hau gainidaztea."
 
 #: ../src/main-win.c:1356
 msgid ""
@@ -130,13 +131,13 @@ msgid ""
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
-"Uneko fitxategia ezabatu nahi duzu?\n"
+"Ziur zaude uneko fitxategia ezabatu nahi duzula?\n"
 "\n"
 "Kontuz: ezabatu ondoren fitxategia ezin da berreskuratu."
 
 #: ../src/main-win.c:1401
 msgid "Start/Stop Slideshow"
-msgstr ""
+msgstr "Hasi/Gelditu diapositiba-aurkezpena"
 
 #: ../src/main-win.c:1417
 msgid "Save As"
@@ -144,12 +145,14 @@ msgstr "Gorde honela"
 
 #: ../src/main-win.c:1487
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr " * EOG irudi ikustailearen eta GThumb-en iturburu kodea aipatu"
+msgstr " * Begiratu EOG irudi ikustailearen eta GThumb-en iturburu kodea"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1491
 msgid "translator-credits"
-msgstr "Alain Mendizabal <alainmendi@gmail.com>"
+msgstr ""
+"Alain Mendizabal <alainmendi@gmail.com>\n"
+"Asier Iturralde Sarasola <asier.iturralde@gmail.com>"
 
 #: ../src/main-win.c:1497
 msgid "GPicView"
@@ -157,7 +160,7 @@ msgstr "GPicView"
 
 #: ../src/main-win.c:1499
 msgid "Copyright (C) 2007 - 2011"
-msgstr "Copyright (C) 2007 - 2011"
+msgstr "Copyright-a (C) 2007 - 2011"
 
 #: ../src/main-win.c:1500
 msgid "Lightweight image viewer from LXDE project"
@@ -172,13 +175,13 @@ msgid ""
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
 "GPicView zure sistemako irudi guztien ikustaile lehenetsia izango da\n"
-"('xdg-mine' programaren bidez egingo da)\n"
+"(hau 'xdg-mine' programaren bidez egingo da)\n"
 "\n"
-"<b>Ziur al zaude hau egin nahi duzula?</b>"
+"<b>Ziur zaude hau egin nahi duzula?</b>"
 
 #: ../src/file-dlgs.c:62
 msgid "All Supported Images"
-msgstr "Irudi guztiak"
+msgstr "Onartutako irudi guztiak"
 
 #: ../src/file-dlgs.c:67
 msgid "All Files"
@@ -186,72 +189,72 @@ msgstr "Fitxategi guztiak"
 
 #: ../src/file-dlgs.c:103
 msgid "JPEG Quality:"
-msgstr ""
+msgstr "JPEG kalitatea:"
 
 #: ../src/file-dlgs.c:104
 msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
 msgstr ""
+"Kalitate baxuagoko irudiek fitxategi-tamaina txikiagoa dute,\n"
+"baina irudien kalitatea baxuagoa da."
 
 #: ../src/file-dlgs.c:121
 msgid "PNG Compression Level:"
-msgstr ""
+msgstr "PNG konpresio maila:"
 
 #: ../src/file-dlgs.c:122
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
 msgstr ""
+"Konpresio maila altuagoko irudiek fitxategi-tamaina txikiagoa dute,\n"
+"baina konprimaketak denbora gehiago behar du."
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
-msgstr ""
+msgstr "Ikusi zure irudiak modu errazean"
 
 #: ../data/pref-dlg.ui.h:2
-#, fuzzy
 msgid "Ask before saving images"
 msgstr "Galdetu irudiak gorde aurretik"
 
 #: ../data/pref-dlg.ui.h:3
-#, fuzzy
 msgid "Ask before deleting images"
-msgstr "Galdetu irudiak gorde aurretik"
+msgstr "Galdetu irudiak ezabatu aurretik"
 
 #: ../data/pref-dlg.ui.h:4
-#, fuzzy
 msgid "Automatically save rotated images"
-msgstr ""
-"Biratutako irudiak automatikoki gorde (Oraingoz JPEG-rekin bakarrik dabil)"
+msgstr "Gorde automatikoki biratutako irudiak"
 
 #: ../data/pref-dlg.ui.h:5
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
+"Biratu JPEG fitxategia EXIF orientazioaren balioa aldatuz\n"
+"(soilik EXIF orientazio-etiketa existitzen bada)"
 
 #: ../data/pref-dlg.ui.h:7
 msgid "Slideshow interval"
-msgstr ""
+msgstr "Diapositiba-aurkezpenaren bitartea"
 
 #: ../data/pref-dlg.ui.h:8
 msgid "sec"
-msgstr ""
+msgstr "seg"
 
 #: ../data/pref-dlg.ui.h:9
-#, fuzzy
 msgid "Make GPicView the default viewer for images"
-msgstr "GPicview irudi ikustaile lehenetsi bezala ipini"
+msgstr "Bihurtu GPicview irudi ikustaile lehenetsia"
 
 #: ../data/pref-dlg.ui.h:10
 msgid "Normal:"
-msgstr ""
+msgstr "Normala:"
 
 #: ../data/pref-dlg.ui.h:11
-#, fuzzy
 msgid "Fullscreen:"
-msgstr "Pantaila osoa"
+msgstr "Pantaila osoa:"
 
 #: ../data/pref-dlg.ui.h:12
 msgid "<b>Background colors</b>"
-msgstr ""
+msgstr "<b>Atzeko planoko koloreak</b>"
