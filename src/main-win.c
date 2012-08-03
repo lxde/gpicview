@@ -90,6 +90,7 @@ static void on_open( GtkWidget* btn, MainWin* mw );
 static void on_zoom_in( GtkWidget* btn, MainWin* mw );
 static void on_zoom_out( GtkWidget* btn, MainWin* mw );
 static void on_preference( GtkWidget* btn, MainWin* mw );
+static void on_toggle_toolbar( GtkMenuItem* item, MainWin* mw );
 static void on_quit( GtkWidget* btn, MainWin* mw );
 static gboolean on_button_press( GtkWidget* widget, GdkEventButton* evt, MainWin* mw );
 static gboolean on_button_release( GtkWidget* widget, GdkEventButton* evt, MainWin* mw );
@@ -235,6 +236,12 @@ void main_win_init( MainWin*mw )
     create_nav_bar( mw, box );
     gtk_widget_show_all( box );
 
+    if (pref.show_toolbar)
+        gtk_widget_show(gtk_widget_get_parent(mw->nav_bar));
+    else
+        gtk_widget_hide(gtk_widget_get_parent(mw->nav_bar));
+
+
     mw->hand_cursor = gdk_cursor_new_for_display( gtk_widget_get_display((GtkWidget*)mw), GDK_FLEUR );
 
 //    zoom_mode = ZOOM_NONE;
@@ -358,6 +365,16 @@ static void update_btns(MainWin* mw)
 
 gboolean main_win_open( MainWin* mw, const char* file_path, ZoomMode zoom )
 {
+    if (g_file_test(file_path, G_FILE_TEST_IS_DIR))
+    {
+        image_list_open_dir( mw->img_list, file_path, NULL );
+        image_list_sort_by_name( mw->img_list, GTK_SORT_DESCENDING );
+        if (image_list_get_first(mw->img_list))
+            main_win_open(mw, image_list_get_current_file_path(mw->img_list), zoom);
+        return;
+    }
+
+
     GError* err = NULL;
     GdkPixbufFormat* info;
     info = gdk_pixbuf_get_file_info( file_path, NULL, NULL );
@@ -540,7 +557,8 @@ gboolean on_win_state_event( GtkWidget* widget, GdkEventWindowState* state )
     else
     {
         gtk_widget_modify_bg( mw->evt_box, GTK_STATE_NORMAL, &pref.bg );
-        gtk_widget_show( gtk_widget_get_parent(mw->nav_bar) );
+        if (pref.show_toolbar)
+            gtk_widget_show( gtk_widget_get_parent(mw->nav_bar) );
         mw->full_screen = FALSE;
     }
 
@@ -1170,6 +1188,10 @@ gboolean on_key_press_event(GtkWidget* widget, GdkEventKey * key)
         case GDK_P:
             on_preference( NULL, mw );
 	    break;
+        case GDK_t:
+        case GDK_T:
+            on_toggle_toolbar( NULL, mw );
+	    break;
         case GDK_Escape:
             if( mw->full_screen )
                 on_full_screen( NULL, mw );
@@ -1396,6 +1418,19 @@ void on_delete( GtkWidget* btn, MainWin* mw )
     }
 }
 
+void on_toggle_toolbar( GtkMenuItem* item, MainWin* mw )
+{
+    pref.show_toolbar = !pref.show_toolbar;
+
+    if (pref.show_toolbar)
+        gtk_widget_show(gtk_widget_get_parent(mw->nav_bar));
+    else
+        gtk_widget_hide(gtk_widget_get_parent(mw->nav_bar));
+
+    save_preferences();
+}
+
+
 void show_popup_menu( MainWin* mw, GdkEventButton* evt )
 {
     static PtkMenuItemEntry menu_def[] =
@@ -1423,6 +1458,7 @@ void show_popup_menu( MainWin* mw, GdkEventButton* evt )
         PTK_IMG_MENU_ITEM( N_("Delete File"), GTK_STOCK_DELETE, G_CALLBACK(on_delete), GDK_Delete, 0 ),
         PTK_SEPARATOR_MENU_ITEM,
         PTK_IMG_MENU_ITEM( N_("Preferences"), GTK_STOCK_PREFERENCES, G_CALLBACK(on_preference), GDK_P, 0 ),
+        PTK_IMG_MENU_ITEM( N_("Show/Hide toolbar"), NULL, G_CALLBACK(on_toggle_toolbar), GDK_T, 0 ),
         PTK_STOCK_MENU_ITEM( GTK_STOCK_ABOUT, on_about ),
         PTK_SEPARATOR_MENU_ITEM,
         PTK_IMG_MENU_ITEM( N_("Quit"), GTK_STOCK_QUIT, G_CALLBACK(on_quit), GDK_Q, 0 ),

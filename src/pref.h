@@ -39,6 +39,8 @@ typedef struct _Pref
 
     int jpg_quality;
     int png_compression;
+
+    gboolean show_toolbar;
 }Pref;
 
 extern Pref pref; /* global variable holding user prerefences */

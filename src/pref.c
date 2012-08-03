@@ -83,6 +83,8 @@ void load_preferences()
     pref.jpg_quality = 90;
     pref.png_compression = 9;
 
+    pref.show_toolbar = TRUE;
+
     kf = g_key_file_new();
     path = g_build_filename( g_get_user_config_dir(),  CFG_FILE, NULL );
     if( g_key_file_load_from_file( kf, path, 0, NULL ) )
@@ -96,6 +98,8 @@ void load_preferences()
 
         kf_get_int( kf, "General", "jpg_quality", &pref.jpg_quality);
         kf_get_int( kf, "General", "png_compression", &pref.png_compression );
+
+        kf_get_bool( kf, "General", "show_toolbar", &pref.show_toolbar );
 
         color = g_key_file_get_string(kf, "General", "bg", NULL);
         if( color )
@@ -144,6 +148,9 @@ void save_preferences()
 
         fprintf( f, "jpg_quality=%d\n", pref.jpg_quality );
         fprintf( f, "png_compression=%d\n", pref.png_compression );
+
+        fprintf( f, "show_toolbar=%d\n", pref.show_toolbar );
+
         fclose( f );
     }
     g_free( path );
