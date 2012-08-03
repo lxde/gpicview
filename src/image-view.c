@@ -186,6 +186,9 @@ void on_size_allocate( GtkWidget* widget, GtkAllocation   *allocation )
 {
     GTK_WIDGET_CLASS(image_view_parent_class)->size_allocate( widget, allocation );
     ImageView* iv = (ImageView*)widget;
+
+    iv->allocation = *allocation;
+
 /*
     if( !iv->buffer || allocation->width != widget->allocation.width ||
         allocation->height != widget->allocation.height )
@@ -465,14 +468,8 @@ gboolean on_idle( ImageView* iv )
     }
     else
     {
-#if GTK_CHECK_VERSION(3, 0, 0)
-        // FIXME!
-        rect.x = 0;
-        rect.width = 0;
-#else
-        rect.x = ((GtkWidget*)iv)->allocation.x;
-        rect.width = ((GtkWidget*)iv)->allocation.width;
-#endif
+        rect.x = iv->allocation.x;
+        rect.width = iv->allocation.width;
     }
 
     if( G_LIKELY(iv->vadj) )
@@ -486,14 +483,8 @@ gboolean on_idle( ImageView* iv )
     }
     else
     {
-#if GTK_CHECK_VERSION(3, 0, 0)
-        // FIXME!
-        rect.y = 0;
-        rect.height = 0;
-#else
-        rect.y = ((GtkWidget*)iv)->allocation.y;
-        rect.height = ((GtkWidget*)iv)->allocation.height;
-#endif
+        rect.y = iv->allocation.y;
+        rect.height = iv->allocation.height;
     }
 
     paint( iv, &rect, iv->interp_type );
@@ -506,12 +497,9 @@ gboolean on_idle( ImageView* iv )
 
 void calc_image_area( ImageView* iv )
 {
-#if GTK_CHECK_VERSION(3, 0, 0)
-// FIXME!
-#else
     if( G_LIKELY( iv->pix ) )
     {
-        GtkAllocation allocation = ((GtkWidget*)iv)->allocation;
+        GtkAllocation allocation = iv->allocation;
         iv->img_area.width = (int)floor( ((gdouble)gdk_pixbuf_get_width( iv->pix )) * iv->scale + 0.5 );
         iv->img_area.height = (int)floor( ((gdouble)gdk_pixbuf_get_height( iv->pix )) * iv->scale + 0.5 );
         // g_debug( "width=%d, height=%d", width, height );
@@ -526,7 +514,6 @@ void calc_image_area( ImageView* iv )
         iv->img_area.y = y_offset;
     }
     else
-#endif
     {
         iv->img_area.x = iv->img_area.y = iv->img_area.width = iv->img_area.height = 0;
     }

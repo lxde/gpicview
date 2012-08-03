@@ -53,6 +53,7 @@ typedef struct _ImageView
     GdkInterpType interp_type;
     guint idle_handler;
     GdkRectangle img_area;
+    GtkAllocation allocation;
 }ImageView;
 
 GtkWidget* image_view_new();
