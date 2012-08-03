@@ -439,8 +439,6 @@ gboolean main_win_open( MainWin* mw, const char* file_path, ZoomMode zoom )
     }
     else  if( mw->zoom_mode == ZOOM_SCALE )  // scale
     {
-        gtk_toggle_button_set_active( (GtkToggleButton*)mw->btn_orig, FALSE );
-        gtk_toggle_button_set_active( (GtkToggleButton*)mw->btn_fit, FALSE );
         main_win_scale_image( mw, mw->scale, GDK_INTERP_BILINEAR );
     }
     else  if( mw->zoom_mode == ZOOM_ORIG )  // original size
@@ -679,7 +677,7 @@ void on_prev( GtkWidget* btn, MainWin* mw )
     if( name )
     {
         char* file_path = image_list_get_current_file_path( mw->img_list );
-        main_win_open( mw, file_path, ZOOM_FIT );
+        main_win_open( mw, file_path, mw->zoom_mode );
         g_free( file_path );
     }
 }
@@ -700,7 +698,7 @@ void on_next( GtkWidget* btn, MainWin* mw )
     if( name )
     {
         char* file_path = image_list_get_current_file_path( mw->img_list );
-        main_win_open( mw, file_path, ZOOM_FIT );
+        main_win_open( mw, file_path, mw->zoom_mode );
         g_free( file_path );
     }
 }
