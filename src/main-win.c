@@ -69,6 +69,7 @@ static void show_popup_menu( MainWin* mw, GdkEventButton* evt );
 static gboolean on_delete_event( GtkWidget* widget, GdkEventAny* evt );
 static void on_size_allocate( GtkWidget* widget, GtkAllocation    *allocation );
 static gboolean on_win_state_event( GtkWidget* widget, GdkEventWindowState* state );
+static void on_scroll_size_allocate(GtkWidget* widget, GtkAllocation* allocation, MainWin* mv);
 static void on_zoom_fit( GtkToggleButton* btn, MainWin* mw );
 static void on_zoom_fit_menu( GtkMenuItem* item, MainWin* mw );
 static void on_full_screen( GtkWidget* btn, MainWin* mw );
@@ -198,6 +199,7 @@ void main_win_init( MainWin*mw )
     gtk_rc_parse_string( scroll_style );
 #endif
     mw->scroll = gtk_scrolled_window_new( NULL, NULL );
+    g_signal_connect(G_OBJECT(mw->scroll), "size-allocate", G_CALLBACK(on_scroll_size_allocate), (gpointer) mw);
     gtk_scrolled_window_set_shadow_type( (GtkScrolledWindow*)mw->scroll, GTK_SHADOW_NONE );
     gtk_scrolled_window_set_policy((GtkScrolledWindow*)mw->scroll,
                                     GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
@@ -578,11 +580,7 @@ void main_win_fit_window_size(  MainWin* mw, gboolean can_strech, GdkInterpType 
 
     if( mw->pix == NULL )
         return;
-#if GTK_CHECK_VERSION(3, 0, 0)
-// FIXME!
-#else
-    main_win_fit_size( mw, mw->scroll->allocation.width, mw->scroll->allocation.height, can_strech, type );
-#endif
+    main_win_fit_size( mw, mw->scroll_allocation.width, mw->scroll_allocation.height, can_strech, type );
 }
 
 GtkWidget* add_nav_btn( MainWin* mw, const char* icon, const char* tip, GCallback cb, gboolean toggle)
@@ -616,6 +614,11 @@ GtkWidget* add_nav_btn_img( MainWin* mw, const char* icon, const char* tip, GCal
     gtk_box_pack_start( (GtkBox*)mw->nav_bar, btn, FALSE, FALSE, 0 );
     *ret_img = img;
     return btn;
+}
+
+void on_scroll_size_allocate(GtkWidget* widget, GtkAllocation* allocation, MainWin* mv)
+{
+    mv->scroll_allocation = *allocation;
 }
 
 void on_zoom_fit_menu( GtkMenuItem* item, MainWin* mw )

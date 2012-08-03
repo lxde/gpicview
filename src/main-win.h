@@ -59,7 +59,6 @@ typedef struct _MainWin
     GdkPixbufAnimationIter* animation_iter;
     guint animation_timeout;
 
-    GtkWidget* zoom_btn;
     GtkWidget* img_view;
     GtkWidget* scroll;
     GtkWidget* evt_box;
@@ -74,6 +73,9 @@ typedef struct _MainWin
     GtkWidget* img_play_stop;
     GtkWidget* percent;
     GdkCursor* hand_cursor;
+
+    GtkAllocation scroll_allocation;
+
     ZoomMode zoom_mode;
     gboolean full_screen;
     gboolean slideshow_running;
