@@ -99,6 +99,10 @@ int main(int argc, char *argv[])
         if (should_start_slideshow)
             main_win_start_slideshow ( win );
     }
+    else
+    {
+        main_win_open( win, ".", ZOOM_NONE );
+    }
 
     gtk_main();
 
