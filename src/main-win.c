@@ -27,6 +27,7 @@
 #include <glib/gi18n.h>
 #include <glib/gstdio.h>
 #include <gdk/gdkkeysyms.h>
+#include <gdk/gdkkeysyms-compat.h>
 
 #include <unistd.h>
 #include <string.h>
@@ -137,8 +138,11 @@ void main_win_finalize( GObject* obj )
 
     if( G_LIKELY(mw->img_list) )
         image_list_free( mw->img_list );
+#if GTK_CHECK_VERSION(3, 0, 0)
+    g_object_unref( mw->hand_cursor );
+#else
     gdk_cursor_unref( mw->hand_cursor );
-
+#endif
     // FIXME: Put this here is weird
     gtk_main_quit();
 }
@@ -156,7 +160,11 @@ void main_win_init( MainWin*mw )
     gtk_window_set_icon_from_file( (GtkWindow*)mw, PACKAGE_DATA_DIR"/pixmaps/gpicview.png", NULL );
     gtk_window_set_default_size( (GtkWindow*)mw, 640, 480 );
 
+#if GTK_CHECK_VERSION(3, 0, 0)
+    GtkWidget* box = gtk_box_new( GTK_ORIENTATION_VERTICAL, 0 );
+#else
     GtkWidget* box = gtk_vbox_new( FALSE, 0 );
+#endif
     gtk_container_add( (GtkContainer*)mw, box);
 
     // image area
@@ -180,22 +188,33 @@ void main_win_init( MainWin*mw )
     mw->img_view = image_view_new();
     gtk_container_add( (GtkContainer*)mw->evt_box, (GtkWidget*)mw->img_view);
 
+#if GTK_CHECK_VERSION(3, 0, 0)
+#else
     const char scroll_style[]=
             "style \"gpicview-scroll\" {"
             "GtkScrolledWindow::scrollbar-spacing=0"
             "}"
             "class \"GtkScrolledWindow\" style \"gpicview-scroll\"";
     gtk_rc_parse_string( scroll_style );
+#endif
     mw->scroll = gtk_scrolled_window_new( NULL, NULL );
     gtk_scrolled_window_set_shadow_type( (GtkScrolledWindow*)mw->scroll, GTK_SHADOW_NONE );
     gtk_scrolled_window_set_policy((GtkScrolledWindow*)mw->scroll,
                                     GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
     GtkAdjustment *hadj, *vadj;
     hadj = gtk_scrolled_window_get_hadjustment((GtkScrolledWindow*)mw->scroll);
+#if GTK_CHECK_VERSION(2, 14, 0)
+    gtk_adjustment_set_page_increment(hadj, 10);
+#else
     hadj->page_increment = 10;
+#endif
     gtk_adjustment_changed(hadj);
     vadj = gtk_scrolled_window_get_vadjustment((GtkScrolledWindow*)mw->scroll);
+#if GTK_CHECK_VERSION(2, 14, 0)
+    gtk_adjustment_set_page_increment(vadj, 10);
+#else
     vadj->page_increment = 10;
+#endif
     gtk_adjustment_changed(vadj);
 
     image_view_set_adjustments( IMAGE_VIEW(mw->img_view), hadj, vadj );    // dirty hack :-(
@@ -559,8 +578,11 @@ void main_win_fit_window_size(  MainWin* mw, gboolean can_strech, GdkInterpType 
 
     if( mw->pix == NULL )
         return;
-
+#if GTK_CHECK_VERSION(3, 0, 0)
+// FIXME!
+#else
     main_win_fit_size( mw, mw->scroll->allocation.width, mw->scroll->allocation.height, can_strech, type );
+#endif
 }
 
 GtkWidget* add_nav_btn( MainWin* mw, const char* icon, const char* tip, GCallback cb, gboolean toggle)
@@ -603,7 +625,7 @@ void on_zoom_fit_menu( GtkMenuItem* item, MainWin* mw )
 
 void on_zoom_fit( GtkToggleButton* btn, MainWin* mw )
 {
-    if( ! btn->active )
+    if( ! gtk_toggle_button_get_active(btn) )
     {
         if( mw->zoom_mode == ZOOM_FIT )
             gtk_toggle_button_set_active( btn, TRUE );
@@ -636,7 +658,7 @@ void on_orig_size( GtkToggleButton* btn, MainWin* mw )
         return;
     }
 
-    if( ! btn->active )
+    if( ! gtk_toggle_button_get_active(btn) )
     {
         if( mw->zoom_mode == ZOOM_ORIG )
             gtk_toggle_button_set_active( btn, TRUE );
@@ -980,7 +1002,7 @@ gboolean on_button_press( GtkWidget* widget, GdkEventButton* evt, MainWin* mw )
                 return FALSE;
             mw->dragging = TRUE;
             gtk_widget_get_pointer( (GtkWidget*)mw, &mw->drag_old_x ,&mw->drag_old_y );
-            gdk_window_set_cursor( widget->window, mw->hand_cursor );
+            gdk_window_set_cursor( gtk_widget_get_window(widget), mw->hand_cursor );
         }
         else if( evt->button == 3 )   // right button
         {
@@ -1012,35 +1034,57 @@ gboolean on_mouse_move( GtkWidget* widget, GdkEventMotion* evt, MainWin* mw )
     GtkRequisition req;
     gtk_widget_size_request( (GtkWidget*)mw->img_view, &req );
 
+#if GTK_CHECK_VERSION(2, 14, 0)
+    gdouble hadj_page_size = gtk_adjustment_get_page_size(hadj);
+    gdouble hadj_lower = gtk_adjustment_get_lower(hadj);
+    gdouble hadj_upper = gtk_adjustment_get_upper(hadj);
+#else
+    gdouble hadj_page_size = hadj->page_size;
+    gdouble hadj_lower = hadj->lower;
+    gdouble hadj_upper = hadj->upper;
+#endif
+
     if( ABS(dx) > 4 )
     {
         mw->drag_old_x = cur_x;
-        if( req.width > hadj->page_size )
+        if( req.width > hadj_page_size )
         {
-            gdouble x = gtk_adjustment_get_value (hadj) + dx;
-            if( x < hadj->lower )
-                x = hadj->lower;
-            else if( (x + hadj->page_size) > hadj->upper )
-                x = hadj->upper - hadj->page_size;
+            gdouble value = gtk_adjustment_get_value (hadj);
+            gdouble x = value + dx;
+            if( x < hadj_lower )
+                x = hadj_lower;
+            else if( (x + hadj_page_size) > hadj_upper )
+                x = hadj_upper - hadj_page_size;
 
-            if( x != hadj->value )
+            if( x != value )
                 gtk_adjustment_set_value (hadj, x );
         }
     }
 
+#if GTK_CHECK_VERSION(2, 14, 0)
+    gdouble vadj_page_size = gtk_adjustment_get_page_size(vadj);
+    gdouble vadj_lower = gtk_adjustment_get_lower(vadj);
+    gdouble vadj_upper = gtk_adjustment_get_upper(vadj);
+#else
+    gdouble vadj_page_size = vadj->page_size;
+    gdouble vadj_lower = vadj->lower;
+    gdouble vadj_upper = vadj->upper;
+#endif
+
     if( ABS(dy) > 4 )
     {
-        if( req.height > vadj->page_size )
+        if( req.height > vadj_page_size )
         {
             mw->drag_old_y = cur_y;
-            gdouble y = gtk_adjustment_get_value (vadj) + dy;
-            if( y < vadj->lower )
-                y = vadj->lower;
-            else if( (y + vadj->page_size) > vadj->upper )
-                y = vadj->upper - vadj->page_size;
+            gdouble value = gtk_adjustment_get_value (vadj);
+            gdouble y = value + dy;
+            if( y < vadj_lower )
+                y = vadj_lower;
+            else if( (y + vadj_page_size) > vadj_upper )
+                y = vadj_upper - vadj_page_size;
 
-            if( y != vadj->value )
-                gtk_adjustment_set_value (vadj, y  );
+            if( y != value )
+                gtk_adjustment_set_value (vadj, y );
         }
     }
     return FALSE;
@@ -1049,7 +1093,7 @@ gboolean on_mouse_move( GtkWidget* widget, GdkEventMotion* evt, MainWin* mw )
 gboolean on_button_release( GtkWidget* widget, GdkEventButton* evt, MainWin* mw )
 {
     mw->dragging = FALSE;
-    gdk_window_set_cursor( widget->window, NULL );
+    gdk_window_set_cursor( gtk_widget_get_window(widget), NULL );
     return FALSE;
 }
 
@@ -1211,11 +1255,27 @@ void main_win_center_image( MainWin* mw )
     GtkRequisition req;
     gtk_widget_size_request( (GtkWidget*)mw->img_view, &req );
 
-    if( req.width > hadj->page_size )
-        gtk_adjustment_set_value(hadj, ( hadj->upper - hadj->page_size ) / 2 );
+#if GTK_CHECK_VERSION(2, 14, 0)
+    gdouble hadj_page_size = gtk_adjustment_get_page_size(hadj);
+    gdouble hadj_upper = gtk_adjustment_get_upper(hadj);
+#else
+    gdouble hadj_page_size = hadj->page_size;
+    gdouble hadj_upper = hadj->upper;
+#endif
 
-    if( req.height > vadj->page_size )
-        gtk_adjustment_set_value(vadj, ( vadj->upper - vadj->page_size ) / 2 );
+    if( req.width > hadj_page_size )
+        gtk_adjustment_set_value(hadj, ( hadj_upper - hadj_page_size ) / 2 );
+
+#if GTK_CHECK_VERSION(2, 14, 0)
+    gdouble vadj_page_size = gtk_adjustment_get_page_size(vadj);
+    gdouble vadj_upper = gtk_adjustment_get_upper(vadj);
+#else
+    gdouble vadj_page_size = vadj->page_size;
+    gdouble vadj_upper = vadj->upper;
+#endif
+
+    if( req.height > vadj_page_size )
+        gtk_adjustment_set_value(vadj, ( vadj_upper - vadj_page_size ) / 2 );
 }
 
 void rotate_image( MainWin* mw, int angle )
@@ -1451,28 +1511,6 @@ void show_popup_menu( MainWin* mw, GdkEventButton* evt )
     gtk_menu_popup( (GtkMenu*)popup, NULL, NULL, NULL, NULL, evt->button, evt->time );
 }
 
-/* callback used to open default browser when URLs got clicked */
-static void open_url( GtkAboutDialog *dlg, const gchar *url, gpointer data)
-{
-    /* FIXME: is there any better way to do this? */
-    char* programs[] = { "xdg-open", "gnome-open", "exo-open" };
-    int i;
-    for(  i = 0; i < G_N_ELEMENTS(programs); ++i)
-    {
-        gchar* open_cmd = NULL;
-        if( (open_cmd = g_find_program_in_path( programs[i] )) )
-        {
-             char* argv [3];
-             argv [0] = programs[i];
-             argv [1] = (gchar *) url;
-             argv [2] = NULL;
-             g_spawn_async (NULL, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, NULL);
-             g_free( open_cmd );
-             break;
-        }
-    }
-}
-
 void on_about( GtkWidget* menu, MainWin* mw )
 {
     GtkWidget * about_dlg;
@@ -1511,7 +1549,16 @@ void on_about( GtkWidget* menu, MainWin* mw )
 void on_drag_data_received( GtkWidget* widget, GdkDragContext *drag_context,
                 int x, int y, GtkSelectionData* data, guint info, guint time, MainWin* mw )
 {
-    if( ! data || data->length <= 0)
+    if( !data)
+        return;
+
+#if GTK_CHECK_VERSION(2, 14, 0)
+    int data_length = gtk_selection_data_get_length(data);
+#else
+    int data_length = data->length;
+#endif
+
+    if( data_length <= 0)
         return;
 
     char* file = NULL;
