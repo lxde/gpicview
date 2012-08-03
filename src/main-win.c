@@ -110,6 +110,10 @@ void on_flip_horizontal( GtkWidget* btn, MainWin* mw );
 static int trans_angle_to_id(int i);
 static int get_new_angle( int orig_angle, int rotate_angle );
 
+static void main_win_set_zoom_scale(MainWin* mw, double scale);
+static void main_win_set_zoom_mode(MainWin* mw, ZoomMode mode);
+static void main_win_update_zoom_buttons_state(MainWin* mw);
+
 // Begin of GObject-related stuff
 
 G_DEFINE_TYPE( MainWin, main_win, GTK_TYPE_WINDOW )
@@ -431,7 +435,6 @@ gboolean main_win_open( MainWin* mw, const char* file_path, ZoomMode zoom )
 
     if( mw->zoom_mode == ZOOM_FIT )
     {
-        gtk_toggle_button_set_active( (GtkToggleButton*)mw->btn_fit, TRUE );
         main_win_fit_window_size( mw, FALSE, GDK_INTERP_BILINEAR );
     }
     else  if( mw->zoom_mode == ZOOM_SCALE )  // scale
@@ -442,7 +445,6 @@ gboolean main_win_open( MainWin* mw, const char* file_path, ZoomMode zoom )
     }
     else  if( mw->zoom_mode == ZOOM_ORIG )  // original size
     {
-        gtk_toggle_button_set_active( (GtkToggleButton*)mw->btn_orig, TRUE );
         image_view_set_scale( (ImageView*)mw->img_view, mw->scale, GDK_INTERP_BILINEAR );
         main_win_center_image( mw );
     }
@@ -466,6 +468,8 @@ gboolean main_win_open( MainWin* mw, const char* file_path, ZoomMode zoom )
 
     update_title( disp_name, mw );
     g_free( disp_name );
+
+    main_win_update_zoom_buttons_state(mw);
 
     return TRUE;
 }
@@ -628,15 +632,8 @@ void on_zoom_fit_menu( GtkMenuItem* item, MainWin* mw )
 
 void on_zoom_fit( GtkToggleButton* btn, MainWin* mw )
 {
-    if( ! gtk_toggle_button_get_active(btn) )
-    {
-        if( mw->zoom_mode == ZOOM_FIT )
-            gtk_toggle_button_set_active( btn, TRUE );
-        return;
-    }
-    gtk_toggle_button_set_active( (GtkToggleButton*)mw->btn_orig, FALSE );
-
-    main_win_fit_window_size( mw, FALSE, GDK_INTERP_BILINEAR );
+    if (gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(btn)))
+        main_win_set_zoom_mode(mw, ZOOM_FIT);
 }
 
 void on_full_screen( GtkWidget* btn, MainWin* mw )
@@ -661,31 +658,8 @@ void on_orig_size( GtkToggleButton* btn, MainWin* mw )
         return;
     }
 
-    if( ! gtk_toggle_button_get_active(btn) )
-    {
-        if( mw->zoom_mode == ZOOM_ORIG )
-            gtk_toggle_button_set_active( btn, TRUE );
-        return;
-    }
-    mw->zoom_mode = ZOOM_ORIG;
-    mw->scale = 1.0;
-//    gtk_scrolled_window_set_policy( (GtkScrolledWindow*)mw->scroll,
-//                                     GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC );
-
-    gtk_toggle_button_set_active( (GtkToggleButton*)mw->btn_fit, FALSE );
-
-    if( ! mw->pix )
-        return;
-
-    // update scale
-    update_title(NULL, mw);
-
-    image_view_set_scale( (ImageView*)mw->img_view, 1.0, GDK_INTERP_BILINEAR );
-
-    while (gtk_events_pending ())
-        gtk_main_iteration ();
-
-    main_win_center_image( mw ); // FIXME:  mw doesn't work well. Why?
+    if (gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(btn)))
+        main_win_set_zoom_mode(mw, ZOOM_ORIG);
 }
 
 void on_prev( GtkWidget* btn, MainWin* mw )
@@ -934,47 +908,16 @@ void on_open( GtkWidget* btn, MainWin* mw )
 
 void on_zoom_in( GtkWidget* btn, MainWin* mw )
 {
-    mw->zoom_mode = ZOOM_SCALE;
-    gtk_toggle_button_set_active( (GtkToggleButton*)mw->btn_fit, FALSE );
-    gtk_toggle_button_set_active( (GtkToggleButton*)mw->btn_orig, FALSE );
-//    gtk_scrolled_window_set_policy( (GtkScrolledWindow*)mw->scroll,
-//                                     GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC );
-
     double scale = mw->scale;
-    if( mw->pix && scale < 20.0 )
-    {
-//        busy(TRUE);
-            scale *= 1.05;
-            if( scale > 20.0 )
-                scale = 20.0;
-            if( mw->scale != scale )
-                main_win_scale_image( mw, scale, GDK_INTERP_BILINEAR );
-//        adjust_adjustment_on_zoom(oldscale);
-//        busy(FALSE);
-    }
+    scale *= 1.05;
+    main_win_set_zoom_scale(mw, scale);
 }
 
 void on_zoom_out( GtkWidget* btn, MainWin* mw )
 {
-    mw->zoom_mode = ZOOM_SCALE;
-    gtk_toggle_button_set_active( (GtkToggleButton*)mw->btn_fit, FALSE );
-    gtk_toggle_button_set_active( (GtkToggleButton*)mw->btn_orig, FALSE );
-//    gtk_scrolled_window_set_policy( (GtkScrolledWindow*)mw->scroll,
-//                                     GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC );
-
     double scale = mw->scale;
-    if( mw->pix && scale > 0.02 )
-    {
-//        busy(TRUE);
-
-        scale /= 1.05;
-        if( scale < 0.02 )
-            scale = 0.02;
-        if( mw->scale != scale )
-            main_win_scale_image( mw, scale, GDK_INTERP_BILINEAR );
-//        adjust_adjustment_on_zoom(oldscale);
-//        busy(FALSE);
-    }
+    scale /= 1.05;
+    main_win_set_zoom_scale(mw, scale);
 }
 
 void on_preference( GtkWidget* btn, MainWin* mw )
@@ -1584,3 +1527,60 @@ void on_drag_data_received( GtkWidget* widget, GdkDragContext *drag_context,
         g_free( file );
     }
 }
+
+static void main_win_set_zoom_scale(MainWin* mw, double scale)
+{
+    main_win_set_zoom_mode(mw, ZOOM_SCALE);
+
+    if (scale > 20.0)
+        scale = 20.0;
+    if (scale < 0.02)
+        scale = 0.02;
+
+    if (mw->scale != scale)
+        main_win_scale_image(mw, scale, GDK_INTERP_BILINEAR);
+}
+
+static void main_win_set_zoom_mode(MainWin* mw, ZoomMode mode)
+{
+    if (mw->zoom_mode == mode)
+       return;
+
+    mw->zoom_mode = mode;
+
+    main_win_update_zoom_buttons_state(mw);
+
+    if (mode == ZOOM_ORIG)
+    {
+        mw->scale = 1.0;
+        if (!mw->pix)
+           return;
+
+        update_title(NULL, mw);
+
+        image_view_set_scale( (ImageView*)mw->img_view, 1.0, GDK_INTERP_BILINEAR );
+
+        while (gtk_events_pending ())
+            gtk_main_iteration ();
+
+        main_win_center_image( mw ); // FIXME:  mw doesn't work well. Why?
+    }
+    else if (mode == ZOOM_FIT)
+    {
+        main_win_fit_window_size( mw, FALSE, GDK_INTERP_BILINEAR );
+    }
+}
+
+static void main_win_update_zoom_buttons_state(MainWin* mw)
+{
+    gboolean button_fit_active = mw->zoom_mode == ZOOM_FIT;
+    gboolean button_orig_active = mw->zoom_mode == ZOOM_ORIG;
+
+    if (gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(mw->btn_fit)) != button_fit_active)
+        gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(mw->btn_fit), button_fit_active);
+
+    if (gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(mw->btn_orig)) != button_orig_active)
+        gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(mw->btn_orig), button_orig_active);
+}
+
+
