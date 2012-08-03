@@ -23,14 +23,28 @@
 
 static void image_view_finalize(GObject *iv);
 
-static void image_view_paint(  ImageView* iv, GdkEventExpose* evt );
 static void image_view_clear( ImageView* iv );
 static gboolean on_idle( ImageView* iv );
 static void calc_image_area( ImageView* iv );
 static void paint(  ImageView* iv, GdkRectangle* invalid_rect, GdkInterpType type );
 
+#if GTK_CHECK_VERSION(3, 0, 0)
+
+static void image_view_paint(  ImageView* iv, cairo_t* cr );
+
+static void on_get_preferred_width( GtkWidget* widget, gint* minimal_width, gint* natural_width );
+static void on_get_preferred_height( GtkWidget* widget, gint* minimal_height, gint* natural_height );
+static gboolean on_draw_event(GtkWidget* widget, cairo_t* cr);
+
+#else // GTK2
+
+static void image_view_paint(  ImageView* iv, GdkEventExpose* evt );
+
 static void on_size_request( GtkWidget* w, GtkRequisition* req );
 static gboolean on_expose_event( GtkWidget* widget, GdkEventExpose* evt );
+#endif
+
+
 static void on_size_allocate( GtkWidget* widget, GtkAllocation    *allocation );
 
 G_DEFINE_TYPE( ImageView, image_view, GTK_TYPE_MISC );
@@ -60,9 +74,16 @@ void image_view_class_init( ImageViewClass* klass )
     obj_class->finalize = image_view_finalize;
 
     widget_class = GTK_WIDGET_CLASS ( klass );
+#if GTK_CHECK_VERSION(3, 0, 0)
+    widget_class->get_preferred_width = on_get_preferred_width;
+    widget_class->get_preferred_height = on_get_preferred_height;
+    widget_class->draw = on_draw_event;
+#else // GTK2
     widget_class->size_request = on_size_request;
-    widget_class->size_allocate = on_size_allocate;
     widget_class->expose_event = on_expose_event;
+#endif
+    widget_class->size_allocate = on_size_allocate;
+
 
 /*
     // set up scrolling support
@@ -133,6 +154,22 @@ void image_view_set_adjustments( ImageView* iv, GtkAdjustment* h, GtkAdjustment*
     }
 }
 
+#if GTK_CHECK_VERSION(3, 0, 0)
+
+void on_get_preferred_width( GtkWidget* widget, gint* minimal_width, gint* natural_width )
+{
+    ImageView* iv = (ImageView*)widget;
+    *minimal_width = *natural_width = iv->img_area.width;
+}
+
+void on_get_preferred_height( GtkWidget* widget, gint* minimal_height, gint* natural_height )
+{
+    ImageView* iv = (ImageView*)widget;
+    *minimal_height = *natural_height = iv->img_area.height;
+}
+
+#else // GTK2
+
 void on_size_request( GtkWidget* w, GtkRequisition* req )
 {
     ImageView* iv = (ImageView*)w;
@@ -142,6 +179,8 @@ void on_size_request( GtkWidget* w, GtkRequisition* req )
 
     GTK_WIDGET_CLASS(image_view_parent_class)->size_request (w, req);
 }
+
+#endif
 
 void on_size_allocate( GtkWidget* widget, GtkAllocation   *allocation )
 {
@@ -204,7 +243,7 @@ eel_cairo_get_clip_region (cairo_t *cr)
         return region;
 }
 
-gboolean on_draw_event( GtkWidget* widget, cairo_t *cr )
+static gboolean on_draw_event( GtkWidget* widget, cairo_t *cr )
 {
 
     ImageView* iv = (ImageView*)widget;
@@ -213,32 +252,23 @@ gboolean on_draw_event( GtkWidget* widget, cairo_t *cr )
     return FALSE;
 
 }
+
 void image_view_paint( ImageView* iv, cairo_t *cr )
 {
     if( iv->pix )
     {
-        GdkRectangle* rects = NULL;
-        int i = 0;
-        cairo_rectangle_int_t n_rects = 0;
+        cairo_region_t * region = eel_cairo_get_clip_region(cr);
+        int n_rects = cairo_region_num_rectangles(region);
 
-/*
-        int                 cairo_region_num_rectangles         (const cairo_region_t *region);
-        void                cairo_region_get_rectangle          (const cairo_region_t *region,
-                                                         int nth,
-                                                         cairo_rectangle_int_t *rectangle);
-
-void                gdk_region_get_rectangles           (const GdkRegion *region,
-                                                         GdkRectangle **rectangles,
-                                                         gint *n_rectangles);
-*/
-
-        cairo_region_get_rectangle(eel_cairo_get_clip_region(cr), &rects, &n_rects);
-
+        int i;
         for( i = 0; i < n_rects; ++i )
         {
-            paint( iv, rects + i, GDK_INTERP_NEAREST );
+            cairo_rectangle_int_t rectangle;
+            cairo_region_get_rectangle(region, i, &rectangle);
+            paint( iv, &rectangle, GDK_INTERP_NEAREST );
         }
-        g_free( rects );
+
+        cairo_region_destroy (region);
 
         if( 0 == iv->idle_handler )
             iv->idle_handler = g_idle_add( (GSourceFunc)on_idle, iv );
@@ -427,23 +457,43 @@ gboolean on_idle( ImageView* iv )
     if( G_LIKELY(iv->hadj) )
     {
         rect.x = (int)gtk_adjustment_get_value(iv->hadj);
+#if GTK_CHECK_VERSION(2, 14, 0)
+        rect.width = (int)gtk_adjustment_get_page_size(iv->hadj);
+#else
         rect.width = (int)iv->hadj->page_size;
+#endif
     }
     else
     {
+#if GTK_CHECK_VERSION(3, 0, 0)
+        // FIXME!
+        rect.x = 0;
+        rect.width = 0;
+#else
         rect.x = ((GtkWidget*)iv)->allocation.x;
         rect.width = ((GtkWidget*)iv)->allocation.width;
+#endif
     }
 
     if( G_LIKELY(iv->vadj) )
     {
         rect.y = (int)gtk_adjustment_get_value(iv->vadj);
+#if GTK_CHECK_VERSION(2, 14, 0)
+        rect.height = (int)gtk_adjustment_get_page_size(iv->vadj);
+#else
         rect.height = (int)iv->vadj->page_size;
+#endif
     }
     else
     {
+#if GTK_CHECK_VERSION(3, 0, 0)
+        // FIXME!
+        rect.y = 0;
+        rect.height = 0;
+#else
         rect.y = ((GtkWidget*)iv)->allocation.y;
         rect.height = ((GtkWidget*)iv)->allocation.height;
+#endif
     }
 
     paint( iv, &rect, iv->interp_type );
@@ -456,6 +506,9 @@ gboolean on_idle( ImageView* iv )
 
 void calc_image_area( ImageView* iv )
 {
+#if GTK_CHECK_VERSION(3, 0, 0)
+// FIXME!
+#else
     if( G_LIKELY( iv->pix ) )
     {
         GtkAllocation allocation = ((GtkWidget*)iv)->allocation;
@@ -473,6 +526,7 @@ void calc_image_area( ImageView* iv )
         iv->img_area.y = y_offset;
     }
     else
+#endif
     {
         iv->img_area.x = iv->img_area.y = iv->img_area.width = iv->img_area.height = 0;
     }
