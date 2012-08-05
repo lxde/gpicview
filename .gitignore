@@ -51,3 +51,7 @@ src/xml-purge
 gpicview.desktop
 po/.intltool-merge-cache
 src/gpicview
+debian/files
+debian/*.log
+debian/*.substvars
+debian/gpicview/
