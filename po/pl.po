@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-20 22:25+0200\n"
+"POT-Creation-Date: 2012-09-23 14:36+0200\n"
 "PO-Revision-Date: 2010-12-24 01:10+0200\n"
 "Last-Translator: Artur <mazdac@gmail.com>\n"
 "Language-Team: Polish\n"
@@ -32,27 +32,27 @@ msgstr "Wypisuje informacje o wersji i kończy program"
 msgid "Start slideshow"
 msgstr "Rozpocznij prezentację"
 
-#: ../src/main-win.c:155 ../src/main-win.c:1387 ../gpicview.desktop.in.h:1
+#: ../src/main-win.c:165 ../src/main-win.c:1413 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
 msgstr "Przeglądarka obrazów"
 
-#: ../src/main-win.c:235 ../src/main-win.c:1399
+#: ../src/main-win.c:267 ../src/main-win.c:1438
 msgid "Previous"
 msgstr "Poprzedni"
 
-#: ../src/main-win.c:236 ../src/main-win.c:1400
+#: ../src/main-win.c:268 ../src/main-win.c:1439
 msgid "Next"
 msgstr "Następny"
 
-#: ../src/main-win.c:237 ../src/main-win.c:739
+#: ../src/main-win.c:269 ../src/main-win.c:754
 msgid "Start Slideshow"
 msgstr "Rozpocznij prezentację"
 
-#: ../src/main-win.c:241 ../src/main-win.c:1403
+#: ../src/main-win.c:273 ../src/main-win.c:1442
 msgid "Zoom Out"
 msgstr "Pomniejsz"
 
-#: ../src/main-win.c:242 ../src/main-win.c:1404
+#: ../src/main-win.c:274 ../src/main-win.c:1443
 msgid "Zoom In"
 msgstr "Powiększ"
 
@@ -60,64 +60,64 @@ msgstr "Powiększ"
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
 #. gtk_widget_set_size_request( percent, 45, -1 );
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
-#: ../src/main-win.c:249 ../src/main-win.c:1405
+#: ../src/main-win.c:281 ../src/main-win.c:1444
 msgid "Fit Image To Window Size"
 msgstr "Dopasuj do rozmiaru okna"
 
-#: ../src/main-win.c:251 ../src/main-win.c:1406
+#: ../src/main-win.c:283 ../src/main-win.c:1445
 msgid "Original Size"
 msgstr "Zwykły rozmiar"
 
-#: ../src/main-win.c:258 ../src/main-win.c:1408
+#: ../src/main-win.c:290 ../src/main-win.c:1447
 msgid "Full Screen"
 msgstr "Pełny ekran"
 
-#: ../src/main-win.c:262 ../src/main-win.c:1410
+#: ../src/main-win.c:294 ../src/main-win.c:1449
 msgid "Rotate Counterclockwise"
 msgstr "Obróć w lewo"
 
-#: ../src/main-win.c:263 ../src/main-win.c:1411
+#: ../src/main-win.c:295 ../src/main-win.c:1450
 msgid "Rotate Clockwise"
 msgstr "Obróć w prawo"
 
-#: ../src/main-win.c:265 ../src/main-win.c:1412
+#: ../src/main-win.c:297 ../src/main-win.c:1451
 msgid "Flip Horizontal"
 msgstr "Odbij poziomo"
 
-#: ../src/main-win.c:266 ../src/main-win.c:1413
+#: ../src/main-win.c:298 ../src/main-win.c:1452
 msgid "Flip Vertical"
 msgstr "Odbij pionowo"
 
-#: ../src/main-win.c:270 ../src/main-win.c:1415
+#: ../src/main-win.c:302 ../src/main-win.c:1454
 msgid "Open File"
 msgstr "Otwórz plik"
 
-#: ../src/main-win.c:271 ../src/main-win.c:1416
+#: ../src/main-win.c:303 ../src/main-win.c:1455
 msgid "Save File"
 msgstr "Zapisz"
 
-#: ../src/main-win.c:272
+#: ../src/main-win.c:304
 msgid "Save File As"
 msgstr "Zapisz plik jako"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
-#: ../src/main-win.c:273 ../src/main-win.c:1419
+#: ../src/main-win.c:305 ../src/main-win.c:1458
 msgid "Delete File"
 msgstr "Usuń"
 
-#: ../src/main-win.c:276 ../src/main-win.c:1421 ../data/pref-dlg.ui.h:1
+#: ../src/main-win.c:308 ../src/main-win.c:1460 ../data/pref-dlg.ui.h:1
 msgid "Preferences"
 msgstr "Preferencje"
 
-#: ../src/main-win.c:277 ../src/main-win.c:1424
+#: ../src/main-win.c:309 ../src/main-win.c:1464
 msgid "Quit"
 msgstr "Zakończ"
 
-#: ../src/main-win.c:747
+#: ../src/main-win.c:762
 msgid "Stop Slideshow"
 msgstr "Zatrzymaj prezentację"
 
-#: ../src/main-win.c:1277
+#: ../src/main-win.c:1303
 msgid ""
 "The file name you selected already exists.\n"
 "Do you want to overwrite existing file?\n"
@@ -127,11 +127,11 @@ msgstr ""
 "Nadpisać istniejący plik?\n"
 "(Uwaga: jakość obrazu może ulec pogorszeniu.)"
 
-#: ../src/main-win.c:1318
+#: ../src/main-win.c:1344
 msgid "Writing this image format is not supported."
 msgstr "Zapisywanie do tego formatu nie jest obsługiwane."
 
-#: ../src/main-win.c:1356
+#: ../src/main-win.c:1382
 msgid ""
 "Are you sure you want to delete current file?\n"
 "\n"
@@ -141,39 +141,43 @@ msgstr ""
 "\n"
 "Uwaga: usuniętego pliku nie będzie można odzyskać."
 
-#: ../src/main-win.c:1401
+#: ../src/main-win.c:1440
 msgid "Start/Stop Slideshow"
 msgstr "Rozpocznij/zatrzymaj prezentację"
 
-#: ../src/main-win.c:1417
+#: ../src/main-win.c:1456
 msgid "Save As"
 msgstr "Zapisz jako"
 
-#: ../src/main-win.c:1487
+#: ../src/main-win.c:1461
+msgid "Show/Hide toolbar"
+msgstr ""
+
+#: ../src/main-win.c:1505
 msgid " * Refer to source code of EOG image viewer and GThumb"
 msgstr " * Korzysta z kodu przeglądarek obrazów EOG oraz GThumb"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../src/main-win.c:1491
+#: ../src/main-win.c:1509
 msgid "translator-credits"
 msgstr ""
 "Grzegorz Gibas <amigib@gmail.com>\n"
 "Piotr Sokół <piotr.sokol@10g.pl> 2010.\n"
 "Artur Kruszewski <mazdac@gmail.com>"
 
-#: ../src/main-win.c:1497
+#: ../src/main-win.c:1515
 msgid "GPicView"
 msgstr "GPicView"
 
-#: ../src/main-win.c:1499
+#: ../src/main-win.c:1517
 msgid "Copyright (C) 2007 - 2011"
 msgstr "Prawa autorskie (C) 2007 - 2011"
 
-#: ../src/main-win.c:1500
+#: ../src/main-win.c:1518
 msgid "Lightweight image viewer from LXDE project"
 msgstr "Przeglądarka obrazów dla środowiska LXDE"
 
-#: ../src/pref.c:157
+#: ../src/pref.c:164
 msgid ""
 "GPicView will become the default viewer for all supported image files on "
 "your system.\n"
