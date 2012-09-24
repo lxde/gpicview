@@ -1,18 +1,21 @@
+#
+# Algimantas Margevičius <margevicius.algimantas@gmail.com>, 2012.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: GPicView\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 14:36+0200\n"
-"PO-Revision-Date: 2010-01-14 10:49+0200\n"
-"Last-Translator: Julius Vitkauskas <zadintuvas@gmail.com>\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2012-09-24 08:03+0300\n"
+"Last-Translator: Algimantas Margevičius <margevicius.algimantas@gmail.com>\n"
+"Language-Team: Lietuvių <>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
-"%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Pootle 2.0.0\n"
+"%100<10 || n%100>=20) ? 1 : 2)\n"
+"X-Generator: Gtranslator 2.91.5\n"
 "X-Poedit-Language: Lithuanian\n"
 "X-Poedit-Country: LITHUANIA\n"
 
@@ -22,7 +25,7 @@ msgstr "[FAILAS]"
 
 #: ../src/gpicview.c:40
 msgid "Print version information and exit"
-msgstr "Išspausdinti versijos informaciją ir išeiti"
+msgstr "Parodyti versijos informaciją ir išeiti"
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
@@ -38,7 +41,7 @@ msgstr "Ankstesnis"
 
 #: ../src/main-win.c:268 ../src/main-win.c:1439
 msgid "Next"
-msgstr "Kitas"
+msgstr "Sekantis"
 
 #: ../src/main-win.c:269 ../src/main-win.c:754
 msgid "Start Slideshow"
@@ -46,11 +49,11 @@ msgstr "Pradėti skaidrių peržiūrą"
 
 #: ../src/main-win.c:273 ../src/main-win.c:1442
 msgid "Zoom Out"
-msgstr "Mažinti"
+msgstr "Atitolinti"
 
 #: ../src/main-win.c:274 ../src/main-win.c:1443
 msgid "Zoom In"
-msgstr "Didinti"
+msgstr "Priartinti"
 
 #. percent = gtk_entry_new();    // show scale (in percentage)
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
@@ -147,18 +150,19 @@ msgstr "Išsaugoti kaip"
 
 #: ../src/main-win.c:1461
 msgid "Show/Hide toolbar"
-msgstr ""
+msgstr "Rodyti/Slėpti įrankinę"
 
 #: ../src/main-win.c:1505
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr "* Žiūrėkite EOG image viewer ir GThumb pirminius tekstus"
+msgstr "* Žiūrėkite EOG paveikslėlių žiūryklės ir GThumb pirminius tekstus"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1509
 msgid "translator-credits"
 msgstr ""
 "Joshas <joshas@freemail.lt>\n"
-"Julius Vitkauskas <zadintuvas@gmail.com>"
+"Julius Vitkauskas <zadintuvas@gmail.com>\n"
+"Algimantas Margevičius <margevicius.algimantas@gmail.com>"
 
 #: ../src/main-win.c:1515
 msgid "GPicView"
@@ -170,7 +174,7 @@ msgstr "Autorinės teisės (C) 2007 - 2011"
 
 #: ../src/main-win.c:1518
 msgid "Lightweight image viewer from LXDE project"
-msgstr "Lengvasvorė LXDE projekto paveikslėlių peržiūros programa"
+msgstr "Lengva LXDE projekto paveikslėlių peržiūros programa"
 
 #: ../src/pref.c:164
 msgid ""
@@ -180,9 +184,9 @@ msgid ""
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"GPicView taps numatytaja paveikslėlių peržiūros programa.\n"
-"Ja bus atidaromi visi palaikomi paveikslėlių failai.\n"
-"(Tai bus padaryta naudojant 'xdg-mime' programą)\n"
+"GPicView taps numatytaja paveikslėlių peržiūros programa. Ja bus atidaromi "
+"visi palaikomi paveikslėlių failai.\n"
+"(Tai bus padaryta naudojant „xdg-mime“ programą)\n"
 "\n"
 "<b>Ar tikrai norite tai atlikti?</b>"
 
@@ -202,7 +206,9 @@ msgstr "JPEG kokybė:"
 msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
-msgstr "Žemesnės kokybės paveikslėliai užima mažiau vietos."
+msgstr ""
+"Žemesnės kokybės paveikslėliai užima mažiau vietos,\n"
+"bet jų kokybė atitinkamai prastesnė."
 
 #: ../src/file-dlgs.c:121
 msgid "PNG Compression Level:"
@@ -246,7 +252,7 @@ msgstr "Skaidrių keitimo intervalas"
 
 #: ../data/pref-dlg.ui.h:8
 msgid "sec"
-msgstr "sek."
+msgstr "s"
 
 #: ../data/pref-dlg.ui.h:9
 msgid "Make GPicView the default viewer for images"
