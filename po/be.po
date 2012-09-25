@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 14:36+0200\n"
-"PO-Revision-Date: 2011-08-09 22:52+0200\n"
+"PO-Revision-Date: 2012-09-26 01:06+0200\n"
 "Last-Translator: Мікалай <crom-a@tut.by>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: be\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.0.5\n"
 
 #: ../src/gpicview.c:38
@@ -29,7 +29,7 @@ msgstr "Паказаць інфармацыю пра версію і выйсц�
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
-msgstr "Пачаць слайдшоў"
+msgstr "Пачаць слайдшоу"
 
 #: ../src/main-win.c:165 ../src/main-win.c:1413 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
@@ -123,7 +123,7 @@ msgid ""
 "(Warning: The quality of original image might be lost)"
 msgstr ""
 "Файл з такой назвай ужо існуе.\n"
-"Жадаеце перапісаць існуючы файл?\n"
+"Перапісаць наяўны файл?\n"
 "(Увага: Якасць арыгінала можа быць згублена)"
 
 #: ../src/main-win.c:1344
@@ -136,7 +136,7 @@ msgid ""
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
-"Вы ўпэнены што жадаеце выдаліць гэты файл?\n"
+"Вы ўпэнены што хочаце сцерці гэты файл?\n"
 "\n"
 "Увага: Выдалены файл нельга будзе аднавіць."
 
@@ -150,7 +150,7 @@ msgstr "Запісаць як"
 
 #: ../src/main-win.c:1461
 msgid "Show/Hide toolbar"
-msgstr ""
+msgstr "Паказаць/схаваць стужку прылад"
 
 #: ../src/main-win.c:1505
 msgid " * Refer to source code of EOG image viewer and GThumb"
