@@ -8,13 +8,14 @@ msgstr ""
 "Project-Id-Version: gpicview\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 14:36+0200\n"
-"PO-Revision-Date: 2010-03-30 23:52+0200\n"
-"Last-Translator: Радослав Иванов <rec_ku@hotmail.com>\n"
+"PO-Revision-Date: 2012-09-30 08:27+0200\n"
+"Last-Translator: Радослав <reckku@gmail.com>\n"
 "Language-Team: MIME-Version: 1.0\n"
-"Language: \n"
+"Language: bg\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Pootle 1.1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
 "X-Poedit-Language: Bulgarian\n"
 "X-Poedit-Country: BULGARIA\n"
 
@@ -149,7 +150,7 @@ msgstr "Запази като"
 
 #: ../src/main-win.c:1461
 msgid "Show/Hide toolbar"
-msgstr ""
+msgstr "Показване/Скриване на полето с инструменти"
 
 #: ../src/main-win.c:1505
 msgid " * Refer to source code of EOG image viewer and GThumb"
