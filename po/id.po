@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: GPicView\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 14:36+0200\n"
-"PO-Revision-Date: 2010-03-20 01:56+0200\n"
-"Last-Translator: Rahman Yusri Aftian <aftian@yahoo.com>\n"
+"PO-Revision-Date: 2012-10-01 02:27+0200\n"
+"Last-Translator: Andika <andika@gmail.com>\n"
 "Language-Team: Indonesian <translation-team-id@lists.sourceforge.net>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
@@ -24,11 +24,11 @@ msgstr "[BERKAS]"
 
 #: ../src/gpicview.c:40
 msgid "Print version information and exit"
-msgstr "Print Informasi Versi dan Keluar"
+msgstr "Cetak informasi versi dan keluar"
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
-msgstr "Mulai slidshow"
+msgstr "Mulai pertunjukan salindia"
 
 #: ../src/main-win.c:165 ../src/main-win.c:1413 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
@@ -36,23 +36,23 @@ msgstr "Penampil Citra"
 
 #: ../src/main-win.c:267 ../src/main-win.c:1438
 msgid "Previous"
-msgstr "Sebelum"
+msgstr "Sebelumnya"
 
 #: ../src/main-win.c:268 ../src/main-win.c:1439
 msgid "Next"
-msgstr "Setelah"
+msgstr "Selanjutnya"
 
 #: ../src/main-win.c:269 ../src/main-win.c:754
 msgid "Start Slideshow"
-msgstr "Mulai slidshow"
+msgstr "Mulai Pertunjukan Salindia"
 
 #: ../src/main-win.c:273 ../src/main-win.c:1442
 msgid "Zoom Out"
-msgstr "Pembesaran ke Luar"
+msgstr "Perkecil"
 
 #: ../src/main-win.c:274 ../src/main-win.c:1443
 msgid "Zoom In"
-msgstr "Pembesaran ke Dalam"
+msgstr "Perbesar"
 
 #. percent = gtk_entry_new();    // show scale (in percentage)
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
@@ -60,7 +60,7 @@ msgstr "Pembesaran ke Dalam"
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
 #: ../src/main-win.c:281 ../src/main-win.c:1444
 msgid "Fit Image To Window Size"
-msgstr "Sesuaikan Citra Ke Ukuran Jendela"
+msgstr "Paskan Citra Ke Ukuran Jendela"
 
 #: ../src/main-win.c:283 ../src/main-win.c:1445
 msgid "Original Size"
@@ -72,19 +72,19 @@ msgstr "Layar Penuh"
 
 #: ../src/main-win.c:294 ../src/main-win.c:1449
 msgid "Rotate Counterclockwise"
-msgstr "Rotasi Berlawanan Arah Jarum Jam"
+msgstr "Putar Berlawanan Arah Jarum Jam"
 
 #: ../src/main-win.c:295 ../src/main-win.c:1450
 msgid "Rotate Clockwise"
-msgstr "Rotasi Searah Jarum Jam"
+msgstr "Putar Searah Jarum Jam"
 
 #: ../src/main-win.c:297 ../src/main-win.c:1451
 msgid "Flip Horizontal"
-msgstr "Menghempaskan Secara horisontal"
+msgstr "Balikkan Mendatar"
 
 #: ../src/main-win.c:298 ../src/main-win.c:1452
 msgid "Flip Vertical"
-msgstr "Menghempasikan Secara Vertikal"
+msgstr "Balikkan Tegak"
 
 #: ../src/main-win.c:302 ../src/main-win.c:1454
 msgid "Open File"
@@ -105,7 +105,7 @@ msgstr "Hapus Berkas"
 
 #: ../src/main-win.c:308 ../src/main-win.c:1460 ../data/pref-dlg.ui.h:1
 msgid "Preferences"
-msgstr "Pengaturan"
+msgstr "Preferensi"
 
 #: ../src/main-win.c:309 ../src/main-win.c:1464
 msgid "Quit"
@@ -113,7 +113,7 @@ msgstr "Keluar"
 
 #: ../src/main-win.c:762
 msgid "Stop Slideshow"
-msgstr "Mulai slidshow"
+msgstr "Hentikan Pertunjukan Salindia"
 
 #: ../src/main-win.c:1303
 msgid ""
@@ -121,13 +121,13 @@ msgid ""
 "Do you want to overwrite existing file?\n"
 "(Warning: The quality of original image might be lost)"
 msgstr ""
-"Nama berkas yang anda pilih telah ada.\n"
-"Anda ingin menimpa berkas yang telah ada?\n"
+"Nama berkas yang Anda pilih telah ada.\n"
+"Apakah Anda ingin menimpa berkas yang telah ada?\n"
 "(Peringatan: Kualitas citra asli mungkin hilang)"
 
 #: ../src/main-win.c:1344
 msgid "Writing this image format is not supported."
-msgstr "Sedang Menulis format gambar yang tidak di support"
+msgstr "Menulis ke format gambar ini tidak didukung."
 
 #: ../src/main-win.c:1382
 msgid ""
@@ -135,13 +135,13 @@ msgid ""
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
-"Apakah anda yakin ingin menghapus berkas saat ini?\n"
+"Apakah Anda yakin ingin menghapus berkas saat ini?\n"
 "\n"
 "Peringatan: Sekali dihapus, berkas tak dapat dikembalikan."
 
 #: ../src/main-win.c:1440
 msgid "Start/Stop Slideshow"
-msgstr "Mulai/Berhenti Slidshow"
+msgstr "Mulai/Berhenti Pertunjukan Salindia"
 
 #: ../src/main-win.c:1456
 msgid "Save As"
@@ -149,7 +149,7 @@ msgstr "Simpan Sebagai"
 
 #: ../src/main-win.c:1461
 msgid "Show/Hide toolbar"
-msgstr ""
+msgstr "Tampilkan/sembunyikan bilah alat"
 
 #: ../src/main-win.c:1505
 msgid " * Refer to source code of EOG image viewer and GThumb"
@@ -159,7 +159,9 @@ msgstr "* Merujuk ke kode program penampil citra EOG dan GThumb"
 #: ../src/main-win.c:1509
 msgid "translator-credits"
 msgstr ""
-"Alih Bahasa<andhika.padmawan@gmail.com>, 2009.<aftian@yahoo.com>, 2009."
+"Andika Padmawan <andhika.padmawan@gmail.com>, 2009.\n"
+"Aftian <aftian@yahoo.com>, 2009.\n"
+"Andika Triwidada <andika@gmail.com>, 2012."
 
 #: ../src/main-win.c:1515
 msgid "GPicView"
@@ -182,10 +184,10 @@ msgid ""
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
 "GPicView akan menjadi penampil standar untuk semua berkas citra yang "
-"didukung di sistem anda.\n"
+"didukung di sistem Anda.\n"
 "(Ini akan dilakukan melalui program 'xdg-mime')\n"
 "\n"
-"<b>Apakah anda yakin ingin melakukan ini?</b>"
+"<b>Apakah Anda yakin ingin melakukan ini?</b>"
 
 #: ../src/file-dlgs.c:62
 msgid "All Supported Images"
@@ -197,58 +199,56 @@ msgstr "Semua Berkas"
 
 #: ../src/file-dlgs.c:103
 msgid "JPEG Quality:"
-msgstr "Kualitas JPEG: "
+msgstr "Kualitas JPEG:"
 
 #: ../src/file-dlgs.c:104
 msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
 msgstr ""
-"Menurunkan hasil nilai-nilai berkwalitas file ukuran yanglebih kecil ,\n"
-" tetapi mutu gambaran akan lebih jelek"
+"Kualitas yang lebih rendah menghasilkan ukuran berkas yang lebih kecil,\n"
+"tetapi mutu gambar akan lebih jelek."
 
 #: ../src/file-dlgs.c:121
 msgid "PNG Compression Level:"
-msgstr "PNG Level Kompres:"
+msgstr "Tingkat Kompresi PNG:"
 
 #: ../src/file-dlgs.c:122
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
 msgstr ""
-"Meningkatkan yang lebih tinggi mengukur hasil dengan ukuran file lebih "
+"Tingkat kompresi yang lebih tinggi menghasilkan ukuran berkas yang lebih "
 "kecil,\n"
-" tetapi memerlukan banyak waktu  lebih untuk lakukan peningkatan."
+"tetapi perlu waktu lebih lama untuk melakukan kompresi."
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
-msgstr "Lihat gambar anda dengan mudah"
+msgstr "Lihat gambar Anda dengan mudah"
 
 #: ../data/pref-dlg.ui.h:2
 msgid "Ask before saving images"
-msgstr "Tanya sebelum menyimpan  citra"
+msgstr "Tanya sebelum menyimpan citra"
 
 #: ../data/pref-dlg.ui.h:3
 msgid "Ask before deleting images"
-msgstr "Tanya sebelum Membuang citra"
+msgstr "Tanya sebelum menghapus citra"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
-msgstr ""
-"Simpan secara otomatis citra yang dirotasikan ( Saat ini hanya JPEG yang "
-"didukung )"
+msgstr "Simpan secara otomatis citra yang diputar"
 
 #: ../data/pref-dlg.ui.h:5
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
-"Ubah nilai orientasi EXIF ketika merotasi dan membalik hanya jika ada tanda "
-"orientasi EXIF ( hanya JPEG)"
+"Putar berkas JPEG dengan menukar nilai orientasi EXIF\n"
+"(hanya jika tag orientasi EXIF ada)"
 
 #: ../data/pref-dlg.ui.h:7
 msgid "Slideshow interval"
-msgstr "Slideshow interval"
+msgstr "Interval salindia"
 
 #: ../data/pref-dlg.ui.h:8
 msgid "sec"
@@ -264,8 +264,8 @@ msgstr "Normal:"
 
 #: ../data/pref-dlg.ui.h:11
 msgid "Fullscreen:"
-msgstr "Layar Penuh"
+msgstr "Layar Penuh:"
 
 #: ../data/pref-dlg.ui.h:12
 msgid "<b>Background colors</b>"
-msgstr "<b>Warna Latar Belakang</b>"
+msgstr "<b>Warna latar</b>"
