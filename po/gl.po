@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: LXDE\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 14:36+0200\n"
-"PO-Revision-Date: 2011-12-24 13:50+0200\n"
+"PO-Revision-Date: 2012-10-12 10:13+0200\n"
 "Last-Translator: mbouzada <mbouzada@gmail.com>\n"
 "Language-Team: Proxecto Trasno <proxecto@trasno.net>\n"
 "Language: gl\n"
@@ -146,7 +146,7 @@ msgstr "Gardar como"
 
 #: ../src/main-win.c:1461
 msgid "Show/Hide toolbar"
-msgstr ""
+msgstr "Amosar/agochar a barra de ferramentas"
 
 #: ../src/main-win.c:1505
 msgid " * Refer to source code of EOG image viewer and GThumb"
