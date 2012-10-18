@@ -147,7 +147,7 @@ msgstr "名前をつけて保存"
 
 #: ../src/main-win.c:1461
 msgid "Show/Hide toolbar"
-msgstr ""
+msgstr "ツールバーを表示/隠す"
 
 #: ../src/main-win.c:1505
 msgid " * Refer to source code of EOG image viewer and GThumb"
