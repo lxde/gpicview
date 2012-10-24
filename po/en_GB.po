@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 14:36+0200\n"
-"PO-Revision-Date: 2012-01-25 00:20+0200\n"
+"PO-Revision-Date: 2012-10-24 21:54+0200\n"
 "Last-Translator: Steve <yorvik.ubunto@gmail.com>\n"
 "Language-Team: English Uk en_GB\n"
 "Language: en_GB\n"
@@ -60,7 +60,7 @@ msgstr "Zoom in"
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
 #: ../src/main-win.c:281 ../src/main-win.c:1444
 msgid "Fit Image To Window Size"
-msgstr "Fit Image to Window Size"
+msgstr "Fit Image to window size"
 
 #: ../src/main-win.c:283 ../src/main-win.c:1445
 msgid "Original Size"
@@ -149,7 +149,7 @@ msgstr "Save as"
 
 #: ../src/main-win.c:1461
 msgid "Show/Hide toolbar"
-msgstr ""
+msgstr "Show/Hide toolbar"
 
 #: ../src/main-win.c:1505
 msgid " * Refer to source code of EOG image viewer and GThumb"
