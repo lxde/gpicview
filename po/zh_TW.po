@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 14:36+0200\n"
-"PO-Revision-Date: 2012-09-30 05:54+0200\n"
+"PO-Revision-Date: 2012-10-26 01:30+0200\n"
 "Last-Translator: Walter <wwycheuk@gmail.com>\n"
 "Language-Team: zh_TW <LL@li.org>\n"
 "Language: zh_TW\n"
@@ -27,15 +27,15 @@ msgstr "[檔案]"
 
 #: ../src/gpicview.c:40
 msgid "Print version information and exit"
-msgstr "顯示版本資訊然後離開"
+msgstr "顯示版本資訊然後結束"
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
-msgstr "開始投影"
+msgstr "開始放映"
 
 #: ../src/main-win.c:165 ../src/main-win.c:1413 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
-msgstr "圖片檢視器"
+msgstr "圖片檢視"
 
 #: ../src/main-win.c:267 ../src/main-win.c:1438
 msgid "Previous"
@@ -47,7 +47,7 @@ msgstr "下一張"
 
 #: ../src/main-win.c:269 ../src/main-win.c:754
 msgid "Start Slideshow"
-msgstr "開始投影"
+msgstr "開始放映"
 
 #: ../src/main-win.c:273 ../src/main-win.c:1442
 msgid "Zoom Out"
@@ -71,7 +71,7 @@ msgstr "原始大小"
 
 #: ../src/main-win.c:290 ../src/main-win.c:1447
 msgid "Full Screen"
-msgstr "全螢幕瀏覽"
+msgstr "全螢幕"
 
 #: ../src/main-win.c:294 ../src/main-win.c:1449
 msgid "Rotate Counterclockwise"
@@ -112,11 +112,11 @@ msgstr "偏好設定"
 
 #: ../src/main-win.c:309 ../src/main-win.c:1464
 msgid "Quit"
-msgstr "離開"
+msgstr "結束"
 
 #: ../src/main-win.c:762
 msgid "Stop Slideshow"
-msgstr "停止投影"
+msgstr "停止放映"
 
 #: ../src/main-win.c:1303
 msgid ""
@@ -144,11 +144,11 @@ msgstr ""
 
 #: ../src/main-win.c:1440
 msgid "Start/Stop Slideshow"
-msgstr "開始或停止投影"
+msgstr "開始或停止放映"
 
 #: ../src/main-win.c:1456
 msgid "Save As"
-msgstr "另存新檔"
+msgstr "另存為"
 
 #: ../src/main-win.c:1461
 msgid "Show/Hide toolbar"
@@ -161,11 +161,13 @@ msgstr " * 參考 EOG 及 GThumb 的程式碼"
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1509
 msgid "translator-credits"
-msgstr "洪任諭 (PCMan) <pcman.tw@gmail.com>"
+msgstr ""
+"洪任諭 (PCMan) <pcman.tw@gmail.com>\n"
+"Walter Cheuk <wwycheuk@gmail.com>"
 
 #: ../src/main-win.c:1515
 msgid "GPicView"
-msgstr "GPicView 圖片檢視器"
+msgstr "GPicView 圖片檢視"
 
 #: ../src/main-win.c:1517
 msgid "Copyright (C) 2007 - 2011"
@@ -234,19 +236,19 @@ msgstr "刪除影像前先詢問"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
-msgstr "自動儲存經過旋轉的影像 (目前只支援 JPEG 格式)"
+msgstr "自動儲存經過旋轉的影像"
 
 #: ../data/pref-dlg.ui.h:5
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
-"透過改變 EXIF orientation 數值來旋轉 JPEG 圖檔\n"
+"透過改變 EXIF orientation 值來旋轉 JPEG 圖檔\n"
 "(只有當 EXIF orientation 標籤存在時有效)"
 
 #: ../data/pref-dlg.ui.h:7
 msgid "Slideshow interval"
-msgstr "投影間隔"
+msgstr "放映間隔"
 
 #: ../data/pref-dlg.ui.h:8
 msgid "sec"
