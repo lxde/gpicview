@@ -8,13 +8,15 @@ msgstr ""
 "Project-Id-Version: 0.1.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 14:36+0200\n"
-"PO-Revision-Date: 2008-11-25 17:12+0200\n"
-"Last-Translator: Elias Julkunen <elias.julkunen@gmail.com>\n"
+"PO-Revision-Date: 2012-09-24 22:48+0200\n"
+"Last-Translator: Elias <wompatti@fffin.com>\n"
 "Language-Team: \n"
-"Language: \n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
@@ -147,7 +149,7 @@ msgstr "Tallenna nimellä"
 
 #: ../src/main-win.c:1461
 msgid "Show/Hide toolbar"
-msgstr ""
+msgstr "Näytä/Piilota työkalurivi"
 
 #: ../src/main-win.c:1505
 msgid " * Refer to source code of EOG image viewer and GThumb"
