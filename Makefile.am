@@ -12,7 +12,7 @@ desktop_in_files = gpicview.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
-icondir = $(datadir)/pixmaps
+icondir = $(datadir)/icons/hicolor/48x48/apps
 icon_DATA = gpicview.png
 
 install-data-local:

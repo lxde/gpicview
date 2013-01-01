@@ -163,7 +163,14 @@ GtkWidget* main_win_new()
 void main_win_init( MainWin*mw )
 {
     gtk_window_set_title( (GtkWindow*)mw, _("Image Viewer"));
-    gtk_window_set_icon_from_file( (GtkWindow*)mw, PACKAGE_DATA_DIR"/pixmaps/gpicview.png", NULL );
+    if (gtk_icon_theme_has_icon(gtk_icon_theme_get_default(), "gpicview"))
+    {
+        gtk_window_set_icon_name((GtkWindow*)mw, "gpicview");
+    }
+    else
+    {
+        gtk_window_set_icon_from_file((GtkWindow*)mw, PACKAGE_DATA_DIR "/icons/hicolor/48x48/apps/gpicview.png", NULL);
+    }
     gtk_window_set_default_size( (GtkWindow*)mw, 640, 480 );
 
 #if GTK_CHECK_VERSION(3, 0, 0)
