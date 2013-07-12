@@ -1,7 +1,7 @@
 ## Process this file with automake to produce Makefile.in
 
 # set the include path found by configure
-INCLUDES = $(all_includes) \
+gpicview_CPPFLAGS = $(all_includes) \
 	$(X11_CFLAGS) \
         $(GTK_CFLAGS) \
         $(ADDITIONAL_FLAGS) \

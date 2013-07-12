@@ -1,14 +1,14 @@
 dnl Process this file with autoconf to produce a configure script.
 
-AC_INIT(configure.in)
-AM_INIT_AUTOMAKE(gpicview, 0.2.3)
-AM_CONFIG_HEADER(config.h)
+AC_INIT([gpicview],[0.2.3],[],[gpicview])
+# Autotols programs
+AM_INIT_AUTOMAKE([1.10 -Wall -Werror foreign])
 AM_MAINTAINER_MODE
 
-AC_LANG_C
-AM_PROG_LIBTOOL
+AC_LANG([C])
+LT_INIT
 
-AC_ISC_POSIX
+AC_SEARCH_LIBS([strerror],[cposix])
 AC_PROG_CC
 AM_PROG_CC_STDC
 AM_PROG_CC_C_O
@@ -18,9 +18,11 @@ AC_HEADER_STDC
 # to configure or passing V=1 to make
 AM_SILENT_RULES([yes])
 
+AC_CONFIG_HEADERS([config.h])
+AC_CONFIG_MACRO_DIR([m4])
+
 AC_ARG_ENABLE(more_warnings,
-       [AC_HELP_STRING([--enable-more-warnings],
-               [Add more warnings @<:@default=no@:>@])],
+       [AS_HELP_STRING([--enable-more-warnings],[Add more warnings @<:@default=no@:>@])],
        [enable_more_warnings="${enableval}"],
        [enable_more_warnings=no]
 )
@@ -35,7 +37,7 @@ AM_GLIB_GNU_GETTEXT
 IT_PROG_INTLTOOL([0.40.0])
 
 AC_ARG_ENABLE(gtk3,
-AC_HELP_STRING([--enable-gtk3],[enable to use gtk-3.0 instead of gtk-2.0]),
+AS_HELP_STRING([--enable-gtk3],[enable to use gtk-3.0 instead of gtk-2.0]),
 [case "${enableval}" in
   yes)  enable_gtk3=yes ;;
   no)   enable_gtk3=no ;;
@@ -67,12 +69,13 @@ GETTEXT_PACKAGE=gpicview
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package.])
 
-AC_OUTPUT([
+AC_CONFIG_FILES([
 Makefile
 src/Makefile
 data/Makefile
 po/Makefile.in
 ])
+AC_OUTPUT
 
 echo
 echo GPicView....................... : Version $VERSION
