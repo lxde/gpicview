@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gpicview\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 14:36+0200\n"
-"PO-Revision-Date: 2012-10-07 02:40+0200\n"
+"PO-Revision-Date: 2013-07-25 11:25+0000\n"
 "Last-Translator: Sérgio <smarquespt@gmail.com>\n"
 "Language-Team: Portuguese\n"
 "Language: pt\n"
@@ -16,9 +16,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.5\n"
-"X-Poedit-Language: Portuguese\n"
-"X-Poedit-Country: PORTUGAL\n"
+"X-Generator: Pootle 2.5.0\n"
+"X-POOTLE-MTIME: 1374751517.0\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
@@ -26,7 +25,7 @@ msgstr "[Ficheiro]"
 
 #: ../src/gpicview.c:40
 msgid "Print version information and exit"
-msgstr "Imprimir informações da versão e sair"
+msgstr "Mostra as informações da versão e sai"
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
@@ -129,7 +128,7 @@ msgstr ""
 
 #: ../src/main-win.c:1344
 msgid "Writing this image format is not supported."
-msgstr "A escrita neste formato não é suportada."
+msgstr "Não há suporte para gravar este formato."
 
 #: ../src/main-win.c:1382
 msgid ""
@@ -137,7 +136,7 @@ msgid ""
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
-"Tem a certeza de que quer eliminar o ficheiro atual?\n"
+"Tem a certeza que quer eliminar o ficheiro atual?\n"
 "\n"
 "Atenção: uma vez eliminado, não poderá ser recuperado."
 
@@ -155,7 +154,7 @@ msgstr "Mostrar/ocultar barra de ferramentas"
 
 #: ../src/main-win.c:1505
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr " *Referência ao código fonte dos visualizadores EOG e GThumb"
+msgstr " * Consulte o código fonte dos visualizadores EOG e GThumb"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1509
@@ -184,8 +183,8 @@ msgid ""
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"O GPicView vai ser o visualizador pré-definido para todas as imagens "
-"suportadas pelo seu sistema.\n"
+"O GPicView será o visualizador pré-definido para todas as imagens suportadas "
+"pelo seu sistema.\n"
 "(Isto será feito através do programa \"xdg-mime\")\n"
 "\n"
 "<b>Tem a certeza de que é isto que quer?</b>"
@@ -224,7 +223,7 @@ msgstr ""
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
-msgstr "Veja facilmente as imagens"
+msgstr "Ver imagens facilmente"
 
 #: ../data/pref-dlg.ui.h:2
 msgid "Ask before saving images"
@@ -243,12 +242,12 @@ msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
-"Rodar ficheiro JPEG ao mudar o valor de orientação EXIF\n"
+"Rodar ficheiro JPEG mudando o valor de orientação EXIF\n"
 "(só funciona se existirem detalhes de orientação EXIF)"
 
 #: ../data/pref-dlg.ui.h:7
 msgid "Slideshow interval"
-msgstr "Intervalo da apresentação"
+msgstr "Tempo entre imagens"
 
 #: ../data/pref-dlg.ui.h:8
 msgid "sec"
