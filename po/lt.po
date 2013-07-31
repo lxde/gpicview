@@ -161,7 +161,7 @@ msgid "translator-credits"
 msgstr ""
 "Joshas <joshas@freemail.lt>\n"
 "Julius Vitkauskas <zadintuvas@gmail.com>\n"
-"Algimantas Margevičius <margevicius.algimantas@gmail.com>\n"
+"Algimantas Margevičius <margevicius.algimantas@gmail.com>"
 
 #: ../src/main-win.c:1515
 msgid "GPicView"
