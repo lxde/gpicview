@@ -6,19 +6,17 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: GPicView 0.1.x\n"
+"Project-Id-Version: GPicView 0.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 14:36+0200\n"
-"PO-Revision-Date: 2012-09-23 21:40+0200\n"
-"Last-Translator: Jay A. <tito.nehru.naser@gmail.com>\n"
+"PO-Revision-Date: 2013-09-05 20:53+0100\n"
+"Last-Translator: Jay A.Fleming <tito.nehru.naser@gmail.com>\n"
 "Language-Team: \n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Pootle 2.0.5\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
@@ -32,27 +30,34 @@ msgstr "Испиши информације о верзији и изађи"
 msgid "Start slideshow"
 msgstr "Аутоматски покретни приказ"
 
-#: ../src/main-win.c:165 ../src/main-win.c:1413 ../gpicview.desktop.in.h:1
+#: ../src/main-win.c:165
+#: ../src/main-win.c:1413
+#: ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
 msgstr "Прегледач слика"
 
-#: ../src/main-win.c:267 ../src/main-win.c:1438
+#: ../src/main-win.c:267
+#: ../src/main-win.c:1438
 msgid "Previous"
 msgstr "Претходна"
 
-#: ../src/main-win.c:268 ../src/main-win.c:1439
+#: ../src/main-win.c:268
+#: ../src/main-win.c:1439
 msgid "Next"
 msgstr "Следећа"
 
-#: ../src/main-win.c:269 ../src/main-win.c:754
+#: ../src/main-win.c:269
+#: ../src/main-win.c:754
 msgid "Start Slideshow"
 msgstr "Аутоматски покретни приказ"
 
-#: ../src/main-win.c:273 ../src/main-win.c:1442
+#: ../src/main-win.c:273
+#: ../src/main-win.c:1442
 msgid "Zoom Out"
 msgstr "Умањи"
 
-#: ../src/main-win.c:274 ../src/main-win.c:1443
+#: ../src/main-win.c:274
+#: ../src/main-win.c:1443
 msgid "Zoom In"
 msgstr "Увећај"
 
@@ -60,39 +65,48 @@ msgstr "Увећај"
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
 #. gtk_widget_set_size_request( percent, 45, -1 );
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
-#: ../src/main-win.c:281 ../src/main-win.c:1444
+#: ../src/main-win.c:281
+#: ../src/main-win.c:1444
 msgid "Fit Image To Window Size"
 msgstr "Прилагоди величину слике према прозору"
 
-#: ../src/main-win.c:283 ../src/main-win.c:1445
+#: ../src/main-win.c:283
+#: ../src/main-win.c:1445
 msgid "Original Size"
-msgstr "Оригинална величина сике"
+msgstr "Оригинална величина слике"
 
-#: ../src/main-win.c:290 ../src/main-win.c:1447
+#: ../src/main-win.c:290
+#: ../src/main-win.c:1447
 msgid "Full Screen"
 msgstr "Прикажи преко целог екрана"
 
-#: ../src/main-win.c:294 ../src/main-win.c:1449
+#: ../src/main-win.c:294
+#: ../src/main-win.c:1449
 msgid "Rotate Counterclockwise"
 msgstr "Окрени на лево"
 
-#: ../src/main-win.c:295 ../src/main-win.c:1450
+#: ../src/main-win.c:295
+#: ../src/main-win.c:1450
 msgid "Rotate Clockwise"
 msgstr "Окрени на десно"
 
-#: ../src/main-win.c:297 ../src/main-win.c:1451
+#: ../src/main-win.c:297
+#: ../src/main-win.c:1451
 msgid "Flip Horizontal"
-msgstr "Окрени хоризонтално"
+msgstr "Изврни према хоризонтали"
 
-#: ../src/main-win.c:298 ../src/main-win.c:1452
+#: ../src/main-win.c:298
+#: ../src/main-win.c:1452
 msgid "Flip Vertical"
-msgstr "Окрени вертикално"
+msgstr "Изврни према вертикали"
 
-#: ../src/main-win.c:302 ../src/main-win.c:1454
+#: ../src/main-win.c:302
+#: ../src/main-win.c:1454
 msgid "Open File"
 msgstr "Отвори датотеку"
 
-#: ../src/main-win.c:303 ../src/main-win.c:1455
+#: ../src/main-win.c:303
+#: ../src/main-win.c:1455
 msgid "Save File"
 msgstr "Сачувај датотеку"
 
@@ -101,17 +115,21 @@ msgid "Save File As"
 msgstr "Сачувај под другим именом"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
-#: ../src/main-win.c:305 ../src/main-win.c:1458
+#: ../src/main-win.c:305
+#: ../src/main-win.c:1458
 msgid "Delete File"
 msgstr "Обриши датотеку"
 
-#: ../src/main-win.c:308 ../src/main-win.c:1460 ../data/pref-dlg.ui.h:1
+#: ../src/main-win.c:308
+#: ../src/main-win.c:1460
+#: ../data/pref-dlg.ui.h:1
 msgid "Preferences"
 msgstr "Поставке"
 
-#: ../src/main-win.c:309 ../src/main-win.c:1464
+#: ../src/main-win.c:309
+#: ../src/main-win.c:1464
 msgid "Quit"
-msgstr "Излаз"
+msgstr "Изађи"
 
 #: ../src/main-win.c:762
 msgid "Stop Slideshow"
@@ -155,7 +173,7 @@ msgstr "Прикажи/Сакриј траку са алаткама"
 
 #: ../src/main-win.c:1505
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr " * Погледајте изворни код „EOG“ и „GThumb“ програма"
+msgstr " * Погледајте изворни код програма „EOG“ и „GThumb“"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1509
@@ -168,16 +186,15 @@ msgstr "Прегледач слика"
 
 #: ../src/main-win.c:1517
 msgid "Copyright (C) 2007 - 2011"
-msgstr "2007-2011. Сва права задржана."
+msgstr "2007-2011. Нека права су задржана."
 
 #: ../src/main-win.c:1518
 msgid "Lightweight image viewer from LXDE project"
-msgstr "Олакшани прегледач слика за LXDE радно окружење"
+msgstr "Једноставан прегледач слика за ЛИкс-ДЕ радно окружење"
 
 #: ../src/pref.c:164
 msgid ""
-"GPicView will become the default viewer for all supported image files on "
-"your system.\n"
+"GPicView will become the default viewer for all supported image files on your system.\n"
 "(This will be done through 'xdg-mime' program)\n"
 "\n"
 "<b>Are you sure you really want to do this?</b>"
@@ -197,7 +214,7 @@ msgstr "Све датотеке"
 
 #: ../src/file-dlgs.c:103
 msgid "JPEG Quality:"
-msgstr "Квалитет „JPEG“ слике:"
+msgstr "Квалитет ЈПЕГ слике:"
 
 #: ../src/file-dlgs.c:104
 msgid ""
@@ -210,7 +227,7 @@ msgstr ""
 
 #: ../src/file-dlgs.c:121
 msgid "PNG Compression Level:"
-msgstr "Ниво компресије „PNG“ слике:"
+msgstr "Ниво компресије ПНГ слике:"
 
 #: ../src/file-dlgs.c:122
 msgid ""
@@ -242,7 +259,7 @@ msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
-"Окрени „JPEG“ слику према „EXIF“ вредностима\n"
+"Окрени ЈПЕГ слику према „EXIF“ вредностима\n"
 "(само ако „EXIF“ таг за оријентацију слике постоји)"
 
 #: ../data/pref-dlg.ui.h:7
@@ -251,7 +268,7 @@ msgstr "Следећа слика после"
 
 #: ../data/pref-dlg.ui.h:8
 msgid "sec"
-msgstr "сек"
+msgstr "сек."
 
 #: ../data/pref-dlg.ui.h:9
 msgid "Make GPicView the default viewer for images"
@@ -267,4 +284,5 @@ msgstr "Цео екран:"
 
 #: ../data/pref-dlg.ui.h:12
 msgid "<b>Background colors</b>"
-msgstr "<b>Позадинске боје</b>"
+msgstr "<b>Боје позадине</b>"
+
