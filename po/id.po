@@ -2,7 +2,6 @@
 # Copyright (C) 2007-2008 ??? (Hon Jen Yee, aka PCMan)
 # This file is distributed under the same license as the GPicView package.
 # Andhika Padmawan <andhika.padmawan@gmail.com>, Rahman Yusri Aftian <aftian@yahoo.com>, 2009.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: GPicView\n"
