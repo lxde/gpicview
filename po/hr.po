@@ -2,14 +2,13 @@
 # Copyright (C) 2009 Hong Jen Yee (PCMan)
 # This file is distributed under the same license as the GPicView package.
 # Frank Bolkovich Boljsa <asjlob@vip.hr>, 2009.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: gpicview_hr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 14:36+0200\n"
-"PO-Revision-Date: 2012-10-07 23:04+0200\n"
-"Last-Translator: zvacet <ikoli@yahoo.com>\n"
+"PO-Revision-Date: 2014-01-17 14:25+0000\n"
+"Last-Translator: Ivica <ikoli@yahoo.com>\n"
 "Language-Team: Croatian <asjlob AT vip.hr>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
@@ -17,9 +16,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Pootle 2.0.5\n"
-"X-Poedit-Language: Croatian\n"
-"X-Poedit-Country: CROATIA\n"
+"X-Generator: Pootle 2.5.0\n"
+"X-POOTLE-MTIME: 1389968725.0\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
@@ -35,7 +33,7 @@ msgstr "Pokreni prikaz u slijedu"
 
 #: ../src/main-win.c:165 ../src/main-win.c:1413 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
-msgstr "Preglednik Slika"
+msgstr "Preglednik slika"
 
 #: ../src/main-win.c:267 ../src/main-win.c:1438
 msgid "Previous"
@@ -51,11 +49,11 @@ msgstr "Pokreni prikaz u slijedu"
 
 #: ../src/main-win.c:273 ../src/main-win.c:1442
 msgid "Zoom Out"
-msgstr "Smanji Zumiranje"
+msgstr "Smanji zumiranje"
 
 #: ../src/main-win.c:274 ../src/main-win.c:1443
 msgid "Zoom In"
-msgstr "Povećaj Zumiranje"
+msgstr "Povećaj zumiranje"
 
 #. percent = gtk_entry_new();    // show scale (in percentage)
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
@@ -67,19 +65,19 @@ msgstr "Podesi sliku na veličinu prozora"
 
 #: ../src/main-win.c:283 ../src/main-win.c:1445
 msgid "Original Size"
-msgstr "Orginalna Veličina"
+msgstr "Orginalna veličina"
 
 #: ../src/main-win.c:290 ../src/main-win.c:1447
 msgid "Full Screen"
-msgstr "Cijeli Zaslon"
+msgstr "Cijeli zaslon"
 
 #: ../src/main-win.c:294 ../src/main-win.c:1449
 msgid "Rotate Counterclockwise"
-msgstr "Rotiraj Suprotno Smjeru Kazaljke na Satu"
+msgstr "Rotiraj suprotno smjeru kazaljke na satu"
 
 #: ../src/main-win.c:295 ../src/main-win.c:1450
 msgid "Rotate Clockwise"
-msgstr "Rotiraj u Smjeru Kazaljke na Satu"
+msgstr "Rotiraj u smjeru kazaljke na satu"
 
 #: ../src/main-win.c:297 ../src/main-win.c:1451
 msgid "Flip Horizontal"
@@ -91,20 +89,20 @@ msgstr "Okreni okomito"
 
 #: ../src/main-win.c:302 ../src/main-win.c:1454
 msgid "Open File"
-msgstr "Otvori Datoteku"
+msgstr "Otvori datoteku"
 
 #: ../src/main-win.c:303 ../src/main-win.c:1455
 msgid "Save File"
-msgstr "Spremi Datoteku"
+msgstr "Spremi datoteku"
 
 #: ../src/main-win.c:304
 msgid "Save File As"
-msgstr "Spremi Datoteku Kao"
+msgstr "Spremi datoteku kao"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
 #: ../src/main-win.c:305 ../src/main-win.c:1458
 msgid "Delete File"
-msgstr "Obriši Datoteku"
+msgstr "Obriši datoteku"
 
 #: ../src/main-win.c:308 ../src/main-win.c:1460 ../data/pref-dlg.ui.h:1
 msgid "Preferences"
@@ -171,7 +169,7 @@ msgstr "GPicView"
 
 #: ../src/main-win.c:1517
 msgid "Copyright (C) 2007 - 2011"
-msgstr "Copyright (C) 2007 - 2011"
+msgstr "Autorska prava (C) 2007 - 2011"
 
 #: ../src/main-win.c:1518
 msgid "Lightweight image viewer from LXDE project"
@@ -193,11 +191,11 @@ msgstr ""
 
 #: ../src/file-dlgs.c:62
 msgid "All Supported Images"
-msgstr "Sve Podržane Slike"
+msgstr "Sve podržane slike"
 
 #: ../src/file-dlgs.c:67
 msgid "All Files"
-msgstr "Sve Datoteke"
+msgstr "Sve datoteke"
 
 #: ../src/file-dlgs.c:103
 msgid "JPEG Quality:"
