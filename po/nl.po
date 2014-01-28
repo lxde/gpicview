@@ -3,13 +3,12 @@
 # This file is distributed under the same license as the gpicview package.
 # Stephan Arts <stephan@xfce.org>, 2008.
 # Pjotr, 2011.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: gpicview\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 14:36+0200\n"
-"PO-Revision-Date: 2012-09-25 23:12+0200\n"
+"PO-Revision-Date: 2014-01-28 13:56+0000\n"
 "Last-Translator: Pjotr <pjotrvertaalt@gmail.com>\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
@@ -17,7 +16,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.5\n"
+"X-Generator: Pootle 2.5.0\n"
+"X-POOTLE-MTIME: 1390917392.0\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
@@ -25,7 +25,7 @@ msgstr "[BESTAND]"
 
 #: ../src/gpicview.c:40
 msgid "Print version information and exit"
-msgstr "Versie-informatie afdrukken en afsluiten"
+msgstr "Druk versie-informatie af en sluit af"
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
@@ -129,8 +129,7 @@ msgstr ""
 
 #: ../src/main-win.c:1344
 msgid "Writing this image format is not supported."
-msgstr ""
-"Het wegschrijven naar dit afbeelding-opmaaktype wordt niet ondersteund."
+msgstr "Het wegschrijven naar dit afbeelding-opmaaktype wordt niet ondersteund."
 
 #: ../src/main-win.c:1382
 msgid ""
@@ -165,7 +164,7 @@ msgid "translator-credits"
 msgstr ""
 "Stephan Arts\n"
 "Sander De Voogdt\n"
-"Pjotr"
+"Pjotr <pjotrvertaalt@gmail.com>"
 
 #: ../src/main-win.c:1515
 msgid "GPicView"
@@ -177,7 +176,7 @@ msgstr "Auteursrecht (C) 2007-2011"
 
 #: ../src/main-win.c:1518
 msgid "Lightweight image viewer from LXDE project"
-msgstr "Lichtgewicht afbeeldingkijker van het LXDE-project"
+msgstr "Lichtgewicht-afbeeldingkijker van het LXDE-project"
 
 #: ../src/pref.c:164
 msgid ""
@@ -191,7 +190,7 @@ msgstr ""
 "afbeeldingbestanden op uw computer.\n"
 "(Dit gebeurt door middel van het 'xdg-mime' programma)\n"
 "\n"
-"<b>Weet u zeker dat u wilt doen?</b>"
+"<b>Weet u zeker dat u dat wil doen?</b>"
 
 #: ../src/file-dlgs.c:62
 msgid "All Supported Images"
@@ -210,20 +209,20 @@ msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
 msgstr ""
-"Een lagere waarde voor kwaliteit zorgt voor kleinere bestanden,\n"
-"maar de beeldkwaliteit zal verminderen."
+"Een lagere waarde voor kwaliteit zorgt voor kleinere\n"
+"bestanden, maar de beeldkwaliteit zal verminderen."
 
 #: ../src/file-dlgs.c:121
 msgid "PNG Compression Level:"
-msgstr "PNG-Compressieniveau:"
+msgstr "PNG-compressieniveau:"
 
 #: ../src/file-dlgs.c:122
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
 msgstr ""
-"Hogere compressiewaarden zorgen voor kleinere bestanden,\n"
-"maar de beeldkwaliteit zal verminderen."
+"Hogere compressiewaarden zorgen voor kleinere\n"
+"bestanden, maar het comprimeren duurt langer."
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
@@ -246,12 +245,12 @@ msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
-"Draai JPEG-bestand door de EXIF-oriëntatiewaarde te veranderen\n"
-"(alleen indien EXIF-oriëntatie-etiket bestaat)"
+"Draai JPEG-bestand door de EXIF-oriëntatiewaarde te\n"
+"veranderen (alleen indien EXIF-oriëntatie-etiket bestaat)"
 
 #: ../data/pref-dlg.ui.h:7
 msgid "Slideshow interval"
-msgstr "Diavoorstelling interval"
+msgstr "Tussenpoze voor diavoorstelling"
 
 #: ../data/pref-dlg.ui.h:8
 msgid "sec"
