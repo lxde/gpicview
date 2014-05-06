@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: GPicView\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 14:36+0200\n"
-"PO-Revision-Date: 2014-05-06 12:06+0000\n"
-"Last-Translator: Abd Elrhman <translations@sphinux.org>\n"
+"PO-Revision-Date: 2014-05-07 00:22+0200\n"
+"Last-Translator: abd elrhman <translations@sphinux.org>\n"
 "Language-Team: Arabic <>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Pootle 2.5.0\n"
+"X-Generator: Lokalize 1.4\n"
 "X-POOTLE-MTIME: 1399378013.0\n"
 
 #: ../src/gpicview.c:38
@@ -170,7 +170,7 @@ msgstr ""
 
 #: ../src/main-win.c:1515
 msgid "GPicView"
-msgstr "جيبسفيو"
+msgstr "جيبكفيو"
 
 #: ../src/main-win.c:1517
 msgid "Copyright (C) 2007 - 2011"
@@ -188,11 +188,11 @@ msgid ""
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"سيصبح عارض الصور جيبسفيو  هو العرض المبدئي لكافة ملفات الصور الموجوة على "
+"سيصبح عارض الصور جيبكفيو  هو العارض المبدئي لكافة ملفات الصور الموجوة على "
 "الحاسوب.\n"
 "(ستتم هذه العملية بإستخدام الأمر 'xdg-mime')\n"
 "\n"
-"<b>أمتأكد من رغبتك بالإستمرار؟</b>"
+"<b>إستمرار؟</b>"
 
 #: ../src/file-dlgs.c:62
 msgid "All Supported Images"
@@ -260,7 +260,7 @@ msgstr "ثواني"
 
 #: ../data/pref-dlg.ui.h:9
 msgid "Make GPicView the default viewer for images"
-msgstr "عيِّن عارض الصور جيبسفيو كـ عارض الصور المبدئي في النظام"
+msgstr "عيِّن عارض الصور جيبكفيو كـ عارض الصور المبدئي في النظام"
 
 #: ../data/pref-dlg.ui.h:10
 msgid "Normal:"
