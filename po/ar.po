@@ -2,26 +2,26 @@
 # Arabic translations for PACKAGE package.
 # Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
 # أحمد فرغل <ahmad.farghal@gmail.com>, 2009.
 # Khaled Hosny <khaledhosny@eglug.org>, 2009.
 # Tareq Al Jurf <taljurf@fedoraproject.org>, 2010.
-#
+# abd elrhman <translations@sphinux.org>, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: GPicView\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 14:36+0200\n"
-"PO-Revision-Date: 2012-10-04 20:17+0200\n"
-"Last-Translator: mohsen <linuxer9@gmail.com>\n"
-"Language-Team: Arabic <trans-ar@lists.fedoraproject.org>\n"
+"PO-Revision-Date: 2014-05-06 12:06+0000\n"
+"Last-Translator: Abd Elrhman <translations@sphinux.org>\n"
+"Language-Team: Arabic <>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: Pootle 2.0.5\n"
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Pootle 2.5.0\n"
+"X-POOTLE-MTIME: 1399378013.0\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
@@ -29,11 +29,11 @@ msgstr "[ملف]"
 
 #: ../src/gpicview.c:40
 msgid "Print version information and exit"
-msgstr "اكتب معلومات الإصدار ثم اخرج"
+msgstr "إطبع معلومات الإصدار ثم اُخرج"
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
-msgstr "ابدأ عرض الشرائح"
+msgstr "إبدء عرض الشرائح"
 
 #: ../src/main-win.c:165 ../src/main-win.c:1413 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
@@ -49,15 +49,15 @@ msgstr "التالية"
 
 #: ../src/main-win.c:269 ../src/main-win.c:754
 msgid "Start Slideshow"
-msgstr "ابدأ عرض الشرائح"
+msgstr "إبدء عرض الشرائح"
 
 #: ../src/main-win.c:273 ../src/main-win.c:1442
 msgid "Zoom Out"
-msgstr "بعّد"
+msgstr "صغِّر"
 
 #: ../src/main-win.c:274 ../src/main-win.c:1443
 msgid "Zoom In"
-msgstr "قرّب"
+msgstr "كبِّر"
 
 #. percent = gtk_entry_new();    // show scale (in percentage)
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
@@ -73,48 +73,48 @@ msgstr "الحجم الأصلي"
 
 #: ../src/main-win.c:290 ../src/main-win.c:1447
 msgid "Full Screen"
-msgstr "ملء الشاشة"
+msgstr "الشاشة الكاملة"
 
 #: ../src/main-win.c:294 ../src/main-win.c:1449
 msgid "Rotate Counterclockwise"
-msgstr "لف عكس عقارب الساعة"
+msgstr "دَوِّر عكس عقارب الساعة"
 
 #: ../src/main-win.c:295 ../src/main-win.c:1450
 msgid "Rotate Clockwise"
-msgstr "لف مع عقارب الساعة"
+msgstr "دَوِّر مع عقارب الساعة"
 
 #: ../src/main-win.c:297 ../src/main-win.c:1451
 msgid "Flip Horizontal"
-msgstr "اقلب أفقيا"
+msgstr "إقلب اُفقياً"
 
 #: ../src/main-win.c:298 ../src/main-win.c:1452
 msgid "Flip Vertical"
-msgstr "اقلب رأسيا"
+msgstr "إقلب رأسياً"
 
 #: ../src/main-win.c:302 ../src/main-win.c:1454
 msgid "Open File"
-msgstr "افتح ملفا"
+msgstr "إفتح ملف"
 
 #: ../src/main-win.c:303 ../src/main-win.c:1455
 msgid "Save File"
-msgstr "احفظ الملف"
+msgstr "إحفظ الملف"
 
 #: ../src/main-win.c:304
 msgid "Save File As"
-msgstr "احفظ الملف كـ"
+msgstr "إحفظ الملف كـ"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
 #: ../src/main-win.c:305 ../src/main-win.c:1458
 msgid "Delete File"
-msgstr "احذف الملف"
+msgstr "إحذف الملف"
 
 #: ../src/main-win.c:308 ../src/main-win.c:1460 ../data/pref-dlg.ui.h:1
 msgid "Preferences"
-msgstr "التفضيلات"
+msgstr "إعدادات"
 
 #: ../src/main-win.c:309 ../src/main-win.c:1464
 msgid "Quit"
-msgstr "أنهِ"
+msgstr "اُخرج"
 
 #: ../src/main-win.c:762
 msgid "Stop Slideshow"
@@ -126,13 +126,13 @@ msgid ""
 "Do you want to overwrite existing file?\n"
 "(Warning: The quality of original image might be lost)"
 msgstr ""
-"اسم الملف الذي اخترته موجود بالفعل.\n"
-"هل تريد الكتابة فوق الملف الموجود؟\n"
-"(تحذير: قد تفقد جودة الصورة الأصلية)"
+"الإسم الذي إخترته للملف موجود مُسبقَاً.\n"
+"إستبدال؟\n"
+"(تحذير: قد تُفقَد جودة الصورة الأصلية)"
 
 #: ../src/main-win.c:1344
 msgid "Writing this image format is not supported."
-msgstr "الحفظ بهيئة الصور هذه غير مدعوم."
+msgstr "الحفظ بهذه الصيغة غير مدعوم"
 
 #: ../src/main-win.c:1382
 msgid ""
@@ -140,35 +140,37 @@ msgid ""
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
-"هل أنت متأكد أنك تريد حذف الملف الحالي؟\n"
+"أمُتأكد من رغبتك بحذف الملف الحالي؟\n"
 "\n"
-"تحذير: لا يمكن استعادة الملف بعد حذفه."
+"تحذير: لا يُمكِن إستعادة الملف بعد حذفه."
 
 #: ../src/main-win.c:1440
 msgid "Start/Stop Slideshow"
-msgstr "ابدأ/أوقف عرض الشرائح"
+msgstr "إبدء/أوقف عرض الشرائح"
 
 #: ../src/main-win.c:1456
 msgid "Save As"
-msgstr "احفظ كـ"
+msgstr "إحفظ كـ"
 
 #: ../src/main-win.c:1461
 msgid "Show/Hide toolbar"
-msgstr "إخفاء\\عرض شريط الأدوات"
+msgstr "إخف/إعرض شريط الأدوات"
 
 #: ../src/main-win.c:1505
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr "* راجع الشفرة المصدرية لعارض الصور عين جنوم وGThumb"
+msgstr " * راجع الشيفرة المَصدَرِية لعارض الصور \"عين جنوم\" و \"GThumb\""
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1509
 msgid "translator-credits"
 msgstr ""
-"أحمد فرغل <ahmad.farghal@gmail.com>كريم أولاد الشلحة <herr.linux88@gmail.com>"
+"أحمد فرغل <ahmad.farghal@gmail.com> "
+"فريق سفينكسار <translations@sphinux.org> "
+"كريم أولاد الشلحة <herr.linux88@gmail.com>"
 
 #: ../src/main-win.c:1515
 msgid "GPicView"
-msgstr "عارض الصور ج"
+msgstr "جيبسفيو"
 
 #: ../src/main-win.c:1517
 msgid "Copyright (C) 2007 - 2011"
@@ -176,7 +178,7 @@ msgstr "حقوق النشر محفوظة (C) 2007 - 2011"
 
 #: ../src/main-win.c:1518
 msgid "Lightweight image viewer from LXDE project"
-msgstr "عارض صور خفيف من مشروع لكسدي"
+msgstr "عارض صور خفيف لبيئة سطح المكتب لكسدي"
 
 #: ../src/pref.c:164
 msgid ""
@@ -186,10 +188,11 @@ msgid ""
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"سيصبح GPicview عارض الصور الافتراضي لكل ملفات الصور المدعومة في النظام.\n"
-"(ستتم هذه العملية بواسطة برنامج 'xdg-mime')\n"
+"سيصبح عارض الصور جيبسفيو  هو العرض المبدئي لكافة ملفات الصور الموجوة على "
+"الحاسوب.\n"
+"(ستتم هذه العملية بإستخدام الأمر 'xdg-mime')\n"
 "\n"
-"<b>هل أنت متأكد أنك تريد القيام بهذا؟</b>"
+"<b>أمتأكد من رغبتك بالإستمرار؟</b>"
 
 #: ../src/file-dlgs.c:62
 msgid "All Supported Images"
@@ -201,71 +204,71 @@ msgstr "كل الملفات"
 
 #: ../src/file-dlgs.c:103
 msgid "JPEG Quality:"
-msgstr "جودة JPEG:"
+msgstr "جودة صورة الـ JPEG:"
 
 #: ../src/file-dlgs.c:104
 msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
 msgstr ""
-"الجودة الأقل تولد صورا أصغر،\n"
-"إلا أن جودة الصورة تكون أسوأ."
+"الجودة الأقل تُوَلِد صور ذات مِساحة أصغر،\n"
+"ولكنها في نفس الوقت تُوَلِد جودة أقل."
 
 #: ../src/file-dlgs.c:121
 msgid "PNG Compression Level:"
-msgstr "مستوى ضغط PNG:"
+msgstr "مستوى ضغط الـPNG:"
 
 #: ../src/file-dlgs.c:122
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
 msgstr ""
-"الضغط الأعلى يولد صورا أصغر،\n"
-"إلا أن إكمال الضغط يستغرق وفتا أطول."
+"الضغط الأقوى يُوَلِد صور ذات مِساحة أصغر،\n"
+"ولكنها تستغرق زمن أطول لإتمام عملية الضغط.."
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
-msgstr "اعرض صورك بسهولة"
+msgstr "إعرض صورك بسهولة وخِفة"
 
 #: ../data/pref-dlg.ui.h:2
 msgid "Ask before saving images"
-msgstr "اسأل قبل حفظ الصور"
+msgstr "السؤال قبل حفظ الصور"
 
 #: ../data/pref-dlg.ui.h:3
 msgid "Ask before deleting images"
-msgstr "اسأل قبل حذف الصور"
+msgstr "السؤال قبل حذف الصور"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
-msgstr "احفظ الصور آليا بعد لفها"
+msgstr "إحفظ الصور آليا بعد تدويرها"
 
 #: ../data/pref-dlg.ui.h:5
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
-"لف صور JPEG عن طريق تغيير قيمة الاتجاه في EXIF\n"
-"(فقط إذا كان وسم الاتجاه موجودا في EXIF)"
+"دَوِّر صور JPEG عن طريق تغيير قيمة الإتجاه في بيانات الـ EXIF الخاصة بالصورة\n"
+"(فقط إذا وجِدَت خانة الإتجاه في بيانات الـ EXIF الخاصة بالصورة)"
 
 #: ../data/pref-dlg.ui.h:7
 msgid "Slideshow interval"
-msgstr "مدة عرض الشرائح"
+msgstr "الزمن الفاصل بين فقرات عرض الشرائح"
 
 #: ../data/pref-dlg.ui.h:8
 msgid "sec"
-msgstr "ثانية"
+msgstr "ثواني"
 
 #: ../data/pref-dlg.ui.h:9
 msgid "Make GPicView the default viewer for images"
-msgstr "اجعل GPicView عارض الصور الافتراضي"
+msgstr "عيِّن عارض الصور جيبسفيو كـ عارض الصور المبدئي في النظام"
 
 #: ../data/pref-dlg.ui.h:10
 msgid "Normal:"
-msgstr "الوضع العادي:"
+msgstr "أثناء الوضع العادي:"
 
 #: ../data/pref-dlg.ui.h:11
 msgid "Fullscreen:"
-msgstr "ملء الشاشة:"
+msgstr "أثناء الشاشة الكاملة:"
 
 #: ../data/pref-dlg.ui.h:12
 msgid "<b>Background colors</b>"
