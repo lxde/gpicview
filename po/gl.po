@@ -3,17 +3,16 @@ msgstr ""
 "Project-Id-Version: LXDE\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 14:36+0200\n"
-"PO-Revision-Date: 2012-10-12 10:13+0200\n"
-"Last-Translator: mbouzada <mbouzada@gmail.com>\n"
+"PO-Revision-Date: 2014-08-11 17:53+0000\n"
+"Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
 "Language-Team: Proxecto Trasno <proxecto@trasno.net>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.5\n"
-"X-Poedit-Language: Galician\n"
-"X-Poedit-Country: SPAIN\n"
+"X-Generator: Pootle 2.6.0-rc1\n"
+"X-POOTLE-MTIME: 1407779597.000000\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
@@ -25,7 +24,7 @@ msgstr "Amosar información da versión e saír"
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
-msgstr "Iniciar presentación"
+msgstr "Iniciar o diaporama"
 
 #: ../src/main-win.c:165 ../src/main-win.c:1413 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
@@ -41,7 +40,7 @@ msgstr "Seguinte"
 
 #: ../src/main-win.c:269 ../src/main-win.c:754
 msgid "Start Slideshow"
-msgstr "Iniciar a presentación"
+msgstr "Iniciar o diaporama"
 
 #: ../src/main-win.c:273 ../src/main-win.c:1442
 msgid "Zoom Out"
@@ -110,7 +109,7 @@ msgstr "Saír"
 
 #: ../src/main-win.c:762
 msgid "Stop Slideshow"
-msgstr "Deter a presentación"
+msgstr "Deter o diaporama"
 
 #: ../src/main-win.c:1303
 msgid ""
@@ -138,7 +137,7 @@ msgstr ""
 
 #: ../src/main-win.c:1440
 msgid "Start/Stop Slideshow"
-msgstr "Iniciar/Deter a presentación"
+msgstr "Iniciar/deter o diaporama"
 
 #: ../src/main-win.c:1456
 msgid "Save As"
@@ -156,9 +155,8 @@ msgstr " * Consulte o código fonte do visor de imaxes EOG e do GThumb"
 #: ../src/main-win.c:1509
 msgid "translator-credits"
 msgstr ""
-"Festor Wailon Dacoba <Galician and Spanish translation>\n"
-"Indalecio Freiría Santos <ifreiria@gmail.com>\n"
-"Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
+"Indalecio Freiría Santos <ifreiria@gmail.com>, 2009 \n"
+"Miguel Anxo Bouzada <mbouzada@gmail.com>,2010, 2011, 2012, 2013, 2014 \n"
 "Proxecto Trasno <proxecto@trasno.net>"
 
 #: ../src/main-win.c:1515
@@ -183,7 +181,7 @@ msgid ""
 msgstr ""
 "GPicView converterase no visor predeterminado para todos os ficheiros de "
 "imaxe no sistema.\n"
-"(Isto farase a través do aplicativo «xdg-mime»)\n"
+"(Isto farase a través da aplicación «xdg-mime»)\n"
 "\n"
 "<b>Está seguro de querer facer isto?</b>"
 
