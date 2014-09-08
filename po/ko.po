@@ -8,17 +8,20 @@ msgstr ""
 "Project-Id-Version: gpicview.master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 14:36+0200\n"
-"PO-Revision-Date: \n"
+"PO-Revision-Date: 2014-08-29 14:16+0000\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language-Team: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.6.0-rc1\n"
+"X-POOTLE-MTIME: 1409321777.000000\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
-msgstr "<파일>"
+msgstr "<파일...>"
 
 #: ../src/gpicview.c:40
 msgid "Print version information and exit"
@@ -71,7 +74,7 @@ msgstr "그림을 창 크기에 맞추기"
 #: ../src/main-win.c:283
 #: ../src/main-win.c:1445
 msgid "Original Size"
-msgstr "본래 크기"
+msgstr "원래 크기"
 
 #: ../src/main-win.c:290
 #: ../src/main-win.c:1447
@@ -176,7 +179,7 @@ msgstr " * EOG 그림보기와 GThumb의 소스코드를 참조하십시오"
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1509
 msgid "translator-credits"
-msgstr "Seong-ho Cho <darkcircle.0426@gmail.com>"
+msgstr "Seong-ho Cho <shcho@gnome.org>"
 
 #: ../src/main-win.c:1515
 msgid "GPicView"
@@ -197,8 +200,8 @@ msgid ""
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"GPicView는 여러분의 시스템에서 지원하는 모든 그림 파일의 기본 보기 프로그램이 될 것입니다.\n"
-"('xdg-mime' 프로그램으로 실행할 것입니다)\n"
+"GPicView는 여러분의 시스템에서 지원하는 모든 그림 파일의 기본 보기 프로그램이 됩니다.\n"
+"('xdg-mime' 프로그램으로 실행합니다)\n"
 "\n"
 "<b>정말로 실행하시겠습니까?</b>"
 
@@ -219,8 +222,8 @@ msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
 msgstr ""
-"낮은 화질 값은 파일 크기를 작게 할 것입니다만,\n"
-"그림 화질은 떨어질 것입니다."
+"낮은 화질 값은 파일 크기를 작게 합니다만,\n"
+"그림 화질은 떨어집니다."
 
 #: ../src/file-dlgs.c:121
 msgid "PNG Compression Level:"
@@ -231,8 +234,8 @@ msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
 msgstr ""
-"높은 압축 수준은 파일 크기를 작게 할 것입니다만,\n"
-"압축하는데 시간이 좀 더 걸릴 것입니다."
+"높은 압축 수준은 파일 크기를 작게 합니다만,\n"
+"압축 시간이 좀 더 걸립니다."
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
@@ -281,4 +284,3 @@ msgstr "전체 화면:"
 #: ../data/pref-dlg.ui.h:12
 msgid "<b>Background colors</b>"
 msgstr "<b>배경 색</b>"
-
