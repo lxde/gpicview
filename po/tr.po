@@ -7,16 +7,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 14:36+0200\n"
-"PO-Revision-Date: 2013-11-06 21:29+0000\n"
-"Last-Translator: vgezer <volkangezer@gmail.com>\n"
+"PO-Revision-Date: 2014-08-08 09:58+0000\n"
+"Last-Translator: <necdetyucel@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1383773371.0\n"
+"X-Generator: Pootle 2.6.0-rc1\n"
+"X-POOTLE-MTIME: 1407491898.000000\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
@@ -159,9 +159,7 @@ msgstr ""
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1509
 msgid "translator-credits"
-msgstr ""
-"Mehmet Gülmen (memetgulmen@gmail.com)\n"
-"Kılıç Kökenmartinamca (martinamca@gmail.com"
+msgstr "çevirmenler"
 
 #: ../src/main-win.c:1515
 msgid "GPicView"
