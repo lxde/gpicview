@@ -1,9 +1,7 @@
 # Asturian translation of GPicView
 # Copyright (C) 2008 THE GPicView'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the GPicView package.
-#
 # Iñigo Varela <ivarela@softastur.org>, 2010.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: gpicview\n"
@@ -18,7 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.1\n"
-"X-Poedit-Language: asturian\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
