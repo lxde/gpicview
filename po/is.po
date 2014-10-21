@@ -1,0 +1,249 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-23 14:36+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: is\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.12.0\n"
+
+#: ../src/gpicview.c:38
+msgid "[FILE]"
+msgstr ""
+
+#: ../src/gpicview.c:40
+msgid "Print version information and exit"
+msgstr ""
+
+#: ../src/gpicview.c:42
+msgid "Start slideshow"
+msgstr ""
+
+#: ../src/main-win.c:165 ../src/main-win.c:1413 ../gpicview.desktop.in.h:1
+msgid "Image Viewer"
+msgstr ""
+
+#: ../src/main-win.c:267 ../src/main-win.c:1438
+msgid "Previous"
+msgstr ""
+
+#: ../src/main-win.c:268 ../src/main-win.c:1439
+msgid "Next"
+msgstr ""
+
+#: ../src/main-win.c:269 ../src/main-win.c:754
+msgid "Start Slideshow"
+msgstr ""
+
+#: ../src/main-win.c:273 ../src/main-win.c:1442
+msgid "Zoom Out"
+msgstr ""
+
+#: ../src/main-win.c:274 ../src/main-win.c:1443
+msgid "Zoom In"
+msgstr ""
+
+#. percent = gtk_entry_new();    // show scale (in percentage)
+#. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
+#. gtk_widget_set_size_request( percent, 45, -1 );
+#. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
+#: ../src/main-win.c:281 ../src/main-win.c:1444
+msgid "Fit Image To Window Size"
+msgstr ""
+
+#: ../src/main-win.c:283 ../src/main-win.c:1445
+msgid "Original Size"
+msgstr ""
+
+#: ../src/main-win.c:290 ../src/main-win.c:1447
+msgid "Full Screen"
+msgstr ""
+
+#: ../src/main-win.c:294 ../src/main-win.c:1449
+msgid "Rotate Counterclockwise"
+msgstr ""
+
+#: ../src/main-win.c:295 ../src/main-win.c:1450
+msgid "Rotate Clockwise"
+msgstr ""
+
+#: ../src/main-win.c:297 ../src/main-win.c:1451
+msgid "Flip Horizontal"
+msgstr ""
+
+#: ../src/main-win.c:298 ../src/main-win.c:1452
+msgid "Flip Vertical"
+msgstr ""
+
+#: ../src/main-win.c:302 ../src/main-win.c:1454
+msgid "Open File"
+msgstr ""
+
+#: ../src/main-win.c:303 ../src/main-win.c:1455
+msgid "Save File"
+msgstr ""
+
+#: ../src/main-win.c:304
+msgid "Save File As"
+msgstr ""
+
+#. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
+#: ../src/main-win.c:305 ../src/main-win.c:1458
+msgid "Delete File"
+msgstr ""
+
+#: ../src/main-win.c:308 ../src/main-win.c:1460 ../data/pref-dlg.ui.h:1
+msgid "Preferences"
+msgstr ""
+
+#: ../src/main-win.c:309 ../src/main-win.c:1464
+msgid "Quit"
+msgstr ""
+
+#: ../src/main-win.c:762
+msgid "Stop Slideshow"
+msgstr ""
+
+#: ../src/main-win.c:1303
+msgid ""
+"The file name you selected already exists.\n"
+"Do you want to overwrite existing file?\n"
+"(Warning: The quality of original image might be lost)"
+msgstr ""
+
+#: ../src/main-win.c:1344
+msgid "Writing this image format is not supported."
+msgstr ""
+
+#: ../src/main-win.c:1382
+msgid ""
+"Are you sure you want to delete current file?\n"
+"\n"
+"Warning: Once deleted, the file cannot be recovered."
+msgstr ""
+
+#: ../src/main-win.c:1440
+msgid "Start/Stop Slideshow"
+msgstr ""
+
+#: ../src/main-win.c:1456
+msgid "Save As"
+msgstr ""
+
+#: ../src/main-win.c:1461
+msgid "Show/Hide toolbar"
+msgstr ""
+
+#: ../src/main-win.c:1505
+msgid " * Refer to source code of EOG image viewer and GThumb"
+msgstr ""
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: ../src/main-win.c:1509
+msgid "translator-credits"
+msgstr ""
+
+#: ../src/main-win.c:1515
+msgid "GPicView"
+msgstr ""
+
+#: ../src/main-win.c:1517
+msgid "Copyright (C) 2007 - 2011"
+msgstr ""
+
+#: ../src/main-win.c:1518
+msgid "Lightweight image viewer from LXDE project"
+msgstr ""
+
+#: ../src/pref.c:164
+msgid ""
+"GPicView will become the default viewer for all supported image files on "
+"your system.\n"
+"(This will be done through 'xdg-mime' program)\n"
+"\n"
+"<b>Are you sure you really want to do this?</b>"
+msgstr ""
+
+#: ../src/file-dlgs.c:62
+msgid "All Supported Images"
+msgstr ""
+
+#: ../src/file-dlgs.c:67
+msgid "All Files"
+msgstr ""
+
+#: ../src/file-dlgs.c:103
+msgid "JPEG Quality:"
+msgstr ""
+
+#: ../src/file-dlgs.c:104
+msgid ""
+"Lower quality values yield smaller file sizes,\n"
+"but the image quality will be poorer."
+msgstr ""
+
+#: ../src/file-dlgs.c:121
+msgid "PNG Compression Level:"
+msgstr ""
+
+#: ../src/file-dlgs.c:122
+msgid ""
+"Higher compression levels yield smaller file sizes,\n"
+"but takes more time to do the compression."
+msgstr ""
+
+#: ../gpicview.desktop.in.h:2
+msgid "View your images easily"
+msgstr ""
+
+#: ../data/pref-dlg.ui.h:2
+msgid "Ask before saving images"
+msgstr ""
+
+#: ../data/pref-dlg.ui.h:3
+msgid "Ask before deleting images"
+msgstr ""
+
+#: ../data/pref-dlg.ui.h:4
+msgid "Automatically save rotated images"
+msgstr ""
+
+#: ../data/pref-dlg.ui.h:5
+msgid ""
+"Rotate JPEG file by changing EXIF orientation value\n"
+"(only if EXIF orientation tag exists)"
+msgstr ""
+
+#: ../data/pref-dlg.ui.h:7
+msgid "Slideshow interval"
+msgstr ""
+
+#: ../data/pref-dlg.ui.h:8
+msgid "sec"
+msgstr ""
+
+#: ../data/pref-dlg.ui.h:9
+msgid "Make GPicView the default viewer for images"
+msgstr ""
+
+#: ../data/pref-dlg.ui.h:10
+msgid "Normal:"
+msgstr ""
+
+#: ../data/pref-dlg.ui.h:11
+msgid "Fullscreen:"
+msgstr ""
+
+#: ../data/pref-dlg.ui.h:12
+msgid "<b>Background colors</b>"
+msgstr ""
