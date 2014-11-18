@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: gpicview\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 14:36+0200\n"
-"PO-Revision-Date: 2014-11-01 23:00+0000\n"
+"PO-Revision-Date: 2014-11-18 16:47+0000\n"
 "Last-Translator: armakolas <armakolas@gmail.com>\n"
 "Language-Team: Greek <LL@li.org>\n"
 "Language: el\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.6.0-rc2\n"
-"X-POOTLE-MTIME: 1414882856.000000\n"
+"X-POOTLE-MTIME: 1416329222.000000\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
@@ -32,7 +32,7 @@ msgstr "Έναρξη παρουσίασης"
 
 #: ../src/main-win.c:165 ../src/main-win.c:1413 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
-msgstr "Προβολή εικόνων"
+msgstr "Εφαρμογή Προβολής Εικόνων"
 
 #: ../src/main-win.c:267 ../src/main-win.c:1438
 msgid "Previous"
@@ -172,7 +172,7 @@ msgstr "Copyright (C) 2007 - 2011"
 
 #: ../src/main-win.c:1518
 msgid "Lightweight image viewer from LXDE project"
-msgstr "Ελαφρί πρόγραμμα προβολής εικόνων από το LXDE project"
+msgstr "Ελαφρύ πρόγραμμα προβολής εικόνων από το LXDE project"
 
 #: ../src/pref.c:164
 msgid ""
@@ -198,7 +198,7 @@ msgstr "Όλα τα αρχεία"
 
 #: ../src/file-dlgs.c:103
 msgid "JPEG Quality:"
-msgstr "JPEG ποιότητα:"
+msgstr "Ποιότητα JPEG:"
 
 #: ../src/file-dlgs.c:104
 msgid ""
