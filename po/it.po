@@ -9,17 +9,16 @@ msgstr ""
 "Project-Id-Version: gpicview 0.1.11\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 14:36+0200\n"
-"PO-Revision-Date: 2012-10-17 14:14+0200\n"
-"Last-Translator: Daniele <daniele@forsi.it>\n"
+"PO-Revision-Date: 2014-12-03 08:38+0000\n"
+"Last-Translator: kunturweb <kunturweb@altervista.org>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.5\n"
-"X-Poedit-Language: Italian\n"
-"X-Poedit-Country: ITALY\n"
+"X-Generator: Pootle 2.6.0-rc2\n"
+"X-POOTLE-MTIME: 1417595910.000000\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
@@ -32,7 +31,7 @@ msgstr "Stampa informazioni sulla versione ed esce"
 # descrizione riga di comando
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
-msgstr "Avvia la presentazionze"
+msgstr "Avvia la presentazione"
 
 #: ../src/main-win.c:165 ../src/main-win.c:1413 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
