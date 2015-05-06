@@ -20,6 +20,8 @@ msgstr ""
 "X-Poedit-Language: Chinese\n"
 "X-Poedit-Country: TAIWAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Pootle-Path: /zh_TW/gpicview/po/zh_TW.po\n"
+"X-Pootle-Revision: 0\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"

@@ -13,6 +13,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.5\n"
 "X-Poedit-Language: Basque\n"
+"X-Pootle-Path: /eu/gpicview/po/eu.po\n"
+"X-Pootle-Revision: 0\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"

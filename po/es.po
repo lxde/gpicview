@@ -2,7 +2,6 @@
 # Copyright (C) 2009 The LXDE Team.
 # This file is distributed under the same license as the GPicView package.
 # Festor Wailon Dacoba <festor90@gmail.com>, 2007.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: gpicview 0.2.1\n"
@@ -17,7 +16,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.5\n"
-"X-Poedit-Language: Spanish\n"
+"X-Pootle-Path: /es/gpicview/po/es.po\n"
+"X-Pootle-Revision: 0\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"

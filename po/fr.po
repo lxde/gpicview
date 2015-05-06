@@ -1,10 +1,8 @@
 # French translation of GPicView.
 # Copyright (C) 2007-2008 洪任諭 (Hon Jen Yee, aka PCMan)
 # This file is distributed under the same license as the GPicView package.
-#
 # ElGeneralMidi <ElGeneralMidi@jabber.ubuntu-fr.org>, 2007.
 # Robert-André Mauchin <zebob.m@pengzone.org>, 2008.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: gpicview r846\n"
@@ -20,6 +18,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Pootle 2.5.0\n"
 "X-POOTLE-MTIME: 1376334568.0\n"
+"X-Pootle-Path: /fr/gpicview/po/fr.po\n"
+"X-Pootle-Revision: 0\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"

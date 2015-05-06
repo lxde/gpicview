@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: GPicView\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 14:36+0200\n"
-"PO-Revision-Date: 2014-11-27 15:37+0000\n"
-"Last-Translator: <safa1996alfulaij@gmail.com>\n"
+"PO-Revision-Date: 2015-04-10 13:38+0000\n"
+"Last-Translator: صفا الفليج <safa1996alfulaij@gmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -21,16 +21,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Pootle 2.6.0-rc2\n"
-"X-POOTLE-MTIME: 1417102675.000000\n"
+"X-Generator: Pootle 2.7.0-alpha1\n"
+"X-POOTLE-MTIME: 1428673130.000000\n"
+"X-Pootle-Path: /ar/gpicview/po/ar.po\n"
+"X-Pootle-Revision: 350\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
-msgstr "[ملف]"
+msgstr "[ملفّ]"
 
 #: ../src/gpicview.c:40
 msgid "Print version information and exit"
-msgstr "اطبع معلومات الإصدار ثم أخرج"
+msgstr "اطبع معلومات الإصدارة ثمّ أخرج"
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
@@ -102,7 +104,7 @@ msgstr "احفظ الملفّ"
 
 #: ../src/main-win.c:304
 msgid "Save File As"
-msgstr "احفظ الملفّ كـ"
+msgstr "احفظ الملفّ كَـ"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
 #: ../src/main-win.c:305 ../src/main-win.c:1458
@@ -141,7 +143,7 @@ msgid ""
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
-"أتريد حقًّا حذف الملفّ الحاليّ؟\n"
+"أمتأكّد من حذف الملفّ الحاليّ؟\n"
 "\n"
 "تحذير: لا يمكن استرجاع الملفّ بمجرّد حذفه."
 
@@ -151,7 +153,7 @@ msgstr "ابدأ/أوقف عرض الشّرائح"
 
 #: ../src/main-win.c:1456
 msgid "Save As"
-msgstr "احفظ كـ"
+msgstr "احفظ كَـ"
 
 #: ../src/main-win.c:1461
 msgid "Show/Hide toolbar"
@@ -190,11 +192,11 @@ msgid ""
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"سيصبح عارض‌الصّور‌ج هو العارض الافتراضيّ لكلّ أنواع الصور المدعومة في "
+"سيصبح عارض‌الصّور‌ج هو العارض الافتراضيّ لكلّ أنواع الصّور المدعومة في "
 "النّظام.\n"
 "(سيتمّ هذا عبر برنامج 'xdg-mime')\n"
 "\n"
-"<b>أتريد حقًّا فعل هذا؟</b>"
+"<b>أمتأكّد من هذا؟</b>"
 
 #: ../src/file-dlgs.c:62
 msgid "All Supported Images"
@@ -242,7 +244,7 @@ msgstr "اسأل قبل حذف الصّور"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
-msgstr "احفظ آليًّا الصّور المُدوَّرة"
+msgstr "احفظ آليًّا الصّور المدوّرة"
 
 #: ../data/pref-dlg.ui.h:5
 msgid ""
@@ -274,7 +276,7 @@ msgstr "ملء الشّاشة:"
 
 #: ../data/pref-dlg.ui.h:12
 msgid "<b>Background colors</b>"
-msgstr "<b>ألوان الخلفية</b>"
+msgstr "<b>ألوان الخلفيّة</b>"
 
 #~ msgid " Full Screen"
 #~ msgstr "ملء الشاشة"

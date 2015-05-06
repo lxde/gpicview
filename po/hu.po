@@ -10,13 +10,18 @@ msgstr ""
 "Project-Id-Version: gpicview\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 14:36+0200\n"
-"PO-Revision-Date: 2010-01-27 17:43+0100\n"
-"Last-Translator: Laszlo Dvornik <dvornik@gnome.hu>\n"
+"PO-Revision-Date: 2015-05-04 17:14+0000\n"
+"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.7.0-alpha1\n"
+"X-POOTLE-MTIME: 1430759650.000000\n"
+"X-Pootle-Path: /hu/gpicview/po/hu.po\n"
+"X-Pootle-Revision: 1486\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
@@ -149,7 +154,7 @@ msgstr "Mentés másként"
 
 #: ../src/main-win.c:1461
 msgid "Show/Hide toolbar"
-msgstr ""
+msgstr "Eszköztár megjelenítése vagy elrejtése"
 
 #: ../src/main-win.c:1505
 msgid " * Refer to source code of EOG image viewer and GThumb"
@@ -161,7 +166,8 @@ msgid "translator-credits"
 msgstr ""
 "Basák Péter Zsolt <shiki@biomernok.hu>\n"
 "Dvornik László <dvornik@gnome.hu>\n"
-"Szervác Attila <sas@321.hu>"
+"Szervác Attila <sas@321.hu>\n"
+"Úr Balázs <urbalazs@gmail.com>"
 
 #: ../src/main-win.c:1515
 msgid "GPicView"

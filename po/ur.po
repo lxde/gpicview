@@ -19,6 +19,8 @@ msgstr ""
 "X-Poedit-Language: Urdu\n"
 "X-Poedit-Country: PAKISTAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Pootle-Path: /ur/gpicview/po/ur.po\n"
+"X-Pootle-Revision: 0\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"

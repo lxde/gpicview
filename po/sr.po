@@ -9,32 +9,37 @@ msgstr ""
 "Project-Id-Version: GPicView 0.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 14:36+0200\n"
-"PO-Revision-Date: 2013-09-05 20:53+0100\n"
-"Last-Translator: Jay A.Fleming <tito.nehru.naser@gmail.com>\n"
+"PO-Revision-Date: 2015-05-01 11:02+0000\n"
+"Last-Translator: Jay A. Fleming <tito.nehru.naser@gmail.com>\n"
 "Language-Team: \n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Pootle 2.7.0-alpha1\n"
+"X-POOTLE-MTIME: 1430478176.000000\n"
+"X-Pootle-Path: /sr/gpicview/po/sr.po\n"
+"X-Pootle-Revision: 709\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
-msgstr "[FILE]"
+msgstr "[ДАТОТЕКА]"
 
 #: ../src/gpicview.c:40
 msgid "Print version information and exit"
-msgstr "Испиши информације о верзији и изађи"
+msgstr "Испиши информације о издању и изађи"
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
-msgstr "Аутоматски покретни приказ"
+msgstr "Пусти покретни приказ"
 
 #: ../src/main-win.c:165
 #: ../src/main-win.c:1413
 #: ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
-msgstr "Прегледач слика"
+msgstr "Прегледник слика"
 
 #: ../src/main-win.c:267
 #: ../src/main-win.c:1438
@@ -44,22 +49,22 @@ msgstr "Претходна"
 #: ../src/main-win.c:268
 #: ../src/main-win.c:1439
 msgid "Next"
-msgstr "Следећа"
+msgstr "Наредна"
 
 #: ../src/main-win.c:269
 #: ../src/main-win.c:754
 msgid "Start Slideshow"
-msgstr "Аутоматски покретни приказ"
+msgstr "Пусти покретни приказ"
 
 #: ../src/main-win.c:273
 #: ../src/main-win.c:1442
 msgid "Zoom Out"
-msgstr "Умањи"
+msgstr "Удаљи"
 
 #: ../src/main-win.c:274
 #: ../src/main-win.c:1443
 msgid "Zoom In"
-msgstr "Увећај"
+msgstr "Приближи"
 
 #. percent = gtk_entry_new();    // show scale (in percentage)
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
@@ -68,12 +73,12 @@ msgstr "Увећај"
 #: ../src/main-win.c:281
 #: ../src/main-win.c:1444
 msgid "Fit Image To Window Size"
-msgstr "Прилагоди величину слике према прозору"
+msgstr "Уколпи слику у прозор"
 
 #: ../src/main-win.c:283
 #: ../src/main-win.c:1445
 msgid "Original Size"
-msgstr "Оригинална величина слике"
+msgstr "Стварна величина слике"
 
 #: ../src/main-win.c:290
 #: ../src/main-win.c:1447
@@ -112,7 +117,7 @@ msgstr "Сачувај датотеку"
 
 #: ../src/main-win.c:304
 msgid "Save File As"
-msgstr "Сачувај под другим именом"
+msgstr "Сачувај под другим називом"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
 #: ../src/main-win.c:305
@@ -155,21 +160,21 @@ msgid ""
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
-"Јесте ли сигурни да желите обрисати ову слику?\n"
+"Желите ли стварно да обришете ову слику?\n"
 "\n"
-"УПОЗОРЕЊЕ: Касније не можете повратити ову слику."
+"УПОЗОРЕЊЕ: Касније не можете повратити слику."
 
 #: ../src/main-win.c:1440
 msgid "Start/Stop Slideshow"
-msgstr "Покрени/Заустави покретни приказ"
+msgstr "Пусти/Заустави покретни приказ"
 
 #: ../src/main-win.c:1456
 msgid "Save As"
-msgstr "Сачувај под другим именом"
+msgstr "Сачувај под другим називом"
 
 #: ../src/main-win.c:1461
 msgid "Show/Hide toolbar"
-msgstr "Прикажи/Сакриј траку са алаткама"
+msgstr "Прикажи/Сакриј алатницу"
 
 #: ../src/main-win.c:1505
 msgid " * Refer to source code of EOG image viewer and GThumb"
@@ -178,19 +183,19 @@ msgstr " * Погледајте изворни код програма „EOG“
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1509
 msgid "translator-credits"
-msgstr "Serbian (sr) — Jay A. Fleming <tito.nehru.naser@gmail.com>"
+msgstr "Српски: Jay A. Fleming,- Мирослав Николић,- Марко Ускоковић"
 
 #: ../src/main-win.c:1515
 msgid "GPicView"
-msgstr "Прегледач слика"
+msgstr "Прегледник слика"
 
 #: ../src/main-win.c:1517
 msgid "Copyright (C) 2007 - 2011"
-msgstr "2007-2011. Нека права су задржана."
+msgstr "Ауторска права — 2007-2011."
 
 #: ../src/main-win.c:1518
 msgid "Lightweight image viewer from LXDE project"
-msgstr "Једноставан прегледач слика за ЛИкс-ДЕ радно окружење"
+msgstr "Једноставан прегледник слика за ЛИкс-ДЕ радно окружење"
 
 #: ../src/pref.c:164
 msgid ""
@@ -199,7 +204,7 @@ msgid ""
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
-"Овај програм ће бити подразумевани прегледач слика за подржане слике.\n"
+"Овај програм ће бити подразумевани прегледник слика за подржане слике.\n"
 "(Ово ће бити остварено посредством „xdg-mime“ програма)\n"
 "\n"
 "<b>Да ли заиста желите ово да урадите?</b>"
@@ -221,9 +226,8 @@ msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
 msgstr ""
-"Мања вредност за квалитет ће учинити да\n"
-"датотека буде мање величине, али ће,\n"
-"у том случају, квалитет слике бити лошији."
+"Мања вредност за квалитет ће учинити да датотека буде мање величине,\n"
+"али ће у том случају, квалитет слике бити лошији."
 
 #: ../src/file-dlgs.c:121
 msgid "PNG Compression Level:"
@@ -234,9 +238,8 @@ msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
 msgstr ""
-"Већи ниво компресије ће учинити да датотека\n"
-"буде мање величине, али ће, у том случају,\n"
-"бити потребно више времена за компресију."
+"Већи ниво компресије ће учинити да датотека буде мање величине,\n"
+" али ће, у том случају, бити потребно више времена за компресију."
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
@@ -252,7 +255,7 @@ msgstr "Питај пре брисања слика"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
-msgstr "Аутоматски сачувај изокретане слике"
+msgstr "Сам сачувај изокретане слике"
 
 #: ../data/pref-dlg.ui.h:5
 msgid ""
@@ -272,7 +275,7 @@ msgstr "сек."
 
 #: ../data/pref-dlg.ui.h:9
 msgid "Make GPicView the default viewer for images"
-msgstr "Постави овај програм за подразумевани прегледач слика"
+msgstr "Постави овај програм за подразумевани прегледник слика"
 
 #: ../data/pref-dlg.ui.h:10
 msgid "Normal:"
@@ -285,4 +288,3 @@ msgstr "Цео екран:"
 #: ../data/pref-dlg.ui.h:12
 msgid "<b>Background colors</b>"
 msgstr "<b>Боје позадине</b>"
-
