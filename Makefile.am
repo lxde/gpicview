@@ -3,11 +3,6 @@ ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
 SUBDIRS = src po data
 
-EXTRA_DIST = \
-	autogen.sh \
-	gpicview.desktop.in \
-	gpicview.png
-
 desktopdir = $(datadir)/applications
 desktop_in_files = gpicview.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
@@ -15,6 +10,12 @@ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 
 icondir = $(datadir)/icons/hicolor/48x48/apps
 icon_DATA = gpicview.png
+
+EXTRA_DIST = \
+	autogen.sh \
+	$(desktop_in_files) \
+	$(desktop_DATA) \
+	$(icon_DATA)
 
 install-data-local:
 	@$(NORMAL_INSTALL)
@@ -36,4 +37,3 @@ dist-hook:
 	    fi \
 	  done \
 	fi
-
