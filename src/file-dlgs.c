@@ -111,6 +111,7 @@ static void on_file_save_filter_changed(GObject* obj, GParamSpec* pspec, gpointe
             g_signal_connect(G_OBJECT(scale), "value-changed", G_CALLBACK(on_int_val_changed), &pref.jpg_quality);
             gtk_scale_set_draw_value(GTK_SCALE(scale), TRUE);
             gtk_scale_set_value_pos(GTK_SCALE(scale), GTK_POS_RIGHT);
+            g_object_set(scale, "width-request", 200, NULL);
             gtk_box_pack_start(GTK_BOX(extra), label, FALSE, TRUE, 0);
             gtk_box_pack_start(GTK_BOX(extra), scale, TRUE, TRUE, 0);
             gtk_box_pack_start(GTK_BOX(extra), label2, FALSE, TRUE, 0);
@@ -129,6 +130,7 @@ static void on_file_save_filter_changed(GObject* obj, GParamSpec* pspec, gpointe
             g_signal_connect(G_OBJECT(scale), "value-changed", G_CALLBACK(on_int_val_changed), &pref.png_compression);
             gtk_scale_set_draw_value(GTK_SCALE(scale), TRUE);
             gtk_scale_set_value_pos(GTK_SCALE(scale), GTK_POS_RIGHT);
+            g_object_set(scale, "width-request", 200, NULL);
             gtk_box_pack_start(GTK_BOX(extra), label, FALSE, TRUE, 0);
             gtk_box_pack_start(GTK_BOX(extra), scale, TRUE, TRUE, 0);
             gtk_box_pack_start(GTK_BOX(extra), label2, FALSE, TRUE, 0);
