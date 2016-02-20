@@ -1,0 +1,9 @@
+# List of source files containing translatable strings.
+
+src/gpicview.c
+src/main-win.c
+src/pref.c
+src/file-dlgs.c
+gpicview.desktop.in
+[type: gettext/glade]data/pref-dlg.ui
+
