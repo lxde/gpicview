@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: GPicView\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 14:36+0200\n"
-"PO-Revision-Date: 2017-05-30 22:32+0000\n"
+"PO-Revision-Date: 2017-05-31 20:21+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lietuvių <>\n"
 "Language: lt\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "(n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.8\n"
-"X-POOTLE-MTIME: 1496183564.390135\n"
+"X-POOTLE-MTIME: 1496262070.920871\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
@@ -208,48 +208,48 @@ msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
 msgstr ""
-"Žemesnės kokybės paveikslėliai užima mažiau vietos,\n"
-"bet jų kokybė atitinkamai prastesnė."
+"Žemesnės kokybės paveikslai užima mažiau vietos,\n"
+"tačiau jų kokybė atitinkamai yra prastesnė."
 
 #: ../src/file-dlgs.c:121
 msgid "PNG Compression Level:"
-msgstr "PNG suspaudimo lygis:"
+msgstr "PNG glaudinimo lygis:"
 
 #: ../src/file-dlgs.c:122
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
 msgstr ""
-"Labiau suspausti paveikslėliai užima mažiau vietos,\n"
-"tačiau didesniam suspaudimui reikia daugiau laiko."
+"Labiau suglaudinti paveikslai užima mažiau vietos,\n"
+"tačiau didesniam glaudinimui reikia daugiau laiko."
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
-msgstr "Lengvai peržiūrėkite paveikslėlius"
+msgstr "Lengvai peržiūrėkite paveikslus"
 
 #: ../data/pref-dlg.ui.h:2
 msgid "Ask before saving images"
-msgstr "Paklausti prieš išsaugant paveikslėlius"
+msgstr "Klausti prieš įrašant paveikslus"
 
 #: ../data/pref-dlg.ui.h:3
 msgid "Ask before deleting images"
-msgstr "Paklausti prieš ištrinant paveikslėlius"
+msgstr "Klausti prieš ištrinant paveikslus"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
-msgstr "Automatiškai išsaugoti pasuktus paveikslėlius"
+msgstr "Automatiškai įrašyti pasuktus paveikslus"
 
 #: ../data/pref-dlg.ui.h:5
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
-"Pasukant ir apverčiant pakeisti EXIF orientacijos reikšmę\n"
-"(jei ji egzistuoja)"
+"Pasukti JPEG failą, pakeičiant EXIF orientacijos reikšmę\n"
+"(tik tuo atveju, jei EXIF žymė yra)"
 
 #: ../data/pref-dlg.ui.h:7
 msgid "Slideshow interval"
-msgstr "Skaidrių keitimo intervalas"
+msgstr "Skaidrių rodymo intervalas"
 
 #: ../data/pref-dlg.ui.h:8
 msgid "sec"
@@ -257,7 +257,7 @@ msgstr "s"
 
 #: ../data/pref-dlg.ui.h:9
 msgid "Make GPicView the default viewer for images"
-msgstr "Padaryti GPicview numatytaja paveikslėlių peržiūros programa"
+msgstr "Padaryti GPicview numatytąja paveikslų žiūrykle"
 
 #: ../data/pref-dlg.ui.h:10
 msgid "Normal:"
@@ -265,7 +265,7 @@ msgstr "Normalus:"
 
 #: ../data/pref-dlg.ui.h:11
 msgid "Fullscreen:"
-msgstr "Per visą ekraną:"
+msgstr "Visas ekranas:"
 
 #: ../data/pref-dlg.ui.h:12
 msgid "<b>Background colors</b>"
