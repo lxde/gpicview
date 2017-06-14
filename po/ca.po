@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 14:36+0200\n"
-"PO-Revision-Date: 2015-06-09 14:56+0000\n"
+"PO-Revision-Date: 2017-06-09 12:00+0000\n"
 "Last-Translator: Davidmp <rbndavid@gmail.com>\n"
 "Language-Team: LXDE Catalan translators group\n"
 "Language: ca\n"
@@ -16,8 +16,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.7\n"
-"X-POOTLE-MTIME: 1433861765.000000\n"
+"X-Generator: Pootle 2.8\n"
+"X-POOTLE-MTIME: 1497009623.837203\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
@@ -228,7 +228,7 @@ msgstr "Pregunta abans de desar imatges"
 
 #: ../data/pref-dlg.ui.h:3
 msgid "Ask before deleting images"
-msgstr "Pregunta abans de borrar imatges"
+msgstr "Pregunta abans d'eliminar imatges"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
