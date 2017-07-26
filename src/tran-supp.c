@@ -819,6 +819,14 @@ jtransform_adjust_parameters (j_decompress_ptr srcinfo,
     }
   }
 
+#if JPEG_LIB_VERSION >= 70
+  if (info->transform == JXFORM_ROT_90 ||
+      info->transform == JXFORM_ROT_270) {
+    dstinfo->jpeg_width = srcinfo->image_height;
+    dstinfo->jpeg_height = srcinfo->image_width;
+  }
+#endif
+
   /* Correct the destination's image dimensions etc if necessary */
   switch (info->transform) {
   case JXFORM_NONE:
