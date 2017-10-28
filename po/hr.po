@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: gpicview_hr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 14:36+0200\n"
-"PO-Revision-Date: 2015-04-02 10:30+0000\n"
+"PO-Revision-Date: 2017-09-28 20:38+0000\n"
 "Last-Translator: Ivica Kolić <ikoli@yahoo.com>\n"
 "Language-Team: Croatian <asjlob AT vip.hr>\n"
 "Language: hr\n"
@@ -16,8 +16,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Pootle 2.7\n"
-"X-POOTLE-MTIME: 1427970639.000000\n"
+"X-Generator: Pootle 2.8\n"
+"X-POOTLE-MTIME: 1506631106.534370\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
@@ -159,9 +159,7 @@ msgstr " * Odnosi se na izvorni kod EOG preglednika datoteka i GThumb"
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1509
 msgid "translator-credits"
-msgstr ""
-"Ivica Kolić ikoli@yahoo.com\n"
-"Boljsa"
+msgstr "Ivica Kolić ikoli@yahoo.com Boljsa"
 
 #: ../src/main-win.c:1515
 msgid "GPicView"
