@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 14:36+0200\n"
-"PO-Revision-Date: 2015-06-17 17:40+0000\n"
+"PO-Revision-Date: 2018-05-27 13:54+0000\n"
 "Last-Translator: Praveen Illa <mail2ipn@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: te\n"
@@ -16,8 +16,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.7\n"
-"X-POOTLE-MTIME: 1434562851.000000\n"
+"X-Generator: Pootle 2.8\n"
+"X-POOTLE-MTIME: 1527429247.131700\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
@@ -159,7 +159,7 @@ msgstr " * EOG బొమ్మ వీక్షకం మరియు జిత�
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1509
 msgid "translator-credits"
-msgstr "Praveen Illa <mail2ipn@gmail.com>, 2011-15."
+msgstr "Praveen Illa <mail2ipn@gmail.com>, 2011-18."
 
 #: ../src/main-win.c:1515
 msgid "GPicView"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 14:36+0200\n"
-"PO-Revision-Date: 2017-09-14 14:17+0000\n"
+"PO-Revision-Date: 2018-08-15 19:26+0000\n"
 "Last-Translator: Davidmp <rbndavid@gmail.com>\n"
 "Language-Team: LXDE Catalan translators group\n"
 "Language: ca\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.8\n"
-"X-POOTLE-MTIME: 1505398627.095370\n"
+"X-POOTLE-MTIME: 1534361167.798295\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
@@ -102,7 +102,7 @@ msgstr "Anomena i desa..."
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
 #: ../src/main-win.c:305 ../src/main-win.c:1458
 msgid "Delete File"
-msgstr "Elimina el fitxer"
+msgstr "Suprimeix el fitxer"
 
 #: ../src/main-win.c:308 ../src/main-win.c:1460 ../data/pref-dlg.ui.h:1
 msgid "Preferences"
@@ -136,9 +136,9 @@ msgid ""
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
-"Segur que voleu eliminar aquest fitxer?\n"
+"Segur que voleu suprimir aquest fitxer?\n"
 "\n"
-"Alerta: un cop eliminat, el fitxer no es podrà recuperar."
+"Alerta: un cop suprimit, el fitxer no es podrà recuperar."
 
 #: ../src/main-win.c:1440
 msgid "Start/Stop Slideshow"
@@ -229,7 +229,7 @@ msgstr "Pregunta abans de desar imatges"
 
 #: ../data/pref-dlg.ui.h:3
 msgid "Ask before deleting images"
-msgstr "Pregunta abans d'eliminar imatges"
+msgstr "Pregunta abans de suprimir imatges"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
