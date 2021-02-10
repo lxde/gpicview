@@ -166,7 +166,7 @@ static void on_set_default( GtkButton* btn, gpointer user_data )
                 "<b>Are you sure you really want to do this?</b>") );
     if( gtk_dialog_run( (GtkDialog*)dlg ) == GTK_RESPONSE_OK )
     {
-        const char cmd[]="xdg-mime default gpicview.desktop image/bmp image/gif image/jpeg image/jpg image/png image/tiff image/x-bmp image/x-pcx image/x-tga image/x-portable-pixmap image/x-portable-bitmap image/x-targa image/x-portable-greymap application/pcx image/svg+xml image/svg-xml";
+        const char cmd[]="xdg-mime default gpicview.desktop application/x-navi-animation image/bmp image/gif image/x-icns image/jpeg image/png image/x-portable-bitmap image/x-portable-graymap image/x-portable-pixmap image/x-quicktime image/svg+xml image/x-tga image/tiff image/vnd.microsoft.icon image/vnd.zbrush.pcx image/x-pcx image/x-win-bitmap image/wmf image/x-wmf image/x-xbitmap image/x-xpixmap";
         g_spawn_command_line_sync( cmd, NULL, NULL, NULL, NULL );
     }
     gtk_widget_destroy( dlg );
