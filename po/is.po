@@ -1,58 +1,58 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Icelandic translation for gpicview package.
+# Copyright (C) 2021 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gpicview package.
+# Sveinn í Felli <sv1@fellsnet.is>, 2021.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 14:36+0200\n"
-"PO-Revision-Date: 2015-08-17 01:28+0000\n"
-"Last-Translator: Anonymous Pootle User\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-03-04 23:11+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
+"Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.7\n"
+"X-Generator: Lokalize 2.0\n"
 "X-POOTLE-MTIME: 1439774888.047483\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
-msgstr ""
+msgstr "[SKRÁ]"
 
 #: ../src/gpicview.c:40
 msgid "Print version information and exit"
-msgstr ""
+msgstr "Prenta upplýsingar um útgáfu og hætta"
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
-msgstr ""
+msgstr "Hefja skyggnusýningu"
 
 #: ../src/main-win.c:165 ../src/main-win.c:1413 ../gpicview.desktop.in.h:1
 msgid "Image Viewer"
-msgstr ""
+msgstr "Myndskoðari"
 
 #: ../src/main-win.c:267 ../src/main-win.c:1438
 msgid "Previous"
-msgstr ""
+msgstr "Fyrri"
 
 #: ../src/main-win.c:268 ../src/main-win.c:1439
 msgid "Next"
-msgstr ""
+msgstr "Næsta"
 
 #: ../src/main-win.c:269 ../src/main-win.c:754
 msgid "Start Slideshow"
-msgstr ""
+msgstr "Hefja skyggnusýningu"
 
 #: ../src/main-win.c:273 ../src/main-win.c:1442
 msgid "Zoom Out"
-msgstr ""
+msgstr "Renna frá"
 
 #: ../src/main-win.c:274 ../src/main-win.c:1443
 msgid "Zoom In"
-msgstr ""
+msgstr "Renna að"
 
 #. percent = gtk_entry_new();    // show scale (in percentage)
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
@@ -60,60 +60,60 @@ msgstr ""
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
 #: ../src/main-win.c:281 ../src/main-win.c:1444
 msgid "Fit Image To Window Size"
-msgstr ""
+msgstr "Laga mynd að stærð glugga"
 
 #: ../src/main-win.c:283 ../src/main-win.c:1445
 msgid "Original Size"
-msgstr ""
+msgstr "Upprunaleg stærð"
 
 #: ../src/main-win.c:290 ../src/main-win.c:1447
 msgid "Full Screen"
-msgstr ""
+msgstr "Fylla skjá"
 
 #: ../src/main-win.c:294 ../src/main-win.c:1449
 msgid "Rotate Counterclockwise"
-msgstr ""
+msgstr "Snúa rangsælis"
 
 #: ../src/main-win.c:295 ../src/main-win.c:1450
 msgid "Rotate Clockwise"
-msgstr ""
+msgstr "Snúa réttsælis"
 
 #: ../src/main-win.c:297 ../src/main-win.c:1451
 msgid "Flip Horizontal"
-msgstr ""
+msgstr "Fletta lárétt"
 
 #: ../src/main-win.c:298 ../src/main-win.c:1452
 msgid "Flip Vertical"
-msgstr ""
+msgstr "Fletta lóðrétt"
 
 #: ../src/main-win.c:302 ../src/main-win.c:1454
 msgid "Open File"
-msgstr ""
+msgstr "Opna skrá"
 
 #: ../src/main-win.c:303 ../src/main-win.c:1455
 msgid "Save File"
-msgstr ""
+msgstr "Vista skrá"
 
 #: ../src/main-win.c:304
 msgid "Save File As"
-msgstr ""
+msgstr "Vista skrá sem"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
 #: ../src/main-win.c:305 ../src/main-win.c:1458
 msgid "Delete File"
-msgstr ""
+msgstr "Eyða skrá"
 
 #: ../src/main-win.c:308 ../src/main-win.c:1460 ../data/pref-dlg.ui.h:1
 msgid "Preferences"
-msgstr ""
+msgstr "Kjörstillingar"
 
 #: ../src/main-win.c:309 ../src/main-win.c:1464
 msgid "Quit"
-msgstr ""
+msgstr "Hætta"
 
 #: ../src/main-win.c:762
 msgid "Stop Slideshow"
-msgstr ""
+msgstr "Stöðva skyggnusýningu"
 
 #: ../src/main-win.c:1303
 msgid ""
@@ -121,10 +121,13 @@ msgid ""
 "Do you want to overwrite existing file?\n"
 "(Warning: The quality of original image might be lost)"
 msgstr ""
+"Skráarheitið sem þú valdir er þegar til.\n"
+"Viltu skrifa yfir fyrirliggjandi skrá?\n"
+"(Aðvörun: Gæði upprunalegu myndarinnar gætu tapast)"
 
 #: ../src/main-win.c:1344
 msgid "Writing this image format is not supported."
-msgstr ""
+msgstr "Ekki er stuðningur við að skrifa þetta snið mynda."
 
 #: ../src/main-win.c:1382
 msgid ""
@@ -132,39 +135,42 @@ msgid ""
 "\n"
 "Warning: Once deleted, the file cannot be recovered."
 msgstr ""
+"Ertu viss um að þú viljir eyða þessari skrá?\n"
+"\n"
+"Aðvörun: Ef henni er eytt er ekki hægt að endurheimta skrána."
 
 #: ../src/main-win.c:1440
 msgid "Start/Stop Slideshow"
-msgstr ""
+msgstr "Hefja/Stöðva skyggnusýningu"
 
 #: ../src/main-win.c:1456
 msgid "Save As"
-msgstr ""
+msgstr "Vista sem"
 
 #: ../src/main-win.c:1461
 msgid "Show/Hide toolbar"
-msgstr ""
+msgstr "Birta/Fela verkfærastiku"
 
 #: ../src/main-win.c:1505
 msgid " * Refer to source code of EOG image viewer and GThumb"
-msgstr ""
+msgstr " * Vísast til grunnkóða EOG-myndskoðarans og GThumb"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1509
 msgid "translator-credits"
-msgstr ""
+msgstr "Sveinn í Felli, (sv1@fellsnet.is)"
 
 #: ../src/main-win.c:1515
 msgid "GPicView"
-msgstr ""
+msgstr "GPicView"
 
 #: ../src/main-win.c:1517
 msgid "Copyright (C) 2007 - 2011"
-msgstr ""
+msgstr "Höfundarréttur (C) 2007 - 2011"
 
 #: ../src/main-win.c:1518
 msgid "Lightweight image viewer from LXDE project"
-msgstr ""
+msgstr "Léttur myndskoðari frá LXDE-verkefninu"
 
 #: ../src/pref.c:164
 msgid ""
@@ -174,77 +180,88 @@ msgid ""
 "\n"
 "<b>Are you sure you really want to do this?</b>"
 msgstr ""
+"GPicView mun verða sjálfgefinn myndskoðari fyrir allar studdar myndskrár á"
+" kerfinu þínu.\n"
+"(Þetta verður gert í gegnum 'xdg-mime' forritið)\n"
+"\n"
+"<b>Ertu viss um að þú viljir gera þetta?</b>"
 
 #: ../src/file-dlgs.c:62
 msgid "All Supported Images"
-msgstr ""
+msgstr "Allar studdar myndskrár"
 
 #: ../src/file-dlgs.c:67
 msgid "All Files"
-msgstr ""
+msgstr "Allar skrár"
 
 #: ../src/file-dlgs.c:103
 msgid "JPEG Quality:"
-msgstr ""
+msgstr "JPEG myndgæði:"
 
 #: ../src/file-dlgs.c:104
 msgid ""
 "Lower quality values yield smaller file sizes,\n"
 "but the image quality will be poorer."
 msgstr ""
+"Lægri gildi gæða gefa minni skráastærðir,\n"
+"en myndgæðin verða lélegri."
 
 #: ../src/file-dlgs.c:121
 msgid "PNG Compression Level:"
-msgstr ""
+msgstr "PNG-þjöppunarstig:"
 
 #: ../src/file-dlgs.c:122
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
 msgstr ""
+"Hærri þjöppunarstig gefa minni skráastærðir,\n"
+"en það tekur lengri tíma að framkvæma þjöppunina."
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
-msgstr ""
+msgstr "Skoðaðu myndirnar þínar á einfaldan hátt"
 
 #: ../data/pref-dlg.ui.h:2
 msgid "Ask before saving images"
-msgstr ""
+msgstr "Spyrja áður en myndir eru vistaðar"
 
 #: ../data/pref-dlg.ui.h:3
 msgid "Ask before deleting images"
-msgstr ""
+msgstr "Spyrja áður en myndum er eytt"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
-msgstr ""
+msgstr "Sjálfvirkt vista snúnar myndir"
 
 #: ../data/pref-dlg.ui.h:5
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
 msgstr ""
+"Snúa JPEG-skrá með því að breyta EXIF-stefnugildi\n"
+"(aðeins ef EXIF-stefnugildi er til staðar)"
 
 #: ../data/pref-dlg.ui.h:7
 msgid "Slideshow interval"
-msgstr ""
+msgstr "Bið milli mynda í skyggnusýningu"
 
 #: ../data/pref-dlg.ui.h:8
 msgid "sec"
-msgstr ""
+msgstr "sek"
 
 #: ../data/pref-dlg.ui.h:9
 msgid "Make GPicView the default viewer for images"
-msgstr ""
+msgstr "Gera GPicView að sjálfgefnu forriti fyrir myndskrár"
 
 #: ../data/pref-dlg.ui.h:10
 msgid "Normal:"
-msgstr ""
+msgstr "Venjulegt:"
 
 #: ../data/pref-dlg.ui.h:11
 msgid "Fullscreen:"
-msgstr ""
+msgstr "Skjáfylli:"
 
 #: ../data/pref-dlg.ui.h:12
 msgid "<b>Background colors</b>"
-msgstr ""
+msgstr "<b>Bakgrunnslitir</b>"
