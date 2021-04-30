@@ -1,6 +1,6 @@
 [Desktop Entry]
 Encoding=UTF-8
-Categories=Graphics;Utility;Core;GTK;Viewer;RasterGraphics;2DGraphics;Photography;
+Categories=Graphics;Core;GTK;Viewer;RasterGraphics;2DGraphics;Photography;
 Exec=gpicview %f
 Icon=gpicview
 StartupNotify=true
