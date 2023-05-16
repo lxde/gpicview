@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: gpicview 0.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 14:36+0200\n"
-"PO-Revision-Date: 2021-02-10 16:42+0100\n"
+"PO-Revision-Date: 2023-05-16 16:29+0100\n"
 "Last-Translator: Ingo Brückl <ib@wupperonline.de>\n"
 "Language-Team: German <translation@mailinglist.lxde.org>\n"
 "Language: de\n"
@@ -47,11 +47,11 @@ msgstr "Diaschau starten"
 
 #: ../src/main-win.c:273 ../src/main-win.c:1442
 msgid "Zoom Out"
-msgstr "Herauszoomen"
+msgstr "Verkleinern"
 
 #: ../src/main-win.c:274 ../src/main-win.c:1443
 msgid "Zoom In"
-msgstr "Hineinzoomen"
+msgstr "Vergrößern"
 
 #. percent = gtk_entry_new();    // show scale (in percentage)
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
@@ -87,7 +87,7 @@ msgstr "Vertikal spiegeln"
 
 #: ../src/main-win.c:302 ../src/main-win.c:1454
 msgid "Open File"
-msgstr "Datei öffnen"
+msgstr "Datei öffnen …"
 
 #: ../src/main-win.c:303 ../src/main-win.c:1455
 msgid "Save File"
@@ -95,7 +95,7 @@ msgstr "Datei speichern"
 
 #: ../src/main-win.c:304
 msgid "Save File As"
-msgstr "Datei speichern unter"
+msgstr "Datei speichern unter …"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
 #: ../src/main-win.c:305 ../src/main-win.c:1458
@@ -137,7 +137,7 @@ msgid ""
 msgstr ""
 "Sind Sie sicher, dass Sie die aktuelle Datei löschen möchten?\n"
 "\n"
-"Warnung: Nach dem Löschen kann diese Datei nicht mehr wieder hergestellt "
+"Warnung: Nach dem Löschen kann diese Datei nicht mehr wiederhergestellt "
 "werden."
 
 #: ../src/main-win.c:1440
@@ -146,7 +146,7 @@ msgstr "Diaschau starten/beenden"
 
 #: ../src/main-win.c:1456
 msgid "Save As"
-msgstr "Speichern unter"
+msgstr "Speichern unter …"
 
 #: ../src/main-win.c:1461
 msgid "Show/Hide toolbar"
@@ -227,7 +227,7 @@ msgstr ""
 
 #: ../gpicview.desktop.in.h:2
 msgid "View your images easily"
-msgstr "Einfache Betrachtung von Bildern"
+msgstr "Einfache Bildbetrachtung"
 
 #: ../data/pref-dlg.ui.h:2
 msgid "Ask before saving images"
