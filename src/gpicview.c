@@ -87,7 +87,7 @@ int main(int argc, char *argv[])
     // FIXME: need to process multiple files...
     if( files )
     {
-        if( G_UNLIKELY( *files[0] != '/' && strstr( files[0], "://" )) )    // This is an URI
+        if( G_UNLIKELY( *files[0] != '/' && strstr( files[0], ":/" )) )    // This is an URI
         {
             char* path = g_filename_from_uri( files[0], NULL, NULL );
 
