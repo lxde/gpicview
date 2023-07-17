@@ -1,5 +1,5 @@
 //--------------------------------------------------------------------------
-// Program to pull the information out of various types of EXIF digital 
+// Program to pull the information out of various types of EXIF digital
 // camera files and show it in a reasonably consistent way
 //
 // This module parses the very complicated exif structures.
@@ -258,14 +258,14 @@ static const TagTable_t TagTable[] = {
   { TAG_EXIF_IMAGELENGTH,       "ExifImageLength"},
   { TAG_RELATED_AUDIO_FILE,     "RelatedAudioFile"},
   { TAG_INTEROP_OFFSET,         "InteroperabilityOffset"},
-  { TAG_FLASH_ENERGY,           "FlashEnergy"},              
-  { TAG_SPATIAL_FREQ_RESP,      "SpatialFrequencyResponse"}, 
-  { TAG_FOCAL_PLANE_XRES,       "FocalPlaneXResolution"},    
-  { TAG_FOCAL_PLANE_YRES,       "FocalPlaneYResolution"},    
-  { TAG_FOCAL_PLANE_UNITS,      "FocalPlaneResolutionUnit"}, 
-  { TAG_SUBJECT_LOCATION,       "SubjectLocation"},          
-  { TAG_EXPOSURE_INDEX,         "ExposureIndex"},            
-  { TAG_SENSING_METHOD,         "SensingMethod"},            
+  { TAG_FLASH_ENERGY,           "FlashEnergy"},
+  { TAG_SPATIAL_FREQ_RESP,      "SpatialFrequencyResponse"},
+  { TAG_FOCAL_PLANE_XRES,       "FocalPlaneXResolution"},
+  { TAG_FOCAL_PLANE_YRES,       "FocalPlaneYResolution"},
+  { TAG_FOCAL_PLANE_UNITS,      "FocalPlaneResolutionUnit"},
+  { TAG_SUBJECT_LOCATION,       "SubjectLocation"},
+  { TAG_EXPOSURE_INDEX,         "ExposureIndex"},
+  { TAG_SENSING_METHOD,         "SensingMethod"},
   { TAG_FILE_SOURCE,            "FileSource"},
   { TAG_SCENE_TYPE,             "SceneType"},
   { TAG_CFA_PATTERN,            "CFA Pattern"},
@@ -363,18 +363,18 @@ void PrintFormatNumber(void * ValuePtr, int Format, int ByteCount)
             case FMT_SBYTE:
             case FMT_BYTE:      printf("%02x",*(uchar *)ValuePtr); s=1;  break;
             case FMT_USHORT:    printf("%d",Get16u(ValuePtr)); s=2;      break;
-            case FMT_ULONG:     
+            case FMT_ULONG:
             case FMT_SLONG:     printf("%d",Get32s(ValuePtr)); s=4;      break;
             case FMT_SSHORT:    printf("%hd",(signed short)Get16u(ValuePtr)); s=2; break;
             case FMT_URATIONAL:
-            case FMT_SRATIONAL: 
-               printf("%d/%d",Get32s(ValuePtr), Get32s(4+(char *)ValuePtr)); 
+            case FMT_SRATIONAL:
+               printf("%d/%d",Get32s(ValuePtr), Get32s(4+(char *)ValuePtr));
                s = 8;
                break;
 
             case FMT_SINGLE:    printf("%f",(double)*(float *)ValuePtr); s=8; break;
             case FMT_DOUBLE:    printf("%f",*(double *)ValuePtr);        s=8; break;
-            default: 
+            default:
                 printf("Unknown format %d:", Format);
                 return;
         }
@@ -404,7 +404,7 @@ double ConvertAnyFormat(void * ValuePtr, int Format)
         case FMT_ULONG:     Value = Get32u(ValuePtr);          break;
 
         case FMT_URATIONAL:
-        case FMT_SRATIONAL: 
+        case FMT_SRATIONAL:
             {
                 int Num,Den;
                 Num = Get32s(ValuePtr);
@@ -433,7 +433,7 @@ double ConvertAnyFormat(void * ValuePtr, int Format)
 //--------------------------------------------------------------------------
 // Process one of the nested EXIF directories.
 //--------------------------------------------------------------------------
-static void ProcessExifDir(unsigned char * DirStart, unsigned char * OffsetBase, 
+static void ProcessExifDir(unsigned char * DirStart, unsigned char * OffsetBase,
         unsigned ExifLength, int NestingLevel)
 {
     int de;
@@ -619,7 +619,7 @@ static void ProcessExifDir(unsigned char * DirStart, unsigned char * OffsetBase,
                     ErrNonfatal("More than %d date fields!  This is nuts", MAX_DATE_COPIES, 0);
                     break;
                 }
-                ImageInfo.DateTimeOffsets[ImageInfo.numDateTimeTags++] = 
+                ImageInfo.DateTimeOffsets[ImageInfo.numDateTimeTags++] =
                     (char *)ValuePtr - (char *)OffsetBase;
                 break;
 
@@ -646,7 +646,7 @@ static void ProcessExifDir(unsigned char * DirStart, unsigned char * OffsetBase,
                             break;
                         }
                     }
-                    
+
                 }else{
                     strncpy(ImageInfo.Comments, (char *)ValuePtr, 199);
                 }
@@ -660,10 +660,10 @@ static void ProcessExifDir(unsigned char * DirStart, unsigned char * OffsetBase,
 
             case TAG_APERTURE:
             case TAG_MAXAPERTURE:
-                // More relevant info always comes earlier, so only use this field if we don't 
+                // More relevant info always comes earlier, so only use this field if we don't
                 // have appropriate aperture information yet.
                 if (ImageInfo.ApertureFNumber == 0){
-                    ImageInfo.ApertureFNumber 
+                    ImageInfo.ApertureFNumber
                         = (float)exp(ConvertAnyFormat(ValuePtr, Format)*log(2)*0.5);
                 }
                 break;
@@ -690,7 +690,7 @@ static void ProcessExifDir(unsigned char * DirStart, unsigned char * OffsetBase,
                 // More complicated way of expressing exposure time, so only use
                 // this value if we don't already have it from somewhere else.
                 if (ImageInfo.ExposureTime == 0){
-                    ImageInfo.ExposureTime 
+                    ImageInfo.ExposureTime
                         = (float)(1/exp(ConvertAnyFormat(ValuePtr, Format)*log(2)));
                 }
                 break;
@@ -734,7 +734,7 @@ static void ProcessExifDir(unsigned char * DirStart, unsigned char * OffsetBase,
             case TAG_FOCAL_PLANE_UNITS:
                 switch((int)ConvertAnyFormat(ValuePtr, Format)){
                     case 1: FocalplaneUnits = 25.4; break; // inch
-                    case 2: 
+                    case 2:
                         // According to the information I was using, 2 means meters.
                         // But looking at the Cannon powershot's files, inches is the only
                         // sensible value.
@@ -835,7 +835,7 @@ static void ProcessExifDir(unsigned char * DirStart, unsigned char * OffsetBase,
 
             case TAG_FOCALLENGTH_35MM:
                 // The focal length equivalent 35 mm is a 2.2 tag (defined as of April 2002)
-                // if its present, use it to compute equivalent focal length instead of 
+                // if its present, use it to compute equivalent focal length instead of
                 // computing it from sensor geometry and actual focal length.
                 ImageInfo.FocalLength35mmEquiv = (unsigned)ConvertAnyFormat(ValuePtr, Format);
                 break;
@@ -850,7 +850,7 @@ static void ProcessExifDir(unsigned char * DirStart, unsigned char * OffsetBase,
 
 
     {
-        // In addition to linking to subdirectories via exif tags, 
+        // In addition to linking to subdirectories via exif tags,
         // there's also a potential link to another directory at the end of each
         // directory.  this has got to be the result of a committee!
         unsigned char * SubdirStart;
@@ -863,7 +863,7 @@ static void ProcessExifDir(unsigned char * DirStart, unsigned char * OffsetBase,
                 if (SubdirStart > OffsetBase+ExifLength || SubdirStart < OffsetBase){
                     if (SubdirStart > OffsetBase && SubdirStart < OffsetBase+ExifLength+20){
                         // Jhead 1.3 or earlier would crop the whole directory!
-                        // As Jhead produces this form of format incorrectness, 
+                        // As Jhead produces this form of format incorrectness,
                         // I'll just let it pass silently
                         if (ShowTags) printf("Thumbnail removed with Jhead 1.3 or earlier\n");
                     }else{
@@ -1011,7 +1011,7 @@ void create_EXIF(void)
     int DateIndex;
     int DirIndex;
     int DirContinuation;
-    
+
     MotorolaOrder = 0;
 
     memcpy(Buffer+2, "Exif\0\0II",8);
@@ -1027,7 +1027,7 @@ void create_EXIF(void)
 
         Put16u(Buffer+DirIndex, NumEntries); // Number of entries
         DirIndex += 2;
-  
+
         // Enitries go here...
         {
             // Date/time entry
@@ -1047,7 +1047,7 @@ void create_EXIF(void)
                 FileTimeAsString(Buffer+DataWriteIndex);
             }
             DataWriteIndex += 20;
-        
+
             // Link to exif dir entry
             Put16u(Buffer+DirIndex, TAG_EXIF_OFFSET);      // Tag
             Put16u(Buffer+DirIndex + 2, FMT_ULONG);        // Format
@@ -1077,7 +1077,7 @@ void create_EXIF(void)
 
         memcpy(Buffer+DataWriteIndex, Buffer+DateIndex, 20);
         DataWriteIndex += 20;
-        
+
         // End of directory - contains optional link to continued directory.
         Put32u(Buffer+DirIndex, 0);
     }
@@ -1113,7 +1113,7 @@ void create_EXIF(void)
         Put32u(Buffer+DirIndex, 0);
     }
 
-    
+
     Buffer[0] = (unsigned char)(DataWriteIndex >> 8);
     Buffer[1] = (unsigned char)DataWriteIndex;
 
@@ -1148,16 +1148,16 @@ const char * ClearOrientation(void)
     for (a=0;a<NumOrientations;a++){
         switch(OrientationNumFormat[a]){
             case FMT_SBYTE:
-            case FMT_BYTE:      
+            case FMT_BYTE:
                 *(uchar *)(OrientationPtr[a]) = 1;
                 break;
 
-            case FMT_USHORT:    
-                Put16u(OrientationPtr[a], 1);                
+            case FMT_USHORT:
+                Put16u(OrientationPtr[a], 1);
                 break;
 
-            case FMT_ULONG:     
-            case FMT_SLONG:     
+            case FMT_ULONG:
+            case FMT_SLONG:
                 memset(OrientationPtr, 0, 4);
                 // Can't be bothered to write  generic Put32 if I only use it once.
                 if (MotorolaOrder){
@@ -1182,8 +1182,8 @@ const char * ClearOrientation(void)
 //--------------------------------------------------------------------------
 int RemoveThumbnail(unsigned char * ExifSection)
 {
-    if (!DirWithThumbnailPtrs || 
-        ImageInfo.ThumbnailOffset == 0 || 
+    if (!DirWithThumbnailPtrs ||
+        ImageInfo.ThumbnailOffset == 0 ||
         ImageInfo.ThumbnailSize == 0){
         // No thumbnail, or already deleted it.
         return 0;
@@ -1211,7 +1211,7 @@ int RemoveThumbnail(unsigned char * ExifSection)
                     return 0;
                 }
                 Put32u(DirEntry+8, 0);
-            }                    
+            }
         }
     }
 
@@ -1239,10 +1239,10 @@ int Exif2tm(struct tm * timeptr, char * ExifTime)
 
 
     if (a == 6){
-        timeptr->tm_isdst = -1;  
-        timeptr->tm_mon -= 1;      // Adjust for unix zero-based months 
-        timeptr->tm_year -= 1900;  // Adjust for year starting at 1900 
-        return TRUE; // worked. 
+        timeptr->tm_isdst = -1;
+        timeptr->tm_mon -= 1;      // Adjust for unix zero-based months
+        timeptr->tm_year -= 1900;  // Adjust for year starting at 1900
+        return TRUE; // worked.
     }
 
     return FALSE; // Wasn't in Exif date format.
@@ -1285,7 +1285,7 @@ void ShowImageInfo(int ShowFileInfo)
     }
 
     if (ImageInfo.FlashUsed >= 0){
-        if (ImageInfo.FlashUsed & 1){    
+        if (ImageInfo.FlashUsed & 1){
             printf("Flash used   : Yes");
             switch (ImageInfo.FlashUsed){
 	            case 0x5: printf(" (Strobe light not detected)"); break;
@@ -1364,7 +1364,7 @@ void ShowImageInfo(int ShowFileInfo)
         // so only show it if its nonzero.
         printf("Exposure bias: %4.2f\n",(double)ImageInfo.ExposureBias);
     }
-        
+
     switch(ImageInfo.Whitebalance) {
         case 1:
             printf("Whitebalance : Manual\n");
@@ -1428,7 +1428,7 @@ void ShowImageInfo(int ShowFileInfo)
             printf("Exposure     : shutter priority (semi-auto)\n");
             break;
         case 5:
-            printf("Exposure     : Creative Program (based towards depth of field)\n"); 
+            printf("Exposure     : Creative Program (based towards depth of field)\n");
             break;
         case 6:
             printf("Exposure     : Action program (based towards fast shutter speed)\n");
@@ -1568,14 +1568,14 @@ int ExifRotateFlipMapping[9][9]=
 {0, 2, 1, 4, 3, 6, 5, 8, 7},
 //3 rotate 180
 {0, 3, 4, 1, 2, 7, 8, 5, 6},
-//4 flip vertical 
+//4 flip vertical
 {0, 4, 3, 2, 1, 8, 7, 6, 5},
-//5 transpose: Flipped about top-left <--> bottom-right axis. 
+//5 transpose: Flipped about top-left <--> bottom-right axis.
 {0, 5, 8, 7, 6, 1, 4, 3, 2},
 //6 rotate 90
 {0, 6, 7, 8, 5, 2, 3, 4, 1},
 //7 transverse: flipped about top-right <--> bottom-left axis
-{0, 7, 6, 5, 8, 3, 2, 1, 4}, 
+{0, 7, 6, 5, 8, 3, 2, 1, 4},
 //8 rotate 270
 {0, 8, 5, 6, 7, 4, 1, 2, 3},
 };
@@ -1585,10 +1585,10 @@ int ExifRotate(const char * fname, int new_angle)
     int fail = FALSE;
     int exif_angle = 0;
     int a;
-    
+
     if(new_angle == 0)
       return TRUE;
-    
+
     // use jhead functions
     ResetJpgfile();
 
@@ -1596,7 +1596,7 @@ int ExifRotate(const char * fname, int new_angle)
     memset(&ImageInfo, 0, sizeof(ImageInfo));
 
     if (!ReadJpegFile( fname, READ_ALL)) return FALSE;
-    
+
     if (NumOrientations != 0)
     {
         if(new_angle == 0) 		new_angle = 1;
@@ -1607,22 +1607,22 @@ int ExifRotate(const char * fname, int new_angle)
         else if(new_angle == -90)	new_angle = 2;
         else if(new_angle == -135)	new_angle = 5;
         else if(new_angle == -180)	new_angle = 4;
-        
+
         exif_angle = ExifRotateFlipMapping[ImageInfo.Orientation][new_angle];
 
         for (a=0;a<NumOrientations;a++){
             switch(OrientationNumFormat[a]){
                 case FMT_SBYTE:
-                case FMT_BYTE:      
+                case FMT_BYTE:
                     *(uchar *)(OrientationPtr[a]) = (uchar) exif_angle;
                     break;
 
-                case FMT_USHORT:    
+                case FMT_USHORT:
                     Put16u(OrientationPtr[a], exif_angle);
                     break;
 
-                case FMT_ULONG:     
-                case FMT_SLONG:     
+                case FMT_ULONG:
+                case FMT_SLONG:
                     memset(OrientationPtr, 0, 4);
                     // Can't be bothered to write  generic Put32 if I only use it once.
                     if (MotorolaOrder){
@@ -1638,14 +1638,14 @@ int ExifRotate(const char * fname, int new_angle)
             }
         }
     }
-    
+
     if(fail == FALSE)
     {
         WriteJpegFile(fname);
     }
-    
+
     // free jhead structure
     DiscardData();
-    
+
     return (NumOrientations != 0) ? TRUE : FALSE;
 }

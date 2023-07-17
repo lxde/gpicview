@@ -251,7 +251,7 @@ static gboolean on_draw_event( GtkWidget* widget, cairo_t *cr )
 {
 
     ImageView* iv = (ImageView*)widget;
-    if ( gtk_widget_get_mapped(widget) ) 
+    if ( gtk_widget_get_mapped(widget) )
         image_view_paint( iv, cr );
     return FALSE;
 

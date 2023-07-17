@@ -103,7 +103,7 @@ static void purge_file( const char* file )
 			}
 		}
 	}
-	
+
 	fclose( fo );
 
 error:
