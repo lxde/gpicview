@@ -1,12 +1,12 @@
 [Desktop Entry]
 Encoding=UTF-8
-Categories=Graphics;Core;GTK;Viewer;RasterGraphics;2DGraphics;Photography;
-Exec=gpicview %f
+Categories=GTK;Graphics;Viewer;
+Exec=gpicview %u
 Icon=gpicview
 StartupNotify=true
 Type=Application
 Terminal=false
 MimeType=application/x-navi-animation;image/bmp;image/gif;image/x-icns;image/jpeg;image/png;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-quicktime;image/svg+xml;image/x-tga;image/tiff;image/vnd.microsoft.icon;image/vnd.zbrush.pcx;image/x-pcx;image/x-win-bitmap;image/wmf;image/x-wmf;image/x-xbitmap;image/x-xpixmap;
-_Name=Image Viewer
+_Name=GPicView
 _GenericName=Image Viewer
 _Comment=View your images easily
