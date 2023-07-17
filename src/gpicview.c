@@ -90,6 +90,15 @@ int main(int argc, char *argv[])
         if( G_UNLIKELY( *files[0] != '/' && strstr( files[0], "://" )) )    // This is an URI
         {
             char* path = g_filename_from_uri( files[0], NULL, NULL );
+
+            if ( !path )
+            {
+                gchar *msg = g_strdup_printf( _("The file \"%s\" cannot be opened!"), files[0] );
+                main_win_show_error( win, msg );
+                g_free( msg );
+                goto run;
+            }
+
             main_win_open( win, path, ZOOM_NONE );
             g_free( path );
         }
@@ -104,6 +113,7 @@ int main(int argc, char *argv[])
         main_win_open( win, ".", ZOOM_NONE );
     }
 
+run:
     gtk_main();
 
     save_preferences();
