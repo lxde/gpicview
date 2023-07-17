@@ -188,8 +188,8 @@ msgid "GPicView"
 msgstr "Pregledač slika"
 
 #: ../src/main-win.c:1517
-msgid "Copyright (C) 2007 - 2011"
-msgstr "2007-2011. Neka prava su zadržana."
+msgid "Copyright (C) 2007 - 2023"
+msgstr "2007-2023. Neka prava su zadržana."
 
 #: ../src/main-win.c:1518
 msgid "Lightweight image viewer from LXDE project"

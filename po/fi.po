@@ -166,8 +166,8 @@ msgid "GPicView"
 msgstr "GPicView"
 
 #: ../src/main-win.c:1517
-msgid "Copyright (C) 2007 - 2011"
-msgstr "Tekijänoikeudet (C) 2007 - 2011"
+msgid "Copyright (C) 2007 - 2023"
+msgstr "Tekijänoikeudet (C) 2007 - 2023"
 
 #: ../src/main-win.c:1518
 msgid "Lightweight image viewer from LXDE project"

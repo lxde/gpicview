@@ -160,7 +160,7 @@ msgid "GPicView"
 msgstr ""
 
 #: ../src/main-win.c:1517
-msgid "Copyright (C) 2007 - 2011"
+msgid "Copyright (C) 2007 - 2023"
 msgstr ""
 
 #: ../src/main-win.c:1518
