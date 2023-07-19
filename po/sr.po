@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GPicView 0.2.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-23 14:36+0200\n"
+"POT-Creation-Date: 2023-07-17 19:50+0200\n"
 "PO-Revision-Date: 2015-05-01 11:02+0000\n"
 "Last-Translator: Jay A. Fleming <tito.nehru.naser@gmail.com>\n"
 "Language-Team: \n"
@@ -16,8 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.7\n"
 "X-POOTLE-MTIME: 1430478176.000000\n"
 
@@ -33,34 +33,32 @@ msgstr "Испиши информације о издању и изађи"
 msgid "Start slideshow"
 msgstr "Пусти покретни приказ"
 
-#: ../src/main-win.c:165
-#: ../src/main-win.c:1413
-#: ../gpicview.desktop.in.h:1
+#: ../src/gpicview.c:96
+#, c-format
+msgid "The file \"%s\" cannot be opened!"
+msgstr ""
+
+#: ../src/main-win.c:165 ../src/main-win.c:1420 ../gpicview.desktop.in.h:2
 msgid "Image Viewer"
 msgstr "Прегледник слика"
 
-#: ../src/main-win.c:267
-#: ../src/main-win.c:1438
+#: ../src/main-win.c:274 ../src/main-win.c:1445
 msgid "Previous"
 msgstr "Претходна"
 
-#: ../src/main-win.c:268
-#: ../src/main-win.c:1439
+#: ../src/main-win.c:275 ../src/main-win.c:1446
 msgid "Next"
 msgstr "Наредна"
 
-#: ../src/main-win.c:269
-#: ../src/main-win.c:754
+#: ../src/main-win.c:276 ../src/main-win.c:761
 msgid "Start Slideshow"
 msgstr "Пусти покретни приказ"
 
-#: ../src/main-win.c:273
-#: ../src/main-win.c:1442
+#: ../src/main-win.c:280 ../src/main-win.c:1449
 msgid "Zoom Out"
 msgstr "Удаљи"
 
-#: ../src/main-win.c:274
-#: ../src/main-win.c:1443
+#: ../src/main-win.c:281 ../src/main-win.c:1450
 msgid "Zoom In"
 msgstr "Приближи"
 
@@ -68,77 +66,64 @@ msgstr "Приближи"
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
 #. gtk_widget_set_size_request( percent, 45, -1 );
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
-#: ../src/main-win.c:281
-#: ../src/main-win.c:1444
+#: ../src/main-win.c:288 ../src/main-win.c:1451
 msgid "Fit Image To Window Size"
 msgstr "Уколпи слику у прозор"
 
-#: ../src/main-win.c:283
-#: ../src/main-win.c:1445
+#: ../src/main-win.c:290 ../src/main-win.c:1452
 msgid "Original Size"
 msgstr "Стварна величина слике"
 
-#: ../src/main-win.c:290
-#: ../src/main-win.c:1447
+#: ../src/main-win.c:297 ../src/main-win.c:1454
 msgid "Full Screen"
 msgstr "Прикажи преко целог екрана"
 
-#: ../src/main-win.c:294
-#: ../src/main-win.c:1449
+#: ../src/main-win.c:301 ../src/main-win.c:1456
 msgid "Rotate Counterclockwise"
 msgstr "Окрени на лево"
 
-#: ../src/main-win.c:295
-#: ../src/main-win.c:1450
+#: ../src/main-win.c:302 ../src/main-win.c:1457
 msgid "Rotate Clockwise"
 msgstr "Окрени на десно"
 
-#: ../src/main-win.c:297
-#: ../src/main-win.c:1451
+#: ../src/main-win.c:304 ../src/main-win.c:1458
 msgid "Flip Horizontal"
 msgstr "Изврни према хоризонтали"
 
-#: ../src/main-win.c:298
-#: ../src/main-win.c:1452
+#: ../src/main-win.c:305 ../src/main-win.c:1459
 msgid "Flip Vertical"
 msgstr "Изврни према вертикали"
 
-#: ../src/main-win.c:302
-#: ../src/main-win.c:1454
+#: ../src/main-win.c:309 ../src/main-win.c:1461
 msgid "Open File"
 msgstr "Отвори датотеку"
 
-#: ../src/main-win.c:303
-#: ../src/main-win.c:1455
+#: ../src/main-win.c:310 ../src/main-win.c:1462
 msgid "Save File"
 msgstr "Сачувај датотеку"
 
-#: ../src/main-win.c:304
+#: ../src/main-win.c:311
 msgid "Save File As"
 msgstr "Сачувај под другим називом"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
-#: ../src/main-win.c:305
-#: ../src/main-win.c:1458
+#: ../src/main-win.c:312 ../src/main-win.c:1465
 msgid "Delete File"
 msgstr "Обриши датотеку"
 
-#: ../src/main-win.c:308
-#: ../src/main-win.c:1460
-#: ../data/pref-dlg.ui.h:1
+#: ../src/main-win.c:315 ../src/main-win.c:1467 ../data/pref-dlg.ui.h:1
 msgid "Preferences"
 msgstr "Поставке"
 
-#: ../src/main-win.c:309
-#: ../src/main-win.c:1464
+#: ../src/main-win.c:316 ../src/main-win.c:1471
 msgid "Quit"
 msgstr "Изађи"
 
-#: ../src/main-win.c:762
+#: ../src/main-win.c:769
 msgid "Stop Slideshow"
 msgstr "Заустави покретни приказ"
 
-#: ../src/main-win.c:1303
+#: ../src/main-win.c:1310
 msgid ""
 "The file name you selected already exists.\n"
 "Do you want to overwrite existing file?\n"
@@ -148,11 +133,11 @@ msgstr ""
 "Да ли желите да пишем преко постојеће датотеке?\n"
 "(УПОЗОРЕЊЕ: Овим можете изгубити на квалитету слике)"
 
-#: ../src/main-win.c:1344
+#: ../src/main-win.c:1351
 msgid "Writing this image format is not supported."
 msgstr "Није подржан запис у овом формату."
 
-#: ../src/main-win.c:1382
+#: ../src/main-win.c:1389
 msgid ""
 "Are you sure you want to delete current file?\n"
 "\n"
@@ -162,42 +147,43 @@ msgstr ""
 "\n"
 "УПОЗОРЕЊЕ: Касније не можете повратити слику."
 
-#: ../src/main-win.c:1440
+#: ../src/main-win.c:1447
 msgid "Start/Stop Slideshow"
 msgstr "Пусти/Заустави покретни приказ"
 
-#: ../src/main-win.c:1456
+#: ../src/main-win.c:1463
 msgid "Save As"
 msgstr "Сачувај под другим називом"
 
-#: ../src/main-win.c:1461
+#: ../src/main-win.c:1468
 msgid "Show/Hide toolbar"
 msgstr "Прикажи/Сакриј алатницу"
 
-#: ../src/main-win.c:1505
+#: ../src/main-win.c:1512
 msgid " * Refer to source code of EOG image viewer and GThumb"
 msgstr " * Погледајте изворни код програма „EOG“ и „GThumb“"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../src/main-win.c:1509
+#: ../src/main-win.c:1516
 msgid "translator-credits"
 msgstr "Српски: Jay A. Fleming,- Мирослав Николић,- Марко Ускоковић"
 
-#: ../src/main-win.c:1515
+#: ../src/main-win.c:1522 ../gpicview.desktop.in.h:1
 msgid "GPicView"
 msgstr "Прегледник слика"
 
-#: ../src/main-win.c:1517
+#: ../src/main-win.c:1524
 msgid "Copyright (C) 2007 - 2023"
 msgstr "Ауторска права — 2007-2023."
 
-#: ../src/main-win.c:1518
+#: ../src/main-win.c:1525
 msgid "Lightweight image viewer from LXDE project"
 msgstr "Једноставан прегледник слика за ЛИкс-ДЕ радно окружење"
 
 #: ../src/pref.c:164
 msgid ""
-"GPicView will become the default viewer for all supported image files on your system.\n"
+"GPicView will become the default viewer for all supported image files on "
+"your system.\n"
 "(This will be done through 'xdg-mime' program)\n"
 "\n"
 "<b>Are you sure you really want to do this?</b>"
@@ -227,11 +213,11 @@ msgstr ""
 "Мања вредност за квалитет ће учинити да датотека буде мање величине,\n"
 "али ће у том случају, квалитет слике бити лошији."
 
-#: ../src/file-dlgs.c:121
+#: ../src/file-dlgs.c:122
 msgid "PNG Compression Level:"
 msgstr "Ниво компресије ПНГ слике:"
 
-#: ../src/file-dlgs.c:122
+#: ../src/file-dlgs.c:123
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
@@ -239,7 +225,7 @@ msgstr ""
 "Већи ниво компресије ће учинити да датотека буде мање величине,\n"
 " али ће, у том случају, бити потребно више времена за компресију."
 
-#: ../gpicview.desktop.in.h:2
+#: ../gpicview.desktop.in.h:3
 msgid "View your images easily"
 msgstr "Лагано прегледање слика"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gpicview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-23 14:36+0200\n"
+"POT-Creation-Date: 2023-07-17 19:50+0200\n"
 "PO-Revision-Date: 2015-08-17 01:28+0000\n"
 "Last-Translator: Anonymous Pootle User\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -31,27 +31,32 @@ msgstr "Vis versjonsinformasjon, og så avslutt."
 msgid "Start slideshow"
 msgstr "Start biletframvising"
 
-#: ../src/main-win.c:165 ../src/main-win.c:1413 ../gpicview.desktop.in.h:1
+#: ../src/gpicview.c:96
+#, c-format
+msgid "The file \"%s\" cannot be opened!"
+msgstr ""
+
+#: ../src/main-win.c:165 ../src/main-win.c:1420 ../gpicview.desktop.in.h:2
 msgid "Image Viewer"
 msgstr "Biletvisar"
 
-#: ../src/main-win.c:267 ../src/main-win.c:1438
+#: ../src/main-win.c:274 ../src/main-win.c:1445
 msgid "Previous"
 msgstr "Førre"
 
-#: ../src/main-win.c:268 ../src/main-win.c:1439
+#: ../src/main-win.c:275 ../src/main-win.c:1446
 msgid "Next"
 msgstr "Neste"
 
-#: ../src/main-win.c:269 ../src/main-win.c:754
+#: ../src/main-win.c:276 ../src/main-win.c:761
 msgid "Start Slideshow"
 msgstr "Start biletframvising"
 
-#: ../src/main-win.c:273 ../src/main-win.c:1442
+#: ../src/main-win.c:280 ../src/main-win.c:1449
 msgid "Zoom Out"
 msgstr "Forminsk"
 
-#: ../src/main-win.c:274 ../src/main-win.c:1443
+#: ../src/main-win.c:281 ../src/main-win.c:1450
 msgid "Zoom In"
 msgstr "Forstørr"
 
@@ -59,64 +64,64 @@ msgstr "Forstørr"
 #. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
 #. gtk_widget_set_size_request( percent, 45, -1 );
 #. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
-#: ../src/main-win.c:281 ../src/main-win.c:1444
+#: ../src/main-win.c:288 ../src/main-win.c:1451
 msgid "Fit Image To Window Size"
 msgstr "Tilpass til vindaugsstorleiken"
 
-#: ../src/main-win.c:283 ../src/main-win.c:1445
+#: ../src/main-win.c:290 ../src/main-win.c:1452
 msgid "Original Size"
 msgstr "Opphavleg storleik"
 
-#: ../src/main-win.c:290 ../src/main-win.c:1447
+#: ../src/main-win.c:297 ../src/main-win.c:1454
 msgid "Full Screen"
 msgstr "Fullskjerm"
 
-#: ../src/main-win.c:294 ../src/main-win.c:1449
+#: ../src/main-win.c:301 ../src/main-win.c:1456
 msgid "Rotate Counterclockwise"
 msgstr "Drei mot klokka"
 
-#: ../src/main-win.c:295 ../src/main-win.c:1450
+#: ../src/main-win.c:302 ../src/main-win.c:1457
 msgid "Rotate Clockwise"
 msgstr "Drei med klokka"
 
-#: ../src/main-win.c:297 ../src/main-win.c:1451
+#: ../src/main-win.c:304 ../src/main-win.c:1458
 msgid "Flip Horizontal"
 msgstr "Spegla vassrett"
 
-#: ../src/main-win.c:298 ../src/main-win.c:1452
+#: ../src/main-win.c:305 ../src/main-win.c:1459
 msgid "Flip Vertical"
 msgstr "Spegla loddrett"
 
-#: ../src/main-win.c:302 ../src/main-win.c:1454
+#: ../src/main-win.c:309 ../src/main-win.c:1461
 msgid "Open File"
 msgstr "Opna fil"
 
-#: ../src/main-win.c:303 ../src/main-win.c:1455
+#: ../src/main-win.c:310 ../src/main-win.c:1462
 msgid "Save File"
 msgstr "Lagra fil"
 
-#: ../src/main-win.c:304
+#: ../src/main-win.c:311
 msgid "Save File As"
 msgstr "Lagra fil som"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
-#: ../src/main-win.c:305 ../src/main-win.c:1458
+#: ../src/main-win.c:312 ../src/main-win.c:1465
 msgid "Delete File"
 msgstr "Slett fil"
 
-#: ../src/main-win.c:308 ../src/main-win.c:1460 ../data/pref-dlg.ui.h:1
+#: ../src/main-win.c:315 ../src/main-win.c:1467 ../data/pref-dlg.ui.h:1
 msgid "Preferences"
 msgstr "Innstillingar"
 
-#: ../src/main-win.c:309 ../src/main-win.c:1464
+#: ../src/main-win.c:316 ../src/main-win.c:1471
 msgid "Quit"
 msgstr "Avslutt"
 
-#: ../src/main-win.c:762
+#: ../src/main-win.c:769
 msgid "Stop Slideshow"
 msgstr "Stopp framvising"
 
-#: ../src/main-win.c:1303
+#: ../src/main-win.c:1310
 msgid ""
 "The file name you selected already exists.\n"
 "Do you want to overwrite existing file?\n"
@@ -126,11 +131,11 @@ msgstr ""
 "Vil du skriva over denne fila?\n"
 "(Åtvaring: Kvaliteten på originalbiletet kan verta forringa.)"
 
-#: ../src/main-win.c:1344
+#: ../src/main-win.c:1351
 msgid "Writing this image format is not supported."
 msgstr "Det er ikkje støtte for lagring til dette formatet."
 
-#: ../src/main-win.c:1382
+#: ../src/main-win.c:1389
 msgid ""
 "Are you sure you want to delete current file?\n"
 "\n"
@@ -140,36 +145,36 @@ msgstr ""
 "\n"
 "Åtvaring: Du kan ikkje gjenoppretta sletta filer."
 
-#: ../src/main-win.c:1440
+#: ../src/main-win.c:1447
 msgid "Start/Stop Slideshow"
 msgstr "Start/stopp framvising"
 
-#: ../src/main-win.c:1456
+#: ../src/main-win.c:1463
 msgid "Save As"
 msgstr "Lagra som"
 
-#: ../src/main-win.c:1461
+#: ../src/main-win.c:1468
 msgid "Show/Hide toolbar"
 msgstr ""
 
-#: ../src/main-win.c:1505
+#: ../src/main-win.c:1512
 msgid " * Refer to source code of EOG image viewer and GThumb"
 msgstr " – Sjå kjeldekoden til Eye of GNOME (EOG) og GThumb"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../src/main-win.c:1509
+#: ../src/main-win.c:1516
 msgid "translator-credits"
 msgstr "Karl Ove Hufthammer"
 
-#: ../src/main-win.c:1515
+#: ../src/main-win.c:1522 ../gpicview.desktop.in.h:1
 msgid "GPicView"
 msgstr "GPicView"
 
-#: ../src/main-win.c:1517
+#: ../src/main-win.c:1524
 msgid "Copyright (C) 2007 - 2023"
 msgstr "Copyright © 2007–2023"
 
-#: ../src/main-win.c:1518
+#: ../src/main-win.c:1525
 msgid "Lightweight image viewer from LXDE project"
 msgstr "Lett biletvisar for LXDE"
 
@@ -207,11 +212,11 @@ msgstr ""
 "Lågare verdiar gjev mindre filer,\n"
 "men dårlegare biletkvalitet."
 
-#: ../src/file-dlgs.c:121
+#: ../src/file-dlgs.c:122
 msgid "PNG Compression Level:"
 msgstr "PNG-komprimering:"
 
-#: ../src/file-dlgs.c:122
+#: ../src/file-dlgs.c:123
 msgid ""
 "Higher compression levels yield smaller file sizes,\n"
 "but takes more time to do the compression."
@@ -219,7 +224,7 @@ msgstr ""
 "Høgare verdiar gjev mindre filer,\n"
 "men det tek lenger tid å lagra dei."
 
-#: ../gpicview.desktop.in.h:2
+#: ../gpicview.desktop.in.h:3
 msgid "View your images easily"
 msgstr "Vis bilete"
 
