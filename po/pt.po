@@ -2,26 +2,27 @@
 # Copyright (C) 2010 THE GPICVIEW'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the GPICVIEW package.
 # Sérgio Marques <smarquespt@gmail.com>, 2009-2012.
+# Hugo Carvalho <hugokarvalho@hotmail.com>, 2022, 2023.
 # Adaptado ao acordo ortográfico de 1990
 msgid ""
 msgstr ""
 "Project-Id-Version: gpicview\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-17 19:50+0200\n"
-"PO-Revision-Date: 2015-03-26 13:30+0000\n"
-"Last-Translator: Sérgio Marques <smarquespt@gmail.com>\n"
+"PO-Revision-Date: 2023-08-02 00:49+0100\n"
+"Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.7\n"
+"X-Generator: Poedit 3.3.2\n"
 "X-POOTLE-MTIME: 1427376637.000000\n"
 
 #: ../src/gpicview.c:38
 msgid "[FILE]"
-msgstr "[Ficheiro]"
+msgstr "[FICHEIRO]"
 
 #: ../src/gpicview.c:40
 msgid "Print version information and exit"
@@ -34,7 +35,7 @@ msgstr "Iniciar apresentação"
 #: ../src/gpicview.c:96
 #, c-format
 msgid "The file \"%s\" cannot be opened!"
-msgstr ""
+msgstr "O ficheiro “%s” não pode ser aberto!"
 
 #: ../src/main-win.c:165 ../src/main-win.c:1420 ../gpicview.desktop.in.h:2
 msgid "Image Viewer"
@@ -74,7 +75,7 @@ msgstr "Tamanho original"
 
 #: ../src/main-win.c:297 ../src/main-win.c:1454
 msgid "Full Screen"
-msgstr "Ecrã completo"
+msgstr "Ecrã inteiro"
 
 #: ../src/main-win.c:301 ../src/main-win.c:1456
 msgid "Rotate Counterclockwise"
@@ -98,11 +99,11 @@ msgstr "Abrir ficheiro"
 
 #: ../src/main-win.c:310 ../src/main-win.c:1462
 msgid "Save File"
-msgstr "Gravar ficheiro"
+msgstr "Guardar ficheiro"
 
 #: ../src/main-win.c:311
 msgid "Save File As"
-msgstr "Gravar ficheiro como"
+msgstr "Guardar ficheiro como"
 
 #. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
 #: ../src/main-win.c:312 ../src/main-win.c:1465
@@ -151,7 +152,7 @@ msgstr "Iniciar/parar apresentação"
 
 #: ../src/main-win.c:1463
 msgid "Save As"
-msgstr "Gravar como"
+msgstr "Guardar como"
 
 #: ../src/main-win.c:1468
 msgid "Show/Hide toolbar"
@@ -166,7 +167,8 @@ msgstr " * Consulte o código fonte dos visualizadores EOG e GThumb"
 msgid "translator-credits"
 msgstr ""
 "Álvaro Morais <alvarommorais@gmail.com>\n"
-"Sérgio Marques <smarquespt@gmail.com>"
+"Sérgio Marques <smarquespt@gmail.com>\n"
+"Hugo Carvalho <hugokarvalho@hotmail.com>"
 
 #: ../src/main-win.c:1522 ../gpicview.desktop.in.h:1
 msgid "GPicView"
@@ -232,7 +234,7 @@ msgstr "Ver imagens facilmente"
 
 #: ../data/pref-dlg.ui.h:2
 msgid "Ask before saving images"
-msgstr "Perguntar antes de gravar imagens"
+msgstr "Perguntar antes de guardar imagens"
 
 #: ../data/pref-dlg.ui.h:3
 msgid "Ask before deleting images"
@@ -240,7 +242,7 @@ msgstr "Perguntar antes de eliminar imagens"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Automatically save rotated images"
-msgstr "Gravar automaticamente imagens rodadas"
+msgstr "Guardar automaticamente imagens rodadas"
 
 #: ../data/pref-dlg.ui.h:5
 msgid ""
@@ -260,7 +262,7 @@ msgstr "seg."
 
 #: ../data/pref-dlg.ui.h:9
 msgid "Make GPicView the default viewer for images"
-msgstr "Tornar GPicview o visualizador pré-definido do sistema"
+msgstr "Tornar GPicview o visualizador predefinido do sistema"
 
 #: ../data/pref-dlg.ui.h:10
 msgid "Normal:"
@@ -268,7 +270,7 @@ msgstr "Normal:"
 
 #: ../data/pref-dlg.ui.h:11
 msgid "Fullscreen:"
-msgstr "Ecrã completo:"
+msgstr "Ecrã inteiro:"
 
 #: ../data/pref-dlg.ui.h:12
 msgid "<b>Background colors</b>"
