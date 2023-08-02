@@ -1,5 +1,6 @@
 /***************************************************************************
  *   Copyright (C) 2007 by PCMan (Hong Jen Yee) <pcman.tw@gmail.com>       *
+ *   Copyright (C) 2023 by Ingo Brückl                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
