@@ -102,10 +102,11 @@ gboolean image_list_open_dir( ImageList* il, const char* path, GError** error )
 
     while( ( name = g_dir_read_name ( dir ) ) )
     {
-//        char* file_path = g_build_filename( dir_path, name, NULL );
-        if( image_list_is_file_supported( name ) )
+        gchar* file_path = g_build_filename( path, name, NULL );
+        gboolean is_dir = g_file_test( file_path, G_FILE_TEST_IS_DIR );
+        if( !is_dir && image_list_is_file_supported( name ) )
             il->list = g_list_prepend( il->list, g_strdup(name) );
-//        g_free( file_path );
+        g_free( file_path );
     }
     g_dir_close( dir );
     il->list = g_list_reverse( il->list );
