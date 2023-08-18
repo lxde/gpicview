@@ -1,5 +1,6 @@
 /***************************************************************************
  *   Copyright (C) 2007, 2008 by PCMan (Hong Jen Yee) <pcman.tw@gmail.com> *
+ *   Copyright (C) 2023 by Ingo Brückl                                     *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -352,7 +353,9 @@ gboolean on_animation_timeout( MainWin* mw )
     int delay;
     if ( gdk_pixbuf_animation_iter_advance( mw->animation_iter, NULL ) )
     {
-        mw->pix = gdk_pixbuf_animation_iter_get_pixbuf( mw->animation_iter );
+        GdkPixbuf *current;
+        current = gdk_pixbuf_animation_iter_get_pixbuf( mw->animation_iter );
+        mw->pix = gdk_pixbuf_copy( current );
         image_view_set_pixbuf( (ImageView*)mw->img_view, mw->pix );
     }
     delay = gdk_pixbuf_animation_iter_get_delay_time( mw->animation_iter );
