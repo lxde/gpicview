@@ -269,7 +269,7 @@ void image_view_paint( ImageView* iv, cairo_t *cr )
         {
             cairo_rectangle_int_t rectangle;
             cairo_region_get_rectangle(region, i, &rectangle);
-            paint( iv, &rectangle, GDK_INTERP_NEAREST, cr );
+            paint( iv, &rectangle, iv->interp_type, cr );
         }
 
         cairo_region_destroy (region);
@@ -306,7 +306,7 @@ void image_view_paint( ImageView* iv, GdkEventExpose* evt )
         for( i = 0; i < n_rects; ++i )
         {
             // GdkRectangle& rect = rects[i];
-            paint( iv, rects + i, GDK_INTERP_NEAREST );
+            paint( iv, rects + i, iv->interp_type );
         }
         g_free( rects );
 
