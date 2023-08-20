@@ -361,8 +361,8 @@ void image_view_set_scale( ImageView* iv, gdouble new_scale, GdkInterpType type 
     gint xPos, yPos;
     gtk_widget_get_pointer(GTK_WIDGET(iv), &xPos, &yPos);
 
-    gdouble oldRelativePositionX =  xPos * 1.0 / iv->img_area.width;
-    gdouble oldRelativePositionY = yPos * 1.0 / iv->img_area.height;
+    gdouble oldRelativePositionX =  (gdouble) xPos / iv->img_area.width;
+    gdouble oldRelativePositionY = (gdouble) yPos / iv->img_area.height;
     gdouble visibleAreaX = xPos - gtk_adjustment_get_value(iv->hadj);
     gdouble visibleAreaY = yPos - gtk_adjustment_get_value(iv->vadj);
 
