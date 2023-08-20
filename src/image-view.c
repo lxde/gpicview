@@ -357,10 +357,26 @@ void image_view_set_scale( ImageView* iv, gdouble new_scale, GdkInterpType type 
     if( new_scale == iv->scale )
         return;
 //    gdouble factor = new_scale / iv->scale;
+
+    gint xPos, yPos;
+    gtk_widget_get_pointer(GTK_WIDGET(iv), &xPos, &yPos);
+
+    gdouble oldRelativePositionX =  xPos * 1.0 / iv->img_area.width;
+    gdouble oldRelativePositionY = yPos * 1.0 / iv->img_area.height;
+    gdouble visibleAreaX = xPos - gtk_adjustment_get_value(iv->hadj);
+    gdouble visibleAreaY = yPos - gtk_adjustment_get_value(iv->vadj);
+
     iv->scale = new_scale;
     if( iv->pix )
     {
         calc_image_area( iv );
+
+        gdouble newPosX = oldRelativePositionX * iv->img_area.width - visibleAreaX;
+        gdouble newPosY = oldRelativePositionY * iv->img_area.height - visibleAreaY;
+
+        iv->hadj->value = newPosX > 0 ? newPosX : 0;
+        iv->vadj->value = newPosY > 0 ? newPosY : 0;
+
         gtk_widget_queue_resize( (GtkWidget*)iv );
 //        gtk_widget_queue_draw( (GtkWidget*)iv );
 
