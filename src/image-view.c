@@ -1,5 +1,6 @@
 /***************************************************************************
  *   Copyright (C) 2007 by PCMan (Hong Jen Yee) <pcman.tw@gmail.com>       *
+ *   Copyright (C) 2023 Ingo Brückl                                        *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -362,6 +363,16 @@ void image_view_set_scale( ImageView* iv, gdouble new_scale, GdkInterpType type 
 
     gdouble hadj_value = gtk_adjustment_get_value(iv->hadj);
     gdouble vadj_value = gtk_adjustment_get_value(iv->vadj);
+
+    // if the pointer is not inside the window...
+    if (xPos < hadj_value || xPos > hadj_value + iv->hadj->page_size ||
+        yPos < vadj_value || yPos > vadj_value + iv->vadj->page_size)
+    {
+        // ...pretend that it is over the center of the image
+        xPos = iv->img_area.width / 2;
+        yPos = iv->img_area.height / 2;
+    }
+
     gdouble oldRelativePositionX =  (gdouble) xPos / iv->img_area.width;
     gdouble oldRelativePositionY = (gdouble) yPos / iv->img_area.height;
     gdouble visibleAreaX = xPos - hadj_value;
