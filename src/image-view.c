@@ -360,21 +360,23 @@ void image_view_set_scale( ImageView* iv, gdouble new_scale, GdkInterpType type 
     gint xPos, yPos;
     gtk_widget_get_pointer(GTK_WIDGET(iv), &xPos, &yPos);
 
+    gdouble hadj_value = gtk_adjustment_get_value(iv->hadj);
+    gdouble vadj_value = gtk_adjustment_get_value(iv->vadj);
     gdouble oldRelativePositionX =  (gdouble) xPos / iv->img_area.width;
     gdouble oldRelativePositionY = (gdouble) yPos / iv->img_area.height;
-    gdouble visibleAreaX = xPos - gtk_adjustment_get_value(iv->hadj);
-    gdouble visibleAreaY = yPos - gtk_adjustment_get_value(iv->vadj);
+    gdouble visibleAreaX = xPos - hadj_value;
+    gdouble visibleAreaY = yPos - vadj_value;
 
     iv->scale = new_scale;
     if( iv->pix )
     {
         calc_image_area( iv );
 
-        gdouble newPosX = oldRelativePositionX * iv->img_area.width - visibleAreaX;
-        gdouble newPosY = oldRelativePositionY * iv->img_area.height - visibleAreaY;
+        hadj_value = oldRelativePositionX * iv->img_area.width - visibleAreaX;
+        vadj_value = oldRelativePositionY * iv->img_area.height - visibleAreaY;
 
-        iv->hadj->value = newPosX > 0 ? newPosX : 0;
-        iv->vadj->value = newPosY > 0 ? newPosY : 0;
+        iv->hadj->value = hadj_value > 0 ? hadj_value : 0;
+        iv->vadj->value = vadj_value > 0 ? vadj_value : 0;
 
         gtk_widget_queue_resize( (GtkWidget*)iv );
 //        gtk_widget_queue_draw( (GtkWidget*)iv );
