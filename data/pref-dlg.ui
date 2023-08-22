@@ -10,6 +10,19 @@
         <property name="visible">True</property>
         <property name="spacing">6</property>
         <child>
+          <object class="GtkCheckButton" id="open_maximized">
+            <property name="label" translatable="yes">Start with a maximized window</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">False</property>
+            <property name="draw_indicator">True</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
           <object class="GtkCheckButton" id="ask_before_save">
             <property name="label" translatable="yes">Ask before saving images</property>
             <property name="visible">True</property>
@@ -19,7 +32,7 @@
           </object>
           <packing>
             <property name="expand">False</property>
-            <property name="position">1</property>
+            <property name="position">2</property>
           </packing>
         </child>
         <child>
@@ -32,7 +45,7 @@
           </object>
           <packing>
             <property name="expand">False</property>
-            <property name="position">2</property>
+            <property name="position">3</property>
           </packing>
         </child>
         <child>
@@ -45,7 +58,7 @@
           </object>
           <packing>
             <property name="expand">False</property>
-            <property name="position">3</property>
+            <property name="position">4</property>
           </packing>
         </child>
         <child>
@@ -59,7 +72,7 @@
           </object>
           <packing>
             <property name="expand">False</property>
-            <property name="position">4</property>
+            <property name="position">5</property>
           </packing>
         </child>
         <child>
@@ -97,7 +110,7 @@
             </child>
           </object>
           <packing>
-            <property name="position">5</property>
+            <property name="position">6</property>
           </packing>
         </child>
         <child>
@@ -109,7 +122,7 @@
           </object>
           <packing>
             <property name="expand">False</property>
-            <property name="position">6</property>
+            <property name="position">7</property>
           </packing>
         </child>
         <child>
@@ -181,7 +194,7 @@
           </object>
           <packing>
             <property name="expand">False</property>
-            <property name="position">7</property>
+            <property name="position">8</property>
           </packing>
         </child>
         <child internal-child="action_area">
