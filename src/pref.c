@@ -206,6 +206,7 @@ void edit_preferences( GtkWindow* parent )
     GtkBuilder* builder = gtk_builder_new();
     GtkDialog* dlg;
     gtk_builder_add_from_file(builder, PACKAGE_DATA_DIR "/gpicview/ui/pref-dlg.ui", NULL);
+    gint response;
 
     dlg = (GtkDialog*)gtk_builder_get_object(builder, "dlg");
     gtk_window_set_transient_for((GtkWindow*)dlg, parent);
@@ -244,15 +245,18 @@ void edit_preferences( GtkWindow* parent )
 
     g_object_unref( builder );
 
-    gtk_dialog_run( dlg );
+    response = gtk_dialog_run( dlg );
 
-    pref.open_maximized = gtk_toggle_button_get_active( (GtkToggleButton*)open_maximized_btn );
-    pref.ask_before_save = gtk_toggle_button_get_active( (GtkToggleButton*)ask_before_save_btn );
-    pref.ask_before_delete = gtk_toggle_button_get_active( (GtkToggleButton*)ask_before_del_btn );
-    pref.auto_save_rotated = gtk_toggle_button_get_active( (GtkToggleButton*)auto_save_btn );
-    pref.rotate_exif_only = gtk_toggle_button_get_active( (GtkToggleButton*)rotate_exif_only_btn );
-    pref.slide_delay = gtk_spin_button_get_value_as_int( (GtkSpinButton*)slide_delay_spinner );
-    pref.zoom_factor = gtk_spin_button_get_value_as_int( (GtkSpinButton*)zoom_factor_spinner );
+    if (response == GTK_RESPONSE_OK)
+    {
+        pref.open_maximized = gtk_toggle_button_get_active( (GtkToggleButton*)open_maximized_btn );
+        pref.ask_before_save = gtk_toggle_button_get_active( (GtkToggleButton*)ask_before_save_btn );
+        pref.ask_before_delete = gtk_toggle_button_get_active( (GtkToggleButton*)ask_before_del_btn );
+        pref.auto_save_rotated = gtk_toggle_button_get_active( (GtkToggleButton*)auto_save_btn );
+        pref.rotate_exif_only = gtk_toggle_button_get_active( (GtkToggleButton*)rotate_exif_only_btn );
+        pref.slide_delay = gtk_spin_button_get_value_as_int( (GtkSpinButton*)slide_delay_spinner );
+        pref.zoom_factor = gtk_spin_button_get_value_as_int( (GtkSpinButton*)zoom_factor_spinner );
+    }
 
     gtk_widget_destroy( (GtkWidget*)dlg );
 }
