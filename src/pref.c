@@ -95,6 +95,7 @@ void load_preferences()
         kf_get_bool( kf, "General", "rotate_exif_only", &pref.rotate_exif_only );
         kf_get_bool( kf, "General", "open_maximized", &pref.open_maximized );
         kf_get_int( kf, "General", "slide_delay", &pref.slide_delay );
+        kf_get_int( kf, "General", "zoom_factor", &pref.zoom_factor );
 
         kf_get_int( kf, "General", "jpg_quality", &pref.jpg_quality);
         kf_get_int( kf, "General", "png_compression", &pref.png_compression );
@@ -120,6 +121,9 @@ void load_preferences()
 
     if (pref.slide_delay == 0)
         pref.slide_delay = 5;
+
+    if (pref.zoom_factor == 0)
+        pref.zoom_factor = 5;
 }
 
 void save_preferences()
@@ -145,6 +149,7 @@ void save_preferences()
         fprintf( f, "bg=#%02x%02x%02x\n", pref.bg.red/256, pref.bg.green/256, pref.bg.blue/256 );
         fprintf( f, "bg_full=#%02x%02x%02x\n", pref.bg_full.red/256, pref.bg_full.green/256, pref.bg_full.blue/256 );
         fprintf( f, "slide_delay=%d\n", pref.slide_delay );
+        fprintf( f, "zoom_factor=%d\n", pref.zoom_factor );
 
         fprintf( f, "jpg_quality=%d\n", pref.jpg_quality );
         fprintf( f, "png_compression=%d\n", pref.png_compression );
@@ -197,7 +202,7 @@ static void on_set_bg_full( GtkColorButton* btn, gpointer user_data )
 void edit_preferences( GtkWindow* parent )
 {
     GtkWidget *open_maximized_btn, *auto_save_btn, *ask_before_save_btn, *set_default_btn,
-              *rotate_exif_only_btn, *slide_delay_spinner, *ask_before_del_btn, *bg_btn, *bg_full_btn;
+              *rotate_exif_only_btn, *slide_delay_spinner, *zoom_factor_spinner, *ask_before_del_btn, *bg_btn, *bg_full_btn;
     GtkBuilder* builder = gtk_builder_new();
     GtkDialog* dlg;
     gtk_builder_add_from_file(builder, PACKAGE_DATA_DIR "/gpicview/ui/pref-dlg.ui", NULL);
@@ -223,6 +228,9 @@ void edit_preferences( GtkWindow* parent )
     slide_delay_spinner = (GtkWidget*)gtk_builder_get_object(builder, "slide_delay");
     gtk_spin_button_set_value( (GtkSpinButton*)slide_delay_spinner, pref.slide_delay) ;
 
+    zoom_factor_spinner = (GtkWidget*)gtk_builder_get_object(builder, "zoom_factor");
+    gtk_spin_button_set_value( (GtkSpinButton*)zoom_factor_spinner, pref.zoom_factor) ;
+
     set_default_btn = (GtkWidget*)gtk_builder_get_object(builder, "make_default");
     g_signal_connect( set_default_btn, "clicked", G_CALLBACK(on_set_default), parent );
 
@@ -244,6 +252,7 @@ void edit_preferences( GtkWindow* parent )
     pref.auto_save_rotated = gtk_toggle_button_get_active( (GtkToggleButton*)auto_save_btn );
     pref.rotate_exif_only = gtk_toggle_button_get_active( (GtkToggleButton*)rotate_exif_only_btn );
     pref.slide_delay = gtk_spin_button_get_value_as_int( (GtkSpinButton*)slide_delay_spinner );
+    pref.zoom_factor = gtk_spin_button_get_value_as_int( (GtkSpinButton*)zoom_factor_spinner );
 
     gtk_widget_destroy( (GtkWidget*)dlg );
 }

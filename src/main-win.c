@@ -934,14 +934,14 @@ void on_open( GtkWidget* btn, MainWin* mw )
 void on_zoom_in( GtkWidget* btn, MainWin* mw )
 {
     double scale = mw->scale;
-    scale *= 1.05;
+    scale *= 1 + pref.zoom_factor / 100.0;
     main_win_set_zoom_scale(mw, scale);
 }
 
 void on_zoom_out( GtkWidget* btn, MainWin* mw )
 {
     double scale = mw->scale;
-    scale /= 1.05;
+    scale /= 1 + pref.zoom_factor / 100.0;
     main_win_set_zoom_scale(mw, scale);
 }
 
