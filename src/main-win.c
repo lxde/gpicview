@@ -51,6 +51,8 @@ static GtkTargetEntry drop_targets[] =
     {"text/plain", 0, 1}
 };
 
+static gboolean show_toolbar;
+
 extern int ExifRotate(const char * fname, int new_angle);
 // defined in exif.c
 extern int ExifRotateFlipMapping[9][9];
@@ -243,7 +245,9 @@ void main_win_init( MainWin*mw )
     create_nav_bar( mw, box );
     gtk_widget_show_all( box );
 
-    if (pref.show_toolbar)
+    show_toolbar = pref.show_toolbar;
+
+    if (show_toolbar)
         gtk_widget_show(gtk_widget_get_parent(mw->nav_bar));
     else
         gtk_widget_hide(gtk_widget_get_parent(mw->nav_bar));
@@ -566,15 +570,11 @@ gboolean on_win_state_event( GtkWidget* widget, GdkEventWindowState* state )
     else
     {
         gtk_widget_modify_bg( mw->evt_box, GTK_STATE_NORMAL, &pref.bg );
-        if (pref.show_toolbar)
+        if (show_toolbar)
             gtk_widget_show( gtk_widget_get_parent(mw->nav_bar) );
         mw->full_screen = FALSE;
     }
 
-    int previous = pref.open_maximized;
-    pref.open_maximized = (state->new_window_state == GDK_WINDOW_STATE_MAXIMIZED);
-    if (previous != pref.open_maximized)
-        save_preferences();
     return TRUE;
 }
 
@@ -1429,14 +1429,12 @@ void on_delete( GtkWidget* btn, MainWin* mw )
 
 void on_toggle_toolbar( GtkMenuItem* item, MainWin* mw )
 {
-    pref.show_toolbar = !pref.show_toolbar;
+    show_toolbar = !show_toolbar;
 
-    if (pref.show_toolbar)
+    if (show_toolbar)
         gtk_widget_show(gtk_widget_get_parent(mw->nav_bar));
     else
         gtk_widget_hide(gtk_widget_get_parent(mw->nav_bar));
-
-    save_preferences();
 }
 
 
