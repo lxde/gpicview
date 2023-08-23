@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gpicview\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-17 19:50+0200\n"
+"POT-Creation-Date: 2023-08-23 15:05+0200\n"
 "PO-Revision-Date: 2015-08-17 01:28+0000\n"
 "Last-Translator: Anonymous Pootle User\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -36,92 +36,87 @@ msgstr "Starta bildspel"
 msgid "The file \"%s\" cannot be opened!"
 msgstr ""
 
-#: ../src/main-win.c:165 ../src/main-win.c:1420 ../gpicview.desktop.in.h:2
+#: ../src/main-win.c:167 ../src/main-win.c:1429 ../gpicview.desktop.in.h:2
 msgid "Image Viewer"
 msgstr "Bildvisare"
 
-#: ../src/main-win.c:274 ../src/main-win.c:1445
+#: ../src/main-win.c:279 ../src/main-win.c:1452
 msgid "Previous"
 msgstr "Föregående"
 
-#: ../src/main-win.c:275 ../src/main-win.c:1446
+#: ../src/main-win.c:280 ../src/main-win.c:1453
 msgid "Next"
 msgstr "Nästa"
 
-#: ../src/main-win.c:276 ../src/main-win.c:761
+#: ../src/main-win.c:281 ../src/main-win.c:770
 msgid "Start Slideshow"
 msgstr "Starta bildspel"
 
-#: ../src/main-win.c:280 ../src/main-win.c:1449
+#: ../src/main-win.c:285 ../src/main-win.c:1456
 msgid "Zoom Out"
 msgstr "Zooma ut"
 
-#: ../src/main-win.c:281 ../src/main-win.c:1450
+#: ../src/main-win.c:286 ../src/main-win.c:1457
 msgid "Zoom In"
 msgstr "Zooma in"
 
-#. percent = gtk_entry_new();    // show scale (in percentage)
-#. g_signal_connect( percent, "activate", G_CALLBACK(on_percentage), mw );
-#. gtk_widget_set_size_request( percent, 45, -1 );
-#. gtk_box_pack_start( (GtkBox*)nav_bar, percent, FALSE, FALSE, 2 );
-#: ../src/main-win.c:288 ../src/main-win.c:1451
+#: ../src/main-win.c:293 ../src/main-win.c:1458
 msgid "Fit Image To Window Size"
 msgstr "Anpassa bild till fönstrets storlek"
 
-#: ../src/main-win.c:290 ../src/main-win.c:1452
+#: ../src/main-win.c:295 ../src/main-win.c:1459
 msgid "Original Size"
 msgstr "Originalstorlek"
 
-#: ../src/main-win.c:297 ../src/main-win.c:1454
+#: ../src/main-win.c:302 ../src/main-win.c:1461
 msgid "Full Screen"
 msgstr "Helskärm"
 
-#: ../src/main-win.c:301 ../src/main-win.c:1456
+#: ../src/main-win.c:306 ../src/main-win.c:1463
 msgid "Rotate Counterclockwise"
 msgstr "Rotera motsols"
 
-#: ../src/main-win.c:302 ../src/main-win.c:1457
+#: ../src/main-win.c:307 ../src/main-win.c:1464
 msgid "Rotate Clockwise"
 msgstr "Rotera medsols"
 
-#: ../src/main-win.c:304 ../src/main-win.c:1458
+#: ../src/main-win.c:309 ../src/main-win.c:1465
 msgid "Flip Horizontal"
 msgstr "Vänd vågrätt"
 
-#: ../src/main-win.c:305 ../src/main-win.c:1459
+#: ../src/main-win.c:310 ../src/main-win.c:1466
 msgid "Flip Vertical"
 msgstr "Rotera lodrätt"
 
-#: ../src/main-win.c:309 ../src/main-win.c:1461
+#: ../src/main-win.c:314 ../src/main-win.c:1468
 msgid "Open File"
 msgstr "Öppna fil"
 
-#: ../src/main-win.c:310 ../src/main-win.c:1462
+#: ../src/main-win.c:315 ../src/main-win.c:1469
 msgid "Save File"
 msgstr "Spara fil"
 
-#: ../src/main-win.c:311
+#: ../src/main-win.c:316
 msgid "Save File As"
 msgstr "Spara fil som"
 
-#. PTK_IMG_MENU_ITEM( N_("Save As Other Size"), GTK_STOCK_SAVE_AS, G_CALLBACK(on_save_as), GDK_A, 0 ),
-#: ../src/main-win.c:312 ../src/main-win.c:1465
+#: ../src/main-win.c:317 ../src/main-win.c:1472
 msgid "Delete File"
 msgstr "Ta bort fil"
 
-#: ../src/main-win.c:315 ../src/main-win.c:1467 ../data/pref-dlg.ui.h:1
+#: ../src/main-win.c:320 ../src/main-win.c:1474 ../data/pref-dlg.ui.h:1
 msgid "Preferences"
 msgstr "Inställningar"
 
-#: ../src/main-win.c:316 ../src/main-win.c:1471
+#: ../src/main-win.c:321 ../src/main-win.c:1478
 msgid "Quit"
 msgstr "Avsluta"
 
-#: ../src/main-win.c:769
+#: ../src/main-win.c:778
 msgid "Stop Slideshow"
 msgstr "Avsluta bildspel"
 
-#: ../src/main-win.c:1310
+#: ../src/main-win.c:1319
 msgid ""
 "The file name you selected already exists.\n"
 "Do you want to overwrite existing file?\n"
@@ -131,11 +126,11 @@ msgstr ""
 "Vill du skriva över den existerande filen?\n"
 "(Varning: originalfilens kvalité kan förloras)"
 
-#: ../src/main-win.c:1351
+#: ../src/main-win.c:1360
 msgid "Writing this image format is not supported."
 msgstr "Stöd för skrivning till det här bildformatet saknas."
 
-#: ../src/main-win.c:1389
+#: ../src/main-win.c:1398
 msgid ""
 "Are you sure you want to delete current file?\n"
 "\n"
@@ -145,24 +140,24 @@ msgstr ""
 "\n"
 "Varning: Borttagna filer kan inte återställas."
 
-#: ../src/main-win.c:1447
+#: ../src/main-win.c:1454
 msgid "Start/Stop Slideshow"
 msgstr "Starta/Avsluta bildspel"
 
-#: ../src/main-win.c:1463
+#: ../src/main-win.c:1470
 msgid "Save As"
 msgstr "Spara som"
 
-#: ../src/main-win.c:1468
+#: ../src/main-win.c:1475
 msgid "Show/Hide toolbar"
 msgstr "Visa/Dölj verktygsrad"
 
-#: ../src/main-win.c:1512
+#: ../src/main-win.c:1519
 msgid " * Refer to source code of EOG image viewer and GThumb"
 msgstr " * Se källkoden för EOG image viewer och GThumb"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../src/main-win.c:1516
+#: ../src/main-win.c:1523
 msgid "translator-credits"
 msgstr ""
 "Martin Bagge <brother@bsnet.se>\n"
@@ -170,19 +165,19 @@ msgstr ""
 "Synpunkter på översättningen skickas till:\n"
 "<tp-sv@listor.tp-sv.se>"
 
-#: ../src/main-win.c:1522 ../gpicview.desktop.in.h:1
+#: ../src/main-win.c:1529 ../gpicview.desktop.in.h:1
 msgid "GPicView"
 msgstr "GPicView"
 
-#: ../src/main-win.c:1524
+#: ../src/main-win.c:1531
 msgid "Copyright (C) 2007 - 2023"
 msgstr "Copyright © 2007 - 2023"
 
-#: ../src/main-win.c:1525
+#: ../src/main-win.c:1532
 msgid "Lightweight image viewer from LXDE project"
 msgstr "Lättviktig bildvisare från LXDE-projektet"
 
-#: ../src/pref.c:164
+#: ../src/pref.c:207
 msgid ""
 "GPicView will become the default viewer for all supported image files on "
 "your system.\n"
@@ -232,21 +227,35 @@ msgstr ""
 msgid "View your images easily"
 msgstr "Visa dina bilder enkelt"
 
-# dubbelspace, rapporterat per mail
 #: ../data/pref-dlg.ui.h:2
+msgid "Start with a maximized window"
+msgstr ""
+
+#: ../data/pref-dlg.ui.h:3
+msgid "Save window size and position"
+msgstr ""
+
+#: ../data/pref-dlg.ui.h:4
+#, fuzzy
+#| msgid "Show/Hide toolbar"
+msgid "Show toolbar"
+msgstr "Visa/Dölj verktygsrad"
+
+# dubbelspace, rapporterat per mail
+#: ../data/pref-dlg.ui.h:5
 msgid "Ask before saving images"
 msgstr "Fråga innan bilder sparas"
 
 # dubbelspace, rapporterat per mail
-#: ../data/pref-dlg.ui.h:3
+#: ../data/pref-dlg.ui.h:6
 msgid "Ask before deleting images"
 msgstr "Fråga innan bilder raderas"
 
-#: ../data/pref-dlg.ui.h:4
+#: ../data/pref-dlg.ui.h:7
 msgid "Automatically save rotated images"
 msgstr "Spara roterade bilder automatiskt"
 
-#: ../data/pref-dlg.ui.h:5
+#: ../data/pref-dlg.ui.h:8
 msgid ""
 "Rotate JPEG file by changing EXIF orientation value\n"
 "(only if EXIF orientation tag exists)"
@@ -254,27 +263,38 @@ msgstr ""
 "Rotera bilder genom att uppdatera EXIF-värdet för rotering\n"
 "(endast om EXIF-etiketten för rotering existerar)"
 
-#: ../data/pref-dlg.ui.h:7
+#: ../data/pref-dlg.ui.h:10
 msgid "Slideshow interval"
 msgstr "Bildintervall vid bildspel"
 
-#: ../data/pref-dlg.ui.h:8
+#: ../data/pref-dlg.ui.h:11
 msgid "sec"
 msgstr "sek"
 
-#: ../data/pref-dlg.ui.h:9
+#: ../data/pref-dlg.ui.h:12
+#, fuzzy
+#| msgid "Zoom Out"
+msgid "Zoom factor"
+msgstr "Zooma ut"
+
+#: ../data/pref-dlg.ui.h:14
+#, no-c-format
+msgid "%"
+msgstr ""
+
+#: ../data/pref-dlg.ui.h:15
 msgid "Make GPicView the default viewer for images"
 msgstr "Gör GPicview till standardvisare för bilder"
 
-#: ../data/pref-dlg.ui.h:10
+#: ../data/pref-dlg.ui.h:16
 msgid "Normal:"
 msgstr "Normal:"
 
-#: ../data/pref-dlg.ui.h:11
+#: ../data/pref-dlg.ui.h:17
 msgid "Fullscreen:"
 msgstr "Helskärm:"
 
-#: ../data/pref-dlg.ui.h:12
+#: ../data/pref-dlg.ui.h:18
 msgid "<b>Background colors</b>"
 msgstr "<b>Bakgrundsfärg</b>"
 
