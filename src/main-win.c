@@ -173,7 +173,8 @@ void main_win_init( MainWin*mw )
     {
         gtk_window_set_icon_from_file((GtkWindow*)mw, PACKAGE_DATA_DIR "/icons/hicolor/48x48/apps/gpicview.png", NULL);
     }
-    gtk_window_set_default_size( (GtkWindow*)mw, 640, 480 );
+    gtk_window_move( GTK_WINDOW(mw), pref.win_x, pref.win_y );
+    gtk_window_set_default_size( GTK_WINDOW(mw), pref.win_w, pref.win_h );
 
 #if GTK_CHECK_VERSION(3, 0, 0)
     GtkWidget* box = gtk_box_new( GTK_ORIENTATION_VERTICAL, 0 );
@@ -326,6 +327,8 @@ void create_nav_bar( MainWin* mw, GtkWidget* box )
 
 gboolean on_delete_event( GtkWidget* widget, GdkEventAny* evt )
 {
+    gtk_window_get_position( GTK_WINDOW(widget), &pref.win_x, &pref.win_y );
+    gtk_window_get_size( GTK_WINDOW(widget), &pref.win_w, &pref.win_h );
     gtk_widget_destroy( widget );
     return TRUE;
 }

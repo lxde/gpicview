@@ -2,6 +2,7 @@
  *      pref.h
  *
  *      Copyright (C) 2007 PCMan <pcman.tw@gmail.com>
+ *      Copyright (C) 2023 Ingo Brückl
  *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
@@ -63,6 +64,32 @@ static int kf_get_int(GKeyFile* kf, const char* grp, const char* name, int* ret 
     return TRUE;
 }
 
+static gboolean kf_get_int_list (GKeyFile *kf, const gchar *grp, const gchar *name, gint *ret, gsize len )
+{
+    gint *list, i;
+    gsize length;
+    GError *error = NULL;
+
+    list = g_key_file_get_integer_list(kf, grp, name, &length, &error);
+
+    if (G_UNLIKELY(error))
+    {
+        g_error_free(error);
+        return FALSE;
+    }
+
+    if (G_LIKELY(list))
+    {
+        for (i = 0; i < length; i++)
+          ret[i] = list[i];
+
+        g_free(list);
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
 void load_preferences()
 {
     /* FIXME: GKeyFile is not fast enough.
@@ -97,6 +124,8 @@ void load_preferences()
         kf_get_int( kf, "General", "slide_delay", &pref.slide_delay );
         kf_get_int( kf, "General", "zoom_factor", &pref.zoom_factor );
 
+        kf_get_int_list( kf, "General", "window", &pref.win_x, 4 );
+
         kf_get_int( kf, "General", "jpg_quality", &pref.jpg_quality);
         kf_get_int( kf, "General", "png_compression", &pref.png_compression );
 
@@ -123,6 +152,12 @@ void load_preferences()
 
     if (pref.zoom_factor == 0)
         pref.zoom_factor = 5;
+
+    if (pref.win_w == 0)
+        pref.win_w = 640;
+
+    if (pref.win_h == 0)
+        pref.win_h = 480;
 }
 
 void save_preferences()
@@ -150,6 +185,8 @@ void save_preferences()
         fprintf( f, "zoom_factor=%d\n", pref.zoom_factor );
         fprintf( f, "bg=#%02x%02x%02x\n", pref.bg.red/256, pref.bg.green/256, pref.bg.blue/256 );
         fprintf( f, "bg_full=#%02x%02x%02x\n", pref.bg_full.red/256, pref.bg_full.green/256, pref.bg_full.blue/256 );
+
+        fprintf( f, "window=%d;%d;%d;%d;\n", pref.win_x, pref.win_y, pref.win_w, pref.win_h);
 
         fprintf( f, "jpg_quality=%d\n", pref.jpg_quality );
         fprintf( f, "png_compression=%d\n", pref.png_compression );

@@ -2,6 +2,7 @@
  *      pref.h
  *
  *      Copyright (C) 2007 PCMan <pcman.tw@gmail.com>
+ *      Copyright (C) 2023 Ingo Brückl
  *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
@@ -37,6 +38,11 @@ typedef struct _Pref
     int zoom_factor;
     GdkColor bg;
     GdkColor bg_full;
+
+    gint win_x; /* these must be placed in sequence */
+    gint win_y;
+    gint win_w;
+    gint win_h;
 
     int jpg_quality;
     int png_compression;
