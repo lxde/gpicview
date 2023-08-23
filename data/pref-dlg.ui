@@ -194,6 +194,7 @@
               <object class="GtkAlignment" id="alignment1">
                 <property name="visible">True</property>
                 <property name="left_padding">12</property>
+                <property name="bottom_padding">4</property>
                 <child>
                   <object class="GtkHBox" id="hbox1">
                     <property name="visible">True</property>
@@ -247,6 +248,7 @@
             <child type="label">
               <object class="GtkLabel" id="label4">
                 <property name="visible">True</property>
+                <property name="ypad">4</property>
                 <property name="label" translatable="yes">&lt;b&gt;Background colors&lt;/b&gt;</property>
                 <property name="use_markup">True</property>
               </object>
