@@ -72,35 +72,34 @@ void load_preferences()
     char* path;
     char* color;
 
-    /* pref.auto_save_rotated = FALSE; */
+    /* pref.open_maximized = FALSE; */
+    pref.show_toolbar = TRUE;
     pref.ask_before_save = TRUE;
     pref.ask_before_delete = TRUE;
+    /* pref.auto_save_rotated = FALSE; */
     pref.rotate_exif_only = TRUE;
-    /* pref.open_maximized = FALSE; */
     pref.bg.red = pref.bg.green = pref.bg.blue = 65535;
     pref.bg_full.red = pref.bg_full.green = pref.bg_full.blue = 0;
 
     pref.jpg_quality = 90;
     pref.png_compression = 9;
 
-    pref.show_toolbar = TRUE;
-
     kf = g_key_file_new();
     path = g_build_filename( g_get_user_config_dir(),  CFG_FILE, NULL );
     if( g_key_file_load_from_file( kf, path, 0, NULL ) )
     {
-        kf_get_bool( kf, "General", "auto_save_rotated", &pref.auto_save_rotated );
+        kf_get_bool( kf, "General", "open_maximized", &pref.open_maximized );
+        kf_get_bool( kf, "General", "show_toolbar", &pref.show_toolbar );
         kf_get_bool( kf, "General", "ask_before_save", &pref.ask_before_save );
         kf_get_bool( kf, "General", "ask_before_delete", &pref.ask_before_delete );
+        kf_get_bool( kf, "General", "auto_save_rotated", &pref.auto_save_rotated );
         kf_get_bool( kf, "General", "rotate_exif_only", &pref.rotate_exif_only );
-        kf_get_bool( kf, "General", "open_maximized", &pref.open_maximized );
         kf_get_int( kf, "General", "slide_delay", &pref.slide_delay );
         kf_get_int( kf, "General", "zoom_factor", &pref.zoom_factor );
 
         kf_get_int( kf, "General", "jpg_quality", &pref.jpg_quality);
         kf_get_int( kf, "General", "png_compression", &pref.png_compression );
 
-        kf_get_bool( kf, "General", "show_toolbar", &pref.show_toolbar );
 
         color = g_key_file_get_string(kf, "General", "bg", NULL);
         if( color )
@@ -141,20 +140,19 @@ void save_preferences()
     if(  (f = fopen( path, "w" )) )
     {
         fputs( "[General]\n", f );
-        fprintf( f, "auto_save_rotated=%d\n", pref.auto_save_rotated );
+        fprintf( f, "open_maximized=%d\n", pref.open_maximized );
+        fprintf( f, "show_toolbar=%d\n", pref.show_toolbar );
         fprintf( f, "ask_before_save=%d\n", pref.ask_before_save );
         fprintf( f, "ask_before_delete=%d\n", pref.ask_before_delete );
+        fprintf( f, "auto_save_rotated=%d\n", pref.auto_save_rotated );
         fprintf( f, "rotate_exif_only=%d\n", pref.rotate_exif_only );
-        fprintf( f, "open_maximized=%d\n", pref.open_maximized );
-        fprintf( f, "bg=#%02x%02x%02x\n", pref.bg.red/256, pref.bg.green/256, pref.bg.blue/256 );
-        fprintf( f, "bg_full=#%02x%02x%02x\n", pref.bg_full.red/256, pref.bg_full.green/256, pref.bg_full.blue/256 );
         fprintf( f, "slide_delay=%d\n", pref.slide_delay );
         fprintf( f, "zoom_factor=%d\n", pref.zoom_factor );
+        fprintf( f, "bg=#%02x%02x%02x\n", pref.bg.red/256, pref.bg.green/256, pref.bg.blue/256 );
+        fprintf( f, "bg_full=#%02x%02x%02x\n", pref.bg_full.red/256, pref.bg_full.green/256, pref.bg_full.blue/256 );
 
         fprintf( f, "jpg_quality=%d\n", pref.jpg_quality );
         fprintf( f, "png_compression=%d\n", pref.png_compression );
-
-        fprintf( f, "show_toolbar=%d\n", pref.show_toolbar );
 
         fclose( f );
     }
