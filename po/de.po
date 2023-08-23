@@ -6,8 +6,8 @@ msgstr ""
 "Project-Id-Version: gpicview 0.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-23 15:05+0200\n"
-"PO-Revision-Date: 2023-07-17 20:01+0200\n"
-"Last-Translator: Ingo Brückl <ib@wupperonline.de>\n"
+"PO-Revision-Date: 2023-08-23 15:08+0200\n"
+"Last-Translator: Ingo Brückl <ib@oddnet.de>\n"
 "Language-Team: German <translation@mailinglist.lxde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -233,17 +233,15 @@ msgstr "Einfacher Bildbetrachter"
 
 #: ../data/pref-dlg.ui.h:2
 msgid "Start with a maximized window"
-msgstr ""
+msgstr "Mit maximiertem Fenster starten"
 
 #: ../data/pref-dlg.ui.h:3
 msgid "Save window size and position"
-msgstr ""
+msgstr "Fenstergröße und -position speichern"
 
 #: ../data/pref-dlg.ui.h:4
-#, fuzzy
-#| msgid "Show/Hide toolbar"
 msgid "Show toolbar"
-msgstr "Werkzeugleiste anzeigen/verstecken"
+msgstr "Werkzeugleiste anzeigen"
 
 #: ../data/pref-dlg.ui.h:5
 msgid "Ask before saving images"
@@ -274,15 +272,13 @@ msgid "sec"
 msgstr "Sekunden"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
-#| msgid "Zoom Out"
 msgid "Zoom factor"
-msgstr "Verkleinern"
+msgstr "Zoom-Faktor:"
 
 #: ../data/pref-dlg.ui.h:14
 #, no-c-format
 msgid "%"
-msgstr ""
+msgstr "%"
 
 #: ../data/pref-dlg.ui.h:15
 msgid "Make GPicView the default viewer for images"
