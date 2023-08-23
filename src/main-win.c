@@ -327,8 +327,12 @@ void create_nav_bar( MainWin* mw, GtkWidget* box )
 
 gboolean on_delete_event( GtkWidget* widget, GdkEventAny* evt )
 {
-    gtk_window_get_position( GTK_WINDOW(widget), &pref.win_x, &pref.win_y );
-    gtk_window_get_size( GTK_WINDOW(widget), &pref.win_w, &pref.win_h );
+    if (pref.save_window)
+    {
+       gtk_window_get_position( GTK_WINDOW(widget), &pref.win_x, &pref.win_y );
+       gtk_window_get_size( GTK_WINDOW(widget), &pref.win_w, &pref.win_h );
+    }
+
     gtk_widget_destroy( widget );
     return TRUE;
 }

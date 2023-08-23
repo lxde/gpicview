@@ -100,6 +100,7 @@ void load_preferences()
     char* color;
 
     /* pref.open_maximized = FALSE; */
+    pref.save_window = TRUE;
     pref.show_toolbar = TRUE;
     pref.ask_before_save = TRUE;
     pref.ask_before_delete = TRUE;
@@ -116,6 +117,7 @@ void load_preferences()
     if( g_key_file_load_from_file( kf, path, 0, NULL ) )
     {
         kf_get_bool( kf, "General", "open_maximized", &pref.open_maximized );
+        kf_get_bool( kf, "General", "save_window", &pref.save_window );
         kf_get_bool( kf, "General", "show_toolbar", &pref.show_toolbar );
         kf_get_bool( kf, "General", "ask_before_save", &pref.ask_before_save );
         kf_get_bool( kf, "General", "ask_before_delete", &pref.ask_before_delete );
@@ -176,6 +178,7 @@ void save_preferences()
     {
         fputs( "[General]\n", f );
         fprintf( f, "open_maximized=%d\n", pref.open_maximized );
+        fprintf( f, "save_window=%d\n", pref.save_window );
         fprintf( f, "show_toolbar=%d\n", pref.show_toolbar );
         fprintf( f, "ask_before_save=%d\n", pref.ask_before_save );
         fprintf( f, "ask_before_delete=%d\n", pref.ask_before_delete );
@@ -236,7 +239,7 @@ static void on_set_bg_full( GtkColorButton* btn, gpointer user_data )
 
 void edit_preferences( GtkWindow* parent )
 {
-    GtkWidget *open_maximized_btn, *show_toolbar_btn, *auto_save_btn, *ask_before_save_btn, *set_default_btn,
+    GtkWidget *open_maximized_btn, *save_window_btn, *show_toolbar_btn, *auto_save_btn, *ask_before_save_btn, *set_default_btn,
               *rotate_exif_only_btn, *slide_delay_spinner, *zoom_factor_spinner, *ask_before_del_btn, *bg_btn, *bg_full_btn;
     GtkBuilder* builder = gtk_builder_new();
     GtkDialog* dlg;
@@ -248,6 +251,9 @@ void edit_preferences( GtkWindow* parent )
 
     open_maximized_btn = (GtkWidget*)gtk_builder_get_object(builder, "open_maximized");
     gtk_toggle_button_set_active( (GtkToggleButton*)open_maximized_btn, pref.open_maximized );
+
+    save_window_btn = (GtkWidget*)gtk_builder_get_object(builder, "save_window");
+    gtk_toggle_button_set_active( (GtkToggleButton*)save_window_btn, pref.save_window );
 
     show_toolbar_btn = (GtkWidget*)gtk_builder_get_object(builder, "show_toolbar");
     gtk_toggle_button_set_active( (GtkToggleButton*)show_toolbar_btn, pref.show_toolbar );
@@ -288,6 +294,7 @@ void edit_preferences( GtkWindow* parent )
     if (response == GTK_RESPONSE_OK)
     {
         pref.open_maximized = gtk_toggle_button_get_active( (GtkToggleButton*)open_maximized_btn );
+        pref.save_window = gtk_toggle_button_get_active( (GtkToggleButton*)save_window_btn );
         pref.show_toolbar = gtk_toggle_button_get_active( (GtkToggleButton*)show_toolbar_btn );
         pref.ask_before_save = gtk_toggle_button_get_active( (GtkToggleButton*)ask_before_save_btn );
         pref.ask_before_delete = gtk_toggle_button_get_active( (GtkToggleButton*)ask_before_del_btn );
