@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: gpicview\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-23 15:05+0200\n"
-"PO-Revision-Date: 2023-08-02 00:49+0100\n"
+"PO-Revision-Date: 2023-08-24 17:43+0100\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese\n"
 "Language: pt\n"
@@ -229,17 +229,15 @@ msgstr "Ver imagens facilmente"
 
 #: ../data/pref-dlg.ui.h:2
 msgid "Start with a maximized window"
-msgstr ""
+msgstr "Iniciar com uma janela maximizada"
 
 #: ../data/pref-dlg.ui.h:3
 msgid "Save window size and position"
-msgstr ""
+msgstr "Guardar o tamanho e a posição da janela"
 
 #: ../data/pref-dlg.ui.h:4
-#, fuzzy
-#| msgid "Show/Hide toolbar"
 msgid "Show toolbar"
-msgstr "Mostrar/ocultar barra de ferramentas"
+msgstr "Mostrar barra de ferramentas"
 
 #: ../data/pref-dlg.ui.h:5
 msgid "Ask before saving images"
@@ -270,15 +268,13 @@ msgid "sec"
 msgstr "seg."
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
-#| msgid "Zoom Out"
 msgid "Zoom factor"
-msgstr "Reduzir"
+msgstr "Factor de ampliação"
 
 #: ../data/pref-dlg.ui.h:14
 #, no-c-format
 msgid "%"
-msgstr ""
+msgstr "%"
 
 #: ../data/pref-dlg.ui.h:15
 msgid "Make GPicView the default viewer for images"
