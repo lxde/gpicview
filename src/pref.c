@@ -80,7 +80,7 @@ static gboolean kf_get_int_list (GKeyFile *kf, const gchar *grp, const gchar *na
 
     if (G_LIKELY(list))
     {
-        for (i = 0; i < length; i++)
+        for (i = 0; i < len && i < length; i++)
           ret[i] = list[i];
 
         g_free(list);
