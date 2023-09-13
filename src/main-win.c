@@ -520,7 +520,7 @@ void main_win_close( MainWin* mw )
     {
         g_object_unref( mw->animation );
         mw->animation = NULL;
-        if( mw->animation_timeout );
+        if( mw->animation_timeout )
         {
             g_source_remove( mw->animation_timeout );
             mw->animation_timeout = 0;
