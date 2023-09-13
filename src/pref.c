@@ -66,8 +66,8 @@ static int kf_get_int(GKeyFile* kf, const char* grp, const char* name, int* ret 
 
 static gboolean kf_get_int_list (GKeyFile *kf, const gchar *grp, const gchar *name, gint *ret, gsize len )
 {
-    gint *list, i;
-    gsize length;
+    gint *list;
+    gsize i, length;
     GError *error = NULL;
 
     list = g_key_file_get_integer_list(kf, grp, name, &length, &error);
