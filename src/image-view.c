@@ -365,8 +365,8 @@ void image_view_set_scale( ImageView* iv, gdouble new_scale, GdkInterpType type 
     gdouble vadj_value = gtk_adjustment_get_value(iv->vadj);
 
     // if the pointer is not inside the window...
-    if (xPos < hadj_value || xPos > hadj_value + iv->hadj->page_size ||
-        yPos < vadj_value || yPos > vadj_value + iv->vadj->page_size)
+    if (xPos < hadj_value || xPos > hadj_value + gtk_adjustment_get_page_size(iv->hadj) ||
+        yPos < vadj_value || yPos > vadj_value + gtk_adjustment_get_page_size(iv->vadj))
     {
         // ...pretend that it is over the center of the image
         xPos = iv->img_area.width / 2;
@@ -386,8 +386,14 @@ void image_view_set_scale( ImageView* iv, gdouble new_scale, GdkInterpType type 
         hadj_value = oldRelativePositionX * iv->img_area.width - visibleAreaX;
         vadj_value = oldRelativePositionY * iv->img_area.height - visibleAreaY;
 
+#if GTK_CHECK_VERSION(3, 0, 0)
+        gtk_adjustment_set_value(iv->hadj, hadj_value > 0 ? hadj_value : 0);
+        gtk_adjustment_set_value(iv->vadj, vadj_value > 0 ? vadj_value : 0);
+#else   // gtk_adjustment_set_value() triggers a "value-changed" event,
+        // causing image flickering in GTK+ 2 due to multiple paint calls
         iv->hadj->value = hadj_value > 0 ? hadj_value : 0;
         iv->vadj->value = vadj_value > 0 ? vadj_value : 0;
+#endif
 
         gtk_widget_queue_resize( (GtkWidget*)iv );
 //        gtk_widget_queue_draw( (GtkWidget*)iv );
