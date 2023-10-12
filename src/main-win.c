@@ -452,14 +452,14 @@ gboolean main_win_open( MainWin* mw, const char* file_path, ZoomMode zoom )
         get_working_area( gtk_widget_get_screen((GtkWidget*)mw), &area );
         // g_debug("determine best zoom mode: orig size:  w=%d, h=%d", w, h);
         // FIXME: actually this is a little buggy :-(
-        if( w < area.width && h < area.height && (w >= 640 || h >= 480) )
+        if( w < area.width && h < area.height && (w >= pref.win_w || h >= pref.win_h) )
         {
             gtk_scrolled_window_set_policy( (GtkScrolledWindow*)mw->scroll, GTK_POLICY_NEVER, GTK_POLICY_NEVER );
             gtk_widget_set_size_request( (GtkWidget*)mw->img_view, w, h );
             GtkRequisition req;
             gtk_widget_size_request ( (GtkWidget*)mw, &req );
-            if( req.width < 640 )   req.width = 640;
-            if( req.height < 480 )   req.height = 480;
+            if( req.width < pref.win_w )   req.width = pref.win_w;
+            if( req.height < pref.win_h )   req.height = pref.win_h;
             gtk_window_resize( (GtkWindow*)mw, req.width, req.height );
             gtk_widget_set_size_request( (GtkWidget*)mw->img_view, -1, -1 );
             gtk_scrolled_window_set_policy( (GtkScrolledWindow*)mw->scroll, GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC );
