@@ -465,6 +465,11 @@ gboolean main_win_open( MainWin* mw, const char* file_path, ZoomMode zoom )
             gtk_scrolled_window_set_policy( (GtkScrolledWindow*)mw->scroll, GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC );
             mw->zoom_mode = ZOOM_ORIG;
             mw->scale = 1.0;
+#if !GTK_CHECK_VERSION(3, 0, 0)
+            while (gtk_events_pending())
+                gtk_main_iteration();
+            g_usleep(10000);
+#endif
         }
         else
             mw->zoom_mode = ZOOM_FIT;
