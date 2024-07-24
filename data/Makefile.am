@@ -15,6 +15,8 @@ ui_in_files = \
 ui_DATA = $(ui_in_files)
 uidir=$(datadir)/gpicview/ui
 
+dist_man_MANS = gpicview.1
+
 EXTRA_DIST = \
 	$(gpicview_DATA) \
 	$(pixmaps_DATA) \
