@@ -22,6 +22,7 @@ if [ "x${ACLOCAL_DIR}" != "x" ]; then
     ACLOCAL_ARG=-I ${ACLOCAL_DIR}
 fi
 
+test -d m4 || mkdir m4
 set -x
 
 ${ACLOCAL:-aclocal$AM_VERSION} ${ACLOCAL_ARG}
