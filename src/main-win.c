@@ -1,6 +1,6 @@
 /***************************************************************************
  *   Copyright (C) 2007, 2008 by PCMan (Hong Jen Yee) <pcman.tw@gmail.com> *
- *   Copyright (C) 2023 by Ingo Brückl                                     *
+ *   Copyright (C) 2023-2024 by Ingo Brückl                                *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -1076,7 +1076,11 @@ gboolean on_mouse_move( GtkWidget* widget, GdkEventMotion* evt, MainWin* mw )
 gboolean on_button_release( GtkWidget* widget, GdkEventButton* evt, MainWin* mw )
 {
     mw->dragging = FALSE;
+#if GTK_CHECK_VERSION(2, 14, 0)
     gdk_window_set_cursor( gtk_widget_get_window(widget), NULL );
+#else
+    gdk_window_set_cursor( GTK_IS_WIDGET(widget) ? widget->window : NULL, NULL );
+#endif
     return FALSE;
 }
 
