@@ -84,6 +84,7 @@ static void on_rotate_clockwise( GtkWidget* btn, MainWin* mw );
 static void on_rotate_counterclockwise( GtkWidget* btn, MainWin* mw );
 static void on_save_as( GtkWidget* btn, MainWin* mw );
 static void on_save( GtkWidget* btn, MainWin* mw );
+static void on_copy( GtkWidget* btn, MainWin* mw );
 static void cancel_slideshow(MainWin* mw);
 static gboolean next_slide(MainWin* mw);
 static void on_slideshow_menu( GtkMenuItem* item, MainWin* mw );
@@ -854,6 +855,13 @@ void on_flip_horizontal( GtkWidget* btn, MainWin* mw )
 
 /* end of rotate & flip */
 
+void on_copy( GtkWidget* btn, MainWin* mw )
+{
+    GtkClipboard* clipboard = gtk_clipboard_get(GDK_SELECTION_CLIPBOARD);
+
+    gtk_clipboard_set_image( clipboard, mw->pix );
+}
+
 void on_save_as( GtkWidget* btn, MainWin* mw )
 {
     char *file, *type;
@@ -1119,6 +1127,7 @@ gboolean on_scroll_event( GtkWidget* widget, GdkEventScroll* evt, MainWin* mw )
 
 gboolean on_key_press_event(GtkWidget* widget, GdkEventKey * key)
 {
+    guint modifiers = gtk_accelerator_get_default_mod_mask();
     MainWin* mw = (MainWin*)widget;
     switch( key->keyval )
     {
@@ -1173,6 +1182,11 @@ gboolean on_key_press_event(GtkWidget* widget, GdkEventKey * key)
         case GDK_a:
         case GDK_A:
             on_save_as( NULL, mw );
+            break;
+        case GDK_c:
+        case GDK_C:
+            if ((key->state & modifiers) == GDK_CONTROL_MASK)
+                on_copy( NULL, mw );
             break;
         case GDK_l:
         case GDK_L:
