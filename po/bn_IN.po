@@ -166,7 +166,7 @@ msgstr "GPicView"
 
 #: ../src/main-win.c:1531
 #, fuzzy
-msgid "Copyright (C) 2007 - 2023"
+msgid "Copyright (C) 2007 - 2025"
 msgstr "সত্ত্বাধিকার (C) ২০০৭ - ২০০৯"
 
 #: ../src/main-win.c:1532
