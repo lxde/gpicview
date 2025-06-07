@@ -23,14 +23,19 @@
 */
 
 # include <gdk/gdk.h>
+#ifndef GDK_WINDOWING_WAYLAND
 # include <gdk/gdkx.h>
 # include <X11/Xlib.h>
 # include <X11/Xutil.h>
 # include <X11/Xatom.h>
+#endif
 
 void get_working_area(GdkScreen* screen, GdkRectangle *rect);
 
 static gboolean gf_display_get_workarea(GdkScreen* g_screen, GdkRectangle *rect) {
+#ifdef GDK_WINDOWING_WAYLAND
+	return FALSE;
+#else
 	Atom xa_desktops, xa_current, xa_workarea, xa_type;
 	Display *x_display;
 	Window x_root;
@@ -134,6 +139,7 @@ static gboolean gf_display_get_workarea(GdkScreen* g_screen, GdkRectangle *rect)
 	XFree(data);
 
 	return TRUE;
+#endif
 }
 
 void get_working_area(GdkScreen* screen, GdkRectangle *rect)
