@@ -22,124 +22,136 @@
   This piece of code detecting working area is got from Guifications, a plug-in for Gaim.
 */
 
-# include <gdk/gdk.h>
-#ifndef GDK_WINDOWING_WAYLAND
-# include <gdk/gdkx.h>
-# include <X11/Xlib.h>
-# include <X11/Xutil.h>
-# include <X11/Xatom.h>
+#include <gdk/gdk.h>
+#ifdef GDK_WINDOWING_WAYLAND
+#include <gdk/gdkwayland.h>
 #endif
+#ifdef GDK_WINDOWING_X11
+#include <gdk/gdkx.h>
+#include <X11/Xlib.h>
+#include <X11/Xutil.h>
+#include <X11/Xatom.h>
+#endif
+
 
 void get_working_area(GdkScreen* screen, GdkRectangle *rect);
 
 static gboolean gf_display_get_workarea(GdkScreen* g_screen, GdkRectangle *rect) {
-#ifdef GDK_WINDOWING_WAYLAND
-	return FALSE;
-#else
-	Atom xa_desktops, xa_current, xa_workarea, xa_type;
-	Display *x_display;
-	Window x_root;
-	guint32 desktops = 0, current = 0;
-	gulong *workareas, len, fill;
-	guchar *data;
-	gint format;
-
 	GdkDisplay *g_display;
-	Screen *x_screen;
 
 	/* get the gdk display */
-	g_display = gdk_display_get_default();
-	if(!g_display)
+	if (!(g_display = gdk_display_get_default()))
 		return FALSE;
 
-	/* get the x display from the gdk display */
-	x_display = gdk_x11_display_get_xdisplay(g_display);
-	if(!x_display)
-		return FALSE;
+	#ifdef GDK_WINDOWING_WAYLAND
+		if (GDK_IS_WAYLAND_DISPLAY (g_display))
+			return FALSE;
+		else
+	#endif
+	#ifdef GDK_WINDOWING_X11
+		if (GDK_IS_X11_DISPLAY (g_display))
+		{
+			Atom xa_desktops, xa_current, xa_workarea, xa_type;
+			Display *x_display;
+			Window x_root;
+			guint32 desktops = 0, current = 0;
+			gulong *workareas, len, fill;
+			guchar *data;
+			gint format;
 
-	/* get the x screen from the gdk screen */
-	x_screen = gdk_x11_screen_get_xscreen(g_screen);
-	if(!x_screen)
-		return FALSE;
+			Screen *x_screen;
 
-	/* get the root window from the screen */
-	x_root = XRootWindowOfScreen(x_screen);
+			/* get the x display from the gdk display */
+			x_display = gdk_x11_display_get_xdisplay(g_display);
+			if(!x_display)
+				return FALSE;
 
-	/* find the _NET_NUMBER_OF_DESKTOPS atom */
-	xa_desktops = XInternAtom(x_display, "_NET_NUMBER_OF_DESKTOPS", True);
-	if(xa_desktops == None)
-		return FALSE;
+			/* get the x screen from the gdk screen */
+			x_screen = gdk_x11_screen_get_xscreen(g_screen);
+			if(!x_screen)
+				return FALSE;
 
-	/* get the number of desktops */
-	if(XGetWindowProperty(x_display, x_root, xa_desktops, 0, 1, False,
-						  XA_CARDINAL, &xa_type, &format, &len, &fill,
-						  &data) != Success)
-	{
-		return FALSE;
-	}
+			/* get the root window from the screen */
+			x_root = XRootWindowOfScreen(x_screen);
 
-	if(!data)
-		return FALSE;
+			/* find the _NET_NUMBER_OF_DESKTOPS atom */
+			xa_desktops = XInternAtom(x_display, "_NET_NUMBER_OF_DESKTOPS", True);
+			if(xa_desktops == None)
+				return FALSE;
 
-	desktops = *(guint32 *)data;
-	XFree(data);
+			/* get the number of desktops */
+			if(XGetWindowProperty(x_display, x_root, xa_desktops, 0, 1, False,
+								  XA_CARDINAL, &xa_type, &format, &len, &fill,
+								  &data) != Success)
+			{
+				return FALSE;
+			}
 
-	/* find the _NET_CURRENT_DESKTOP atom */
-	xa_current = XInternAtom(x_display, "_NET_CURRENT_DESKTOP", True);
-	if(xa_current == None)
-		return FALSE;
+			if(!data)
+				return FALSE;
 
-	/* get the current desktop */
-	if(XGetWindowProperty(x_display, x_root, xa_current, 0, 1, False,
-						  XA_CARDINAL, &xa_type, &format, &len, &fill,
-						  &data) != Success)
-	{
-		return FALSE;
-	}
+			desktops = *(guint32 *)data;
+			XFree(data);
 
-	if(!data)
-		return FALSE;
+			/* find the _NET_CURRENT_DESKTOP atom */
+			xa_current = XInternAtom(x_display, "_NET_CURRENT_DESKTOP", True);
+			if(xa_current == None)
+				return FALSE;
 
-	current = *(guint32 *)data;
-	XFree(data);
+			/* get the current desktop */
+			if(XGetWindowProperty(x_display, x_root, xa_current, 0, 1, False,
+								  XA_CARDINAL, &xa_type, &format, &len, &fill,
+								  &data) != Success)
+			{
+				return FALSE;
+			}
 
-	/* find the _NET_WORKAREA atom */
-	xa_workarea = XInternAtom(x_display, "_NET_WORKAREA", True);
-	if(xa_workarea == None)
-		return FALSE;
+			if(!data)
+				return FALSE;
 
-	if(XGetWindowProperty(x_display, x_root, xa_workarea, 0, (glong)(4 * 32),
-						  False, AnyPropertyType, &xa_type, &format, &len,
-						  &fill, &data) != Success)
-	{
-		return FALSE;
-	}
+			current = *(guint32 *)data;
+			XFree(data);
 
-	/* make sure the type and format are good */
-	if(xa_type == None || format == 0)
-		return FALSE;
+			/* find the _NET_WORKAREA atom */
+			xa_workarea = XInternAtom(x_display, "_NET_WORKAREA", True);
+			if(xa_workarea == None)
+				return FALSE;
 
-	/* make sure we don't have any leftovers */
-	if(fill)
-		return FALSE;
+			if(XGetWindowProperty(x_display, x_root, xa_workarea, 0, (glong)(4 * 32),
+								  False, AnyPropertyType, &xa_type, &format, &len,
+								  &fill, &data) != Success)
+			{
+				return FALSE;
+			}
 
-	/* make sure len divides evenly by 4 */
-	if(len % 4)
-		return FALSE;
+			/* make sure the type and format are good */
+			if(xa_type == None || format == 0)
+				return FALSE;
 
-	/* it's good, lets use it */
-	workareas = (gulong *)(guint32 *)data;
+			/* make sure we don't have any leftovers */
+			if(fill)
+				return FALSE;
 
-	rect->x = (guint32)workareas[current * 4];
-	rect->y = (guint32)workareas[current * 4 + 1];
-	rect->width = (guint32)workareas[current * 4 + 2];
-	rect->height = (guint32)workareas[current * 4 + 3];
+			/* make sure len divides evenly by 4 */
+			if(len % 4)
+				return FALSE;
 
-	/* clean up our memory */
-	XFree(data);
+			/* it's good, lets use it */
+			workareas = (gulong *)(guint32 *)data;
 
-	return TRUE;
-#endif
+			rect->x = (guint32)workareas[current * 4];
+			rect->y = (guint32)workareas[current * 4 + 1];
+			rect->width = (guint32)workareas[current * 4 + 2];
+			rect->height = (guint32)workareas[current * 4 + 3];
+
+			/* clean up our memory */
+			XFree(data);
+
+			return TRUE;
+		}
+		else
+	#endif
+			g_error ("Unsupported GDK backend");
 }
 
 void get_working_area(GdkScreen* screen, GdkRectangle *rect)
