@@ -367,6 +367,7 @@ gboolean on_animation_timeout( MainWin* mw )
     {
         GdkPixbuf *current;
         current = gdk_pixbuf_animation_iter_get_pixbuf( mw->animation_iter );
+        g_object_unref(mw->pix);
         mw->pix = gdk_pixbuf_copy( current );
         image_view_set_pixbuf( (ImageView*)mw->img_view, mw->pix );
     }
