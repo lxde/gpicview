@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-23 15:05+0200\n"
-"PO-Revision-Date: 2018-08-15 19:26+0000\n"
+"PO-Revision-Date: 2025-10-31 11:33+0100\n"
 "Last-Translator: Davidmp <rbndavid@gmail.com>\n"
 "Language-Team: LXDE Catalan translators group\n"
 "Language: ca\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.8\n"
+"X-Generator: Poedit 3.6\n"
 "X-POOTLE-MTIME: 1534361167.798295\n"
 
 #: ../src/gpicview.c:38
@@ -25,7 +25,7 @@ msgstr "[FITXER]"
 
 #: ../src/gpicview.c:40
 msgid "Print version information and exit"
-msgstr "Mostra informació de la versió i surt"
+msgstr "Mostra la informació de la versió i surt"
 
 #: ../src/gpicview.c:42
 msgid "Start slideshow"
@@ -34,7 +34,7 @@ msgstr "Inicia la presentació"
 #: ../src/gpicview.c:96
 #, c-format
 msgid "The file \"%s\" cannot be opened!"
-msgstr ""
+msgstr "El fitxer %s no es pot obrir!"
 
 #: ../src/main-win.c:167 ../src/main-win.c:1429 ../gpicview.desktop.in.h:2
 msgid "Image Viewer"
@@ -82,11 +82,11 @@ msgstr "Gira cap a la dreta"
 
 #: ../src/main-win.c:309 ../src/main-win.c:1465
 msgid "Flip Horizontal"
-msgstr "Inverteix"
+msgstr "Gira horitzontalment"
 
 #: ../src/main-win.c:310 ../src/main-win.c:1466
 msgid "Flip Vertical"
-msgstr "Reflecteix verticalment"
+msgstr "Gira verticalment"
 
 #: ../src/main-win.c:314 ../src/main-win.c:1468
 msgid "Open File"
@@ -98,7 +98,7 @@ msgstr "Desa"
 
 #: ../src/main-win.c:316
 msgid "Save File As"
-msgstr "Anomena i desa..."
+msgstr "Desa com a"
 
 #: ../src/main-win.c:317 ../src/main-win.c:1472
 msgid "Delete File"
@@ -124,7 +124,7 @@ msgid ""
 msgstr ""
 "El nom seleccionat ja existeix.\n"
 "Voleu sobreescriure el fitxer existent?\n"
-"(Atenció: podeu perdre la qualitat de la imatge original)"
+"(Atenció: podeu perdre la qualitat de la imatge original.)"
 
 #: ../src/main-win.c:1360
 msgid "Writing this image format is not supported."
@@ -146,7 +146,7 @@ msgstr "Inicia / atura la presentació"
 
 #: ../src/main-win.c:1470
 msgid "Save As"
-msgstr "Anomena i desa..."
+msgstr "Desa com a"
 
 #: ../src/main-win.c:1475
 msgid "Show/Hide toolbar"
@@ -159,7 +159,9 @@ msgstr " * Basat en el codi font dels visors d'imatges EOG i GThumb"
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1523
 msgid "translator-credits"
-msgstr "LXDE - Pootle"
+msgstr ""
+"LXDE - Pootle\n"
+"Davidmp"
 
 #: ../src/main-win.c:1529 ../gpicview.desktop.in.h:1
 msgid "GPicView"
@@ -197,7 +199,7 @@ msgstr "Tots els fitxers"
 
 #: ../src/file-dlgs.c:103
 msgid "JPEG Quality:"
-msgstr "Qualitat JPEG:"
+msgstr "Qualitat de JPEG:"
 
 #: ../src/file-dlgs.c:104
 msgid ""
@@ -209,7 +211,7 @@ msgstr ""
 
 #: ../src/file-dlgs.c:122
 msgid "PNG Compression Level:"
-msgstr "Nivell de compressió PNG:"
+msgstr "Nivell de compressió de PNG:"
 
 #: ../src/file-dlgs.c:123
 msgid ""
@@ -225,17 +227,15 @@ msgstr "Visualitzeu imatges fàcilment"
 
 #: ../data/pref-dlg.ui.h:2
 msgid "Start with a maximized window"
-msgstr ""
+msgstr "Comença amb una finestra maximitzada"
 
 #: ../data/pref-dlg.ui.h:3
 msgid "Save window size and position"
-msgstr ""
+msgstr "Desa la mida i la posició de la finestra"
 
 #: ../data/pref-dlg.ui.h:4
-#, fuzzy
-#| msgid "Show/Hide toolbar"
 msgid "Show toolbar"
-msgstr "Mostra / amaga la barra d'eines"
+msgstr "Mostra la barra d'eines"
 
 #: ../data/pref-dlg.ui.h:5
 msgid "Ask before saving images"
@@ -255,7 +255,7 @@ msgid ""
 "(only if EXIF orientation tag exists)"
 msgstr ""
 "Gira el fitxer JPEG canviant el valor d'orientació d'EXIF\n"
-"(només si l'etiqueta EXIF d'orientació existeix)"
+"(només si existeix l'etiqueta EXIF d'orientació)"
 
 #: ../data/pref-dlg.ui.h:10
 msgid "Slideshow interval"
@@ -263,18 +263,16 @@ msgstr "Interval de la presentació"
 
 #: ../data/pref-dlg.ui.h:11
 msgid "sec"
-msgstr "seg"
+msgstr "s"
 
 #: ../data/pref-dlg.ui.h:12
-#, fuzzy
-#| msgid "Zoom Out"
 msgid "Zoom factor"
-msgstr "Apropa"
+msgstr "Factor d'ampliació"
 
 #: ../data/pref-dlg.ui.h:14
 #, no-c-format
 msgid "%"
-msgstr ""
+msgstr "%"
 
 #: ../data/pref-dlg.ui.h:15
 msgid "Make GPicView the default viewer for images"
@@ -290,4 +288,4 @@ msgstr "Pantalla completa:"
 
 #: ../data/pref-dlg.ui.h:18
 msgid "<b>Background colors</b>"
-msgstr "<b>Colors de fons</b>"
+msgstr "<b>Colors del fons</b>"
