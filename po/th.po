@@ -2,14 +2,14 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# Warut Bunprasert <warut.b@disroot.org>, 2026
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-23 15:05+0200\n"
 "PO-Revision-Date: 2015-08-17 01:28+0000\n"
-"Last-Translator: Anonymous Pootle User\n"
+"Last-Translator: Warut Bunprasert <warut.b@disroot.org>, 2026\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: th\n"
 "MIME-Version: 1.0\n"
@@ -34,7 +34,7 @@ msgstr "เริ่มการนำเสนอภาพนิ่ง"
 #: ../src/gpicview.c:96
 #, c-format
 msgid "The file \"%s\" cannot be opened!"
-msgstr ""
+msgstr "ไม่สามารถเปิดไฟล์ \"%s\" ได้"
 
 #: ../src/main-win.c:167 ../src/main-win.c:1429 ../gpicview.desktop.in.h:2
 msgid "Image Viewer"
@@ -42,7 +42,7 @@ msgstr "ตัวดูภาพ"
 
 #: ../src/main-win.c:279 ../src/main-win.c:1452
 msgid "Previous"
-msgstr "ที่แล้ว"
+msgstr "ก่อนหน้า"
 
 #: ../src/main-win.c:280 ../src/main-win.c:1453
 msgid "Next"
@@ -159,7 +159,7 @@ msgstr "* อ้างอิง source code ของโปรแกรมดู
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../src/main-win.c:1523
 msgid "translator-credits"
-msgstr "ผู้แปล"
+msgstr "Warut Bunprasert <warut.b@disroot.org>, 2026"
 
 #: ../src/main-win.c:1529 ../gpicview.desktop.in.h:1
 msgid "GPicView"
@@ -171,7 +171,7 @@ msgstr "สงวนลิขสิทธิ์ (C) 2007 - 2025"
 
 #: ../src/main-win.c:1532
 msgid "Lightweight image viewer from LXDE project"
-msgstr "ตัวดูรูบภาพแบบเบาๆ จากโครงการ LXDE "
+msgstr "โปรแกรมดูรูบภาพแบบเบา ๆ จากโครงการ LXDE "
 
 #: ../src/pref.c:207
 msgid ""
@@ -224,15 +224,15 @@ msgstr "ดูภาพอย่างง่ายดาย"
 
 #: ../data/pref-dlg.ui.h:2
 msgid "Start with a maximized window"
-msgstr ""
+msgstr "เริ่มต้นด้วยหน้าต่างขยายใหญ่สุด"
 
 #: ../data/pref-dlg.ui.h:3
 msgid "Save window size and position"
-msgstr ""
+msgstr "บันทึกขนาดหน้าต่างและตำแหน่ง"
 
 #: ../data/pref-dlg.ui.h:4
 msgid "Show toolbar"
-msgstr ""
+msgstr "แสดงแถบเครื่องมือ"
 
 #: ../data/pref-dlg.ui.h:5
 msgid "Ask before saving images"
@@ -271,7 +271,7 @@ msgstr "ขยาย"
 #: ../data/pref-dlg.ui.h:14
 #, no-c-format
 msgid "%"
-msgstr ""
+msgstr "%"
 
 #: ../data/pref-dlg.ui.h:15
 msgid "Make GPicView the default viewer for images"
