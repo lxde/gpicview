@@ -1,0 +1,287 @@
+# Georgian translation for gpicview.
+# Copyright (C) 2026 gpicview's authors.
+# This file is distributed under the same license as the gpicview package.
+# Ekaterine Papava <papava.e@gtu.ge>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gpicview\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-23 15:05+0200\n"
+"PO-Revision-Date: 2026-02-23 18:54+0100\n"
+"Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
+"Language-Team: Georgian <(nothing)>\n"
+"Language: ka\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.8\n"
+
+#: ../src/gpicview.c:38
+msgid "[FILE]"
+msgstr "[ფაილი]"
+
+#: ../src/gpicview.c:40
+msgid "Print version information and exit"
+msgstr "ვერსიის შესახებ ინფორმაციის გამოტანა და გასვლა"
+
+#: ../src/gpicview.c:42
+msgid "Start slideshow"
+msgstr "სლაიდშოუს დაწყება"
+
+#: ../src/gpicview.c:96
+#, c-format
+msgid "The file \"%s\" cannot be opened!"
+msgstr "ფაილის \"%s\" გახსნა შეუძლებელია!"
+
+#: ../src/main-win.c:167 ../src/main-win.c:1429 ../gpicview.desktop.in.h:2
+msgid "Image Viewer"
+msgstr "სურათების გამხსნელი"
+
+#: ../src/main-win.c:279 ../src/main-win.c:1452
+msgid "Previous"
+msgstr "წინა"
+
+#: ../src/main-win.c:280 ../src/main-win.c:1453
+msgid "Next"
+msgstr "შემდეგი"
+
+#: ../src/main-win.c:281 ../src/main-win.c:770
+msgid "Start Slideshow"
+msgstr "სლაიდშოუს დაწყება"
+
+#: ../src/main-win.c:285 ../src/main-win.c:1456
+msgid "Zoom Out"
+msgstr "დაპატარავება"
+
+#: ../src/main-win.c:286 ../src/main-win.c:1457
+msgid "Zoom In"
+msgstr "გადიდება"
+
+#: ../src/main-win.c:293 ../src/main-win.c:1458
+msgid "Fit Image To Window Size"
+msgstr "გამოსახულების ჩატევა ფანჯარაში"
+
+#: ../src/main-win.c:295 ../src/main-win.c:1459
+msgid "Original Size"
+msgstr "საწყისი ზომა"
+
+#: ../src/main-win.c:302 ../src/main-win.c:1461
+msgid "Full Screen"
+msgstr "სრული ეკრანი"
+
+#: ../src/main-win.c:306 ../src/main-win.c:1463
+msgid "Rotate Counterclockwise"
+msgstr "საათის ისრის საწინააღმდეგო მიმართულებით შებრუნება"
+
+#: ../src/main-win.c:307 ../src/main-win.c:1464
+msgid "Rotate Clockwise"
+msgstr "საათის ისრის მიმართულებით შებრუნება"
+
+#: ../src/main-win.c:309 ../src/main-win.c:1465
+msgid "Flip Horizontal"
+msgstr "ჰორიზონტალურად გადაბრუნება"
+
+#: ../src/main-win.c:310 ../src/main-win.c:1466
+msgid "Flip Vertical"
+msgstr "ვერტიკალურად გადაბრუნება"
+
+#: ../src/main-win.c:314 ../src/main-win.c:1468
+msgid "Open File"
+msgstr "ფაილის გახსნა"
+
+#: ../src/main-win.c:315 ../src/main-win.c:1469
+msgid "Save File"
+msgstr "ფაილის შენახვა"
+
+#: ../src/main-win.c:316
+msgid "Save File As"
+msgstr "ფაილის შენახვა, როგორც"
+
+#: ../src/main-win.c:317 ../src/main-win.c:1472
+msgid "Delete File"
+msgstr "ფაილის წაშლა"
+
+#: ../src/main-win.c:320 ../src/main-win.c:1474 ../data/pref-dlg.ui.h:1
+msgid "Preferences"
+msgstr "მორგება"
+
+#: ../src/main-win.c:321 ../src/main-win.c:1478
+msgid "Quit"
+msgstr "გასვლა"
+
+#: ../src/main-win.c:778
+msgid "Stop Slideshow"
+msgstr "სლაიდშოუს შეჩერება"
+
+#: ../src/main-win.c:1319
+msgid ""
+"The file name you selected already exists.\n"
+"Do you want to overwrite existing file?\n"
+"(Warning: The quality of original image might be lost)"
+msgstr ""
+"თქვენს მიერ არჩეული ფაილის სახელი უკვე არსებობს.\n"
+"გნებავთ არსებული ფაილის თავზე გადაწერა?\n"
+"(გაფრთხილება: შეიძლება, ორიგინალი გამოსახულების ხარისხი დაიკარგოს)"
+
+#: ../src/main-win.c:1360
+msgid "Writing this image format is not supported."
+msgstr "ამ გამოსახულების ფორმატში ჩაწერა მხარდაჭერილი არაა."
+
+#: ../src/main-win.c:1398
+msgid ""
+"Are you sure you want to delete current file?\n"
+"\n"
+"Warning: Once deleted, the file cannot be recovered."
+msgstr ""
+"მართლა გნებავთ მიმდინარე ფაილის წაშლა?\n"
+"\n"
+"გაფრთხილება: წაშლა შეუქცევადია."
+
+#: ../src/main-win.c:1454
+msgid "Start/Stop Slideshow"
+msgstr "სლაიდ შოუს დაწყება/გაჩერება"
+
+#: ../src/main-win.c:1470
+msgid "Save As"
+msgstr "შენახვა, როგორც"
+
+#: ../src/main-win.c:1475
+msgid "Show/Hide toolbar"
+msgstr "ხელსაწყოთა ზოლის ჩვენება/დამალვა"
+
+#: ../src/main-win.c:1519
+msgid " * Refer to source code of EOG image viewer and GThumb"
+msgstr " * მიმართეთ EOG-ის და GThumb-ის წყარო კოდს"
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: ../src/main-win.c:1523
+msgid "translator-credits"
+msgstr "ეკატერინე პაპავა"
+
+#: ../src/main-win.c:1529 ../gpicview.desktop.in.h:1
+msgid "GPicView"
+msgstr "GPicView"
+
+#: ../src/main-win.c:1531
+msgid "Copyright (C) 2007 - 2023"
+msgstr "(C) 2007 - 2023 ყველა უფლება დაცულია"
+
+#: ../src/main-win.c:1532
+msgid "Lightweight image viewer from LXDE project"
+msgstr "მსუბუქი სურათების დამთვალიერებელი პროექტისთვის LXDE"
+
+#: ../src/pref.c:207
+msgid ""
+"GPicView will become the default viewer for all supported image files on "
+"your system.\n"
+"(This will be done through 'xdg-mime' program)\n"
+"\n"
+"<b>Are you sure you really want to do this?</b>"
+msgstr ""
+"GPicView თქვენს სისტემაზე ყველა მხარდაჭერილი გამოსახულების ნაგულისხმევი "
+"გახსნის პროგრამა გახდება.\n"
+"(ეს ხდება პროგრამით 'xdg-mime)\n"
+"\n"
+"<b>მართლა გნებავთ ამის გაკეთება?</b>"
+
+#: ../src/file-dlgs.c:62
+msgid "All Supported Images"
+msgstr "ყველა მხარდაჭერილი გამოსახულება"
+
+#: ../src/file-dlgs.c:67
+msgid "All Files"
+msgstr "ყველა ფაილი"
+
+#: ../src/file-dlgs.c:103
+msgid "JPEG Quality:"
+msgstr "JPEG ხარისხი:"
+
+#: ../src/file-dlgs.c:104
+msgid ""
+"Lower quality values yield smaller file sizes,\n"
+"but the image quality will be poorer."
+msgstr ""
+"დაბალი ხარისხის მნიშვნელობები პატარა ფაილის ზომას მოგცემთ,\n"
+"მაგრამ გამოსახულების ხარი უფრო ცუდი იქნება."
+
+#: ../src/file-dlgs.c:122
+msgid "PNG Compression Level:"
+msgstr "PNG შეკუმშვის დონე:"
+
+#: ../src/file-dlgs.c:123
+msgid ""
+"Higher compression levels yield smaller file sizes,\n"
+"but takes more time to do the compression."
+msgstr ""
+"მაღალი შეკუმშვის დონეები უფრო პატარა ფაილებს მოგცემთ,\n"
+"მაგრამ შეკუმშვას უფრო მეტი დრო სჭირდება."
+
+#: ../gpicview.desktop.in.h:3
+msgid "View your images easily"
+msgstr "სურათების დათვალიერება იოლად"
+
+#: ../data/pref-dlg.ui.h:2
+msgid "Start with a maximized window"
+msgstr "გაშვება მთელ ეკრანზე"
+
+#: ../data/pref-dlg.ui.h:3
+msgid "Save window size and position"
+msgstr "ფანჯრის ზომისა და მდებარეობის დამახსოვრება"
+
+#: ../data/pref-dlg.ui.h:4
+msgid "Show toolbar"
+msgstr "ხელსაწყოთა ზოლის ჩვენება"
+
+#: ../data/pref-dlg.ui.h:5
+msgid "Ask before saving images"
+msgstr "დადასტურება გამოსახულებების შენახვამდე"
+
+#: ../data/pref-dlg.ui.h:6
+msgid "Ask before deleting images"
+msgstr "დადასტურება გამოსახულებების წაშლამდე"
+
+#: ../data/pref-dlg.ui.h:7
+msgid "Automatically save rotated images"
+msgstr "შებრუნებული გამოსახულებების ავტომატური შენახვა"
+
+#: ../data/pref-dlg.ui.h:8
+msgid ""
+"Rotate JPEG file by changing EXIF orientation value\n"
+"(only if EXIF orientation tag exists)"
+msgstr ""
+"JPEG ფაილის შებრუნება EXIF-ის ორიენტაციის მნიშვნელობით\n"
+"(მხოლოდ, თუ არსებობს EXIF-ის ორიენტაციის ჭდე)"
+
+#: ../data/pref-dlg.ui.h:10
+msgid "Slideshow interval"
+msgstr "სლაიდშოუს ინტერვალი"
+
+#: ../data/pref-dlg.ui.h:11
+msgid "sec"
+msgstr "წმ"
+
+#: ../data/pref-dlg.ui.h:12
+msgid "Zoom factor"
+msgstr "გადიდების ფარდობა"
+
+#: ../data/pref-dlg.ui.h:14
+#, no-c-format
+msgid "%"
+msgstr "%"
+
+#: ../data/pref-dlg.ui.h:15
+msgid "Make GPicView the default viewer for images"
+msgstr "GPicView-ის დაყენება გამოსახულების ფაილების ნაგულისხმევ გამხსნელად"
+
+#: ../data/pref-dlg.ui.h:16
+msgid "Normal:"
+msgstr "ნორმალური:"
+
+#: ../data/pref-dlg.ui.h:17
+msgid "Fullscreen:"
+msgstr "სრულ ეკრანზე:"
+
+#: ../data/pref-dlg.ui.h:18
+msgid "<b>Background colors</b>"
+msgstr "<b>ფონის ფერები</b>"
