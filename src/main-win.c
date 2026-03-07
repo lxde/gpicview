@@ -573,6 +573,9 @@ void on_size_allocate( GtkWidget* widget, GtkAllocation    *allocation )
 
 gboolean on_win_state_event( GtkWidget* widget, GdkEventWindowState* state )
 {
+#if GTK_CHECK_VERSION(3, 0, 0)
+    GTK_WIDGET_CLASS(main_win_parent_class)->window_state_event( widget, state );
+#endif
     MainWin* mw = (MainWin*)widget;
     if( (state->new_window_state & GDK_WINDOW_STATE_FULLSCREEN) != 0 )
     {
