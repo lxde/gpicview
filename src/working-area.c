@@ -23,14 +23,20 @@
 */
 
 # include <gdk/gdk.h>
+
+#ifdef GDK_WINDOWING_X11
 # include <gdk/gdkx.h>
 # include <X11/Xlib.h>
 # include <X11/Xutil.h>
 # include <X11/Xatom.h>
+#endif
 
 void get_working_area(GdkScreen* screen, GdkRectangle *rect);
 
 static gboolean gf_display_get_workarea(GdkScreen* g_screen, GdkRectangle *rect) {
+#ifndef GDK_WINDOWING_X11
+	return FALSE;
+#else
 	Atom xa_desktops, xa_current, xa_workarea, xa_type;
 	Display *x_display;
 	Window x_root;
@@ -46,6 +52,11 @@ static gboolean gf_display_get_workarea(GdkScreen* g_screen, GdkRectangle *rect)
 	g_display = gdk_display_get_default();
 	if(!g_display)
 		return FALSE;
+
+#if defined(GDK_IS_X11_DISPLAY) && defined(GDK_IS_X11_SCREEN)
+	if(!GDK_IS_X11_DISPLAY(g_display) || !GDK_IS_X11_SCREEN(g_screen))
+		return FALSE;
+#endif
 
 	/* get the x display from the gdk display */
 	x_display = gdk_x11_display_get_xdisplay(g_display);
@@ -134,6 +145,7 @@ static gboolean gf_display_get_workarea(GdkScreen* g_screen, GdkRectangle *rect)
 	XFree(data);
 
 	return TRUE;
+#endif
 }
 
 void get_working_area(GdkScreen* screen, GdkRectangle *rect)
