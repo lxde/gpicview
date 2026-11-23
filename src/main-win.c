@@ -367,7 +367,9 @@ gboolean on_animation_timeout( MainWin* mw )
     {
         GdkPixbuf *current;
         current = gdk_pixbuf_animation_iter_get_pixbuf( mw->animation_iter );
-        mw->pix = gdk_pixbuf_copy( current );
+        GdkPixbuf *pix = gdk_pixbuf_copy( current );
+        g_object_unref( mw->pix );
+        mw->pix = pix;
         image_view_set_pixbuf( (ImageView*)mw->img_view, mw->pix );
     }
     delay = gdk_pixbuf_animation_iter_get_delay_time( mw->animation_iter );
@@ -427,6 +429,7 @@ gboolean main_win_open( MainWin* mw, const char* file_path, ZoomMode zoom )
         /* we found an animation */
         mw->animation_iter = gdk_pixbuf_animation_get_iter( mw->animation, NULL );
         mw->pix = gdk_pixbuf_animation_iter_get_pixbuf( mw->animation_iter );
+        g_object_ref( mw->pix );
         delay = gdk_pixbuf_animation_iter_get_delay_time( mw->animation_iter );
         mw->animation_timeout = g_timeout_add( delay, (GSourceFunc) on_animation_timeout, mw );
     }
@@ -522,20 +525,27 @@ void main_win_start_slideshow( MainWin* mw )
 
 void main_win_close( MainWin* mw )
 {
+    if( mw->animation_timeout )
+    {
+        g_source_remove( mw->animation_timeout );
+        mw->animation_timeout = 0;
+    }
+
+    if( mw->animation_iter )
+    {
+        g_object_unref( mw->animation_iter );
+        mw->animation_iter = NULL;
+    }
+
     if( mw->animation )
     {
         g_object_unref( mw->animation );
         mw->animation = NULL;
-        if( mw->animation_timeout )
-        {
-            g_source_remove( mw->animation_timeout );
-            mw->animation_timeout = 0;
-        }
     }
-    else if( mw->pix )
-    {
+
+    if( mw->pix )
         g_object_unref( mw->pix );
-    }
+
     mw->pix = NULL;
 }
 
